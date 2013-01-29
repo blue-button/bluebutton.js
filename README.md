@@ -5,7 +5,31 @@ A JavaScript library to work with Blue Button Continuity of Care Document (CCD) 
 
 This project is under heavy development and the API is subject to change, a lot!
 
-## Sample Usage
+## Building
+
+All JavaScript files are concatenated and compiled with [Google's Closure Compiler](https://developers.google.com/closure/compiler/). If errors or warnings are found during compilation, the compiler will print them and quit.
+
+Run `rake build` to build in production mode. The compiler uses `SIMPLE_OPTIMIZATIONS` and a closure will wrap the resulting JavaScript. (Read more about [compilation levels](https://developers.google.com/closure/compiler/docs/compilation_levels).)
+
+Run `rake build[dev]` to build the developer. The compiler uses the `WHITESPACE_ONLY` and `PRETTY_PRINT` options to condense but preserve resulting JavaScript.
+
+## Running Tests
+
+Run `rake tests`.
+
+Tests are run using [PhantomJS](http://phantomjs.org), [QUnit](http://qunitjs.com), and [JSHint](http://www.jshint.com).
+
+# The API
+
+Parse a Blue Button CCD XML document using:
+
+```javascript
+var bb = BlueButton(xml);
+```
+
+## Medications
+
+## Labs
 
 ```javascript
 bb.labs();

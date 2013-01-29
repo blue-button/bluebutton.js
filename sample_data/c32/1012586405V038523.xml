@@ -1,0 +1,844 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><?xml-stylesheet type="text/xsl" href="CCD.xsl"?>
+<ClinicalDocument xmlns="urn:hl7-org:v3" xmlns:voc="urn:hl7-org:v3/voc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:hl7-org:v3 http://xreg2.nist.gov:11080/hitspValidation/schema/cdar2c32/infrastructure/cda/C32_CDA.xsd">
+	<!-- 
+    ********************************************************
+    CDA Header
+    ********************************************************
+    -->
+    <!-- HITSP C32 V2.5:  Add realmCode -->
+    <realmCode code="US"/>
+	<!-- Following template is HL7 CDA Release 2 -->
+	<!-- POCD_HD000040 is for Lab.Report.Clinical.Document -->
+	<typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3"/>
+	<!-- HITSP C32 V2.5:  Template for IHE PCC Medical Documents specification -->
+	<templateId root="1.3.6.1.4.1.19376.1.5.3.1.1.1"/>
+	<!-- Following template is the CCD v1.0 Templates Root -->
+	<templateId root="2.16.840.1.113883.10.20.1"/>
+	<!-- HITSP C32 V2.5:  Template for HL7 General Header constraints-->
+	<templateId root="2.16.840.1.113883.10.20.3"/>
+	<!-- Following template is the HITSP/C32 Registration and Medication Template -->
+	<templateId root="2.16.840.1.113883.3.88.11.32.1"/>
+	<!-- HITSP C32 V2.5:  Template for HITSP C32 V2.5 -->
+	<templateId root="2.16.840.1.113883.3.88.11.83.1"/>
+	<!-- CDA Document Identifer, id=VA OID, extension=system-generated -->
+	<id extension="2.25.46823109975755564458965873656508892295" root="2.16.840.1.113883.4.349"/>
+	<!-- CDA Document Code -->
+	<code code="34133-9" codeSystem="2.16.840.1.113883.6.1" displayName="Summarization of Episode Note"/>
+	<!-- CDA Document Title -->
+	<title>Department of Veterans Affairs Summarization of Episode Note</title>
+	<!-- 1.01 DOCUMENT TIMESTAMP, REQUIRED -->
+	<effectiveTime value="20121130143303-0600"/>
+	<!-- CDA Confiedntiality Code -->
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25"/>
+	<!-- CDA DOCUMENT LANGUAGE -->
+	<languageCode code="en-US"/>
+	<!-- 
+	********************************************************
+	PERSON INFORMATION CONTENT MODULE, REQUIRED
+	********************************************************
+	-->
+    <recordTarget>
+        <patientRole>
+			<!-- 1.02 PERSON ID, REQUIRED, id=VA OID, extension=GUID -->
+            <id extension="1012586405V038523" root="2.16.840.1.113883.4.349"/>
+			<!--  1.03 PERSON ADDRESS-HOME PERMANENT, REQUIRED -->
+            <addr use="HP">
+                <streetAddressLine>4000 Minor St</streetAddressLine>
+                <city>HONOLULU</city>
+                <state>HI</state>
+                <postalCode>96801</postalCode>
+            </addr>
+			<!-- 1.04 PERSON PHONE/EMAIL/URL, REQUIRED -->
+            <telecom use="HP" value="tel:+1-501-300-2343"/>
+            <patient>
+				<!--  1.05 PERSON NAME LEGAL, REQUIRED -->
+                <name use="L">
+                    
+                    <given>CHARLES</given><given>T</given>
+                    <family>BROWN</family>
+                    
+                </name>
+				<!--  1.05 PERSON NAME Alias Name, Optional -->
+                <name use="P">
+                    
+                    <given nullFlavor="UNK"/>
+                    <family nullFlavor="UNK"/>
+                    
+                </name>
+				<!-- HITSP C32 V2.5: 1.06 GENDER, REQUIRED AND REQUIRED Terminology -->
+				<!-- HITSP C32 V2.5: When Vista value is M, F, send as HL7AdminGenderCode  -->
+				<!-- HITSP C32 V2.5: When Vista value is "Unknown", send as genderCode nullFlavor=UNK"  -->
+                <administrativeGenderCode code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGenderCode" displayName="Male">
+					<originalText>MALE</originalText>
+				</administrativeGenderCode>
+				<!-- 1.07 PERSON DATE OF BIRTH, REQUIRED -->
+                <birthTime value="19350105"/>
+				<!--  1.08 MARITAL STATUS, Optional-R2 -->
+				<!-- VLER SEG 1B:  Send as HL7 MaritalStatus  -->
+				<maritalStatusCode code="M" codeSystem="2.16.840.1.113883.5.2" codeSystemName="MaritalStatusCode" displayName="Married">
+					<originalText>MARRIED</originalText>
+				</maritalStatusCode>
+				<!--  1.09 RELIGIOUS AFFILIATION, Optional, Removed b/c data not yet available via VA VIstA RPCs-->
+				<!--  1.10 RACE, Optional -->
+				<!--  1.10 RACE as originalText per NHIN Core Content Specification b/c VA code translation not yet available -->
+                <raceCode codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDC Race and Ethnicity" nullFlavor="UNK">
+                    
+                </raceCode>
+				<!-- 1.11 ETHNICITY, Optional -->
+				<!-- 1.11 ETHNICITY as originalText per NHIN Core Content Specification b/c VA code translation not yet available -->
+                <ethnicGroupCode codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDC Race and Ethnicity" nullFlavor="UNK">
+                    
+                </ethnicGroupCode>
+				<!-- 
+				********************************************************
+				LANGUAGE SPOKEN CONTENT MODULE
+				********************************************************
+				-->
+                <languageCommunication>
+                    <templateId root="2.16.840.1.113883.3.88.11.32.2"/>
+					<!--  2.01 LANGUAGE, REQUIRED, languageCode as nullFlavor b/c data not yet available via VA VistA RPCs -->
+                    <languageCode nullFlavor="UNK"/>
+                </languageCommunication>
+            </patient>
+        </patientRole>
+    </recordTarget>
+	<!-- 
+	********************************************************
+	INFORMATION SOURCE CONTENT MODULE, REQUIRED
+	********************************************************
+	-->
+	<!-- AUTHOR SECTION (REQUIRED) OF INFORMATION SOURCE CONTENT MODULE -->
+	<author>
+		<!-- 10.01 AUTHOR TIME (=Document Creation Date), REQUIRED -->
+		<time value="20121130143303-0600"/>
+		<assignedAuthor>
+			<!-- 10.02 AUTHOR ID (VA OID) (authorOID), REQUIIRED -->
+			<id root="2.16.840.1.113883.4.349"/>
+			<!-- HITSP C32 V2.5:  Assigned Author Address Required, but VA VistA data not yet available -->
+			<addr/>
+			<!-- HITSP C32 V2.5:  Assigned Author  Telecom Required, but VA VistA data not yet available -->
+			<telecom/>
+			<!-- 10.02 AUTHOR NAME REQUIRED -->
+			<!-- HITSP C32 V2.5:  C83  assignedPerson/Author Name REQUIRED but provided as representedOrganization-->
+			<assignedPerson>
+				<name/>
+			</assignedPerson>
+			<!-- 10.02 AUTHOR NAME REQUIRED as representedOrganization-->
+			<representedOrganization>
+				<!-- 10.02 AUTHORING DEVICE ORGANIZATION OID (VA OID) (deviceOrgOID), REQUIIRED -->
+				<id root="2.16.840.1.113883.4.349"/>
+				<!-- 10.02 AUTHORING DEVICE ORGANIZATION NAME (deviceOrgName), REQUIIRED -->
+				<name>Department of Veterans Affairs</name>
+				<!-- HITSP C32 V2.5:  Assigned Author  Telecom Required, but VA VistA data not yet available -->
+				<telecom/>
+				<!-- HITSP C32 V2.5:  Assigned Author Address Required, but VA VistA data not yet available -->
+				<addr/>
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<!-- INFORMATION SOURCE SECTION (OPTIONAL)OF INFORMATION SOURCE CONTENT MODULE -->
+	<!-- 10.06 INFORMATION SOURCE AS AN ORGANIZATION, REQUIRED -->
+	<informant>
+		<assignedEntity>
+			<id nullFlavor="NI"/>
+			<!-- HITSP C32 V2.5:   Address Required for informant/assignedEntity, but VA VistA data not yet available -->
+			<addr/>
+			<!-- HITSP C32 V2.5:    Telecom Required for informant/assignedEntity, but VA VistA data not yet available -->
+			<telecom/>
+			<!-- HITSP C32 V2.5:  assignedPerson Required for informant/assignedEntity, but VA VistA data not yet available -->
+			<assignedPerson>
+				<!-- HITSP C32 V2.5:  Name Required for informant/assignedEntity/assignedPerson -->
+				<name>Department of Veterans Affairs</name>
+			</assignedPerson>
+			<representedOrganization>
+				<!-- 10.06 INFORMATION SOURCE ORGANIZATION OID (VA OID) (sourceOrgOID), REQUIRED -->
+				<id root="2.16.840.1.113883.4.349"/>
+				<!-- 10.06 INFORMATION SOURCE ORGANIZATION NAME (sourceOrgName), REQUIRED -->
+				<name>Department of Veterans Affairs</name>
+				<!-- HITSP C32 V2.5:    Telecom Required for representedOrganization, but VA VistA data not yet available -->
+				<telecom/>
+				<!-- HITSP C32 V2.5:   Address Required for representedOrganization, but VA VistA data not yet available -->
+				<addr/>
+			</representedOrganization>
+		</assignedEntity>
+	</informant>
+	<!-- 
+	********************************************************
+	CCD CDA R2 CUSTODIAN AS AN ORGANIZATION, REQUIRED
+	********************************************************
+	-->
+	<custodian>
+		<assignedCustodian>
+			<representedCustodianOrganization>
+				<!-- CCD CDA R2 CUSTODIAN OID (VA) (custodianOID) -->
+				<id root="2.16.840.1.113883.4.349"/>
+				<!-- CCD CDA R2 CUSTODIAN NAME (custodianName) -->
+				<name>Department of Veterans Affairs</name>
+				<!-- HITSP C32 V2.5:    Telecom Required for representedOrganization, but VA VistA data not yet available -->
+				<telecom/>
+				<!-- HITSP C32 V2.5:   Address Required for representedOrganization, but VA VistA data not yet available -->
+				<addr/>
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+    <!-- 
+	********************************************************
+	CCD CDA R2 LEGAL AUTHENTICATOR AS AN ORGANIZATION, REQUIRED
+	********************************************************
+	-->
+	<legalAuthenticator>
+		<!-- CCD CDA R2 TIME OF AUTHENTICATION -->
+		<time value="20121130143303-0600"/>
+		<signatureCode code="S"/>
+		<assignedEntity>
+			<id nullFlavor="NI"/>
+			<!-- HITSP C32 V2.5:   Address Required for assignedEntity, but VA VistA data not yet available -->
+			<addr/>
+			<!-- HITSP C32 V2.5:    Telecom Required for assignedEntity, but VA VistA data not yet available -->
+			<telecom/>
+			<!-- HITSP C32 V2.5:   assigned Person Required for legalAuthenticator/assignedEntity  -->
+			<assignedPerson>
+				<name>Department of Veterans Affairs</name>
+			</assignedPerson>
+			<representedOrganization>
+				<!-- CCD CDA R2 LEGAL AUTHENTICATOR OID (VA)  -->
+				<id root="2.16.840.1.113883.4.349"/>
+				<!-- CCD CDA R2 LEGAL AUTHENTICATOR NAME (authenticatorName) -->
+				<name>Department of Veterans Affairs</name>
+				<!-- HITSP C32 V2.5:    Telecom Required for representedOrganization, but VA VistA data not yet available -->
+				<telecom/>
+				<!-- HITSP C32 V2.5:   Address Required for representedOrganization, but VA VistA data not yet available -->
+				<addr/>
+			</representedOrganization>
+		</assignedEntity>
+	</legalAuthenticator>
+	<!-- 
+    ********************************************************
+    SUPPORT CONTENT MODULE, REQUIRED
+    ********************************************************
+    -->
+    <participant typeCode="IND"> <!-- participant block repeated for NOK and ECON -->
+        <templateId root="2.16.840.1.113883.3.88.11.32.3"/>
+        <!-- HITSP C32 V2.5:    IHE Support Template -->
+		<templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.4"/>
+		<!--  3.01 DATE, REQUIRED -->
+		<!--  3.01 DATE date as nullFlavor b/c data not yet available via VA VistA RPCs -->
+        <time nullFlavor="UNK"/>
+		<!--  3.02 CONTACT TYPE, REQUIRED, classCode value determined by VistA value in contactType -->
+        <associatedEntity classCode="ECON">
+			<!--  3.03 CONTACT RELATIONSHIP as originalText per NHIN Core Content Specification b/c VA code translation not yet available -->
+            <code code="UNK" codeSystem="2.16.840.1.113883.5.111" codeSystemName="RoleCode">
+                <originalText>relationshipType</originalText>
+            </code>
+			<!--  3.04 CONTACT Addresss, Home Permanent, Optional-R2 -->
+            <addr use="HP">
+                
+                <city>homeCity</city>
+                <state>homeState</state>
+                <postalCode>homePostal</postalCode>
+            </addr>
+            <!-- HITSP C32 V2.5:    Telecom Required for assignedEntity  -->
+			<!--  3.05 CONTACT PHONE/EMAIL/URL, Optional-R2,  Removed b/c data not yet available via VA VistA RPCs -->
+			<telecom nullFlavor="UNK"/>
+            <associatedPerson>
+				<!-- 3.06 CONTACT NAME, REQUIRED -->
+                <name>
+                    
+                    <given>CHARLES T</given>
+                    <family>BROWN</family>
+                    
+                </name>
+            </associatedPerson>
+        </associatedEntity>
+    </participant>
+	<!-- 
+	********************************************************
+	CCD CDA R2 DOCUMENTATION OF MODULE - QUERY META DATA, Optional 
+	********************************************************
+	-->
+    <documentationOf>
+        <serviceEvent classCode="PCPR">
+            <effectiveTime>
+				<!-- QUERY META DATA, SERVICE START TIME, Optional -->
+                <low value="19000101000000-0600"/>
+				<!-- QUERY META DATA, SERVICE STOP TIME, Optional -->
+                <high value="20121130143303-0600"/>
+            </effectiveTime>
+            <!-- 
+			********************************************************
+			HEALTHCARE PROVIDER MODULE, OPTIONAL
+			********************************************************
+			-->
+            <performer typeCode="PRF">
+                    <!-- Provider Template Id  -->
+                    <templateId root="2.16.840.1.113883.3.88.11.32.4"/>
+                    <!-- 4.02-PROVIDER ROLE CODED, Optional-R2, Removed b/c data not yet available via VA VistA RPCs -->
+                    <!-- 4.03-PROVIDER ROLE FREE TEXT, Optional-R2, Removed b/c data not yet available via VA VistA RPCs -->
+                    <!-- 4.01-DATE RANGE, Required, nullFlavor b/c data not yet available via VA VistA RPCs -->
+                    <time>
+                         <high nullFlavor="UNK"/>
+                    </time>
+				    <assignedEntity>
+				        <!-- Provider ID from Problems Module (7.05Treating Provider ID) -->
+				        <id extension="provider1" root="2.16.840.1.113883.4.349"/>
+				        <!-- HITSP C32 V2.5:   Address Required for assignedEntity, but VA VistA data not yet available -->
+						<addr/>
+						<!-- HITSP C32 V2.5:    Telecom Required for iassignedEntity, but VA VistA data not yet available -->
+						<telecom/>
+						<assignedPerson>
+							<name>SMSPROVIDER,SIX</name>
+						</assignedPerson>
+                                                <representedOrganization>
+                                                        <!-- INFORMATION SOURCE FOR FACILITY ID=VA OID, EXT= VAMC TREATING FACILITY NBR -->
+                                                        <id extension="613" root="2.16.840.1.113883.4.349"/>
+                                                        <!-- INFORMATION SOURCE FACILITY NAME (facilityName) -->
+                                                        <name>MARTINSBURG VAMC</name>
+                                                        <!-- HITSP C32 V2.5:    Telecom Required for representedOrganization, but VA VistA data not yet available -->
+                                                        <telecom/>
+                                                        <!-- HITSP C32 V2.5:   Address Required for representedOrganization, but VA VistA data not yet available -->
+                                                        <addr/>
+                                                </representedOrganization>
+				    </assignedEntity>
+			</performer><performer typeCode="PRF">
+                    <!-- Provider Template Id  -->
+                    <templateId root="2.16.840.1.113883.3.88.11.32.4"/>
+                    <!-- 4.02-PROVIDER ROLE CODED, Optional-R2, Removed b/c data not yet available via VA VistA RPCs -->
+                    <!-- 4.03-PROVIDER ROLE FREE TEXT, Optional-R2, Removed b/c data not yet available via VA VistA RPCs -->
+                    <!-- 4.01-DATE RANGE, Required, nullFlavor b/c data not yet available via VA VistA RPCs -->
+                    <time>
+                         <high nullFlavor="UNK"/>
+                    </time>
+				    <assignedEntity>
+				        <!-- Provider ID from Problems Module (7.05Treating Provider ID) -->
+				        <id extension="provider2" root="2.16.840.1.113883.4.349"/>
+				        <!-- HITSP C32 V2.5:   Address Required for assignedEntity, but VA VistA data not yet available -->
+						<addr/>
+						<!-- HITSP C32 V2.5:    Telecom Required for iassignedEntity, but VA VistA data not yet available -->
+						<telecom/>
+						<assignedPerson>
+							<name>SMSPROVIDER,SIX</name>
+						</assignedPerson>
+                                                <representedOrganization>
+                                                        <!-- INFORMATION SOURCE FOR FACILITY ID=VA OID, EXT= VAMC TREATING FACILITY NBR -->
+                                                        <id extension="613" root="2.16.840.1.113883.4.349"/>
+                                                        <!-- INFORMATION SOURCE FACILITY NAME (facilityName) -->
+                                                        <name>MARTINSBURG VAMC</name>
+                                                        <!-- HITSP C32 V2.5:    Telecom Required for representedOrganization, but VA VistA data not yet available -->
+                                                        <telecom/>
+                                                        <!-- HITSP C32 V2.5:   Address Required for representedOrganization, but VA VistA data not yet available -->
+                                                        <addr/>
+                                                </representedOrganization>
+				    </assignedEntity>
+			</performer>
+        </serviceEvent>
+    </documentationOf>
+    <!-- 
+	********************************************************
+	CDA BODY
+	********************************************************
+	-->	
+    <component>
+        <structuredBody>
+        	<!-- 
+			********************************************************
+			ALLERGY/DRUG SECTION SECTION
+			********************************************************
+			-->
+			<component>
+							<section>
+								<!-- CCD Alert Section Template-->
+								<templateId root="2.16.840.1.113883.10.20.1.2"/>
+								<!-- HITSP C32 V2.5:  Allergy and Adverse Reaction Section Template -->
+								<templateId root="2.16.840.1.113883.3.88.11.83.102"/>
+								<!-- HITSP C32 V2.5:  IHE Allergies and Other Adverse Reactions  Section Template -->
+								<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.13"/>
+									<!-- HITSP C32 V2.5:  CCD Section Conformance code value , static -->
+								<code code="48765-2" codeSystem="2.16.840.1.113883.6.1" displayName="Allergies, adverse reactions, alerts"/>
+								<title>Allergies</title>
+								<!--  ALLERGIES NARRATIVE BLOCK -->
+								 <text>
+									<!-- VLER SEG 1B: Allergies/Drug Business Rules for Medical Content  -->
+									<table border="1" width="100%">
+										<thead>
+											<tr>
+												<th>Department of Veterans Affairs</th>
+												<th>Business Rules for Construction of Medical Information</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Allergies</td>
+												<td>This section contains all patient allergy information from all VA treatment facilities. It does not contain patient allergies that were deleted or entered in error.</td>
+											</tr>
+										</tbody>
+									</table>
+									<table ID="allergyNarritive" border="1" width="100%">
+										<thead>
+											<tr>
+												<th>Allergy</th>
+                                                                                                <th>Coded Allergy</th>
+												<th>Verification Date</th>
+												<th>Event Type</th>
+												<th>Reaction</th>
+												<th>Severity</th>
+												<th>Source</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>
+													<content ID="andAllergy1">ANIMAL DANDER</content>
+												</td>
+												<td>
+													<content ID="andCodedAllergyName1">Coded Allergy Name Not Available</content>
+												</td>
+												<td>
+													<content ID="andVerificationDate1">20120702154245</content>
+												</td>
+												<td>
+													<content ID="andEventType1">Propensity to adverse reactions</content>
+											    </td>
+												<td>
+													<list>
+														<item>
+															<content ID="andReaction1-1">DROWSY</content>
+													    </item>
+													</list>
+												</td>
+												<td>
+													<content ID="andSeverity1"/>
+												</td>
+												<td>
+													<content ID="andSource1">MARTINSBURG VAMC</content>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</text>
+								<entry typeCode="DRIV">
+									<act classCode="ACT" moodCode="EVN">
+										<templateId assigningAuthorityName="CCD" root="2.16.840.1.113883.10.20.1.27"/>
+										<!-- HITSP C32 V2.5:  Templates for Allergy/Drug Module/Entry -->
+										<templateId root="2.16.840.1.113883.3.88.11.83.6"/>
+										<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+										<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.3"/>
+										<!-- CCD Allergy Act ID as nullflavor -->
+										<id nullFlavor="UNK"/>
+										<code nullFlavor="NA"/>
+										<!-- HITSP C32 V2.5:  IHE Concern Template Requires statusCode and effectiveTime  -->
+										<statusCode code="active"/>
+										<effectiveTime>
+											<low nullFlavor="UNK"/>
+										</effectiveTime>
+										<!-- INFORMATION SOURCE FOR ALLERGIES/DRUG, Optional -->
+										<author>
+											<!--  ADD TIME TO INFORMATION SOURCE FOR ALLERGIES/DRUG -->
+											<time nullFlavor="UNK"/>
+											<assignedAuthor>
+												<id nullFlavor="NI"/>
+												<!-- HITSP C32 V2.5:   Address Required for assignedEntity, but VA VistA data not yet available -->
+												<addr/>
+												<!-- HITSP C32 V2.5:    Telecom Required for assignedEntity, but VA VistA data not yet available -->
+												<telecom/>
+												<representedOrganization>
+													<!-- INFORMATION SOURCE FOR FACILITY ID=VA OID, EXT= VAMC TREATING FACILITY NBR -->
+													<id extension="613" root="2.16.840.1.113883.4.349"/>
+													<!-- INFORMATION SOURCE FACILITY NAME (facilityName) -->
+													<name>MARTINSBURG VAMC</name>
+													<!-- HITSP C32 V2.5:    Telecom Required for representedOrganization, but VA VistA data not yet available -->
+													<telecom/>
+													<!-- HITSP C32 V2.5:   Address Required for representedOrganization, but VA VistA data not yet available -->
+													<addr/>
+												</representedOrganization>
+											</assignedAuthor>
+										</author>
+										<entryRelationship inversionInd="false" typeCode="SUBJ">
+											<observation classCode="OBS" moodCode="EVN">
+												<!-- HITSP C32 V2.5:    Allergy Templates -->
+												<templateId root="2.16.840.1.113883.10.20.1.28"/>
+												<!-- Alert observation template -->
+												<templateId root="2.16.840.1.113883.10.20.1.18"/>
+												<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+												<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+												<!-- HITSP C32 V2.5: IHE Observation Templates Require Id -->
+												<id nullFlavor="UNK"/>
+												<!-- 6.02 ADVERSE EVENT TYPE, REQUIRED; SNOMED CT  -->
+												<!-- HITSP C32 V2.5:  6.02 ADVERSE EVENT TYPE SNOMED CT Terminology Required -->
+												<code code="420134006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Propensity to adverse reactions">
+													<originalText>OTHER</originalText>
+												</code>
+												<!-- IHE  Status Code fro Observation -->
+												<statusCode code="completed"/>
+												<!-- 6.01 ADVERSE EVENT DATE, Optional-R2 -->
+												<effectiveTime>
+													<low value="20120702154245"/>
+												</effectiveTime>
+												<!-- HITSP C32 V2.5:  IHE Allergy Concern Template Requires value, When uncoded only xsi:type=CD allowed -->
+												<value xsi:type="CD"/>
+												<!-- HITSP C32 V2.5: Participant block for 6.04-Product Coded -->
+												<participant typeCode="CSM">
+													<participantRole classCode="MANU">
+														<playingEntity classCode="MMAT">
+															<!--  6.04 PRODUCT CODED, Optional-R2, Removed b/c data not yet available via VA VistA RPCs -->
+																<code code="UNK" nullFlavor="UNK">
+																 <originalText>
+																	 <reference value="#andCodedAllergyName1"/>
+																 </originalText>
+															 </code>
+															<!-- 6.03 PRODUCT FREE TEXT, REQUIRED-->
+															<name>ANIMAL DANDER</name>
+														</playingEntity>
+													</participantRole>
+												</participant>
+												<!--  SEVERITY ENTRY RELATIONSHIP BLOCK optional, 0 or 1 per Allergy -->
+												
+												<!--  REACTION ENTRYRELATIONSHIP BLOCK optional, repeatable  -->
+												<entryRelationship inversionInd="true" typeCode="MFST">
+													<observation classCode="OBS" moodCode="EVN">
+														<!-- Reaction Template ID -->
+														<templateId root="2.16.840.1.113883.10.20.1.54"/>
+														<!-- HITSP C32 V2.5:    Allergy Templates -->
+														<templateId root="2.16.840.1.113883.10.20.1.28"/>
+														<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+														<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.6"/>
+														<id nullFlavor="UNK"/>
+														<code code="ASSERTION" codeSystem="2.16.840.1.113883.5.4" codeSystemName="HL7ActCode"/>
+														<!-- 6.05 REACTION-FREE TEXT, optional,-->
+														<text>
+															<reference value="#andReaction1-1"/>
+														</text>
+														<statusCode code="completed"/>
+														<effectiveTime>
+															<low nullFlavor="UNK"/>
+														</effectiveTime>
+														<!-- 6.06 REACTION CODED optional, when uncoded only xsi:type=CD allowed -->
+														<value xsi:type="CD"/>
+													</observation>
+												</entryRelationship>
+											</observation>
+										</entryRelationship>
+									</act>
+								</entry>
+							</section>
+						</component>
+			<!-- 
+			********************************************************
+			PROBLEM/CONDITION SECTION
+			********************************************************
+			-->
+			<component> <!-- Component 2 -->
+				<section>
+					<!-- CCD Problem Section Template -->
+					<templateId root="2.16.840.1.113883.10.20.1.11"/>
+					<!-- HITSP C32 V2.5:  Problem Section Template -->
+					<templateId root="2.16.840.1.113883.3.88.11.83.103"/>
+					<!-- HITSP C32 V2.5:  IHE Active Problems Section Template -->
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.3.6"/>
+					<!-- HITSP C32 V2.5:  C83 - IHE Problem Concern Templates -->
+					<!-- templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/
+					<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/ -->
+					<code code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Problems"/>
+					<title>Problems/Conditions</title>
+					<!--  PROBLEMS NARRATIVE BLOCK, Required -->
+                    <text>
+                        <!-- VLER SEG 1B: Problem/Condition Business Rules for Medical Content  -->
+                        <table border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Department of Veterans Affairs</th>
+									<th>Business Rules for Construction of Medical Information</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Problems/Conditions</td>
+									<td>This section contains patient conditions (active and inactive) information from all VA treatment facilities. It does not contain patient conditions that were deleted.</td>
+								</tr>
+							</tbody>
+						</table>
+						<table ID="problemNarritive" border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Problem</th>
+									<th>Status</th>
+									<th>Problem Code</th>
+									<th>Date of Onset</th>
+									<th>Provider</th>
+									<th>Source</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<content ID="pndProblem1">Dizziness (ICD-9-CM 780.4)</content>
+								    </td>
+									<td>
+										<content ID="pndStatus1">Active</content>
+									</td>
+									<td>
+										<content ID="pndProblemCode1">780.4</content>
+									</td>
+									<td>
+										<content ID="pndDateOfOnset1"/>
+									</td>
+									<td>
+										<content ID="pndProvider1">SMSPROVIDER,SIX</content>
+									</td>
+									<td>
+										<content ID="pndSource1">MARTINSBURG VAMC</content>
+									</td>
+								</tr><tr>
+									<td>
+										<content ID="pndProblem2">Headache (ICD-9-CM 784.0)</content>
+								    </td>
+									<td>
+										<content ID="pndStatus2">Active</content>
+									</td>
+									<td>
+										<content ID="pndProblemCode2">784.0</content>
+									</td>
+									<td>
+										<content ID="pndDateOfOnset2"/>
+									</td>
+									<td>
+										<content ID="pndProvider2">SMSPROVIDER,SIX</content>
+									</td>
+									<td>
+										<content ID="pndSource2">MARTINSBURG VAMC</content>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+					<entry typeCode="DRIV">
+						<act classCode="ACT" moodCode="EVN">
+							<!-- CCD Problem Act Template -->
+							<templateId root="2.16.840.1.113883.10.20.1.27"/>
+							<!-- HITSP V2.5:  C83 Templates for Problem Module/Entry -->
+							<templateId root="2.16.840.1.113883.3.88.11.83.7"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                            <!-- CCD Problem Act ID as nullFlavor  -->
+							<id nullFlavor="UNK"/>
+							<code nullFlavor="NA"/>
+							<!-- HITSP V2.5 IHE Problem Concern Templates Requires statusCode -->
+							<statusCode code="completed"/>
+							<!--  7.01 PROBLEM DATE (cda:low=Date of Onset, cda:high=Date Resolved), Optional R2 -->
+							<effectiveTime>
+								<low nullFlavor="UNK"/>
+                                                                <high nullFlavor="UNK"/>
+							</effectiveTime>
+						    <!-- 7.05 TREATING PROVIDER id link to HealthCare Provider Entry--> 
+                            <performer typeCode="PRF">
+                                     <assignedEntity>
+											<id extension="provider1" root="2.16.840.1.113883.4.349"/>
+											<!-- HITSP C32 V2.5:   Address Required for assignedEntity, but VA VistA data not yet available -->
+											<addr/>
+											<!-- HITSP C32 V2.5:    Telecom Required for assignedEntity, but VA VistA data not yet available -->
+											<telecom/>
+                                      </assignedEntity>
+                            </performer>
+							<!-- INFORMATION SOURCE FOR PROBLEM, Optional -->
+							<author>
+								<!-- HITSP C32 V2.5:    Time as nullFlavor because VA VistA data not yet available -->
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<!-- HITSP C32 V2.5:   Address Required for assignedAuthor, but VA VistA data not yet available -->
+									<addr/>
+									<!-- HITSP C32 V2.5:    Telecom Required for assignedAuthor, but VA VistA data not yet available -->
+									<telecom/>
+									<representedOrganization>
+										<!-- INFORMATION SOURCE FOR FACILITY ID=VA OID, EXT= VAMC TREATING FACILITY NBR -->
+										<id extension="613" root="2.16.840.1.113883.4.349"/>
+										<!-- INFORMATION SOURCE FACILITY NAME (facilityName) -->
+										<name>MARTINSBURG VAMC</name>
+										<!-- HITSP C32 V2.5:    Telecom Required for representedOrganization, but VA VistA data not yet available -->
+										<telecom/>
+										<!-- HITSP C32 V2.5:   Address Required for representedOrganization, but VA VistA data not yet available -->
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<entryRelationship inversionInd="false" typeCode="SUBJ">
+								<!-- CCD Problem observation - Required -->
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- Problem observation template -->
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<!-- HITSP V2.5:  C83 Templates for Problem Module/Entry -->
+								    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+								  	<!-- CCD Problem Obs ID as nullFlavor  -->
+									<id nullFlavor="UNK"/>
+									<!-- 7.02 PROBLEM TYPE, R2, SNOMED CT  -->
+									<!-- HITSP C32 V2.5:  7.02 PROBLEM TYPE, Optional SNOMED CT, provided as nullFalvor b/c data not yet available via VA VistA RPCs -->
+									<code codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" nullFlavor="UNK">
+										<originalText>Problem Type Not Available</originalText>
+									</code>
+									<!-- 7.03 PROBLEM NAME, REQUIRED -->
+									<text>
+										<reference value="#pndProblem1"/>
+									</text>
+									<statusCode code="completed"/>
+									<!-- HITSP V2.5:  IHE Problem Templates Require low value entry -->
+									<effectiveTime>
+										<low nullFlavor="UNK"/> 
+									</effectiveTime>
+									<!--  7.04 PROBLEM CODE, Optional, When uncoded only xsi:type="CD" allowed, Available as ICD-9, not SNOMED CT,  -->
+									<!-- HITSP V2.5:  IHE Problem Templates Require value entry -->
+									<value xsi:type="CD">
+										<translation code="780.4" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD-9-CM"/>
+									</value>
+									<!--  7.12 PROBLEM STATUS entryRelationship block, Optional, -->
+									<entryRelationship typeCode="REFR">
+										<observation classCode="OBS" moodCode="EVN">
+										<!-- HITSP C32 V2.5:  CCD Problem status observation template -->
+											<templateId root="2.16.840.1.113883.10.20.1.50"/> 
+											<code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+											<statusCode code="completed"/>
+											<!--  HITSP C32 V2.5: 7.12 PROBLEM STATUS  Optional, Translated ftom VistA value -->
+											<value code="55561003" codeSystem="2.16.840.1.113883.6.96" displayName="Active" xsi:type="CE">
+												<originalText>ACTIVE</originalText>
+											</value>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry><entry typeCode="DRIV">
+						<act classCode="ACT" moodCode="EVN">
+							<!-- CCD Problem Act Template -->
+							<templateId root="2.16.840.1.113883.10.20.1.27"/>
+							<!-- HITSP V2.5:  C83 Templates for Problem Module/Entry -->
+							<templateId root="2.16.840.1.113883.3.88.11.83.7"/>
+							<templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.1"/>
+                            <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5.2"/>
+                            <!-- CCD Problem Act ID as nullFlavor  -->
+							<id nullFlavor="UNK"/>
+							<code nullFlavor="NA"/>
+							<!-- HITSP V2.5 IHE Problem Concern Templates Requires statusCode -->
+							<statusCode code="completed"/>
+							<!--  7.01 PROBLEM DATE (cda:low=Date of Onset, cda:high=Date Resolved), Optional R2 -->
+							<effectiveTime>
+								<low nullFlavor="UNK"/>
+                                                                <high nullFlavor="UNK"/>
+							</effectiveTime>
+						    <!-- 7.05 TREATING PROVIDER id link to HealthCare Provider Entry--> 
+                            <performer typeCode="PRF">
+                                     <assignedEntity>
+											<id extension="provider2" root="2.16.840.1.113883.4.349"/>
+											<!-- HITSP C32 V2.5:   Address Required for assignedEntity, but VA VistA data not yet available -->
+											<addr/>
+											<!-- HITSP C32 V2.5:    Telecom Required for assignedEntity, but VA VistA data not yet available -->
+											<telecom/>
+                                      </assignedEntity>
+                            </performer>
+							<!-- INFORMATION SOURCE FOR PROBLEM, Optional -->
+							<author>
+								<!-- HITSP C32 V2.5:    Time as nullFlavor because VA VistA data not yet available -->
+								<time nullFlavor="UNK"/>
+								<assignedAuthor>
+									<id nullFlavor="NI"/>
+									<!-- HITSP C32 V2.5:   Address Required for assignedAuthor, but VA VistA data not yet available -->
+									<addr/>
+									<!-- HITSP C32 V2.5:    Telecom Required for assignedAuthor, but VA VistA data not yet available -->
+									<telecom/>
+									<representedOrganization>
+										<!-- INFORMATION SOURCE FOR FACILITY ID=VA OID, EXT= VAMC TREATING FACILITY NBR -->
+										<id extension="613" root="2.16.840.1.113883.4.349"/>
+										<!-- INFORMATION SOURCE FACILITY NAME (facilityName) -->
+										<name>MARTINSBURG VAMC</name>
+										<!-- HITSP C32 V2.5:    Telecom Required for representedOrganization, but VA VistA data not yet available -->
+										<telecom/>
+										<!-- HITSP C32 V2.5:   Address Required for representedOrganization, but VA VistA data not yet available -->
+										<addr/>
+									</representedOrganization>
+								</assignedAuthor>
+							</author>
+							<entryRelationship inversionInd="false" typeCode="SUBJ">
+								<!-- CCD Problem observation - Required -->
+								<observation classCode="OBS" moodCode="EVN">
+									<!-- Problem observation template -->
+									<templateId root="2.16.840.1.113883.10.20.1.28"/>
+									<!-- HITSP V2.5:  C83 Templates for Problem Module/Entry -->
+								    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.5"/>
+								  	<!-- CCD Problem Obs ID as nullFlavor  -->
+									<id nullFlavor="UNK"/>
+									<!-- 7.02 PROBLEM TYPE, R2, SNOMED CT  -->
+									<!-- HITSP C32 V2.5:  7.02 PROBLEM TYPE, Optional SNOMED CT, provided as nullFalvor b/c data not yet available via VA VistA RPCs -->
+									<code codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" nullFlavor="UNK">
+										<originalText>Problem Type Not Available</originalText>
+									</code>
+									<!-- 7.03 PROBLEM NAME, REQUIRED -->
+									<text>
+										<reference value="#pndProblem2"/>
+									</text>
+									<statusCode code="completed"/>
+									<!-- HITSP V2.5:  IHE Problem Templates Require low value entry -->
+									<effectiveTime>
+										<low nullFlavor="UNK"/> 
+									</effectiveTime>
+									<!--  7.04 PROBLEM CODE, Optional, When uncoded only xsi:type="CD" allowed, Available as ICD-9, not SNOMED CT,  -->
+									<!-- HITSP V2.5:  IHE Problem Templates Require value entry -->
+									<value xsi:type="CD">
+										<translation code="784.0" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD-9-CM"/>
+									</value>
+									<!--  7.12 PROBLEM STATUS entryRelationship block, Optional, -->
+									<entryRelationship typeCode="REFR">
+										<observation classCode="OBS" moodCode="EVN">
+										<!-- HITSP C32 V2.5:  CCD Problem status observation template -->
+											<templateId root="2.16.840.1.113883.10.20.1.50"/> 
+											<code code="33999-4" codeSystem="2.16.840.1.113883.6.1" displayName="Status"/>
+											<statusCode code="completed"/>
+											<!--  HITSP C32 V2.5: 7.12 PROBLEM STATUS  Optional, Translated ftom VistA value -->
+											<value code="55561003" codeSystem="2.16.840.1.113883.6.96" displayName="Active" xsi:type="CE">
+												<originalText>ACTIVE</originalText>
+											</value>
+										</observation>
+									</entryRelationship>
+								</observation>
+							</entryRelationship>
+						</act>
+					</entry>
+                </section>
+			</component>
+ 			<!-- 
+			********************************************************
+			MEDICATIONS (RX & Non-RX)  SECTION
+			********************************************************
+			-->
+			
+			<!-- 
+			********************************************************
+			VLER SEG 1B:  VITAL SIGNS SECTION
+			********************************************************
+			-->
+			
+            <!-- 
+			********************************************************
+			VLER SEG 1B:  LAB RESULTS SECTION (Chemistry/Hematology)
+			********************************************************
+			-->
+			
+				<!-- 
+				********************************************************
+				VLER SEGMENT 1B:  IMMUNIZATION SECTION
+				********************************************************
+				-->
+				
+			<!-- 
+			********************************************************
+			NHIN_CR_101, CR100
+			VLER Segment 1Bii:  ENCOUNTER SECTION 
+           	********************************************************
+			-->
+			
+	     <!-- 
+			********************************************************
+			NHIN_CR95, CR94
+			VLER Segment 1Bii:  PROCEDURE SECTION 
+			********************************************************
+			-->
+			
+    	</structuredBody>
+	</component>
+</ClinicalDocument>

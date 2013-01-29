@@ -1,0 +1,10 @@
+
+{
+	"copyright": "/**\n * BlueButton.js\n */\n",
+	"compiler_path": "vendor/compiler-r2388.jar",
+	"build_path": "build/bluebutton-0.0.0.js",
+	"src_path": "src/",
+	"files": [
+		"bluebutton"
+	]
+}
