@@ -3,7 +3,22 @@
 
 A JavaScript library to work with Blue Button Continuity of Care Document (CCD) data.
 
-This project is under heavy development and the API is subject to change, a lot!
+**This project is under heavy development and the API is subject to change, a lot!**
+
+<!-- 
+# About
+
+BlueButton.js is a JavaScript library for working with complex health data. The library will parse and process [Continuity of Care Documents](http://en.wikipedia.org/wiki/Continuity_of_Care_Document) in XML beginning with the C32 standard now supported by the [Dept. of Veterans Affairs](http://www.va.gov/bluebutton/).
+
+This is an official open-source project of [OSEHRA](http://osehra.org).
+
+- Provides a simple interface to query for data
+- Query and navigate CCD data
+- Will be used to power visual frameworks, specifically from health design challenge, but can be extended for any designs
+- Helper functionality in working with complex health data
+- Resources: http://www.va.gov/BLUEBUTTON/Resources.asp
+-->
+
 
 ## Building
 
@@ -21,7 +36,7 @@ Tests are run using [PhantomJS](http://phantomjs.org), [QUnit](http://qunitjs.co
 
 # The API
 
-Parse a Blue Button CCD XML document using:
+Parse a Blue Button CCD in XML using:
 
 ```javascript
 var bb = BlueButton(xml);

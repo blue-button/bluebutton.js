@@ -63,44 +63,22 @@ task :build, :options do |t, args|
     js_build << "\n(function () {\n"
   end
   
-  # TODO: If compiler has errors, print and quit
-  result = IO.popen(compiler_cmd << " 2>&1").readlines.join
+  result = `#{compiler_cmd << " 2>&1"}`
   
-  if result[0..4] == "ERROR"
+  # If an error occured
+  unless $?.exitstatus.zero?
     puts "failed!"
     puts result.error
     exit
   end
   
   js_build << result
-  
   puts "done!",""
   
   # Close the closure
-  if !manifest[:dev_mode] then js_build << "})();" end
+  unless dev_mode then js_build << "})();" end
   
   File.open("#{manifest[:build_path]}", "w") { |f| f.puts(js_build) }
   puts "  File written: #{manifest[:build_path]}".success, ""
   
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
