@@ -24,22 +24,17 @@ class Hash
 end
 
 desc "Build BlueButton.js"
-task :build, :options do |t, args|
-  if args[:options] == "dev" then dev_mode = true end
+task :build do
   
-  msg = "\nBuilding BlueButton.js"
-  
-  if dev_mode
-    puts "#{msg} (Development)".task, ""
-  else
-    puts "#{msg} (Production)".task, ""
-  end
+  puts "\nBuilding BlueButton.js".task, ""
   
   manifest = File.open("manifest.json", "r") { |f| f.read }
   manifest = JSON.parse(manifest).symbolize_keys
   
-  # The final build containing all the JS
-  js_build = ""
+  # Contains the assembled JS
+  dev_js = prod_js = manifest[:copyright]
+  
+  ### COMPILER COMMANDS ###
   
   # Example:
   #   "java -jar compiler.jar --js hi.js --js_output_file hi.min.js"
@@ -51,34 +46,43 @@ task :build, :options do |t, args|
     compiler_cmd << " --js #{manifest[:src_path]}#{js_file}.js"
   end
   
-  print "\n  Compiling..."
+  dev_cmd = prod_cmd = compiler_cmd
+  dev_cmd += " --compilation_level WHITESPACE_ONLY" <<
+             " --formatting PRETTY_PRINT"
   
-  js_build << manifest[:copyright]
+  ### DEVELOPMENT BUILD ###
   
-  if dev_mode
-    compiler_cmd << " --compilation_level WHITESPACE_ONLY" <<
-                    " --formatting PRETTY_PRINT"
-  else
-    # Add a closure
-    js_build << "\n(function () {\n"
-  end
+  print "\n  Compiling development build..."
+  result = `#{dev_cmd << " 2>&1"}`
   
-  result = `#{compiler_cmd << " 2>&1"}`
-  
-  # If an error occured
+  # If an error occurred
   unless $?.exitstatus.zero?
     puts "failed!"
     puts result.error
     exit
   end
   
-  js_build << result
-  puts "done!",""
+  dev_js += result
+  dev_path = "#{manifest[:build_path]}bluebutton-#{manifest[:version]}-dev.js"
+  File.open(dev_path, "w") { |f| f.puts(dev_js) }
   
-  # Close the closure
-  unless dev_mode then js_build << "})();" end
+  print "done!"
   
-  File.open("#{manifest[:build_path]}", "w") { |f| f.puts(js_build) }
-  puts "  File written: #{manifest[:build_path]}".success, ""
+  ### PRODUCTION BUILD ###
+  
+  print "\n  Compiling production build..."
+  result = `#{prod_cmd << " 2>&1"}`
+  
+  # Add a closure
+  prod_js += "\n(function () {\n" << result << "})();"
+  prod_path = "#{manifest[:build_path]}bluebutton-#{manifest[:version]}.js"
+  File.open(prod_path, "w") { |f| f.puts(prod_js) }
+  
+  print "done!"
+  
+  ### DONE ###
+  
+  msg = "  Files written:\n    #{dev_path}\n    #{prod_path}"
+  puts "", "", msg.success, ""
   
 end

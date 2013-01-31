@@ -1,10 +1,25 @@
 
 {
 	"copyright": "/**\n * BlueButton.js\n */\n",
+  "version": "0.0.0",
 	"compiler_path": "vendor/compiler-r2388.jar",
-	"build_path": "build/bluebutton-0.0.0.js",
+	"build_path": "build/",
 	"src_path": "src/",
 	"files": [
+    "core",
+    "allergies",
+    "demographics",
+    "discharge",
+    "encounters",
+    "functions",
+    "history",
+    "immunizations",
+    "labs",
+    "medications",
+    "plan",
+    "problems",
+    "procedures",
+    "vitals",
 		"bluebutton"
 	]
 }
