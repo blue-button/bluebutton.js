@@ -3,23 +3,19 @@
 
 A JavaScript library to work with Blue Button data in the form of XML Continuity of Care Documents, supporting both C32 and CCDA standards.
 
-**This project is under heavy development!**
-
-Until a v1.0.0 release, the public API will change, a lot.
+**This project is under heavy development!** Until a v1.0.0 release, the public API will change, a lot.
 
 ## Community and Contributing
 
 This project is currently under development by members of the [Blue Button developer community](https://github.com/blue-button?tab=members) and will be maintained by [OSEHRA](http://osehra.org).
 
-Until a public release (version 0.1.0), this project is considered a "developer preview" and pull requests will be ignored. If you have a suggestion or concern, submit an issue or tweet us at [@bluebuttondev](http://twitter.com/bluebuttondev)
+Until a public release (version 0.1.0), this project is considered a "developer preview" and pull requests will be ignored. If you have a suggestion or concern, submit an issue or tweet us at [@bluebuttondev](http://twitter.com/bluebuttondev).
 
 ## Building
 
 Run `rake build` to build both the development and production JavaScript.
 
-Builds are placed in the `build/` directory. Both builds first assemble all JavaScript files in the `src/` directory in the order defined in `manifest.json`.
-
-All JavaScript files are concatenated and compiled with [Google's Closure Compiler](https://developers.google.com/closure/compiler/). If errors or warnings are found during compilation, the compiler will quit and they will be printed in the console.
+Builds are placed in the `build/` directory. Both builds first assemble all JavaScript files in the `src/` directory in the order defined in `manifest.json`. All JavaScript files are concatenated and compiled with [Google's Closure Compiler](http://developers.google.com/closure/compiler/). If errors or warnings are found during compilation, the compiler will quit and they will be printed in the console.
 
 <!--
 ## Running Tests
@@ -37,7 +33,7 @@ Start by creating a Blue Button document object by passing the CCD XML (C32 or C
 var bb = BlueButton(xml);
 ```
 
-The document object, `bb` in this example, now exposes all CCD data in a simple and consistent interface. Accessing major sections of the CCD document are shown below.
+The document object, `bb` in this example, now exposes all CCD data through a simple and consistent interface. Accessing major sections of the CCD document are shown below.
 
 ## Medications
 
@@ -73,7 +69,7 @@ And an example medication object:
     code: 5955009
   },
   status: {
-    name: "Active,
+    name: "Active",
     codeSystemName: "SNOMED CT",
     codeSystem: "2.16.840.1.113883.6.96",
     code: 55561003
@@ -89,7 +85,7 @@ And an example medication object:
 
 ## Immunizations
 
-Use the `immunizations` method to get the list of all immunizations:
+Use the `immunizations` method to retrieve a list of all immunizations:
 
 ```javascript
 bb.immunizations();  // Returns all immunizations as an Array
