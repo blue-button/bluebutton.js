@@ -53,29 +53,18 @@ And an example medication object:
     codeSystem: "2.16.840.1.113883.6.88",
     code: 573621
   },
-  date: {
-    value: 20110301
-  },
-  directions: {
-    text: "2 puffs QID PRN wheezing"
-  },
-  instructions: {
-    text: "Generic Substitution Allowed"
-  },
+  date: 20110301,
+  directions: "2 puffs QID PRN wheezing",
+  instructions: "Generic Substitution Allowed",
+  status: "active",
   drugVehicle: {
     name: "Diethylene Glycol",
     codeSystemName: "SNOWMED CT",
     codeSystem: "2.16.840.1.113883.6.96",
     code: 5955009
   },
-  status: {
-    name: "Active",
-    codeSystemName: "SNOMED CT",
-    codeSystem: "2.16.840.1.113883.6.96",
-    code: 55561003
-  },
   indication: {
-    name: " Bronchitis",
+    name: "Bronchitis",
     codeSystemName: "SNOWMED CT",
     codeSystem: "2.16.840.1.113883.6.96",
     code: 32398004
@@ -101,15 +90,9 @@ And an example immunization object:
     codeSystem: "2.16.840.1.113883.6.59",
     code: 573621
   },
-  instructions: {
-    text: "Possible flu-like symptoms for three days."
-  },
-  date: {
-    value: 19981215
-  },
-  status: {
-    name: "Completed"
-  }
+  instructions: "Possible flu-like symptoms for three days.",
+  date: 19981215,
+  status: "completed"
 }
 ```
 
