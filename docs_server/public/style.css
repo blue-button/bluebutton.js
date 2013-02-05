@@ -1,0 +1,369 @@
+/* Resets */
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q,
+samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset,
+form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article,
+aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio,
+video {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  background: transparent;
+  vertical-align: baseline;
+  font-size: 100%;
+}
+
+body {
+  background: #f0f0f0;
+  font: 20px "Helvetica Neue", Helvetica, Arial, Geneva, sans-serif;
+  /* font-family: "Open Sans"; */
+  /* font-family: "Lato"; */
+}
+
+.home { }
+
+.home .header {
+  margin-bottom: 35px;
+  min-width: 900px;
+  height: 370px;
+  background: #52779c;
+  background: linear-gradient(top, #52779c, #234878);
+  background: -moz-linear-gradient(top, #52779c, #234878);
+  background: -webkit-linear-gradient(top, #52779c, #234878);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.home .header .content {
+  padding-top: 40px;
+  text-align: center;
+}
+
+.home .header h1 {
+  padding: 15px 0 25px 0;
+  text-shadow: 0 5px 4px rgba(0, 0, 0, 0.3);
+  font-size: 60px;
+}
+
+.home .header img {
+  width: 150px;
+  height: 150px;
+}
+
+.home .header ul {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.home .header li {
+  display: inline-block;
+}
+
+.home .header a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+}
+
+.home .header a:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.home .content-area {
+  margin-bottom: 100px;
+  min-width: 900px;
+}
+
+.home .content-area .content {
+  text-align: center;
+}
+
+.home .content-area h1 {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 24px;
+}
+
+.home .content-area ul {
+  margin: 0 auto;
+  padding: 10px 10px 25px 10px;
+  width: 400px;
+  border-radius: 4px;
+  background: #fafafa;
+  background: linear-gradient(top, #fff, #f5f5f5);
+  background: -moz-linear-gradient(top, #fff, #f5f5f5);
+  background: -webkit-linear-gradient(top, #fff, #f5f5f5);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.6);
+  list-style: none;
+}
+
+.home .content-area ul li { }
+
+.home .content-area ul li h1 {
+  margin-bottom: 10px;
+  color: #3d628c;
+  font-size: 30px;
+}
+
+.home .content-area ul li h2 {
+  margin-bottom: 15px;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 20px;
+}
+
+.home .content-area ul li p {
+  margin-bottom: 30px;
+  font-size: 18px;
+  line-height: 1.4em;
+}
+
+.home .content-area ul li a {
+  color: #3d628c;
+  text-decoration: none;
+}
+
+.home .content-area ul li a:hover {
+  text-decoration: underline;
+}
+
+.home .content-area ul li .button {
+  padding: 10px 15px;
+  border-radius: 5px;
+  background: #52779c;
+  background: linear-gradient(top, #52779c, #234878);
+  background: -moz-linear-gradient(top, #52779c, #234878);
+  background: -webkit-linear-gradient(top, #52779c, #234878);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0 2px 1px rgba(0, 0, 0, 0.5);
+  font-size: 18px;
+}
+
+.home .content-area ul li .button:hover {
+  background: #5c85b0;
+  background: linear-gradient(top, #5c85b0, #234878);
+  background: -moz-linear-gradient(top, #5c85b0, #234878);
+  background: -webkit-linear-gradient(top, #5c85b0, #234878);
+  text-decoration: none;
+}
+
+.home .content-area ul li .button:active {
+  background: #426181;
+  background: linear-gradient(top, #426181, #234878);
+  background: -moz-linear-gradient(top, #426181, #234878);
+  background: -webkit-linear-gradient(top, #426181, #234878);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Documentation */
+
+.docs .header {
+  margin-bottom: 15px;
+  min-width: 902px;
+  height: 48px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  background: #52779c;
+  background: linear-gradient(top, #52779c, #234878);
+  background: -moz-linear-gradient(top, #52779c, #234878);
+  background: -webkit-linear-gradient(top, #52779c, #234878);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  cursor: default;
+}
+
+.docs .header .content {
+  display: block;
+  margin: 0 auto;
+  padding: 14px 0 0 0;
+  max-width: 900px;
+  width: auto;
+  color: #fff;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.docs .header img {
+  position: relative;
+  top: -8px;
+  float: left;
+  padding-right: 8px;
+  height: 35px;
+}
+
+.docs .header a {
+  color: #fff;
+}
+
+.docs .header h1 {
+  float: left;
+}
+
+.docs .header ul {
+  float: right;
+  margin-top: -15px;
+  margin-right: 4px;
+}
+
+.docs .header ul li {
+  display: inline-block;
+  margin-top: 0;
+  margin-right: -4px;
+  padding: 15px 12px;
+  list-style: none;
+}
+
+.docs .header ul li.active {
+  background: #334f78;
+  background: linear-gradient(top, #334f78, #2e4466);
+  background: -moz-linear-gradient(top, #334f78, #2e4466);
+  background: -webkit-linear-gradient(top, #436180, #1d3c66);
+}
+
+.docs .header ul li a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.docs .content-area {
+  position: relative;
+  margin: 10px auto;
+  margin-bottom: 10px;
+  width: 900px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.docs .sidebar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: inline-block;
+  width: 190px;
+  border-radius: 3px;
+  border-bottom-right-radius: 0;
+  background: #fafafa;
+}
+
+.docs .sidebar ul {
+  list-style: none;
+}
+
+.docs .sidebar li {
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #ccc;
+  background: #fafafa;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.docs .sidebar li div {
+  padding: 7px 10px;
+}
+
+.docs .sidebar li.active {
+  background: #fff;
+  color: #4d4d4d;
+}
+
+/* arrow box -- cssarrowplease.com */
+.docs .sidebar li.active {
+  position: relative;
+  background: #fff;
+}
+.docs .sidebar li.active:after, .sidebar li:before {
+  position: absolute;
+  left: 100%;
+  width: 0;
+  height: 0;
+  border: solid transparent;
+  content: " ";
+  pointer-events: none;
+}
+.docs .sidebar li.active:after {
+  top: 50%;
+  margin-top: -6px;
+  border-width: 6px;
+  border-left-color: #fff;
+}
+.docs .sidebar li.active:before {
+  top: 50%;
+  margin-top: -7px;
+  border-width: 7px;
+  border-left-color: #b3b3b3;
+}
+/* end arrow box */
+
+.docs .sidebar li:first-child {
+  border-top-left-radius: 3px;
+}
+
+.docs .sidebar a {
+  color: #4d4d4d;
+  text-decoration: none;
+}
+
+.docs .sidebar li:hover {
+  background: #fff;
+  cursor: pointer;
+}
+
+.docs .page {
+  margin-left: 190px;
+  padding: 20px;
+  min-height: 500px;
+  border-left: 1px solid #ccc;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  background: #fff;
+  color: #262626;
+  font-size: 16px;
+  line-height: 1.4em;
+}
+
+.docs .page h1 {
+  margin-bottom: 1em;
+  font-size: 24px;
+}
+
+.docs .page h2 {
+  margin-top: 1.2em;
+  margin-bottom: 1em;
+  font-size: 20px;
+}
+
+.docs .page p {
+  margin-bottom: 1em;
+}
+
+.docs .page ul {
+  list-style-position: inside;
+  margin-left: 10px;
+  margin-bottom: 1em;
+}
+
+.docs .page code {
+  padding: 2px 6px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  background: #fafafa;
+  font-size: 15px;
+  font-family: Menlo, Consolas, Monaco, "Lucida Console", monospace;
+}
+
+.docs .page pre code {
+  display: block;
+  overflow-y: auto;
+  margin-bottom: 15px;
+  padding: 10px;
+  line-height: 1.33em;
+}
+
+.footer {}
+
+.footer .content {
+  margin: 0 auto;
+  max-width: 900px;
+  width: auto;
+  color: #666666;
+  font-size: 14px;
+  min-height: 25px;
+}

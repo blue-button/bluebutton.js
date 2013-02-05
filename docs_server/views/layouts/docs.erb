@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Blue Button Developer Center</title>
+    <meta name="description" content="The Blue Button Developer Center">
+    <link href="/style.css" rel="stylesheet">
+    <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet'> -->
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/tomorrow.min.css">
+  </head>
+  <body class="docs">
+    
+    <div class="header">
+      <div class="content">
+        <a href="/">
+          <img src="/bb_logo_sm.png" alt="" />
+          <h1>Blue Button Developer Center</h1>
+        </a>
+        <ul>
+          <li class="active">BlueButton.js</li>
+          <!-- 
+          <a href=""><li>News</li></a>
+          <a href=""><li>Community</li></a>
+           -->
+        </ul>
+      </div>
+    </div>
+    
+    <div class="content-area">
+      <div class="sidebar">
+        <ul>
+          <%= menu_link "Getting Started", "/getting_started" %>
+          <%= menu_link "Demographics", "/demographics" %>
+          <%= menu_link "Allergies", "/allergies" %>
+          <%= menu_link "Discharge", "/discharge" %>
+          <%= menu_link "Encounters", "/encounters" %>
+          <%= menu_link "Functions", "/functions" %>
+          <%= menu_link "History", "/history" %>
+          <%= menu_link "Immunizations", "/immunizations" %>
+          <%= menu_link "Labs", "/labs" %>
+          <%= menu_link "Medications", "/medications" %>
+          <%= menu_link "Plan", "/plan" %>
+          <%= menu_link "Problems", "/problems" %>
+          <%= menu_link "Procedures", "/procedures" %>
+          <%= menu_link "Vitals", "/vitals" %>
+        </ul>
+      </div>
+      
+      <div class="page">
+        <%= yield %>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <div class="content">
+      </div>
+    </div>
+    
+    <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
