@@ -23,10 +23,9 @@ body {
 
 .home { }
 
-.home .header {
-  margin-bottom: 35px;
-  min-width: 900px;
-  height: 370px;
+.home .title {
+  min-width: 800px;
+  margin-bottom: 30px;
   background: #52779c;
   background: linear-gradient(top, #52779c, #234878);
   background: -moz-linear-gradient(top, #52779c, #234878);
@@ -35,51 +34,71 @@ body {
   color: #fff;
 }
 
-.home .header .content {
+.home .title .content {
+  margin: 0 auto;
   padding-top: 40px;
+  width: 750px;
   text-align: center;
 }
 
-.home .header h1 {
-  padding: 15px 0 25px 0;
+.home .title h1 {
+  padding: 15px 0 10px 0;
   text-shadow: 0 5px 4px rgba(0, 0, 0, 0.3);
   font-size: 60px;
 }
 
-.home .header img {
+.home .title h2 {
+  padding: 0 0 15px 0;
+  text-shadow: 0 5px 4px rgba(0, 0, 0, 0.3);
+  font-size: 30px;
+  color: #cfdde8;
+}
+
+.home .title img {
   width: 150px;
   height: 150px;
 }
 
-.home .header ul {
-  color: rgba(255, 255, 255, 0.8);
+.home .title ul {
+  padding: 0 0 35px 0;
+  color: #d5e5f0;
 }
 
-.home .header li {
+.home .title li {
   display: inline-block;
 }
 
-.home .header a {
-  color: rgba(255, 255, 255, 0.6);
+.home .title a {
+  color: #bed2e2;
   text-decoration: none;
 }
 
-.home .header a:hover {
-  color: rgba(255, 255, 255, 0.8);
+.home .title a:hover {
+  color: #d5e5f0;
 }
 
 .home .content-area {
   margin-bottom: 100px;
-  min-width: 900px;
+  min-width: 800px;
 }
 
 .home .content-area .content {
+  margin: 0 auto;
+  width: 650px;
   text-align: center;
+  text-shadow: 0 2px 0 #fff;
+  color: #737373;
 }
 
 .home .content-area h1 {
-  color: rgba(0, 0, 0, 0.5);
-  font-size: 24px;
+  padding-bottom: 20px;
+  font-size: 28px;
+}
+
+.home .content-area p {
+  padding-bottom: 35px;
+  font-size: 20px;
+  line-height: 1.3em;
 }
 
 .home .content-area ul {
@@ -115,16 +134,15 @@ body {
   line-height: 1.4em;
 }
 
-.home .content-area ul li a {
-  color: #3d628c;
-  text-decoration: none;
+.home .content-area a {
+  color: inherit;
 }
 
-.home .content-area ul li a:hover {
-  text-decoration: underline;
+.home .content-area a:hover {
+  color: #4d4d4d;
 }
 
-.home .content-area ul li .button {
+.home a.button {
   padding: 10px 15px;
   border-radius: 5px;
   background: #52779c;
@@ -132,13 +150,14 @@ body {
   background: -moz-linear-gradient(top, #52779c, #234878);
   background: -webkit-linear-gradient(top, #52779c, #234878);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-  color: #fff;
+  color: #eaedf8;
   text-decoration: none;
-  text-shadow: 0 2px 1px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 1px rgba(0, 0, 0, 0.4);
   font-size: 18px;
 }
 
-.home .content-area ul li .button:hover {
+.home a.button:hover {
+  color: #eaedf8;
   background: #5c85b0;
   background: linear-gradient(top, #5c85b0, #234878);
   background: -moz-linear-gradient(top, #5c85b0, #234878);
@@ -146,7 +165,7 @@ body {
   text-decoration: none;
 }
 
-.home .content-area ul li .button:active {
+.home a.button:active {
   background: #426181;
   background: linear-gradient(top, #426181, #234878);
   background: -moz-linear-gradient(top, #426181, #234878);
@@ -154,9 +173,7 @@ body {
   box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-/* Documentation */
-
-.docs .header {
+.header {
   margin-bottom: 15px;
   min-width: 902px;
   height: 48px;
@@ -169,7 +186,7 @@ body {
   cursor: default;
 }
 
-.docs .header .content {
+.header .content {
   display: block;
   margin: 0 auto;
   padding: 14px 0 0 0;
@@ -181,7 +198,7 @@ body {
   font-size: 16px;
 }
 
-.docs .header img {
+.header img {
   position: relative;
   top: -8px;
   float: left;
@@ -189,36 +206,42 @@ body {
   height: 35px;
 }
 
-.docs .header a {
-  color: #fff;
+.header a {
+  color: #d8e4ed;
 }
 
-.docs .header h1 {
+.header h1 {
+  color: #fff;
   float: left;
 }
 
-.docs .header ul {
-  float: right;
+.header ul {
   margin-top: -15px;
   margin-right: 4px;
 }
 
-.docs .header ul li {
+.header ul li {
   display: inline-block;
   margin-top: 0;
   margin-right: -4px;
   padding: 15px 12px;
   list-style: none;
+  float: right;
 }
 
-.docs .header ul li.active {
+.header ul li.title {
+  float: left;
+}
+
+.header ul li.active {
+  color: #eff9fc;
   background: #334f78;
   background: linear-gradient(top, #334f78, #2e4466);
   background: -moz-linear-gradient(top, #334f78, #2e4466);
   background: -webkit-linear-gradient(top, #436180, #1d3c66);
 }
 
-.docs .header ul li a {
+.header ul li a {
   color: inherit;
   text-decoration: none;
 }
@@ -232,7 +255,7 @@ body {
   border-radius: 3px;
 }
 
-.docs .sidebar {
+.sidebar {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -247,7 +270,7 @@ body {
   list-style: none;
 }
 
-.docs .sidebar li {
+.sidebar li {
   border-top: 1px solid #fff;
   border-bottom: 1px solid #ccc;
   background: #fafafa;
@@ -255,21 +278,21 @@ body {
   font-size: 15px;
 }
 
-.docs .sidebar li div {
+.sidebar li div {
   padding: 7px 10px;
 }
 
-.docs .sidebar li.active {
+.sidebar li.active {
   background: #fff;
   color: #4d4d4d;
 }
 
 /* arrow box -- cssarrowplease.com */
-.docs .sidebar li.active {
+.sidebar li.active {
   position: relative;
   background: #fff;
 }
-.docs .sidebar li.active:after, .sidebar li:before {
+.sidebar li.active:after, .sidebar li:before {
   position: absolute;
   left: 100%;
   width: 0;
@@ -278,13 +301,13 @@ body {
   content: " ";
   pointer-events: none;
 }
-.docs .sidebar li.active:after {
+.sidebar li.active:after {
   top: 50%;
   margin-top: -6px;
   border-width: 6px;
   border-left-color: #fff;
 }
-.docs .sidebar li.active:before {
+.sidebar li.active:before {
   top: 50%;
   margin-top: -7px;
   border-width: 7px;
@@ -292,55 +315,59 @@ body {
 }
 /* end arrow box */
 
-.docs .sidebar li:first-child {
+.sidebar li:first-child {
   border-top-left-radius: 3px;
 }
 
-.docs .sidebar a {
-  color: #4d4d4d;
+.sidebar a {
+  /*color: #4d4d4d;*/
+  color: #737373;
   text-decoration: none;
 }
 
-.docs .sidebar li:hover {
+.sidebar li:hover {
   background: #fff;
   cursor: pointer;
 }
 
 .docs .page {
   margin-left: 190px;
-  padding: 20px;
   min-height: 500px;
   border-left: 1px solid #ccc;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
+}
+
+.page {
+  padding: 20px;
   background: #fff;
-  color: #262626;
+  color: #404040;
   font-size: 16px;
   line-height: 1.4em;
 }
 
-.docs .page h1 {
+.page h1 {
   margin-bottom: 1em;
   font-size: 24px;
 }
 
-.docs .page h2 {
+.page h2 {
   margin-top: 1.2em;
   margin-bottom: 1em;
   font-size: 20px;
 }
 
-.docs .page p {
+.page p {
   margin-bottom: 1em;
 }
 
-.docs .page ul {
+.page ul {
   list-style-position: inside;
   margin-left: 10px;
   margin-bottom: 1em;
 }
 
-.docs .page code {
+.page code {
   padding: 2px 6px;
   border: 1px solid #dddddd;
   border-radius: 3px;
@@ -349,12 +376,25 @@ body {
   font-family: Menlo, Consolas, Monaco, "Lucida Console", monospace;
 }
 
-.docs .page pre code {
+.page pre code {
   display: block;
   overflow-y: auto;
   margin-bottom: 15px;
   padding: 10px;
   line-height: 1.33em;
+}
+
+.single-page .page {
+  border-radius: 3px;
+}
+
+.single-page .content-area {
+  position: relative;
+  margin: 10px auto;
+  margin-bottom: 10px;
+  width: 900px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
 }
 
 .footer {}

@@ -2,6 +2,8 @@
 
 helpers do
   
+  LATEST_BUILD = "https://raw.github.com/blue-button/bluebutton.js/master/build/bluebutton-0.0.0.js"
+  
   def menu_link(text, path)
     if params[:splat][0] == path[1..-1]  # ignore first '/'
       "<li class='active'><div>#{text}</div></li>"
@@ -10,28 +12,40 @@ helpers do
     end
   end
   
+  def header_link(text, path)
+    if request.path == path
+      "<li class='active'>#{text}</li>"
+    else
+      "<a href='#{path}'><li>#{text}</li></a>"
+    end
+  end
+  
   def render_doc(url)
-    path = 'views/docs/' << url
+    layout = { :layout => :'layouts/docs' }
+    path = 'docs/' << url
+    base_path = 'views/docs/' << url
     
     # Deal with trailing '/'
     if path[-1] == '/'
       redirect url[0..-2]
     end
     
-    if File.exists?(path + '/index.md')
-      render_file(path + '/index.md')
-    elsif File.exists?(path + '.md')
-      render_file(path + '.md')
-    else
+    # Look for 'index.md' if it exists
+    if File.exists?(base_path + '/index.md')
+      render_md(path + '/index.md', layout)
+    end
+    
+    render_md(path, layout)
+  end
+  
+  def render_md(path, layout)
+    path = 'views/' << path << '.md'
+    
+    unless File.exists?(path)
       raise error 404
     end
-  end
-  
-  def render_file(path)
-    erb render_md(File.read(path)), :layout => :'layouts/docs'
-  end
-  
-  def render_md(md)
+    
+    md = File.read(path)
     rc =  Redcarpet::Markdown.new(
             Redcarpet::Render::HTML.new(:hard_wrap => true),
             :autolink => true,
@@ -42,7 +56,8 @@ helpers do
             :tables => true,
             :superscript => true )
       
-    rc.render(md)
+    md_rendered = rc.render(md)
+    erb md_rendered, layout
   end
   
 end

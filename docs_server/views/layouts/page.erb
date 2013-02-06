@@ -7,9 +7,17 @@
     <meta name="description" content="BlueButton.js">
     <link href="/style.css" rel="stylesheet">
   </head>
-  <body class="home">
+  <body class="single-page">
     
-    <%= yield %>
+    <%= erb :'layouts/_header' %>
+    
+    <div class="content-area">
+      <div class="page">
+        <%= yield %>
+      </div>
+    </div>
+    
+    <%= erb :'layouts/_footer' %>
     
   </body>
 </html>
