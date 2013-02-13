@@ -86,3 +86,6 @@ task :build do
   puts "", "", msg.success, ""
   
 end
+
+task :default => :build
+

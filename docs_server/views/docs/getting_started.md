@@ -52,6 +52,10 @@ bb.medications({
 });
 ```
 
+## Dates
+
+All dates and times are represented in [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601) in either `YYYY-MM-DD` or including the time as `YYYY-MM-DDTHH:MMZ`. For example, a date might look like `2013-02-07` or `2013-02-07T03:29Z`.
+
 ## Other Methods
 
 TODO: Consider other methods supported by the Blue Button document object.

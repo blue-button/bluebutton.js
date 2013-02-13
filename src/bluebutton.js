@@ -2,29 +2,30 @@
 
 var BlueButton = function (xml) {
   // dependancies
-  var c = Labs.a,
-      d = Labs.b;
+  // var c = Labs.a,
+  //     d = Labs.b;
   
   // properties
   var xmlDOM = null,
       data = {};
   
   // public methods
-  var getData = function () {
+  var data = function () {
     return data;
   };
   
   // init
   xmlDOM = Core.parseXML(xml);
-  data.labs = Labs.extract(xmlDOM);
+  
+  // Process document sections (XML -> JSON)
+  data.immunizations = Immunizations.process(xmlDOM);
   
   return {
-    labs: c,
-    labRanges: d,
-    getData: getData,
-    xmlDOM: xmlDOM
-    // Meds.meds: meds,
-    // Meds.types: medTypes
+    // labs: c,
+    // labRanges: d,
+    data: data,
+    xmlDOM: xmlDOM,
+    immunizations: data.immunizations
   };
 };
 

@@ -52,6 +52,10 @@ ALTERNATE REPRESENTATION:
 }
 ```
 
+
+
+
+<!-- 
 ## Filters
 
 ```javascript
@@ -65,7 +69,7 @@ bb.medications({
   sortBy: "date"
 });
 ```
-
+-->
 
 
 

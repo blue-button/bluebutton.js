@@ -1,6 +1,5 @@
-# The Blue Button Developer Center
+# BlueButton.js Documentation Server
 
-A simple Sinatra web app with documentation, code samples, and tools for the Blue Button Developer.
+This is a simple Sinatra web app to host documentation, code samples, and tools for BlueButton.js.
 
-View live at [bluebuttondev.herokuapp.com](http://bluebuttondev.herokuapp.com)
-Gets news and announcements on Twitter: [@bluebuttondev](http://twitter.com/bluebuttondev)
+Deploy to the host server (currently Heroku) using `rake deploy`.

@@ -1,0 +1,244 @@
+{
+  "patient": {
+    "demographics": {
+      "firstName": "Myra",
+      "lastName": "Jones",
+      "gender": "Female",
+      "birthTime": "19470501"
+    },
+    "address": {
+      "street": "1357 Amber Drive",
+      "city": "Beaverton",
+      "state": "OR",
+      "country": "US",
+      "zipCode": "97006"
+    }
+  },
+  "allergies": [
+    {
+      "substance": {
+        "name": "Penicillin G benzathine",
+        "code": "7982",
+        "codeSystem": "2.16.840.1.113883.6.88",
+        "codeSystemName": "RxNorm"
+      },
+      "status": {
+        "name": "Inactive",
+        "code": "73425007",
+        "codeSystem": "2.16.840.1.113883.6.96",
+        "codeSystemName": ""
+      },
+      "reaction": {
+        "name": "Hives",
+        "code": "247472004",
+        "codeSystem": "2.16.840.1.113883.6.96",
+        "codeSystemName": ""
+      },
+      "severity": {
+        "name": "Moderate to severe",
+        "code": "371924009",
+        "codeSystem": "2.16.840.1.113883.6.96",
+        "codeSystemName": "SNOMED CT"
+      }
+    },
+    {
+      "substance": {
+        "name": "Codeine",
+        "code": "2670",
+        "codeSystem": "2.16.840.1.113883.6.88",
+        "codeSystemName": "RxNorm"
+      },
+      "status": {
+        "name": "Active",
+        "code": "55561003",
+        "codeSystem": "2.16.840.1.113883.6.96",
+        "codeSystemName": ""
+      },
+      "reaction": {
+        "name": "Shortness of Breath",
+        "code": "267036007",
+        "codeSystem": "2.16.840.1.113883.6.96",
+        "codeSystemName": ""
+      },
+      "severity": {
+        "name": "Moderate",
+        "code": "6736007",
+        "codeSystem": "2.16.840.1.113883.6.96",
+        "codeSystemName": "SNOMED CT"
+      }
+    },
+    {
+      "substance": {
+        "name": "Aspirin",
+        "code": "1191",
+        "codeSystem": "2.16.840.1.113883.6.88",
+        "codeSystemName": "RxNorm"
+      },
+      "status": {
+        "name": "Active",
+        "code": "55561003",
+        "codeSystem": "2.16.840.1.113883.6.96",
+        "codeSystemName": ""
+      },
+      "reaction": {
+        "name": "Hives",
+        "code": "247472004",
+        "codeSystem": "2.16.840.1.113883.6.96",
+        "codeSystemName": ""
+      },
+      "severity": {
+        "name": "Mild to moderate",
+        "code": "371923003",
+        "codeSystem": "2.16.840.1.113883.6.96",
+        "codeSystemName": "SNOMED CT"
+      }
+    }
+  ],
+  "medications": [
+    {
+      "product": {
+        "name": "Proventil 0.09 MG/ACTUAT inhalant solution",
+        "code": "573621",
+        "codeSystem": "2.16.840.1.113883.6.88",
+        "codeSystemName": "RxNorm"
+      },
+      "drugVehicle": {
+        "name": "Aerosol",
+        "code": "324049",
+        "codeSystem": "2.16.840.1.113883.6.88",
+        "codeSystemName": "RxNorm"
+      },
+      "indication": {
+        "name": "Finding",
+        "code": "404684003",
+        "codeSystem": "2.16.840.1.113883.6.96",
+        "codeSystemName": "SNOMED CT"
+      },
+      "instructions": "",
+      "date": "20120806"
+    },
+    {
+      "product": {
+        "name": "120 ACTUAT Fluticasone propionate 0.11 MG/ACTUAT Metered Dose Inhaler",
+        "code": "896001",
+        "codeSystem": "2.16.840.1.113883.6.88",
+        "codeSystemName": "RxNorm"
+      },
+      "drugVehicle": {
+        "name": "Aerosol",
+        "code": "324049",
+        "codeSystem": "2.16.840.1.113883.6.88",
+        "codeSystemName": "RxNorm"
+      },
+      "indication": {
+        "name": "Finding",
+        "code": "404684003",
+        "codeSystem": "2.16.840.1.113883.6.96",
+        "codeSystemName": "SNOMED CT"
+      },
+      "instructions": "",
+      "date": "20120813"
+    }
+  ],
+  "immunizations": [
+    {
+      "status": "completed",
+      "product": {
+        "name": "Influenza virus vaccine",
+        "code": "88",
+        "codeSystem": "2.16.840.1.113883.6.59",
+        "codeSystemName": "CVX"
+      },
+      "instructions": "Possible flu-like symptoms for three days.",
+      "date": "20120510"
+    },
+    {
+      "status": "completed",
+      "product": {
+        "name": "Tetanus and diphtheria toxoids - preservative free",
+        "code": "103",
+        "codeSystem": "2.16.840.1.113883.6.59",
+        "codeSystemName": "CVX"
+      },
+      "instructions": "Possible flu-like symptoms for three days.",
+      "date": "20120401"
+    }
+  ],
+  "problems": [
+    {
+      "complaint": {
+        "codeSystemName": ""
+      },
+      "status": {
+        "codeSystemName": ""
+      },
+      "date": "20120806"
+    },
+    {
+      "complaint": {
+        "codeSystemName": ""
+      },
+      "status": {
+        "name": "Resolved",
+        "code": "413322009",
+        "codeSystem": "2.16.840.1.113883.6.96",
+        "codeSystemName": "SNOMED CT"
+      },
+      "onsetAge": "65",
+      "date": "20120806"
+    },
+    {
+      "complaint": {
+        "codeSystemName": ""
+      },
+      "status": {
+        "name": "Active",
+        "code": "55561003",
+        "codeSystem": "2.16.840.1.113883.6.96",
+        "codeSystemName": "SNOMED CT"
+      },
+      "onsetAge": "59",
+      "date": "20070103"
+    }
+  ],
+  "procedures": [
+    {
+      "procedure": {
+        "name": "Chest X-Ray",
+        "code": "168731009",
+        "codeSystem": "2.16.840.1.113883.6.96",
+        "codeSystemName": "SNOMED-CT"
+      },
+      "targetSite": {
+        "name": "Lower Respiratory Tract Structure",
+        "code": "82094008",
+        "codeSystem": "2.16.840.1.113883.6.96",
+        "codeSystemName": "SNOMED CT"
+      }
+    }
+  ],
+  "encounters": [
+    {
+      "activity": {
+        "name": "InPatient Admission",
+        "code": "99222",
+        "codeSystem": "2.16.840.1.113883.6.12",
+        "codeSystemName": "CPT"
+      }
+    }
+  ],
+  "vitalSigns": [
+    {
+      "date": "Nov 1, 2011",
+      "height": "69 inches",
+      "weight": "189 lbs",
+      "bloodPressure": "132/86 mmHg"
+    },
+    {
+      "date": "August 6, 2012",
+      "height": "69 inches",
+      "weight": "194 lbs",
+      "bloodPressure": "145/88 mmHg"
+    }
+  ]
+}

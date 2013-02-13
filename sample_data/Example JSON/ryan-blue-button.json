@@ -1,0 +1,291 @@
+{
+        "patient": {    
+            "demographics": {
+                "firstName": "David",
+                "middleName": null,
+                "lastName": "Yun",
+                "age": 38,
+                "gender": "Male",
+                "bloodType": "AB",
+                "organDonor": "Yes"
+            },
+            "address": {
+                "street": "123 Anywhere Road",
+                "city": "San Francisco",
+                "state": "CA",
+                "country": "United States",
+                "zipCode": 94103
+            },
+        },
+        "allergies":[
+            {
+                "substance": {
+                    "name": "Penicillin",
+                    "codeSystemName":"RxNorm", 
+                    "codeSystem":"2.16.840.1.113883.6.88",  
+                    "code":314422
+                },
+                "reaction": {
+                    "name": "Causes hives.",
+                    "codeSystemName":"SNOMED CT", 
+                    "codeSystem":"2.16.840.1.113883.6.96",  
+                    "code":247472004
+                },
+                "severity": {
+                    "name": "Moderate to severe",
+                    "codeSystemName":"SNOMED CT", 
+                    "codeSystem":"2.16.840.1.113883.6.96",  
+                    "code":371924009
+                },
+                "status": {
+                    "name": "Active",
+                    "codeSystemName":"SNOMED CT", 
+                    "codeSystem":"2.16.840.1.113883.6.96",  
+                    "code":55561003
+                },
+                "code": {
+                    "name": "Drug allergy",
+                    "codeSystemName":"SNOMED CT", 
+                    "codeSystem":"2.16.840.1.113883.6.96",  
+                    "code":416098002
+                }
+            },
+            {
+                "substance": {
+                    "name": "Aspirin",
+                    "codeSystemName":"UNII", 
+                    "codeSystem":"2.16.840.1.113883.4.9",  
+                    "code":"R16CO5Y76E"
+                },
+                "reaction": {
+                    "name": "Wheezing",
+                    "codeSystemName":"SNOMED CT", 
+                    "codeSystem":"2.16.840.1.113883.6.96",  
+                    "code":56018004
+                },
+                "severity": {
+                    "name": "Moderate to severe",
+                    "codeSystemName":"SNOMED CT", 
+                    "codeSystem":"2.16.840.1.113883.6.96",  
+                    "code":371924009
+                },
+                "status": {
+                    "name": "Active",
+                    "codeSystemName":"SNOMED CT", 
+                    "codeSystem":"2.16.840.1.113883.6.96",  
+                    "code":55561003
+                },
+                "code": {
+                    "name": "Drug allergy",
+                    "codeSystemName":"SNOMED CT", 
+                    "codeSystem":"2.16.840.1.113883.6.96",  
+                    "code":416098002
+                }
+            },
+            {
+                "substance": {
+                    "name": "Codeine",
+                    "codeSystemName":"UNII", 
+                    "codeSystem":"2.16.840.1.113883.4.9",  
+                    "code":"Q830PW7520"
+                },
+                "reaction": {
+                    "name": "Nausea",
+                    "codeSystemName":"SNOMED CT", 
+                    "codeSystem":"2.16.840.1.113883.6.96",  
+                    "code":73879007
+                },
+                "severity": {
+                    "name": "Moderate to severe",
+                    "codeSystemName":"SNOMED CT", 
+                    "codeSystem":"2.16.840.1.113883.6.96",  
+                    "code":371924009
+                },
+                "status": {
+                    "name": "Active",
+                    "codeSystemName":"SNOMED CT", 
+                    "codeSystem":"2.16.840.1.113883.6.96",  
+                    "code":55561003
+                },
+                "code": {
+                    "name": "Drug allergy",
+                    "codeSystemName":"SNOMED CT", 
+                    "codeSystem":"2.16.840.1.113883.6.96",  
+                    "code":416098002
+                }
+            }
+        ],
+        "medications": [
+            {
+                "product": {
+                    "name": "Proventil 0.09 MG/ACTUAT inhalant solution",
+                    "codeSystemName": "RxNorm",
+                    "codeSystem": "2.16.840.1.113883.6.88",
+                    "code": 573621
+                },
+                "date": {
+                    "value": 20110301
+                },
+                "directions": {
+                    "text": "2 puffs QID PRN wheezing"
+                },
+                "instructions": {
+                    "text": "Generic Substitition Allowed"
+                },
+                "drugVehicle": {
+                    "name": "Diethylene Glycol",
+                    "codeSystemName": "SNOWMED CT",
+                    "codeSystem": "2.16.840.1.113883.6.96",
+                    "code":5955009
+                },
+                "status": {
+                    "name": "Active",
+                    "codeSystemName":"SNOMED CT", 
+                    "codeSystem":"2.16.840.1.113883.6.96",  
+                    "code":55561003
+                },
+                "indication": {
+                    "name": " Bronchitis",
+                    "codeSystemName": "SNOWMED CT",
+                    "codeSystem": "2.16.840.1.113883.6.96",
+                    "code":32398004
+                }
+            }
+        ],
+        "immunizations": [
+            {
+                "product": {
+                    "name": "Tetanus and diphtheria toxoids - preservative free",
+                    "codeSystemName": "CVX",
+                    "codeSystem": "2.16.840.1.113883.6.59",
+                    "code": 573621
+                },
+                "instructions": {
+                    "text": "Possible flu-like symptoms for three days."
+                },
+                "date": {
+                    "value": 19981215
+                },
+                "status": {
+                    "name": "Completed"
+                }
+            },
+            {
+                "product": {
+                    "name": "Influenza virus vaccine",
+                    "codeSystemName": "CVX",
+                    "codeSystem": "2.16.840.1.113883.6.59",
+                    "code": 33
+                },
+                "instructions": {
+                    "text": "Possible flu-like symptoms for three days."
+                },
+                "date": {
+                    "value": 19980521
+                },
+                "status": {
+                    "name": "Completed"
+                }
+            }
+        ],
+        "problems": [
+            {
+                "problem": {
+                    "name": "Pneumonia",
+                    "codeSystemName": "SNOWMED CT",
+                    "codeSystem": "2.16.840.1.113883.6.96",
+                    "code": 233604007
+                },
+                "date":{
+                    "value": 19980301,
+                    "onsetAge": 52
+                },
+                "status": {
+                    "name": "Resolved",
+                    "codeSystemName":"SNOMED CT", 
+                    "codeSystem":"2.16.840.1.113883.6.96",  
+                    "code":413322009
+                }                
+            }
+        ],
+        "procedures": [
+            {
+                "procedure": {
+                    "name": "Colonic polypectomy",
+                    "codeSystemName": "SNOWMED CT",
+                    "codeSystem": "2.16.840.1.113883.6.96",
+                    "code": 274025005
+                },
+                "date": {
+                    "value": 19980301
+                },
+                "targetSite": {
+                    "name": "Abdomen and pelvis",
+                    "codeSystemName": "SNOWMED CT",
+                    "codeSystem": "2.16.840.1.113883.6.96",
+                    "code": 416949008
+                }
+            }
+        ],
+        "encounters": [
+            {
+                "activity": {
+                    "name": "Office consultation - 15m",
+                    "codeSystemName": "CPT",
+                    "codeSystem": "2.16.840.1.113883.6.12",
+                    "code": 99241
+                },
+                "date": {
+                    "value": 20000407
+                }
+            }
+        ],
+        "vitalSigns": [
+            {
+                "date": {
+                    "value": 20000407
+                },
+                "height": {
+                    "value": 177,
+                    "unit": "cm"
+                },
+                "weight": {
+                    "value": 88,
+                    "unit": "kg"
+                },
+                "bloodPressure": {
+                    "systolic": {
+                        "value": 132,
+                        "unit": "mm[Hg]"
+                    },
+                    "diastolic": {
+                        "value": 86,
+                        "unit": "mm[Hg]"
+                    }
+                }
+            },
+            {
+                "date": {
+                    "value": 19980301
+                },
+                "height": {
+                    "value": 177,
+                    "unit": "cm"
+                },
+                "weight": {
+                    "value": 86,
+                    "unit": "kg"
+                },
+                "bloodPressure": {
+                    "systolic": {
+                        "value": 145,
+                        "unit": "mm[Hg]"
+                    },
+                    "diastolic": {
+                        "value": 88,
+                        "unit": "mm[Hg]"
+                    }
+                }
+            }
+        ]
+    }

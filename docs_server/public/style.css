@@ -24,7 +24,7 @@ body {
 .home { }
 
 .home .title {
-  min-width: 800px;
+  min-width: 900px;
   margin-bottom: 30px;
   background: #52779c;
   background: linear-gradient(top, #52779c, #234878);
@@ -79,7 +79,7 @@ body {
 
 .home .content-area {
   margin-bottom: 100px;
-  min-width: 800px;
+  min-width: 900px;
 }
 
 .home .content-area .content {
@@ -216,20 +216,27 @@ body {
 }
 
 .header ul {
-  margin-top: -15px;
+  margin-top: 0;
   margin-right: 4px;
 }
 
 .header ul li {
   display: inline-block;
-  margin-top: 0;
+  margin-top: -14px;
   margin-right: -4px;
-  padding: 15px 12px;
+  height: 48px;
+  padding: 0 12px;
   list-style: none;
   float: right;
 }
 
+.header ul li div {
+  margin-top: 14px;
+}
+
 .header ul li.title {
+  margin: 0;
+  padding: 0;
   float: left;
 }
 
@@ -284,7 +291,7 @@ body {
 
 .sidebar li.active {
   background: #fff;
-  color: #4d4d4d;
+  color: #333;
 }
 
 /* arrow box -- cssarrowplease.com */
@@ -320,8 +327,7 @@ body {
 }
 
 .sidebar a {
-  /*color: #4d4d4d;*/
-  color: #737373;
+  color: #666;
   text-decoration: none;
 }
 
@@ -341,24 +347,24 @@ body {
 .page {
   padding: 20px;
   background: #fff;
-  color: #404040;
+  color: #333;
   font-size: 16px;
-  line-height: 1.4em;
+  line-height: 1.5em;
 }
 
 .page h1 {
-  margin-bottom: 1em;
+  margin-bottom: 0.75em;
   font-size: 24px;
 }
 
 .page h2 {
   margin-top: 1.2em;
-  margin-bottom: 1em;
+  margin-bottom: 0.75em;
   font-size: 20px;
 }
 
 .page p {
-  margin-bottom: 1em;
+  margin-bottom: 0.75em;
 }
 
 .page ul {
@@ -368,7 +374,7 @@ body {
 }
 
 .page code {
-  padding: 2px 6px;
+  padding: 0 6px;
   border: 1px solid #dddddd;
   border-radius: 3px;
   background: #fafafa;
@@ -382,7 +388,10 @@ body {
   margin-bottom: 15px;
   padding: 10px;
   line-height: 1.33em;
+  color: inherit;
 }
+
+.page a { color: #234878; }
 
 .single-page .page {
   border-radius: 3px;

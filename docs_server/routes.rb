@@ -16,7 +16,11 @@ get '/contributing' do
   render_md('contributing', :layout => :'layouts/page')
 end
 
-get '/*' do
+get '/docs/?' do
+  redirect '/docs/getting_started'
+end
+
+get '/docs/*' do
   render_doc(params[:splat][0])
 end
 

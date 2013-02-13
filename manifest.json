@@ -1,25 +1,25 @@
 
 {
-	"copyright": "/**\n * BlueButton.js\n */\n",
-  "version": "0.0.0",
-	"compiler_path": "vendor/compiler-r2388.jar",
-	"build_path": "build/",
-	"src_path": "src/",
-	"files": [
+  "copyright": "/**\n * BlueButton.js\n */\n",
+  "version": "0.0.1",
+  "compiler_path": "vendor/compiler-r2388.jar",
+  "build_path": "build/",
+  "src_path": "src/",
+  "files": [
     "core",
-    "allergies",
-    "demographics",
-    "discharge",
-    "encounters",
-    "functions",
-    "history",
-    "immunizations",
-    "labs",
-    "medications",
-    "plan",
-    "problems",
-    "procedures",
-    "vitals",
-		"bluebutton"
-	]
+    "sections/allergies",
+    "sections/demographics",
+    "sections/discharge",
+    "sections/encounters",
+    "sections/functions",
+    "sections/history",
+    "sections/immunizations",
+    "sections/labs",
+    "sections/medications",
+    "sections/plan",
+    "sections/problems",
+    "sections/procedures",
+    "sections/vitals",
+    "bluebutton"
+  ]
 }
