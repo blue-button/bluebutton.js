@@ -7,23 +7,22 @@ var BlueButton = function (xml) {
   
   // properties
   var xmlDOM = null,
-      data = {};
-  
-  // public methods
-  var data = function () {
-    return data;
-  };
+      data = {},
+      json = "";
   
   // init
   xmlDOM = Core.parseXML(xml);
   
   // Process document sections (XML -> JSON)
   data.immunizations = Immunizations.process(xmlDOM);
+  json = JSON.stringify(data, null, 2);
+  
   
   return {
     // labs: c,
     // labRanges: d,
     data: data,
+    json: json,
     xmlDOM: xmlDOM,
     immunizations: data.immunizations
   };

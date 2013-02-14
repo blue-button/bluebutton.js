@@ -15,10 +15,10 @@ var Immunizations = function () {
     var entries = el.parentElement.getElementsByTagName('entry');
     
     for (var i = 0; i < entries.length; i++) {
-      var date = entries[i].getElementsByTagName('effectiveTime');
+      var el = entries[i].getElementsByTagName('effectiveTime')[0];
       
       data.push({
-        date: date
+        date: el.getAttribute("value")
       });
     }
     

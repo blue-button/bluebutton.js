@@ -16,6 +16,12 @@ get '/contributing' do
   render_md('contributing', :layout => :'layouts/page')
 end
 
+# Tests
+
+get '/json' do
+  render_md('json', :layout => :'layouts/page')
+end
+
 get '/docs/?' do
   redirect '/docs/getting_started'
 end
