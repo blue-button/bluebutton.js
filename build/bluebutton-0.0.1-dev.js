@@ -35,8 +35,8 @@ var Immunizations = function() {
     var el = Core.getElementByTagAttrValue(xmlDOM, "templateId", "root", templateId);
     var entries = el.parentElement.getElementsByTagName("entry");
     for(var i = 0;i < entries.length;i++) {
-      var date = entries[i].getElementsByTagName("effectiveTime");
-      data.push({date:date})
+      var el = entries[i].getElementsByTagName("effectiveTime")[0];
+      data.push({date:el.getAttribute("value")})
     }
     return data
   };
@@ -58,13 +58,11 @@ var Labs = function() {
   return{a:labs, b:ranges, extract:extract}
 }();
 var BlueButton = function(xml) {
-  var xmlDOM = null, data = {};
-  var data = function() {
-    return data
-  };
+  var xmlDOM = null, data = {}, json = "";
   xmlDOM = Core.parseXML(xml);
   data.immunizations = Immunizations.process(xmlDOM);
-  return{data:data, xmlDOM:xmlDOM, immunizations:data.immunizations}
+  json = JSON.stringify(data, null, 2);
+  return{data:data, json:json, xmlDOM:xmlDOM, immunizations:data.immunizations}
 };
 window.BlueButton = BlueButton;
 
