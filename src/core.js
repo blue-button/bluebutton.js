@@ -32,14 +32,19 @@ var Core = function() {
     var el = xmlDOM.getElementsByTagName(tag);
     
     for (var i = 0; i < el.length; i++) {
-      if (el[i].attributes.getNamedItem(attr).nodeValue === value) {
+      if (el[i].getAttribute(attr) === value) {
         return el[i];
       }
     }
   };
   
+  var getSection = function(xmlDOM, templateId) {
+    return getElementByTagAttrValue(xmlDOM, 'templateId', 'root', templateId);
+  };
+  
   return {
     parseXML: parseXML,
-    getElementByTagAttrValue: getElementByTagAttrValue
+    getElementByTagAttrValue: getElementByTagAttrValue,
+    getSection: getSection
   }
 }();

@@ -2,8 +2,6 @@
 
 helpers do
   
-  LATEST_BUILD = "https://raw.github.com/blue-button/bluebutton.js/master/build/bluebutton-0.0.0.js"
-  
   def sidebar_link(text, path)
     request_path = '/docs/' << params[:splat][0]
     if request_path == path

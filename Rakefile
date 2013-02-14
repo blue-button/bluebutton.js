@@ -32,7 +32,7 @@ task :build do
   manifest = JSON.parse(manifest).symbolize_keys
   
   # Contains the assembled JS
-  dev_js = prod_js = manifest[:copyright]
+  dev_js = prod_js = manifest[:copyright] += "\n// v.#{manifest[:version]}\n\n"
   
   ### COMPILER COMMANDS ###
   
@@ -80,10 +80,28 @@ task :build do
   
   print "done!"
   
+  ### MAKING COPIES ###
+  
+  `cp #{dev_path} build/bluebutton-latest-dev.js`
+  `cp #{prod_path} build/bluebutton-latest.js`
+  `cp build/bluebutton-latest-dev.js docs_server/public/`
+  `cp build/bluebutton-latest.js docs_server/public/`
+  
   ### DONE ###
   
-  msg = "  Files written:\n    #{dev_path}\n    #{prod_path}"
-  puts "", "", msg.success, ""
+msg = <<-msg
+
+
+  Files written:
+    #{dev_path}
+    #{prod_path}
+    build/bluebutton-latest-dev.js
+    build/bluebutton-latest.js
+    docs_server/public/bluebutton-latest-dev.js
+    docs_server/public/bluebutton-latest.js
+msg
+
+  puts msg.success
   
 end
 

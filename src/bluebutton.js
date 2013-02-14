@@ -17,7 +17,6 @@ var BlueButton = function (xml) {
   data.immunizations = Immunizations.process(xmlDOM);
   json = JSON.stringify(data, null, 2);
   
-  
   return {
     // labs: c,
     // labRanges: d,
