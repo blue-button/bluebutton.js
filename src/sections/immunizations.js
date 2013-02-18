@@ -39,10 +39,10 @@ var Immunizations = function () {
       // instructions
       el = entries[i].getElementsByTagName('entryRelationship')[0];
       var codeTag = el.getElementsByTagName('code')[0];
-      var instructions_name = codeTag.getAttribute('displayName');
       var instructions_text = el.getElementsByTagName('text')[0].childNodes[0].nodeValue;
-      var instructions_code = codeTag.getAttribute('code');
-      var instructions_code_system = codeTag.getAttribute('codeSystem');
+      var education_name = codeTag.getAttribute('displayName');
+      var education_code = codeTag.getAttribute('code');
+      var education_code_system = codeTag.getAttribute('codeSystem');
       
       // translation
       el = entries[i].getElementsByTagName('translation')[0];
@@ -57,7 +57,13 @@ var Immunizations = function () {
           name: product_name,
           code: product_code,
           hl7_code_system: product_hl7_code_system,
-          code_system_name: product_code_system_name
+          code_system_name: product_code_system_name,
+          translation: {
+            name: translation_name,
+            code: translation_code,
+            code_system: translation_code_system,
+            code_system_name: translation_code_system_name
+          }
         },
         route: {
           name: route_name,
@@ -65,17 +71,11 @@ var Immunizations = function () {
           code_system: route_code_system,
           code_system_name: route_code_system_name
         },
-        instructions: {
-          name: instructions_name,
-          text: instructions_text,
-          code: instructions_code,
-          code_system: instructions_code_system
-        },
-        translation: {
-          name: translation_name,
-          code: translation_code,
-          code_system: translation_code_system,
-          code_system_name: translation_code_system_name
+        instructions: instructions_text,
+        education_type: {
+          name: education_name,
+          code: education_code,
+          code_system: education_code_system
         }
       });
     }

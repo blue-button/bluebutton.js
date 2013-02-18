@@ -16,12 +16,9 @@ The document object, `bb` in this example, now exposes all CCD data through a si
 
 All health records have the following sections:
 
-- Allergies
 - Demographics
-- Discharge
+- Allergies
 - Encounters
-- Functions
-- History
 - Immunizations
 - Labs
 - Medications

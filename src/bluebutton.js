@@ -17,10 +17,7 @@ var BlueButton = function (xml) {
   // public methods
   var allergies = function () { return data.allergies };
   var demographics = function () { return data.demographics };
-  var discharge = function () { return data.discharge };
   var encounters = function () { return data.encounters };
-  var functions = function () { return data.functions };
-  var history = function () { return data.history };
   var immunizations = function () { return data.immunizations };
   var labs = function () { return data.labs };
   var medications = function () { return data.medications };
@@ -34,10 +31,7 @@ var BlueButton = function (xml) {
   
   data.allergies = Allergies.process(xmlDOM);
   data.demographics  = Demographics.process(xmlDOM);
-  data.discharge = Discharge.process(xmlDOM);
   data.encounters = Encounters.process(xmlDOM);
-  data.functions = Functions.process(xmlDOM);
-  data.history = History.process(xmlDOM);
   data.immunizations = Immunizations.process(xmlDOM);
   data.labs = Labs.process(xmlDOM);
   data.medications = Medications.process(xmlDOM);
@@ -49,10 +43,7 @@ var BlueButton = function (xml) {
   addMethods([
     data.allergies,
     data.demographics,
-    data.discharge,
     data.encounters,
-    data.functions,
-    data.history,
     data.immunizations,
     data.labs,
     data.medications,
@@ -67,10 +58,7 @@ var BlueButton = function (xml) {
     xmlDOM: xmlDOM,
     allergies: allergies,
     demographics: demographics,
-    discharge: discharge,
     encounters: encounters,
-    functions: functions,
-    history: history,
     immunizations: immunizations,
     labs: labs,
     medications: medications,

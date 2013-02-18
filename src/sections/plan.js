@@ -11,6 +11,10 @@ var Plan = function () {
   var process = function (xmlDOM) {
     var data = [];
     data.push({
+      date: "20000421",
+      name: "Colonoscopy",
+      code: "310634005",
+      code_system: "2.16.840.1.113883.6.96"
     });
     
     return data;

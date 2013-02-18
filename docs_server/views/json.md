@@ -23,23 +23,11 @@ bb.medications().json();
     white-space: pre;
   }
 </style>
-<button onclick="load()">Use Sample Data and Convert</button> <button onclick="convert()">Convert</button>
+<button onclick="load()">Use Sample Data and Convert</button> <button onclick="convert()">Convert</button> <button onclick="clearAll()">Clear</button>
 
 ## Demographics
 
 <pre><code id="demographics"></code></pre>
-
-## Immunizations
-
-<pre><code id="immunizations" class="javascript"></code></pre>
-
-## Medications
-
-<pre><code id="medications"></code></pre>
-
-## Labs
-
-<pre><code id="labs"></code></pre>
 
 ## Allergies
 
@@ -48,6 +36,22 @@ bb.medications().json();
 ## Encounters
 
 <pre><code id="encounters"></code></pre>
+
+## Immunizations
+
+<pre><code id="immunizations" class="javascript"></code></pre>
+
+## Labs
+
+<pre><code id="labs"></code></pre>
+
+## Medications
+
+<pre><code id="medications"></code></pre>
+
+## Plan
+
+<pre><code id="plan"></code></pre>
 
 ## Problems
 
@@ -66,63 +70,65 @@ bb.medications().json();
   
   var xml, bb;
   var demographics = document.getElementById('demographics');
-  var immunizations = document.getElementById('immunizations');
-  var medications = document.getElementById('medications');
-  var labs = document.getElementById('labs');
   var allergies = document.getElementById('allergies');
   var encounters = document.getElementById('encounters');
+  var immunizations = document.getElementById('immunizations');
+  var labs = document.getElementById('labs');
+  var medications = document.getElementById('medications');
+  var plan = document.getElementById('plan');
   var problems = document.getElementById('problems');
   var procedures = document.getElementById('procedures');
   var vitals = document.getElementById('vitals');
   
-  function hl (src) {
-    return hljs.highlight("javascript", src).value
+  function hl(src) {
+    return hljs.highlight('javascript', src).value
   }
   
-  function load () {
+  function load() {
     var xhReq = new XMLHttpRequest();
-    xhReq.open("GET", "/hl7_ccd.xml", false);
+    xhReq.open('GET', '/hl7_ccd.xml', false);
     xhReq.send(null);
     var xml = xhReq.responseText;
     
     // TODO: Replace '\t' in xml with '  '
     xml = xml.replace(/\t/g, '  ');
     
+    clearAll();
     document.getElementById('xml').value = xml;
     convert();
   }
   
-  function convert() {
-    demographics.innerHTML = "";
-    immunizations.innerHTML = "";
-    medications.innerHTML = "";
-    labs.innerHTML = "";
-    allergies.innerHTML = "";
-    encounters.innerHTML = "";
-    problems.innerHTML = "";
-    procedures.innerHTML = "";
-    vitals.innerHTML = "";
+  function clearAll() {
+    document.getElementById('xml').value = '';
     
-    xml = document.getElementById('xml').value;
+    demographics.innerHTML = '';
+    allergies.innerHTML = '';
+    encounters.innerHTML = '';
+    immunizations.innerHTML = '';
+    labs.innerHTML = '';
+    medications.innerHTML = '';
+    plan.innerHTML = '';
+    problems.innerHTML = '';
+    procedures.innerHTML = '';
+    vitals.innerHTML = '';
+    
     bb = null;
+  }
+  
+  function convert() {
+    xml = document.getElementById('xml').value;
     bb = BlueButton(xml);
     
-    // demographics.innerHTML = bb.demographics.json();
-    
+    demographics.innerHTML = hl(bb.demographics().json());
+    allergies.innerHTML = hl(bb.allergies().json());
+    encounters.innerHTML = hl(bb.encounters().json());
     immunizations.innerHTML = hl(bb.immunizations().json());
-    medications.innerHTML = hl(bb.medications().json());
     labs.innerHTML = hl(bb.labs().json());
+    medications.innerHTML = hl(bb.medications().json());
+    plan.innerHTML = hl(bb.plan().json());
     problems.innerHTML = hl(bb.problems().json());
     procedures.innerHTML = hl(bb.procedures().json());
+    vitals.innerHTML = hl(bb.vitals().json());
   }
 
 </script>
-
-
-
-
-
-
-
-
-

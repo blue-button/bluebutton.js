@@ -38,7 +38,8 @@ var Allergies = function() {
   var templateId = "";
   var process = function(xmlDOM) {
     var data = [];
-    data.push({});
+    data.push({date:{value:"20090909", low:"20090902", high:"20100103"}, observation:{date:{low:"20110215"}, name:"drug allergy", code:"416098002", code_system:"2.16.840.1.113883.6.96", code_system_name:"SNOMED CT", value:{name:"Adverse reaction to substance", code:"282100009", code_system:"2.16.840.1.113883.6.96", code_system_name:"SNOMED CT"}, participant:{name:"ALLERGENIC EXTRACT, PENICILLIN", code:"314422", code_system:"2.16.840.1.113883.6.88", code_system_name:"RxNorm"}, status:"active", reaction:{date:{low:"20090711"}, 
+    name:"Hives", code:"247472004", code_system:"2.16.840.1.113883.6.96"}, severity:"moderate to severe"}});
     return data
   };
   return{process:process}
@@ -47,16 +48,8 @@ var Demographics = function() {
   var templateId = "";
   var process = function(xmlDOM) {
     var data = [];
-    data.push({});
-    return data
-  };
-  return{process:process}
-}();
-var Discharge = function() {
-  var templateId = "";
-  var process = function(xmlDOM) {
-    var data = [];
-    data.push({});
+    data.push({name:{prefix:"Mr.", given:["Adam", "Frankie"], family:"Everyman"}, dob:"1954-11-25", gender:"male", marital_status:"married", address:{street:["17 Daws Rd.", "Apt 102"], city:"Blue Bell", state:"MA", country:"US", zip:"02368"}, phone:{home:["555-555-1212"], work:["555-555-2323"], mobile:["555-555-3434", "555-555-4545"]}, email:"adam@email.com", race:"white", ethnicity:"Not Hispanic or Latino", religion:"Christian (non-Catholic, non-specific)", guardian:{name:{given:["Ralph", "Frankie"], 
+    family:"Relative"}, relationship:"Grandfather", address:{street:["17 Daws Rd.", "Apt 102"], city:"Blue Bell", state:"MA", country:"US", zip:"02368"}, phone:{home:"781-555-1212"}}, birthplace:{state:"MA", zip:"02368", country:"US"}, provider:{organization:"Good Health Clinic", phone:"781-555-1212", address:{street:["21 North Ave"], city:"Burlington", state:"MA", zip:"02368", country:"US"}}});
     return data
   };
   return{process:process}
@@ -65,25 +58,8 @@ var Encounters = function() {
   var templateId = "";
   var process = function(xmlDOM) {
     var data = [];
-    data.push({});
-    return data
-  };
-  return{process:process}
-}();
-var Functions = function() {
-  var templateId = "";
-  var process = function(xmlDOM) {
-    var data = [];
-    data.push({});
-    return data
-  };
-  return{process:process}
-}();
-var History = function() {
-  var templateId = "";
-  var process = function(xmlDOM) {
-    var data = [];
-    data.push({});
+    data.push({date:"20000407", name:"Office consultation - 15 minutes", finding:{name:"Bronchitis", code:"32398004", code_system:"2.16.840.1.113883.6.96"}, code:"99241", code_system:"2.16.840.1.113883.6.12", code_system_name:"CPT", code_system_version:4, translation:{name:"Ambulatory", code:"AMB", code_system:"2.16.840.1.113883.5.4", code_system_name:"HL7 ActEncounterCode"}, performer:{name:"General Physician", code:"59058001", code_system:"2.16.840.1.113883.6.96", code_system_name:"SNOMED CT"}, 
+    participant:{organization:"Good Health Clinic", street:["17 Daws Rd."], city:"Blue Bell", state:"MA", zip:"02368", country:"US", name:"General Acute Care Hospital", code:"GACH", code_system:"2.16.840.1.113883.5.111", code_system_name:"HL7 RoleCode"}});
     return data
   };
   return{process:process}
@@ -110,16 +86,17 @@ var Immunizations = function() {
       var route_code_system_name = el.getAttribute("codeSystemName");
       el = entries[i].getElementsByTagName("entryRelationship")[0];
       var codeTag = el.getElementsByTagName("code")[0];
-      var instructions_name = codeTag.getAttribute("displayName");
       var instructions_text = el.getElementsByTagName("text")[0].childNodes[0].nodeValue;
-      var instructions_code = codeTag.getAttribute("code");
-      var instructions_code_system = codeTag.getAttribute("codeSystem");
+      var education_name = codeTag.getAttribute("displayName");
+      var education_code = codeTag.getAttribute("code");
+      var education_code_system = codeTag.getAttribute("codeSystem");
       el = entries[i].getElementsByTagName("translation")[0];
       var translation_name = el.getAttribute("displayName");
       var translation_code = el.getAttribute("code");
       var translation_code_system = el.getAttribute("codeSystem");
       var translation_code_system_name = el.getAttribute("codeSystemName");
-      data.push({date:date, product:{name:product_name, code:product_code, hl7_code_system:product_hl7_code_system, code_system_name:product_code_system_name}, route:{name:route_name, code:route_code, code_system:route_code_system, code_system_name:route_code_system_name}, instructions:{name:instructions_name, text:instructions_text, code:instructions_code, code_system:instructions_code_system}, translation:{name:translation_name, code:translation_code, code_system:translation_code_system, code_system_name:translation_code_system_name}})
+      data.push({date:date, product:{name:product_name, code:product_code, hl7_code_system:product_hl7_code_system, code_system_name:product_code_system_name, translation:{name:translation_name, code:translation_code, code_system:translation_code_system, code_system_name:translation_code_system_name}}, route:{name:route_name, code:route_code, code_system:route_code_system, code_system_name:route_code_system_name}, instructions:instructions_text, education_type:{name:education_name, code:education_code, 
+      code_system:education_code_system}})
     }
     return data
   };
@@ -149,7 +126,7 @@ var Plan = function() {
   var templateId = "";
   var process = function(xmlDOM) {
     var data = [];
-    data.push({});
+    data.push({date:"20000421", name:"Colonoscopy", code:"310634005", code_system:"2.16.840.1.113883.6.96"});
     return data
   };
   return{process:process}
@@ -176,7 +153,7 @@ var Vitals = function() {
   var templateId = "";
   var process = function(xmlDOM) {
     var data = [];
-    data.push({});
+    data.push({date:"19991114", group:[{name:"Height", code:"8302-2", code_system:"2.16.840.1.113883.6.1", code_system_name:"LOINC", value:117, unit:"cm"}, {name:"Patient Body Weight - Measured", code:"3141-9", code_system:"2.16.840.1.113883.6.1", code_system_name:"LOINC", value:86, unit:"kg"}, {name:"Intravascular Systolic", code:"8480-6", code_system:"2.16.840.1.113883.6.1", code_system_name:"LOINC", value:132, unit:"mm[Hg]"}]});
     return data
   };
   return{process:process}
@@ -196,17 +173,8 @@ var BlueButton = function(xml) {
   var demographics = function() {
     return data.demographics
   };
-  var discharge = function() {
-    return data.discharge
-  };
   var encounters = function() {
     return data.encounters
-  };
-  var functions = function() {
-    return data.functions
-  };
-  var history = function() {
-    return data.history
   };
   var immunizations = function() {
     return data.immunizations
@@ -232,10 +200,7 @@ var BlueButton = function(xml) {
   xmlDOM = Core.parseXML(xml);
   data.allergies = Allergies.process(xmlDOM);
   data.demographics = Demographics.process(xmlDOM);
-  data.discharge = Discharge.process(xmlDOM);
   data.encounters = Encounters.process(xmlDOM);
-  data.functions = Functions.process(xmlDOM);
-  data.history = History.process(xmlDOM);
   data.immunizations = Immunizations.process(xmlDOM);
   data.labs = Labs.process(xmlDOM);
   data.medications = Medications.process(xmlDOM);
@@ -243,8 +208,8 @@ var BlueButton = function(xml) {
   data.problems = Problems.process(xmlDOM);
   data.procedures = Procedures.process(xmlDOM);
   data.vitals = Vitals.process(xmlDOM);
-  addMethods([data.allergies, data.demographics, data.discharge, data.encounters, data.functions, data.history, data.immunizations, data.labs, data.medications, data.plan, data.problems, data.procedures, data.vitals]);
-  return{data:data, xmlDOM:xmlDOM, allergies:allergies, demographics:demographics, discharge:discharge, encounters:encounters, functions:functions, history:history, immunizations:immunizations, labs:labs, medications:medications, plan:plan, problems:problems, procedures:procedures, vitals:vitals}
+  addMethods([data.allergies, data.demographics, data.encounters, data.immunizations, data.labs, data.medications, data.plan, data.problems, data.procedures, data.vitals]);
+  return{data:data, xmlDOM:xmlDOM, allergies:allergies, demographics:demographics, encounters:encounters, immunizations:immunizations, labs:labs, medications:medications, plan:plan, problems:problems, procedures:procedures, vitals:vitals}
 };
 window.BlueButton = BlueButton;
 
