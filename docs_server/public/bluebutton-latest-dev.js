@@ -34,6 +34,60 @@ var Core = function() {
   };
   return{parseXML:parseXML, getElementByTagAttrValue:getElementByTagAttrValue, getSection:getSection}
 }();
+var Allergies = function() {
+  var templateId = "";
+  var process = function(xmlDOM) {
+    var data = [];
+    data.push({});
+    return data
+  };
+  return{process:process}
+}();
+var Demographics = function() {
+  var templateId = "";
+  var process = function(xmlDOM) {
+    var data = [];
+    data.push({});
+    return data
+  };
+  return{process:process}
+}();
+var Discharge = function() {
+  var templateId = "";
+  var process = function(xmlDOM) {
+    var data = [];
+    data.push({});
+    return data
+  };
+  return{process:process}
+}();
+var Encounters = function() {
+  var templateId = "";
+  var process = function(xmlDOM) {
+    var data = [];
+    data.push({});
+    return data
+  };
+  return{process:process}
+}();
+var Functions = function() {
+  var templateId = "";
+  var process = function(xmlDOM) {
+    var data = [];
+    data.push({});
+    return data
+  };
+  return{process:process}
+}();
+var History = function() {
+  var templateId = "";
+  var process = function(xmlDOM) {
+    var data = [];
+    data.push({});
+    return data
+  };
+  return{process:process}
+}();
 var Immunizations = function() {
   var templateId = "2.16.840.1.113883.10.20.22.2.2";
   var process = function(xmlDOM) {
@@ -73,25 +127,124 @@ var Immunizations = function() {
 }();
 var Labs = function() {
   var templateId = "2.16.840.1.113883.10.20.22.2.3.1";
-  var labs = function(args) {
-    return this.getData() + " labs:" + args
+  var process = function(xmlDOM) {
+    var data = [];
+    data.push({name:"CBC WO DIFFERENTIAL", code:"43789009", code_system:"2.16.840.1.113883.6.96", code_system_name:"SNOMED CT", results:[{date:"200003231430", name:"WBC", value:6.7, unit:"10+3/ul", code:"33765-9", code_system:"2.16.840.1.113883.6.1", code_system_name:"LOINC", range:{low:4.3, high:10.8}}]});
+    return data
   };
-  var ranges = function() {
+  return{process:process}
+}();
+var Medications = function() {
+  var templateId = "2.16.840.1.113883.10.20.22.2.1.1";
+  var process = function(xmlDOM) {
+    var data = [];
+    data.push({effective_time:{low:"20110301", high:"20120301"}, product:{name:"Albuterol 0.09 MG/ACTUAT inhalant solution", code:"329498", code_system:"2.16.840.1.113883.6.88", translation:{name:"Proventil 0.09 MG/ACTUAT inhalant solution", code:"573621", code_system:"2.16.840.1.113883.6.88", code_system_name:"RxNorm"}}, dose_quantity:1, rate_quantity:{value:90, unit:"ml/min"}, precondition:{name:"Wheezing", code:"56018004", code_system:"2.16.840.1.113883.6.96"}, reason:{name:"Bronchitis", code:"32398004", 
+    code_system:"2.16.840.1.113883.6.96"}, route:{name:"RESPIRATORY (INHALATION)", code:"C38216", code_system:"2.16.840.1.113883.3.26.1.1", code_system_name:"NCI Thesaurus"}, participant:{name:"drug vehicle", code:"412307009", code_system:"2.16.840.1.113883.6.96", playing_entity:{name:"Diethylene Glycol", code:"5955009", code_system:"2.16.840.1.113883.6.96", code_system_name:"SNOMED CT"}}, administration:{name:"INHALANT", code:"C42944", code_system:"2.16.840.1.113883.3.26.1.1", code_system_name:"NCI Thesaurus"}, 
+    performer:{organization:"Good Health Clinic", person:"Dr. Robert Michaels"}});
+    return data
   };
-  var extract = function(xmlDOM) {
-    var el = Core.getElementByTagAttrValue(xmlDOM, "templateId", "root", templateId);
-    el = el.parentElement;
-    el = el.getElementsByTagName("value");
-    return el
+  return{process:process}
+}();
+var Plan = function() {
+  var templateId = "";
+  var process = function(xmlDOM) {
+    var data = [];
+    data.push({});
+    return data
   };
-  return{a:labs, b:ranges, extract:extract}
+  return{process:process}
+}();
+var Problems = function() {
+  var templateId = "2.16.840.1.113883.10.20.22.2.5";
+  var process = function(xmlDOM) {
+    var data = [];
+    data.push({date:{from:"199803", to:"199803"}, name:"Pneumonia", status:"Active", age:57, code:"233604007", code_system:"2.16.840.1.113883.6.96"});
+    return data
+  };
+  return{process:process}
+}();
+var Procedures = function() {
+  var templateId = "2.16.840.1.113883.10.20.22.2.7";
+  var process = function(xmlDOM) {
+    var data = [];
+    data.push({date:"20110215", name:"Colonic polypectomy", code:"274025005", code_system:"2.16.840.1.113883.6.96", specimen:{name:"colonic polyp sample", code:"309226005", code_system:"2.16.840.1.113883.6.96"}, performer:{organization:"Good Health Clinic", street:["17 Daws Rd."], city:"Blue Bell", state:"MA", zip:"02368", country:"US", phone:"555-555-1234"}, participant:{name:"Colonoscope", code:"90412006", code_system:"2.16.840.1.113883.6.96"}});
+    return data
+  };
+  return{process:process}
+}();
+var Vitals = function() {
+  var templateId = "";
+  var process = function(xmlDOM) {
+    var data = [];
+    data.push({});
+    return data
+  };
+  return{process:process}
 }();
 var BlueButton = function(xml) {
-  var xmlDOM = null, data = {}, json = "";
+  var xmlDOM = null, data = {};
+  var addMethods = function(objects) {
+    for(var i = 0;i < objects.length;i++) {
+      objects[i].json = function() {
+        return JSON.stringify(this, null, 2)
+      }
+    }
+  };
+  var allergies = function() {
+    return data.allergies
+  };
+  var demographics = function() {
+    return data.demographics
+  };
+  var discharge = function() {
+    return data.discharge
+  };
+  var encounters = function() {
+    return data.encounters
+  };
+  var functions = function() {
+    return data.functions
+  };
+  var history = function() {
+    return data.history
+  };
+  var immunizations = function() {
+    return data.immunizations
+  };
+  var labs = function() {
+    return data.labs
+  };
+  var medications = function() {
+    return data.medications
+  };
+  var plan = function() {
+    return data.plan
+  };
+  var problems = function() {
+    return data.problems
+  };
+  var procedures = function() {
+    return data.procedures
+  };
+  var vitals = function() {
+    return data.vitals
+  };
   xmlDOM = Core.parseXML(xml);
+  data.allergies = Allergies.process(xmlDOM);
+  data.demographics = Demographics.process(xmlDOM);
+  data.discharge = Discharge.process(xmlDOM);
+  data.encounters = Encounters.process(xmlDOM);
+  data.functions = Functions.process(xmlDOM);
+  data.history = History.process(xmlDOM);
   data.immunizations = Immunizations.process(xmlDOM);
-  json = JSON.stringify(data, null, 2);
-  return{data:data, json:json, xmlDOM:xmlDOM, immunizations:data.immunizations}
+  data.labs = Labs.process(xmlDOM);
+  data.medications = Medications.process(xmlDOM);
+  data.plan = Plan.process(xmlDOM);
+  data.problems = Problems.process(xmlDOM);
+  data.procedures = Procedures.process(xmlDOM);
+  data.vitals = Vitals.process(xmlDOM);
+  addMethods([data.allergies, data.demographics, data.discharge, data.encounters, data.functions, data.history, data.immunizations, data.labs, data.medications, data.plan, data.problems, data.procedures, data.vitals]);
+  return{data:data, xmlDOM:xmlDOM, allergies:allergies, demographics:demographics, discharge:discharge, encounters:encounters, functions:functions, history:history, immunizations:immunizations, labs:labs, medications:medications, plan:plan, problems:problems, procedures:procedures, vitals:vitals}
 };
 window.BlueButton = BlueButton;
 

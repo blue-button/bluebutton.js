@@ -27,3 +27,5 @@ task :deploy do
   puts "", "Done!".task, ""
   
 end
+
+task :default => :deploy
