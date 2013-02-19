@@ -38,8 +38,8 @@ var Allergies = function() {
   var templateId = "";
   var process = function(xmlDOM) {
     var data = [];
-    data.push({date:{value:"20090909", low:"20090902", high:"20100103"}, observation:{date:{low:"20110215"}, name:"drug allergy", code:"416098002", code_system:"2.16.840.1.113883.6.96", code_system_name:"SNOMED CT", value:{name:"Adverse reaction to substance", code:"282100009", code_system:"2.16.840.1.113883.6.96", code_system_name:"SNOMED CT"}, participant:{name:"ALLERGENIC EXTRACT, PENICILLIN", code:"314422", code_system:"2.16.840.1.113883.6.88", code_system_name:"RxNorm"}, status:"active", reaction:{date:{low:"20090711"}, 
-    name:"Hives", code:"247472004", code_system:"2.16.840.1.113883.6.96"}, severity:"moderate to severe"}});
+    data.push({date:{value:"20090909", low:"20090902", high:"20100103"}, observation_date:{low:"20110215"}, name:"drug allergy", code:"416098002", code_system:"2.16.840.1.113883.6.96", code_system_name:"SNOMED CT", reaction_type:{name:"Adverse reaction to substance", code:"282100009", code_system:"2.16.840.1.113883.6.96", code_system_name:"SNOMED CT"}, allergen:{name:"ALLERGENIC EXTRACT, PENICILLIN", code:"314422", code_system:"2.16.840.1.113883.6.88", code_system_name:"RxNorm"}, status:"active", 
+    reaction:{date:{low:"20090711"}, name:"Hives", code:"247472004", code_system:"2.16.840.1.113883.6.96"}, severity:"moderate to severe"});
     return data
   };
   return{process:process}
@@ -59,7 +59,7 @@ var Encounters = function() {
   var process = function(xmlDOM) {
     var data = [];
     data.push({date:"20000407", name:"Office consultation - 15 minutes", finding:{name:"Bronchitis", code:"32398004", code_system:"2.16.840.1.113883.6.96"}, code:"99241", code_system:"2.16.840.1.113883.6.12", code_system_name:"CPT", code_system_version:4, translation:{name:"Ambulatory", code:"AMB", code_system:"2.16.840.1.113883.5.4", code_system_name:"HL7 ActEncounterCode"}, performer:{name:"General Physician", code:"59058001", code_system:"2.16.840.1.113883.6.96", code_system_name:"SNOMED CT"}, 
-    participant:{organization:"Good Health Clinic", street:["17 Daws Rd."], city:"Blue Bell", state:"MA", zip:"02368", country:"US", name:"General Acute Care Hospital", code:"GACH", code_system:"2.16.840.1.113883.5.111", code_system_name:"HL7 RoleCode"}});
+    location:{organization:"Good Health Clinic", street:["17 Daws Rd."], city:"Blue Bell", state:"MA", zip:"02368", country:"US", name:"General Acute Care Hospital", code:"GACH", code_system:"2.16.840.1.113883.5.111", code_system_name:"HL7 RoleCode"}});
     return data
   };
   return{process:process}
@@ -77,7 +77,7 @@ var Immunizations = function() {
       el = el.getElementsByTagName("code")[0];
       var product_name = el.getAttribute("displayName");
       var product_code = el.getAttribute("code");
-      var product_hl7_code_system = el.getAttribute("codeSystem");
+      var product_code_system = el.getAttribute("codeSystem");
       var product_code_system_name = el.getAttribute("codeSystemName");
       el = entries[i].getElementsByTagName("routeCode")[0];
       var route_name = el.getAttribute("displayName");
@@ -95,8 +95,7 @@ var Immunizations = function() {
       var translation_code = el.getAttribute("code");
       var translation_code_system = el.getAttribute("codeSystem");
       var translation_code_system_name = el.getAttribute("codeSystemName");
-      data.push({date:date, product:{name:product_name, code:product_code, hl7_code_system:product_hl7_code_system, code_system_name:product_code_system_name, translation:{name:translation_name, code:translation_code, code_system:translation_code_system, code_system_name:translation_code_system_name}}, route:{name:route_name, code:route_code, code_system:route_code_system, code_system_name:route_code_system_name}, instructions:instructions_text, education_type:{name:education_name, code:education_code, 
-      code_system:education_code_system}})
+      data.push({date:date, product:{name:product_name, code:product_code, code_system:product_code_system, code_system_name:product_code_system_name, translation:{name:translation_name, code:translation_code, code_system:translation_code_system, code_system_name:translation_code_system_name}}, route:{name:route_name, code:route_code, code_system:route_code_system, code_system_name:route_code_system_name}, instructions:instructions_text, education_type:{name:education_name, code:education_code, code_system:education_code_system}})
     }
     return data
   };
@@ -106,7 +105,7 @@ var Labs = function() {
   var templateId = "2.16.840.1.113883.10.20.22.2.3.1";
   var process = function(xmlDOM) {
     var data = [];
-    data.push({name:"CBC WO DIFFERENTIAL", code:"43789009", code_system:"2.16.840.1.113883.6.96", code_system_name:"SNOMED CT", results:[{date:"200003231430", name:"WBC", value:6.7, unit:"10+3/ul", code:"33765-9", code_system:"2.16.840.1.113883.6.1", code_system_name:"LOINC", range:{low:4.3, high:10.8}}]});
+    data.push({name:"CBC WO DIFFERENTIAL", code:"43789009", code_system:"2.16.840.1.113883.6.96", code_system_name:"SNOMED CT", results:[{date:"200003231430", name:"WBC", value:6.7, unit:"10+3/ul", code:"33765-9", code_system:"2.16.840.1.113883.6.1", code_system_name:"LOINC", reference:{low:4.3, high:10.8}}]});
     return data
   };
   return{process:process}
@@ -116,8 +115,7 @@ var Medications = function() {
   var process = function(xmlDOM) {
     var data = [];
     data.push({effective_time:{low:"20110301", high:"20120301"}, product:{name:"Albuterol 0.09 MG/ACTUAT inhalant solution", code:"329498", code_system:"2.16.840.1.113883.6.88", translation:{name:"Proventil 0.09 MG/ACTUAT inhalant solution", code:"573621", code_system:"2.16.840.1.113883.6.88", code_system_name:"RxNorm"}}, dose_quantity:1, rate_quantity:{value:90, unit:"ml/min"}, precondition:{name:"Wheezing", code:"56018004", code_system:"2.16.840.1.113883.6.96"}, reason:{name:"Bronchitis", code:"32398004", 
-    code_system:"2.16.840.1.113883.6.96"}, route:{name:"RESPIRATORY (INHALATION)", code:"C38216", code_system:"2.16.840.1.113883.3.26.1.1", code_system_name:"NCI Thesaurus"}, participant:{name:"drug vehicle", code:"412307009", code_system:"2.16.840.1.113883.6.96", playing_entity:{name:"Diethylene Glycol", code:"5955009", code_system:"2.16.840.1.113883.6.96", code_system_name:"SNOMED CT"}}, administration:{name:"INHALANT", code:"C42944", code_system:"2.16.840.1.113883.3.26.1.1", code_system_name:"NCI Thesaurus"}, 
-    performer:{organization:"Good Health Clinic", person:"Dr. Robert Michaels"}});
+    code_system:"2.16.840.1.113883.6.96"}, route:{name:"RESPIRATORY (INHALATION)", code:"C38216", code_system:"2.16.840.1.113883.3.26.1.1", code_system_name:"NCI Thesaurus"}, vehicle:{name:"Diethylene Glycol", code:"5955009", code_system:"2.16.840.1.113883.6.96", code_system_name:"SNOMED CT"}, administration:{name:"INHALANT", code:"C42944", code_system:"2.16.840.1.113883.3.26.1.1", code_system_name:"NCI Thesaurus"}, prescriber:{organization:"Good Health Clinic", person:"Dr. Robert Michaels"}});
     return data
   };
   return{process:process}
@@ -153,7 +151,7 @@ var Vitals = function() {
   var templateId = "";
   var process = function(xmlDOM) {
     var data = [];
-    data.push({date:"19991114", group:[{name:"Height", code:"8302-2", code_system:"2.16.840.1.113883.6.1", code_system_name:"LOINC", value:117, unit:"cm"}, {name:"Patient Body Weight - Measured", code:"3141-9", code_system:"2.16.840.1.113883.6.1", code_system_name:"LOINC", value:86, unit:"kg"}, {name:"Intravascular Systolic", code:"8480-6", code_system:"2.16.840.1.113883.6.1", code_system_name:"LOINC", value:132, unit:"mm[Hg]"}]});
+    data.push({date:"19991114", results:[{name:"Height", code:"8302-2", code_system:"2.16.840.1.113883.6.1", code_system_name:"LOINC", value:117, unit:"cm"}, {name:"Patient Body Weight - Measured", code:"3141-9", code_system:"2.16.840.1.113883.6.1", code_system_name:"LOINC", value:86, unit:"kg"}, {name:"Intravascular Systolic", code:"8480-6", code_system:"2.16.840.1.113883.6.1", code_system_name:"LOINC", value:132, unit:"mm[Hg]"}]});
     return data
   };
   return{process:process}

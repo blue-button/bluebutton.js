@@ -29,6 +29,7 @@ var Procedures = function () {
         country: "US",
         phone: "555-555-1234"
       },
+      // device == participant
       participant: {
         name: "Colonoscope",
         code: "90412006",

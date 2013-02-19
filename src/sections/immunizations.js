@@ -26,7 +26,7 @@ var Immunizations = function () {
       el = el.getElementsByTagName('code')[0];
       var product_name = el.getAttribute('displayName');
       var product_code = el.getAttribute('code');
-      var product_hl7_code_system = el.getAttribute('codeSystem');
+      var product_code_system = el.getAttribute('codeSystem');
       var product_code_system_name = el.getAttribute('codeSystemName');
       
       // route
@@ -56,7 +56,7 @@ var Immunizations = function () {
         product: {
           name: product_name,
           code: product_code,
-          hl7_code_system: product_hl7_code_system,
+          code_system: product_code_system,
           code_system_name: product_code_system_name,
           translation: {
             name: translation_name,

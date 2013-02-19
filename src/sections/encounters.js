@@ -34,7 +34,8 @@ var Encounters = function () {
         code_system: "2.16.840.1.113883.6.96",
         code_system_name: "SNOMED CT"
       },
-      participant: {
+      // location == participant
+      location: {
         organization: "Good Health Clinic",
         street: ["17 Daws Rd."],
         city: "Blue Bell",

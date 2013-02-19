@@ -47,16 +47,12 @@ var Medications = function () {
         code_system: "2.16.840.1.113883.3.26.1.1",
         code_system_name: "NCI Thesaurus"
       },
-      participant: {
-        name: "drug vehicle",
-        code: "412307009",
+      // vehicle == participant
+      vehicle: {
+        name: "Diethylene Glycol",
+        code: "5955009",
         code_system: "2.16.840.1.113883.6.96",
-        playing_entity: {
-          name: "Diethylene Glycol",
-          code: "5955009",
-          code_system: "2.16.840.1.113883.6.96",
-          code_system_name: "SNOMED CT"
-        }
+        code_system_name: "SNOMED CT"
       },
       administration: {
         name: "INHALANT",
@@ -64,7 +60,8 @@ var Medications = function () {
         code_system: "2.16.840.1.113883.3.26.1.1",
         code_system_name: "NCI Thesaurus"
       },
-      performer: {
+      // prescriber == performer
+      prescriber: {
         organization: "Good Health Clinic",
         person: "Dr. Robert Michaels"
       }

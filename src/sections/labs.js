@@ -24,7 +24,8 @@ var Labs = function () {
           code: "33765-9",
           code_system: "2.16.840.1.113883.6.1",
           code_system_name: "LOINC",
-          range: {
+          // reference == referenceRange
+          reference: {
             low: 4.3,
             high: 10.8
           }

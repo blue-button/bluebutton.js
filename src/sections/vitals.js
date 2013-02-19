@@ -12,7 +12,7 @@ var Vitals = function () {
     var data = [];
     data.push({
       date: "19991114",
-      group: [
+      results: [
         {
           name: "Height",
           code: "8302-2",
