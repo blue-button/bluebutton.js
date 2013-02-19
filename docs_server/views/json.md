@@ -1,6 +1,6 @@
 # JSON Test
 
-This converts each section of a CCDA document in XML to JSON, for example:
+This converts each section of a CCDA document in XML to JSON, using for example:
 
 ```javascript
 var bb = BlueButton(xml);
@@ -25,45 +25,77 @@ bb.medications().json();
 </style>
 <button onclick="load()">Use Sample Data and Convert</button> <button onclick="convert()">Convert</button> <button onclick="clearAll()">Clear</button>
 
+[Demographics](#demographics-section), [Allergies](#allergies-section), [Encounters](#encounters-section), [Immunizations](#immunizations-section), [Labs](#labs-section), [Medications](#medications-section), [Care Plan](#plan-section), [Problems](#problems-section), [Procedures](#procedures-section), [Vitals](#vitals-section)
+
+<a name="demographics-section"></a>
+
 ## Demographics
 
 <pre><code id="demographics"></code></pre>
+
+
+<a name="allergies-section"></a>
 
 ## Allergies
 
 <pre><code id="allergies"></code></pre>
 
+
+<a name="encounters-section"></a>
+
 ## Encounters
 
 <pre><code id="encounters"></code></pre>
+
+
+<a name="immunizations-section"></a>
 
 ## Immunizations
 
 <pre><code id="immunizations" class="javascript"></code></pre>
 
+
+<a name="labs-section"></a>
+
 ## Labs
 
 <pre><code id="labs"></code></pre>
+
+
+<a name="medications-section"></a>
 
 ## Medications
 
 <pre><code id="medications"></code></pre>
 
-## Plan
+
+<a name="plan-section"></a>
+
+## Care Plan
 
 <pre><code id="plan"></code></pre>
+
+
+<a name="problems-section"></a>
 
 ## Problems
 
 <pre><code id="problems"></code></pre>
 
+
+<a name="procedures-section"></a>
+
 ## Procedures
 
 <pre><code id="procedures"></code></pre>
 
+
+<a name="vitals-section"></a>
+
 ## Vitals
 
 <pre><code id="vitals"></code></pre>
+
 
 <script src="/bluebutton-latest-dev.js"></script>
 <script>
