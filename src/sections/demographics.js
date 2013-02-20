@@ -50,7 +50,9 @@ var Demographics = function () {
           country: "US",
           zip: "02368"
         },
-        phone: { home: "781-555-1212" }
+        phone: {
+          home: ["781-555-1212"]
+        }
       },
       birthplace: {
         state: "MA",
