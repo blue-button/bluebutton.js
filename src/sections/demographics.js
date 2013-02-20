@@ -9,14 +9,13 @@ var Demographics = function () {
   
   // methods
   var process = function (xmlDOM) {
-    var data = [];
-    data.push({
+    var data = {
       name: {
         prefix: "Mr.",
         given: ["Adam", "Frankie"],
         family: "Everyman"
       },
-      dob: "1954-11-25",
+      dob: Core.date("19541125"),
       gender: "male",
       // Marital status uses code system 2.16.840.1.113883.5.2
       // TODO: document all possible marital_status values
@@ -69,7 +68,7 @@ var Demographics = function () {
           country: "US"
         }
       }
-    });
+    };
     
     return data;
   };

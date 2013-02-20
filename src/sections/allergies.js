@@ -12,11 +12,11 @@ var Allergies = function () {
     var data = [];
     data.push({
       date: {
-        value: "20090909",
-        low: "20090902",
-        high: "20100103"
+        value: Core.date("20090909"),
+        low: Core.date("20090902"),
+        high: Core.date("20100103")
       },
-      observation_date: { low: "20110215" },
+      observation_date: { low: Core.date("20110215") },
       name: "drug allergy",
       code: "416098002",
       code_system: "2.16.840.1.113883.6.96",

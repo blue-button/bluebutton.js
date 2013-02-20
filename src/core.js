@@ -42,9 +42,17 @@ var Core = function() {
     return getElementByTagAttrValue(xmlDOM, 'templateId', 'root', templateId);
   };
   
+  var date = function(str) {
+    var year = str.substr(0, 4);
+    var month = str.substr(4, 2);
+    var day = str.substr(6, 2);
+    return new Date(year, month, day);
+  };
+  
   return {
     parseXML: parseXML,
     getElementByTagAttrValue: getElementByTagAttrValue,
-    getSection: getSection
+    getSection: getSection,
+    date: date
   }
 }();

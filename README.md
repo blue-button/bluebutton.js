@@ -9,7 +9,7 @@ A JavaScript library to work with Blue Button data in the form of XML Continuity
 
 This project is currently under development by members of the [Blue Button developer community](https://github.com/blue-button?tab=members) and will be maintained by [OSEHRA](http://osehra.org).
 
-Until a public release (version 0.1.0), this project is considered a "developer preview" and pull requests will be ignored. If you have a suggestion or concern, submit an issue or tweet us at [@bluebuttondev](http://twitter.com/bluebuttondev).
+Until a public release (version 0.1.0), this project is considered a "developer preview". If you have a suggestion or concern, submit an issue or tweet us at [@bluebuttondev](http://twitter.com/bluebuttondev).
 
 ## Building
 

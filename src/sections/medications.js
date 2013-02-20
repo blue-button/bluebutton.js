@@ -12,8 +12,8 @@ var Medications = function () {
     var data = [];
     data.push({
       effective_time: {
-        low: "20110301",
-        high: "20120301"
+        low: Core.date("20110301"),
+        high: Core.date("20120301")
       },
       product: {
         name: "Albuterol 0.09 MG/ACTUAT inhalant solution",

@@ -11,7 +11,7 @@ var Encounters = function () {
   var process = function (xmlDOM) {
     var data = [];
     data.push({
-      date: "20000407",
+      date: Core.date("20000407"),
       name: "Office consultation - 15 minutes",
       finding: {
         name: "Bronchitis",

@@ -11,7 +11,7 @@ var Procedures = function () {
   var process = function (xmlDOM) {
     var data = [];
     data.push({
-      date: "20110215",
+      date: Core.date("20110215"),
       name: "Colonic polypectomy",
       code: "274025005",
       code_system: "2.16.840.1.113883.6.96",

@@ -20,6 +20,7 @@ var Immunizations = function () {
       // date
       el = entries[i].getElementsByTagName('effectiveTime')[0];
       var date = el.getAttribute('value');
+      date = Core.date(date);
       
       // product
       el = entries[i].getElementsByTagName('consumable')[0];

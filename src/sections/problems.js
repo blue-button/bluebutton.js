@@ -12,8 +12,8 @@ var Problems = function () {
     var data = [];
     data.push({
       date: {
-        from: "199803",
-        to: "199803"
+        from: Core.date("199803"),
+        to: Core.date("199803")
       },
       name: "Pneumonia",
       status: "Active",

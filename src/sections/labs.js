@@ -17,7 +17,7 @@ var Labs = function () {
       code_system_name: "SNOMED CT",
       results: [
         {
-          date: "200003231430",
+          date: Core.date("200003231430"),
           name: "WBC",
           value: 6.7,
           unit: "10+3/ul",

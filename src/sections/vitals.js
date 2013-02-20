@@ -11,7 +11,7 @@ var Vitals = function () {
   var process = function (xmlDOM) {
     var data = [];
     data.push({
-      date: "19991114",
+      date: Core.date("19991114"),
       results: [
         {
           name: "Height",
