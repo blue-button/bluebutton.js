@@ -3,48 +3,88 @@
 var Allergies = function () {
   
   // dependancies
+  var parseDate = Core.parseDate;
   
   // properties
-  var templateId = '';
+  var sectionTemplateID = '2.16.840.1.113883.10.20.22.2.6.1';
   
   // methods
   var process = function (xmlDOM) {
-    var data = [];
-    data.push({
-      date: {
-        value: Core.date("20090909"),
-        low: Core.date("20090902"),
-        high: Core.date("20100103")
-      },
-      observation_date: { low: Core.date("20110215") },
-      name: "drug allergy",
-      code: "416098002",
-      code_system: "2.16.840.1.113883.6.96",
-      code_system_name: "SNOMED CT",
-      // reaction_type == value
-      reaction_type: {
-        name: "Adverse reaction to substance",
-        code: "282100009",
-        code_system: "2.16.840.1.113883.6.96",
-        code_system_name: "SNOMED CT"
-      },
-      // allergen == participant
-      allergen: {
-        name: "ALLERGENIC EXTRACT, PENICILLIN",
-        code: "314422",
-        code_system: "2.16.840.1.113883.6.88",
-        code_system_name: "RxNorm"
-      },
-      status: "active",
-      reaction: {
-        date: { low: "20090711" },
-        name: "Hives",
-        code: "247472004",
-        code_system: "2.16.840.1.113883.6.96"
-      },
-      severity: "moderate to severe"
-    });
+    var data = [], el, entries, entry;
     
+    el = xmlDOM.template(sectionTemplateID);
+    entries = el.elsByTag('entry');
+    
+    for (var i = 0; i < entries.length; i++) {
+      entry = entries[i];
+      
+      el = entry.template('2.16.840.1.113883.10.20.22.4.7').tag('code');
+      var name = el.attr('displayName'),
+          code = el.attr('code'),
+          code_system = el.attr('codeSystem'),
+          code_system_name = el.attr('codeSystemName');
+      
+      // value => reaction_type
+      el = entry.template('2.16.840.1.113883.10.20.22.4.7').tag('value');
+      var reaction_type_name = el.attr('displayName'),
+          reaction_type_code = el.attr('code'),
+          reaction_type_code_system = el.attr('codeSystem'),
+          reaction_type_code_system_name = el.attr('codeSystemName');
+      
+      // reaction
+      el = entry.template('2.16.840.1.113883.10.20.22.4.9').tag('value');
+      var reaction_name = el.attr('displayName'),
+          reaction_code = el.attr('code'),
+          reaction_code_system = el.attr('codeSystem');
+      
+      // severity
+      el = entry.template('2.16.840.1.113883.10.20.22.4.8').tag('value');
+      var severity = el.attr('displayName');
+      
+      // participant => allergen
+      el = entry.tag('participant').tag('code');
+      var allergen_name = el.attr('displayName'),
+          allergen_code = el.attr('code'),
+          allergen_code_system = el.attr('codeSystem'),
+          allergen_code_system_name = el.attr('codeSystemName');
+      
+      // status
+      el = entry.template('2.16.840.1.113883.10.20.22.4.28').tag('value');
+      var status = el.attr('displayName');
+      
+      data.push({
+        date: {
+          value: null,
+          low: null,
+          high: null
+        },
+        observation_date: { low: null },
+        name: name,
+        code: code,
+        code_system: code_system,
+        code_system_name: code_system_name,
+        status: status,
+        severity: severity,
+        reaction: {
+          date: { low: null },
+          name: reaction_name,
+          code: reaction_code,
+          code_system: reaction_code_system
+        },
+        reaction_type: {
+          name: reaction_type_name,
+          code: reaction_type_code,
+          code_system: reaction_code_system,
+          code_system_name: reaction_type_code_system_name
+        },
+        allergen: {
+          name: allergen_name,
+          code: allergen_code,
+          code_system: allergen_code_system,
+          code_system_name: allergen_code_system_name
+        }
+      });
+    }
     return data;
   };
   

@@ -3,70 +3,130 @@
 var Medications = function () {
   
   // dependancies
+  var parseDate = Core.parseDate;
   
   // properties
-  var templateId = '2.16.840.1.113883.10.20.22.2.1.1';
+  var sectionTemplateID = '2.16.840.1.113883.10.20.22.2.1.1';
   
   // methods
   var process = function (xmlDOM) {
-    var data = [];
-    data.push({
-      effective_time: {
-        low: Core.date("20110301"),
-        high: Core.date("20120301")
-      },
-      product: {
-        name: "Albuterol 0.09 MG/ACTUAT inhalant solution",
-        code: "329498",
-        code_system: "2.16.840.1.113883.6.88",
-        translation: {
-          name: "Proventil 0.09 MG/ACTUAT inhalant solution",
-          code: "573621",
-          code_system: "2.16.840.1.113883.6.88",
-          code_system_name: "RxNorm"
-        }
-      },
-      dose_quantity: 1,
-      rate_quantity: {
-        value: 90,
-        unit: "ml/min"
-      },
-      precondition: {
-        name: "Wheezing",
-        code: "56018004",
-        code_system: "2.16.840.1.113883.6.96"
-      },
-      reason: {
-        name: "Bronchitis",
-        code: "32398004",
-        code_system: "2.16.840.1.113883.6.96"
-      },
-      route: {
-        name: "RESPIRATORY (INHALATION)",
-        code: "C38216",
-        code_system: "2.16.840.1.113883.3.26.1.1",
-        code_system_name: "NCI Thesaurus"
-      },
-      // vehicle == participant
-      vehicle: {
-        name: "Diethylene Glycol",
-        code: "5955009",
-        code_system: "2.16.840.1.113883.6.96",
-        code_system_name: "SNOMED CT"
-      },
-      administration: {
-        name: "INHALANT",
-        code: "C42944",
-        code_system: "2.16.840.1.113883.3.26.1.1",
-        code_system_name: "NCI Thesaurus"
-      },
-      // prescriber == performer
-      prescriber: {
-        organization: "Good Health Clinic",
-        person: "Dr. Robert Michaels"
-      }
-    });
+    var data = [], el, entries, entry;
     
+    el = xmlDOM.template(sectionTemplateID);
+    entries = el.elsByTag('entry');
+    
+    for (var i = 0; i < entries.length; i++) {
+      entry = entries[i];
+      
+      el = entry.tag('effectiveTime');
+      var low = parseDate(el.tag('low').attr('value')),
+          high = parseDate(el.tag('high').attr('value'));
+      
+      el = entry.tag('manufacturedProduct').tag('code');
+      var product_name = el.attr('displayName'),
+          product_code = el.attr('code'),
+          product_code_system = el.attr('codeSystem');
+      
+      el = entry.tag('manufacturedProduct').tag('translation');
+      var translation_name = el.attr('displayName'),
+          translation_code = el.attr('code'),
+          translation_code_system = el.attr('codeSystem'),
+          translation_code_system_name = el.attr('codeSystemName');
+      
+      var dose_quantity = entry.tag('doseQuantity').attr('value');
+      el = entry.tag('rateQuantity');
+      var rate_quantity_value = el.attr('value'),
+          rate_quantity_unit = el.attr('unit');
+      
+      el = entry.tag('precondition').tag('value');
+      var precondition_name = el.attr('displayName'),
+          precondition_code = el.attr('code'),
+          precondition_code_system = el.attr('codeSystem'),
+      
+      el = entry.template('2.16.840.1.113883.10.20.22.4.19').tag('value');
+      var reason_name = el.attr('displayName'),
+          reason_code = el.attr('code'),
+          reason_code_system = el.attr('codeSystem');
+      
+      el = entry.tag('routeCode')
+      var route_name = el.attr('displayName'),
+          route_code = el.attr('code'),
+          route_code_system = el.attr('codeSystem'),
+          route_code_system_name = el.attr('codeSystemName');
+      
+      // participant => vehicle
+      el = entry.tag('participant').tag('code');
+      var vehicle_name = el.attr('displayName'),
+          vehicle_code = el.attr('code'),
+          vehicle_code_system = el.attr('codeSystem'),
+          vehicle_code_system_name = el.attr('codeSystemName');
+      
+      el = entry.tag('administrationUnitCode');
+      var administration_name = el.attr('displayName'),
+          administration_code = el.attr('code'),
+          administration_code_system = el.attr('codeSystem'),
+          administration_code_system_name = el.attr('codeSystemName');
+      
+      // performer => prescriber
+      el = entry.tag('performer');
+      var prescriber_organization = el.tag('name').val(),
+          prescriber_person = null;
+      
+      data.push({
+        effective_time: {
+          low: low,
+          high: high
+        },
+        product: {
+          name: product_name,
+          code: product_code,
+          code_system: product_code_system,
+          translation: {
+            name: translation_name,
+            code: translation_code,
+            code_system: translation_code_system,
+            code_system_name: translation_code_system_name
+          }
+        },
+        dose_quantity: dose_quantity,
+        rate_quantity: {
+          value: rate_quantity_value,
+          unit: rate_quantity_unit
+        },
+        precondition: {
+          name: precondition_name,
+          code: precondition_code,
+          code_system: precondition_code_system
+        },
+        reason: {
+          name: reason_name,
+          code: reason_code,
+          code_system: reason_code_system
+        },
+        route: {
+          name: route_name,
+          code: route_code,
+          code_system: route_code_system,
+          code_system_name: route_code_system_name
+        },
+        vehicle: {
+          name: vehicle_name,
+          code: vehicle_code,
+          code_system: vehicle_code_system,
+          code_system_name: vehicle_code_system_name
+        },
+        administration: {
+          name: administration_name,
+          code: administration_code,
+          code_system: administration_code_system,
+          code_system_name: administration_code_system_name
+        },
+        prescriber: {
+          organization: prescriber_organization,
+          person: prescriber_person
+        }
+      });
+    }
     return data;
   };
   

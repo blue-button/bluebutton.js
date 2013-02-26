@@ -3,20 +3,33 @@
 var Plan = function () {
   
   // dependancies
+  var parseDate = Core.parseDate;
   
   // properties
-  var templateId = '';
+  var sectionTemplateID = '2.16.840.1.113883.10.20.22.2.10';
   
   // methods
   var process = function (xmlDOM) {
-    var data = [];
-    data.push({
-      date: Core.date("20000421"),
-      name: "Colonoscopy",
-      code: "310634005",
-      code_system: "2.16.840.1.113883.6.96"
-    });
+    var data = [], el, entries, entry;
     
+    el = xmlDOM.template(sectionTemplateID);
+    entries = el.elsByTag('entry');
+    
+    for (var i = 0; i < entries.length; i++) {
+      entry = entries[i];
+      
+      var date = null,
+          name = null,
+          code = null,
+          code_system = null;
+      
+      data.push({
+        date: date,
+        name: name,
+        code: code,
+        code_system: code_system
+      });
+    }
     return data;
   };
   

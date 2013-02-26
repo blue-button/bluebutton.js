@@ -1,56 +1,55 @@
-// immunizations.js - Laboratory Results
+// immunizations.js
 
 var Immunizations = function () {
   
   // dependancies
+  var parseDate = Core.parseDate;
   
   // properties
-  var templateId = '2.16.840.1.113883.10.20.22.2.2';
+  var sectionTemplateID = '2.16.840.1.113883.10.20.22.2.2';
   
   // methods
   var process = function (xmlDOM) {
-    var data = [],
-        entries,
-        el;
+    var data = [], el, entries, entry;
         
-    el = Core.getSection(xmlDOM, templateId);
-    entries = el.parentElement.getElementsByTagName('entry');
+    el = xmlDOM.template(sectionTemplateID);
+    entries = el.elsByTag('entry');
     
     for (var i = 0; i < entries.length; i++) {
+      entry = entries[i];
+      
       // date
-      el = entries[i].getElementsByTagName('effectiveTime')[0];
-      var date = el.getAttribute('value');
-      date = Core.date(date);
+      el = entry.tag('effectiveTime');
+      var date = parseDate(el.attr('value'));
       
       // product
-      el = entries[i].getElementsByTagName('consumable')[0];
-      el = el.getElementsByTagName('code')[0];
-      var product_name = el.getAttribute('displayName');
-      var product_code = el.getAttribute('code');
-      var product_code_system = el.getAttribute('codeSystem');
-      var product_code_system_name = el.getAttribute('codeSystemName');
-      
-      // route
-      el = entries[i].getElementsByTagName('routeCode')[0];
-      var route_name = el.getAttribute('displayName');
-      var route_code = el.getAttribute('code');
-      var route_code_system = el.getAttribute('codeSystem');
-      var route_code_system_name = el.getAttribute('codeSystemName');
-      
-      // instructions
-      el = entries[i].getElementsByTagName('entryRelationship')[0];
-      var codeTag = el.getElementsByTagName('code')[0];
-      var instructions_text = el.getElementsByTagName('text')[0].childNodes[0].nodeValue;
-      var education_name = codeTag.getAttribute('displayName');
-      var education_code = codeTag.getAttribute('code');
-      var education_code_system = codeTag.getAttribute('codeSystem');
+      el = entry.template('2.16.840.1.113883.10.20.22.4.54').tag('code');
+      var product_name = el.attr('displayName'),
+          product_code = el.attr('code'),
+          product_code_system = el.attr('codeSystem'),
+          product_code_system_name = el.attr('codeSystemName');
       
       // translation
-      el = entries[i].getElementsByTagName('translation')[0];
-      var translation_name = el.getAttribute('displayName');
-      var translation_code = el.getAttribute('code');
-      var translation_code_system = el.getAttribute('codeSystem');
-      var translation_code_system_name = el.getAttribute('codeSystemName');
+      el = entry.template('2.16.840.1.113883.10.20.22.4.54').tag('translation');
+      var translation_name = el.attr('displayName'),
+          translation_code = el.attr('code'),
+          translation_code_system = el.attr('codeSystem'),
+          translation_code_system_name = el.attr('codeSystemName');
+      
+      // route
+      el = entry.tag('routeCode');
+      var route_name = el.attr('displayName'),
+          route_code = el.attr('code'),
+          route_code_system = el.attr('codeSystem'),
+          route_code_system_name = el.attr('codeSystemName');
+      
+      // instructions
+      el = entry.template('2.16.840.1.113883.10.20.22.4.20');
+      var instructions_text = el.tag('text').val();
+      el = el.tag('code');
+      var education_name = el.attr('displayName'),
+          education_code = el.attr('code'),
+          education_code_system = el.attr('codeSystem');
       
       data.push({
         date: date,

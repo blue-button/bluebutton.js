@@ -3,52 +3,93 @@
 var Encounters = function () {
   
   // dependancies
+  var parseDate = Core.parseDate;
   
   // properties
-  var templateId = '';
+  var sectionTemplateID = '2.16.840.1.113883.10.20.22.2.22.1';
   
   // methods
   var process = function (xmlDOM) {
-    var data = [];
-    data.push({
-      date: Core.date("20000407"),
-      name: "Office consultation - 15 minutes",
-      finding: {
-        name: "Bronchitis",
-        code: "32398004",
-        code_system: "2.16.840.1.113883.6.96"
-      },
-      code: "99241",
-      code_system: "2.16.840.1.113883.6.12",
-      code_system_name: "CPT",
-      code_system_version: 4,
-      translation: {
-        name: "Ambulatory",
-        code: "AMB",
-        code_system: "2.16.840.1.113883.5.4",
-        code_system_name: "HL7 ActEncounterCode"
-      },
-      performer: {
-        name: "General Physician",
-        code: "59058001",
-        code_system: "2.16.840.1.113883.6.96",
-        code_system_name: "SNOMED CT"
-      },
-      // location == participant
-      location: {
-        organization: "Good Health Clinic",
-        street: ["17 Daws Rd."],
-        city: "Blue Bell",
-        state: "MA",
-        zip: "02368",
-        country: "US",
-        name: "General Acute Care Hospital",
-        code: "GACH",
-        code_system: "2.16.840.1.113883.5.111",
-        code_system_name: "HL7 RoleCode"
-      }
-    });
+    var data = [], el, entries, entry;
     
+    el = xmlDOM.template(sectionTemplateID);
+    entries = el.elsByTag('entry');
+    
+    for (var i = 0; i < entries.length; i++) {
+      entry = entries[i];
+      
+      var date = entry.tag('effectiveTime').attr('value');
+      
+      el = entry.tag('code');
+      var name = el.attr('displayName'),
+          code = el.attr('code'),
+          code_system = el.attr('codeSystem'),
+          code_system_name = el.attr('codeSystemName'),
+          code_system_version = el.attr('codeSystemVersion');
+      
+      // finding
+      el = entry.tag('value');
+      var finding_name = el.attr('displayName'),
+          finding_code = el.attr('code'),
+          finding_code_system = el.attr('codeSystem');
+      
+      // translation
+      el = entry.tag('translation');
+      var translation_name = el.attr('displayName'),
+          translation_code = el.attr('code'),
+          translation_code_system = el.attr('codeSystem'),
+          translation_code_system_name = el.attr('codeSystemName');
+      
+      // performer
+      el = entry.tag('performer').tag('code');
+      var performer_name = el.attr('displayName'),
+          performer_code = el.attr('code'),
+          performer_code_system = el.attr('codeSystem'),
+          performer_code_system_name = el.attr('codeSystemName');
+
+      // participant => location
+      el = entry.tag('participant');
+      var organization = el.tag('code').attr('displayName'),
+          street = el.tag('streetAddressLine').val(),
+          city = el.tag('city').val(),
+          state = el.tag('state').val(),
+          zip = el.tag('postalCode').val(),
+          country = el.tag('country').val();
+      
+      data.push({
+        date: date,
+        name: name,
+        code: code,
+        code_system: code_system,
+        code_system_name: code_system_name,
+        code_system_version: code_system_version,
+        finding: {
+          name: finding_name,
+          code: finding_code,
+          code_system: finding_code_system
+        },
+        translation: {
+          name: translation_name,
+          code: translation_code,
+          code_system: translation_code_system,
+          code_system_name: translation_code_system_name
+        },
+        performer: {
+          name: performer_name,
+          code: performer_code,
+          code_system: performer_code_system,
+          code_system_name: performer_code_system_name
+        },
+        location: {
+          organization: organization,
+          street: street,
+          city: city,
+          state: state,
+          zip: zip,
+          country: country
+        }
+      });
+    }
     return data;
   };
   

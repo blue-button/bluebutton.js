@@ -29,6 +29,17 @@ var BlueButton = function (xml) {
   // init
   xmlDOM = Core.parseXML(xml);
   
+  // Add Core methods to XML elements in DOM
+  var els = xmlDOM.getElementsByTagName('*');
+  for (var i = 0; i < els.length; i++) {
+    els[i].template = Core.template;
+    els[i].tag = Core.tag;
+    els[i].elsByTag = Core.elsByTag;
+    els[i].attr = Core.attr;
+    els[i].val = Core.val;
+  };
+  xmlDOM.template = Core.template;
+  
   data.allergies = Allergies.process(xmlDOM);
   data.demographics  = Demographics.process(xmlDOM);
   data.encounters = Encounters.process(xmlDOM);
