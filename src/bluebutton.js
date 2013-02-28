@@ -21,7 +21,6 @@ var BlueButton = function (xml) {
   var immunizations = function () { return data.immunizations };
   var labs = function () { return data.labs };
   var medications = function () { return data.medications };
-  var plan = function () { return data.plan };
   var problems = function () { return data.problems };
   var procedures = function () { return data.procedures };
   var vitals = function () { return data.vitals };
@@ -46,7 +45,6 @@ var BlueButton = function (xml) {
   data.immunizations = Immunizations.process(xmlDOM);
   data.labs = Labs.process(xmlDOM);
   data.medications = Medications.process(xmlDOM);
-  data.plan = Plan.process(xmlDOM);
   data.problems = Problems.process(xmlDOM);
   data.procedures = Procedures.process(xmlDOM);
   data.vitals = Vitals.process(xmlDOM);
@@ -58,7 +56,6 @@ var BlueButton = function (xml) {
     data.immunizations,
     data.labs,
     data.medications,
-    data.plan,
     data.problems,
     data.procedures,
     data.vitals
@@ -73,7 +70,6 @@ var BlueButton = function (xml) {
     immunizations: immunizations,
     labs: labs,
     medications: medications,
-    plan: plan,
     problems: problems,
     procedures: procedures,
     vitals: vitals
