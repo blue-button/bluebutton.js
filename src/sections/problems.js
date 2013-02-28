@@ -19,8 +19,8 @@ var Problems = function () {
       entry = entries[i];
       
       el = entry.tag('effectiveTime');
-      var from = el.tag('low').attr('value'),
-          to = el.tag('high').attr('value');
+      var from = parseDate(el.tag('low').attr('value')),
+          to = parseDate(el.tag('high').attr('value'));
       
       el = entry.template('2.16.840.1.113883.10.20.22.4.4').tag('code');
       var name = el.attr('displayName'),

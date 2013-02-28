@@ -19,7 +19,7 @@ var Procedures = function () {
       entry = entries[i];
       
       el = entry.tag('effectiveTime');
-      var date = el.attr('value');
+      var date = parseDate(el.attr('value'));
       
       el = entry.tag('code');
       var name = el.attr('displayName'),

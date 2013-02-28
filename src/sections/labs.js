@@ -77,8 +77,3 @@ var Labs = function () {
   };
 
 }();
-
-
-
-
-

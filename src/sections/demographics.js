@@ -21,7 +21,7 @@ var Demographics = function () {
         family = el.tag('family').val();
     
     el = patient.tag('patient');
-    var dob = el.tag('birthTime').attr('value'),
+    var dob = parseDate(el.tag('birthTime').attr('value')),
         gender = el.tag('administrativeGenderCode').attr('displayName'),
         marital_status = el.tag('maritalStatusCode').attr('displayName');
     
