@@ -2,7 +2,7 @@
  * BlueButton.js
  */
 
-// v.0.0.2
+// v.0.0.3
 
 var Core = function() {
   var parseXML = function(data) {
@@ -91,7 +91,7 @@ var Demographics = function() {
     el = patient.tag("patient").tag("name");
     var prefix = el.tag("prefix").val(), given = el.tag("given").val(), family = el.tag("family").val();
     el = patient.tag("patient");
-    var dob = el.tag("birthTime").attr("value"), gender = el.tag("administrativeGenderCode").attr("displayName"), marital_status = el.tag("maritalStatusCode").attr("displayName");
+    var dob = parseDate(el.tag("birthTime").attr("value")), gender = el.tag("administrativeGenderCode").attr("displayName"), marital_status = el.tag("maritalStatusCode").attr("displayName");
     el = patient.tag("addr");
     var street = el.tag("streetAddressLine").val(), city = el.tag("city").val(), state = el.tag("state").val(), zip = el.tag("postalCode").val(), country = el.tag("country").val();
     el = patient.tag("telecom");
@@ -121,7 +121,7 @@ var Encounters = function() {
     entries = el.elsByTag("entry");
     for(var i = 0;i < entries.length;i++) {
       entry = entries[i];
-      var date = entry.tag("effectiveTime").attr("value");
+      var date = parseDate(entry.tag("effectiveTime").attr("value"));
       el = entry.tag("code");
       var name = el.attr("displayName"), code = el.attr("code"), code_system = el.attr("codeSystem"), code_system_name = el.attr("codeSystemName"), code_system_version = el.attr("codeSystemVersion");
       el = entry.tag("value");
@@ -232,22 +232,6 @@ var Medications = function() {
   };
   return{process:process}
 }();
-var Plan = function() {
-  var parseDate = Core.parseDate;
-  var sectionTemplateID = "2.16.840.1.113883.10.20.22.2.10";
-  var process = function(xmlDOM) {
-    var data = [], el, entries, entry;
-    el = xmlDOM.template(sectionTemplateID);
-    entries = el.elsByTag("entry");
-    for(var i = 0;i < entries.length;i++) {
-      entry = entries[i];
-      var date = null, name = null, code = null, code_system = null;
-      data.push({date:date, name:name, code:code, code_system:code_system})
-    }
-    return data
-  };
-  return{process:process}
-}();
 var Problems = function() {
   var parseDate = Core.parseDate;
   var sectionTemplateID = "2.16.840.1.113883.10.20.22.2.5";
@@ -258,7 +242,7 @@ var Problems = function() {
     for(var i = 0;i < entries.length;i++) {
       entry = entries[i];
       el = entry.tag("effectiveTime");
-      var from = el.tag("low").attr("value"), to = el.tag("high").attr("value");
+      var from = parseDate(el.tag("low").attr("value")), to = parseDate(el.tag("high").attr("value"));
       el = entry.template("2.16.840.1.113883.10.20.22.4.4").tag("code");
       var name = el.attr("displayName"), code = el.attr("code"), code_system = el.attr("codeSystem");
       el = entry.template("2.16.840.1.113883.10.20.22.4.6");
@@ -281,7 +265,7 @@ var Procedures = function() {
     for(var i = 0;i < entries.length;i++) {
       entry = entries[i];
       el = entry.tag("effectiveTime");
-      var date = el.attr("value");
+      var date = parseDate(el.attr("value"));
       el = entry.tag("code");
       var name = el.attr("displayName"), code = el.attr("code"), code_system = el.attr("codeSystem");
       specimen_name = null;
@@ -323,7 +307,7 @@ var Vitals = function() {
   };
   return{process:process}
 }();
-var BlueButton = function(xml) {
+var BlueButton = function(source) {
   var xmlDOM = null, data = {};
   var addMethods = function(objects) {
     for(var i = 0;i < objects.length;i++) {
@@ -350,9 +334,6 @@ var BlueButton = function(xml) {
   var medications = function() {
     return data.medications
   };
-  var plan = function() {
-    return data.plan
-  };
   var problems = function() {
     return data.problems
   };
@@ -362,28 +343,31 @@ var BlueButton = function(xml) {
   var vitals = function() {
     return data.vitals
   };
-  xmlDOM = Core.parseXML(xml);
-  var els = xmlDOM.getElementsByTagName("*");
-  for(var i = 0;i < els.length;i++) {
-    els[i].template = Core.template;
-    els[i].tag = Core.tag;
-    els[i].elsByTag = Core.elsByTag;
-    els[i].attr = Core.attr;
-    els[i].val = Core.val
+  if(source.substr(0, 5) == "<?xml") {
+    xmlDOM = Core.parseXML(xml);
+    var els = xmlDOM.getElementsByTagName("*");
+    for(var i = 0;i < els.length;i++) {
+      els[i].template = Core.template;
+      els[i].tag = Core.tag;
+      els[i].elsByTag = Core.elsByTag;
+      els[i].attr = Core.attr;
+      els[i].val = Core.val
+    }
+    xmlDOM.template = Core.template;
+    data.allergies = Allergies.process(xmlDOM);
+    data.demographics = Demographics.process(xmlDOM);
+    data.encounters = Encounters.process(xmlDOM);
+    data.immunizations = Immunizations.process(xmlDOM);
+    data.labs = Labs.process(xmlDOM);
+    data.medications = Medications.process(xmlDOM);
+    data.problems = Problems.process(xmlDOM);
+    data.procedures = Procedures.process(xmlDOM);
+    data.vitals = Vitals.process(xmlDOM);
+    addMethods([data.allergies, data.demographics, data.encounters, data.immunizations, data.labs, data.medications, data.problems, data.procedures, data.vitals])
+  }else {
+    data = JSON.parse(source)
   }
-  xmlDOM.template = Core.template;
-  data.allergies = Allergies.process(xmlDOM);
-  data.demographics = Demographics.process(xmlDOM);
-  data.encounters = Encounters.process(xmlDOM);
-  data.immunizations = Immunizations.process(xmlDOM);
-  data.labs = Labs.process(xmlDOM);
-  data.medications = Medications.process(xmlDOM);
-  data.plan = Plan.process(xmlDOM);
-  data.problems = Problems.process(xmlDOM);
-  data.procedures = Procedures.process(xmlDOM);
-  data.vitals = Vitals.process(xmlDOM);
-  addMethods([data.allergies, data.demographics, data.encounters, data.immunizations, data.labs, data.medications, data.plan, data.problems, data.procedures, data.vitals]);
-  return{data:data, xmlDOM:xmlDOM, allergies:allergies, demographics:demographics, encounters:encounters, immunizations:immunizations, labs:labs, medications:medications, plan:plan, problems:problems, procedures:procedures, vitals:vitals}
+  return{data:data, xmlDOM:xmlDOM, allergies:allergies, demographics:demographics, encounters:encounters, immunizations:immunizations, labs:labs, medications:medications, problems:problems, procedures:procedures, vitals:vitals}
 };
 window.BlueButton = BlueButton;
 
