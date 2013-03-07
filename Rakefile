@@ -89,7 +89,7 @@ task :build do
   
   ### DONE ###
   
-msg = <<-msg
+  msg = <<-msg
 
 
   Files written:
@@ -102,6 +102,48 @@ msg = <<-msg
 msg
 
   puts msg.success
+  
+end
+
+
+desc "Build One Pager"
+task :page do
+  
+  xml = File.open("sample_data/CCDA XML/hl7_ccd.xml", "r") { |f| f.read }
+  bbjs = File.open("build/bluebutton-latest.js", "r") { |f| f.read }
+  
+  page = <<-page
+<html>
+<head>
+  <title>Blue Button</title>
+</head>
+<body>
+  <pre id="result"></pre>
+  <textarea id="xml" style="display:none">
+page
+  
+  page << xml
+  
+  page << <<-page
+  </textarea>
+  <script>
+page
+  
+  page << bbjs
+  
+  page << <<-page
+  </script>
+  <script>
+    var xml = document.getElementById('xml').value;
+    var bb = BlueButton(xml);
+    var el = document.getElementById('result');
+    el.innerHTML = bb.data.json();
+  </script>
+</body>
+</html>
+page
+  
+  File.open("build/bluebutton.html", "w") { |f| f.puts(page) }
   
 end
 
