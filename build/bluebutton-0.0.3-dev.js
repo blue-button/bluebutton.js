@@ -343,6 +343,7 @@ var BlueButton = function(source) {
   var vitals = function() {
     return data.vitals
   };
+  source = source.replace(/^\s+|\s+$/g, "");
   if(source.substr(0, 5) == "<?xml") {
     xmlDOM = Core.parseXML(xml);
     var els = xmlDOM.getElementsByTagName("*");
@@ -363,7 +364,7 @@ var BlueButton = function(source) {
     data.problems = Problems.process(xmlDOM);
     data.procedures = Procedures.process(xmlDOM);
     data.vitals = Vitals.process(xmlDOM);
-    addMethods([data.allergies, data.demographics, data.encounters, data.immunizations, data.labs, data.medications, data.problems, data.procedures, data.vitals])
+    addMethods([data, data.allergies, data.demographics, data.encounters, data.immunizations, data.labs, data.medications, data.problems, data.procedures, data.vitals])
   }else {
     data = JSON.parse(source)
   }

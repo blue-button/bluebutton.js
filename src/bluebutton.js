@@ -28,6 +28,8 @@ var BlueButton = function (source) {
   // init
   
   // parse as XML
+  // remove leading and trailing whitespace
+  source = source.replace(/^\s+|\s+$/g,'');
   if (source.substr(0, 5) == "<?xml") {
     xmlDOM = Core.parseXML(xml);
     
@@ -53,6 +55,7 @@ var BlueButton = function (source) {
     data.vitals = Vitals.process(xmlDOM);
     
     addMethods([
+      data,
       data.allergies,
       data.demographics,
       data.encounters,
