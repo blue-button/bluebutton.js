@@ -109,6 +109,8 @@ end
 desc "Build One Pager"
 task :page do
   
+  puts "\nBuilding page BlueButton.html".task, ""
+  
   xml = File.open("sample_data/CCDA XML/hl7_ccd.xml", "r") { |f| f.read }
   bbjs = File.open("build/bluebutton-latest.js", "r") { |f| f.read }
   
@@ -145,6 +147,14 @@ page
   
   File.open("build/bluebutton.html", "w") { |f| f.puts(page) }
   
+  puts "  File written: build/bluebutton.html".success, ""
+  
 end
 
-task :default => :build
+desc "Build All"
+task :all do
+  Rake::Task["build"].execute
+  Rake::Task["page"].execute
+end
+
+task :default => :all

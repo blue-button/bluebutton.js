@@ -27,6 +27,15 @@ var Core = function() {
     return xml;
   };
   
+  var emptyEl = function() {
+    el = document.createElement();
+    el.elsByTag = Core.elsByTag;
+    el.tag = Core.tag;
+    el.attr = Core.attr;
+    el.val = Core.val;
+    return el;
+  };
+  
   var tagAttrVal = function (xmlDOM, tag, attr, value) {
     var el = xmlDOM.getElementsByTagName(tag);
     for (var i = 0; i < el.length; i++) {
@@ -38,11 +47,20 @@ var Core = function() {
   
   var template = function(templateId) {
     var el = tagAttrVal(this, 'templateId', 'root', templateId);
-    return el.parentElement;
+    if (!el) {
+      return emptyEl();
+    } else {
+      return el.parentElement;
+    }
   };
   
   var tag = function(tag) {
-    return this.getElementsByTagName(tag)[0];
+    var el = this.getElementsByTagName(tag)[0];
+    if (!el) {
+      return emptyEl();
+    } else {
+      return el;
+    }
   };
   
   var elsByTag = function(tag) {
@@ -50,14 +68,24 @@ var Core = function() {
   };
   
   var attr = function(attr) {
+    if (!this) { return null; }
     return this.getAttribute(attr);
   };
   
   var val = function() {
-    return this.childNodes[0].nodeValue;
+    if (!this) { return null; }
+    try {
+      return this.childNodes[0].nodeValue;
+    } catch (e) {
+      return null;
+    }
   };
   
   var parseDate = function(str) {
+    if (!str || typeof str !== "string") {
+      console.log("Error: date is not a string");
+      return null;
+    }
     var year = str.substr(0, 4);
     var month = str.substr(4, 2);
     var day = str.substr(6, 2);
@@ -66,7 +94,6 @@ var Core = function() {
   
   return {
     parseXML: parseXML,
-    tagAttrVal: tagAttrVal,
     template: template,
     tag: tag,
     elsByTag: elsByTag,
