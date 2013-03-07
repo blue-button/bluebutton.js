@@ -25,7 +25,7 @@ bb.medications().json();
 </style>
 <button onclick="load()">Use Sample Data and Convert</button> <button onclick="convert()">Convert</button> <button onclick="clearAll()">Clear</button>
 
-[Demographics](#demographics-section), [Allergies](#allergies-section), [Encounters](#encounters-section), [Immunizations](#immunizations-section), [Labs](#labs-section), [Medications](#medications-section), [Care Plan](#plan-section), [Problems](#problems-section), [Procedures](#procedures-section), [Vitals](#vitals-section)
+[Demographics](#demographics-section), [Allergies](#allergies-section), [Encounters](#encounters-section), [Immunizations](#immunizations-section), [Labs](#labs-section), [Medications](#medications-section), [Problems](#problems-section), [Procedures](#procedures-section), [Vitals](#vitals-section)
 
 <a name="demographics-section"></a>
 
@@ -69,13 +69,6 @@ bb.medications().json();
 <pre><code id="medications"></code></pre>
 
 
-<a name="plan-section"></a>
-
-## Care Plan
-
-<pre><code id="plan"></code></pre>
-
-
 <a name="problems-section"></a>
 
 ## Problems
@@ -107,7 +100,6 @@ bb.medications().json();
   var immunizations = document.getElementById('immunizations');
   var labs = document.getElementById('labs');
   var medications = document.getElementById('medications');
-  var plan = document.getElementById('plan');
   var problems = document.getElementById('problems');
   var procedures = document.getElementById('procedures');
   var vitals = document.getElementById('vitals');
@@ -139,7 +131,6 @@ bb.medications().json();
     immunizations.innerHTML = '';
     labs.innerHTML = '';
     medications.innerHTML = '';
-    plan.innerHTML = '';
     problems.innerHTML = '';
     procedures.innerHTML = '';
     vitals.innerHTML = '';
@@ -157,7 +148,6 @@ bb.medications().json();
     immunizations.innerHTML = hl(bb.immunizations().json());
     labs.innerHTML = hl(bb.labs().json());
     medications.innerHTML = hl(bb.medications().json());
-    plan.innerHTML = hl(bb.plan().json());
     problems.innerHTML = hl(bb.problems().json());
     procedures.innerHTML = hl(bb.procedures().json());
     vitals.innerHTML = hl(bb.vitals().json());

@@ -1,6 +1,6 @@
 // bluebutton.js - The Public Object and Interface
 
-var BlueButton = function (xml) {
+var BlueButton = function (source) {
   // dependancies
   
   // properties
@@ -26,40 +26,48 @@ var BlueButton = function (xml) {
   var vitals = function () { return data.vitals };
   
   // init
-  xmlDOM = Core.parseXML(xml);
   
-  // Add Core methods to XML elements in DOM
-  var els = xmlDOM.getElementsByTagName('*');
-  for (var i = 0; i < els.length; i++) {
-    els[i].template = Core.template;
-    els[i].tag = Core.tag;
-    els[i].elsByTag = Core.elsByTag;
-    els[i].attr = Core.attr;
-    els[i].val = Core.val;
-  };
-  xmlDOM.template = Core.template;
-  
-  data.allergies = Allergies.process(xmlDOM);
-  data.demographics  = Demographics.process(xmlDOM);
-  data.encounters = Encounters.process(xmlDOM);
-  data.immunizations = Immunizations.process(xmlDOM);
-  data.labs = Labs.process(xmlDOM);
-  data.medications = Medications.process(xmlDOM);
-  data.problems = Problems.process(xmlDOM);
-  data.procedures = Procedures.process(xmlDOM);
-  data.vitals = Vitals.process(xmlDOM);
-  
-  addMethods([
-    data.allergies,
-    data.demographics,
-    data.encounters,
-    data.immunizations,
-    data.labs,
-    data.medications,
-    data.problems,
-    data.procedures,
-    data.vitals
-  ]);
+  // parse as XML
+  if (source.substr(0, 5) == "<?xml") {
+    xmlDOM = Core.parseXML(xml);
+    
+    // Add Core methods to XML elements in DOM
+    var els = xmlDOM.getElementsByTagName('*');
+    for (var i = 0; i < els.length; i++) {
+      els[i].template = Core.template;
+      els[i].tag = Core.tag;
+      els[i].elsByTag = Core.elsByTag;
+      els[i].attr = Core.attr;
+      els[i].val = Core.val;
+    };
+    xmlDOM.template = Core.template;
+    
+    data.allergies = Allergies.process(xmlDOM);
+    data.demographics  = Demographics.process(xmlDOM);
+    data.encounters = Encounters.process(xmlDOM);
+    data.immunizations = Immunizations.process(xmlDOM);
+    data.labs = Labs.process(xmlDOM);
+    data.medications = Medications.process(xmlDOM);
+    data.problems = Problems.process(xmlDOM);
+    data.procedures = Procedures.process(xmlDOM);
+    data.vitals = Vitals.process(xmlDOM);
+    
+    addMethods([
+      data.allergies,
+      data.demographics,
+      data.encounters,
+      data.immunizations,
+      data.labs,
+      data.medications,
+      data.problems,
+      data.procedures,
+      data.vitals
+    ]);
+    
+  // parse as JSON
+  } else {
+    data = JSON.parse(source)
+  }
   
   return {
     data: data,
