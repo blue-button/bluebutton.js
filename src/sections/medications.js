@@ -33,7 +33,10 @@ var Medications = function () {
           translation_code_system = el.attr('codeSystem'),
           translation_code_system_name = el.attr('codeSystemName');
       
-      var dose_quantity = entry.tag('doseQuantity').attr('value');
+      el = entry.tag('doseQuantity');
+      var dose_value = el.attr('value'),
+          dose_unit = el.attr('unit');
+      
       el = entry.tag('rateQuantity');
       var rate_quantity_value = el.attr('value'),
           rate_quantity_unit = el.attr('unit');
@@ -88,7 +91,10 @@ var Medications = function () {
             code_system_name: translation_code_system_name
           }
         },
-        dose_quantity: dose_quantity,
+        dose_quantity: {
+          value: dose_value,
+          unit: dose_unit
+        },
         rate_quantity: {
           value: rate_quantity_value,
           unit: rate_quantity_unit
