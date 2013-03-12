@@ -23,7 +23,7 @@ bb.medications().json();
     white-space: pre;
   }
 </style>
-<button onclick="load()">Use Sample Data and Convert</button> <button onclick="convert()">Convert</button> <button onclick="clearAll()">Clear</button>
+<button onclick="load('ccda')">Use CCDA Sample Data and Convert</button> <button onclick="load('va_c32')">Use VA C32 Sample Data and Convert</button> <button onclick="convert()">Convert</button> <button onclick="clearAll()">Clear</button>
 
 [Demographics](#demographics-section), [Allergies](#allergies-section), [Encounters](#encounters-section), [Immunizations](#immunizations-section), [Labs](#labs-section), [Medications](#medications-section), [Problems](#problems-section), [Procedures](#procedures-section), [Vitals](#vitals-section)
 
@@ -31,21 +31,21 @@ bb.medications().json();
 
 ## Demographics
 
-<pre><code id="demographics"></code></pre>
+<pre><code id="demographics" class="javascript"></code></pre>
 
 
 <a name="allergies-section"></a>
 
 ## Allergies
 
-<pre><code id="allergies"></code></pre>
+<pre><code id="allergies" class="javascript"></code></pre>
 
 
 <a name="encounters-section"></a>
 
 ## Encounters
 
-<pre><code id="encounters"></code></pre>
+<pre><code id="encounters" class="javascript"></code></pre>
 
 
 <a name="immunizations-section"></a>
@@ -59,35 +59,35 @@ bb.medications().json();
 
 ## Labs
 
-<pre><code id="labs"></code></pre>
+<pre><code id="labs" class="javascript"></code></pre>
 
 
 <a name="medications-section"></a>
 
 ## Medications
 
-<pre><code id="medications"></code></pre>
+<pre><code id="medications" class="javascript"></code></pre>
 
 
 <a name="problems-section"></a>
 
 ## Problems
 
-<pre><code id="problems"></code></pre>
+<pre><code id="problems" class="javascript"></code></pre>
 
 
 <a name="procedures-section"></a>
 
 ## Procedures
 
-<pre><code id="procedures"></code></pre>
+<pre><code id="procedures" class="javascript"></code></pre>
 
 
 <a name="vitals-section"></a>
 
 ## Vitals
 
-<pre><code id="vitals"></code></pre>
+<pre><code id="vitals" class="javascript"></code></pre>
 
 
 <script src="/bluebutton-latest-dev.js"></script>
@@ -108,37 +108,43 @@ bb.medications().json();
     return hljs.highlight('javascript', src).value
   }
   
-  function load() {
+  function load(kind) {
     var xhReq = new XMLHttpRequest();
-    xhReq.open('GET', '/hl7_ccd.xml', false);
+    
+    var url;
+    switch (kind) {
+      case 'ccda': url = '/hl7_ccd.xml'
+        break;
+      case 'va_c32': url = '/VA_CCD_Sample_File_Version_12_3.xml'
+        break;
+    }
+    
+    xhReq.open('GET', url, false);
     xhReq.send(null);
     var xml = xhReq.responseText;
     
     // TODO: Replace '\t' in xml with '  '
     xml = xml.replace(/\t/g, '  ');
     
+    document.getElementById('xml').value = '';
     clearAll();
     document.getElementById('xml').value = xml;
     convert();
   }
   
   function clearAll() {
-    document.getElementById('xml').value = '';
+    var els = document.getElementsByTagName('code');
     
-    demographics.innerHTML = '';
-    allergies.innerHTML = '';
-    encounters.innerHTML = '';
-    immunizations.innerHTML = '';
-    labs.innerHTML = '';
-    medications.innerHTML = '';
-    problems.innerHTML = '';
-    procedures.innerHTML = '';
-    vitals.innerHTML = '';
+    // i = 1 so it doesn't clear the sample usage example
+    for (var i = 1; i < els.length; i++) {
+      els[i].innerHTML = '';
+    };
     
     bb = null;
   }
   
   function convert() {
+    clearAll();
     xml = document.getElementById('xml').value;
     bb = BlueButton(xml);
     
