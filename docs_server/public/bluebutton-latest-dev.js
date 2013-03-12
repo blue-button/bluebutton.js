@@ -2,7 +2,7 @@
  * BlueButton.js
  */
 
-// v.0.0.4
+// v.0.0.5
 
 var Core = function() {
   var parseXML = function(data) {
@@ -241,7 +241,8 @@ var Medications = function() {
       var product_name = el.attr("displayName"), product_code = el.attr("code"), product_code_system = el.attr("codeSystem");
       el = entry.tag("manufacturedProduct").tag("translation");
       var translation_name = el.attr("displayName"), translation_code = el.attr("code"), translation_code_system = el.attr("codeSystem"), translation_code_system_name = el.attr("codeSystemName");
-      var dose_quantity = entry.tag("doseQuantity").attr("value");
+      el = entry.tag("doseQuantity");
+      var dose_value = el.attr("value"), dose_unit = el.attr("unit");
       el = entry.tag("rateQuantity");
       var rate_quantity_value = el.attr("value"), rate_quantity_unit = el.attr("unit");
       el = entry.tag("precondition").tag("value");
@@ -255,7 +256,7 @@ var Medications = function() {
       var administration_name = el.attr("displayName"), administration_code = el.attr("code"), administration_code_system = el.attr("codeSystem"), administration_code_system_name = el.attr("codeSystemName");
       el = entry.tag("performer");
       var prescriber_organization = el.tag("name").val(), prescriber_person = null;
-      data.push({effective_time:{low:low, high:high}, product:{name:product_name, code:product_code, code_system:product_code_system, translation:{name:translation_name, code:translation_code, code_system:translation_code_system, code_system_name:translation_code_system_name}}, dose_quantity:dose_quantity, rate_quantity:{value:rate_quantity_value, unit:rate_quantity_unit}, precondition:{name:precondition_name, code:precondition_code, code_system:precondition_code_system}, reason:{name:reason_name, 
+      data.push({effective_time:{low:low, high:high}, product:{name:product_name, code:product_code, code_system:product_code_system, translation:{name:translation_name, code:translation_code, code_system:translation_code_system, code_system_name:translation_code_system_name}}, dose_quantity:{value:dose_value, unit:dose_unit}, rate_quantity:{value:rate_quantity_value, unit:rate_quantity_unit}, precondition:{name:precondition_name, code:precondition_code, code_system:precondition_code_system}, reason:{name:reason_name, 
       code:reason_code, code_system:reason_code_system}, route:{name:route_name, code:route_code, code_system:route_code_system, code_system_name:route_code_system_name}, vehicle:{name:vehicle_name, code:vehicle_code, code_system:vehicle_code_system, code_system_name:vehicle_code_system_name}, administration:{name:administration_name, code:administration_code, code_system:administration_code_system, code_system_name:administration_code_system_name}, prescriber:{organization:prescriber_organization, 
       person:prescriber_person}})
     }
