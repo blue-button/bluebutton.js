@@ -28,7 +28,7 @@ var Core = function() {
   };
   
   var emptyEl = function() {
-    el = document.createElement();
+    el = document.createElement('empty');
     el.elsByTag = Core.elsByTag;
     el.tag = Core.tag;
     el.attr = Core.attr;
