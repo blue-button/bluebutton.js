@@ -451,7 +451,7 @@ var BlueButton = function(source) {
     if(xmlDOM.template("1.3.6.1.4.1.19376.1.5.3.1.1.1").tagName == "EMPTY") {
       type = "ccda"
     }else {
-      type == "c32"
+      type = "c32"
     }
     data.allergies = Allergies.process(xmlDOM, type);
     data.demographics = Demographics.process(xmlDOM, type);
