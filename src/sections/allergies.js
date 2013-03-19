@@ -6,13 +6,20 @@ var Allergies = function () {
   var parseDate = Core.parseDate;
   
   // properties
-  var sectionTemplateID = '2.16.840.1.113883.10.20.22.2.6.1';
+  var CCDASectionTemplateID = '2.16.840.1.113883.10.20.22.2.6.1';
+  var C32SectionTemplateID = '2.16.840.1.113883.3.88.11.83.102';
   
   // methods
-  var process = function (xmlDOM) {
-    var data = [], el, entries, entry;
+  var process = function (xmlDOM, type) {
+    var data = [], el, entries, entry, templateID;
     
-    el = xmlDOM.template(sectionTemplateID);
+    if (type == 'ccda') {
+      templateID = CCDASectionTemplateID;
+    } else {
+      templateID = C32SectionTemplateID;
+    }
+    
+    el = xmlDOM.template(templateID);
     entries = el.elsByTag('entry');
     
     for (var i = 0; i < entries.length; i++) {
@@ -32,7 +39,11 @@ var Allergies = function () {
           reaction_type_code_system_name = el.attr('codeSystemName');
       
       // reaction
-      el = entry.template('2.16.840.1.113883.10.20.22.4.9').tag('value');
+      if (type == 'ccda') {
+        el = entry.template('2.16.840.1.113883.10.20.22.4.9').tag('value');
+      } else {
+        el = entry.template('2.16.840.1.113883.10.20.1.54').tag('value');
+      }
       var reaction_name = el.attr('displayName'),
           reaction_code = el.attr('code'),
           reaction_code_system = el.attr('codeSystem');
@@ -86,6 +97,12 @@ var Allergies = function () {
       });
     }
     return data;
+  };
+  
+  var parseCCDA = function (xmlDOM) {
+    
+    
+    return 
   };
   
   return {

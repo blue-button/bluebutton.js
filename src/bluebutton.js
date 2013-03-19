@@ -5,6 +5,7 @@ var BlueButton = function (source) {
   
   // properties
   var xmlDOM = null,
+      type,
       data = {};
   
   // private methods
@@ -44,15 +45,22 @@ var BlueButton = function (source) {
     };
     xmlDOM.template = Core.template;
     
-    data.allergies = Allergies.process(xmlDOM);
-    data.demographics  = Demographics.process(xmlDOM);
-    data.encounters = Encounters.process(xmlDOM);
-    data.immunizations = Immunizations.process(xmlDOM);
-    data.labs = Labs.process(xmlDOM);
-    data.medications = Medications.process(xmlDOM);
-    data.problems = Problems.process(xmlDOM);
-    data.procedures = Procedures.process(xmlDOM);
-    data.vitals = Vitals.process(xmlDOM);
+    // Detect document type (CCDA or VA C32)
+    if (xmlDOM.template('1.3.6.1.4.1.19376.1.5.3.1.1.1').tagName == 'EMPTY') {
+      type = 'ccda';
+    } else {
+      type == 'c32';
+    }
+    
+    data.allergies = Allergies.process(xmlDOM, type);
+    data.demographics  = Demographics.process(xmlDOM, type);
+    data.encounters = Encounters.process(xmlDOM, type);
+    data.immunizations = Immunizations.process(xmlDOM, type);
+    data.labs = Labs.process(xmlDOM, type);
+    data.medications = Medications.process(xmlDOM, type);
+    data.problems = Problems.process(xmlDOM, type);
+    data.procedures = Procedures.process(xmlDOM, type);
+    data.vitals = Vitals.process(xmlDOM, type);
     
     addMethods([
       data,

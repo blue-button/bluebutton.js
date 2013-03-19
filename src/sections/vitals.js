@@ -6,13 +6,21 @@ var Vitals = function () {
   var parseDate = Core.parseDate;
   
   // properties
-  var sectionTemplateID = '2.16.840.1.113883.10.20.22.2.4.1';
+  var CCDASectionTemplateID = '2.16.840.1.113883.10.20.22.2.4.1';
+  var C32SectionTemplateID = '2.16.840.1.113883.10.20.1.16';
   
   // methods
-  var process = function (xmlDOM) {
-    var data = [], results_data = [], el, entries, entry, results, result;
+  var process = function (xmlDOM, type) {
+    var data = [], results_data = [], el, entries, entry, results, result, templateID;
     
-    el = xmlDOM.template(sectionTemplateID);
+    if (type == 'ccda') {
+      templateID = CCDASectionTemplateID;
+    } else {
+      templateID = C32SectionTemplateID;
+    }
+    
+    el = xmlDOM.template(templateID);
+    
     entries = el.elsByTag('entry');
     
     for (var i = 0; i < entries.length; i++) {
@@ -23,8 +31,8 @@ var Vitals = function () {
       
       results = entry.elsByTag('component');
       
-      for (var i = 0; i < results.length; i++) {
-        result = results[i];
+      for (var j = 0; j < results.length; j++) {
+        result = results[j];
         
         // Results
         
@@ -53,7 +61,8 @@ var Vitals = function () {
         results: results_data
       });
     }
-    return data;
+    // return data;
+    return [];
   };
   
   return {

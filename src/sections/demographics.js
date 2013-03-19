@@ -6,13 +6,20 @@ var Demographics = function () {
   var parseDate = Core.parseDate;
   
   // properties
-  var sectionTemplateID = '2.16.840.1.113883.10.20.22.1.1';
+  var CCDASectionTemplateID = '2.16.840.1.113883.10.20.22.1.1';
+  var C32SectionTemplateID = '1.3.6.1.4.1.19376.1.5.3.1.1.1';
   
   // methods
-  var process = function (xmlDOM) {
-    var data, el, patient;
+  var process = function (xmlDOM, type) {
+    var data, el, patient, templateID;
     
-    el = xmlDOM.template(sectionTemplateID);
+    if (type == 'ccda') {
+      templateID = CCDASectionTemplateID;
+    } else {
+      templateID = C32SectionTemplateID;
+    }
+    
+    el = xmlDOM.template(templateID);
     patient = el.tag('patientRole');
     
     el = patient.tag('patient').tag('name');
