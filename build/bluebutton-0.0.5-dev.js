@@ -22,7 +22,7 @@ var Core = function() {
     return xml
   };
   var emptyEl = function() {
-    el = document.createElement();
+    el = document.createElement("empty");
     el.elsByTag = Core.elsByTag;
     el.tag = Core.tag;
     el.attr = Core.attr;
@@ -86,10 +86,16 @@ var Core = function() {
 }();
 var Allergies = function() {
   var parseDate = Core.parseDate;
-  var sectionTemplateID = "2.16.840.1.113883.10.20.22.2.6.1";
-  var process = function(xmlDOM) {
-    var data = [], el, entries, entry;
-    el = xmlDOM.template(sectionTemplateID);
+  var CCDASectionTemplateID = "2.16.840.1.113883.10.20.22.2.6.1";
+  var C32SectionTemplateID = "2.16.840.1.113883.3.88.11.83.102";
+  var process = function(xmlDOM, type) {
+    var data = [], el, entries, entry, templateID;
+    if(type == "ccda") {
+      templateID = CCDASectionTemplateID
+    }else {
+      templateID = C32SectionTemplateID
+    }
+    el = xmlDOM.template(templateID);
     entries = el.elsByTag("entry");
     for(var i = 0;i < entries.length;i++) {
       entry = entries[i];
@@ -97,7 +103,11 @@ var Allergies = function() {
       var name = el.attr("displayName"), code = el.attr("code"), code_system = el.attr("codeSystem"), code_system_name = el.attr("codeSystemName");
       el = entry.template("2.16.840.1.113883.10.20.22.4.7").tag("value");
       var reaction_type_name = el.attr("displayName"), reaction_type_code = el.attr("code"), reaction_type_code_system = el.attr("codeSystem"), reaction_type_code_system_name = el.attr("codeSystemName");
-      el = entry.template("2.16.840.1.113883.10.20.22.4.9").tag("value");
+      if(type == "ccda") {
+        el = entry.template("2.16.840.1.113883.10.20.22.4.9").tag("value")
+      }else {
+        el = entry.template("2.16.840.1.113883.10.20.1.54").tag("value")
+      }
       var reaction_name = el.attr("displayName"), reaction_code = el.attr("code"), reaction_code_system = el.attr("codeSystem");
       el = entry.template("2.16.840.1.113883.10.20.22.4.8").tag("value");
       var severity = el.attr("displayName");
@@ -110,14 +120,23 @@ var Allergies = function() {
     }
     return data
   };
+  var parseCCDA = function(xmlDOM) {
+    return
+  };
   return{process:process}
 }();
 var Demographics = function() {
   var parseDate = Core.parseDate;
-  var sectionTemplateID = "2.16.840.1.113883.10.20.22.1.1";
-  var process = function(xmlDOM) {
-    var data, el, patient;
-    el = xmlDOM.template(sectionTemplateID);
+  var CCDASectionTemplateID = "2.16.840.1.113883.10.20.22.1.1";
+  var C32SectionTemplateID = "1.3.6.1.4.1.19376.1.5.3.1.1.1";
+  var process = function(xmlDOM, type) {
+    var data, el, patient, templateID;
+    if(type == "ccda") {
+      templateID = CCDASectionTemplateID
+    }else {
+      templateID = C32SectionTemplateID
+    }
+    el = xmlDOM.template(templateID);
     patient = el.tag("patientRole");
     el = patient.tag("patient").tag("name");
     var prefix = el.tag("prefix").val(), given = el.tag("given").val(), family = el.tag("family").val();
@@ -145,10 +164,16 @@ var Demographics = function() {
 }();
 var Encounters = function() {
   var parseDate = Core.parseDate;
-  var sectionTemplateID = "2.16.840.1.113883.10.20.22.2.22.1";
-  var process = function(xmlDOM) {
-    var data = [], el, entries, entry;
-    el = xmlDOM.template(sectionTemplateID);
+  var CCDASectionTemplateID = "2.16.840.1.113883.10.20.22.2.22.1";
+  var C32SectionTemplateID = "2.16.840.1.113883.10.20.1.3";
+  var process = function(xmlDOM, type) {
+    var data = [], el, entries, entry, templateID;
+    if(type == "ccda") {
+      templateID = CCDASectionTemplateID
+    }else {
+      templateID = C32SectionTemplateID
+    }
+    el = xmlDOM.template(templateID);
     entries = el.elsByTag("entry");
     for(var i = 0;i < entries.length;i++) {
       entry = entries[i];
@@ -172,10 +197,16 @@ var Encounters = function() {
 }();
 var Immunizations = function() {
   var parseDate = Core.parseDate;
-  var sectionTemplateID = "2.16.840.1.113883.10.20.22.2.2";
-  var process = function(xmlDOM) {
-    var data = [], el, entries, entry;
-    el = xmlDOM.template(sectionTemplateID);
+  var CCDASectionTemplateID = "2.16.840.1.113883.10.20.22.2.2";
+  var C32SectionTemplateID = "2.16.840.1.113883.10.20.1.6";
+  var process = function(xmlDOM, type) {
+    var data = [], el, entries, entry, templateID;
+    if(type == "ccda") {
+      templateID = CCDASectionTemplateID
+    }else {
+      templateID = C32SectionTemplateID
+    }
+    el = xmlDOM.template(templateID);
     entries = el.elsByTag("entry");
     for(var i = 0;i < entries.length;i++) {
       entry = entries[i];
@@ -199,18 +230,24 @@ var Immunizations = function() {
 }();
 var Labs = function() {
   var parseDate = Core.parseDate;
-  var sectionTemplateID = "2.16.840.1.113883.10.20.22.2.3.1";
-  var process = function(xmlDOM) {
-    var data = [], results_data = [], el, entries, entry, results, result;
-    el = xmlDOM.template(sectionTemplateID);
+  var CCDASectionTemplateID = "2.16.840.1.113883.10.20.22.2.3.1";
+  var C32SectionTemplateID = "2.16.840.1.113883.10.20.1.14";
+  var process = function(xmlDOM, type) {
+    var data = [], results_data = [], el, entries, entry, results, result, templateID;
+    if(type == "ccda") {
+      templateID = CCDASectionTemplateID
+    }else {
+      templateID = C32SectionTemplateID
+    }
+    el = xmlDOM.template(templateID);
     entries = el.elsByTag("entry");
     for(var i = 0;i < entries.length;i++) {
       entry = entries[i];
       el = entry.tag("code");
       var name = el.attr("displayName"), code = el.attr("code"), code_system = el.attr("codeSystem"), code_system_name = el.attr("codeSystemName");
       results = entry.elsByTag("component");
-      for(var i = 0;i < results.length;i++) {
-        result = results[i];
+      for(var j = 0;j < results.length;j++) {
+        result = results[j];
         var date = parseDate(result.tag("effectiveTime").attr("value"));
         el = result.tag("code");
         var name = el.attr("displayName"), code = el.attr("code"), code_system = el.attr("codeSystem"), code_system_name = el.attr("codeSystemName");
@@ -228,10 +265,16 @@ var Labs = function() {
 }();
 var Medications = function() {
   var parseDate = Core.parseDate;
-  var sectionTemplateID = "2.16.840.1.113883.10.20.22.2.1.1";
-  var process = function(xmlDOM) {
-    var data = [], el, entries, entry;
-    el = xmlDOM.template(sectionTemplateID);
+  var CCDASectionTemplateID = "2.16.840.1.113883.10.20.22.2.1.1";
+  var C32SectionTemplateID = "2.16.840.1.113883.3.88.11.83.112";
+  var process = function(xmlDOM, type) {
+    var data = [], el, entries, entry, templateID;
+    if(type == "ccda") {
+      templateID = CCDASectionTemplateID
+    }else {
+      templateID = C32SectionTemplateID
+    }
+    el = xmlDOM.template(templateID);
     entries = el.elsByTag("entry");
     for(var i = 0;i < entries.length;i++) {
       entry = entries[i];
@@ -266,10 +309,16 @@ var Medications = function() {
 }();
 var Problems = function() {
   var parseDate = Core.parseDate;
-  var sectionTemplateID = "2.16.840.1.113883.10.20.22.2.5";
-  var process = function(xmlDOM) {
-    var data = [], el, entries, entry;
-    el = xmlDOM.template(sectionTemplateID);
+  var CCDASectionTemplateID = "2.16.840.1.113883.10.20.22.2.5";
+  var C32SectionTemplateID = "2.16.840.1.113883.10.20.1.11";
+  var process = function(xmlDOM, type) {
+    var data = [], el, entries, entry, templateID;
+    if(type == "ccda") {
+      templateID = CCDASectionTemplateID
+    }else {
+      templateID = C32SectionTemplateID
+    }
+    el = xmlDOM.template(templateID);
     entries = el.elsByTag("entry");
     for(var i = 0;i < entries.length;i++) {
       entry = entries[i];
@@ -289,10 +338,16 @@ var Problems = function() {
 }();
 var Procedures = function() {
   var parseDate = Core.parseDate;
-  var sectionTemplateID = "2.16.840.1.113883.10.20.22.2.7";
-  var process = function(xmlDOM) {
-    var data = [], el, entries, entry;
-    el = xmlDOM.template(sectionTemplateID);
+  var CCDASectionTemplateID = "2.16.840.1.113883.10.20.22.2.7";
+  var C32SectionTemplateID = "2.16.840.1.113883.10.20.1.12";
+  var process = function(xmlDOM, type) {
+    var data = [], el, entries, entry, templateID;
+    if(type == "ccda") {
+      templateID = CCDASectionTemplateID
+    }else {
+      templateID = C32SectionTemplateID
+    }
+    el = xmlDOM.template(templateID);
     entries = el.elsByTag("entry");
     for(var i = 0;i < entries.length;i++) {
       entry = entries[i];
@@ -315,18 +370,24 @@ var Procedures = function() {
 }();
 var Vitals = function() {
   var parseDate = Core.parseDate;
-  var sectionTemplateID = "2.16.840.1.113883.10.20.22.2.4.1";
-  var process = function(xmlDOM) {
-    var data = [], results_data = [], el, entries, entry, results, result;
-    el = xmlDOM.template(sectionTemplateID);
+  var CCDASectionTemplateID = "2.16.840.1.113883.10.20.22.2.4.1";
+  var C32SectionTemplateID = "2.16.840.1.113883.10.20.1.16";
+  var process = function(xmlDOM, type) {
+    var data = [], results_data = [], el, entries, entry, results, result, templateID;
+    if(type == "ccda") {
+      templateID = CCDASectionTemplateID
+    }else {
+      templateID = C32SectionTemplateID
+    }
+    el = xmlDOM.template(templateID);
     entries = el.elsByTag("entry");
     for(var i = 0;i < entries.length;i++) {
       entry = entries[i];
       el = entry.tag("effectiveTime");
       var date = parseDate(el.attr("value"));
       results = entry.elsByTag("component");
-      for(var i = 0;i < results.length;i++) {
-        result = results[i];
+      for(var j = 0;j < results.length;j++) {
+        result = results[j];
         el = result.tag("code");
         var name = el.attr("displayName"), code = el.attr("code"), code_system = el.attr("codeSystem"), code_system_name = el.attr("codeSystemName");
         el = result.tag("value");
@@ -335,12 +396,12 @@ var Vitals = function() {
       }
       data.push({date:date, results:results_data})
     }
-    return data
+    return[]
   };
   return{process:process}
 }();
 var BlueButton = function(source) {
-  var xmlDOM = null, data = {};
+  var xmlDOM = null, type, data = {};
   var addMethods = function(objects) {
     for(var i = 0;i < objects.length;i++) {
       objects[i].json = function() {
@@ -387,15 +448,20 @@ var BlueButton = function(source) {
       els[i].val = Core.val
     }
     xmlDOM.template = Core.template;
-    data.allergies = Allergies.process(xmlDOM);
-    data.demographics = Demographics.process(xmlDOM);
-    data.encounters = Encounters.process(xmlDOM);
-    data.immunizations = Immunizations.process(xmlDOM);
-    data.labs = Labs.process(xmlDOM);
-    data.medications = Medications.process(xmlDOM);
-    data.problems = Problems.process(xmlDOM);
-    data.procedures = Procedures.process(xmlDOM);
-    data.vitals = Vitals.process(xmlDOM);
+    if(xmlDOM.template("1.3.6.1.4.1.19376.1.5.3.1.1.1").tagName == "EMPTY") {
+      type = "ccda"
+    }else {
+      type == "c32"
+    }
+    data.allergies = Allergies.process(xmlDOM, type);
+    data.demographics = Demographics.process(xmlDOM, type);
+    data.encounters = Encounters.process(xmlDOM, type);
+    data.immunizations = Immunizations.process(xmlDOM, type);
+    data.labs = Labs.process(xmlDOM, type);
+    data.medications = Medications.process(xmlDOM, type);
+    data.problems = Problems.process(xmlDOM, type);
+    data.procedures = Procedures.process(xmlDOM, type);
+    data.vitals = Vitals.process(xmlDOM, type);
     addMethods([data, data.allergies, data.demographics, data.encounters, data.immunizations, data.labs, data.medications, data.problems, data.procedures, data.vitals])
   }else {
     data = JSON.parse(source)
