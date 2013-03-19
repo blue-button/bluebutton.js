@@ -126,13 +126,18 @@ bb.medications().json();
     // TODO: Replace '\t' in xml with '  '
     xml = xml.replace(/\t/g, '  ');
     
-    document.getElementById('xml').value = '';
     clearAll();
     document.getElementById('xml').value = xml;
     convert();
   }
   
   function clearAll() {
+    clearXML();
+    clearJSON();
+  }
+  
+  function clearXML() { document.getElementById('xml').value = ''; }
+  function clearJSON() {
     var els = document.getElementsByTagName('code');
     
     // i = 1 so it doesn't clear the sample usage example
@@ -144,7 +149,7 @@ bb.medications().json();
   }
   
   function convert() {
-    clearAll();
+    clearJSON();
     xml = document.getElementById('xml').value;
     bb = BlueButton(xml);
     
