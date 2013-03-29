@@ -2,12 +2,12 @@
  * BlueButton.js
  */
 
-// v.0.0.5
+// v.0.0.6
 
 var Core = function() {
   var parseXML = function(data) {
     if(!data || typeof data !== "string") {
-      console.log("Error: XML data is not a string");
+      console.log("BB Error: XML data is not a string");
       return null
     }
     var xml, tmp;
@@ -18,6 +18,10 @@ var Core = function() {
       xml = new ActiveXObject("Microsoft.XMLDOM");
       xml.async = "false";
       xml.loadXML(data)
+    }
+    if(!xml || !xml.documentElement || xml.getElementsByTagName("parsererror").length) {
+      console.log("BB Error: Could not parse XML");
+      return null
     }
     return xml
   };
@@ -42,7 +46,7 @@ var Core = function() {
     if(!el) {
       return emptyEl()
     }else {
-      return el.parentElement
+      return el.parentNode
     }
   };
   var tag = function(tag) {
@@ -86,16 +90,21 @@ var Core = function() {
 }();
 var Allergies = function() {
   var parseDate = Core.parseDate;
-  var CCDASectionTemplateID = "2.16.840.1.113883.10.20.22.2.6.1";
-  var C32SectionTemplateID = "2.16.840.1.113883.3.88.11.83.102";
   var process = function(xmlDOM, type) {
-    var data = [], el, entries, entry, templateID;
-    if(type == "ccda") {
-      templateID = CCDASectionTemplateID
-    }else {
-      templateID = C32SectionTemplateID
+    var data;
+    switch(type) {
+      case "ccda":
+        data = parseCCDA(xmlDOM);
+        break;
+      case "va_c32":
+        data = parseVAC32(xmlDOM);
+        break
     }
-    el = xmlDOM.template(templateID);
+    return data
+  };
+  var parseCCDA = function(xmlDOM) {
+    var data = [], el, entries, entry;
+    el = xmlDOM.template("2.16.840.1.113883.10.20.22.2.6.1");
     entries = el.elsByTag("entry");
     for(var i = 0;i < entries.length;i++) {
       entry = entries[i];
@@ -103,11 +112,7 @@ var Allergies = function() {
       var name = el.attr("displayName"), code = el.attr("code"), code_system = el.attr("codeSystem"), code_system_name = el.attr("codeSystemName");
       el = entry.template("2.16.840.1.113883.10.20.22.4.7").tag("value");
       var reaction_type_name = el.attr("displayName"), reaction_type_code = el.attr("code"), reaction_type_code_system = el.attr("codeSystem"), reaction_type_code_system_name = el.attr("codeSystemName");
-      if(type == "ccda") {
-        el = entry.template("2.16.840.1.113883.10.20.22.4.9").tag("value")
-      }else {
-        el = entry.template("2.16.840.1.113883.10.20.1.54").tag("value")
-      }
+      el = entry.template("2.16.840.1.113883.10.20.22.4.9").tag("value");
       var reaction_name = el.attr("displayName"), reaction_code = el.attr("code"), reaction_code_system = el.attr("codeSystem");
       el = entry.template("2.16.840.1.113883.10.20.22.4.8").tag("value");
       var severity = el.attr("displayName");
@@ -120,45 +125,72 @@ var Allergies = function() {
     }
     return data
   };
-  var parseCCDA = function(xmlDOM) {
-    return
+  var parseVAC32 = function(xmlDOM) {
+    var data = [], el, entries, entry;
+    el = xmlDOM.template("2.16.840.1.113883.3.88.11.83.102");
+    entries = el.elsByTag("entry");
+    for(var i = 0;i < entries.length;i++) {
+      entry = entries[i];
+      el = entry.template("2.16.840.1.113883.10.20.22.4.7").tag("code");
+      var name = el.attr("displayName"), code = el.attr("code"), code_system = el.attr("codeSystem"), code_system_name = el.attr("codeSystemName");
+      el = entry.template("2.16.840.1.113883.10.20.22.4.7").tag("value");
+      var reaction_type_name = el.attr("displayName"), reaction_type_code = el.attr("code"), reaction_type_code_system = el.attr("codeSystem"), reaction_type_code_system_name = el.attr("codeSystemName");
+      el = entry.template("2.16.840.1.113883.10.20.1.54").tag("value");
+      var reaction_name = el.attr("displayName"), reaction_code = el.attr("code"), reaction_code_system = el.attr("codeSystem");
+      el = entry.template("2.16.840.1.113883.10.20.22.4.8").tag("value");
+      var severity = el.attr("displayName");
+      el = entry.tag("participant").tag("code");
+      var allergen_name = el.attr("displayName"), allergen_code = el.attr("code"), allergen_code_system = el.attr("codeSystem"), allergen_code_system_name = el.attr("codeSystemName");
+      el = entry.template("2.16.840.1.113883.10.20.22.4.28").tag("value");
+      var status = el.attr("displayName");
+      data.push({date:{value:null, low:null, high:null}, observation_date:{low:null}, name:name, code:code, code_system:code_system, code_system_name:code_system_name, status:status, severity:severity, reaction:{date:{low:null}, name:reaction_name, code:reaction_code, code_system:reaction_code_system}, reaction_type:{name:reaction_type_name, code:reaction_type_code, code_system:reaction_code_system, code_system_name:reaction_type_code_system_name}, allergen:{name:allergen_name, code:allergen_code, 
+      code_system:allergen_code_system, code_system_name:allergen_code_system_name}})
+    }
+    return data
   };
   return{process:process}
 }();
 var Demographics = function() {
   var parseDate = Core.parseDate;
-  var CCDASectionTemplateID = "2.16.840.1.113883.10.20.22.1.1";
-  var C32SectionTemplateID = "1.3.6.1.4.1.19376.1.5.3.1.1.1";
   var process = function(xmlDOM, type) {
-    var data, el, patient, templateID;
-    if(type == "ccda") {
-      templateID = CCDASectionTemplateID
-    }else {
-      templateID = C32SectionTemplateID
+    var data;
+    switch(type) {
+      case "ccda":
+        data = parseCCDA(xmlDOM);
+        break;
+      case "va_c32":
+        data = parseVAC32(xmlDOM);
+        break
     }
-    el = xmlDOM.template(templateID);
+    return{name:{prefix:data.prefix, given:data.given, family:data.family}, dob:data.dob, gender:data.gender, marital_status:data.marital_status, address:{street:data.street, city:data.city, state:data.state, zip:data.zip, country:data.country}, phone:{home:data.home, work:data.work, mobile:data.mobile}, email:data.email, race:data.race, ethnicity:data.ethnicity, religion:data.religion, birthplace:{state:data.birthplace_state, zip:data.birthplace_zip, country:data.birthplace_country}, guardian:{name:{given:data.guardian_given, 
+    family:data.guardian_family}, relationship:data.guardian_relationship, address:{street:data.guardian_street, city:data.guardian_city, state:data.guardian_state, zip:data.guardian_zip, country:data.guardian_country}, phone:{home:data.guardian_home}}, provider:{organization:data.provider_organization, phone:data.provider_phone, address:{street:data.provider_street, city:data.provider_city, state:data.provider_state, zip:data.provider_zip, country:data.provider_country}}}
+  };
+  var parseCCDA = function(xmlDOM) {
+    var data = {}, el, patient;
+    el = xmlDOM.template("2.16.840.1.113883.10.20.22.1.1");
     patient = el.tag("patientRole");
     el = patient.tag("patient").tag("name");
-    var prefix = el.tag("prefix").val(), given = el.tag("given").val(), family = el.tag("family").val();
+    data.prefix = el.tag("prefix").val(), data.given = el.tag("given").val(), data.family = el.tag("family").val();
     el = patient.tag("patient");
-    var dob = parseDate(el.tag("birthTime").attr("value")), gender = el.tag("administrativeGenderCode").attr("displayName"), marital_status = el.tag("maritalStatusCode").attr("displayName");
+    data.dob = parseDate(el.tag("birthTime").attr("value")), data.gender = el.tag("administrativeGenderCode").attr("displayName"), data.marital_status = el.tag("maritalStatusCode").attr("displayName");
     el = patient.tag("addr");
-    var street = el.tag("streetAddressLine").val(), city = el.tag("city").val(), state = el.tag("state").val(), zip = el.tag("postalCode").val(), country = el.tag("country").val();
+    data.street = el.tag("streetAddressLine").val(), data.city = el.tag("city").val(), data.state = el.tag("state").val(), data.zip = el.tag("postalCode").val(), data.country = el.tag("country").val();
     el = patient.tag("telecom");
-    var home = el.attr("value"), work = null, mobile = null;
-    email = null;
-    var race = patient.tag("raceCode").attr("displayName"), ethnicity = patient.tag("ethnicGroupCode").attr("displayName"), religion = patient.tag("religiousAffiliationCode").attr("displayName"), el = patient.tag("birthplace");
-    var birthplace_state = el.tag("state").val(), birthplace_zip = el.tag("postalCode").val(), birthplace_country = el.tag("country").val();
+    data.home = el.attr("value"), data.work = null, data.mobile = null;
+    data.email = null;
+    data.race = patient.tag("raceCode").attr("displayName"), data.ethnicity = patient.tag("ethnicGroupCode").attr("displayName"), data.religion = patient.tag("religiousAffiliationCode").attr("displayName"), el = patient.tag("birthplace");
+    data.birthplace_state = el.tag("state").val(), data.birthplace_zip = el.tag("postalCode").val(), data.birthplace_country = el.tag("country").val();
     el = patient.tag("guardian");
-    var guardian_relationship = el.tag("code").attr("displayName"), guardian_home = el.tag("telecom").attr("value");
+    data.guardian_relationship = el.tag("code").attr("displayName"), data.guardian_home = el.tag("telecom").attr("value");
     el = el.tag("guardianPerson");
-    var guardian_given = el.tag("given").val(), guardian_family = el.tag("family").val(), el = patient.tag("guardian").tag("addr");
-    var guardian_street = el.tag("streetAddressLine").val(), guardian_city = el.tag("city").val(), guardian_state = el.tag("state").val(), guardian_zip = el.tag("postalCode").val(), guardian_country = el.tag("country").val();
+    data.guardian_given = el.tag("given").val(), data.guardian_family = el.tag("family").val(), el = patient.tag("guardian").tag("addr");
+    data.guardian_street = el.tag("streetAddressLine").val(), data.guardian_city = el.tag("city").val(), data.guardian_state = el.tag("state").val(), data.guardian_zip = el.tag("postalCode").val(), data.guardian_country = el.tag("country").val();
     el = patient.tag("providerOrganization");
-    var provider_organization = el.tag("name").val(), provider_phone = el.tag("telecom").attr("value"), provider_street = el.tag("streetAddressLine").val(), provider_city = el.tag("city").val(), provider_state = el.tag("state").val(), provider_zip = el.tag("postalCode").val(), provider_country = el.tag("country").val();
-    data = {name:{prefix:prefix, given:given, family:family}, dob:dob, gender:gender, marital_status:marital_status, address:{street:street, city:city, state:state, zip:zip, country:country}, phone:{home:home, work:work, mobile:mobile}, email:email, race:race, ethnicity:ethnicity, religion:religion, birthplace:{state:birthplace_state, zip:birthplace_zip, country:birthplace_country}, guardian:{name:{given:guardian_given, family:guardian_family}, relationship:guardian_relationship, address:{street:guardian_street, 
-    city:guardian_city, state:guardian_state, zip:guardian_zip, country:guardian_country}, phone:{home:guardian_home}}, provider:{organization:provider_organization, phone:provider_phone, address:{street:provider_street, city:provider_city, state:provider_state, zip:provider_zip, country:provider_country}}};
+    data.provider_organization = el.tag("name").val(), data.provider_phone = el.tag("telecom").attr("value"), data.provider_street = el.tag("streetAddressLine").val(), data.provider_city = el.tag("city").val(), data.provider_state = el.tag("state").val(), data.provider_zip = el.tag("postalCode").val(), data.provider_country = el.tag("country").val();
     return data
+  };
+  var parseVAC32 = function(xmlDOM) {
+    var C32SectionTemplateID = "1.3.6.1.4.1.19376.1.5.3.1.1.1"
   };
   return{process:process}
 }();
@@ -396,7 +428,7 @@ var Vitals = function() {
       }
       data.push({date:date, results:results_data})
     }
-    return[]
+    return data
   };
   return{process:process}
 }();
@@ -408,6 +440,9 @@ var BlueButton = function(source) {
         return JSON.stringify(this, null, 2)
       }
     }
+  };
+  var doc = function() {
+    return data.document
   };
   var allergies = function() {
     return data.allergies
@@ -448,11 +483,12 @@ var BlueButton = function(source) {
       els[i].val = Core.val
     }
     xmlDOM.template = Core.template;
-    if(xmlDOM.template("1.3.6.1.4.1.19376.1.5.3.1.1.1").tagName == "EMPTY") {
+    if(xmlDOM.template("1.3.6.1.4.1.19376.1.5.3.1.1.1").tagName.toLowerCase() == "empty") {
       type = "ccda"
     }else {
-      type = "c32"
+      type = "va_c32"
     }
+    data.document = {type:type};
     data.allergies = Allergies.process(xmlDOM, type);
     data.demographics = Demographics.process(xmlDOM, type);
     data.encounters = Encounters.process(xmlDOM, type);
@@ -462,11 +498,11 @@ var BlueButton = function(source) {
     data.problems = Problems.process(xmlDOM, type);
     data.procedures = Procedures.process(xmlDOM, type);
     data.vitals = Vitals.process(xmlDOM, type);
-    addMethods([data, data.allergies, data.demographics, data.encounters, data.immunizations, data.labs, data.medications, data.problems, data.procedures, data.vitals])
+    addMethods([data, data.document, data.allergies, data.demographics, data.encounters, data.immunizations, data.labs, data.medications, data.problems, data.procedures, data.vitals])
   }else {
     data = JSON.parse(source)
   }
-  return{data:data, xmlDOM:xmlDOM, allergies:allergies, demographics:demographics, encounters:encounters, immunizations:immunizations, labs:labs, medications:medications, problems:problems, procedures:procedures, vitals:vitals}
+  return{data:data, xmlDOM:xmlDOM, document:doc, allergies:allergies, demographics:demographics, encounters:encounters, immunizations:immunizations, labs:labs, medications:medications, problems:problems, procedures:procedures, vitals:vitals}
 };
 window.BlueButton = BlueButton;
 
