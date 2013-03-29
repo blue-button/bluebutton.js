@@ -26,7 +26,7 @@ end
 desc "Build BlueButton.js"
 task :build do
   
-  puts "\nBuilding BlueButton.js".task, ""
+  puts "\nBuilding BlueButton.js".task
   
   manifest = File.open("manifest.json", "r") { |f| f.read }
   manifest = JSON.parse(manifest).symbolize_keys
@@ -34,13 +34,32 @@ task :build do
   # Contains the assembled JS
   dev_js = prod_js = manifest[:copyright] += "\n// v.#{manifest[:version]}\n\n"
   
+  # Check for compiler
+  if !File.exist?("vendor/compiler.jar")
+    
+    puts "  Could not find compiler!".error
+    
+    msg = <<-msg
+    
+    Google's Closure Compiler is needed to build BlueButton.js.
+    
+    1) Download it from:
+        http://closure-compiler.googlecode.com/files/compiler-latest.zip
+    2) Unzip and place 'compiler.jar' in the 'vendor' directory.
+    
+msg
+
+    puts msg
+    exit
+  end
+  
   ### COMPILER COMMANDS ###
   
   # Example:
   #   "java -jar compiler.jar --js hi.js --js_output_file hi.min.js"
-  compiler_cmd = "java -jar #{manifest[:compiler_path]}"
+  compiler_cmd = "java -jar vendor/compiler.jar"
   
-  puts "  Adding files:"
+  puts "", "  Adding files:"
   manifest[:files].each do |js_file|
     print "    #{js_file}.js\n"
     compiler_cmd << " --js #{manifest[:src_path]}#{js_file}.js"
