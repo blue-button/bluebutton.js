@@ -15,6 +15,8 @@ Until a public release (version 0.1.0), this project is considered a "developer 
 
 <!-- TODO: Say something about requiring Ruby. -->
 
+Download the latest [Google's Closure Compiler](http://closure-compiler.googlecode.com/files/compiler-latest.zip) and unzip it to the `vendor` directory.
+
 Run `rake build` to build both the development and production JavaScript.
 
 Builds are placed in the `build/` directory. Both builds first assemble all JavaScript files in the `src/` directory in the order defined in `manifest.json`. All JavaScript files are concatenated and compiled with [Google's Closure Compiler](http://developers.google.com/closure/compiler/). If errors or warnings are found during compilation, the compiler will quit and they will be printed in the console.
