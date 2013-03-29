@@ -8,11 +8,7 @@ var Core = function(){
     this.wrapped = elt;
     this.tagName = elt.tagName;
   };
-
-  ElementFacade.prototype.toJSON = function(){
-    return this.wrapped.toString()
-  };
-
+  
   for (var i=0; i<fns.length;i++){
     (function(fname){
       ElementFacade.prototype[fname] = function(){
@@ -22,8 +18,7 @@ var Core = function(){
   }
 
   function wrap(e){
-    if (!e) return null;
-    if (typeof e === "string") return e;
+    if (!e) return e;
     if (e.length === undefined){
       return new ElementFacade(e);
     }
@@ -48,7 +43,8 @@ var Core = function(){
       xml.async = "false";
       xml.loadXML(data)
     }
-    if(!xml || !xml.documentElement || xml.getElementsByTagName("parsererror").length) {
+    if(!xml || !xml.
+    Element || xml.getElementsByTagName("parsererror").length) {
       console.log("BB Error: Could not parse XML");
       return null
     }
@@ -89,7 +85,7 @@ var Core = function(){
     if(!this) {
       return null
     }
-    return wrap(this.wrapped.getAttribute(attr));
+    return this.wrapped.getAttribute(attr);
   };
   var val = function() {
     if(!this.wrapped) {
