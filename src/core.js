@@ -1,109 +1,115 @@
 // core.js - Essential shared functionality
 
-var Core = function() {
-  
-  // Cross-browser XML parsing
-  var parseXML = function (data) {
-    // Must be a string
-    if (!data || typeof data !== "string") {
-      console.log("BB Error: XML data is not a string");
-      return null;
+var Core = function(){
+
+  var fns = ["elsByTag", "tag", "attr", "val", "template"];
+
+  var ElementFacade = function(elt){
+    this.wrapped = elt;
+    this.tagName = elt.tagName;
+  };
+
+  ElementFacade.prototype.toJSON = function(){
+    return this.wrapped.toString()
+  };
+
+  for (var i=0; i<fns.length;i++){
+    (function(fname){
+      ElementFacade.prototype[fname] = function(){
+        return Core[fname].apply(this, arguments); 
+      };
+    })(fns[i]);
+  }
+
+  function wrap(e){
+    if (!e) return null;
+    if (typeof e === "string") return e;
+    if (e.length === undefined){
+      return new ElementFacade(e);
     }
-    
+    var ret = [];
+    for (var i=0; i<e.length;i++){
+      ret.push(new ElementFacade(e[i]));
+    }
+    return ret;
+  };
+
+  var parseXML = function(data) {
+    if(!data || typeof data !== "string") {
+      console.log("BB Error: XML data is not a string");
+      return null
+    }
     var xml, tmp;
-    
-    // Standard parser
-    if (window.DOMParser) {
-      parser = new DOMParser();
-      xml = parser.parseFromString(data, "text/xml");
-      
-    // IE
-    } else {
+    if(window.DOMParser) {
+      parser = new DOMParser;
+      xml = parser.parseFromString(data, "text/xml")
+    }else {
       xml = new ActiveXObject("Microsoft.XMLDOM");
       xml.async = "false";
-      xml.loadXML(data);
+      xml.loadXML(data)
     }
-    
-    if (!xml || !xml.documentElement || xml.getElementsByTagName("parsererror").length) {
+    if(!xml || !xml.documentElement || xml.getElementsByTagName("parsererror").length) {
       console.log("BB Error: Could not parse XML");
-      return null;
+      return null
     }
-    
-    return xml;
+    return wrap(xml);
   };
-  
   var emptyEl = function() {
-    el = document.createElement('empty');
-    el.elsByTag = Core.elsByTag;
-    el.tag = Core.tag;
-    el.attr = Core.attr;
-    el.val = Core.val;
-    return el;
+    el = document.createElement("empty");
+    return wrap(el);
   };
-  
-  var tagAttrVal = function (xmlDOM, tag, attr, value) {
+  var tagAttrVal = function(xmlDOM, tag, attr, value) {
     var el = xmlDOM.getElementsByTagName(tag);
-    for (var i = 0; i < el.length; i++) {
-      if (el[i].getAttribute(attr) === value) {
-        return el[i];
+    for(var i = 0;i < el.length;i++) {
+      if(el[i].getAttribute(attr) === value) {
+        return el[i]
       }
     }
   };
-  
   var template = function(templateId) {
-    var el = tagAttrVal(this, 'templateId', 'root', templateId);
-    if (!el) {
-      return emptyEl();
-    } else {
-      return el.parentNode;
+    var el = tagAttrVal(this.wrapped, "templateId", "root", templateId);
+    if(!el) {
+      return emptyEl()
+    }else {
+      return wrap(el.parentNode);
     }
   };
-  
   var tag = function(tag) {
-    var el = this.getElementsByTagName(tag)[0];
-    if (!el) {
-      return emptyEl();
-    } else {
-      return el;
+    var el = this.wrapped.getElementsByTagName(tag)[0];
+    if(!el) {
+      return emptyEl()
+    }else {
+      return wrap(el);
     }
   };
-  
   var elsByTag = function(tag) {
-    return this.getElementsByTagName(tag);
+    return wrap(this.wrapped.getElementsByTagName(tag));
   };
-  
   var attr = function(attr) {
-    if (!this) { return null; }
-    return this.getAttribute(attr);
+    if(!this) {
+      return null
+    }
+    return wrap(this.wrapped.getAttribute(attr));
   };
-  
   var val = function() {
-    if (!this) { return null; }
+    if(!this.wrapped) {
+      return null
+    }
     try {
-      return this.childNodes[0].nodeValue;
-    } catch (e) {
-      return null;
+      return this.wrapped.childNodes[0].nodeValue;
+    }catch(e) {
+      return null
     }
   };
-  
   var parseDate = function(str) {
-    if (!str || typeof str !== "string") {
+    if(!str || typeof str !== "string") {
       console.log("Error: date is not a string");
-      return null;
+      return null
     }
     var year = str.substr(0, 4);
     var month = str.substr(4, 2);
     var day = str.substr(6, 2);
-    return new Date(year, month, day);
+    return new Date(year, month, day)
   };
-  
-  return {
-    parseXML: parseXML,
-    template: template,
-    tag: tag,
-    elsByTag: elsByTag,
-    attr: attr,
-    val: val,
-    parseDate: parseDate
-  }
+  return{parseXML:parseXML, template:template, tag:tag, elsByTag:elsByTag, attr:attr, val:val, parseDate:parseDate}
 }();
