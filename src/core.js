@@ -6,7 +6,7 @@ var Core = function() {
   var parseXML = function (data) {
     // Must be a string
     if (!data || typeof data !== "string") {
-      console.log("Error: XML data is not a string");
+      console.log("BB Error: XML data is not a string");
       return null;
     }
     
@@ -22,6 +22,11 @@ var Core = function() {
       xml = new ActiveXObject("Microsoft.XMLDOM");
       xml.async = "false";
       xml.loadXML(data);
+    }
+    
+    if (!xml || !xml.documentElement || xml.getElementsByTagName("parsererror").length) {
+      console.log("BB Error: Could not parse XML");
+      return null;
     }
     
     return xml;
@@ -50,7 +55,7 @@ var Core = function() {
     if (!el) {
       return emptyEl();
     } else {
-      return el.parentElement;
+      return el.parentNode;
     }
   };
   
