@@ -61,8 +61,7 @@ var Vitals = function () {
         results: results_data
       });
     }
-    // return data;
-    return [];
+    return data;
   };
   
   return {
