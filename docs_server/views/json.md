@@ -25,7 +25,15 @@ bb.medications().json();
 </style>
 <button onclick="load('ccda')">Use CCDA Sample Data and Convert</button> <button onclick="load('va_c32')">Use VA C32 Sample Data and Convert</button> <button onclick="convert()">Convert</button> <button onclick="clearAll()">Clear</button>
 
-[Demographics](#demographics-section), [Allergies](#allergies-section), [Encounters](#encounters-section), [Immunizations](#immunizations-section), [Labs](#labs-section), [Medications](#medications-section), [Problems](#problems-section), [Procedures](#procedures-section), [Vitals](#vitals-section)
+[Document](#document-section), [Demographics](#demographics-section), [Allergies](#allergies-section), [Encounters](#encounters-section), [Immunizations](#immunizations-section), [Labs](#labs-section), [Medications](#medications-section), [Problems](#problems-section), [Procedures](#procedures-section), [Vitals](#vitals-section)
+
+
+<a name="document-section"></a>
+
+## Document
+
+<pre><code id="document" class="javascript"></code></pre>
+
 
 <a name="demographics-section"></a>
 
@@ -94,6 +102,7 @@ bb.medications().json();
 <script>
   
   var xml, bb;
+  var doc = document.getElementById('document');
   var demographics = document.getElementById('demographics');
   var allergies = document.getElementById('allergies');
   var encounters = document.getElementById('encounters');
@@ -153,6 +162,7 @@ bb.medications().json();
     xml = document.getElementById('xml').value;
     bb = BlueButton(xml);
     
+    doc.innerHTML = hl(bb.document().json());
     demographics.innerHTML = hl(bb.demographics().json());
     allergies.innerHTML = hl(bb.allergies().json());
     encounters.innerHTML = hl(bb.encounters().json());
