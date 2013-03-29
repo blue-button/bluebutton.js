@@ -18,7 +18,6 @@ var Core = function(){
   }
 
   function wrap(e){
-    if (!e) return e;
     if (e.length === undefined){
       return new ElementFacade(e);
     }
