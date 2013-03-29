@@ -16,6 +16,7 @@ var BlueButton = function (source) {
   };
   
   // public methods
+  var doc = function () { return data.document };
   var allergies = function () { return data.allergies };
   var demographics = function () { return data.demographics };
   var encounters = function () { return data.encounters };
@@ -46,12 +47,14 @@ var BlueButton = function (source) {
     xmlDOM.template = Core.template;
     
     // Detect document type (CCDA or VA C32)
-    if (xmlDOM.template('1.3.6.1.4.1.19376.1.5.3.1.1.1').tagName == 'EMPTY') {
+    if (xmlDOM.template('1.3.6.1.4.1.19376.1.5.3.1.1.1')
+      .tagName.toLowerCase() == 'empty') {
       type = 'ccda';
     } else {
-      type = 'c32';
+      type = 'va_c32';
     }
     
+    data.document = { type: type };
     data.allergies = Allergies.process(xmlDOM, type);
     data.demographics  = Demographics.process(xmlDOM, type);
     data.encounters = Encounters.process(xmlDOM, type);
@@ -64,6 +67,7 @@ var BlueButton = function (source) {
     
     addMethods([
       data,
+      data.document,
       data.allergies,
       data.demographics,
       data.encounters,
@@ -83,6 +87,7 @@ var BlueButton = function (source) {
   return {
     data: data,
     xmlDOM: xmlDOM,
+    document: doc,
     allergies: allergies,
     demographics: demographics,
     encounters: encounters,
