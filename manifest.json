@@ -2,7 +2,7 @@
 {
   "copyright": "/**\n * BlueButton.js\n */\n",
   "version": "0.0.6",
-  "compiler_path": "vendor/compiler-r2388.jar",
+  "compiler_path": "vendor/compiler.jar",
   "build_path": "build/",
   "src_path": "src/",
   "files": [
