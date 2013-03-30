@@ -2490,6 +2490,9 @@ Vital Signs
 // v.0.0.6
 
 var Core = function() {
+  var ElementWrapper = function(el) {
+    return{el:el, template:Core.template, tag:Core.tag, elsByTag:Core.elsByTag, attr:Core.attr, val:Core.val}
+  };
   var parseXML = function(data) {
     if(!data || typeof data !== "string") {
       console.log("BB Error: XML data is not a string");
@@ -2500,26 +2503,37 @@ var Core = function() {
       parser = new DOMParser;
       xml = parser.parseFromString(data, "text/xml")
     }else {
-      xml = new ActiveXObject("Microsoft.XMLDOM");
-      xml.async = "false";
-      xml.loadXML(data)
+      try {
+        xml = new ActiveXObject("Microsoft.XMLDOM");
+        xml.async = "false";
+        xml.loadXML(data)
+      }catch(e) {
+        console.log("BB ActiveX Exception: Could not parse XML")
+      }
     }
     if(!xml || !xml.documentElement || xml.getElementsByTagName("parsererror").length) {
       console.log("BB Error: Could not parse XML");
       return null
     }
-    return xml
+    return wrapElement(xml)
+  };
+  var wrapElement = function(el) {
+    if(el.length) {
+      var els = [];
+      for(var i = 0;i < el.length;i++) {
+        els.push(ElementWrapper(el[i]))
+      }
+      return els
+    }else {
+      return ElementWrapper(el)
+    }
   };
   var emptyEl = function() {
-    el = document.createElement("empty");
-    el.elsByTag = Core.elsByTag;
-    el.tag = Core.tag;
-    el.attr = Core.attr;
-    el.val = Core.val;
-    return el
+    var el = document.createElement("empty");
+    return wrapElement(el)
   };
-  var tagAttrVal = function(xmlDOM, tag, attr, value) {
-    var el = xmlDOM.getElementsByTagName(tag);
+  var tagAttrVal = function(el, tag, attr, value) {
+    el = el.getElementsByTagName(tag);
     for(var i = 0;i < el.length;i++) {
       if(el[i].getAttribute(attr) === value) {
         return el[i]
@@ -2527,36 +2541,36 @@ var Core = function() {
     }
   };
   var template = function(templateId) {
-    var el = tagAttrVal(this, "templateId", "root", templateId);
+    var el = tagAttrVal(this.el, "templateId", "root", templateId);
     if(!el) {
       return emptyEl()
     }else {
-      return el.parentNode
+      return wrapElement(el.parentNode)
     }
   };
   var tag = function(tag) {
-    var el = this.getElementsByTagName(tag)[0];
+    var el = this.el.getElementsByTagName(tag)[0];
     if(!el) {
       return emptyEl()
     }else {
-      return el
+      return wrapElement(el)
     }
   };
   var elsByTag = function(tag) {
-    return this.getElementsByTagName(tag)
+    return wrapElement(this.el.getElementsByTagName(tag))
   };
   var attr = function(attr) {
-    if(!this) {
+    if(!this.el) {
       return null
     }
-    return this.getAttribute(attr)
+    return this.el.getAttribute(attr)
   };
   var val = function() {
-    if(!this) {
+    if(!this.el) {
       return null
     }
     try {
-      return this.childNodes[0].nodeValue
+      return this.el.childNodes[0].nodeValue
     }catch(e) {
       return null
     }
@@ -2571,7 +2585,7 @@ var Core = function() {
     var day = str.substr(6, 2);
     return new Date(year, month, day)
   };
-  return{parseXML:parseXML, template:template, tag:tag, elsByTag:elsByTag, attr:attr, val:val, parseDate:parseDate}
+  return{parseXML:parseXML, wrapElement:wrapElement, template:template, tag:tag, elsByTag:elsByTag, attr:attr, val:val, parseDate:parseDate}
 }();
 var Allergies = function() {
   var parseDate = Core.parseDate;
@@ -2959,16 +2973,7 @@ var BlueButton = function(source) {
   source = source.replace(/^\s+|\s+$/g, "");
   if(source.substr(0, 5) == "<?xml") {
     xmlDOM = Core.parseXML(xml);
-    var els = xmlDOM.getElementsByTagName("*");
-    for(var i = 0;i < els.length;i++) {
-      els[i].template = Core.template;
-      els[i].tag = Core.tag;
-      els[i].elsByTag = Core.elsByTag;
-      els[i].attr = Core.attr;
-      els[i].val = Core.val
-    }
-    xmlDOM.template = Core.template;
-    if(xmlDOM.template("1.3.6.1.4.1.19376.1.5.3.1.1.1").tagName.toLowerCase() == "empty") {
+    if(xmlDOM.template("1.3.6.1.4.1.19376.1.5.3.1.1.1").el.tagName.toLowerCase() == "empty") {
       type = "ccda"
     }else {
       type = "va_c32"
