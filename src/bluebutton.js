@@ -29,26 +29,26 @@ var BlueButton = function (source) {
   
   // init
   
-  // parse as XML
-  // remove leading and trailing whitespace
+  // Parse as XML
+  // Remove leading and trailing whitespace
   source = source.replace(/^\s+|\s+$/g,'');
   if (source.substr(0, 5) == "<?xml") {
     xmlDOM = Core.parseXML(xml);
     
     // Add Core methods to XML elements in DOM
-    var els = xmlDOM.getElementsByTagName('*');
-    for (var i = 0; i < els.length; i++) {
-      els[i].template = Core.template;
-      els[i].tag = Core.tag;
-      els[i].elsByTag = Core.elsByTag;
-      els[i].attr = Core.attr;
-      els[i].val = Core.val;
-    };
-    xmlDOM.template = Core.template;
+    // var els = xmlDOM.getElementsByTagName('*');
+    // for (var i = 0; i < els.length; i++) {
+    //   els[i].template = Core.template;
+    //   els[i].tag = Core.tag;
+    //   els[i].elsByTag = Core.elsByTag;
+    //   els[i].attr = Core.attr;
+    //   els[i].val = Core.val;
+    // };
+    // xmlDOM.template = Core.template;
     
     // Detect document type (CCDA or VA C32)
     if (xmlDOM.template('1.3.6.1.4.1.19376.1.5.3.1.1.1')
-      .tagName.toLowerCase() == 'empty') {
+      .el.tagName.toLowerCase() == 'empty') {
       type = 'ccda';
     } else {
       type = 'va_c32';

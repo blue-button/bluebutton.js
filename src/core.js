@@ -2,6 +2,20 @@
 
 var Core = function() {
   
+  // properties
+  var ElementWrapper = function(el) {
+    return {
+      el: el,
+      template: Core.template,
+      tag: Core.tag,
+      elsByTag: Core.elsByTag,
+      attr: Core.attr,
+      val: Core.val
+    }
+  };
+  
+  // methods
+  
   // Cross-browser XML parsing
   var parseXML = function (data) {
     // Must be a string
@@ -19,9 +33,13 @@ var Core = function() {
       
     // IE
     } else {
-      xml = new ActiveXObject("Microsoft.XMLDOM");
-      xml.async = "false";
-      xml.loadXML(data);
+      try {
+        xml = new ActiveXObject("Microsoft.XMLDOM");
+        xml.async = "false";
+        xml.loadXML(data);
+      } catch (e) {
+        console.log("BB ActiveX Exception: Could not parse XML");
+      }
     }
     
     if (!xml || !xml.documentElement || xml.getElementsByTagName("parsererror").length) {
@@ -29,20 +47,31 @@ var Core = function() {
       return null;
     }
     
-    return xml;
+    return wrapElement(xml);
+  };
+  
+  var wrapElement = function(el) {
+    // el is an array of elements
+    if (el.length) {
+      var els = [];
+      for (var i = 0; i < el.length; i++) {
+        els.push(ElementWrapper(el[i]));
+      }
+      return els;
+    
+    // el is a single element
+    } else {
+      return ElementWrapper(el);
+    }
   };
   
   var emptyEl = function() {
-    el = document.createElement('empty');
-    el.elsByTag = Core.elsByTag;
-    el.tag = Core.tag;
-    el.attr = Core.attr;
-    el.val = Core.val;
-    return el;
+    var el = document.createElement('empty');
+    return wrapElement(el);
   };
   
-  var tagAttrVal = function (xmlDOM, tag, attr, value) {
-    var el = xmlDOM.getElementsByTagName(tag);
+  var tagAttrVal = function(el, tag, attr, value) {
+    el = el.getElementsByTagName(tag);
     for (var i = 0; i < el.length; i++) {
       if (el[i].getAttribute(attr) === value) {
         return el[i];
@@ -51,36 +80,36 @@ var Core = function() {
   };
   
   var template = function(templateId) {
-    var el = tagAttrVal(this, 'templateId', 'root', templateId);
+    var el = tagAttrVal(this.el, 'templateId', 'root', templateId);
     if (!el) {
       return emptyEl();
     } else {
-      return el.parentNode;
+      return wrapElement(el.parentNode);
     }
   };
   
   var tag = function(tag) {
-    var el = this.getElementsByTagName(tag)[0];
+    var el = this.el.getElementsByTagName(tag)[0];
     if (!el) {
       return emptyEl();
     } else {
-      return el;
+      return wrapElement(el);
     }
   };
   
   var elsByTag = function(tag) {
-    return this.getElementsByTagName(tag);
+    return wrapElement(this.el.getElementsByTagName(tag));
   };
   
   var attr = function(attr) {
-    if (!this) { return null; }
-    return this.getAttribute(attr);
+    if (!this.el) { return null; }
+    return this.el.getAttribute(attr);
   };
   
   var val = function() {
-    if (!this) { return null; }
+    if (!this.el) { return null; }
     try {
-      return this.childNodes[0].nodeValue;
+      return this.el.childNodes[0].nodeValue;
     } catch (e) {
       return null;
     }
@@ -99,6 +128,7 @@ var Core = function() {
   
   return {
     parseXML: parseXML,
+    wrapElement: wrapElement,
     template: template,
     tag: tag,
     elsByTag: elsByTag,
