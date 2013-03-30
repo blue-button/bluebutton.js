@@ -17,10 +17,10 @@ Run `rake build` to build both the development and production JavaScript.
 
 Requirements:
 
-- [Ruby](http://www.ruby-lang.org/). We recommend using Ruby 2.0. View [installation instructions](http://www.ruby-lang.org/en/downloads/).
+- [Ruby](http://www.ruby-lang.org/). We recommend using Ruby 2.0. View the [installation instructions](http://www.ruby-lang.org/en/downloads/).
 - [Google's Closure Compiler](https://developers.google.com/closure/compiler/). Download the [latest version](http://closure-compiler.googlecode.com/files/compiler-latest.zip), unzip, and place `compiler.jar` into the `vendor` directory.
 
-All builds are placed in the `build/` directory. Both development and production builds first assemble all JavaScript files in the `src/` directory in the order defined in `manifest.json`. All JavaScript files are concatenated and compiled with Google's Closure Compiler. All errors and warnings will be printed to the console and the script will quit.
+All builds are placed in the `build/` directory. Both development and production builds first assemble all JavaScript files in the `src/` directory in the order defined in `manifest.json`. All JavaScript files are concatenated and compiled with Google's Closure Compiler. All errors and warnings will be printed to the console.
 
 <!--
 ## Running Tests
@@ -32,7 +32,7 @@ Tests are run using [PhantomJS](http://phantomjs.org), [QUnit](http://qunitjs.co
 
 # Usage
 
-Start by creating a Blue Button document object by passing the CCD XML (C32 or CCDA) to `BlueButton`:
+Start by creating a Blue Button document object by passing CCDA or VA C32 XML to `BlueButton`:
 
 ```javascript
 var bb = BlueButton(xml);
