@@ -487,7 +487,7 @@ var BlueButton = function(source) {
   };
   source = source.replace(/^\s+|\s+$/g, "");
   if(source.substr(0, 5) == "<?xml") {
-    xmlDOM = Core.parseXML(xml);
+    xmlDOM = Core.parseXML(source);
     if(xmlDOM.template("1.3.6.1.4.1.19376.1.5.3.1.1.1").el.tagName.toLowerCase() == "empty") {
       type = "ccda"
     }else {

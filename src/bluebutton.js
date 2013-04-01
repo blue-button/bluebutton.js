@@ -33,7 +33,7 @@ var BlueButton = function (source) {
   // Remove leading and trailing whitespace
   source = source.replace(/^\s+|\s+$/g,'');
   if (source.substr(0, 5) == "<?xml") {
-    xmlDOM = Core.parseXML(xml);
+    xmlDOM = Core.parseXML(source);
     
     // Add Core methods to XML elements in DOM
     // var els = xmlDOM.getElementsByTagName('*');
