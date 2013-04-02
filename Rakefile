@@ -65,14 +65,10 @@ msg
     compiler_cmd << " --js #{manifest[:src_path]}#{js_file}.js"
   end
   
-  dev_cmd = prod_cmd = compiler_cmd
-  dev_cmd += " --compilation_level WHITESPACE_ONLY" <<
-             " --formatting PRETTY_PRINT"
+  ### PRODUCTION BUILD ###
   
-  ### DEVELOPMENT BUILD ###
-  
-  print "\n  Compiling development build..."
-  result = `#{dev_cmd << " 2>&1"}`
+  print "\n  Compiling production build..."
+  result = `#{compiler_cmd << " 2>&1"}`
   
   # If an error occurred
   unless $?.exitstatus.zero?
@@ -81,21 +77,24 @@ msg
     exit
   end
   
-  dev_js += result
-  dev_path = "#{manifest[:build_path]}bluebutton-#{manifest[:version]}-dev.js"
-  File.open(dev_path, "w") { |f| f.puts(dev_js) }
-  
-  print "done!"
-  
-  ### PRODUCTION BUILD ###
-  
-  print "\n  Compiling production build..."
-  result = `#{prod_cmd << " 2>&1"}`
-  
   # Add a closure
   prod_js += "\n(function () {\n" << result << "})();"
   prod_path = "#{manifest[:build_path]}bluebutton-#{manifest[:version]}.js"
   File.open(prod_path, "w") { |f| f.puts(prod_js) }
+  
+  print "done!"
+  
+  ### DEVELOPMENT BUILD ###
+  
+  print "\n  Assembling development build..."
+  
+  manifest[:files].each do |js_file|
+    dev_js << "\n\n" <<
+      File.open("#{manifest[:src_path]}#{js_file}.js", "r") { |f| f.read }
+  end
+  
+  dev_path = "#{manifest[:build_path]}bluebutton-#{manifest[:version]}-dev.js"
+  File.open(dev_path, "w") { |f| f.puts(dev_js) }
   
   print "done!"
   
