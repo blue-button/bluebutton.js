@@ -5,7 +5,7 @@ var BlueButton = function (source) {
   
   // properties
   var xmlDOM = null,
-      type,
+      type = '',
       data = {};
   
   // private methods
@@ -34,17 +34,6 @@ var BlueButton = function (source) {
   source = source.replace(/^\s+|\s+$/g,'');
   if (source.substr(0, 5) == "<?xml") {
     xmlDOM = Core.parseXML(source);
-    
-    // Add Core methods to XML elements in DOM
-    // var els = xmlDOM.getElementsByTagName('*');
-    // for (var i = 0; i < els.length; i++) {
-    //   els[i].template = Core.template;
-    //   els[i].tag = Core.tag;
-    //   els[i].elsByTag = Core.elsByTag;
-    //   els[i].attr = Core.attr;
-    //   els[i].val = Core.val;
-    // };
-    // xmlDOM.template = Core.template;
     
     // Detect document type (CCDA or VA C32)
     if (xmlDOM.template('1.3.6.1.4.1.19376.1.5.3.1.1.1')
@@ -81,7 +70,24 @@ var BlueButton = function (source) {
     
   // parse as JSON
   } else {
-    data = JSON.parse(source)
+    type = 'json';
+    
+    try {
+      var json = JSON.parse(source);
+    } catch (e) {
+      console.log("BB Exception: Could not parse JSON");
+    }
+    
+    data.document = { type: type };
+    data.allergies = Allergies.process(json, type);
+    data.demographics  = Demographics.process(json, type);
+    data.encounters = Encounters.process(json, type);
+    data.immunizations = Immunizations.process(json, type);
+    data.labs = Labs.process(json, type);
+    data.medications = Medications.process(json, type);
+    data.problems = Problems.process(json, type);
+    data.procedures = Procedures.process(json, type);
+    data.vitals = Vitals.process(json, type);
   }
   
   return {
@@ -98,6 +104,7 @@ var BlueButton = function (source) {
     procedures: procedures,
     vitals: vitals
   };
+  
 };
 
 window.BlueButton = BlueButton;

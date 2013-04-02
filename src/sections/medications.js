@@ -6,20 +6,90 @@ var Medications = function () {
   var parseDate = Core.parseDate;
   
   // properties
-  var CCDASectionTemplateID = '2.16.840.1.113883.10.20.22.2.1.1';
-  var C32SectionTemplateID = '2.16.840.1.113883.3.88.11.83.112';
   
   // methods
-  var process = function (xmlDOM, type) {
-    var data = [], el, entries, entry, templateID;
+    var process = function (source, type) {
+    var raw, data = [];
     
-    if (type == 'ccda') {
-      templateID = CCDASectionTemplateID;
-    } else {
-      templateID = C32SectionTemplateID;
+    switch (type) {
+      case 'ccda':
+        raw = processCCDA(source);
+        break;
+      case 'va_c32':
+        raw = processVAC32(source);
+        break;
+      case 'json':
+        return processJSON(source);
+        break;
     }
     
-    el = xmlDOM.template(templateID);
+    for (var i = 0; i < raw.length; i++) {
+      data.push({
+        effective_time: {
+          low: raw[i].low,
+          high: raw[i].high
+        },
+        product: {
+          name: raw[i].product_name,
+          code: raw[i].product_code,
+          code_system: raw[i].product_code_system,
+          translation: {
+            name: raw[i].translation_name,
+            code: raw[i].translation_code,
+            code_system: raw[i].translation_code_system,
+            code_system_name: raw[i].translation_code_system_name
+          }
+        },
+        dose_quantity: {
+          value: raw[i].dose_value,
+          unit: raw[i].dose_unit
+        },
+        rate_quantity: {
+          value: raw[i].rate_quantity_value,
+          unit: raw[i].rate_quantity_unit
+        },
+        precondition: {
+          name: raw[i].precondition_name,
+          code: raw[i].precondition_code,
+          code_system: raw[i].precondition_code_system
+        },
+        reason: {
+          name: raw[i].reason_name,
+          code: raw[i].reason_code,
+          code_system: raw[i].reason_code_system
+        },
+        route: {
+          name: raw[i].route_name,
+          code: raw[i].route_code,
+          code_system: raw[i].route_code_system,
+          code_system_name: raw[i].route_code_system_name
+        },
+        vehicle: {
+          name: raw[i].vehicle_name,
+          code: raw[i].vehicle_code,
+          code_system: raw[i].vehicle_code_system,
+          code_system_name: raw[i].vehicle_code_system_name
+        },
+        administration: {
+          name: raw[i].administration_name,
+          code: raw[i].administration_code,
+          code_system: raw[i].administration_code_system,
+          code_system_name: raw[i].administration_code_system_name
+        },
+        prescriber: {
+          organization: raw[i].prescriber_organization,
+          person: raw[i].prescriber_person
+        }
+      });
+    }
+    
+    return data;
+  };
+  
+  var processCCDA = function (xmlDOM) {
+    var data = [], el, entries, entry;
+    
+    el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.1.1');
     entries = el.elsByTag('entry');
     
     for (var i = 0; i < entries.length; i++) {
@@ -83,64 +153,153 @@ var Medications = function () {
           prescriber_person = null;
       
       data.push({
-        effective_time: {
-          low: low,
-          high: high
-        },
-        product: {
-          name: product_name,
-          code: product_code,
-          code_system: product_code_system,
-          translation: {
-            name: translation_name,
-            code: translation_code,
-            code_system: translation_code_system,
-            code_system_name: translation_code_system_name
-          }
-        },
-        dose_quantity: {
-          value: dose_value,
-          unit: dose_unit
-        },
-        rate_quantity: {
-          value: rate_quantity_value,
-          unit: rate_quantity_unit
-        },
-        precondition: {
-          name: precondition_name,
-          code: precondition_code,
-          code_system: precondition_code_system
-        },
-        reason: {
-          name: reason_name,
-          code: reason_code,
-          code_system: reason_code_system
-        },
-        route: {
-          name: route_name,
-          code: route_code,
-          code_system: route_code_system,
-          code_system_name: route_code_system_name
-        },
-        vehicle: {
-          name: vehicle_name,
-          code: vehicle_code,
-          code_system: vehicle_code_system,
-          code_system_name: vehicle_code_system_name
-        },
-        administration: {
-          name: administration_name,
-          code: administration_code,
-          code_system: administration_code_system,
-          code_system_name: administration_code_system_name
-        },
-        prescriber: {
-          organization: prescriber_organization,
-          person: prescriber_person
-        }
+        low: low,
+        high: high,
+        product_name: product_name,
+        product_code: product_code,
+        product_code_system: product_code_system,
+        translation_name: translation_name,
+        translation_code: translation_code,
+        translation_code_system: translation_code_system,
+        translation_code_system_name: translation_code_system_name,
+        dose_value: dose_value,
+        dose_unit: dose_unit,
+        rate_quantity_value: rate_quantity_value,
+        rate_quantity_unit: rate_quantity_unit,
+        precondition_name: precondition_name,
+        precondition_code: precondition_code,
+        precondition_code_system: precondition_code_system,
+        reason_name: reason_name,
+        reason_code: reason_code,
+        reason_code_system: reason_code_system,
+        route_name: route_name,
+        route_code: route_code,
+        route_code_system: route_code_system,
+        route_code_system_name: route_code_system_name,
+        vehicle_name: vehicle_name,
+        vehicle_code: vehicle_code,
+        vehicle_code_system: vehicle_code_system,
+        vehicle_code_system_name: vehicle_code_system_name,
+        administration_name: administration_name,
+        administration_code: administration_code,
+        administration_code_system: administration_code_system,
+        administration_code_system_name: administration_code_system_name,
+        prescriber_organization: prescriber_organization,
+        prescriber_person: prescriber_person
       });
     }
+    
     return data;
+  };
+  
+  var processVAC32 = function (xmlDOM) {
+    var data = [], el, entries, entry;
+    
+    el = xmlDOM.template('2.16.840.1.113883.3.88.11.83.112');
+    entries = el.elsByTag('entry');
+    
+    for (var i = 0; i < entries.length; i++) {
+      entry = entries[i];
+      
+      el = entry.tag('effectiveTime');
+      var low = parseDate(el.tag('low').attr('value')),
+          high = parseDate(el.tag('high').attr('value'));
+      
+      el = entry.tag('manufacturedProduct').tag('code');
+      var product_name = el.attr('displayName'),
+          product_code = el.attr('code'),
+          product_code_system = el.attr('codeSystem');
+      
+      el = entry.tag('manufacturedProduct').tag('translation');
+      var translation_name = el.attr('displayName'),
+          translation_code = el.attr('code'),
+          translation_code_system = el.attr('codeSystem'),
+          translation_code_system_name = el.attr('codeSystemName');
+      
+      el = entry.tag('doseQuantity');
+      var dose_value = el.attr('value'),
+          dose_unit = el.attr('unit');
+      
+      el = entry.tag('rateQuantity');
+      var rate_quantity_value = el.attr('value'),
+          rate_quantity_unit = el.attr('unit');
+      
+      el = entry.tag('precondition').tag('value');
+      var precondition_name = el.attr('displayName'),
+          precondition_code = el.attr('code'),
+          precondition_code_system = el.attr('codeSystem'),
+      
+      el = entry.template('2.16.840.1.113883.10.20.22.4.19').tag('value');
+      var reason_name = el.attr('displayName'),
+          reason_code = el.attr('code'),
+          reason_code_system = el.attr('codeSystem');
+      
+      el = entry.tag('routeCode')
+      var route_name = el.attr('displayName'),
+          route_code = el.attr('code'),
+          route_code_system = el.attr('codeSystem'),
+          route_code_system_name = el.attr('codeSystemName');
+      
+      // participant => vehicle
+      el = entry.tag('participant').tag('code');
+      var vehicle_name = el.attr('displayName'),
+          vehicle_code = el.attr('code'),
+          vehicle_code_system = el.attr('codeSystem'),
+          vehicle_code_system_name = el.attr('codeSystemName');
+      
+      el = entry.tag('administrationUnitCode');
+      var administration_name = el.attr('displayName'),
+          administration_code = el.attr('code'),
+          administration_code_system = el.attr('codeSystem'),
+          administration_code_system_name = el.attr('codeSystemName');
+      
+      // performer => prescriber
+      el = entry.tag('performer');
+      var prescriber_organization = el.tag('name').val(),
+          prescriber_person = null;
+      
+      data.push({
+        low: low,
+        high: high,
+        product_name: product_name,
+        product_code: product_code,
+        product_code_system: product_code_system,
+        translation_name: translation_name,
+        translation_code: translation_code,
+        translation_code_system: translation_code_system,
+        translation_code_system_name: translation_code_system_name,
+        dose_value: dose_value,
+        dose_unit: dose_unit,
+        rate_quantity_value: rate_quantity_value,
+        rate_quantity_unit: rate_quantity_unit,
+        precondition_name: precondition_name,
+        precondition_code: precondition_code,
+        precondition_code_system: precondition_code_system,
+        reason_name: reason_name,
+        reason_code: reason_code,
+        reason_code_system: reason_code_system,
+        route_name: route_name,
+        route_code: route_code,
+        route_code_system: route_code_system,
+        route_code_system_name: route_code_system_name,
+        vehicle_name: vehicle_name,
+        vehicle_code: vehicle_code,
+        vehicle_code_system: vehicle_code_system,
+        vehicle_code_system_name: vehicle_code_system_name,
+        administration_name: administration_name,
+        administration_code: administration_code,
+        administration_code_system: administration_code_system,
+        administration_code_system_name: administration_code_system_name,
+        prescriber_organization: prescriber_organization,
+        prescriber_person: prescriber_person
+      });
+    }
+    
+    return data;
+  };
+  
+  var processJSON = function (json) {
+    return {};
   };
   
   return {

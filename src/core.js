@@ -1,9 +1,9 @@
 // core.js - Essential shared functionality
 
-var Core = function() {
+var Core = function () {
   
   // properties
-  var ElementWrapper = function(el) {
+  var ElementWrapper = function (el) {
     return {
       el: el,
       template: Core.template,
@@ -50,7 +50,7 @@ var Core = function() {
     return wrapElement(xml);
   };
   
-  var wrapElement = function(el) {
+  var wrapElement = function (el) {
     // el is an array of elements
     if (el.length) {
       var els = [];
@@ -65,12 +65,12 @@ var Core = function() {
     }
   };
   
-  var emptyEl = function() {
+  var emptyEl = function () {
     var el = document.createElement('empty');
     return wrapElement(el);
   };
   
-  var tagAttrVal = function(el, tag, attr, value) {
+  var tagAttrVal = function (el, tag, attr, value) {
     el = el.getElementsByTagName(tag);
     for (var i = 0; i < el.length; i++) {
       if (el[i].getAttribute(attr) === value) {
@@ -79,7 +79,7 @@ var Core = function() {
     }
   };
   
-  var template = function(templateId) {
+  var template = function (templateId) {
     var el = tagAttrVal(this.el, 'templateId', 'root', templateId);
     if (!el) {
       return emptyEl();
@@ -88,7 +88,7 @@ var Core = function() {
     }
   };
   
-  var tag = function(tag) {
+  var tag = function (tag) {
     var el = this.el.getElementsByTagName(tag)[0];
     if (!el) {
       return emptyEl();
@@ -97,16 +97,16 @@ var Core = function() {
     }
   };
   
-  var elsByTag = function(tag) {
+  var elsByTag = function (tag) {
     return wrapElement(this.el.getElementsByTagName(tag));
   };
   
-  var attr = function(attr) {
+  var attr = function (attr) {
     if (!this.el) { return null; }
     return this.el.getAttribute(attr);
   };
   
-  var val = function() {
+  var val = function () {
     if (!this.el) { return null; }
     try {
       return this.el.childNodes[0].nodeValue;
@@ -115,7 +115,7 @@ var Core = function() {
     }
   };
   
-  var parseDate = function(str) {
+  var parseDate = function (str) {
     if (!str || typeof str !== "string") {
       console.log("Error: date is not a string");
       return null;
@@ -135,5 +135,6 @@ var Core = function() {
     attr: attr,
     val: val,
     parseDate: parseDate
-  }
+  };
+  
 }();

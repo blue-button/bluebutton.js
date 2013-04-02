@@ -8,22 +8,60 @@ var Allergies = function () {
   // properties
   
   // methods
-  var process = function (xmlDOM, type) {
-    var data;
+  var process = function (source, type) {
+    var raw, data = [];
     
     switch (type) {
       case 'ccda':
-        data = parseCCDA(xmlDOM);
+        raw = processCCDA(source);
         break;
       case 'va_c32':
-        data = parseVAC32(xmlDOM);
+        raw = processVAC32(source);
         break;
+      case 'json':
+        return processJSON(source);
+        break;
+    }
+    
+    for (var i = 0; i < raw.length; i++) {
+      data.push({
+        date: {
+          value: null,
+          low: null,
+          high: null
+        },
+        observation_date: { low: null },
+        name: raw[i].name,
+        code: raw[i].code,
+        code_system: raw[i].code_system,
+        code_system_name: raw[i].code_system_name,
+        status: raw[i].status,
+        severity: raw[i].severity,
+        reaction: {
+          date: { low: null },
+          name: raw[i].reaction_name,
+          code: raw[i].reaction_code,
+          code_system: raw[i].reaction_code_system
+        },
+        reaction_type: {
+          name: raw[i].reaction_type_name,
+          code: raw[i].reaction_type_code,
+          code_system: raw[i].reaction_code_system,
+          code_system_name: raw[i].reaction_type_code_system_name
+        },
+        allergen: {
+          name: raw[i].allergen_name,
+          code: raw[i].allergen_code,
+          code_system: raw[i].allergen_code_system,
+          code_system_name: raw[i].allergen_code_system_name
+        }
+      });
     }
     
     return data;
   };
   
-  var parseCCDA = function (xmlDOM) {
+  var processCCDA = function (xmlDOM) {
     var data = [], el, entries, entry;
     
     el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.6.1');
@@ -67,42 +105,29 @@ var Allergies = function () {
       var status = el.attr('displayName');
       
       data.push({
-        date: {
-          value: null,
-          low: null,
-          high: null
-        },
-        observation_date: { low: null },
         name: name,
         code: code,
         code_system: code_system,
         code_system_name: code_system_name,
-        status: status,
+        reaction_type_name: reaction_type_name,
+        reaction_type_code: reaction_type_code,
+        reaction_type_code_system: reaction_type_code_system,
+        reaction_type_code_system_name: reaction_type_code_system_name,
+        reaction_name: reaction_name,
+        reaction_code: reaction_code,
+        reaction_code_system: reaction_code_system,
         severity: severity,
-        reaction: {
-          date: { low: null },
-          name: reaction_name,
-          code: reaction_code,
-          code_system: reaction_code_system
-        },
-        reaction_type: {
-          name: reaction_type_name,
-          code: reaction_type_code,
-          code_system: reaction_code_system,
-          code_system_name: reaction_type_code_system_name
-        },
-        allergen: {
-          name: allergen_name,
-          code: allergen_code,
-          code_system: allergen_code_system,
-          code_system_name: allergen_code_system_name
-        }
+        allergen_name: allergen_name,
+        allergen_code: allergen_code,
+        allergen_code_system: allergen_code_system,
+        allergen_code_system_name: allergen_code_system_name
       });
     }
+    
     return data;
   };
   
-  var parseVAC32 = function (xmlDOM) {
+  var processVAC32 = function (xmlDOM) {
     var data = [], el, entries, entry;
     
     el = xmlDOM.template('2.16.840.1.113883.3.88.11.83.102');
@@ -146,39 +171,30 @@ var Allergies = function () {
       var status = el.attr('displayName');
       
       data.push({
-        date: {
-          value: null,
-          low: null,
-          high: null
-        },
-        observation_date: { low: null },
         name: name,
         code: code,
         code_system: code_system,
         code_system_name: code_system_name,
-        status: status,
+        reaction_type_name: reaction_type_name,
+        reaction_type_code: reaction_type_code,
+        reaction_type_code_system: reaction_type_code_system,
+        reaction_type_code_system_name: reaction_type_code_system_name,
+        reaction_name: reaction_name,
+        reaction_code: reaction_code,
+        reaction_code_system: reaction_code_system,
         severity: severity,
-        reaction: {
-          date: { low: null },
-          name: reaction_name,
-          code: reaction_code,
-          code_system: reaction_code_system
-        },
-        reaction_type: {
-          name: reaction_type_name,
-          code: reaction_type_code,
-          code_system: reaction_code_system,
-          code_system_name: reaction_type_code_system_name
-        },
-        allergen: {
-          name: allergen_name,
-          code: allergen_code,
-          code_system: allergen_code_system,
-          code_system_name: allergen_code_system_name
-        }
+        allergen_name: allergen_name,
+        allergen_code: allergen_code,
+        allergen_code_system: allergen_code_system,
+        allergen_code_system_name: allergen_code_system_name
       });
     }
+    
     return data;
+  };
+  
+  var processJSON = function (json) {
+    return {};
   };
   
   return {

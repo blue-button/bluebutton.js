@@ -1,6 +1,6 @@
 // codes.js
 
-var Codes = function() {
+var Codes = function () {
 
   // dependancies
   
@@ -18,5 +18,6 @@ var Codes = function() {
   // init
   
   return {
-  }
+  };
+  
 }();
