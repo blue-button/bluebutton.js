@@ -124,7 +124,7 @@ bb.medications().json();
     switch (kind) {
       case 'ccda': url = '/hl7_ccd.xml'
         break;
-      case 'va_c32': url = '/VA_CCD_Sample_File_Version_12_3.xml'
+      case 'va_c32': url = '/VA_CCD_Sample_File_Version_12_4.xml'
         break;
     }
     
