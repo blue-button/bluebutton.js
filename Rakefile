@@ -129,7 +129,7 @@ task :page do
   
   puts "\nBuilding page BlueButton.html".task, ""
   
-  xml = File.open("sample_data/CCDA XML/hl7_ccd.xml", "r") { |f| f.read }
+  xml = File.open("sample_data/ccda/hl7_ccd.xml", "r") { |f| f.read }
   bbjs = File.open("build/bluebutton-latest-dev.js", "r") { |f| f.read }
   
   page = <<-page
