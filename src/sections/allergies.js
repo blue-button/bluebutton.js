@@ -136,14 +136,14 @@ var Allergies = function () {
     for (var i = 0; i < entries.length; i++) {
       entry = entries[i];
       
-      el = entry.template('2.16.840.1.113883.10.20.22.4.7').tag('code');
-      var name = el.attr('displayName'),
+      el = entry.template('2.16.840.1.113883.10.20.1.28').tag('code');
+      var name = el.tag('originalText').val(),
           code = el.attr('code'),
           code_system = el.attr('codeSystem'),
           code_system_name = el.attr('codeSystemName');
       
       // value => reaction_type
-      el = entry.template('2.16.840.1.113883.10.20.22.4.7').tag('value');
+      el = entry.template('2.16.840.1.113883.10.20.1.54').tag('value');
       var reaction_type_name = el.attr('displayName'),
           reaction_type_code = el.attr('code'),
           reaction_type_code_system = el.attr('codeSystem'),
@@ -156,12 +156,12 @@ var Allergies = function () {
           reaction_code_system = el.attr('codeSystem');
       
       // severity
-      el = entry.template('2.16.840.1.113883.10.20.22.4.8').tag('value');
+      el = entry.template('2.16.840.1.113883.10.20.1.55').tag('value');
       var severity = el.attr('displayName');
       
       // participant => allergen
       el = entry.tag('participant').tag('code');
-      var allergen_name = el.attr('displayName'),
+      var allergen_name = entry.tag('participant').tag('name').val(),
           allergen_code = el.attr('code'),
           allergen_code_system = el.attr('codeSystem'),
           allergen_code_system_name = el.attr('codeSystemName');

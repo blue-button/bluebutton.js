@@ -69,10 +69,10 @@ var Labs = function () {
       
       // panel
       el = entry.tag('code');
-      var name = el.attr('displayName'),
-          code = el.attr('code'),
-          code_system = el.attr('codeSystem'),
-          code_system_name = el.attr('codeSystemName');
+      var panel_name = el.attr('displayName'),
+          panel_code = el.attr('code'),
+          panel_code_system = el.attr('codeSystem'),
+          panel_code_system_name = el.attr('codeSystemName');
       
       results = entry.elsByTag('component');
       
@@ -109,10 +109,10 @@ var Labs = function () {
       }
       
       data.push({
-        name: name,
-        code: code,
-        code_system: code_system,
-        code_system_name: code_system_name,
+        name: panel_name,
+        code: panel_code,
+        code_system: panel_code_system,
+        code_system_name: panel_code_system_name,
         results: results_data
       });
     }
@@ -130,10 +130,10 @@ var Labs = function () {
       
       // panel
       el = entry.tag('code');
-      var name = el.attr('displayName'),
-          code = el.attr('code'),
-          code_system = el.attr('codeSystem'),
-          code_system_name = el.attr('codeSystemName');
+      var panel_name = el.attr('displayName'),
+          panel_code = el.attr('code'),
+          panel_code_system = el.attr('codeSystem'),
+          panel_code_system_name = el.attr('codeSystemName');
       
       results = entry.elsByTag('component');
       
@@ -143,7 +143,7 @@ var Labs = function () {
         var date = parseDate(result.tag('effectiveTime').attr('value'));
         
         el = result.tag('code');
-        var name = el.attr('displayName'),
+        var name = el.tag('originalText').val(),
             code = el.attr('code'),
             code_system = el.attr('codeSystem'),
             code_system_name = el.attr('codeSystemName');
@@ -170,10 +170,10 @@ var Labs = function () {
       }
       
       data.push({
-        name: name,
-        code: code,
-        code_system: code_system,
-        code_system_name: code_system_name,
+        name: panel_name,
+        code: panel_code,
+        code_system: panel_code_system,
+        code_system_name: panel_code_system_name,
         results: results_data
       });
     }

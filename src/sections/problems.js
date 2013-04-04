@@ -90,8 +90,8 @@ var Problems = function () {
       var from = parseDate(el.tag('low').attr('value')),
           to = parseDate(el.tag('high').attr('value'));
       
-      el = entry.template('2.16.840.1.113883.10.20.22.4.4').tag('code');
-      var name = el.attr('displayName'),
+      el = entry.template('2.16.840.1.113883.10.20.1.28').tag('code');
+      var name = el.tag('originalText').val(),
           code = el.attr('code'),
           code_system = el.attr('codeSystem');
       

@@ -135,7 +135,7 @@ var Immunizations = function () {
       var date = parseDate(el.attr('value'));
       
       // product
-      el = entry.template('2.16.840.1.113883.10.20.22.4.54').tag('code');
+      el = entry.template('2.16.840.1.113883.10.20.1.53').tag('code');
       var product_name = el.attr('displayName'),
           product_code = el.attr('code'),
           product_code_system = el.attr('codeSystem'),

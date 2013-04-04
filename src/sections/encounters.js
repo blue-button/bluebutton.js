@@ -146,7 +146,7 @@ var Encounters = function () {
     for (var i = 0; i < entries.length; i++) {
       entry = entries[i];
       
-      var date = parseDate(entry.tag('effectiveTime').attr('value'));
+      var date = parseDate(entry.tag('effectiveTime').tag('low').attr('value'));
       
       el = entry.tag('code');
       var name = el.attr('displayName'),

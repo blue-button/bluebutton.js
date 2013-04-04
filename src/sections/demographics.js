@@ -155,7 +155,7 @@ var Demographics = function () {
     patient = el.tag('patientRole');
     
     el = patient.tag('patient').tag('name');
-    data.prefix = el.tag('prefix').val();
+    data.prefix = null;
     data.given = el.tag('given').val();
     data.family = el.tag('family').val();
     

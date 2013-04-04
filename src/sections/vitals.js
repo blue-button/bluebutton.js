@@ -61,7 +61,7 @@ var Vitals = function () {
       entry = entries[i];
       
       el = entry.tag('effectiveTime');
-      var date = parseDate(el.attr('value'));
+      var entry_date = parseDate(el.attr('value'));
       
       results = entry.elsByTag('component');
       
@@ -91,7 +91,7 @@ var Vitals = function () {
       }
       
       data.push({
-        date: date,
+        date: entry_date,
         results: results_data
       });
     }

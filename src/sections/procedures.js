@@ -128,10 +128,10 @@ var Procedures = function () {
       entry = entries[i];
       
       el = entry.tag('effectiveTime');
-      var date = parseDate(el.attr('value'));
+      var date = parseDate(el.tag('low').attr('value'));
       
       el = entry.tag('code');
-      var name = el.attr('displayName'),
+      var name = el.tag('originalText').val(),
           code = el.attr('code'),
           code_system = el.attr('codeSystem');
       
