@@ -2487,7 +2487,7 @@ Vital Signs
  * BlueButton.js
  */
 
-// v.0.0.7.pre
+// v.0.0.7
 
 
 
@@ -2771,14 +2771,14 @@ var Allergies = function () {
     for (var i = 0; i < entries.length; i++) {
       entry = entries[i];
       
-      el = entry.template('2.16.840.1.113883.10.20.22.4.7').tag('code');
-      var name = el.attr('displayName'),
+      el = entry.template('2.16.840.1.113883.10.20.1.28').tag('code');
+      var name = el.tag('originalText').val(),
           code = el.attr('code'),
           code_system = el.attr('codeSystem'),
           code_system_name = el.attr('codeSystemName');
       
       // value => reaction_type
-      el = entry.template('2.16.840.1.113883.10.20.22.4.7').tag('value');
+      el = entry.template('2.16.840.1.113883.10.20.1.54').tag('value');
       var reaction_type_name = el.attr('displayName'),
           reaction_type_code = el.attr('code'),
           reaction_type_code_system = el.attr('codeSystem'),
@@ -2791,12 +2791,12 @@ var Allergies = function () {
           reaction_code_system = el.attr('codeSystem');
       
       // severity
-      el = entry.template('2.16.840.1.113883.10.20.22.4.8').tag('value');
+      el = entry.template('2.16.840.1.113883.10.20.1.55').tag('value');
       var severity = el.attr('displayName');
       
       // participant => allergen
       el = entry.tag('participant').tag('code');
-      var allergen_name = el.attr('displayName'),
+      var allergen_name = entry.tag('participant').tag('name').val(),
           allergen_code = el.attr('code'),
           allergen_code_system = el.attr('codeSystem'),
           allergen_code_system_name = el.attr('codeSystemName');
@@ -2996,7 +2996,7 @@ var Demographics = function () {
     patient = el.tag('patientRole');
     
     el = patient.tag('patient').tag('name');
-    data.prefix = el.tag('prefix').val();
+    data.prefix = null;
     data.given = el.tag('given').val();
     data.family = el.tag('family').val();
     
@@ -3213,7 +3213,7 @@ var Encounters = function () {
     for (var i = 0; i < entries.length; i++) {
       entry = entries[i];
       
-      var date = parseDate(entry.tag('effectiveTime').attr('value'));
+      var date = parseDate(entry.tag('effectiveTime').tag('low').attr('value'));
       
       el = entry.tag('code');
       var name = el.attr('displayName'),
@@ -3428,7 +3428,7 @@ var Immunizations = function () {
       var date = parseDate(el.attr('value'));
       
       // product
-      el = entry.template('2.16.840.1.113883.10.20.22.4.54').tag('code');
+      el = entry.template('2.16.840.1.113883.10.20.1.53').tag('code');
       var product_name = el.attr('displayName'),
           product_code = el.attr('code'),
           product_code_system = el.attr('codeSystem'),
@@ -3561,10 +3561,10 @@ var Labs = function () {
       
       // panel
       el = entry.tag('code');
-      var name = el.attr('displayName'),
-          code = el.attr('code'),
-          code_system = el.attr('codeSystem'),
-          code_system_name = el.attr('codeSystemName');
+      var panel_name = el.attr('displayName'),
+          panel_code = el.attr('code'),
+          panel_code_system = el.attr('codeSystem'),
+          panel_code_system_name = el.attr('codeSystemName');
       
       results = entry.elsByTag('component');
       
@@ -3601,10 +3601,10 @@ var Labs = function () {
       }
       
       data.push({
-        name: name,
-        code: code,
-        code_system: code_system,
-        code_system_name: code_system_name,
+        name: panel_name,
+        code: panel_code,
+        code_system: panel_code_system,
+        code_system_name: panel_code_system_name,
         results: results_data
       });
     }
@@ -3622,10 +3622,10 @@ var Labs = function () {
       
       // panel
       el = entry.tag('code');
-      var name = el.attr('displayName'),
-          code = el.attr('code'),
-          code_system = el.attr('codeSystem'),
-          code_system_name = el.attr('codeSystemName');
+      var panel_name = el.attr('displayName'),
+          panel_code = el.attr('code'),
+          panel_code_system = el.attr('codeSystem'),
+          panel_code_system_name = el.attr('codeSystemName');
       
       results = entry.elsByTag('component');
       
@@ -3635,7 +3635,7 @@ var Labs = function () {
         var date = parseDate(result.tag('effectiveTime').attr('value'));
         
         el = result.tag('code');
-        var name = el.attr('displayName'),
+        var name = el.tag('originalText').val(),
             code = el.attr('code'),
             code_system = el.attr('codeSystem'),
             code_system_name = el.attr('codeSystemName');
@@ -3662,10 +3662,10 @@ var Labs = function () {
       }
       
       data.push({
-        name: name,
-        code: code,
-        code_system: code_system,
-        code_system_name: code_system_name,
+        name: panel_name,
+        code: panel_code,
+        code_system: panel_code_system,
+        code_system_name: panel_code_system_name,
         results: results_data
       });
     }
@@ -4086,8 +4086,8 @@ var Problems = function () {
       var from = parseDate(el.tag('low').attr('value')),
           to = parseDate(el.tag('high').attr('value'));
       
-      el = entry.template('2.16.840.1.113883.10.20.22.4.4').tag('code');
-      var name = el.attr('displayName'),
+      el = entry.template('2.16.840.1.113883.10.20.1.28').tag('code');
+      var name = el.tag('originalText').val(),
           code = el.attr('code'),
           code_system = el.attr('codeSystem');
       
@@ -4251,10 +4251,10 @@ var Procedures = function () {
       entry = entries[i];
       
       el = entry.tag('effectiveTime');
-      var date = parseDate(el.attr('value'));
+      var date = parseDate(el.tag('low').attr('value'));
       
       el = entry.tag('code');
-      var name = el.attr('displayName'),
+      var name = el.tag('originalText').val(),
           code = el.attr('code'),
           code_system = el.attr('codeSystem');
       
@@ -4379,7 +4379,7 @@ var Vitals = function () {
       entry = entries[i];
       
       el = entry.tag('effectiveTime');
-      var date = parseDate(el.attr('value'));
+      var entry_date = parseDate(el.attr('value'));
       
       results = entry.elsByTag('component');
       
@@ -4409,7 +4409,7 @@ var Vitals = function () {
       }
       
       data.push({
-        date: date,
+        date: entry_date,
         results: results_data
       });
     }
