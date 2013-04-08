@@ -25,9 +25,9 @@ var Medications = function () {
     
     for (var i = 0; i < raw.length; i++) {
       data.push({
-        effective_time: {
-          low: raw[i].low,
-          high: raw[i].high
+        date_range: {
+          start: raw[i].start_date,
+          end: raw[i].end_date
         },
         product: {
           name: raw[i].product_name,
@@ -96,8 +96,8 @@ var Medications = function () {
       entry = entries[i];
       
       el = entry.tag('effectiveTime');
-      var low = parseDate(el.tag('low').attr('value')),
-          high = parseDate(el.tag('high').attr('value'));
+      var start_date = parseDate(el.tag('low').attr('value')),
+          end_date = parseDate(el.tag('high').attr('value'));
       
       el = entry.tag('manufacturedProduct').tag('code');
       var product_name = el.attr('displayName'),
@@ -153,8 +153,8 @@ var Medications = function () {
           prescriber_person = null;
       
       data.push({
-        low: low,
-        high: high,
+        start_date: start_date,
+        end_date: end_date,
         product_name: product_name,
         product_code: product_code,
         product_code_system: product_code_system,
@@ -202,8 +202,8 @@ var Medications = function () {
       entry = entries[i];
       
       el = entry.tag('effectiveTime');
-      var low = parseDate(el.tag('low').attr('value')),
-          high = parseDate(el.tag('high').attr('value'));
+      var start_date = parseDate(el.tag('low').attr('value')),
+          end_date = parseDate(el.tag('high').attr('value'));
       
       el = entry.tag('manufacturedProduct').tag('code');
       var product_name = el.attr('displayName'),
@@ -259,8 +259,8 @@ var Medications = function () {
           prescriber_person = null;
       
       data.push({
-        low: low,
-        high: high,
+        start_date: start_date,
+        end_date: end_date,
         product_name: product_name,
         product_code: product_code,
         product_code_system: product_code_system,

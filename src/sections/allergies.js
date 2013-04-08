@@ -25,12 +25,10 @@ var Allergies = function () {
     
     for (var i = 0; i < raw.length; i++) {
       data.push({
-        date: {
-          value: null,
-          low: null,
-          high: null
+        date_range: {
+          start: raw[i].start_date,
+          end: raw[i].end_date
         },
-        observation_date: { low: null },
         name: raw[i].name,
         code: raw[i].code,
         code_system: raw[i].code_system,
@@ -38,7 +36,6 @@ var Allergies = function () {
         status: raw[i].status,
         severity: raw[i].severity,
         reaction: {
-          date: { low: null },
           name: raw[i].reaction_name,
           code: raw[i].reaction_code,
           code_system: raw[i].reaction_code_system
@@ -69,6 +66,10 @@ var Allergies = function () {
     
     for (var i = 0; i < entries.length; i++) {
       entry = entries[i];
+      
+      el = entry.tag('effectiveTime');
+      var start_date = parseDate(el.tag('low').attr('value')),
+          end_date = parseDate(el.tag('high').attr('value'));
       
       el = entry.template('2.16.840.1.113883.10.20.22.4.7').tag('code');
       var name = el.attr('displayName'),
@@ -106,6 +107,8 @@ var Allergies = function () {
       
       data.push({
         name: name,
+        start_date: start_date,
+        end_date: end_date,
         code: code,
         code_system: code_system,
         code_system_name: code_system_name,
@@ -135,6 +138,10 @@ var Allergies = function () {
     
     for (var i = 0; i < entries.length; i++) {
       entry = entries[i];
+      
+      el = entry.tag('effectiveTime');
+      var start_date = el.tag('low').attr('value'),
+          end_date = el.tag('high').attr('value');
       
       el = entry.template('2.16.840.1.113883.10.20.1.28').tag('code');
       var name = el.tag('originalText').val(),
@@ -172,6 +179,8 @@ var Allergies = function () {
       
       data.push({
         name: name,
+        start_date: start_date,
+        end_date: end_date,
         code: code,
         code_system: code_system,
         code_system_name: code_system_name,

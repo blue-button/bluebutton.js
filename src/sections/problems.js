@@ -25,9 +25,9 @@ var Problems = function () {
     
     for (var i = 0; i < raw.length; i++) {
       data.push({
-        date: {
-          from: raw[i].from,
-          to: raw[i].to
+        date_range: {
+          start: raw[i].start_date,
+          end: raw[i].end_date
         },
         name: raw[i].name,
         status: raw[i].status,
@@ -50,8 +50,8 @@ var Problems = function () {
       entry = entries[i];
       
       el = entry.tag('effectiveTime');
-      var from = parseDate(el.tag('low').attr('value')),
-          to = parseDate(el.tag('high').attr('value'));
+      var start_date = parseDate(el.tag('low').attr('value')),
+          end_date = parseDate(el.tag('high').attr('value'));
       
       el = entry.template('2.16.840.1.113883.10.20.22.4.4').tag('code');
       var name = el.attr('displayName'),
@@ -65,8 +65,8 @@ var Problems = function () {
       var age = parseInt(el.tag('value').attr('value'));
       
       data.push({
-        from: from,
-        to: to,
+        start_date: start_date,
+        end_date: end_date,
         name: name,
         code: code,
         code_system: code_system,
@@ -87,8 +87,8 @@ var Problems = function () {
       entry = entries[i];
       
       el = entry.tag('effectiveTime');
-      var from = parseDate(el.tag('low').attr('value')),
-          to = parseDate(el.tag('high').attr('value'));
+      var start_date = parseDate(el.tag('low').attr('value')),
+          end_date = parseDate(el.tag('high').attr('value'));
       
       el = entry.template('2.16.840.1.113883.10.20.1.28').tag('code');
       var name = el.tag('originalText').val(),
@@ -102,8 +102,8 @@ var Problems = function () {
       var age = parseInt(el.tag('value').attr('value'));
       
       data.push({
-        from: from,
-        to: to,
+        start_date: start_date,
+        end_date: end_date,
         name: name,
         code: code,
         code_system: code_system,
