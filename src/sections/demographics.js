@@ -45,6 +45,7 @@ var Demographics = function () {
         mobile: data.mobile
       },
       email: data.email,
+      language: data.language,
       race: data.race,
       ethnicity: data.ethnicity,
       religion: data.religion,
@@ -113,6 +114,7 @@ var Demographics = function () {
     
     data.email = null;
     
+    data.language = patient.tag('languageCommunication').tag('languageCode').attr('code');
     data.race = patient.tag('raceCode').attr('displayName');
     data.ethnicity = patient.tag('ethnicGroupCode').attr('displayName');
     data.religion = patient.tag('religiousAffiliationCode').attr('displayName');
@@ -178,6 +180,7 @@ var Demographics = function () {
     
     data.email = null;
     
+    data.language = patient.tag('languageCommunication').tag('languageCode').attr('code');
     data.race = patient.tag('raceCode').attr('displayName');
     data.ethnicity = patient.tag('ethnicGroupCode').attr('displayName');
     data.religion = patient.tag('religiousAffiliationCode').attr('displayName');
