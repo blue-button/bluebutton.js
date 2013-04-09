@@ -127,7 +127,7 @@ end
 desc "Build One Pager"
 task :page do
   
-  puts "\nBuilding page BlueButton.html".task, ""
+  puts "\nBuilding page BlueButton.html".task
   
   xml = File.open("sample_data/ccda/hl7_ccd.xml", "r") { |f| f.read }
   bbjs = File.open("build/bluebutton-latest-dev.js", "r") { |f| f.read }
@@ -165,7 +165,16 @@ page
   
   File.open("build/bluebutton.html", "w") { |f| f.puts(page) }
   
-  puts "  File written: build/bluebutton.html".success, ""
+  `cp build/bluebutton.html docs_server/public/`
+  
+  msg = <<-msg
+
+  Files written:
+    build/bluebutton.html
+    docs_server/public/bluebutton.html
+msg
+
+  puts msg.success
   
 end
 
