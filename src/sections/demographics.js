@@ -86,13 +86,20 @@ var Demographics = function () {
   };
   
   var processCCDA = function (xmlDOM) {
-    var data = {}, el, patient;
+    var data = {}, el, els, patient;
     
     el = xmlDOM.template('2.16.840.1.113883.10.20.22.1.1');
     patient = el.tag('patientRole');
     el = patient.tag('patient').tag('name');
     data.prefix = el.tag('prefix').val();
-    data.given = el.tag('given').val();
+    
+    els = el.elsByTag('given');
+    data.given = [];
+    
+    for (var i = 0; i < els.length; i++) {
+      data.given.push(els[i].val());
+    }
+    
     data.family = el.tag('family').val();
     
     el = patient.tag('patient');
@@ -101,7 +108,13 @@ var Demographics = function () {
     data.marital_status = el.tag('maritalStatusCode').attr('displayName');
     
     el = patient.tag('addr');
-    data.street = el.tag('streetAddressLine').val();
+    els = el.elsByTag('streetAddressLine');
+    data.street = [];
+    
+    for (var i = 0; i < els.length; i++) {
+      data.street.push(els[i].val());
+    }
+    
     data.city = el.tag('city').val();
     data.state = el.tag('state').val();
     data.zip = el.tag('postalCode').val();
@@ -128,11 +141,25 @@ var Demographics = function () {
     data.guardian_relationship = el.tag('code').attr('displayName');
     data.guardian_home = el.tag('telecom').attr('value');
     el = el.tag('guardianPerson');
-    data.guardian_given = el.tag('given').val();
+    
+    els = el.elsByTag('given');
+    data.guardian_given = [];
+    
+    for (var i = 0; i < els.length; i++) {
+      data.guardian_given.push(els[i].val());
+    }
+    
     data.guardian_family = el.tag('family').val();
     
     el = patient.tag('guardian').tag('addr');
-    data.guardian_street = el.tag('streetAddressLine').val();
+    
+    els = el.elsByTag('streetAddressLine');
+    data.guardian_street = [];
+    
+    for (var i = 0; i < els.length; i++) {
+      data.guardian_street.push(els[i].val());
+    }
+    
     data.guardian_city = el.tag('city').val();
     data.guardian_state = el.tag('state').val();
     data.guardian_zip = el.tag('postalCode').val();
@@ -142,6 +169,14 @@ var Demographics = function () {
     data.provider_organization = el.tag('name').val();
     data.provider_phone = el.tag('telecom').attr('value');
     data.provider_street = el.tag('streetAddressLine').val();
+    
+    els = el.elsByTag('streetAddressLine');
+    data.provider_street = [];
+    
+    for (var i = 0; i < els.length; i++) {
+      data.provider_street.push(els[i].val());
+    }
+    
     data.provider_city = el.tag('city').val();
     data.provider_state = el.tag('state').val();
     data.provider_zip = el.tag('postalCode').val();
