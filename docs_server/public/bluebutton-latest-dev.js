@@ -2,7 +2,7 @@
  * BlueButton.js
  */
 
-// v.0.0.7
+// v.0.0.8.pre
 
 
 
@@ -175,12 +175,10 @@ var Allergies = function () {
     
     for (var i = 0; i < raw.length; i++) {
       data.push({
-        date: {
-          value: null,
-          low: null,
-          high: null
+        date_range: {
+          start: raw[i].start_date,
+          end: raw[i].end_date
         },
-        observation_date: { low: null },
         name: raw[i].name,
         code: raw[i].code,
         code_system: raw[i].code_system,
@@ -188,7 +186,6 @@ var Allergies = function () {
         status: raw[i].status,
         severity: raw[i].severity,
         reaction: {
-          date: { low: null },
           name: raw[i].reaction_name,
           code: raw[i].reaction_code,
           code_system: raw[i].reaction_code_system
@@ -219,6 +216,10 @@ var Allergies = function () {
     
     for (var i = 0; i < entries.length; i++) {
       entry = entries[i];
+      
+      el = entry.tag('effectiveTime');
+      var start_date = parseDate(el.tag('low').attr('value')),
+          end_date = parseDate(el.tag('high').attr('value'));
       
       el = entry.template('2.16.840.1.113883.10.20.22.4.7').tag('code');
       var name = el.attr('displayName'),
@@ -256,6 +257,8 @@ var Allergies = function () {
       
       data.push({
         name: name,
+        start_date: start_date,
+        end_date: end_date,
         code: code,
         code_system: code_system,
         code_system_name: code_system_name,
@@ -285,6 +288,10 @@ var Allergies = function () {
     
     for (var i = 0; i < entries.length; i++) {
       entry = entries[i];
+      
+      el = entry.tag('effectiveTime');
+      var start_date = el.tag('low').attr('value'),
+          end_date = el.tag('high').attr('value');
       
       el = entry.template('2.16.840.1.113883.10.20.1.28').tag('code');
       var name = el.tag('originalText').val(),
@@ -322,6 +329,8 @@ var Allergies = function () {
       
       data.push({
         name: name,
+        start_date: start_date,
+        end_date: end_date,
         code: code,
         code_system: code_system,
         code_system_name: code_system_name,
@@ -401,6 +410,7 @@ var Demographics = function () {
         mobile: data.mobile
       },
       email: data.email,
+      language: data.language,
       race: data.race,
       ethnicity: data.ethnicity,
       religion: data.religion,
@@ -441,13 +451,20 @@ var Demographics = function () {
   };
   
   var processCCDA = function (xmlDOM) {
-    var data = {}, el, patient;
+    var data = {}, el, els, patient;
     
     el = xmlDOM.template('2.16.840.1.113883.10.20.22.1.1');
     patient = el.tag('patientRole');
     el = patient.tag('patient').tag('name');
     data.prefix = el.tag('prefix').val();
-    data.given = el.tag('given').val();
+    
+    els = el.elsByTag('given');
+    data.given = [];
+    
+    for (var i = 0; i < els.length; i++) {
+      data.given.push(els[i].val());
+    }
+    
     data.family = el.tag('family').val();
     
     el = patient.tag('patient');
@@ -456,7 +473,13 @@ var Demographics = function () {
     data.marital_status = el.tag('maritalStatusCode').attr('displayName');
     
     el = patient.tag('addr');
-    data.street = el.tag('streetAddressLine').val();
+    els = el.elsByTag('streetAddressLine');
+    data.street = [];
+    
+    for (var i = 0; i < els.length; i++) {
+      data.street.push(els[i].val());
+    }
+    
     data.city = el.tag('city').val();
     data.state = el.tag('state').val();
     data.zip = el.tag('postalCode').val();
@@ -469,6 +492,7 @@ var Demographics = function () {
     
     data.email = null;
     
+    data.language = patient.tag('languageCommunication').tag('languageCode').attr('code');
     data.race = patient.tag('raceCode').attr('displayName');
     data.ethnicity = patient.tag('ethnicGroupCode').attr('displayName');
     data.religion = patient.tag('religiousAffiliationCode').attr('displayName');
@@ -482,11 +506,25 @@ var Demographics = function () {
     data.guardian_relationship = el.tag('code').attr('displayName');
     data.guardian_home = el.tag('telecom').attr('value');
     el = el.tag('guardianPerson');
-    data.guardian_given = el.tag('given').val();
+    
+    els = el.elsByTag('given');
+    data.guardian_given = [];
+    
+    for (var i = 0; i < els.length; i++) {
+      data.guardian_given.push(els[i].val());
+    }
+    
     data.guardian_family = el.tag('family').val();
     
     el = patient.tag('guardian').tag('addr');
-    data.guardian_street = el.tag('streetAddressLine').val();
+    
+    els = el.elsByTag('streetAddressLine');
+    data.guardian_street = [];
+    
+    for (var i = 0; i < els.length; i++) {
+      data.guardian_street.push(els[i].val());
+    }
+    
     data.guardian_city = el.tag('city').val();
     data.guardian_state = el.tag('state').val();
     data.guardian_zip = el.tag('postalCode').val();
@@ -496,6 +534,14 @@ var Demographics = function () {
     data.provider_organization = el.tag('name').val();
     data.provider_phone = el.tag('telecom').attr('value');
     data.provider_street = el.tag('streetAddressLine').val();
+    
+    els = el.elsByTag('streetAddressLine');
+    data.provider_street = [];
+    
+    for (var i = 0; i < els.length; i++) {
+      data.provider_street.push(els[i].val());
+    }
+    
     data.provider_city = el.tag('city').val();
     data.provider_state = el.tag('state').val();
     data.provider_zip = el.tag('postalCode').val();
@@ -534,6 +580,7 @@ var Demographics = function () {
     
     data.email = null;
     
+    data.language = patient.tag('languageCommunication').tag('languageCode').attr('code');
     data.race = patient.tag('raceCode').attr('displayName');
     data.ethnicity = patient.tag('ethnicGroupCode').attr('displayName');
     data.religion = patient.tag('religiousAffiliationCode').attr('displayName');
@@ -1225,9 +1272,9 @@ var Medications = function () {
     
     for (var i = 0; i < raw.length; i++) {
       data.push({
-        effective_time: {
-          low: raw[i].low,
-          high: raw[i].high
+        date_range: {
+          start: raw[i].start_date,
+          end: raw[i].end_date
         },
         product: {
           name: raw[i].product_name,
@@ -1296,8 +1343,8 @@ var Medications = function () {
       entry = entries[i];
       
       el = entry.tag('effectiveTime');
-      var low = parseDate(el.tag('low').attr('value')),
-          high = parseDate(el.tag('high').attr('value'));
+      var start_date = parseDate(el.tag('low').attr('value')),
+          end_date = parseDate(el.tag('high').attr('value'));
       
       el = entry.tag('manufacturedProduct').tag('code');
       var product_name = el.attr('displayName'),
@@ -1353,8 +1400,8 @@ var Medications = function () {
           prescriber_person = null;
       
       data.push({
-        low: low,
-        high: high,
+        start_date: start_date,
+        end_date: end_date,
         product_name: product_name,
         product_code: product_code,
         product_code_system: product_code_system,
@@ -1402,8 +1449,8 @@ var Medications = function () {
       entry = entries[i];
       
       el = entry.tag('effectiveTime');
-      var low = parseDate(el.tag('low').attr('value')),
-          high = parseDate(el.tag('high').attr('value'));
+      var start_date = parseDate(el.tag('low').attr('value')),
+          end_date = parseDate(el.tag('high').attr('value'));
       
       el = entry.tag('manufacturedProduct').tag('code');
       var product_name = el.attr('displayName'),
@@ -1459,8 +1506,8 @@ var Medications = function () {
           prescriber_person = null;
       
       data.push({
-        low: low,
-        high: high,
+        start_date: start_date,
+        end_date: end_date,
         product_name: product_name,
         product_code: product_code,
         product_code_system: product_code_system,
@@ -1536,9 +1583,9 @@ var Problems = function () {
     
     for (var i = 0; i < raw.length; i++) {
       data.push({
-        date: {
-          from: raw[i].from,
-          to: raw[i].to
+        date_range: {
+          start: raw[i].start_date,
+          end: raw[i].end_date
         },
         name: raw[i].name,
         status: raw[i].status,
@@ -1561,8 +1608,8 @@ var Problems = function () {
       entry = entries[i];
       
       el = entry.tag('effectiveTime');
-      var from = parseDate(el.tag('low').attr('value')),
-          to = parseDate(el.tag('high').attr('value'));
+      var start_date = parseDate(el.tag('low').attr('value')),
+          end_date = parseDate(el.tag('high').attr('value'));
       
       el = entry.template('2.16.840.1.113883.10.20.22.4.4').tag('code');
       var name = el.attr('displayName'),
@@ -1576,8 +1623,8 @@ var Problems = function () {
       var age = parseInt(el.tag('value').attr('value'));
       
       data.push({
-        from: from,
-        to: to,
+        start_date: start_date,
+        end_date: end_date,
         name: name,
         code: code,
         code_system: code_system,
@@ -1598,8 +1645,8 @@ var Problems = function () {
       entry = entries[i];
       
       el = entry.tag('effectiveTime');
-      var from = parseDate(el.tag('low').attr('value')),
-          to = parseDate(el.tag('high').attr('value'));
+      var start_date = parseDate(el.tag('low').attr('value')),
+          end_date = parseDate(el.tag('high').attr('value'));
       
       el = entry.template('2.16.840.1.113883.10.20.1.28').tag('code');
       var name = el.tag('originalText').val(),
@@ -1613,8 +1660,8 @@ var Problems = function () {
       var age = parseInt(el.tag('value').attr('value'));
       
       data.push({
-        from: from,
-        to: to,
+        start_date: start_date,
+        end_date: end_date,
         name: name,
         code: code,
         code_system: code_system,
@@ -1910,7 +1957,7 @@ var Vitals = function () {
             code_system_name = el.attr('codeSystemName');
         
         el = result.tag('value');
-        var value = el.attr('value'),
+        var value = parseInt(el.attr('value')),
             unit = el.attr('unit');
         
         results_data.push({
