@@ -77,7 +77,7 @@ var Vitals = function () {
             code_system_name = el.attr('codeSystemName');
         
         el = result.tag('value');
-        var value = el.attr('value'),
+        var value = parseInt(el.attr('value')),
             unit = el.attr('unit');
         
         results_data.push({
