@@ -55,7 +55,7 @@ var Procedures = function () {
   };
   
   var processCCDA = function (xmlDOM) {
-    var data = [], el, entries, entry;
+    var data = [], el, els, entries, entry;
     
     el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.7');
     entries = el.elsByTag('entry');
@@ -80,11 +80,18 @@ var Procedures = function () {
           specimen_code = null,
           specimen_code_system = null;
       
-      el = entry.tag('performer');
+      el = entry.tag('performer').tag('addr');
       var organization = el.tag('name').val(),
-          phone = el.tag('telecom').attr('value'),
-          street = el.tag('streetAddressLine').val(),
-          city = el.tag('city').val(),
+          phone = el.tag('telecom').attr('value');
+      
+      els = el.elsByTag('streetAddressLine');
+      street = [];
+      
+      for (var j = 0; j < els.length; j++) {
+        street.push(els[j].val());
+      }
+          
+      var city = el.tag('city').val(),
           state = el.tag('state').val(),
           zip = el.tag('postalCode').val(),
           country = el.tag('country').val();
@@ -119,7 +126,7 @@ var Procedures = function () {
   };
   
   var processVAC32 = function (xmlDOM) {
-    var data = [], el, entries, entry;
+    var data = [], el, els, entries, entry;
     
     el = xmlDOM.template('2.16.840.1.113883.10.20.1.12');
     entries = el.elsByTag('entry');
@@ -144,11 +151,18 @@ var Procedures = function () {
           specimen_code = null,
           specimen_code_system = null;
       
-      el = entry.tag('performer');
+      el = entry.tag('performer').tag('addr');
       var organization = el.tag('name').val(),
-          phone = el.tag('telecom').attr('value'),
-          street = el.tag('streetAddressLine').val(),
-          city = el.tag('city').val(),
+          phone = el.tag('telecom').attr('value');
+      
+      els = el.elsByTag('streetAddressLine');
+      street = [];
+      
+      for (var j = 0; j < els.length; j++) {
+        street.push(els[j].val());
+      }
+          
+      var city = el.tag('city').val(),
           state = el.tag('state').val(),
           zip = el.tag('postalCode').val(),
           country = el.tag('country').val();

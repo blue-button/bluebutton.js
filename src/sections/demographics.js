@@ -185,7 +185,7 @@ var Demographics = function () {
   };
   
   var processVAC32 = function (xmlDOM) {
-    var data = {}, el, patient;
+    var data = {}, el, els, patient;
     
     el = xmlDOM.template('1.3.6.1.4.1.19376.1.5.3.1.1.1');
     patient = el.tag('patientRole');

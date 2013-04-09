@@ -62,7 +62,7 @@ var Encounters = function () {
   };
   
   var processCCDA = function (xmlDOM) {
-    var data = [], el, entries, entry;
+    var data = [], el, els, entries, entry;
     
     el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.22.1');
     entries = el.elsByTag('entry');
@@ -101,9 +101,16 @@ var Encounters = function () {
 
       // participant => location
       el = entry.tag('participant');
-      var organization = el.tag('code').attr('displayName'),
-          street = el.tag('streetAddressLine').val(),
-          city = el.tag('city').val(),
+      var organization = el.tag('code').attr('displayName');
+      
+      els = el.elsByTag('streetAddressLine');
+      street = [];
+      
+      for (var j = 0; j < els.length; j++) {
+        street.push(els[j].val());
+      }
+      
+      var city = el.tag('city').val(),
           state = el.tag('state').val(),
           zip = el.tag('postalCode').val(),
           country = el.tag('country').val();
@@ -138,7 +145,7 @@ var Encounters = function () {
   };
   
  var processVAC32 = function (xmlDOM) {
-   var data = [], el, entries, entry;
+   var data = [], el, els, entries, entry;
     
     el = xmlDOM.template('2.16.840.1.113883.10.20.1.3');
     entries = el.elsByTag('entry');
@@ -177,9 +184,16 @@ var Encounters = function () {
 
       // participant => location
       el = entry.tag('participant');
-      var organization = el.tag('code').attr('displayName'),
-          street = el.tag('streetAddressLine').val(),
-          city = el.tag('city').val(),
+      var organization = el.tag('code').attr('displayName');
+      
+      els = el.elsByTag('streetAddressLine');
+      street = [];
+      
+      for (var j = 0; j < els.length; j++) {
+        street.push(els[j].val());
+      }
+      
+      var city = el.tag('city').val(),
           state = el.tag('state').val(),
           zip = el.tag('postalCode').val(),
           country = el.tag('country').val();
