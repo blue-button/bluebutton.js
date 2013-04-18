@@ -126,6 +126,18 @@ var Core = function () {
     return new Date(year, month, day);
   };
   
+  var trim = function (o) {
+    var y;
+    for (var x in o) {
+      y = o[x];
+      if (y === null || (y instanceof Object && Object.keys(y).length == 0)) {
+        delete o[x];
+      }
+      if (y instanceof Object) y = trim(y);
+    }
+    return o;
+  }
+  
   return {
     parseXML: parseXML,
     wrapElement: wrapElement,
@@ -134,7 +146,8 @@ var Core = function () {
     elsByTag: elsByTag,
     attr: attr,
     val: val,
-    parseDate: parseDate
+    parseDate: parseDate,
+    trim: trim
   };
   
 }();
