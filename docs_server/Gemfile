@@ -2,5 +2,5 @@ source 'https://rubygems.org'
 
 gem 'thin'
 gem 'sinatra'
-# gem 'sinatra-reloader'
+gem 'sinatra-reloader'
 gem 'redcarpet'

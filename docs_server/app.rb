@@ -1,7 +1,7 @@
 # App Server (app.rb)
 
 require 'sinatra'
-# require 'sinatra/reloader' if development?
+require 'sinatra/reloader' if development?
 require 'redcarpet'
 
 # Includes

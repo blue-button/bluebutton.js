@@ -37,6 +37,7 @@ body {
 .home .title .content {
   margin: 0 auto;
   padding-top: 40px;
+  padding-bottom: 20px;
   width: 750px;
   text-align: center;
 }

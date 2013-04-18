@@ -1,11 +1,13 @@
-# JSON Test
+# JSON Demo
 
-This converts each section of a CCDA document in XML to JSON, using for example:
+This demo converts each section of a CCDA document in XML to JSON, using for example:
 
 ```javascript
 var bb = BlueButton(xml);
 bb.medications().json();
 ```
+
+[View JSON in older browsers.](/bluebutton.html)
 
 ## CCDA XML
 
@@ -17,13 +19,16 @@ bb.medications().json();
   }
   textarea {
     width: 100%;
-    height: 350px;
+    height: 300px;
     font-size: 14px;
     font-family: 'menlo', monospace;
     white-space: pre;
   }
 </style>
-<button onclick="load('ccda')">Use CCDA Sample Data and Convert</button> <button onclick="load('va_c32')">Use VA C32 Sample Data and Convert</button> <button onclick="convert()">Convert</button> <button onclick="clearAll()">Clear</button>
+
+Use sample data and convert:
+
+<button onclick="load('greenway')">Greenway CCDA</button> <button onclick="load('nextgen')">NextGen CCDA</button> <button onclick="load('va_c32')">VA C32</button> | <button onclick="convert()">Convert</button> <button onclick="clearAll()">Clear</button>
 
 [Document](#document-section), [Demographics](#demographics-section), [Allergies](#allergies-section), [Encounters](#encounters-section), [Immunizations](#immunizations-section), [Labs](#labs-section), [Medications](#medications-section), [Problems](#problems-section), [Procedures](#procedures-section), [Vitals](#vitals-section)
 
@@ -122,9 +127,13 @@ bb.medications().json();
     
     var url;
     switch (kind) {
-      case 'ccda': url = '/hl7_ccd.xml'
+      // case 'ccda': url = '/hl7_ccd.xml'
+      //   break;
+      case 'greenway': url = 'Greenway_CCDA_Adam_Everyman.xml';
         break;
-      case 'va_c32': url = '/VA_CCD_Sample_File_Version_12_4.xml'
+      case 'nextgen': url = 'NextGen_CCDA_Isabella_Jones.xml';
+        break;
+      case 'va_c32': url = '/VA_CCD_Sample_File_Version_12_4.xml';
         break;
     }
     
