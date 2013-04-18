@@ -130,6 +130,8 @@ task :page do
   puts "\nBuilding page BlueButton.html".task
   
   xml = File.open("sample_data/ccda/Greenway_CCDA_Adam_Everyman.xml", "r") { |f| f.read }
+  xml.gsub!('&','&amp;')
+  
   bbjs = File.open("build/bluebutton-latest-dev.js", "r") { |f| f.read }
   
   page = <<-page
