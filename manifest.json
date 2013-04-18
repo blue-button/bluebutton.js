@@ -1,7 +1,7 @@
 
 {
   "copyright": "/**\n * BlueButton.js\n */\n",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "build_path": "build/",
   "src_path": "src/",
   "files": [

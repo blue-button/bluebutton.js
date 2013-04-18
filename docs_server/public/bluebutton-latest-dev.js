@@ -2,7 +2,7 @@
  * BlueButton.js
  */
 
-// v.0.0.8
+// v.0.0.9
 
 
 
@@ -725,7 +725,7 @@ var Encounters = function () {
   var processCCDA = function (xmlDOM) {
     var data = [], el, els, entries, entry;
     
-    el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.22.1');
+    el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.22');
     entries = el.elsByTag('entry');
     
     for (var i = 0; i < entries.length; i++) {
@@ -960,7 +960,7 @@ var Immunizations = function () {
   var processCCDA = function (xmlDOM) {
     var data = [], el, entries, entry;
     
-    el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.2');
+    el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.2.1');
     entries = el.elsByTag('entry');
     
     for (var i = 0; i < entries.length; i++) {
@@ -1188,7 +1188,7 @@ var Labs = function () {
             code_system_name = el.attr('codeSystemName');
         
         el = result.tag('value');
-        var value = el.attr('value'),
+        var value = parseInt(el.attr('value')),
             unit = el.attr('unit');
         
         // reference range may not be present
@@ -1249,7 +1249,7 @@ var Labs = function () {
             code_system_name = el.attr('codeSystemName');
         
         el = result.tag('value');
-        var value = el.attr('value'),
+        var value = parseInt(el.attr('value')),
             unit = el.attr('unit');
         
         // reference range may not be present
@@ -1647,7 +1647,7 @@ var Problems = function () {
   var processCCDA = function (xmlDOM) {
     var data = [], el, entries, entry;
     
-    el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.5');
+    el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.5.1');
     entries = el.elsByTag('entry');
     
     for (var i = 0; i < entries.length; i++) {
@@ -1788,7 +1788,7 @@ var Procedures = function () {
   var processCCDA = function (xmlDOM) {
     var data = [], el, els, entries, entry;
     
-    el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.7');
+    el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.7.1');
     entries = el.elsByTag('entry');
     
     for (var i = 0; i < entries.length; i++) {
