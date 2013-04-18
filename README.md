@@ -1,7 +1,7 @@
 
 # BlueButton.js
 
-A JavaScript library to work with Blue Button data. BlueButton.js supports CCDA and VA C32 documents.
+A JavaScript library to work with Blue Button data. BlueButton.js supports CCDA and VA C32 documents. [Try the demo.](http://bluebutton.blacktm.com/json)
 
 **This project is under heavy development!** Until a v1.0.0 release, the public API will change, a lot.
 
@@ -9,7 +9,7 @@ A JavaScript library to work with Blue Button data. BlueButton.js supports CCDA 
 
 This project is currently under development by members of the [Blue Button developer community](https://github.com/blue-button?tab=members) and will be maintained by [OSEHRA](http://osehra.org).
 
-Until a public release (v0.1.0), this project is considered a "developer preview". If you have a suggestion or concern, submit an issue or tweet us at [@bluebuttondev](http://twitter.com/bluebuttondev).
+If you have a suggestion or concern, submit an issue or tweet us at [@bluebuttondev](http://twitter.com/bluebuttondev).
 
 ## Building
 
@@ -22,20 +22,54 @@ Requirements:
 
 All builds are placed in the `build/` directory. Both development and production builds first assemble all JavaScript files in the `src/` directory in the order defined in `manifest.json`. All JavaScript files are concatenated and compiled with Google's Closure Compiler. All errors and warnings will be printed to the console.
 
-<!--
-## Running Tests
-
-Run `rake tests`.
-
-Tests are run using [PhantomJS](http://phantomjs.org), [QUnit](http://qunitjs.com), and [JSHint](http://www.jshint.com).
--->
-
 # Usage
 
-Start by creating a Blue Button document object by passing CCDA or VA C32 XML to `BlueButton`:
+Start by creating a Blue Button document object by passing CCDA or VA C32 XML string to `BlueButton`:
 
 ```javascript
 var bb = BlueButton(xml);
 ```
 
 The Blue Button document object, `bb` in this example, now exposes all patient data through a simple and consistent interface.
+
+## Sections
+
+The health record sections are available using these public methods – JavaScript objects representing the patient data is returned from each:
+
+```javascript
+// Returns the patient's personal information and demographics
+bb.demographics();
+
+// Returns the patient's allergies and alerts
+bb.allergies();
+
+// Returns the patient's encounters
+bb.encounters();
+
+// Returns a list of the patient's immunizations
+bb.immunizations();
+
+// Returns a list of the patient's laboratory results, organized by panel
+bb.labs();
+
+// Returns a list of the patient's medications
+bb.medications();
+
+// Returns the patient's problem list
+bb.problems();
+
+// Returns a list of the patient's procedures
+bb.procedures();
+
+// Returns a list of the patient's vital readings, grouped by date
+bb.vitals();
+```
+
+## Document Metadata
+
+Information about the document itself can be accessed by using the `document` method:
+
+```javascript
+// Returns an object containing information about the CCD document
+bb.document();
+```
