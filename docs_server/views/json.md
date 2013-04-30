@@ -28,7 +28,7 @@ bb.medications().json();
 
 Use sample data and convert:
 
-<button onclick="load('greenway')">Greenway CCDA</button> <button onclick="load('nextgen')">NextGen CCDA</button> <button onclick="load('va_c32')">VA C32</button> | <button onclick="convert()">Convert</button> <button onclick="clearAll()">Clear</button>
+<button onclick="load('hl7')">HL7 CCDA</button> <button onclick="load('greenway')">Greenway CCDA</button> <button onclick="load('nextgen')">NextGen CCDA</button> <button onclick="load('va_c32')">VA C32</button> | <button onclick="convert()">Convert</button> <button onclick="clearAll()">Clear</button>
 
 [Document](#document-section), [Demographics](#demographics-section), [Allergies](#allergies-section), [Encounters](#encounters-section), [Immunizations](#immunizations-section), [Labs](#labs-section), [Medications](#medications-section), [Problems](#problems-section), [Procedures](#procedures-section), [Vitals](#vitals-section)
 
@@ -127,8 +127,8 @@ Use sample data and convert:
     
     var url;
     switch (kind) {
-      // case 'ccda': url = '/hl7_ccd.xml'
-      //   break;
+      case 'hl7': url = '/hl7_ccd.xml'
+        break;
       case 'greenway': url = 'Greenway_CCDA_Adam_Everyman.xml';
         break;
       case 'nextgen': url = 'NextGen_CCDA_Isabella_Jones.xml';
