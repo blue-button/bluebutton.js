@@ -43,7 +43,11 @@ var Problems = function () {
   var processCCDA = function (xmlDOM) {
     var data = [], el, entries, entry;
     
-    el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.5.1');
+    el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.5.1')
+    if (el.isEmpty()) {
+      el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.5');
+    }
+    
     entries = el.elsByTag('entry');
     
     for (var i = 0; i < entries.length; i++) {
