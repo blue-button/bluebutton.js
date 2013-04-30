@@ -2,7 +2,7 @@
  * BlueButton.js
  */
 
-// v.0.0.9
+// v.0.0.10
 
 
 
@@ -14,11 +14,12 @@ var Core = function () {
   var ElementWrapper = function (el) {
     return {
       el: el,
-      template: Core.template,
-      tag: Core.tag,
-      elsByTag: Core.elsByTag,
-      attr: Core.attr,
-      val: Core.val
+      template: template,
+      tag: tag,
+      elsByTag: elsByTag,
+      attr: attr,
+      val: val,
+      isEmpty: isEmpty
     }
   };
   
@@ -123,6 +124,14 @@ var Core = function () {
     }
   };
   
+  var isEmpty = function () {
+    if (this.el.tagName.toLowerCase() == 'empty') {
+      return true;
+    } else {
+      return false;
+    }
+  };
+  
   var parseDate = function (str) {
     if (!str || typeof str !== "string") {
       console.log("Error: date is not a string");
@@ -134,15 +143,23 @@ var Core = function () {
     return new Date(year, month, day);
   };
   
+  var trim = function (o) {
+    var y;
+    for (var x in o) {
+      y = o[x];
+      // if (y === null || (y instanceof Object && Object.keys(y).length == 0)) {
+      if (y === null) {
+        delete o[x];
+      }
+      if (y instanceof Object) y = trim(y);
+    }
+    return o;
+  }
+  
   return {
     parseXML: parseXML,
-    wrapElement: wrapElement,
-    template: template,
-    tag: tag,
-    elsByTag: elsByTag,
-    attr: attr,
-    val: val,
-    parseDate: parseDate
+    parseDate: parseDate,
+    trim: trim
   };
   
 }();
@@ -725,7 +742,11 @@ var Encounters = function () {
   var processCCDA = function (xmlDOM) {
     var data = [], el, els, entries, entry;
     
-    el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.22');
+    el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.22')
+    if (el.isEmpty()) {
+      el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.22.1');
+    }
+    
     entries = el.elsByTag('entry');
     
     for (var i = 0; i < entries.length; i++) {
@@ -960,7 +981,11 @@ var Immunizations = function () {
   var processCCDA = function (xmlDOM) {
     var data = [], el, entries, entry;
     
-    el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.2.1');
+    el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.2.1')
+    if (el.isEmpty()) {
+      el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.2');
+    }
+    
     entries = el.elsByTag('entry');
     
     for (var i = 0; i < entries.length; i++) {
@@ -1647,7 +1672,11 @@ var Problems = function () {
   var processCCDA = function (xmlDOM) {
     var data = [], el, entries, entry;
     
-    el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.5.1');
+    el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.5.1')
+    if (el.isEmpty()) {
+      el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.5');
+    }
+    
     entries = el.elsByTag('entry');
     
     for (var i = 0; i < entries.length; i++) {
@@ -1788,7 +1817,11 @@ var Procedures = function () {
   var processCCDA = function (xmlDOM) {
     var data = [], el, els, entries, entry;
     
-    el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.7.1');
+    el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.7.1')
+    if (el.isEmpty()) {
+      el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.7');
+    }
+    
     entries = el.elsByTag('entry');
     
     for (var i = 0; i < entries.length; i++) {
@@ -2135,8 +2168,7 @@ var BlueButton = function (source) {
     xmlDOM = Core.parseXML(source);
     
     // Detect document type (CCDA or VA C32)
-    if (xmlDOM.template('1.3.6.1.4.1.19376.1.5.3.1.1.1')
-      .el.tagName.toLowerCase() == 'empty') {
+    if (xmlDOM.template('1.3.6.1.4.1.19376.1.5.3.1.1.1').isEmpty()) {
       type = 'ccda';
     } else {
       type = 'va_c32';
