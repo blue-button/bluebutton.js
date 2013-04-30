@@ -36,8 +36,7 @@ var BlueButton = function (source) {
     xmlDOM = Core.parseXML(source);
     
     // Detect document type (CCDA or VA C32)
-    if (xmlDOM.template('1.3.6.1.4.1.19376.1.5.3.1.1.1')
-      .el.tagName.toLowerCase() == 'empty') {
+    if (xmlDOM.template('1.3.6.1.4.1.19376.1.5.3.1.1.1').isEmpty()) {
       type = 'ccda';
     } else {
       type = 'va_c32';

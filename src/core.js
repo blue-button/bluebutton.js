@@ -6,11 +6,12 @@ var Core = function () {
   var ElementWrapper = function (el) {
     return {
       el: el,
-      template: Core.template,
-      tag: Core.tag,
-      elsByTag: Core.elsByTag,
-      attr: Core.attr,
-      val: Core.val
+      template: template,
+      tag: tag,
+      elsByTag: elsByTag,
+      attr: attr,
+      val: val,
+      isEmpty: isEmpty
     }
   };
   
@@ -115,6 +116,14 @@ var Core = function () {
     }
   };
   
+  var isEmpty = function () {
+    if (this.el.tagName.toLowerCase() == 'empty') {
+      return true;
+    } else {
+      return false;
+    }
+  };
+  
   var parseDate = function (str) {
     if (!str || typeof str !== "string") {
       console.log("Error: date is not a string");
@@ -130,7 +139,8 @@ var Core = function () {
     var y;
     for (var x in o) {
       y = o[x];
-      if (y === null || (y instanceof Object && Object.keys(y).length == 0)) {
+      // if (y === null || (y instanceof Object && Object.keys(y).length == 0)) {
+      if (y === null) {
         delete o[x];
       }
       if (y instanceof Object) y = trim(y);
@@ -140,12 +150,6 @@ var Core = function () {
   
   return {
     parseXML: parseXML,
-    wrapElement: wrapElement,
-    template: template,
-    tag: tag,
-    elsByTag: elsByTag,
-    attr: attr,
-    val: val,
     parseDate: parseDate,
     trim: trim
   };
