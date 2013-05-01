@@ -2,18 +2,15 @@
 <?xml-stylesheet type="text/xsl" href="CDA.xsl"?>
 <!--
 
-  Title: US_Realm_Header_Template
-  Original Filename: US_Realm_Header_Template.xml
-  Version: 1.0
-  Revision History:
-  01/31/2011 bam created
+	Title: US_Realm_Header_Template
+	Original Filename: US_Realm_Header_Template.xml
+	Version: 1.0
+	Revision History:
+	01/31/2011 bam created
     07/29/2011 RWM modified
 
 -->
-<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="urn:hl7-org:v3 http://xreg2.nist.gov:8080/hitspValidation/schema/cdar2c32/infrastructure/cda/C32_CDA.xsd"
- xmlns="urn:hl7-org:v3"
- xmlns:mif="urn:hl7-org:v3/mif">
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:hl7-org:v3" xmlns:mif="urn:hl7-org:v3/mif" xsi:schemaLocation="urn:hl7-org:v3 http://xreg2.nist.gov:8080/hitspValidation/schema/cdar2c32/infrastructure/cda/C32_CDA.xsd">
   <!--
 
 ********************************************************
@@ -22,7 +19,7 @@
 
 ********************************************************
 
-  -->
+	-->
   <realmCode code="US"/>
   <typeId root="2.16.840.1.113883.1.3" extension="POCD_HD000040"/>
   <!-- US General Header Template -->
@@ -68,8 +65,8 @@
         <birthTime value="19541125"/>
         <maritalStatusCode code="M" displayName="Married" codeSystem="2.16.840.1.113883.5.2" codeSystemName="MaritalStatusCode"/>
         <religiousAffiliationCode code="1013" displayName="Christian (non-Catholic, non-specific)" codeSystemName="HL7 Religious Affiliation " codeSystem="2.16.840.1.113883.1.11.19185"/>
-        <raceCode code="2106-3" displayName="White" codeSystem="2.16.840.1.113883.6.238" codeSystemName="Race and Ethnicity - CDC"/>
-        <ethnicGroupCode code="2186-5" displayName="Not Hispanic or Latino" codeSystem="2.16.840.1.113883.6.238" codeSystemName="Race and Ethnicity - CDC"/>
+        <raceCode code="2106-3" displayName="White" codeSystem="2.16.840.1.113883.6.238" codeSystemName="Race &amp; Ethnicity - CDC"/>
+        <ethnicGroupCode code="2186-5" displayName="Not Hispanic or Latino" codeSystem="2.16.840.1.113883.6.238" codeSystemName="Race &amp; Ethnicity - CDC"/>
         <guardian>
           <code code="GRFTH" displayName="Grandfather" codeSystem="2.16.840.1.113883.5.111" codeSystemName="HL7 Role code"/>
           <addr use="HP">
@@ -664,10 +661,9 @@ MEDICATIONS
               <templateId root="2.16.840.1.113883.10.20.22.4.16"/>
               <!-- ** MEDICATION ACTIVITY -->
               <id root="cdbd33f0-6cde-11db-9fe1-0800200c9a66"/>
-              <text>
-                <reference value="#Med1"/> 0.09 MG/ACTUAT inhalant solution, 2 puffs QID PRN wheezing
+              <text><reference value="#Med1"/> 0.09 MG/ACTUAT inhalant solution, 2 puffs QID PRN wheezing
 
-              </text>
+							</text>
               <statusCode code="completed"/>
               <effectiveTime xsi:type="IVL_TS">
                 <low value="20110301"/>
@@ -1418,8 +1414,7 @@ ENCOUNTERS
               </thead>
               <tbody>
                 <tr>
-                  <td>
-                    <content ID="Encounter1"/> Examination</td>
+                  <td><content ID="Encounter1"/> Examination</td>
                   <td>Performer Name</td>
                   <td>Good Health Clinic</td>
                   <td>Apr 07, 2000</td>
@@ -1435,7 +1430,7 @@ ENCOUNTERS
               <id root="2a620155-9d11-439e-92b3-5d9815ff4de8"/>
               <code code="99241" displayName="Office consultation - 15 minutes" codeSystemName="CPT" codeSystem="2.16.840.1.113883.6.12" codeSystemVersion="4">
                 <originalText>Checkup Examination<reference value="#Encounter1"/>
-                </originalText>
+								</originalText>
                 <translation code="AMB" codeSystem="2.16.840.1.113883.5.4" displayName="Ambulatory" codeSystemName="HL7 ActEncounterCode"/>
               </code>
               <effectiveTime value="20000407"/>
@@ -1608,26 +1603,22 @@ IMMUNIZATIONS
               </thead>
               <tbody>
                 <tr>
-                  <td>
-                    <content ID="immun1"/>Influenza virus vaccine, IM</td>
+                  <td><content ID="immun1"/>Influenza virus vaccine, IM</td>
                   <td>Nov 1999</td>
                   <td>Completed</td>
                 </tr>
                 <tr>
-                  <td>
-                    <content ID="immun2"/>Influenza virus vaccine, IM</td>
+                  <td><content ID="immun2"/>Influenza virus vaccine, IM</td>
                   <td>Dec 1998</td>
                   <td>Completed</td>
                 </tr>
                 <tr>
-                  <td>
-                    <content ID="immun3"/>Pneumococcal polysaccharide vaccine, IM</td>
+                  <td><content ID="immun3"/>Pneumococcal polysaccharide vaccine, IM</td>
                   <td>Dec 1998</td>
                   <td>Completed</td>
                 </tr>
                 <tr>
-                  <td>
-                    <content ID="immun4"/>Tetanus and diphtheria toxoids, IM</td>
+                  <td><content ID="immun4"/>Tetanus and diphtheria toxoids, IM</td>
                   <td>1997</td>
                   <td>Refused</td>
                 </tr>
@@ -1953,7 +1944,7 @@ PAYERS
                   <id root="3e676a50-7aac-11db-9fe1-0800200c9a66"/>
                   <code code="SELF" codeSystemName="HL7 RoleClassRelationship" codeSystem="2.16.840.1.113883.5.110">
 
-                  </code>
+									</code>
                   <statusCode code="completed"/>
                   <!-- Insurance Company Information -->
                   <performer typeCode="PRF">
@@ -2062,27 +2053,27 @@ PAYERS
 
 
 
-                  <entryRelationship typeCode="REFR">
+									<entryRelationship typeCode="REFR">
 
-                    <act classCode="ACT" moodCode="DEF">
+										<act classCode="ACT" moodCode="DEF">
 
-                      <id root="f4dce790-8328-11db-9fe1-0800200c9a66"/>
+											<id root="f4dce790-8328-11db-9fe1-0800200c9a66"/>
 
-                      <code nullFlavor="UNK"/>
+											<code nullFlavor="UNK"/>
 
-                      <text>Health Plan Name<reference value="PntrToHealthPlanNameInSectionText"/>
+											<text>Health Plan Name<reference value="PntrToHealthPlanNameInSectionText"/>
 
-                      </text>
+											</text>
 
-                      <statusCode code="active"/>
+											<statusCode code="active"/>
 
-                    </act>
+										</act>
 
-                  </entryRelationship>
+									</entryRelationship>
 
-                  
+									
 
-                  -->
+									-->
                 </act>
               </entryRelationship>
             </act>
@@ -2192,20 +2183,17 @@ SOCIAL HISTORY
               </thead>
               <tbody>
                 <tr>
-                  <td>
-                    <content ID="soc1"/> smoking</td>
+                  <td><content ID="soc1"/> smoking</td>
                   <td>1 pack per day</td>
                   <td>1947 - 1972</td>
                 </tr>
                 <tr>
-                  <td>
-                    <content ID="soc2"/> smoking</td>
+                  <td><content ID="soc2"/> smoking</td>
                   <td>None</td>
                   <td>1973 - </td>
                 </tr>
                 <tr>
-                  <td>
-                    <content ID="soc3"/>Alcohol consumption</td>
+                  <td><content ID="soc3"/>Alcohol consumption</td>
                   <td>None</td>
                   <td>1973 - </td>
                 </tr>

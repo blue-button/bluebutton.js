@@ -129,9 +129,7 @@ task :page do
   
   puts "\nBuilding page BlueButton.html".task
   
-  xml = File.open("sample_data/ccda/Greenway_CCDA_Adam_Everyman.xml", "r") { |f| f.read }
-  xml.gsub!('&','&amp;')
-  
+  xml = File.open("sample_data/ccda/hl7_ccd.xml", "r") { |f| f.read }
   bbjs = File.open("build/bluebutton-latest-dev.js", "r") { |f| f.read }
   
   page = <<-page
@@ -141,13 +139,13 @@ task :page do
 </head>
 <body>
   <pre id="result"></pre>
-  <textarea id="xml" style="display:none">
+  <script id="xml" type="text/plain">
 page
   
   page << xml
   
   page << <<-page
-  </textarea>
+  </script>
   <script>
 page
   
@@ -156,7 +154,7 @@ page
   page << <<-page
   </script>
   <script>
-    var xml = document.getElementById('xml').value;
+    var xml = document.getElementById('xml').innerHTML;
     var bb = BlueButton(xml);
     var el = document.getElementById('result');
     el.innerHTML = bb.data.json();
