@@ -2,3 +2,4 @@
 vendor/compiler*.jar
 tmp/
 docs_server/.git
+Gemfile.lock
