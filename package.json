@@ -1,0 +1,54 @@
+{
+  "name": "bluebutton",
+  "version": "0.0.12",
+  "description": "BlueButton.js allows web developers to parse and navigate complex health data with ease.",
+  "keywords": [
+    "bb",
+    "emr",
+    "medical",
+    "record"
+  ],
+  "homepage": "http://bluebutton.blacktm.com/",
+  "bugs": "https://github.com/blue-button/bluebutton.js/issues",
+  "author": {
+    "name": "Tom Black",
+    "url": "http://blacktm.com/"
+  },
+  "contributors": [
+    {
+      "name": "Rob Dodson",
+      "email": "lets.email.rob@gmail.com",
+      "url": "http://robdodson.me"
+    }
+  ],
+  "main": [
+    "build/bluebutton.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/blue-button/bluebutton.js.git"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "matchdep": "~0.1.1",
+    "grunt": "~0.4.0",
+    "bower": "~0.x",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-clean": "~0.4.1",
+    "grunt-contrib-jasmine": "~0.4.2",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-umd": "~1.0.0"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.0",
+    "bower": "~0.x"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "licenses": []
+}

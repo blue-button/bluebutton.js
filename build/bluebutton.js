@@ -1,10 +1,4 @@
-/**
- * BlueButton.js
- */
-
-// v.0.0.11
-
-
+/* BlueButton.js -- 0.0.12 */
 
 // core.js - Essential shared functionality
 
@@ -163,7 +157,7 @@ var Core = function () {
   };
   
 }();
-
+;
 
 // allergies.js
 
@@ -378,7 +372,7 @@ var Allergies = function () {
   };
 
 }();
-
+;
 
 // demographics.js
 
@@ -674,7 +668,7 @@ var Demographics = function () {
   };
 
 }();
-
+;
 
 // encounters.js
 
@@ -918,7 +912,7 @@ var Encounters = function () {
   };
 
 }();
-
+;
 
 // immunizations.js
 
@@ -1121,7 +1115,7 @@ var Immunizations = function () {
   };
 
 }();
-
+;
 
 // labs.js
 
@@ -1314,7 +1308,7 @@ var Labs = function () {
   };
 
 }();
-
+;
 
 // medications.js
 
@@ -1625,7 +1619,7 @@ var Medications = function () {
   };
 
 }();
-
+;
 
 // problems.js
 
@@ -1756,7 +1750,7 @@ var Problems = function () {
   };
 
 }();
-
+;
 
 // procedures.js
 
@@ -1969,7 +1963,7 @@ var Procedures = function () {
   };
   
 }();
-
+;
 
 // vitals.js
 
@@ -2128,7 +2122,7 @@ var Vitals = function () {
   };
   
 }();
-
+;
 
 // bluebutton.js - The Public Object and Interface
 
