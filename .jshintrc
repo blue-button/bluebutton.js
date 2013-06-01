@@ -1,0 +1,22 @@
+{
+  "bitwise": true,
+  "eqeqeq": true,
+  "forin": true,
+  "immed": true,
+  "latedef": true,
+  "newcap": true,
+  "noarg": true,
+  "noempty": true,
+  "nonew": true,
+  "regexp": true,
+  "trailing": true,
+  "undef": true,
+  "unused": false,
+  "es5": true,
+  "globalstrict": true,
+  "smarttabs": true,
+  "browser": true,
+  "globals": {
+    "Core": true
+  }
+}

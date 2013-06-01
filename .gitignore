@@ -3,3 +3,5 @@ vendor/compiler*.jar
 tmp/
 docs_server/.git
 Gemfile.lock
+node_modules
+components
