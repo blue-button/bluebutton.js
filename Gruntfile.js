@@ -15,10 +15,22 @@ module.exports = function(grunt) {
     banner: "/* BlueButton.js -- <%= pkg.version %> */\n\n",
 
     clean: {
-      build: ["<%= bb.build %>/*.js"],
+      build: ["<%= bb.build %>"],
       // bug in grunt-contrib-jasmine (0.4.2) doesn't tear this folder down
       // so we manually delete it
       test: ["./.grunt"]
+    },
+
+    jshint: {
+      options: {
+        jshintrc: ".jshintrc"
+      },
+      beforeconcat: {
+        src: ["<%= bb.src %>/{,*/}*.foo"]
+      },
+      afterconcat: {
+        src: ["<%= bb.build %>/{,*/}*.foo"]
+      }
     },
 
     concat: {
@@ -48,18 +60,11 @@ module.exports = function(grunt) {
       all: {
         options: {
           banner: "<%= banner %>",
+          // Put everything in a closure that spits out a BlueButton global
           wrap: "BlueButton"
         },
         src: "<%= bb.build %>/bluebutton.js",
         dest: "<%= bb.build %>/bluebutton.min.js"
-      }
-    },
-
-    copy: {
-      all: {
-        expand: true,
-        src: "<%= bb.samples %>/**",
-        dest: "<%= bb.build %>"
       }
     },
 
@@ -78,7 +83,18 @@ module.exports = function(grunt) {
   require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
 
   // Define tasks
-  grunt.registerTask("default", ["clean", "concat", "uglify", "copy"]);
-  grunt.registerTask("test", ["default", "jasmine", "clean:test"]);
+  grunt.registerTask("default", [
+    "clean",
+    "jshint:beforeconcat",
+    "concat",
+    "jshint:afterconcat",
+    "uglify"
+  ]);
+  
+  grunt.registerTask("test", [
+    "default",
+    "jasmine",
+    "clean:test"
+  ]);
 
 };
