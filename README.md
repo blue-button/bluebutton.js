@@ -1,15 +1,17 @@
 
 # BlueButton.js
 
-A JavaScript library to work with Blue Button data. BlueButton.js supports CCDA and VA C32 documents. [Try the demo.](http://bluebutton.blacktm.com/json)
+A JavaScript library to work with Blue Button data. BlueButton.js supports CCDA and VA C32 documents. [Try the demo.](http://blue-button.github.io/blue-button-for-developers/docs/js/demo.html)
 
-**This project is under heavy development!** Until a v1.0.0 release, the public API will change, a lot.
+**This project is under heavy development!** Until a v1 release, the public API will change, a lot.
 
 ## Community and Contributing
 
-This project is currently under development by members of the [Blue Button developer community](https://github.com/blue-button?tab=members) and will be maintained by [OSEHRA](http://osehra.org).
+This project is currently under development by members of the [Blue Button developer community](https://github.com/blue-button?tab=members).
 
-If you have a suggestion or concern, submit an issue or tweet us at [@bluebuttondev](http://twitter.com/bluebuttondev).
+If you have a suggestion or concern, submit an issue or tweet us at [@ProjectBlueBtn](http://twitter.com/ProjectBlueBtn).
+
+<!--
 
 ## Building
 
@@ -21,6 +23,8 @@ Requirements:
 - [Google's Closure Compiler](https://developers.google.com/closure/compiler/). Download the [latest version](http://closure-compiler.googlecode.com/files/compiler-latest.zip), unzip, and place `compiler.jar` into the `vendor` directory.
 
 All builds are placed in the `build/` directory. Both development and production builds first assemble all JavaScript files in the `src/` directory in the order defined in `manifest.json`. All JavaScript files are concatenated and compiled with Google's Closure Compiler. All errors and warnings will be printed to the console.
+
+-->
 
 # Usage
 
