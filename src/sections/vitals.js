@@ -51,7 +51,7 @@ var Vitals = function () {
   };
   
   var processCCDA = function (xmlDOM) {
-    var data = [], results_data = [], el, entries, entry, results, result;
+    var data = [], el, entries, entry, results, result;
     
     el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.4.1');
     
@@ -63,6 +63,7 @@ var Vitals = function () {
       el = entry.tag('effectiveTime');
       var entry_date = parseDate(el.attr('value'));
       
+      var results_data = []
       results = entry.elsByTag('component');
       
       for (var j = 0; j < results.length; j++) {
