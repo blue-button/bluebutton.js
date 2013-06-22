@@ -3,3 +3,4 @@ tmp/
 Gemfile.lock
 node_modules
 components
+npm-debug.log
