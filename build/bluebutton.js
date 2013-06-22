@@ -1320,7 +1320,7 @@ var Medications = function () {
   // properties
   
   // methods
-    var process = function (source, type) {
+  var process = function (source, type) {
     var raw, data = [];
     
     switch (type) {
