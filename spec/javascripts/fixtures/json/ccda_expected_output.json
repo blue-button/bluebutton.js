@@ -101,16 +101,16 @@
     "marital_status": "Never Married",
     "address": {
       "street": [
-        null,
-        null
+        "17 Daws Rd.",
+        "Apt 27"
       ],
-      "city": null,
-      "state": "GA",
-      "zip": null,
+      "city": "Blue Bell",
+      "state": "MA",
+      "zip": "02368",
       "country": "US"
     },
     "phone": {
-      "home": null,
+      "home": "tel:(781)555-1212",
       "work": null,
       "mobile": null
     },

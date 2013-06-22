@@ -6,7 +6,7 @@ describe('CCDA', function() {
   }
   
   beforeEach(function() {
-    record = readFixtures('../../../sample_data/ccda/Greenway_CCDA_Adam_Everyman.xml');
+    record = readFixtures('../../../components/blue-button-reference-ccda/blue_button_reference_ccda.xml');
     bb = BlueButton(record);
     expectedOutput = getJSONFixture('ccda_expected_output.json');
   });
