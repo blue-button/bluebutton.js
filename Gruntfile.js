@@ -15,10 +15,7 @@ module.exports = function(grunt) {
     banner: "/* BlueButton.js -- <%= pkg.version %> */\n\n",
 
     clean: {
-      build: ["<%= bb.build %>"],
-      // bug in grunt-contrib-jasmine (0.4.2) doesn't tear this folder down
-      // so we manually delete it
-      test: ["./.grunt"]
+      build: ["<%= bb.build %>"]
     },
 
     jshint: {
@@ -70,11 +67,11 @@ module.exports = function(grunt) {
 
     jasmine: {
       test: {
-        src: "<%= bb.build %>/bluebutton.js",
         options: {
           specs: "<%= bb.test %>/*_spec.js",
           vendor: ["<%= bb.test %>/helpers/*.js"]
-        }
+        },
+        src: "<%= bb.build %>/bluebutton.js",
       }
     }
   });
@@ -93,8 +90,7 @@ module.exports = function(grunt) {
   
   grunt.registerTask("test", [
     "default",
-    "jasmine",
-    "clean:test"
+    "jasmine"
   ]);
 
 };

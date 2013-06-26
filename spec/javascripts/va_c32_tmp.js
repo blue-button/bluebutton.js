@@ -1,3 +1,8 @@
+/*
+We're missing a proper reference implementation to test va c32 so this spec
+has been renamed to _tmp to prevent it from being picked up by the jasmine task.
+ */
+
 describe('VA C32', function() {
   var record, expectedOutput, bb;
 
