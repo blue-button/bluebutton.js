@@ -53,12 +53,17 @@ module.exports = function(grunt) {
       }
     },
 
+    umd: {
+     all: {
+       src: "<%= bb.build %>/bluebutton.js",
+       objectToExport: "BlueButton"
+     }
+   },
+
     uglify: {
       all: {
         options: {
-          banner: "<%= banner %>",
-          // Put everything in a closure that spits out a BlueButton global
-          wrap: "BlueButton"
+          banner: "<%= banner %>"
         },
         src: "<%= bb.build %>/bluebutton.js",
         dest: "<%= bb.build %>/bluebutton.min.js"
@@ -73,6 +78,16 @@ module.exports = function(grunt) {
         },
         src: "<%= bb.build %>/bluebutton.js",
       }
+    },
+
+    watch: {
+      all: {
+        files: "<%= bb.src %>/**/*.js",
+        tasks: ["default"],
+        options: {
+          interrupt: true,
+        }
+      }
     }
   });
 
@@ -84,6 +99,7 @@ module.exports = function(grunt) {
     "clean",
     "jshint:beforeconcat",
     "concat",
+    "umd",
     "jshint:afterconcat",
     "uglify"
   ]);
