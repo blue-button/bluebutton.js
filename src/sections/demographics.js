@@ -104,7 +104,14 @@ var Demographics = function () {
     
     el = patient.tag('patient');
     data.dob = parseDate(el.tag('birthTime').attr('value'));
-    data.gender = el.tag('administrativeGenderCode').attr('displayName');
+    var gender = el.tag('administrativeGenderCode').attr('code');
+    var genders = {
+      'M': 'Male',
+      'F': 'Female',
+      'U': 'Undifferentiated'
+    };
+    data.gender =  genders[gender] || null;
+
     data.marital_status = el.tag('maritalStatusCode').attr('displayName');
     
     el = patient.tag('addr');
