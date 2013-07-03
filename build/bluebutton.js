@@ -480,7 +480,14 @@ var Demographics = function () {
     
     el = patient.tag('patient');
     data.dob = parseDate(el.tag('birthTime').attr('value'));
-    data.gender = el.tag('administrativeGenderCode').attr('displayName');
+    var gender = el.tag('administrativeGenderCode').attr('code');
+    var genders = {
+      'M': 'Male',
+      'F': 'Female',
+      'U': 'Undifferentiated'
+    };
+    data.gender =  genders[gender] || null;
+
     data.marital_status = el.tag('maritalStatusCode').attr('displayName');
     
     el = patient.tag('addr');
@@ -1178,7 +1185,7 @@ var Labs = function () {
   };
   
   var processCCDA = function (xmlDOM) {
-    var data = [], results_data = [], el, entries, entry, results, result;
+    var data = [], results_data, el, entries, entry, results, result;
     
     el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.3.1');
     entries = el.elsByTag('entry');
@@ -1194,6 +1201,7 @@ var Labs = function () {
           panel_code_system_name = el.attr('codeSystemName');
       
       results = entry.elsByTag('component');
+      results_data = [];
       
       for (var j = 0; j < results.length; j++) {
         result = results[j];
@@ -2018,7 +2026,7 @@ var Vitals = function () {
   };
   
   var processCCDA = function (xmlDOM) {
-    var data = [], results_data = [], el, entries, entry, results, result;
+    var data = [], results_data, el, entries, entry, results, result;
     
     el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.4.1');
     
@@ -2031,6 +2039,7 @@ var Vitals = function () {
       var entry_date = parseDate(el.attr('value'));
       
       results = entry.elsByTag('component');
+      results_data = [];
       
       for (var j = 0; j < results.length; j++) {
         result = results[j];
