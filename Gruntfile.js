@@ -38,6 +38,7 @@ module.exports = function(grunt) {
         },
         src: [
           "<%= bb.src %>/core.js",
+          "<%= bb.src %>/codes.js",
           "<%= bb.src %>/sections/allergies.js",
           "<%= bb.src %>/sections/demographics.js",
           "<%= bb.src %>/sections/encounters.js",

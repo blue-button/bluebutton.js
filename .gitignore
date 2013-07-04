@@ -1,5 +1,5 @@
 *.DS_Store
-tmp/
-Gemfile.lock
+*.log
+tmp
 node_modules
 components
