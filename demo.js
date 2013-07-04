@@ -8,5 +8,8 @@ var data = fs.readFileSync(
 
 console.log('starting bluebutton...');
 var bb = BlueButton(data);
-console.log('bb returned...');
-console.log(bb.document());
+console.log('writing record...');
+fs.writeFile('node-record.json', bb.data.json(), function (err) {
+  if (err) throw err;
+  console.log('It\'s saved!');
+});

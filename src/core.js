@@ -96,6 +96,8 @@ var Core = function () {
   var tagAttrVal = function (el, tag, attr, value) {
     el = el.getElementsByTagName(tag);
     for (var i = 0; i < el.length; i++) {
+      // Workaround a bug in jsdom https://github.com/tmpvar/jsdom/issues/651
+      attr = isNode ? attr.toLowerCase() : attr;
       if (el[i].getAttribute(attr) === value) {
         return el[i];
       }
@@ -126,6 +128,8 @@ var Core = function () {
   
   var attr = function (attr) {
     if (!this.el) { return null; }
+    // Workaround a bug in jsdom https://github.com/tmpvar/jsdom/issues/651
+    attr = isNode ? attr.toLowerCase() : attr;
     return this.el.getAttribute(attr);
   };
   
