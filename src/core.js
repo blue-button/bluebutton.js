@@ -131,7 +131,7 @@ var Core = function () {
     }
     var year = str.substr(0, 4);
     // months start at 0, because why not
-    var month = parseInt(str.substr(4, 2)) - 1;
+    var month = parseInt(str.substr(4, 2), 10) - 1;
     var day = str.substr(6, 2);
     return new Date(year, month, day);
   };
