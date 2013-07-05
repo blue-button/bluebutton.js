@@ -1,9 +1,39 @@
-/* BlueButton.js -- 0.0.14 */
+(function (root, factory) {
+
+        if (typeof exports === 'object') {
+            module.exports = factory();
+        }
+        else if (typeof define === 'function' && define.amd) {
+            define(factory);
+        }
+        else {
+            root.BlueButton = factory();
+        }
+
+    }(this, function () {
+
+        /* BlueButton.js -- 0.0.14 */
 
 // core.js - Essential shared functionality
 
 var Core = function () {
-  
+
+  // Establish the root object, `window` in the browser, or `global` in Node.
+  var root = this,
+      jsdom = undefined,
+      isNode = false,
+      doc = root.document; // Will be `undefined` if we're in Node
+
+  // Check if we're in Node. If so, pull in jsdom so we can
+  // simulate the DOM
+  if (typeof exports !== 'undefined') {
+    if (typeof module !== 'undefined' && module.exports) {
+      isNode = true;
+      jsdom = require("jsdom");
+      doc = new (jsdom.level(1, "core").Document)();
+    }
+  }
+
   // properties
   var ElementWrapper = function (el) {
     return {
@@ -28,23 +58,29 @@ var Core = function () {
     }
     
     var xml, tmp;
-    
-    // Standard parser
-    if (window.DOMParser) {
-      parser = new DOMParser();
-      xml = parser.parseFromString(data, "text/xml");
-      
-    // IE
+
+    // Node
+    if (isNode) {
+      xml = jsdom.jsdom(data, jsdom.level(1, "core"));
+    // Browser
     } else {
-      try {
-        xml = new ActiveXObject("Microsoft.XMLDOM");
-        xml.async = "false";
-        xml.loadXML(data);
-      } catch (e) {
-        console.log("BB ActiveX Exception: Could not parse XML");
+      // Standard parser
+      if (window.DOMParser) {
+        parser = new DOMParser();
+        xml = parser.parseFromString(data, "text/xml");
+        
+      // IE
+      } else {
+        try {
+          xml = new ActiveXObject("Microsoft.XMLDOM");
+          xml.async = "false";
+          xml.loadXML(data);
+        } catch (e) {
+          console.log("BB ActiveX Exception: Could not parse XML");
+        }
       }
     }
-    
+
     if (!xml || !xml.documentElement || xml.getElementsByTagName("parsererror").length) {
       console.log("BB Error: Could not parse XML");
       return null;
@@ -69,13 +105,15 @@ var Core = function () {
   };
   
   var emptyEl = function () {
-    var el = document.createElement('empty');
+    var el = doc.createElement('empty');
     return wrapElement(el);
   };
   
   var tagAttrVal = function (el, tag, attr, value) {
     el = el.getElementsByTagName(tag);
     for (var i = 0; i < el.length; i++) {
+      // Workaround a bug in jsdom https://github.com/tmpvar/jsdom/issues/651
+      attr = isNode ? attr.toLowerCase() : attr;
       if (el[i].getAttribute(attr) === value) {
         return el[i];
       }
@@ -106,6 +144,8 @@ var Core = function () {
   
   var attr = function (attr) {
     if (!this.el) { return null; }
+    // Workaround a bug in jsdom https://github.com/tmpvar/jsdom/issues/651
+    attr = isNode ? attr.toLowerCase() : attr;
     return this.el.getAttribute(attr);
   };
   
@@ -2266,5 +2306,6 @@ var BlueButton = function (source) {
   };
   
 };
+        return BlueButton;
 
-window.BlueButton = BlueButton;
+    }));

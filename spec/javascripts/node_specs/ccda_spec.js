@@ -1,19 +1,16 @@
 var fs = require('fs'),
     path = require('path'),
+    _ = require('underscore'),
     BlueButton = require('../../../build/bluebutton');
 
 describe('CCDA', function() {
-  var record, expectedOutput, bb;
+  var record = fs.readFileSync(path.resolve(__dirname, '../../../components/blue-button-reference-ccda/blue_button_reference_ccda.xml'), 'utf-8');
+  var bb = BlueButton(record);
+  var expectedOutput = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../fixtures/json/ccda_expected_output.json'), 'utf-8'));
 
   function toJSON(target) {
     return JSON.parse(target.json())
   }
-  
-  beforeEach(function() {
-    record = fs.readFileSync(path.resolve(__dirname, '../../../components/blue-button-reference-ccda/blue_button_reference_ccda.xml'), 'utf-8');
-    bb = BlueButton(record);
-    expectedOutput = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../fixtures/json/ccda_expected_output.json'), 'utf-8'));
-  });
 
   describe('document', function() {
     it('should match the ccda type', function() {
@@ -25,83 +22,92 @@ describe('CCDA', function() {
   });
 
   describe('allergies', function() {
-    it('should output the correct json', function() {
-      var actual = toJSON(bb.allergies());
-      var expected = expectedOutput.allergies;
-
-      expect(actual).toEqual(expected);
+    var allergies = toJSON(bb.allergies());
+    _.each(allergies, function(actual, i) {
+      it('should output the correct allergy at index['+i+']', function() {
+        var expected = expectedOutput.allergies[i];
+        expect(actual).toEqual(expected);
+      });
     });
   });
 
+  // We don't iterate over demographics because it's just an object,
+  // not an array of objects like everything else.
   describe('demographics', function() {
-    it('should output the correct json', function() {
+    it('should output the correct demographics', function() {
       var actual = toJSON(bb.demographics());
       var expected = expectedOutput.demographics;
-
       expect(actual).toEqual(expected);
     });
   });
 
   describe('encounters', function() {
-    it('should output the correct json', function() {
-      var actual = toJSON(bb.encounters());
-      var expected = expectedOutput.encounters;
-
-      expect(actual).toEqual(expected);
+    var encounters = toJSON(bb.encounters());
+    _.each(encounters, function(actual, i) {
+      it('should output the correct encounter at index['+i+']', function() {
+        var expected = expectedOutput.encounters[i];
+        expect(actual).toEqual(expected);
+      });
     });
   });
 
   describe('immunizations', function() {
-    it('should output the correct json', function() {
-      var actual = toJSON(bb.immunizations());
-      var expected = expectedOutput.immunizations;
-
-      expect(actual).toEqual(expected);
+    var immunizations = toJSON(bb.immunizations());
+    _.each(immunizations, function(actual, i) {
+      it('should output the correct immunization at index['+i+']', function() {
+        var expected = expectedOutput.immunizations[i];
+        expect(actual).toEqual(expected);
+      });
     });
   });
 
   describe('labs', function() {
-    it('should output the correct json', function() {
-      var actual = toJSON(bb.labs());
-      var expected = expectedOutput.labs;
-
-      expect(actual).toEqual(expected);
+    var labs = toJSON(bb.labs());
+    _.each(labs, function(actual, i) {
+      it('should output the correct lab at index['+i+']', function() {
+        var expected = expectedOutput.labs[i];
+        expect(actual).toEqual(expected);
+      });
     });
   });
 
   describe('medications', function() {
-    it('should output the correct json', function() {
-      var actual = toJSON(bb.medications());
-      var expected = expectedOutput.medications;
-
-      expect(actual).toEqual(expected);
+    var medications = toJSON(bb.medications());
+    _.each(medications, function(actual, i) {
+      it('should output the correct medication at index['+i+']', function() {
+        var expected = expectedOutput.medications[i];
+        expect(actual).toEqual(expected);
+      });
     });
   });
 
   describe('problems', function() {
-    it('should output the correct json', function() {
-      var actual = toJSON(bb.problems());
-      var expected = expectedOutput.problems;
-
-      expect(actual).toEqual(expected);
+    var problems = toJSON(bb.problems());
+    _.each(problems, function(actual, i) {
+      it('should output the correct problem at index['+i+']', function() {
+        var expected = expectedOutput.problems[i];
+        expect(actual).toEqual(expected);
+      });
     });
   });
 
   describe('procedures', function() {
-    it('should output the correct json', function() {
-      var actual = toJSON(bb.procedures());
-      var expected = expectedOutput.procedures;
-
-      expect(actual).toEqual(expected);
+    var procedures = toJSON(bb.procedures());
+    _.each(procedures, function(actual, i) {
+      it('should output the correct procedure at index['+i+']', function() {
+        var expected = expectedOutput.procedures[i];
+        expect(actual).toEqual(expected);
+      });
     });
   });
 
   describe('vitals', function() {
-    it('should output the correct json', function() {
-      var actual = toJSON(bb.vitals());
-      var expected = expectedOutput.vitals;
-
-      expect(actual).toEqual(expected);
+    var vitals = toJSON(bb.vitals());
+    _.each(vitals, function(actual, i) {
+      it('should output the correct vital at index['+i+']', function() {
+        var expected = expectedOutput.vitals[i];
+        expect(actual).toEqual(expected);
+      });
     });
   });
 

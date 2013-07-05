@@ -26,13 +26,13 @@ describe('CCDA', function() {
     });
   });
 
+  // We don't iterate over demographics because it's just an object,
+  // not an array of objects like everything else.
   describe('demographics', function() {
-    var demographics = toJSON(bb.demographics());
-    $.each(demographics, function(i, actual) {
-      it('should output the correct demographic at index['+i+']', function() {
-        var expected = expectedOutput.demographics[i];
-        expect(actual).toEqual(expected);
-      });
+    it('should output the correct demographics', function() {
+      var actual = toJSON(bb.demographics());
+      var expected = expectedOutput.demographics;
+      expect(actual).toEqual(expected);
     });
   });
 
