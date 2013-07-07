@@ -96,7 +96,7 @@
       ],
       "family": "Everyman"
     },
-    "dob": "1962-11-22T08:00:00.000Z",
+    "dob": "1962-10-22T07:00:00.000Z",
     "gender": "Male",
     "marital_status": "Never Married",
     "address": {
@@ -159,7 +159,7 @@
   "encounters": [],
   "immunizations": [
     {
-      "date": "2012-04-30T07:00:00.000Z",
+      "date": "2012-03-30T07:00:00.000Z",
       "product": {
         "name": "influenza, NOS",
         "code": "88",
@@ -194,50 +194,11 @@
       "code_system_name": null,
       "results": [
         {
-          "date": "2013-02-24T08:00:00.000Z",
+          "date": "2013-01-24T08:00:00.000Z",
           "name": "Hgb Bld-mCnc",
           "value": 15,
           "unit": "g/dL",
           "code": "718-7",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "reference": {
-            "low": null,
-            "high": null
-          }
-        },
-        {
-          "date": "2013-02-24T08:00:00.000Z",
-          "name": "Hct Fr Bld Auto",
-          "value": 50,
-          "unit": "%",
-          "code": "4544-3",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "reference": {
-            "low": null,
-            "high": null
-          }
-        },
-        {
-          "date": "2013-02-24T08:00:00.000Z",
-          "name": "WBC # Bld Auto",
-          "value": 6,
-          "unit": "x10E3/uL",
-          "code": "6690-2",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "reference": {
-            "low": null,
-            "high": null
-          }
-        },
-        {
-          "date": "2013-02-24T08:00:00.000Z",
-          "name": "Platelet # Bld Auto",
-          "value": 300,
-          "unit": "x10E3/uL",
-          "code": "777-3",
           "code_system": "2.16.840.1.113883.6.1",
           "code_system_name": "LOINC",
           "reference": {
@@ -254,50 +215,11 @@
       "code_system_name": null,
       "results": [
         {
-          "date": "2013-02-24T08:00:00.000Z",
-          "name": "Hgb Bld-mCnc",
-          "value": 15,
-          "unit": "g/dL",
-          "code": "718-7",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "reference": {
-            "low": null,
-            "high": null
-          }
-        },
-        {
-          "date": "2013-02-24T08:00:00.000Z",
+          "date": "2013-01-24T08:00:00.000Z",
           "name": "Hct Fr Bld Auto",
           "value": 50,
           "unit": "%",
           "code": "4544-3",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "reference": {
-            "low": null,
-            "high": null
-          }
-        },
-        {
-          "date": "2013-02-24T08:00:00.000Z",
-          "name": "WBC # Bld Auto",
-          "value": 6,
-          "unit": "x10E3/uL",
-          "code": "6690-2",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "reference": {
-            "low": null,
-            "high": null
-          }
-        },
-        {
-          "date": "2013-02-24T08:00:00.000Z",
-          "name": "Platelet # Bld Auto",
-          "value": 300,
-          "unit": "x10E3/uL",
-          "code": "777-3",
           "code_system": "2.16.840.1.113883.6.1",
           "code_system_name": "LOINC",
           "reference": {
@@ -314,50 +236,11 @@
       "code_system_name": null,
       "results": [
         {
-          "date": "2013-02-24T08:00:00.000Z",
-          "name": "Hgb Bld-mCnc",
-          "value": 15,
-          "unit": "g/dL",
-          "code": "718-7",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "reference": {
-            "low": null,
-            "high": null
-          }
-        },
-        {
-          "date": "2013-02-24T08:00:00.000Z",
-          "name": "Hct Fr Bld Auto",
-          "value": 50,
-          "unit": "%",
-          "code": "4544-3",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "reference": {
-            "low": null,
-            "high": null
-          }
-        },
-        {
-          "date": "2013-02-24T08:00:00.000Z",
+          "date": "2013-01-24T08:00:00.000Z",
           "name": "WBC # Bld Auto",
           "value": 6,
           "unit": "x10E3/uL",
           "code": "6690-2",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "reference": {
-            "low": null,
-            "high": null
-          }
-        },
-        {
-          "date": "2013-02-24T08:00:00.000Z",
-          "name": "Platelet # Bld Auto",
-          "value": 300,
-          "unit": "x10E3/uL",
-          "code": "777-3",
           "code_system": "2.16.840.1.113883.6.1",
           "code_system_name": "LOINC",
           "reference": {
@@ -374,46 +257,7 @@
       "code_system_name": null,
       "results": [
         {
-          "date": "2013-02-24T08:00:00.000Z",
-          "name": "Hgb Bld-mCnc",
-          "value": 15,
-          "unit": "g/dL",
-          "code": "718-7",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "reference": {
-            "low": null,
-            "high": null
-          }
-        },
-        {
-          "date": "2013-02-24T08:00:00.000Z",
-          "name": "Hct Fr Bld Auto",
-          "value": 50,
-          "unit": "%",
-          "code": "4544-3",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "reference": {
-            "low": null,
-            "high": null
-          }
-        },
-        {
-          "date": "2013-02-24T08:00:00.000Z",
-          "name": "WBC # Bld Auto",
-          "value": 6,
-          "unit": "x10E3/uL",
-          "code": "6690-2",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "reference": {
-            "low": null,
-            "high": null
-          }
-        },
-        {
-          "date": "2013-02-24T08:00:00.000Z",
+          "date": "2013-01-24T08:00:00.000Z",
           "name": "Platelet # Bld Auto",
           "value": 300,
           "unit": "x10E3/uL",
@@ -431,8 +275,8 @@
   "medications": [
     {
       "date_range": {
-        "start": "2013-02-24T08:00:00.000Z",
-        "end": "2013-03-23T07:00:00.000Z"
+        "start": "2013-01-24T08:00:00.000Z",
+        "end": "2013-02-23T08:00:00.000Z"
       },
       "product": {
         "name": "azithromycin Oral Tablet 500 mg",
@@ -488,8 +332,8 @@
     },
     {
       "date_range": {
-        "start": "2013-02-01T08:00:00.000Z",
-        "end": "2013-03-03T08:00:00.000Z"
+        "start": "2013-01-01T08:00:00.000Z",
+        "end": "2013-01-31T08:00:00.000Z"
       },
       "product": {
         "name": "albuterol sulfate Inhalation HFA Aerosol Inhaler 90 mcg/actuation",
@@ -545,8 +389,8 @@
     },
     {
       "date_range": {
-        "start": "2013-04-13T07:00:00.000Z",
-        "end": "2013-05-12T07:00:00.000Z"
+        "start": "2013-03-13T07:00:00.000Z",
+        "end": "2013-04-12T07:00:00.000Z"
       },
       "product": {
         "name": "Viagra Oral Tablet 50 mg",
@@ -604,7 +448,7 @@
   "problems": [
     {
       "date_range": {
-        "start": "2011-10-25T07:00:00.000Z",
+        "start": "2011-09-25T07:00:00.000Z",
         "end": null
       },
       "name": null,
@@ -615,7 +459,7 @@
     },
     {
       "date_range": {
-        "start": "2012-04-30T07:00:00.000Z",
+        "start": "2012-03-30T07:00:00.000Z",
         "end": null
       },
       "name": null,
@@ -626,8 +470,8 @@
     },
     {
       "date_range": {
-        "start": "2011-11-28T08:00:00.000Z",
-        "end": "2011-12-08T08:00:00.000Z"
+        "start": "2011-10-28T07:00:00.000Z",
+        "end": "2011-11-08T08:00:00.000Z"
       },
       "name": null,
       "status": "Resolved",
@@ -637,7 +481,7 @@
     },
     {
       "date_range": {
-        "start": "2013-02-24T08:00:00.000Z",
+        "start": "2013-01-24T08:00:00.000Z",
         "end": null
       },
       "name": null,
@@ -648,7 +492,7 @@
     },
     {
       "date_range": {
-        "start": "2013-04-07T07:00:00.000Z",
+        "start": "2013-03-07T08:00:00.000Z",
         "end": null
       },
       "name": null,
@@ -659,7 +503,7 @@
     },
     {
       "date_range": {
-        "start": "2013-04-07T07:00:00.000Z",
+        "start": "2013-03-07T08:00:00.000Z",
         "end": null
       },
       "name": null,
@@ -671,7 +515,7 @@
   ],
   "procedures": [
     {
-      "date": "2012-04-30T07:00:00.000Z",
+      "date": "2012-03-30T07:00:00.000Z",
       "name": "INFLUENZA VIRUS VACC SPLIT PRSRV FREE 3 YRS/> IM",
       "code": "90656",
       "code_system": "2.16.840.1.113883.6.12",
@@ -696,7 +540,7 @@
       }
     },
     {
-      "date": "2013-02-24T08:00:00.000Z",
+      "date": "2013-01-24T08:00:00.000Z",
       "name": "RADIOLOGIC EXAM CHEST 2 VIEWS FRONTAL&LATERAL",
       "code": "71020",
       "code_system": "2.16.840.1.113883.6.12",
@@ -723,7 +567,7 @@
   ],
   "vitals": [
     {
-      "date": "2011-10-25T07:00:00.000Z",
+      "date": "2011-09-25T07:00:00.000Z",
       "results": [
         {
           "name": "BP Diastolic",
@@ -763,133 +607,13 @@
           "code_system": "2.16.840.1.113883.6.1",
           "code_system_name": "LOINC",
           "value": 180,
-          "unit": "[lb_av]"
-        },
-        {
-          "name": "BP Diastolic",
-          "code": "8462-4",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 98,
-          "unit": "mm[Hg]"
-        },
-        {
-          "name": "BP Systolic",
-          "code": "8480-6",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 160,
-          "unit": "mm[Hg]"
-        },
-        {
-          "name": "Body Mass Index",
-          "code": "41909-3",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 27,
-          "unit": "kg/m²"
-        },
-        {
-          "name": "Body Height (Measured)",
-          "code": "8302-2",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 70,
-          "unit": "[in_us]"
-        },
-        {
-          "name": "Body Weight (Measured)",
-          "code": "3141-9",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 195,
-          "unit": "[lb_av]"
-        },
-        {
-          "name": "BP Diastolic",
-          "code": "8462-4",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 80,
-          "unit": "mm[Hg]"
-        },
-        {
-          "name": "BP Systolic",
-          "code": "8480-6",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 120,
-          "unit": "mm[Hg]"
-        },
-        {
-          "name": "Body Mass Index",
-          "code": "41909-3",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 23,
-          "unit": "kg/m²"
-        },
-        {
-          "name": "Body Height (Measured)",
-          "code": "8302-2",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 70,
-          "unit": "[in_us]"
-        },
-        {
-          "name": "Body Weight (Measured)",
-          "code": "3141-9",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 162,
           "unit": "[lb_av]"
         }
       ]
     },
     {
-      "date": "2012-04-30T07:00:00.000Z",
+      "date": "2012-03-30T07:00:00.000Z",
       "results": [
-        {
-          "name": "BP Diastolic",
-          "code": "8462-4",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 75,
-          "unit": "mm[Hg]"
-        },
-        {
-          "name": "BP Systolic",
-          "code": "8480-6",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 120,
-          "unit": "mm[Hg]"
-        },
-        {
-          "name": "Body Mass Index",
-          "code": "41909-3",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 25,
-          "unit": "kg/m²"
-        },
-        {
-          "name": "Body Height (Measured)",
-          "code": "8302-2",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 70,
-          "unit": "[in_us]"
-        },
-        {
-          "name": "Body Weight (Measured)",
-          "code": "3141-9",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 180,
-          "unit": "[lb_av]"
-        },
         {
           "name": "BP Diastolic",
           "code": "8462-4",
@@ -928,133 +652,13 @@
           "code_system": "2.16.840.1.113883.6.1",
           "code_system_name": "LOINC",
           "value": 195,
-          "unit": "[lb_av]"
-        },
-        {
-          "name": "BP Diastolic",
-          "code": "8462-4",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 80,
-          "unit": "mm[Hg]"
-        },
-        {
-          "name": "BP Systolic",
-          "code": "8480-6",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 120,
-          "unit": "mm[Hg]"
-        },
-        {
-          "name": "Body Mass Index",
-          "code": "41909-3",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 23,
-          "unit": "kg/m²"
-        },
-        {
-          "name": "Body Height (Measured)",
-          "code": "8302-2",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 70,
-          "unit": "[in_us]"
-        },
-        {
-          "name": "Body Weight (Measured)",
-          "code": "3141-9",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 162,
           "unit": "[lb_av]"
         }
       ]
     },
     {
-      "date": "2013-02-24T08:00:00.000Z",
+      "date": "2013-01-24T08:00:00.000Z",
       "results": [
-        {
-          "name": "BP Diastolic",
-          "code": "8462-4",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 75,
-          "unit": "mm[Hg]"
-        },
-        {
-          "name": "BP Systolic",
-          "code": "8480-6",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 120,
-          "unit": "mm[Hg]"
-        },
-        {
-          "name": "Body Mass Index",
-          "code": "41909-3",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 25,
-          "unit": "kg/m²"
-        },
-        {
-          "name": "Body Height (Measured)",
-          "code": "8302-2",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 70,
-          "unit": "[in_us]"
-        },
-        {
-          "name": "Body Weight (Measured)",
-          "code": "3141-9",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 180,
-          "unit": "[lb_av]"
-        },
-        {
-          "name": "BP Diastolic",
-          "code": "8462-4",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 98,
-          "unit": "mm[Hg]"
-        },
-        {
-          "name": "BP Systolic",
-          "code": "8480-6",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 160,
-          "unit": "mm[Hg]"
-        },
-        {
-          "name": "Body Mass Index",
-          "code": "41909-3",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 27,
-          "unit": "kg/m²"
-        },
-        {
-          "name": "Body Height (Measured)",
-          "code": "8302-2",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 70,
-          "unit": "[in_us]"
-        },
-        {
-          "name": "Body Weight (Measured)",
-          "code": "3141-9",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 195,
-          "unit": "[lb_av]"
-        },
         {
           "name": "BP Diastolic",
           "code": "8462-4",

@@ -105,5 +105,3 @@ var BlueButton = function (source) {
   };
   
 };
-
-window.BlueButton = BlueButton;
