@@ -15,9 +15,6 @@ var Labs = function () {
       case 'ccda':
         panels = processCCDA(source);
         break;
-      case 'va_c32':
-        panels = processVAC32(source);
-        break;
       case 'json':
         return processJSON(source);
         break;
@@ -119,8 +116,6 @@ var Labs = function () {
     }
     return data;
   };
-  
-  var processVAC32 = function (xmlDOM) {};
   
   var processJSON = function (json) {
     return {};

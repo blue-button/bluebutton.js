@@ -15,9 +15,6 @@ var Allergies = function () {
       case 'ccda':
         raw = processCCDA(source);
         break;
-      case 'va_c32':
-        raw = processVAC32(source);
-        break;
       case 'json':
         return processJSON(source);
         break;
@@ -129,8 +126,6 @@ var Allergies = function () {
     
     return data;
   };
-  
-  var processVAC32 = function (xmlDOM) {};
   
   var processJSON = function (json) {
     return {};

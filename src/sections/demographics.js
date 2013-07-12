@@ -15,9 +15,6 @@ var Demographics = function () {
       case 'ccda':
         data = processCCDA(source);
         break;
-      case 'va_c32':
-        data = processVAC32(source);
-        break;
       case 'json':
         return processJSON(source);
         break;
@@ -190,8 +187,6 @@ var Demographics = function () {
     
     return data;
   };
-  
-  var processVAC32 = function (xmlDOM) {};
   
   var processJSON = function (json) {
     return {};

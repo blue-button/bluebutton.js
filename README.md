@@ -1,7 +1,7 @@
 
 # BlueButton.js
 
-A JavaScript library to work with Blue Button data. BlueButton.js supports CCDA and VA C32 documents. [Try the demo.](http://blue-button.github.io/blue-button-for-developers/docs/js/demo.html)
+BlueButton.js is JavaScript library to work with Blue Button data. [Try the demo.](http://blue-button.github.io/blue-button-for-developers/docs/js/demo.html)
 
 **This project is under heavy development!** Until a v1 release, the public API will change, a lot.
 
@@ -28,7 +28,7 @@ All builds are placed in the `build/` directory. Both development and production
 
 # Usage
 
-Start by creating a Blue Button document object by passing CCDA or VA C32 XML string to `BlueButton`:
+Start by creating a Blue Button document object by passing a CCDA XML string to `BlueButton`:
 
 ```javascript
 var bb = BlueButton(xml);

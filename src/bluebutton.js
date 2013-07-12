@@ -35,12 +35,7 @@ var BlueButton = function (source) {
   if (source.substr(0, 5) == "<?xml") {
     xmlDOM = Core.parseXML(source);
     
-    // Detect document type (CCDA or VA C32)
-    if (xmlDOM.template('1.3.6.1.4.1.19376.1.5.3.1.1.1').isEmpty()) {
-      type = 'ccda';
-    } else {
-      type = 'va_c32';
-    }
+    type = 'ccda';
     
     data.document = { type: type };
     data.allergies = Allergies.process(xmlDOM, type);

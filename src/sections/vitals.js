@@ -15,9 +15,6 @@ var Vitals = function () {
       case 'ccda':
         entries = processCCDA(source);
         break;
-      case 'va_c32':
-        entries = processVAC32(source);
-        break;
       case 'json':
         return processJSON(source);
         break;
@@ -98,8 +95,6 @@ var Vitals = function () {
     }
     return data;
   };
-  
-  var processVAC32 = function (xmlDOM) {};
   
   var processJSON = function (json) {
     return {};
