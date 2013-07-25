@@ -4,7 +4,7 @@ var fs = require('fs'),
     BlueButton = require('../../../build/bluebutton');
 
 describe('CCDA', function() {
-  var record = fs.readFileSync(path.resolve(__dirname, '../../../components/blue-button-reference-ccda/blue_button_reference_ccda.xml'), 'utf-8');
+  var record = fs.readFileSync(path.resolve(__dirname, '../../../bower_components/sample_ccdas/Kinsights\ Samples/kinsights-sample-timmy.xml'), 'utf-8');
   var bb = BlueButton(record);
   var expectedOutput = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../fixtures/json/ccda_expected_output.json'), 'utf-8'));
 

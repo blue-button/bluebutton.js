@@ -5,86 +5,30 @@
   "allergies": [
     {
       "date_range": {
-        "start": null,
+        "start": "2013-07-01T07:00:00.000Z",
         "end": null
       },
       "name": null,
       "code": "ASSERTION",
       "code_system": "2.16.840.1.113883.5.4",
       "code_system_name": null,
-      "severity": null,
+      "severity": "moderate",
       "reaction": {
-        "name": null,
-        "code": null,
-        "code_system": null
+        "name": "Rash",
+        "code": "64144002",
+        "code_system": "2.16.840.1.113883.6.96"
       },
       "reaction_type": {
-        "name": "Allergy to substance (disorder)",
+        "name": "allergy to substance",
         "code": "419199007",
-        "code_system": null,
+        "code_system": "2.16.840.1.113883.6.96",
         "code_system_name": "SNOMED CT"
       },
       "allergen": {
-        "name": null,
-        "code": null,
-        "code_system": null,
-        "code_system_name": null
-      }
-    },
-    {
-      "date_range": {
-        "start": null,
-        "end": null
-      },
-      "name": null,
-      "code": "ASSERTION",
-      "code_system": "2.16.840.1.113883.5.4",
-      "code_system_name": null,
-      "severity": null,
-      "reaction": {
-        "name": null,
-        "code": null,
-        "code_system": null
-      },
-      "reaction_type": {
-        "name": "Allergy to substance (disorder)",
-        "code": "419199007",
-        "code_system": null,
-        "code_system_name": "SNOMED CT"
-      },
-      "allergen": {
-        "name": "Bicillin L-A",
-        "code": "215674",
-        "code_system": "2.16.840.1.113883.6.88",
-        "code_system_name": "RxNorm"
-      }
-    },
-    {
-      "date_range": {
-        "start": null,
-        "end": null
-      },
-      "name": null,
-      "code": "ASSERTION",
-      "code_system": "2.16.840.1.113883.5.4",
-      "code_system_name": null,
-      "severity": null,
-      "reaction": {
-        "name": null,
-        "code": null,
-        "code_system": null
-      },
-      "reaction_type": {
-        "name": "Allergy to substance (disorder)",
-        "code": "419199007",
-        "code_system": null,
-        "code_system_name": "SNOMED CT"
-      },
-      "allergen": {
-        "name": "Ecpirin",
-        "code": "1001473",
-        "code_system": "2.16.840.1.113883.6.88",
-        "code_system_name": "RxNorm"
+        "name": "cat hair",
+        "code": "1564HD0N96",
+        "code_system": "2.2.16.840.1.113883.4.9",
+        "code_system_name": "UNII"
       }
     }
   ],
@@ -92,32 +36,31 @@
     "name": {
       "prefix": null,
       "given": [
-        "Adam"
+        "Timmy"
       ],
-      "family": "Everyman"
+      "family": "Wilkinson"
     },
-    "dob": "1962-10-22T07:00:00.000Z",
+    "dob": "2011-04-01T07:00:00.000Z",
     "gender": "Male",
     "marital_status": "Never Married",
     "address": {
       "street": [
-        "17 Daws Rd.",
-        "Apt 27"
+        "119 Grattan St"
       ],
-      "city": "Blue Bell",
-      "state": "MA",
-      "zip": "02368",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94117",
       "country": "US"
     },
     "phone": {
-      "home": "tel:(781)555-1212",
+      "home": "tel:703-373-1575",
       "work": null,
       "mobile": null
     },
     "email": null,
     "language": "eng",
-    "race": "White",
-    "ethnicity": "Hispanic or Latino",
+    "race": null,
+    "ethnicity": null,
     "religion": null,
     "birthplace": {
       "state": null,
@@ -126,43 +69,530 @@
     },
     "guardian": {
       "name": {
-        "given": [],
-        "family": null
+        "given": [
+          "Jackson"
+        ],
+        "family": "Wilkinson"
       },
-      "relationship": null,
+      "relationship": "Parent",
+      "address": {
+        "street": [
+          "119 Grattan St"
+        ],
+        "city": "San Francisco",
+        "state": "CA",
+        "zip": "94117",
+        "country": "US"
+      },
+      "phone": {
+        "home": "207-841-9103"
+      }
+    },
+    "provider": {
+      "organization": "Dr. David Yoon",
+      "phone": "tel:215-343-1212",
       "address": {
         "street": [],
         "city": null,
         "state": null,
         "zip": null,
         "country": null
-      },
-      "phone": {
-        "home": null
-      }
-    },
-    "provider": {
-      "organization": "Get Well Clinic",
-      "phone": "555-555-1004",
-      "address": {
-        "street": [
-          "1004 Healthcare Dr. practice",
-          null
-        ],
-        "city": "Portland",
-        "state": "OR",
-        "zip": "97005",
-        "country": "United States"
       }
     }
   },
   "encounters": [],
   "immunizations": [
     {
-      "date": "2012-03-30T07:00:00.000Z",
+      "date": "2011-08-13T07:00:00.000Z",
       "product": {
-        "name": "influenza, NOS",
+        "name": "Flu",
         "code": "88",
+        "code_system": "2.16.840.1.113883.12.292",
+        "code_system_name": "CVX",
+        "translation": {
+          "name": null,
+          "code": null,
+          "code_system": null,
+          "code_system_name": null
+        }
+      },
+      "route": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "instructions": null,
+      "education_type": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      }
+    },
+    {
+      "date": "2011-09-01T07:00:00.000Z",
+      "product": {
+        "name": "DTaP",
+        "code": "107",
+        "code_system": "2.16.840.1.113883.12.292",
+        "code_system_name": "CVX",
+        "translation": {
+          "name": null,
+          "code": null,
+          "code_system": null,
+          "code_system_name": null
+        }
+      },
+      "route": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "instructions": null,
+      "education_type": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      }
+    },
+    {
+      "date": "2011-09-01T07:00:00.000Z",
+      "product": {
+        "name": "Hib",
+        "code": "17",
+        "code_system": "2.16.840.1.113883.12.292",
+        "code_system_name": "CVX",
+        "translation": {
+          "name": null,
+          "code": null,
+          "code_system": null,
+          "code_system_name": null
+        }
+      },
+      "route": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "instructions": null,
+      "education_type": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      }
+    },
+    {
+      "date": "2011-07-01T07:00:00.000Z",
+      "product": {
+        "name": "HepB",
+        "code": "45",
+        "code_system": "2.16.840.1.113883.12.292",
+        "code_system_name": "CVX",
+        "translation": {
+          "name": null,
+          "code": null,
+          "code_system": null,
+          "code_system_name": null
+        }
+      },
+      "route": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "instructions": null,
+      "education_type": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      }
+    },
+    {
+      "date": "2011-09-01T07:00:00.000Z",
+      "product": {
+        "name": "HepB",
+        "code": "45",
+        "code_system": "2.16.840.1.113883.12.292",
+        "code_system_name": "CVX",
+        "translation": {
+          "name": null,
+          "code": null,
+          "code_system": null,
+          "code_system_name": null
+        }
+      },
+      "route": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "instructions": null,
+      "education_type": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      }
+    },
+    {
+      "date": "2011-09-01T07:00:00.000Z",
+      "product": {
+        "name": "IPV",
+        "code": "10",
+        "code_system": "2.16.840.1.113883.12.292",
+        "code_system_name": "CVX",
+        "translation": {
+          "name": null,
+          "code": null,
+          "code_system": null,
+          "code_system_name": null
+        }
+      },
+      "route": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "instructions": null,
+      "education_type": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      }
+    },
+    {
+      "date": "2011-09-01T07:00:00.000Z",
+      "product": {
+        "name": "PCV",
+        "code": "133",
+        "code_system": "2.16.840.1.113883.12.292",
+        "code_system_name": "CVX",
+        "translation": {
+          "name": null,
+          "code": null,
+          "code_system": null,
+          "code_system_name": null
+        }
+      },
+      "route": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "instructions": null,
+      "education_type": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      }
+    },
+    {
+      "date": "2011-09-01T07:00:00.000Z",
+      "product": {
+        "name": "RV",
+        "code": "122",
+        "code_system": "2.16.840.1.113883.12.292",
+        "code_system_name": "CVX",
+        "translation": {
+          "name": null,
+          "code": null,
+          "code_system": null,
+          "code_system_name": null
+        }
+      },
+      "route": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "instructions": null,
+      "education_type": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      }
+    },
+    {
+      "date": "2011-09-09T07:00:00.000Z",
+      "product": {
+        "name": "DTaP",
+        "code": "107",
+        "code_system": "2.16.840.1.113883.12.292",
+        "code_system_name": "CVX",
+        "translation": {
+          "name": null,
+          "code": null,
+          "code_system": null,
+          "code_system_name": null
+        }
+      },
+      "route": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "instructions": null,
+      "education_type": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      }
+    },
+    {
+      "date": "2011-09-09T07:00:00.000Z",
+      "product": {
+        "name": "Hib",
+        "code": "17",
+        "code_system": "2.16.840.1.113883.12.292",
+        "code_system_name": "CVX",
+        "translation": {
+          "name": null,
+          "code": null,
+          "code_system": null,
+          "code_system_name": null
+        }
+      },
+      "route": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "instructions": null,
+      "education_type": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      }
+    },
+    {
+      "date": "2011-09-09T07:00:00.000Z",
+      "product": {
+        "name": "PCV",
+        "code": "133",
+        "code_system": "2.16.840.1.113883.12.292",
+        "code_system_name": "CVX",
+        "translation": {
+          "name": null,
+          "code": null,
+          "code_system": null,
+          "code_system_name": null
+        }
+      },
+      "route": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "instructions": null,
+      "education_type": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      }
+    },
+    {
+      "date": "2011-09-09T07:00:00.000Z",
+      "product": {
+        "name": "RV",
+        "code": "122",
+        "code_system": "2.16.840.1.113883.12.292",
+        "code_system_name": "CVX",
+        "translation": {
+          "name": null,
+          "code": null,
+          "code_system": null,
+          "code_system_name": null
+        }
+      },
+      "route": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "instructions": null,
+      "education_type": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      }
+    },
+    {
+      "date": "2011-11-01T07:00:00.000Z",
+      "product": {
+        "name": "IPV",
+        "code": "10",
+        "code_system": "2.16.840.1.113883.12.292",
+        "code_system_name": "CVX",
+        "translation": {
+          "name": null,
+          "code": null,
+          "code_system": null,
+          "code_system_name": null
+        }
+      },
+      "route": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "instructions": null,
+      "education_type": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      }
+    },
+    {
+      "date": "2011-11-04T07:00:00.000Z",
+      "product": {
+        "name": "IPV",
+        "code": "10",
+        "code_system": "2.16.840.1.113883.12.292",
+        "code_system_name": "CVX",
+        "translation": {
+          "name": null,
+          "code": null,
+          "code_system": null,
+          "code_system_name": null
+        }
+      },
+      "route": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "instructions": null,
+      "education_type": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      }
+    },
+    {
+      "date": "2012-01-01T08:00:00.000Z",
+      "product": {
+        "name": "Hib",
+        "code": "17",
+        "code_system": "2.16.840.1.113883.12.292",
+        "code_system_name": "CVX",
+        "translation": {
+          "name": null,
+          "code": null,
+          "code_system": null,
+          "code_system_name": null
+        }
+      },
+      "route": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "instructions": null,
+      "education_type": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      }
+    },
+    {
+      "date": "2012-01-01T08:00:00.000Z",
+      "product": {
+        "name": "PCV",
+        "code": "133",
+        "code_system": "2.16.840.1.113883.12.292",
+        "code_system_name": "CVX",
+        "translation": {
+          "name": null,
+          "code": null,
+          "code_system": null,
+          "code_system_name": null
+        }
+      },
+      "route": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "instructions": null,
+      "education_type": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      }
+    },
+    {
+      "date": "2012-01-03T08:00:00.000Z",
+      "product": {
+        "name": "RV",
+        "code": "122",
+        "code_system": "2.16.840.1.113883.12.292",
+        "code_system_name": "CVX",
+        "translation": {
+          "name": null,
+          "code": null,
+          "code_system": null,
+          "code_system_name": null
+        }
+      },
+      "route": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "instructions": null,
+      "education_type": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      }
+    },
+    {
+      "date": "2013-01-09T08:00:00.000Z",
+      "product": {
+        "name": "HepA",
+        "code": "85",
+        "code_system": "2.16.840.1.113883.12.292",
+        "code_system_name": "CVX",
+        "translation": {
+          "name": null,
+          "code": null,
+          "code_system": null,
+          "code_system_name": null
+        }
+      },
+      "route": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "instructions": null,
+      "education_type": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      }
+    },
+    {
+      "date": "2013-05-01T07:00:00.000Z",
+      "product": {
+        "name": "DTaP",
+        "code": "107",
         "code_system": "2.16.840.1.113883.12.292",
         "code_system_name": "CVX",
         "translation": {
@@ -186,112 +616,27 @@
       }
     }
   ],
-  "labs": [
-    {
-      "name": null,
-      "code": null,
-      "code_system": null,
-      "code_system_name": null,
-      "results": [
-        {
-          "date": "2013-01-24T08:00:00.000Z",
-          "name": "Hgb Bld-mCnc",
-          "value": 15,
-          "unit": "g/dL",
-          "code": "718-7",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "reference": {
-            "low": null,
-            "high": null
-          }
-        }
-      ]
-    },
-    {
-      "name": null,
-      "code": null,
-      "code_system": null,
-      "code_system_name": null,
-      "results": [
-        {
-          "date": "2013-01-24T08:00:00.000Z",
-          "name": "Hct Fr Bld Auto",
-          "value": 50,
-          "unit": "%",
-          "code": "4544-3",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "reference": {
-            "low": null,
-            "high": null
-          }
-        }
-      ]
-    },
-    {
-      "name": null,
-      "code": null,
-      "code_system": null,
-      "code_system_name": null,
-      "results": [
-        {
-          "date": "2013-01-24T08:00:00.000Z",
-          "name": "WBC # Bld Auto",
-          "value": 6,
-          "unit": "x10E3/uL",
-          "code": "6690-2",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "reference": {
-            "low": null,
-            "high": null
-          }
-        }
-      ]
-    },
-    {
-      "name": null,
-      "code": null,
-      "code_system": null,
-      "code_system_name": null,
-      "results": [
-        {
-          "date": "2013-01-24T08:00:00.000Z",
-          "name": "Platelet # Bld Auto",
-          "value": 300,
-          "unit": "x10E3/uL",
-          "code": "777-3",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "reference": {
-            "low": null,
-            "high": null
-          }
-        }
-      ]
-    }
-  ],
+  "labs": [],
   "medications": [
     {
       "date_range": {
-        "start": "2013-01-24T08:00:00.000Z",
-        "end": "2013-02-23T08:00:00.000Z"
+        "start": "2013-07-01T07:00:00.000Z",
+        "end": null
       },
       "product": {
-        "name": "azithromycin Oral Tablet 500 mg",
-        "code": "445655",
-        "code_system": null,
+        "name": "Desonide (Topical) Topical Ointment 0.0005 mg/mg",
+        "code": "204135",
+        "code_system": "2.16.840.1.113883.6.88",
         "translation": {
-          "name": "Azithromycin 500 MG Oral Tablet",
-          "code": "248656",
-          "code_system": "2.16.840.1.113883.6.88",
-          "code_system_name": "RxNorm"
+          "name": null,
+          "code": null,
+          "code_system": null,
+          "code_system_name": null
         }
       },
       "dose_quantity": {
-        "value": "1",
-        "unit": "tablet"
+        "value": null,
+        "unit": null
       },
       "rate_quantity": {
         "value": null,
@@ -303,9 +648,9 @@
         "code_system": null
       },
       "reason": {
-        "name": null,
-        "code": null,
-        "code_system": null
+        "name": "Asthma",
+        "code": "195967001",
+        "code_system": "2.16.840.1.113883.6.96"
       },
       "route": {
         "name": null,
@@ -332,22 +677,22 @@
     },
     {
       "date_range": {
-        "start": "2013-01-01T08:00:00.000Z",
-        "end": "2013-01-31T08:00:00.000Z"
+        "start": "2011-07-15T07:00:00.000Z",
+        "end": null
       },
       "product": {
-        "name": "albuterol sulfate Inhalation HFA Aerosol Inhaler 90 mcg/actuation",
-        "code": "279394",
-        "code_system": null,
+        "name": "Hydrocortisone (Topical) Topical Gel 0.01 mg/mg",
+        "code": "198706",
+        "code_system": "2.16.840.1.113883.6.88",
         "translation": {
-          "name": "200 ACTUAT Albuterol 0.09 MG/ACTUAT Metered Dose Inhaler",
-          "code": "745679",
-          "code_system": "2.16.840.1.113883.6.88",
-          "code_system_name": "RxNorm"
+          "name": null,
+          "code": null,
+          "code_system": null,
+          "code_system_name": null
         }
       },
       "dose_quantity": {
-        "value": "2",
+        "value": null,
         "unit": null
       },
       "rate_quantity": {
@@ -360,66 +705,9 @@
         "code_system": null
       },
       "reason": {
-        "name": null,
-        "code": null,
-        "code_system": null
-      },
-      "route": {
-        "name": null,
-        "code": null,
-        "code_system": null,
-        "code_system_name": null
-      },
-      "vehicle": {
-        "name": null,
-        "code": null,
-        "code_system": null,
-        "code_system_name": null
-      },
-      "administration": {
-        "name": null,
-        "code": null,
-        "code_system": null,
-        "code_system_name": null
-      },
-      "prescriber": {
-        "organization": null,
-        "person": null
-      }
-    },
-    {
-      "date_range": {
-        "start": "2013-03-13T07:00:00.000Z",
-        "end": "2013-04-12T07:00:00.000Z"
-      },
-      "product": {
-        "name": "Viagra Oral Tablet 50 mg",
-        "code": "186458",
-        "code_system": null,
-        "translation": {
-          "name": "sildenafil 50 MG Oral Tablet",
-          "code": "312950",
-          "code_system": "2.16.840.1.113883.6.88",
-          "code_system_name": "RxNorm"
-        }
-      },
-      "dose_quantity": {
-        "value": "2",
-        "unit": "tablet"
-      },
-      "rate_quantity": {
-        "value": null,
-        "unit": null
-      },
-      "precondition": {
-        "name": null,
-        "code": null,
-        "code_system": null
-      },
-      "reason": {
-        "name": null,
-        "code": null,
-        "code_system": null
+        "name": "Eczema",
+        "code": "43116000",
+        "code_system": "2.16.840.1.113883.6.96"
       },
       "route": {
         "name": null,
@@ -448,258 +736,615 @@
   "problems": [
     {
       "date_range": {
-        "start": "2011-09-25T07:00:00.000Z",
+        "start": "2013-01-10T08:00:00.000Z",
         "end": null
       },
-      "name": null,
+      "name": "Complaint",
       "status": "Active",
       "age": null,
-      "code": null,
-      "code_system": null
+      "code": "409586006",
+      "code_system": "2.16.840.1.113883.6.96"
     },
     {
       "date_range": {
-        "start": "2012-03-30T07:00:00.000Z",
+        "start": "2011-11-01T07:00:00.000Z",
         "end": null
       },
-      "name": null,
+      "name": "Complaint",
       "status": "Active",
       "age": null,
-      "code": null,
-      "code_system": null
+      "code": "409586006",
+      "code_system": "2.16.840.1.113883.6.96"
     },
     {
       "date_range": {
-        "start": "2011-10-28T07:00:00.000Z",
-        "end": "2011-11-08T08:00:00.000Z"
+        "start": "2011-07-01T07:00:00.000Z",
+        "end": null
       },
-      "name": null,
-      "status": "Resolved",
+      "name": "Complaint",
+      "status": "Active",
       "age": null,
-      "code": null,
-      "code_system": null
+      "code": "409586006",
+      "code_system": "2.16.840.1.113883.6.96"
     },
     {
       "date_range": {
-        "start": "2013-01-24T08:00:00.000Z",
+        "start": "2010-08-01T07:00:00.000Z",
         "end": null
       },
-      "name": null,
+      "name": "Complaint",
       "status": "Active",
       "age": null,
-      "code": null,
-      "code_system": null
+      "code": "409586006",
+      "code_system": "2.16.840.1.113883.6.96"
     },
     {
       "date_range": {
-        "start": "2013-03-07T08:00:00.000Z",
-        "end": null
+        "start": "2011-12-01T08:00:00.000Z",
+        "end": "2012-01-19T08:00:00.000Z"
       },
-      "name": null,
-      "status": "Active",
+      "name": "Complaint",
+      "status": "Inactive",
       "age": null,
-      "code": null,
-      "code_system": null
+      "code": "409586006",
+      "code_system": "2.16.840.1.113883.6.96"
     },
     {
       "date_range": {
-        "start": "2013-03-07T08:00:00.000Z",
-        "end": null
+        "start": "2012-01-02T08:00:00.000Z",
+        "end": "2012-01-18T08:00:00.000Z"
       },
-      "name": null,
-      "status": "Active",
+      "name": "Complaint",
+      "status": "Inactive",
       "age": null,
-      "code": null,
-      "code_system": null
+      "code": "409586006",
+      "code_system": "2.16.840.1.113883.6.96"
+    },
+    {
+      "date_range": {
+        "start": "2011-10-01T07:00:00.000Z",
+        "end": "2012-01-17T08:00:00.000Z"
+      },
+      "name": "Complaint",
+      "status": "Inactive",
+      "age": null,
+      "code": "409586006",
+      "code_system": "2.16.840.1.113883.6.96"
+    },
+    {
+      "date_range": {
+        "start": "2011-07-01T07:00:00.000Z",
+        "end": "2012-01-16T08:00:00.000Z"
+      },
+      "name": "Complaint",
+      "status": "Inactive",
+      "age": null,
+      "code": "409586006",
+      "code_system": "2.16.840.1.113883.6.96"
+    },
+    {
+      "date_range": {
+        "start": "2011-08-01T07:00:00.000Z",
+        "end": "2012-01-03T08:00:00.000Z"
+      },
+      "name": "Complaint",
+      "status": "Inactive",
+      "age": null,
+      "code": "409586006",
+      "code_system": "2.16.840.1.113883.6.96"
+    },
+    {
+      "date_range": {
+        "start": "2011-11-09T08:00:00.000Z",
+        "end": "2011-12-07T08:00:00.000Z"
+      },
+      "name": "Complaint",
+      "status": "Inactive",
+      "age": null,
+      "code": "409586006",
+      "code_system": "2.16.840.1.113883.6.96"
+    },
+    {
+      "date_range": {
+        "start": "2011-12-01T08:00:00.000Z",
+        "end": "2011-12-06T08:00:00.000Z"
+      },
+      "name": "Complaint",
+      "status": "Inactive",
+      "age": null,
+      "code": "409586006",
+      "code_system": "2.16.840.1.113883.6.96"
+    },
+    {
+      "date_range": {
+        "start": "2011-09-21T07:00:00.000Z",
+        "end": "2011-10-01T07:00:00.000Z"
+      },
+      "name": "Complaint",
+      "status": "Inactive",
+      "age": null,
+      "code": "409586006",
+      "code_system": "2.16.840.1.113883.6.96"
+    },
+    {
+      "date_range": {
+        "start": "2011-09-01T07:00:00.000Z",
+        "end": "2011-09-15T07:00:00.000Z"
+      },
+      "name": "Complaint",
+      "status": "Inactive",
+      "age": null,
+      "code": "409586006",
+      "code_system": "2.16.840.1.113883.6.96"
+    },
+    {
+      "date_range": {
+        "start": "2011-02-01T08:00:00.000Z",
+        "end": "2011-03-01T08:00:00.000Z"
+      },
+      "name": "Complaint",
+      "status": "Inactive",
+      "age": null,
+      "code": "409586006",
+      "code_system": "2.16.840.1.113883.6.96"
     }
   ],
-  "procedures": [
-    {
-      "date": "2012-03-30T07:00:00.000Z",
-      "name": "INFLUENZA VIRUS VACC SPLIT PRSRV FREE 3 YRS/> IM",
-      "code": "90656",
-      "code_system": "2.16.840.1.113883.6.12",
-      "specimen": {
-        "name": null,
-        "code": null,
-        "code_system": null
-      },
-      "performer": {
-        "organization": null,
-        "street": [],
-        "city": null,
-        "state": null,
-        "zip": null,
-        "country": null,
-        "phone": null
-      },
-      "device": {
-        "name": null,
-        "code": null,
-        "code_system": null
-      }
-    },
-    {
-      "date": "2013-01-24T08:00:00.000Z",
-      "name": "RADIOLOGIC EXAM CHEST 2 VIEWS FRONTAL&LATERAL",
-      "code": "71020",
-      "code_system": "2.16.840.1.113883.6.12",
-      "specimen": {
-        "name": null,
-        "code": null,
-        "code_system": null
-      },
-      "performer": {
-        "organization": null,
-        "street": [],
-        "city": null,
-        "state": null,
-        "zip": null,
-        "country": null,
-        "phone": null
-      },
-      "device": {
-        "name": null,
-        "code": null,
-        "code_system": null
-      }
-    }
-  ],
+  "procedures": [],
   "vitals": [
     {
-      "date": "2011-09-25T07:00:00.000Z",
+      "date": "2013-06-12T07:00:00.000Z",
       "results": [
-        {
-          "name": "BP Diastolic",
-          "code": "8462-4",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 75,
-          "unit": "mm[Hg]"
-        },
-        {
-          "name": "BP Systolic",
-          "code": "8480-6",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 120,
-          "unit": "mm[Hg]"
-        },
-        {
-          "name": "Body Mass Index",
-          "code": "41909-3",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 25,
-          "unit": "kg/m²"
-        },
         {
           "name": "Body Height (Measured)",
           "code": "8302-2",
           "code_system": "2.16.840.1.113883.6.1",
           "code_system_name": "LOINC",
-          "value": 70,
+          "value": 37,
           "unit": "[in_us]"
-        },
-        {
-          "name": "Body Weight (Measured)",
-          "code": "3141-9",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 180,
-          "unit": "[lb_av]"
         }
       ]
     },
     {
-      "date": "2012-03-30T07:00:00.000Z",
+      "date": "2013-01-28T08:00:00.000Z",
       "results": [
         {
-          "name": "BP Diastolic",
-          "code": "8462-4",
+          "name": "Body Height (Measured)",
+          "code": "8302-2",
           "code_system": "2.16.840.1.113883.6.1",
           "code_system_name": "LOINC",
-          "value": 98,
-          "unit": "mm[Hg]"
-        },
+          "value": 34,
+          "unit": "[in_us]"
+        }
+      ]
+    },
+    {
+      "date": "2012-01-24T08:00:00.000Z",
+      "results": [
         {
-          "name": "BP Systolic",
-          "code": "8480-6",
+          "name": "Body Height (Measured)",
+          "code": "8302-2",
           "code_system": "2.16.840.1.113883.6.1",
           "code_system_name": "LOINC",
-          "value": 160,
-          "unit": "mm[Hg]"
-        },
+          "value": 28,
+          "unit": "[in_us]"
+        }
+      ]
+    },
+    {
+      "date": "2011-12-08T08:00:00.000Z",
+      "results": [
         {
-          "name": "Body Mass Index",
-          "code": "41909-3",
+          "name": "Body Height (Measured)",
+          "code": "8302-2",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 18,
+          "unit": "[in_us]"
+        }
+      ]
+    },
+    {
+      "date": "2011-11-17T08:00:00.000Z",
+      "results": [
+        {
+          "name": "Body Height (Measured)",
+          "code": "8302-2",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 28,
+          "unit": "[in_us]"
+        }
+      ]
+    },
+    {
+      "date": "2011-10-03T07:00:00.000Z",
+      "results": [
+        {
+          "name": "Body Height (Measured)",
+          "code": "8302-2",
           "code_system": "2.16.840.1.113883.6.1",
           "code_system_name": "LOINC",
           "value": 27,
-          "unit": "kg/m²"
-        },
+          "unit": "[in_us]"
+        }
+      ]
+    },
+    {
+      "date": "2011-09-01T07:00:00.000Z",
+      "results": [
         {
           "name": "Body Height (Measured)",
           "code": "8302-2",
           "code_system": "2.16.840.1.113883.6.1",
           "code_system_name": "LOINC",
-          "value": 70,
+          "value": 18,
           "unit": "[in_us]"
-        },
+        }
+      ]
+    },
+    {
+      "date": "2011-08-07T07:00:00.000Z",
+      "results": [
+        {
+          "name": "Body Height (Measured)",
+          "code": "8302-2",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 26,
+          "unit": "[in_us]"
+        }
+      ]
+    },
+    {
+      "date": "2011-07-01T07:00:00.000Z",
+      "results": [
+        {
+          "name": "Body Height (Measured)",
+          "code": "8302-2",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 24,
+          "unit": "[in_us]"
+        }
+      ]
+    },
+    {
+      "date": "2011-06-01T07:00:00.000Z",
+      "results": [
+        {
+          "name": "Body Height (Measured)",
+          "code": "8302-2",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 23,
+          "unit": "[in_us]"
+        }
+      ]
+    },
+    {
+      "date": "2011-05-01T07:00:00.000Z",
+      "results": [
+        {
+          "name": "Body Height (Measured)",
+          "code": "8302-2",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 21,
+          "unit": "[in_us]"
+        }
+      ]
+    },
+    {
+      "date": "2011-04-01T07:00:00.000Z",
+      "results": [
+        {
+          "name": "Body Height (Measured)",
+          "code": "8302-2",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 18,
+          "unit": "[in_us]"
+        }
+      ]
+    },
+    {
+      "date": "2013-06-12T07:00:00.000Z",
+      "results": [
         {
           "name": "Body Weight (Measured)",
           "code": "3141-9",
           "code_system": "2.16.840.1.113883.6.1",
           "code_system_name": "LOINC",
-          "value": 195,
+          "value": 31,
           "unit": "[lb_av]"
         }
       ]
     },
     {
-      "date": "2013-01-24T08:00:00.000Z",
+      "date": "2013-01-28T08:00:00.000Z",
       "results": [
-        {
-          "name": "BP Diastolic",
-          "code": "8462-4",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 80,
-          "unit": "mm[Hg]"
-        },
-        {
-          "name": "BP Systolic",
-          "code": "8480-6",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 120,
-          "unit": "mm[Hg]"
-        },
-        {
-          "name": "Body Mass Index",
-          "code": "41909-3",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 23,
-          "unit": "kg/m²"
-        },
-        {
-          "name": "Body Height (Measured)",
-          "code": "8302-2",
-          "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "value": 70,
-          "unit": "[in_us]"
-        },
         {
           "name": "Body Weight (Measured)",
           "code": "3141-9",
           "code_system": "2.16.840.1.113883.6.1",
           "code_system_name": "LOINC",
-          "value": 162,
+          "value": 27,
           "unit": "[lb_av]"
+        }
+      ]
+    },
+    {
+      "date": "2012-08-09T07:00:00.000Z",
+      "results": [
+        {
+          "name": "Body Weight (Measured)",
+          "code": "3141-9",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 24,
+          "unit": "[lb_av]"
+        }
+      ]
+    },
+    {
+      "date": "2011-11-17T08:00:00.000Z",
+      "results": [
+        {
+          "name": "Body Weight (Measured)",
+          "code": "3141-9",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 18,
+          "unit": "[lb_av]"
+        }
+      ]
+    },
+    {
+      "date": "2011-09-01T07:00:00.000Z",
+      "results": [
+        {
+          "name": "Body Weight (Measured)",
+          "code": "3141-9",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 16,
+          "unit": "[lb_av]"
+        }
+      ]
+    },
+    {
+      "date": "2011-08-07T07:00:00.000Z",
+      "results": [
+        {
+          "name": "Body Weight (Measured)",
+          "code": "3141-9",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 15,
+          "unit": "[lb_av]"
+        }
+      ]
+    },
+    {
+      "date": "2011-07-01T07:00:00.000Z",
+      "results": [
+        {
+          "name": "Body Weight (Measured)",
+          "code": "3141-9",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 13,
+          "unit": "[lb_av]"
+        }
+      ]
+    },
+    {
+      "date": "2011-06-01T07:00:00.000Z",
+      "results": [
+        {
+          "name": "Body Weight (Measured)",
+          "code": "3141-9",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 12,
+          "unit": "[lb_av]"
+        }
+      ]
+    },
+    {
+      "date": "2011-05-01T07:00:00.000Z",
+      "results": [
+        {
+          "name": "Body Weight (Measured)",
+          "code": "3141-9",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 8,
+          "unit": "[lb_av]"
+        }
+      ]
+    },
+    {
+      "date": "2011-04-01T07:00:00.000Z",
+      "results": [
+        {
+          "name": "Body Weight (Measured)",
+          "code": "3141-9",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 5,
+          "unit": "[lb_av]"
+        }
+      ]
+    },
+    {
+      "date": null,
+      "results": [
+        {
+          "name": "Body Mass Index",
+          "code": "39156-5",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 18,
+          "unit": "kg/m2"
+        }
+      ]
+    },
+    {
+      "date": null,
+      "results": [
+        {
+          "name": "Body Mass Index",
+          "code": "39156-5",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 23,
+          "unit": "kg/m2"
+        }
+      ]
+    },
+    {
+      "date": null,
+      "results": [
+        {
+          "name": "Body Mass Index",
+          "code": "39156-5",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 16,
+          "unit": "kg/m2"
+        }
+      ]
+    },
+    {
+      "date": null,
+      "results": [
+        {
+          "name": "Body Mass Index",
+          "code": "39156-5",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 16,
+          "unit": "kg/m2"
+        }
+      ]
+    },
+    {
+      "date": null,
+      "results": [
+        {
+          "name": "Body Mass Index",
+          "code": "39156-5",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 16,
+          "unit": "kg/m2"
+        }
+      ]
+    },
+    {
+      "date": null,
+      "results": [
+        {
+          "name": "Body Mass Index",
+          "code": "39156-5",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 16,
+          "unit": "kg/m2"
+        }
+      ]
+    },
+    {
+      "date": null,
+      "results": [
+        {
+          "name": "Body Mass Index",
+          "code": "39156-5",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 14,
+          "unit": "kg/m2"
+        }
+      ]
+    },
+    {
+      "date": null,
+      "results": [
+        {
+          "name": "Body Mass Index",
+          "code": "39156-5",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 15,
+          "unit": "kg/m2"
+        }
+      ]
+    },
+    {
+      "date": null,
+      "results": [
+        {
+          "name": "Body Mass Index",
+          "code": "39156-5",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 16,
+          "unit": "kg/m2"
+        }
+      ]
+    },
+    {
+      "date": null,
+      "results": [
+        {
+          "name": "Body Mass Index",
+          "code": "39156-5",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 15,
+          "unit": "kg/m2"
+        }
+      ]
+    },
+    {
+      "date": null,
+      "results": [
+        {
+          "name": "Body Mass Index",
+          "code": "39156-5",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 13,
+          "unit": "kg/m2"
+        }
+      ]
+    },
+    {
+      "date": "2012-01-26T08:00:00.000Z",
+      "results": [
+        {
+          "name": "Head Circumference",
+          "code": "8287-5",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 18,
+          "unit": "[in_i]"
+        }
+      ]
+    },
+    {
+      "date": "2012-01-24T08:00:00.000Z",
+      "results": [
+        {
+          "name": "Head Circumference",
+          "code": "8287-5",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 18,
+          "unit": "[in_i]"
         }
       ]
     }
   ]
-}
+} 
