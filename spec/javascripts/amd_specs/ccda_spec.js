@@ -1,6 +1,6 @@
 define(['../../../build/bluebutton'], function(BlueButton) {
   describe('CCDA', function() {
-    var record = readFixtures('../../../components/blue-button-reference-ccda/blue_button_reference_ccda.xml');
+    var record = readFixtures('../../../bower_components/sample_ccdas/Kinsights%20Samples/kinsights-sample-timmy.xml');
     var expectedOutput = getJSONFixture('ccda_expected_output.json');
     var bb = BlueButton(record);
 
