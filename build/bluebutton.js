@@ -12,7 +12,7 @@
 
     }(this, function () {
 
-        /* BlueButton.js -- 0.0.15 */
+        /* BlueButton.js -- 0.0.16 */
 
 /*
  * core.js - Essential and shared functionality.
@@ -1318,7 +1318,7 @@ var Problems = function () {
       var start_date = parseDate(el.tag('low').attr('value')),
           end_date = parseDate(el.tag('high').attr('value'));
       
-      el = entry.template('2.16.840.1.113883.10.20.22.4.4').tag('code');
+      el = entry.template('2.16.840.1.113883.10.20.22.4.4').tag('value');
       var name = el.attr('displayName'),
           code = el.attr('code'),
           code_system = el.attr('codeSystem');
