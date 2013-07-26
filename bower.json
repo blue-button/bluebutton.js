@@ -13,6 +13,6 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "blue-button-reference-ccda": "git@github.com:blue-button/blue-button-reference-ccda.git"
+    "sample_ccdas": "git@github.com:chb/sample_ccdas.git"
   }
 }
