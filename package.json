@@ -21,9 +21,7 @@
       "url": "http://robdodson.me"
     }
   ],
-  "main": [
-    "build/bluebutton.js"
-  ],
+  "main": "build/bluebutton.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/blue-button/bluebutton.js.git"
