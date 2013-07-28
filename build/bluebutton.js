@@ -12,7 +12,7 @@
 
     }(this, function () {
 
-        /* BlueButton.js -- 0.0.16 */
+        /* BlueButton.js -- 0.0.17 */
 
 /*
  * core.js - Essential and shared functionality.
