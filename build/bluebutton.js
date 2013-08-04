@@ -12,7 +12,7 @@
 
     }(this, function () {
 
-        /* BlueButton.js -- 0.0.17 */
+        /* BlueButton.js -- 0.0.18 */
 
 /*
  * core.js - Essential and shared functionality.
@@ -1165,12 +1165,20 @@ var Medications = function () {
       var start_date = parseDate(el.tag('low').attr('value')),
           end_date = parseDate(el.tag('high').attr('value'));
 
-      el = entry.elsByTag('effectiveTime')[1];
-      var schedule_type = el.attr('institutionSpecified') == "true" ? "frequency" : "interval";
 
-      el = entry.elsByTag('effectiveTime')[1].tag('period');
-      var schedule_period_value = el.attr('value'),
-          schedule_period_unit = el.attr('unit');
+      el = entry.elsByTag('effectiveTime')[1];
+      var schedule_type, schedule_period_value, schedule_period_unit;
+      if(el){
+        schedule_type = {
+          "true": "frequency",
+          "false": "interval"
+        }[el.attr('institutionSpecified')];
+
+        el = el.tag('period');
+        // NOTE: "el" is now the period tag within effectiveTime
+        schedule_period_value = el.attr('value'),
+        schedule_period_unit = el.attr('unit');
+      }
 
       el = entry.tag('manufacturedProduct').tag('code');
       var product_name = el.attr('displayName'),
