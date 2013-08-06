@@ -360,6 +360,13 @@
         "start": "2011-03-01T08:00:00.000Z",
         "end": "2012-03-01T08:00:00.000Z"
       },
+      "schedule": {
+        "type": "frequency",
+        "period": {
+          "value": "6",
+          "unit": "h"
+        }
+      },
       "product": {
         "name": "Albuterol 0.09 MG/ACTUAT inhalant solution",
         "code": "329498",

@@ -12,7 +12,7 @@
 
     }(this, function () {
 
-        /* BlueButton.js -- 0.0.17 */
+        /* BlueButton.js -- 0.0.18 */
 
 /*
  * core.js - Essential and shared functionality.
@@ -1063,16 +1063,16 @@ var Labs = function () {
 // medications.js
 
 var Medications = function () {
-  
+
   // dependancies
   var parseDate = Core.parseDate;
-  
+
   // properties
-  
+
   // methods
   var process = function (source, type) {
     var raw, data = [];
-    
+
     switch (type) {
       case 'ccda':
         raw = processCCDA(source);
@@ -1081,12 +1081,19 @@ var Medications = function () {
         return processJSON(source);
         break;
     }
-    
+
     for (var i = 0; i < raw.length; i++) {
       data.push({
         date_range: {
           start: raw[i].start_date,
           end: raw[i].end_date
+        },
+        schedule: {
+          type: raw[i].schedule_type,
+          period: {
+            value: raw[i].schedule_period_value,
+            unit: raw[i].schedule_period_unit
+          }
         },
         product: {
           name: raw[i].product_name,
@@ -1141,79 +1148,97 @@ var Medications = function () {
         }
       });
     }
-    
+
     return data;
   };
-  
+
   var processCCDA = function (xmlDOM) {
     var data = [], el, entries, entry;
-    
+
     el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.1.1');
     entries = el.elsByTag('entry');
-    
+
     for (var i = 0; i < entries.length; i++) {
       entry = entries[i];
-      
-      el = entry.tag('effectiveTime');
+
+      el = entry.elsByTag('effectiveTime')[0];
       var start_date = parseDate(el.tag('low').attr('value')),
           end_date = parseDate(el.tag('high').attr('value'));
-      
+
+
+      el = entry.elsByTag('effectiveTime')[1];
+      var schedule_type, schedule_period_value, schedule_period_unit;
+      if(el){
+        schedule_type = {
+          "true": "frequency",
+          "false": "interval"
+        }[el.attr('institutionSpecified')];
+
+        el = el.tag('period');
+        // NOTE: "el" is now the period tag within effectiveTime
+        schedule_period_value = el.attr('value'),
+        schedule_period_unit = el.attr('unit');
+      }
+
       el = entry.tag('manufacturedProduct').tag('code');
       var product_name = el.attr('displayName'),
           product_code = el.attr('code'),
           product_code_system = el.attr('codeSystem');
-      
+
       el = entry.tag('manufacturedProduct').tag('translation');
       var translation_name = el.attr('displayName'),
           translation_code = el.attr('code'),
           translation_code_system = el.attr('codeSystem'),
           translation_code_system_name = el.attr('codeSystemName');
-      
+
       el = entry.tag('doseQuantity');
       var dose_value = el.attr('value'),
           dose_unit = el.attr('unit');
-      
+
       el = entry.tag('rateQuantity');
       var rate_quantity_value = el.attr('value'),
           rate_quantity_unit = el.attr('unit');
-      
+
       el = entry.tag('precondition').tag('value');
       var precondition_name = el.attr('displayName'),
           precondition_code = el.attr('code'),
           precondition_code_system = el.attr('codeSystem'),
-      
+
       el = entry.template('2.16.840.1.113883.10.20.22.4.19').tag('value');
       var reason_name = el.attr('displayName'),
           reason_code = el.attr('code'),
           reason_code_system = el.attr('codeSystem');
-      
+
       el = entry.tag('routeCode')
       var route_name = el.attr('displayName'),
           route_code = el.attr('code'),
           route_code_system = el.attr('codeSystem'),
           route_code_system_name = el.attr('codeSystemName');
-      
+
       // participant => vehicle
       el = entry.tag('participant').tag('code');
       var vehicle_name = el.attr('displayName'),
           vehicle_code = el.attr('code'),
           vehicle_code_system = el.attr('codeSystem'),
           vehicle_code_system_name = el.attr('codeSystemName');
-      
+
       el = entry.tag('administrationUnitCode');
       var administration_name = el.attr('displayName'),
           administration_code = el.attr('code'),
           administration_code_system = el.attr('codeSystem'),
           administration_code_system_name = el.attr('codeSystemName');
-      
+
       // performer => prescriber
       el = entry.tag('performer');
       var prescriber_organization = el.tag('name').val(),
           prescriber_person = null;
-      
+
       data.push({
         start_date: start_date,
         end_date: end_date,
+        schedule_type: schedule_type,
+        schedule_period_value: schedule_period_value,
+        schedule_period_unit: schedule_period_unit,
         product_name: product_name,
         product_code: product_code,
         product_code_system: product_code_system,
@@ -1247,14 +1272,14 @@ var Medications = function () {
         prescriber_person: prescriber_person
       });
     }
-    
+
     return data;
   };
-  
+
   var processJSON = function (json) {
     return {};
   };
-  
+
   return {
     process: process
   };
