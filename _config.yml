@@ -1,3 +1,4 @@
-name: Your New Jekyll Site
+name: BlueButton.js
 markdown: redcarpet
 pygments: true
+baseurl: /bluebutton.js
