@@ -12,13 +12,81 @@
 
     }(this, function () {
 
-        /* BlueButton.js -- 0.0.17 */
+        /* BlueButton.js -- 0.0.18 */
 
 /*
  * core.js - Essential and shared functionality.
  */
 
 var Core = function () {
+  
+  // Properties
+  ///////////////////////////
+  
+  // Private Methods
+  ///////////////////////////
+  
+  // Public Methods
+  ///////////////////////////
+  
+  /*
+   * Parses an HL7 date in String form and creates a new Date object.
+   * 
+   * TODO: CCDA dates can be in form:
+   *   <effectiveTime value="20130703094812"/>
+   * ...or:
+   *   <effectiveTime>
+   *     <low value="19630617120000"/>
+   *     <high value="20110207100000"/>
+   *   </effectiveTime>
+   * When latter, parseDate will not be given type `String`, but `null` and
+   * log the error "date is not a string".
+   */
+  var parseDate = function (str) {
+    if (!str || typeof str !== "string") {
+      // console.log("Error: date is not a string");
+      return null;
+    }
+    var year = str.substr(0, 4);
+    // months start at 0, because why not
+    var month = parseInt(str.substr(4, 2), 10) - 1;
+    var day = str.substr(6, 2);
+    return new Date(year, month, day);
+  };
+  
+  /*
+   * Removes all `null` properties from an object.
+   */
+  var trim = function (o) {
+    var y;
+    for (var x in o) {
+      y = o[x];
+      // if (y === null || (y instanceof Object && Object.keys(y).length == 0)) {
+      if (y === null) {
+        delete o[x];
+      }
+      if (y instanceof Object) y = trim(y);
+    }
+    return o;
+  };
+  
+  // Init
+  ///////////////////////////
+  
+  // Reveal public methods
+  return {
+    parseDate: parseDate,
+    trim: trim
+  };
+  
+}();
+;
+
+/*
+ * xml.js - XML parsing functions.
+ */
+
+var XML = function () {
   
   // Properties
   ///////////////////////////
@@ -202,47 +270,6 @@ var Core = function () {
     return wrapElement(xml);
   };
   
-  /*
-   * Parses an HL7 date in String form and creates a new Date object.
-   * 
-   * TODO: CCDA dates can be in form:
-   *   <effectiveTime value="20130703094812"/>
-   * ...or:
-   *   <effectiveTime>
-   *     <low value="19630617120000"/>
-   *     <high value="20110207100000"/>
-   *   </effectiveTime>
-   * When latter, parseDate will not be given type `String`, but `null` and
-   * log the error "date is not a string".
-   */
-  var parseDate = function (str) {
-    if (!str || typeof str !== "string") {
-      console.log("Error: date is not a string");
-      return null;
-    }
-    var year = str.substr(0, 4);
-    // months start at 0, because why not
-    var month = parseInt(str.substr(4, 2), 10) - 1;
-    var day = str.substr(6, 2);
-    return new Date(year, month, day);
-  };
-  
-  /*
-   * Removes all `null` properties from an object.
-   */
-  var trim = function (o) {
-    var y;
-    for (var x in o) {
-      y = o[x];
-      // if (y === null || (y instanceof Object && Object.keys(y).length == 0)) {
-      if (y === null) {
-        delete o[x];
-      }
-      if (y instanceof Object) y = trim(y);
-    }
-    return o;
-  };
-  
   // Init
   ///////////////////////////
   
@@ -263,97 +290,107 @@ var Core = function () {
   
   // Reveal public methods
   return {
-    parseXML: parseXML,
-    parseDate: parseDate,
-    trim: trim
+    parseXML: parseXML
   };
   
 }();
 ;
 
-// codes.js
+/*
+ * codes.js
+ */
 
 var Codes = function () {
-
-  // dependancies
   
-  // properties
-  var urls = {
-    snomed: 'http://purl.bioontology.org/ontology/snomedct/',
-    loinc: 'http://purl.bioontology.org/ontology/lnc/',
-    rxnorm: 'http://purl.bioontology.org/ontology/rxnorm/'
+  // Properties
+  ///////////////////////////
+  
+  // Private Methods
+  ///////////////////////////
+
+  /*
+   * Consistently parse a CCDA code.
+   */
+  var parse = function (el) {};
+  
+  /*
+   * Administrative Gender (HL7 V3)
+   * http://phinvads.cdc.gov/vads/ViewValueSet.action?id=8DE75E17-176B-DE11-9B52-0015173D1785
+   * OID: 2.16.840.1.113883.1.11.1
+   */
+  var gender = function (code) {
+    var map = {
+      'F': 'female',
+      'M': 'male',
+      'UN': 'undifferentiated'
+    };
+    
+    return map[code] || null;
   };
   
-  // private methods
+  /*
+   * Marital Status (HL7)
+   * http://phinvads.cdc.gov/vads/ViewValueSet.action?id=46D34BBC-617F-DD11-B38D-00188B398520
+   * OID: 2.16.840.1.114222.4.11.809
+   */
+  var maritalStatus = function (code) {
+    var map = {
+      'N': 'annulled',
+      'C': 'common law',
+      'D': 'divorced',
+      'P': 'domestic partner',
+      'I': 'interlocutory',
+      'E': 'legally separated',
+      'G': 'living together',
+      'M': 'married',
+      'O': 'other',
+      'R': 'registered domestic partner',
+      'A': 'separated',
+      'S': 'single',
+      'U': 'unknown',
+      'B': 'unmarried',
+      'T': 'unreported',
+      'W': 'widowed'
+    };
+    
+    return map[code] || null;
+  };
   
-  // public methods
+  // Init
+  ///////////////////////////
   
-  // init
-  
+  // Reveal public methods
   return {
+    gender: gender,
+    maritalStatus: maritalStatus
   };
   
 }();
 ;
 
-// allergies.js
+/*
+ * allergies.js
+ */
 
 var Allergies = function () {
   
-  // dependancies
+  // Dependancies
+  ///////////////////////////
   var parseDate = Core.parseDate;
   
-  // properties
+  // Properties
+  ///////////////////////////
   
-  // methods
-  var process = function (source, type) {
-    var raw, data = [];
-    
-    switch (type) {
-      case 'ccda':
-        raw = processCCDA(source);
-        break;
-      case 'json':
-        return processJSON(source);
-        break;
-    }
-    
-    for (var i = 0; i < raw.length; i++) {
-      data.push({
-        date_range: {
-          start: raw[i].start_date,
-          end: raw[i].end_date
-        },
-        name: raw[i].name,
-        code: raw[i].code,
-        code_system: raw[i].code_system,
-        code_system_name: raw[i].code_system_name,
-        status: raw[i].status,
-        severity: raw[i].severity,
-        reaction: {
-          name: raw[i].reaction_name,
-          code: raw[i].reaction_code,
-          code_system: raw[i].reaction_code_system
-        },
-        reaction_type: {
-          name: raw[i].reaction_type_name,
-          code: raw[i].reaction_type_code,
-          code_system: raw[i].reaction_code_system,
-          code_system_name: raw[i].reaction_type_code_system_name
-        },
-        allergen: {
-          name: raw[i].allergen_name,
-          code: raw[i].allergen_code,
-          code_system: raw[i].allergen_code_system,
-          code_system_name: raw[i].allergen_code_system_name
-        }
-      });
-    }
-    
-    return data;
-  };
+  // Private Methods
+  ///////////////////////////
   
-  var processCCDA = function (xmlDOM) {
+  // Public Methods
+  ///////////////////////////
+  
+  /*
+   * Parse the allergies CCDA XML section.
+   */
+  var parse = function (xmlDOM) {
     var data = [], el, entries, entry;
     
     el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.6.1');
@@ -401,303 +438,266 @@ var Allergies = function () {
       var status = el.attr('displayName');
       
       data.push({
+        date_range: {
+          start: start_date,
+          end: end_date
+        },
         name: name,
-        start_date: start_date,
-        end_date: end_date,
         code: code,
         code_system: code_system,
         code_system_name: code_system_name,
-        reaction_type_name: reaction_type_name,
-        reaction_type_code: reaction_type_code,
-        reaction_type_code_system: reaction_type_code_system,
-        reaction_type_code_system_name: reaction_type_code_system_name,
-        reaction_name: reaction_name,
-        reaction_code: reaction_code,
-        reaction_code_system: reaction_code_system,
+        status: status,
         severity: severity,
-        allergen_name: allergen_name,
-        allergen_code: allergen_code,
-        allergen_code_system: allergen_code_system,
-        allergen_code_system_name: allergen_code_system_name
+        reaction: {
+          name: reaction_name,
+          code: reaction_code,
+          code_system: reaction_code_system
+        },
+        reaction_type: {
+          name: reaction_type_name,
+          code: reaction_type_code,
+          code_system: reaction_code_system,
+          code_system_name: reaction_type_code_system_name
+        },
+        allergen: {
+          name: allergen_name,
+          code: allergen_code,
+          code_system: allergen_code_system,
+          code_system_name: allergen_code_system_name
+        }
       });
     }
     
     return data;
   };
   
-  var processJSON = function (json) {
-    return {};
+  // Init
+  ///////////////////////////
+  
+  // Reveal public methods
+  return {
+    parse: parse
   };
   
-  return {
-    process: process
-  };
-
 }();
 ;
 
-// demographics.js
+/*
+ * demographics.js
+ */
 
 var Demographics = function () {
   
-  // dependancies
+  // Dependancies
+  ///////////////////////////
   var parseDate = Core.parseDate;
   
-  // properties
+  // Properties
+  ///////////////////////////
   
-  // methods
-  var process = function (source, type) {
-    var data;
-    
-    switch (type) {
-      case 'ccda':
-        data = processCCDA(source);
-        break;
-      case 'json':
-        return processJSON(source);
-        break;
-    }
-    
-    return {
-      name: {
-        prefix: data.prefix,
-        given: data.given,
-        family: data.family
-      },
-      dob: data.dob,
-      gender: data.gender,
-      marital_status: data.marital_status,
-      address: {
-       street: data.street,
-        city: data.city,
-        state: data.state,
-        zip: data.zip,
-        country: data.country
-      },
-      phone: {
-        home: data.home,
-        work: data.work,
-        mobile: data.mobile
-      },
-      email: data.email,
-      language: data.language,
-      race: data.race,
-      ethnicity: data.ethnicity,
-      religion: data.religion,
-      birthplace: {
-        state: data.birthplace_state,
-        zip: data.birthplace_zip,
-        country: data.birthplace_country
-      },
-      guardian: {
-        name: {
-          given: data.guardian_given,
-          family:  data.guardian_family
-        },
-        relationship: data.guardian_relationship,
-        address: {
-          street: data.guardian_street,
-          city: data.guardian_city,
-          state: data.guardian_state,
-          zip: data.guardian_zip,
-          country: data.guardian_country
-        },
-        phone: {
-          home: data.guardian_home
-        }
-      },
-      provider: {
-        organization: data.provider_organization,
-        phone: data.provider_phone,
-        address: {
-          street: data.provider_street,
-          city: data.provider_city,
-          state: data.provider_state,
-          zip: data.provider_zip,
-          country: data.provider_country
-        }
-      }
-    };
-  };
+  // Private Methods
+  ///////////////////////////
   
-  var processCCDA = function (xmlDOM) {
+  // Public Methods
+  ///////////////////////////
+  
+  /*
+   * Parse the demographics CCDA XML section.
+   */
+  var parse = function (xmlDOM) {
     var data = {}, el, els, patient;
     
     el = xmlDOM.template('2.16.840.1.113883.10.20.22.1.1');
     patient = el.tag('patientRole');
     el = patient.tag('patient').tag('name');
-    data.prefix = el.tag('prefix').val();
+    var prefix = el.tag('prefix').val();
     
     els = el.elsByTag('given');
-    data.given = [];
+    var given = [];
     
     for (var i = 0; i < els.length; i++) {
-      data.given.push(els[i].val());
+      given.push(els[i].val());
     }
     
-    data.family = el.tag('family').val();
+    var family = el.tag('family').val();
     
     el = patient.tag('patient');
-    data.dob = parseDate(el.tag('birthTime').attr('value'));
-    var gender = el.tag('administrativeGenderCode').attr('code');
-    var genders = {
-      'M': 'Male',
-      'F': 'Female',
-      'U': 'Undifferentiated'
-    };
-    data.gender =  genders[gender] || null;
-
-    data.marital_status = el.tag('maritalStatusCode').attr('displayName');
+    var dob = parseDate(el.tag('birthTime').attr('value')),
+        gender = Codes.gender(el.tag('administrativeGenderCode').attr('code')),
+        marital_status = Codes.maritalStatus(el.tag('maritalStatusCode').attr('code'));
     
     el = patient.tag('addr');
     els = el.elsByTag('streetAddressLine');
-    data.street = [];
+    var street = [];
     
     for (var i = 0; i < els.length; i++) {
-      data.street.push(els[i].val());
+      street.push(els[i].val());
     }
     
-    data.city = el.tag('city').val();
-    data.state = el.tag('state').val();
-    data.zip = el.tag('postalCode').val();
-    data.country = el.tag('country').val();
+    var city = el.tag('city').val(),
+        state = el.tag('state').val(),
+        zip = el.tag('postalCode').val(),
+        country = el.tag('country').val();
     
     el = patient.tag('telecom');
-    data.home = el.attr('value');
-    data.work = null;
-    data.mobile = null;
+    var home = el.attr('value'),
+        work = null,
+        mobile = null;
     
-    data.email = null;
+    var email = null;
     
-    data.language = patient.tag('languageCommunication').tag('languageCode').attr('code');
-    data.race = patient.tag('raceCode').attr('displayName');
-    data.ethnicity = patient.tag('ethnicGroupCode').attr('displayName');
-    data.religion = patient.tag('religiousAffiliationCode').attr('displayName');
+    var language = patient.tag('languageCommunication').tag('languageCode').attr('code'),
+        race = patient.tag('raceCode').attr('displayName'),
+        ethnicity = patient.tag('ethnicGroupCode').attr('displayName'),
+        religion = patient.tag('religiousAffiliationCode').attr('displayName');
     
     el = patient.tag('birthplace');
-    data.birthplace_state = el.tag('state').val();
-    data.birthplace_zip = el.tag('postalCode').val();
-    data.birthplace_country = el.tag('country').val();
+    var birthplace_state = el.tag('state').val(),
+        birthplace_zip = el.tag('postalCode').val(),
+        birthplace_country = el.tag('country').val();
     
     el = patient.tag('guardian');
-    data.guardian_relationship = el.tag('code').attr('displayName');
-    data.guardian_home = el.tag('telecom').attr('value');
+    var guardian_relationship = el.tag('code').attr('displayName'),
+        guardian_home = el.tag('telecom').attr('value');
     el = el.tag('guardianPerson');
     
     els = el.elsByTag('given');
-    data.guardian_given = [];
+    var guardian_given = [];
     
     for (var i = 0; i < els.length; i++) {
-      data.guardian_given.push(els[i].val());
+      guardian_given.push(els[i].val());
     }
     
-    data.guardian_family = el.tag('family').val();
+    var guardian_family = el.tag('family').val();
     
     el = patient.tag('guardian').tag('addr');
     
     els = el.elsByTag('streetAddressLine');
-    data.guardian_street = [];
+    var guardian_street = [];
     
     for (var i = 0; i < els.length; i++) {
-      data.guardian_street.push(els[i].val());
+      guardian_street.push(els[i].val());
     }
     
-    data.guardian_city = el.tag('city').val();
-    data.guardian_state = el.tag('state').val();
-    data.guardian_zip = el.tag('postalCode').val();
-    data.guardian_country = el.tag('country').val();
+    var guardian_city = el.tag('city').val(),
+        guardian_state = el.tag('state').val(),
+        guardian_zip = el.tag('postalCode').val(),
+        guardian_country = el.tag('country').val();
     
     el = patient.tag('providerOrganization');
-    data.provider_organization = el.tag('name').val();
-    data.provider_phone = el.tag('telecom').attr('value');
+    var provider_organization = el.tag('name').val(),
+        provider_phone = el.tag('telecom').attr('value');
     
     els = el.elsByTag('streetAddressLine');
-    data.provider_street = [];
+    var provider_street = [];
     
     for (var i = 0; i < els.length; i++) {
-      data.provider_street.push(els[i].val());
+      provider_street.push(els[i].val());
     }
     
-    data.provider_city = el.tag('city').val();
-    data.provider_state = el.tag('state').val();
-    data.provider_zip = el.tag('postalCode').val();
-    data.provider_country = el.tag('country').val();
+    var provider_city = el.tag('city').val(),
+        provider_state = el.tag('state').val(),
+        provider_zip = el.tag('postalCode').val(),
+        provider_country = el.tag('country').val();
+    
+    data = {
+      name: {
+        prefix: prefix,
+        given: given,
+        family: family
+      },
+      dob: dob,
+      gender: gender,
+      marital_status: marital_status,
+      address: {
+       street: street,
+        city: city,
+        state: state,
+        zip: zip,
+        country: country
+      },
+      phone: {
+        home: home,
+        work: work,
+        mobile: mobile
+      },
+      email: email,
+      language: language,
+      race: race,
+      ethnicity: ethnicity,
+      religion: religion,
+      birthplace: {
+        state: birthplace_state,
+        zip: birthplace_zip,
+        country: birthplace_country
+      },
+      guardian: {
+        name: {
+          given: guardian_given,
+          family: guardian_family
+        },
+        relationship: guardian_relationship,
+        address: {
+          street: guardian_street,
+          city: guardian_city,
+          state: guardian_state,
+          zip: guardian_zip,
+          country: guardian_country
+        },
+        phone: {
+          home: guardian_home
+        }
+      },
+      provider: {
+        organization: provider_organization,
+        phone: provider_phone,
+        address: {
+          street: provider_street,
+          city: provider_city,
+          state: provider_state,
+          zip: provider_zip,
+          country: provider_country
+        }
+      }
+    };
     
     return data;
   };
   
-  var processJSON = function (json) {
-    return {};
+  // Init
+  ///////////////////////////
+  
+  // Reveal public methods
+  return {
+    parse: parse
   };
   
-  return {
-    process: process
-  };
-
 }();
 ;
 
-// encounters.js
+/*
+ * encounters.js
+ */
 
 var Encounters = function () {
   
-  // dependancies
+  // Dependancies
+  ///////////////////////////
   var parseDate = Core.parseDate;
   
-  // properties
+  // Properties
+  ///////////////////////////
   
-  // methods
-  var process = function (source, type) {
-    var raw, data = [];
-    
-    switch (type) {
-      case 'ccda':
-        raw = processCCDA(source);
-        break;
-      case 'json':
-        return processJSON(source);
-        break;
-    }
-    
-    for (var i = 0; i < raw.length; i++) {
-      data.push({
-        date: raw[i].date,
-        name: raw[i].name,
-        code: raw[i].code,
-        code_system: raw[i].code_system,
-        code_system_name: raw[i].code_system_name,
-        code_system_version: raw[i].code_system_version,
-        finding: {
-          name: raw[i].finding_name,
-          code: raw[i].finding_code,
-          code_system: raw[i].finding_code_system
-        },
-        translation: {
-          name: raw[i].translation_name,
-          code: raw[i].translation_code,
-          code_system: raw[i].translation_code_system,
-          code_system_name: raw[i].translation_code_system_name
-        },
-        performer: {
-          name: raw[i].performer_name,
-          code: raw[i].performer_code,
-          code_system: raw[i].performer_code_system,
-          code_system_name: raw[i].performer_code_system_name
-        },
-        location: {
-          organization: raw[i].organization,
-          street: raw[i].street,
-          city: raw[i].city,
-          state: raw[i].state,
-          zip: raw[i].zip,
-          country: raw[i].country
-        }
-      });
-    }
-    return data;
-  };
+  // Private Methods
+  ///////////////////////////
   
-  var processCCDA = function (xmlDOM) {
+  // Public Methods
+  ///////////////////////////
+  
+  /*
+   * Parse the allergies CCDA XML section.
+   */
+  var parse = function (xmlDOM) {
     var data = [], el, els, entries, entry;
     
     el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.22')
@@ -762,87 +762,30 @@ var Encounters = function () {
         code_system: code_system,
         code_system_name: code_system_name,
         code_system_version: code_system_version,
-        finding_name: finding_name,
-        finding_code: finding_code,
-        finding_code_system: finding_code_system,
-        translation_name: translation_name,
-        translation_code: translation_code,
-        translation_code_system: translation_code_system,
-        translation_code_system_name: translation_code_system_name,
-        performer_name: performer_name,
-        performer_code_system: performer_code_system,
-        performer_code_system_name: performer_code_system_name,
-        organization: organization,
-        street: street,
-        city: city,
-        state: state,
-        zip: zip,
-        country: country
-      });
-    }
-    
-    return data;
-  };
-  
-  var processJSON = function (json) {
-    return {};
-  };
-  
-  return {
-    process: process
-  };
-
-}();
-;
-
-// immunizations.js
-
-var Immunizations = function () {
-  
-  // dependancies
-  var parseDate = Core.parseDate;
-  
-  // properties
-  
-  // methods
-  var process = function (source, type) {
-    var raw, data = [];
-    
-    switch (type) {
-      case 'ccda':
-        raw = processCCDA(source);
-        break;
-      case 'json':
-        return processJSON(source);
-        break;
-    }
-    
-    for (var i = 0; i < raw.length; i++) {
-      data.push({
-        date: raw[i].date,
-        product: {
-          name: raw[i].product_name,
-          code: raw[i].product_code,
-          code_system: raw[i].product_code_system,
-          code_system_name: raw[i].product_code_system_name,
-          translation: {
-            name: raw[i].translation_name,
-            code: raw[i].translation_code,
-            code_system: raw[i].translation_code_system,
-            code_system_name: raw[i].translation_code_system_name
-          }
+        finding: {
+          name: finding_name,
+          code: finding_code,
+          code_system: finding_code_system
         },
-        route: {
-          name: raw[i].route_name,
-          code: raw[i].route_code,
-          code_system: raw[i].route_code_system,
-          code_system_name: raw[i].route_code_system_name
+        translation: {
+          name: translation_name,
+          code: translation_code,
+          code_system: translation_code_system,
+          code_system_name: translation_code_system_name
         },
-        instructions: raw[i].instructions_text,
-        education_type: {
-          name: raw[i].education_name,
-          code: raw[i].education_code,
-          code_system: raw[i].education_code_system
+        performer: {
+          name: performer_name,
+          code: performer_code,
+          code_system: performer_code_system,
+          code_system_name: performer_code_system_name
+        },
+        location: {
+          organization: organization,
+          street: street,
+          city: city,
+          state: state,
+          zip: zip,
+          country: country
         }
       });
     }
@@ -850,7 +793,40 @@ var Immunizations = function () {
     return data;
   };
   
-  var processCCDA = function (xmlDOM) {
+  // Init
+  ///////////////////////////
+  
+  // Reveal public methods
+  return {
+    parse: parse
+  };
+  
+}();
+;
+
+/*
+ * immunizations.js
+ */
+
+var Immunizations = function () {
+  
+  // Dependancies
+  ///////////////////////////
+  var parseDate = Core.parseDate;
+  
+  // Properties
+  ///////////////////////////
+  
+  // Private Methods
+  ///////////////////////////
+  
+  // Public Methods
+  ///////////////////////////
+  
+  /*
+   * Parse the allergies CCDA XML section.
+   */
+  var parse = function (xmlDOM) {
     var data = [], el, entries, entry;
     
     el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.2.1')
@@ -898,96 +874,70 @@ var Immunizations = function () {
       
       data.push({
         date: date,
-        product_name: product_name,
-        product_code: product_code,
-        product_code_system: product_code_system,
-        product_code_system_name: product_code_system_name,
-        translation_name: translation_name,
-        translation_code: translation_code,
-        translation_code_system: translation_code_system,
-        translation_code_system_name: translation_code_system_name,
-        route_name: route_name,
-        route_code: route_code,
-        route_code_system: route_code_system,
-        route_code_system_name: route_code_system_name,
-        instructions_text: instructions_text,
-        education_name: education_name,
-        education_code: education_code,
-        education_code_system: education_code_system
+        product: {
+          name: product_name,
+          code: product_code,
+          code_system: product_code_system,
+          code_system_name: product_code_system_name,
+          translation: {
+            name: translation_name,
+            code: translation_code,
+            code_system: translation_code_system,
+            code_system_name: translation_code_system_name
+          }
+        },
+        route: {
+          name: route_name,
+          code: route_code,
+          code_system: route_code_system,
+          code_system_name: route_code_system_name
+        },
+        instructions: instructions_text,
+        education_type: {
+          name: education_name,
+          code: education_code,
+          code_system: education_code_system
+        }
       });
     }
+    
     return data;
   };
   
-  var processJSON = function (json) {
-    return {};
+  // Init
+  ///////////////////////////
+  
+  // Reveal public methods
+  return {
+    parse: parse
   };
   
-  return {
-    process: process
-  };
-
 }();
 ;
 
-// labs.js
+/*
+ * labs.js
+ */
 
 var Labs = function () {
   
-  // dependancies
+  // Dependancies
+  ///////////////////////////
   var parseDate = Core.parseDate;
   
-  // properties
+  // Properties
+  ///////////////////////////
   
-  // methods
-  var process = function (source, type) {
-    var panels, data = [];
-    
-    switch (type) {
-      case 'ccda':
-        panels = processCCDA(source);
-        break;
-      case 'json':
-        return processJSON(source);
-        break;
-    }
-    
-    for (var i = 0; i < panels.length; i++) {
-      var p = panels[i];
-      var panel = {
-        name: p.name,
-        code: p.code,
-        code_system: p.code_system,
-        code_system_name: p.code_system_name
-      }
-      
-      var results = [];
-      
-      for (var j = 0; j < p.results.length; j++) {
-        var r = p.results[j];
-        results.push({
-          date: r.date,
-          name: r.name,
-          value: r.value,
-          unit: r.unit,
-          code: r.code,
-          code_system: r.code_system,
-          code_system_name: r.code_system_name,
-          reference: {
-            low: r.reference_low,
-            high: r.reference_high
-          }
-        });
-      }
-      
-      panel.results = results;
-      data.push(panel);
-    }
-    
-    return data;
-  };
+  // Private Methods
+  ///////////////////////////
   
-  var processCCDA = function (xmlDOM) {
+  // Public Methods
+  ///////////////////////////
+  
+  /*
+   * Parse the labs CCDA XML section.
+   */
+  var parse = function (xmlDOM) {
     var data = [], results_data, el, entries, entry, results, result;
     
     el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.3.1');
@@ -1000,8 +950,8 @@ var Labs = function () {
       el = entry.tag('code');
       var panel_name = el.attr('displayName'),
           panel_code = el.attr('code'),
-          panel_code_system = el.attr('codeSystem'),
-          panel_code_system_name = el.attr('codeSystemName');
+          // panel_code_system = el.attr('codeSystem'),
+          // panel_code_system_name = el.attr('codeSystemName');
       
       results = entry.elsByTag('component');
       results_data = [];
@@ -1014,16 +964,16 @@ var Labs = function () {
         el = result.tag('code');
         var name = el.attr('displayName'),
             code = el.attr('code'),
-            code_system = el.attr('codeSystem'),
-            code_system_name = el.attr('codeSystemName');
+            // code_system = el.attr('codeSystem'),
+            // code_system_name = el.attr('codeSystemName');
         
         el = result.tag('value');
         var value = parseInt(el.attr('value')),
             unit = el.attr('unit');
         
         // reference range may not be present
-        reference_low = null;
-        reference_high = null;
+        // reference_low = null;
+        // reference_high = null;
         
         results_data.push({
           date: date,
@@ -1031,121 +981,59 @@ var Labs = function () {
           value: value,
           unit: unit,
           code: code,
-          code_system: code_system,
-          code_system_name: code_system_name,
-          reference_low: reference_low,
-          reference_high: reference_high
+          // code_system: code_system,
+          // code_system_name: code_system_name,
+          // reference_low: reference_low,
+          // reference_high: reference_high
         });
       }
       
       data.push({
         name: panel_name,
         code: panel_code,
-        code_system: panel_code_system,
-        code_system_name: panel_code_system_name,
+        // code_system: panel_code_system,
+        // code_system_name: panel_code_system_name,
         results: results_data
       });
     }
+    
     return data;
   };
   
-  var processJSON = function (json) {
-    return {};
+  // Init
+  ///////////////////////////
+  
+  // Reveal public methods
+  return {
+    parse: parse
   };
   
-  return {
-    process: process
-  };
-
 }();
 ;
 
-// medications.js
+/*
+ * medications.js
+ */
 
 var Medications = function () {
   
-  // dependancies
+  // Dependancies
+  ///////////////////////////
   var parseDate = Core.parseDate;
   
-  // properties
+  // Properties
+  ///////////////////////////
   
-  // methods
-  var process = function (source, type) {
-    var raw, data = [];
-    
-    switch (type) {
-      case 'ccda':
-        raw = processCCDA(source);
-        break;
-      case 'json':
-        return processJSON(source);
-        break;
-    }
-    
-    for (var i = 0; i < raw.length; i++) {
-      data.push({
-        date_range: {
-          start: raw[i].start_date,
-          end: raw[i].end_date
-        },
-        product: {
-          name: raw[i].product_name,
-          code: raw[i].product_code,
-          code_system: raw[i].product_code_system,
-          translation: {
-            name: raw[i].translation_name,
-            code: raw[i].translation_code,
-            code_system: raw[i].translation_code_system,
-            code_system_name: raw[i].translation_code_system_name
-          }
-        },
-        dose_quantity: {
-          value: raw[i].dose_value,
-          unit: raw[i].dose_unit
-        },
-        rate_quantity: {
-          value: raw[i].rate_quantity_value,
-          unit: raw[i].rate_quantity_unit
-        },
-        precondition: {
-          name: raw[i].precondition_name,
-          code: raw[i].precondition_code,
-          code_system: raw[i].precondition_code_system
-        },
-        reason: {
-          name: raw[i].reason_name,
-          code: raw[i].reason_code,
-          code_system: raw[i].reason_code_system
-        },
-        route: {
-          name: raw[i].route_name,
-          code: raw[i].route_code,
-          code_system: raw[i].route_code_system,
-          code_system_name: raw[i].route_code_system_name
-        },
-        vehicle: {
-          name: raw[i].vehicle_name,
-          code: raw[i].vehicle_code,
-          code_system: raw[i].vehicle_code_system,
-          code_system_name: raw[i].vehicle_code_system_name
-        },
-        administration: {
-          name: raw[i].administration_name,
-          code: raw[i].administration_code,
-          code_system: raw[i].administration_code_system,
-          code_system_name: raw[i].administration_code_system_name
-        },
-        prescriber: {
-          organization: raw[i].prescriber_organization,
-          person: raw[i].prescriber_person
-        }
-      });
-    }
-    
-    return data;
-  };
+  // Private Methods
+  ///////////////////////////
   
-  var processCCDA = function (xmlDOM) {
+  // Public Methods
+  ///////////////////////////
+  
+  /*
+   * Parse the medications CCDA XML section.
+   */
+  var parse = function (xmlDOM) {
     var data = [], el, entries, entry;
     
     el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.1.1');
@@ -1212,96 +1100,101 @@ var Medications = function () {
           prescriber_person = null;
       
       data.push({
-        start_date: start_date,
-        end_date: end_date,
-        product_name: product_name,
-        product_code: product_code,
-        product_code_system: product_code_system,
-        translation_name: translation_name,
-        translation_code: translation_code,
-        translation_code_system: translation_code_system,
-        translation_code_system_name: translation_code_system_name,
-        dose_value: dose_value,
-        dose_unit: dose_unit,
-        rate_quantity_value: rate_quantity_value,
-        rate_quantity_unit: rate_quantity_unit,
-        precondition_name: precondition_name,
-        precondition_code: precondition_code,
-        precondition_code_system: precondition_code_system,
-        reason_name: reason_name,
-        reason_code: reason_code,
-        reason_code_system: reason_code_system,
-        route_name: route_name,
-        route_code: route_code,
-        route_code_system: route_code_system,
-        route_code_system_name: route_code_system_name,
-        vehicle_name: vehicle_name,
-        vehicle_code: vehicle_code,
-        vehicle_code_system: vehicle_code_system,
-        vehicle_code_system_name: vehicle_code_system_name,
-        administration_name: administration_name,
-        administration_code: administration_code,
-        administration_code_system: administration_code_system,
-        administration_code_system_name: administration_code_system_name,
-        prescriber_organization: prescriber_organization,
-        prescriber_person: prescriber_person
+        date_range: {
+          start: start_date,
+          end: end_date
+        },
+        product: {
+          name: product_name,
+          code: product_code,
+          code_system: product_code_system,
+          translation: {
+            name: translation_name,
+            code: translation_code,
+            code_system: translation_code_system,
+            code_system_name: translation_code_system_name
+          }
+        },
+        dose_quantity: {
+          value: dose_value,
+          unit: dose_unit
+        },
+        rate_quantity: {
+          value: rate_quantity_value,
+          unit: rate_quantity_unit
+        },
+        precondition: {
+          name: precondition_name,
+          code: precondition_code,
+          code_system: precondition_code_system
+        },
+        reason: {
+          name: reason_name,
+          code: reason_code,
+          code_system: reason_code_system
+        },
+        route: {
+          name: route_name,
+          code: route_code,
+          code_system: route_code_system,
+          code_system_name: route_code_system_name
+        },
+        vehicle: {
+          name: vehicle_name,
+          code: vehicle_code,
+          code_system: vehicle_code_system,
+          code_system_name: vehicle_code_system_name
+        },
+        administration: {
+          name: administration_name,
+          code: administration_code,
+          code_system: administration_code_system,
+          code_system_name: administration_code_system_name
+        },
+        prescriber: {
+          organization: prescriber_organization,
+          person: prescriber_person
+        }
       });
     }
     
     return data;
   };
   
-  var processJSON = function (json) {
-    return {};
+  // Init
+  ///////////////////////////
+  
+  // Reveal public methods
+  return {
+    parse: parse
   };
   
-  return {
-    process: process
-  };
-
 }();
 ;
 
-// problems.js
+/*
+ * problems.js
+ */
 
 var Problems = function () {
   
-  // dependancies
+  // Dependancies
+  ///////////////////////////
   var parseDate = Core.parseDate;
   
-  // properties
+  // Properties
+  ///////////////////////////
   
-  // methods
-  var process = function (source, type) {
-    var raw, data = [];
-    
-    switch (type) {
-      case 'ccda':
-        raw = processCCDA(source);
-        break;
-      case 'json':
-        return processJSON(source);
-        break;
-    }
-    
-    for (var i = 0; i < raw.length; i++) {
-      data.push({
-        date_range: {
-          start: raw[i].start_date,
-          end: raw[i].end_date
-        },
-        name: raw[i].name,
-        status: raw[i].status,
-        age: raw[i].age,
-        code: raw[i].code,
-        code_system: raw[i].code_system
-      });
-    }
-    
-    return data;
-  };
+  // Private Methods
+  ///////////////////////////
   
-  var processCCDA = function (xmlDOM) {
+  // Public Methods
+  ///////////////////////////
+  
+  /*
+   * Parse the problems CCDA XML section.
+   */
+  var parse = function (xmlDOM) {
     var data = [], el, entries, entry;
     
     el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.5.1')
@@ -1330,83 +1223,55 @@ var Problems = function () {
       var age = parseInt(el.tag('value').attr('value'));
       
       data.push({
-        start_date: start_date,
-        end_date: end_date,
+        date_range: {
+          start: start_date,
+          end: end_date
+        },
         name: name,
-        code: code,
-        code_system: code_system,
         status: status,
-        age: age
+        age: age,
+        code: code,
+        code_system: code_system
       });
     }
+    
     return data;
   };
   
-  var processJSON = function (json) {
-    return {};
+  // Init
+  ///////////////////////////
+  
+  // Reveal public methods
+  return {
+    parse: parse
   };
   
-  return {
-    process: process
-  };
-
 }();
 ;
 
-// procedures.js
+/*
+ * procedures.js
+ */
 
 var Procedures = function () {
   
-  // dependancies
+  // Dependancies
+  ///////////////////////////
   var parseDate = Core.parseDate;
   
-  // properties
+  // Properties
+  ///////////////////////////
   
-  // methods
-  var process = function (source, type) {
-    var raw, data = [];
-    
-    switch (type) {
-      case 'ccda':
-        raw = processCCDA(source);
-        break;
-      case 'json':
-        return processJSON(source);
-        break;
-    }
-    
-    for (var i = 0; i < raw.length; i++) {
-      data.push({
-        date: raw[i].date,
-        name: raw[i].name,
-        code: raw[i].code,
-        code_system: raw[i].code_system,
-        specimen: {
-          name: raw[i].specimen_name,
-          code: raw[i].specimen_code,
-          code_system: raw[i].specimen_code_system
-        },
-        performer: {
-          organization: raw[i].organization,
-          street: raw[i].street,
-          city: raw[i].city,
-          state: raw[i].state,
-          zip: raw[i].zip,
-          country: raw[i].country,
-          phone: raw[i].phone
-        },
-        device: {
-          name: raw[i].device_name,
-          code: raw[i].device_code,
-          code_system: raw[i].device_code_system
-        }
-      });
-    }
-    
-    return data;
-  };
+  // Private Methods
+  ///////////////////////////
   
-  var processCCDA = function (xmlDOM) {
+  // Public Methods
+  ///////////////////////////
+  
+  /*
+   * Parse the problems CCDA XML section.
+   */
+  var parse = function (xmlDOM) {
     var data = [], el, els, entries, entry;
     
     el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.7.1')
@@ -1463,85 +1328,65 @@ var Procedures = function () {
         name: name,
         code: code,
         code_system: code_system,
-        specimen_name: specimen_name,
-        specimen_code: specimen_code,
-        specimen_code_system: specimen_code_system,
-        organization: organization,
-        phone: phone,
-        street: street,
-        city: city,
-        state: state,
-        zip: zip,
-        country: country,
-        device_name: device_name,
-        device_code: device_code,
-        device_code_system: device_code_system
+        specimen: {
+          name: specimen_name,
+          code: specimen_code,
+          code_system: specimen_code_system
+        },
+        performer: {
+          organization: organization,
+          street: street,
+          city: city,
+          state: state,
+          zip: zip,
+          country: country,
+          phone: phone
+        },
+        device: {
+          name: device_name,
+          code: device_code,
+          code_system: device_code_system
+        }
       });
     }
+    
     return data;
   };
   
-  var processJSON = function (json) {
-    return {};
-  };
+  // Init
+  ///////////////////////////
   
+  // Reveal public methods
   return {
-    process: process
+    parse: parse
   };
   
 }();
 ;
 
-// vitals.js
+/*
+ * vitals.js
+ */
 
 var Vitals = function () {
   
-  // dependancies
+  // Dependancies
+  ///////////////////////////
   var parseDate = Core.parseDate;
   
-  // properties
+  // Properties
+  ///////////////////////////
   
-  // methods
-  var process = function (source, type) {
-    var entries, data = [];
-    
-    switch (type) {
-      case 'ccda':
-        entries = processCCDA(source);
-        break;
-      case 'json':
-        return processJSON(source);
-        break;
-    }
-    
-    for (var i = 0; i < entries.length; i++) {
-      var e = entries[i];
-      var entry = {
-        date: e.date
-      }
-      
-      var results = [];
-      
-      for (var j = 0; j < e.results.length; j++) {
-        var r = e.results[j];
-        results.push({
-          name: r.name,
-          code: r.code,
-          code_system: r.code_system,
-          code_system_name: r.code_system_name,
-          value: r.value,
-          unit: r.unit
-        });
-      }
-      
-      entry.results = results;
-      data.push(entry);
-    }
-    
-    return data;
-  };
+  // Private Methods
+  ///////////////////////////
   
-  var processCCDA = function (xmlDOM) {
+  // Public Methods
+  ///////////////////////////
+  
+  /*
+   * Parse the problems CCDA XML section.
+   */
+  var parse = function (xmlDOM) {
     var data = [], results_data, el, entries, entry, results, result;
     
     el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.4.1');
@@ -1565,8 +1410,8 @@ var Vitals = function () {
         el = result.tag('code');
         var name = el.attr('displayName'),
             code = el.attr('code'),
-            code_system = el.attr('codeSystem'),
-            code_system_name = el.attr('codeSystemName');
+            // code_system = el.attr('codeSystem'),
+            // code_system_name = el.attr('codeSystemName');
         
         el = result.tag('value');
         var value = parseInt(el.attr('value')),
@@ -1575,8 +1420,8 @@ var Vitals = function () {
         results_data.push({
           name: name,
           code: code,
-          code_system: code_system,
-          code_system_name: code_system_name,
+          // code_system: code_system,
+          // code_system_name: code_system_name,
           value: value,
           unit: unit
         });
@@ -1587,22 +1432,25 @@ var Vitals = function () {
         results: results_data
       });
     }
+    
     return data;
   };
   
-  var processJSON = function (json) {
-    return {};
-  };
+  // Init
+  ///////////////////////////
   
+  // Reveal public methods
   return {
-    process: process
+    parse: parse
   };
   
 }();
 ;
 
-// bluebutton.js - The Public Object and Interface
-
+/*
+ * bluebutton.js - The public `BlueButton` object.
+ */
+ 
 var BlueButton = function (source) {
   // dependancies
   
@@ -1628,7 +1476,13 @@ var BlueButton = function (source) {
   var medications = function () { return data.medications };
   var problems = function () { return data.problems };
   var procedures = function () { return data.procedures };
-  var vitals = function () { return data.vitals };
+  var vitals = function (filters) {
+    if (filters) {
+      return Core.filters(data.vitals);
+    } else {
+      return data.vitals;
+    }
+  };
   
   // init
   
@@ -1636,20 +1490,20 @@ var BlueButton = function (source) {
   // Remove leading and trailing whitespace
   source = source.replace(/^\s+|\s+$/g,'');
   if (source.substr(0, 5) == "<?xml") {
-    xmlDOM = Core.parseXML(source);
+    xmlDOM = XML.parseXML(source);
     
     type = 'ccda';
     
     data.document = { type: type };
-    data.allergies = Allergies.process(xmlDOM, type);
-    data.demographics  = Demographics.process(xmlDOM, type);
-    data.encounters = Encounters.process(xmlDOM, type);
-    data.immunizations = Immunizations.process(xmlDOM, type);
-    data.labs = Labs.process(xmlDOM, type);
-    data.medications = Medications.process(xmlDOM, type);
-    data.problems = Problems.process(xmlDOM, type);
-    data.procedures = Procedures.process(xmlDOM, type);
-    data.vitals = Vitals.process(xmlDOM, type);
+    data.allergies = Allergies.parse(xmlDOM);
+    data.demographics  = Demographics.parse(xmlDOM);
+    data.encounters = Encounters.parse(xmlDOM);
+    data.immunizations = Immunizations.parse(xmlDOM);
+    data.labs = Labs.parse(xmlDOM);
+    data.medications = Medications.parse(xmlDOM);
+    data.problems = Problems.parse(xmlDOM);
+    data.procedures = Procedures.parse(xmlDOM);
+    data.vitals = Vitals.parse(xmlDOM);
     
     addMethods([
       data,
@@ -1674,22 +1528,11 @@ var BlueButton = function (source) {
     } catch (e) {
       console.log("BB Exception: Could not parse JSON");
     }
-    
-    data.document = { type: type };
-    data.allergies = Allergies.process(json, type);
-    data.demographics  = Demographics.process(json, type);
-    data.encounters = Encounters.process(json, type);
-    data.immunizations = Immunizations.process(json, type);
-    data.labs = Labs.process(json, type);
-    data.medications = Medications.process(json, type);
-    data.problems = Problems.process(json, type);
-    data.procedures = Procedures.process(json, type);
-    data.vitals = Vitals.process(json, type);
   }
   
   return {
-    data: data,
     xmlDOM: xmlDOM,
+    data: data,
     document: doc,
     allergies: allergies,
     demographics: demographics,
@@ -1703,6 +1546,7 @@ var BlueButton = function (source) {
   };
   
 };
+
         return BlueButton;
 
     }));

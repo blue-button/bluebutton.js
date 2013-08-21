@@ -1,13 +1,7 @@
 *.DS_Store
 *.log
-<<<<<<< HEAD
+npm-debug.log
 tmp/
 node_modules/
 components/
-=======
-tmp
-node_modules
-components
-bower_components
->>>>>>> 543f720e38e2315dcb77297320ee8edff94e12aa
-npm-debug.log
+bower_components/
