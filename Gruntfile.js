@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   // Configurable paths
   var bbConfig = {
     build: "./build",
-    src: "./src",
+    src: "./lib",
     test: "./spec/javascripts",
     samples: "./sample_data"
   };
@@ -38,16 +38,17 @@ module.exports = function(grunt) {
         },
         src: [
           "<%= bb.src %>/core.js",
+          "<%= bb.src %>/xml.js",
           "<%= bb.src %>/codes.js",
-          "<%= bb.src %>/sections/allergies.js",
-          "<%= bb.src %>/sections/demographics.js",
-          "<%= bb.src %>/sections/encounters.js",
-          "<%= bb.src %>/sections/immunizations.js",
-          "<%= bb.src %>/sections/labs.js",
-          "<%= bb.src %>/sections/medications.js",
-          "<%= bb.src %>/sections/problems.js",
-          "<%= bb.src %>/sections/procedures.js",
-          "<%= bb.src %>/sections/vitals.js",
+          "<%= bb.src %>/ccda/allergies.js",
+          "<%= bb.src %>/ccda/demographics.js",
+          "<%= bb.src %>/ccda/encounters.js",
+          "<%= bb.src %>/ccda/immunizations.js",
+          "<%= bb.src %>/ccda/labs.js",
+          "<%= bb.src %>/ccda/medications.js",
+          "<%= bb.src %>/ccda/problems.js",
+          "<%= bb.src %>/ccda/procedures.js",
+          "<%= bb.src %>/ccda/vitals.js",
           "<%= bb.src %>/bluebutton.js"
         ],
         dest: "<%= bb.build %>/bluebutton.js"
