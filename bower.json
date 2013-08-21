@@ -1,6 +1,6 @@
 {
   "name": "bluebutton",
-  "version": "0.0.15",
+  "version": "0.0.17",
   "description": "BlueButton.js allows web developers to parse and navigate complex health data with ease.",
   "main": [
     "build/bluebutton.js"
@@ -13,6 +13,6 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "blue-button-reference-ccda": "git@github.com:blue-button/blue-button-reference-ccda.git"
+    "sample_ccdas": "git@github.com:chb/sample_ccdas.git"
   }
 }
