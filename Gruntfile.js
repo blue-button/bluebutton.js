@@ -40,6 +40,19 @@ module.exports = function(grunt) {
           "<%= bb.src %>/core.js",
           "<%= bb.src %>/xml.js",
           "<%= bb.src %>/codes.js",
+          
+          "<%= bb.src %>/c32/c32.js",
+          "<%= bb.src %>/c32/allergies.js",
+          "<%= bb.src %>/c32/demographics.js",
+          "<%= bb.src %>/c32/encounters.js",
+          "<%= bb.src %>/c32/immunizations.js",
+          "<%= bb.src %>/c32/labs.js",
+          "<%= bb.src %>/c32/medications.js",
+          "<%= bb.src %>/c32/problems.js",
+          "<%= bb.src %>/c32/procedures.js",
+          "<%= bb.src %>/c32/vitals.js",
+          
+          "<%= bb.src %>/ccda/ccda.js",
           "<%= bb.src %>/ccda/allergies.js",
           "<%= bb.src %>/ccda/demographics.js",
           "<%= bb.src %>/ccda/encounters.js",
@@ -49,6 +62,7 @@ module.exports = function(grunt) {
           "<%= bb.src %>/ccda/problems.js",
           "<%= bb.src %>/ccda/procedures.js",
           "<%= bb.src %>/ccda/vitals.js",
+          
           "<%= bb.src %>/bluebutton.js"
         ],
         dest: "<%= bb.build %>/bluebutton.js"
