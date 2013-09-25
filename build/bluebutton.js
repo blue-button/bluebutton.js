@@ -1591,7 +1591,7 @@ CCDA.Allergies = function () {
         reaction_type: {
           name: reaction_type_name,
           code: reaction_type_code,
-          code_system: reaction_code_system,
+          code_system: reaction_type_code_system,
           code_system_name: reaction_type_code_system_name
         },
         allergen: {
