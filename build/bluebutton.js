@@ -421,7 +421,8 @@ C32.Allergies = function () {
   var parse = function (xmlDOM) {
     var data = [], el, entries, entry;
     
-    el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.6.1');
+    el = xmlDOM.template('2.16.840.1.113883.3.88.11.83.102');
+
     entries = el.elsByTag('entry');
     
     for (var i = 0; i < entries.length; i++) {
@@ -431,27 +432,27 @@ C32.Allergies = function () {
       var start_date = parseDate(el.tag('low').attr('value')),
           end_date = parseDate(el.tag('high').attr('value'));
       
-      el = entry.template('2.16.840.1.113883.10.20.22.4.7').tag('code');
+      el = entry.template('2.16.840.1.113883.3.88.11.83.6').tag('code');
       var name = el.attr('displayName'),
           code = el.attr('code'),
           code_system = el.attr('codeSystem'),
           code_system_name = el.attr('codeSystemName');
       
       // value => reaction_type
-      el = entry.template('2.16.840.1.113883.10.20.22.4.7').tag('value');
+      el = entry.template('2.16.840.1.113883.3.88.11.83.6').tag('value');
       var reaction_type_name = el.attr('displayName'),
           reaction_type_code = el.attr('code'),
           reaction_type_code_system = el.attr('codeSystem'),
           reaction_type_code_system_name = el.attr('codeSystemName');
       
       // reaction
-      el = entry.template('2.16.840.1.113883.10.20.22.4.9').tag('value');
+      el = entry.template('2.16.840.1.113883.10.20.1.54').tag('value');
       var reaction_name = el.attr('displayName'),
           reaction_code = el.attr('code'),
           reaction_code_system = el.attr('codeSystem');
       
       // severity
-      el = entry.template('2.16.840.1.113883.10.20.22.4.8').tag('value');
+      el = entry.template('2.16.840.1.113883.10.20.1.55').tag('value');
       var severity = el.attr('displayName');
       
       // participant => allergen
@@ -462,7 +463,7 @@ C32.Allergies = function () {
           allergen_code_system_name = el.attr('codeSystemName');
       
       // status
-      el = entry.template('2.16.840.1.113883.10.20.22.4.28').tag('value');
+      el = entry.template('2.16.840.1.113883.10.20.1.39').tag('value');
       var status = el.attr('displayName');
       
       data.push({
@@ -484,7 +485,7 @@ C32.Allergies = function () {
         reaction_type: {
           name: reaction_type_name,
           code: reaction_type_code,
-          code_system: reaction_code_system,
+          code_system: reaction_type_code_system,
           code_system_name: reaction_type_code_system_name
         },
         allergen: {
@@ -535,7 +536,7 @@ C32.Demographics = function () {
   var parse = function (xmlDOM) {
     var data = {}, el, els, patient;
     
-    el = xmlDOM.template('2.16.840.1.113883.10.20.22.1.1');
+    el = xmlDOM.template('2.16.840.1.113883.3.88.11.32.1');
     patient = el.tag('patientRole');
     el = patient.tag('patient').tag('name');
     var prefix = el.tag('prefix').val();
@@ -728,11 +729,8 @@ C32.Encounters = function () {
   var parse = function (xmlDOM) {
     var data = [], el, els, entries, entry;
     
-    el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.22')
-    if (el.isEmpty()) {
-      el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.22.1');
-    }
-    
+    el = xmlDOM.template('2.16.840.1.113883.3.88.11.83.127');
+
     entries = el.elsByTag('entry');
     
     for (var i = 0; i < entries.length; i++) {
@@ -857,11 +855,8 @@ C32.Immunizations = function () {
   var parse = function (xmlDOM) {
     var data = [], el, entries, entry;
     
-    el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.2.1')
-    if (el.isEmpty()) {
-      el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.2');
-    }
-    
+    el = xmlDOM.template('2.16.840.1.113883.3.88.11.83.117');
+
     entries = el.elsByTag('entry');
     
     for (var i = 0; i < entries.length; i++) {
@@ -968,7 +963,8 @@ C32.Labs = function () {
   var parse = function (xmlDOM) {
     var data = [], results_data, el, entries, entry, results, result;
     
-    el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.3.1');
+    el = xmlDOM.template('2.16.840.1.113883.3.88.11.83.122');
+
     entries = el.elsByTag('entry');
     
     for (var i = 0; i < entries.length; i++) {
@@ -1064,7 +1060,8 @@ C32.Medications = function () {
   var parse = function (xmlDOM) {
     var data = [], el, entries, entry;
     
-    el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.1.1');
+    el = xmlDOM.template('2.16.840.1.113883.3.88.11.83.112');
+
     entries = el.elsByTag('entry');
     
     for (var i = 0; i < entries.length; i++) {
@@ -1225,10 +1222,7 @@ C32.Problems = function () {
   var parse = function (xmlDOM) {
     var data = [], el, entries, entry;
     
-    el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.5.1')
-    if (el.isEmpty()) {
-      el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.5');
-    }
+    el = xmlDOM.template('2.16.840.1.113883.3.88.11.83.103');
     
     entries = el.elsByTag('entry');
     
@@ -1302,10 +1296,7 @@ C32.Procedures = function () {
   var parse = function (xmlDOM) {
     var data = [], el, els, entries, entry;
     
-    el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.7.1')
-    if (el.isEmpty()) {
-      el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.7');
-    }
+    el = xmlDOM.template('2.16.840.1.113883.3.88.11.83.108');
     
     entries = el.elsByTag('entry');
     
@@ -1417,7 +1408,7 @@ C32.Vitals = function () {
   var parse = function (xmlDOM) {
     var data = [], results_data, el, entries, entry, results, result;
     
-    el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.4.1');
+    el = xmlDOM.template('2.16.840.1.113883.3.88.11.83.119');
     
     entries = el.elsByTag('entry');
     
@@ -1591,7 +1582,7 @@ CCDA.Allergies = function () {
         reaction_type: {
           name: reaction_type_name,
           code: reaction_type_code,
-          code_system: reaction_code_system,
+          code_system: reaction_type_code_system,
           code_system_name: reaction_type_code_system_name
         },
         allergen: {
