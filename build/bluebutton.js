@@ -724,7 +724,7 @@ C32.Encounters = function () {
   ///////////////////////////
   
   /*
-   * Parse the allergies CCDA XML section.
+   * Parse the encounters CCDA XML section.
    */
   var parse = function (xmlDOM) {
     var data = [], el, els, entries, entry;
@@ -737,6 +737,9 @@ C32.Encounters = function () {
       entry = entries[i];
       
       var date = parseDate(entry.tag('effectiveTime').attr('value'));
+      if (!date) {
+        var date = parseDate(entry.tag('effectiveTime').tag('low').attr('value'));
+      }
       
       el = entry.tag('code');
       var name = el.attr('displayName'),
@@ -759,15 +762,15 @@ C32.Encounters = function () {
           translation_code_system_name = el.attr('codeSystemName');
       
       // performer
-      el = entry.tag('performer').tag('code');
-      var performer_name = el.attr('displayName'),
+      el = entry.tag('performer');
+      var performer_name = el.tag('name').val(),
           performer_code = el.attr('code'),
           performer_code_system = el.attr('codeSystem'),
           performer_code_system_name = el.attr('codeSystemName');
 
       // participant => location
       el = entry.tag('participant');
-      var organization = el.tag('code').attr('displayName');
+      var organization = el.tag('name').val();
       
       els = el.elsByTag('streetAddressLine');
       street = [];
@@ -850,7 +853,7 @@ C32.Immunizations = function () {
   ///////////////////////////
   
   /*
-   * Parse the allergies CCDA XML section.
+   * Parse the immunizations CCDA XML section.
    */
   var parse = function (xmlDOM) {
     var data = [], el, entries, entry;
@@ -1291,7 +1294,7 @@ C32.Procedures = function () {
   ///////////////////////////
   
   /*
-   * Parse the problems CCDA XML section.
+   * Parse the procedures CCDA XML section.
    */
   var parse = function (xmlDOM) {
     var data = [], el, els, entries, entry;
@@ -1403,7 +1406,7 @@ C32.Vitals = function () {
   ///////////////////////////
   
   /*
-   * Parse the problems CCDA XML section.
+   * Parse the vitals CCDA XML section.
    */
   var parse = function (xmlDOM) {
     var data = [], results_data, el, entries, entry, results, result;
