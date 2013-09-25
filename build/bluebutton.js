@@ -870,14 +870,14 @@ C32.Immunizations = function () {
       var date = parseDate(el.attr('value'));
       
       // product
-      el = entry.template('2.16.840.1.113883.10.20.22.4.54').tag('code');
+      el = entry.template('2.16.840.1.113883.10.20.1.53').tag('code');
       var product_name = el.attr('displayName'),
           product_code = el.attr('code'),
           product_code_system = el.attr('codeSystem'),
           product_code_system_name = el.attr('codeSystemName');
       
       // translation
-      el = entry.template('2.16.840.1.113883.10.20.22.4.54').tag('translation');
+      el = entry.template('2.16.840.1.113883.10.20.1.53').tag('translation');
       var translation_name = el.attr('displayName'),
           translation_code = el.attr('code'),
           translation_code_system = el.attr('codeSystem'),
@@ -891,7 +891,7 @@ C32.Immunizations = function () {
           route_code_system_name = el.attr('codeSystemName');
       
       // instructions
-      el = entry.template('2.16.840.1.113883.10.20.22.4.20');
+      el = entry.template('2.16.840.1.113883.10.20.1.49');
       var instructions_text = el.tag('text').val();
       el = el.tag('code');
       var education_name = el.attr('displayName'),
