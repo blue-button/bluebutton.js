@@ -1232,7 +1232,7 @@ C32.Problems = function () {
     for (var i = 0; i < entries.length; i++) {
       entry = entries[i];
       
-      el = entry.template('2.16.840.1.113883.10.20.1.28').tag('effectiveTime');
+      el = entry.tag('effectiveTime');
       var start_date = parseDate(el.tag('low').attr('value')),
           end_date = parseDate(el.tag('high').attr('value'));
       
