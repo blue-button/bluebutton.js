@@ -724,7 +724,7 @@ C32.Encounters = function () {
   ///////////////////////////
   
   /*
-   * Parse the allergies CCDA XML section.
+   * Parse the encounters CCDA XML section.
    */
   var parse = function (xmlDOM) {
     var data = [], el, els, entries, entry;
@@ -737,6 +737,9 @@ C32.Encounters = function () {
       entry = entries[i];
       
       var date = parseDate(entry.tag('effectiveTime').attr('value'));
+      if (!date) {
+        var date = parseDate(entry.tag('effectiveTime').tag('low').attr('value'));
+      }
       
       el = entry.tag('code');
       var name = el.attr('displayName'),
@@ -759,15 +762,15 @@ C32.Encounters = function () {
           translation_code_system_name = el.attr('codeSystemName');
       
       // performer
-      el = entry.tag('performer').tag('code');
-      var performer_name = el.attr('displayName'),
+      el = entry.tag('performer');
+      var performer_name = el.tag('name').val(),
           performer_code = el.attr('code'),
           performer_code_system = el.attr('codeSystem'),
           performer_code_system_name = el.attr('codeSystemName');
 
       // participant => location
       el = entry.tag('participant');
-      var organization = el.tag('code').attr('displayName');
+      var organization = el.tag('name').val();
       
       els = el.elsByTag('streetAddressLine');
       street = [];
@@ -850,7 +853,7 @@ C32.Immunizations = function () {
   ///////////////////////////
   
   /*
-   * Parse the allergies CCDA XML section.
+   * Parse the immunizations CCDA XML section.
    */
   var parse = function (xmlDOM) {
     var data = [], el, entries, entry;
@@ -867,14 +870,14 @@ C32.Immunizations = function () {
       var date = parseDate(el.attr('value'));
       
       // product
-      el = entry.template('2.16.840.1.113883.10.20.22.4.54').tag('code');
+      el = entry.template('2.16.840.1.113883.10.20.1.53').tag('code');
       var product_name = el.attr('displayName'),
           product_code = el.attr('code'),
           product_code_system = el.attr('codeSystem'),
           product_code_system_name = el.attr('codeSystemName');
       
       // translation
-      el = entry.template('2.16.840.1.113883.10.20.22.4.54').tag('translation');
+      el = entry.template('2.16.840.1.113883.10.20.1.53').tag('translation');
       var translation_name = el.attr('displayName'),
           translation_code = el.attr('code'),
           translation_code_system = el.attr('codeSystem'),
@@ -888,7 +891,7 @@ C32.Immunizations = function () {
           route_code_system_name = el.attr('codeSystemName');
       
       // instructions
-      el = entry.template('2.16.840.1.113883.10.20.22.4.20');
+      el = entry.template('2.16.840.1.113883.10.20.1.49');
       var instructions_text = el.tag('text').val();
       el = el.tag('code');
       var education_name = el.attr('displayName'),
@@ -1095,7 +1098,7 @@ C32.Medications = function () {
           precondition_code = el.attr('code'),
           precondition_code_system = el.attr('codeSystem'),
       
-      el = entry.template('2.16.840.1.113883.10.20.22.4.19').tag('value');
+      el = entry.template('2.16.840.1.113883.10.20.1.28').tag('value');
       var reason_name = el.attr('displayName'),
           reason_code = el.attr('code'),
           reason_code_system = el.attr('codeSystem');
@@ -1233,15 +1236,15 @@ C32.Problems = function () {
       var start_date = parseDate(el.tag('low').attr('value')),
           end_date = parseDate(el.tag('high').attr('value'));
       
-      el = entry.template('2.16.840.1.113883.10.20.22.4.4').tag('value');
+      el = entry.template('2.16.840.1.113883.10.20.1.28').tag('value');
       var name = el.attr('displayName'),
           code = el.attr('code'),
           code_system = el.attr('codeSystem');
       
-      el = entry.template('2.16.840.1.113883.10.20.22.4.6');
+      el = entry.template('2.16.840.1.113883.10.20.1.50');
       var status = el.tag('value').attr('displayName');
       
-      el = entry.template('2.16.840.1.113883.10.20.22.4.31');
+      el = entry.template('2.16.840.1.113883.10.20.1.38');
       var age = parseFloat(el.tag('value').attr('value'));
       
       data.push({
@@ -1291,7 +1294,7 @@ C32.Procedures = function () {
   ///////////////////////////
   
   /*
-   * Parse the problems CCDA XML section.
+   * Parse the procedures CCDA XML section.
    */
   var parse = function (xmlDOM) {
     var data = [], el, els, entries, entry;
@@ -1403,7 +1406,7 @@ C32.Vitals = function () {
   ///////////////////////////
   
   /*
-   * Parse the problems CCDA XML section.
+   * Parse the vitals CCDA XML section.
    */
   var parse = function (xmlDOM) {
     var data = [], results_data, el, entries, entry, results, result;
