@@ -1,3 +1,7 @@
+---
+layout: docs
+---
+
 # Medications
 
 Use the `medications` method to retrieve a list of all medications:

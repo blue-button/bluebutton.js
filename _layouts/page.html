@@ -5,20 +5,20 @@
     <meta charset="utf-8">
     <title>BlueButton.js</title>
     <meta name="description" content="BlueButton.js">
-    <link href="{{ site.baseurl }}/style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/tomorrow.min.css">
   </head>
   <body class="single-page">
     
-    <%= erb :'layouts/_header' %>
+    {% include header.html %}
     
     <div class="content-area">
       <div class="page">
-        <%= yield %>
+        {{ content }}
       </div>
     </div>
     
-    <%= erb :'layouts/_footer' %>
+    {% include footer.html %}
     
     <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>BlueButton.js</title>
     <meta name="description" content="BlueButton.js">
-    <link href="{{ site.baseurl }}/css/style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
     <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet'> -->
     <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/tomorrow.min.css">
   </head>
@@ -16,10 +16,26 @@
     <div class="content-area">
       <div class="sidebar">
         <ul>
+          <li {% if page.url == '/docs/index.html' %}class="active"{% endif %}><a href="/docs"><div>Getting Started</div></a></li>
+          
+          <li {% if page.url == '/docs/concepts.html' %}class="active"{% endif %}><a href="/docs/concepts.html"><div>Core Concepts</div></a></li>
+          
+          <li {% if page.url == '/docs/json/index.html' %}class="active"{% endif %}><a href="/docs/json"><div>Blue Button JSON</div></a></li>
+          
+          <ul>
+            <li {% if page.url == '/docs/json/demographics.html' %}class="active"{% endif %}><a href="/docs/json/demographics.html"><div>Demographics</div></a></li>
+            
+            <li {% if page.url == '/docs/json/allergies.html' %}class="active"{% endif %}><a href="/docs/json/allergies.html"><div>Allergies</div></a></li>
+            
+            <li {% if page.url == '/docs/json/medications.html' %}class="active"{% endif %}><a href="/docs/json/medications.html"><div>Medications</div></a></li>
+          </ul>
+          
+          <li {% if page.url == '/docs/resources.html' %}class="active"{% endif %}><a href="/docs/resources.html"><div>Resources</div></a></li>
+          
+          <!--
           <li><a href="/docs/getting_started"><div>Getting Started</div></a></li>
           <li><a href="/docs/demographics"><div>Demographics</div></a></li>
           <li><a href="/docs/allergies"><div>Allergies</div></a></li>
-          <!-- <li class="active"><div>Allergies</div></li> -->
           <li><a href="/docs/encounters"><div>Encounters</div></a></li>
           <li><a href="/docs/immunizations"><div>Immunizations</div></a></li>
           <li><a href="/docs/labs"><div>Labs</div></a></li>
@@ -28,6 +44,7 @@
           <li><a href="/docs/problems"><div>Problems</div></a></li>
           <li><a href="/docs/procedures"><div>Procedures</div></a></li>
           <li><a href="/docs/vitals"><div>Vitals</div></a></li>
+          -->
         </ul>
       </div>
       

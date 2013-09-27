@@ -8,12 +8,23 @@
           <h1>BlueButton.js</h1>
         </a>
       </li>
-      <!--
-      <%= header_link "About", "/about" %>
-      <%= header_link "Community", "/community" %>
-      <%= header_link "Contributing", "/contributing" %>
-      <%= header_link "Docs", "/docs" %>
-      -->
+        {% if page.url == '/community.html' %}
+          <li class="active"><div>Community</div></li>
+        {% else %}
+          <a href="/community.html"><li><div>Community</div></li></a>
+        {% endif %}
+        
+        {% if page.url == '/sandbox.html' %}
+          <li class="active"><div>Sandbox</div></li>
+        {% else %}
+          <a href="/sandbox.html"><li><div>Sandbox</div></li></a>
+        {% endif %}
+        
+        {% if page.url contains '/docs' %}
+          <li class="active"><div>Documentation</div></li>
+        {% else %}
+          <a href="/docs"><li><div>Documentation</div></li></a>
+        {% endif %}
     </ul>
   </div>
 </div>

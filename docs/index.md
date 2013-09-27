@@ -1,3 +1,7 @@
+---
+layout: docs
+---
+
 # Welcome to BlueButton.js
 
 BlueButton.js is a JavaScript library for working with Blue Button data. A simple and consistent API is exposed from a C32 or CCDA continuity of care document in XML.

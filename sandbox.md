@@ -1,8 +1,8 @@
 ---
-layout: docs
+layout: page
 ---
 
-# JSON Demo
+# Sandbox
 
 This demo converts each section of a CCDA document in XML to JSON, using for example:
 
@@ -11,7 +11,7 @@ var bb = BlueButton(xml);
 bb.medications().json();
 ```
 
-## CCDA XML
+## Source Data
 
 <textarea id="xml"></textarea>
 

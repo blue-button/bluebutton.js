@@ -1,3 +1,7 @@
+---
+layout: docs
+---
+
 # Demographics
 
 Use the `demographics` method to retrieve the patient's personal information:

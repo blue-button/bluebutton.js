@@ -1,3 +1,7 @@
+---
+layout: docs
+---
+
 # Allergies
 
 Use the `allergies` method to retrieve a list of all allergies:

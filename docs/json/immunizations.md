@@ -1,3 +1,7 @@
+---
+layout: docs
+---
+
 # Immunizations
 
 Use the `immunizations` method to retrieve a list of all immunizations:
