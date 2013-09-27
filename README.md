@@ -9,7 +9,9 @@ BlueButton.js is JavaScript library to work with Blue Button data. [Try the demo
 
 This project is currently under development by members of the [Blue Button developer community](https://github.com/blue-button?tab=members).
 
-If you have a suggestion or concern, submit an issue or tweet us at [@ProjectBlueBtn](http://twitter.com/ProjectBlueBtn).
+If you have a suggestion or concern, submit an issue or tweet us at [@BlueButtonDev](http://twitter.com/bluebuttondev).
+
+<!-- Add Google Group: https://groups.google.com/d/forum/bluebuttondev -->
 
 <!--
 
