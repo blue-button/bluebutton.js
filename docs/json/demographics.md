@@ -4,91 +4,75 @@ layout: docs
 
 # Demographics
 
-Use the `demographics` method to retrieve the patient's personal information:
-
-```javascript
-bb.demographics();
-```
-
-This returns:
-
-```javascript
+```json
 {
-  name: {
-    prefix: "Mr.",
-    given: "Adam",
-    call_me: "Frankie",
-    middle: "M",
-    family: "Everyman"
+  "name": {
+    "prefix": null,
+    "given": [
+      "Anna"
+    ],
+    "family": "Bryant"
   },
-  dob: "1954-11-25",
-  gender: "male",
-  age: 64,
-  marital_status: "married",
-  address: {
-    street: "17 Daws Rd.",
-    city: "Blue Bell",
-    state: "MA",
-    country: "US",
-    zip: "02368"
+  "dob": "1994-06-16T04:00:00.000Z",
+  "gender": "female",
+  "marital_status": "married",
+  "address": {
+    "street": [
+      "1357 Amber Drive"
+    ],
+    "city": "Beaverton",
+    "state": "OR",
+    "zip": "97867",
+    "country": "US"
   },
-  phone: {
-    home: "555-555-1212",
-    work: "555-555-1010"
+  "phone": {
+    "home": "tel:(816)276-6909",
+    "work": null,
+    "mobile": null
   },
-  email: "adam@email.com",
-  race: {
-    label: "White",
-    code: "2106-3",
-    code_system: "2.16.840.1.113883.6.238",
-    code_system_name: "Race & Ethnicity - CDC"
+  "email": null,
+  "language": "en-US",
+  "race": "White",
+  "ethnicity": "Not Hispanic or Latino",
+  "religion": "Hinduism",
+  "birthplace": {
+    "state": "DC",
+    "zip": "20009",
+    "country": "USA"
   },
-  ethnicity: {
-    label: "Not Hispanic or Latino",
-    code: "2186-5",
-    code_system: "2.16.840.1.113883.6.238",
-    code_system_name: "Race & Ethnicity - CDC"
-  },
-  religion: {
-    label: "Christian (non-Catholic, non-specific)",
-    code: "1013",
-    code_system: "2.16.840.1.113883.1.11.19185",
-    code_system_name: "HL7 Religious Affiliation"
-  },
-  guardian: {
-    name: {
-      given: "Ralph",
-      family: "Relative"
+  "guardian": {
+    "name": {
+      "given": [
+        "Daniel"
+      ],
+      "family": "Spalato"
     },
-    relationship: "Grandfather",
-    address: {
-      street: "17 Daws Rd.",
-      city: "Blue Bell",
-      state: "MA",
-      country: "US",
-      zip: "02368"
+    "relationship": "healthcare power of attorney",
+    "address": {
+      "street": [
+        "125 Dalmatian Road"
+      ],
+      "city": "Agram",
+      "state": "VA",
+      "zip": "22201",
+      "country": "US"
     },
-    phone: "781-555-1212"
+    "phone": {
+      "home": "tel:(781)555-1212"
+    }
   },
-  birthplace: {
-    state: "MA",
-    zip: "02368",
-    country: "US"
-  },
-  provider: {
-    name: "Good Health Clinic",
-    phone: "781-555-1212",
-    address: {
-      street: "21 North Ave",
-      city: "Burlington",
-      state: "MA",
-      zip: "02368",
-      country: "US"
+  "provider": {
+    "organization": "Community Health and Hospitals",
+    "phone": "tel: 555-555-5000",
+    "address": {
+      "street": [
+        "1001 Village Avenue"
+      ],
+      "city": "Portland",
+      "state": "OR",
+      "zip": "99123",
+      "country": "US"
     }
   }
 }
 ```
-
-
-
-

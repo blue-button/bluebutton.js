@@ -301,7 +301,6 @@ body {
 
 .sidebar li.active {
   background: #fff;
-  color: #333;
 }
 
 /* arrow box -- cssarrowplease.com */
@@ -337,7 +336,7 @@ body {
 }
 
 .sidebar a {
-  color: #333;
+  color: #4d4d4d;
   text-decoration: none;
 }
 
@@ -350,8 +349,8 @@ body {
 
 .sidebar ul ul li {
   padding-left: 20px;
-  font-weight: bold;
-  color: #666;
+  font-weight: normal;
+  color: #4d4d4d;
 }
 
 .sidebar ul ul li.active {
@@ -362,7 +361,7 @@ body {
 }
 
 .sidebar ul ul li a {
-  color: #666;
+  color: #4d4d4d;
 }
 
 .docs .page {

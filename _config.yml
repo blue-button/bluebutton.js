@@ -2,3 +2,6 @@ name: BlueButton.js
 markdown: redcarpet
 pygments: true
 baseurl: /bluebutton.js
+
+redcarpet:
+  extensions: ['hard_wrap', 'autolink']

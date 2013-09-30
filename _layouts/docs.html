@@ -6,8 +6,9 @@
     <title>BlueButton.js</title>
     <meta name="description" content="BlueButton.js">
     <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/syntax.css" rel="stylesheet">
     <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet'> -->
-    <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/tomorrow.min.css">
+    <!-- <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/tomorrow.min.css"> -->
   </head>
   <body class="docs">
     
@@ -27,24 +28,24 @@
             
             <li {% if page.url == '/docs/json/allergies.html' %}class="active"{% endif %}><a href="/docs/json/allergies.html"><div>Allergies</div></a></li>
             
+            <li {% if page.url == '/docs/json/encounters.html' %}class="active"{% endif %}><a href="/docs/json/encounters.html"><div>Encounters</div></a></li>
+            
+            <li {% if page.url == '/docs/json/immunizations.html' %}class="active"{% endif %}><a href="/docs/json/immunizations.html"><div>Immunizations</div></a></li>
+            
+            <li {% if page.url == '/docs/json/labs.html' %}class="active"{% endif %}><a href="/docs/json/labs.html"><div>Labs</div></a></li>
+            
             <li {% if page.url == '/docs/json/medications.html' %}class="active"{% endif %}><a href="/docs/json/medications.html"><div>Medications</div></a></li>
+            
+            <li {% if page.url == '/docs/json/problems.html' %}class="active"{% endif %}><a href="/docs/json/problems.html"><div>Problems</div></a></li>
+            
+            <li {% if page.url == '/docs/json/procedures.html' %}class="active"{% endif %}><a href="/docs/json/procedures.html"><div>Procedures</div></a></li>
+            
+            <li {% if page.url == '/docs/json/vitals.html' %}class="active"{% endif %}><a href="/docs/json/vitals.html"><div>Vitals</div></a></li>
+            
           </ul>
           
           <li {% if page.url == '/docs/resources.html' %}class="active"{% endif %}><a href="/docs/resources.html"><div>Resources</div></a></li>
           
-          <!--
-          <li><a href="/docs/getting_started"><div>Getting Started</div></a></li>
-          <li><a href="/docs/demographics"><div>Demographics</div></a></li>
-          <li><a href="/docs/allergies"><div>Allergies</div></a></li>
-          <li><a href="/docs/encounters"><div>Encounters</div></a></li>
-          <li><a href="/docs/immunizations"><div>Immunizations</div></a></li>
-          <li><a href="/docs/labs"><div>Labs</div></a></li>
-          <li><a href="/docs/medications"><div>Medications</div></a></li>
-          <li><a href="/docs/plan"><div>Plan</div></a></li>
-          <li><a href="/docs/problems"><div>Problems</div></a></li>
-          <li><a href="/docs/procedures"><div>Procedures</div></a></li>
-          <li><a href="/docs/vitals"><div>Vitals</div></a></li>
-          -->
         </ul>
       </div>
       
@@ -55,7 +56,9 @@
     
     {% include footer.html %}
     
+    <!--
     <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
+    -->
   </body>
 </html>
