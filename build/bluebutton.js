@@ -972,54 +972,58 @@ C32.Labs = function () {
     
     for (var i = 0; i < entries.length; i++) {
       entry = entries[i];
+
+      el = entry.tag('effectiveTime');
+      var panel_date = parseDate(entry.tag('effectiveTime').attr('value'));
+      if (!panel_date) {
+        var panel_date = parseDate(entry.tag('effectiveTime').tag('low').attr('value'));
+      }
       
       // panel
       el = entry.tag('code');
       var panel_name = el.attr('displayName'),
           panel_code = el.attr('code'),
-          // panel_code_system = el.attr('codeSystem'),
-          // panel_code_system_name = el.attr('codeSystemName');
+          panel_code_system = el.attr('codeSystem'),
+          panel_code_system_name = el.attr('codeSystemName');
       
       results = entry.elsByTag('component');
       results_data = [];
       
       for (var j = 0; j < results.length; j++) {
         result = results[j];
-        
-        var date = parseDate(result.tag('effectiveTime').attr('value'));
-        
-        el = result.tag('code');
-        var name = el.attr('displayName'),
-            code = el.attr('code'),
-            // code_system = el.attr('codeSystem'),
-            // code_system_name = el.attr('codeSystemName');
-        
-        el = result.tag('value');
-        var value = parseFloat(el.attr('value')),
-            unit = el.attr('unit');
-        
-        // reference range may not be present
-        // reference_low = null;
-        // reference_high = null;
-        
-        results_data.push({
-          date: date,
-          name: name,
-          value: value,
-          unit: unit,
-          code: code,
-          // code_system: code_system,
-          // code_system_name: code_system_name,
-          // reference_low: reference_low,
-          // reference_high: reference_high
-        });
+
+        // sometimes results organizers contain non-results. we only want results
+        if (result.template('2.16.840.1.113883.10.20.1.31').val()) {
+          var date = parseDate(result.tag('effectiveTime').attr('value'));
+          
+          el = result.tag('code');
+          var name = el.attr('displayName'),
+              code = el.attr('code'),
+              code_system = el.attr('codeSystem'),
+              code_system_name = el.attr('codeSystemName');
+          
+          el = result.tag('value');
+          var value = parseFloat(el.attr('value')),
+              unit = el.attr('unit');
+          
+          results_data.push({
+            date: date,
+            name: name,
+            value: value,
+            unit: unit,
+            code: code,
+            code_system: code_system,
+            code_system_name: code_system_name,
+          });
+        }
       }
       
       data.push({
         name: panel_name,
         code: panel_code,
-        // code_system: panel_code_system,
-        // code_system_name: panel_code_system_name,
+        code_system: panel_code_system,
+        code_system_name: panel_code_system_name,
+        date: panel_date,
         results: results_data
       });
     }
@@ -1824,7 +1828,7 @@ CCDA.Encounters = function () {
   ///////////////////////////
   
   /*
-   * Parse the allergies CCDA XML section.
+   * Parse the encounters CCDA XML section.
    */
   var parse = function (xmlDOM) {
     var data = [], el, els, entries, entry;
@@ -1953,7 +1957,7 @@ CCDA.Immunizations = function () {
   ///////////////////////////
   
   /*
-   * Parse the allergies CCDA XML section.
+   * Parse the immunizations CCDA XML section.
    */
   var parse = function (xmlDOM) {
     var data = [], el, entries, entry;
@@ -2398,7 +2402,7 @@ CCDA.Procedures = function () {
   ///////////////////////////
   
   /*
-   * Parse the problems CCDA XML section.
+   * Parse the procedures CCDA XML section.
    */
   var parse = function (xmlDOM) {
     var data = [], el, els, entries, entry;
@@ -2513,7 +2517,7 @@ CCDA.Vitals = function () {
   ///////////////////////////
   
   /*
-   * Parse the problems CCDA XML section.
+   * Parse the vitals CCDA XML section.
    */
   var parse = function (xmlDOM) {
     var data = [], results_data, el, entries, entry, results, result;
