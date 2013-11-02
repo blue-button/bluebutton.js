@@ -4,11 +4,11 @@ layout: docs
 
 # Welcome to BlueButton.js
 
-BlueButton.js is a JavaScript library for working with Blue Button data. A simple and consistent API is exposed from a C32 or CCDA continuity of care document in XML.
+Healthcare data and documents can be difficult to parse and navigate. BlueButton.js is designed to make life a little easier for healthcare developers by providing a single API to the health record, so you can focus on the data and the patient. BlueButton.js currently supports CCDA and C32 documents, but there's room to expand if the community has an interest.
 
 ## Getting Started
 
-Start by creating a Blue Button document object by passing the CCD XML (C32 or CCDA) to `BlueButton`:
+To use BlueButton.js with a health document, start by creating a Blue Button document object by passing the CCD XML to `BlueButton`:
 
 ```javascript
 var bb = BlueButton(xml);
@@ -18,26 +18,44 @@ The document object, `bb` in this example, now exposes all CCD data through a si
 
 ## Document Sections
 
-All health records have the following sections:
-
-- Demographics
-- Allergies
-- Encounters
-- Immunizations
-- Labs
-- Medications
-- Plan
-- Problems
-- Procedures
-- Vitals
-
-Each section can be accessed by using methods named after the sections. For example, get a list of all medications, use:
+The health record sections are available using the following public methods. JavaScript objects representing the patient data for that section is returned from each method:
 
 ```javascript
+// Returns personal information and demographics
+bb.demographics();
+
+// Returns allergies and alerts
+bb.allergies();
+
+// Returns encounters
+bb.encounters();
+
+// Returns a list of immunizations
+bb.immunizations();
+
+// Returns a list of laboratory results, organized by panel
+bb.labs();
+
+// Returns a list of medications
 bb.medications();
+
+// Returns the problem list
+bb.problems();
+
+// Returns a list of procedures
+bb.procedures();
+
+// Returns a list of vital readings, grouped by date
+bb.vitals();
+```
+Information about the document itself can be accessed by using the `document` method:
+
+```javascript
+// Returns an object containing information about the CCD document
+bb.document();
 ```
 
-An array containing all medications in the patient record is returned.
+<!--
 
 ## Filters
 
@@ -72,6 +90,4 @@ bb.all();     // Get the entire health record
 bb.everything();
 ```
 
-
-
-
+-->

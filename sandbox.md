@@ -4,7 +4,7 @@ layout: page
 
 # Sandbox
 
-This demo converts each section of a CCDA document in XML to JSON, using for example:
+This demo converts each section of a CCD document in XML to JSON, using for example:
 
 ```javascript
 var bb = BlueButton(xml);
@@ -28,7 +28,7 @@ bb.medications().json();
   }
 </style>
 
-Use sample data and convert: <button onclick="load('bb_ref_ccda')">Blue Button Reference CCDA</button> | <button onclick="convert()">Convert</button> <button onclick="clearAll()">Clear</button>
+Use sample data and convert: <button onclick="load('bb_ref_ccda')">Sample CCDA</button> | <button onclick="convert()">Convert</button> <button onclick="clearAll()">Clear</button>
 
 [Document](#document-section), [Demographics](#demographics-section), [Allergies](#allergies-section), [Encounters](#encounters-section), [Immunizations](#immunizations-section), [Labs](#labs-section), [Medications](#medications-section), [Problems](#problems-section), [Procedures](#procedures-section), [Vitals](#vitals-section)
 
@@ -127,15 +127,10 @@ Use sample data and convert: <button onclick="load('bb_ref_ccda')">Blue Button R
     
     var url;
     switch (kind) {
-      case 'hl7': url = '/hl7_ccd.xml'
-        break;
-      case 'greenway': url = 'Greenway_CCDA_Adam_Everyman.xml';
-        break;
-      case 'nextgen': url = 'NextGen_CCDA_Isabella_Jones.xml';
-        break;
       case 'va_c32': url = '/VA_CCD_Sample_File_Version_12_4.xml';
         break;
-      case 'bb_ref_ccda': url = baseURL + '/files/blue_button_reference_ccda.xml';
+      case 'bb_ref_ccda': url = baseURL + '/files/ccda.xml';
+        break;
     }
     
     xhReq.open('GET', url, false);
