@@ -105,7 +105,7 @@ Use sample data and convert: <button onclick="load('bb_ref_ccda')">Sample CCDA</
 <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
 <script src="https://rawgithub.com/blue-button/bluebutton.js/master/build/bluebutton.js"></script>
 <script>
-  var baseURL = "{{ site.baseurl }}";
+  var baseURL = "";
   var xml, bb;
   var doc = document.getElementById('document');
   var demographics = document.getElementById('demographics');
