@@ -9,7 +9,7 @@ BlueButton.js is JavaScript library to help make working with healthcare data ea
 
 To use BlueButton.js with a health document, start by creating a Blue Button document object by passing the CCD XML to BlueButton:
 
-``` js
+```JavaScript
 var bb = BlueButton(xml);
 ```
 
@@ -19,7 +19,7 @@ The document object, `bb` in this example, now exposes all CCD data through a si
 
 The health record sections are available using the following public methods. JavaScript objects representing the patient data for that section is returned from each method:
 
-``` js
+```JavaScript
 // Returns personal information and demographics
 bb.demographics();
 
@@ -50,7 +50,7 @@ bb.vitals();
 
 Information about the document itself can be accessed by using the document method:
 
-``` js
+```JavaScript
 // Returns an object containing information about the CCD document
 bb.document();
 ```
@@ -59,7 +59,7 @@ bb.document();
 
 Each section contains a convenience `json()` method.
 
-``` js
+```JavaScript
 // Returns a JSON representation of demographics
 bb.demographics().json();
 
@@ -73,7 +73,7 @@ BlueButton.js uses a UMD wrapper to support NodeJS and AMD module loaders like R
 
 ### Example using Node
 
-```
+```JavaScript
 var fs = require('fs');
 var BlueButton = require('bluebutton');
 
@@ -86,7 +86,7 @@ console.log(bb.demographics().json());
 
 ### Example using RequireJS
 
-```
+```JavaScript
 require.config({
   paths: {
     bluebutton: '../bower_components/bluebutton.js/build/bluebutton',
@@ -107,7 +107,7 @@ require(['bluebutton', 'text!examples/xml/ccd.xml'], function (BlueButton, xml) 
 
 ### Example using Browser Global
 
-```
+```HTML
 <body>
   <script src="./bower_components/bluebutton/build/bluebutton.js"></script>
   <script>
