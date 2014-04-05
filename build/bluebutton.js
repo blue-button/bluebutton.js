@@ -1446,8 +1446,8 @@ C32.Vitals = function () {
         el = result.tag('code');
         var name = el.attr('displayName'),
             code = el.attr('code'),
-            // code_system = el.attr('codeSystem'),
-            // code_system_name = el.attr('codeSystemName');
+            code_system = el.attr('codeSystem'),
+            code_system_name = el.attr('codeSystemName');
         
         el = result.tag('value');
         var value = parseFloat(el.attr('value')),
@@ -2553,8 +2553,8 @@ CCDA.Vitals = function () {
         el = result.tag('code');
         var name = el.attr('displayName'),
             code = el.attr('code'),
-            // code_system = el.attr('codeSystem'),
-            // code_system_name = el.attr('codeSystemName');
+            code_system = el.attr('codeSystem'),
+            code_system_name = el.attr('codeSystemName');
         
         el = result.tag('value');
         var value = parseFloat(el.attr('value')),
@@ -2563,8 +2563,8 @@ CCDA.Vitals = function () {
         results_data.push({
           name: name,
           code: code,
-          // code_system: code_system,
-          // code_system_name: code_system_name,
+          code_system: code_system,
+          code_system_name: code_system_name,
           value: value,
           unit: unit
         });
