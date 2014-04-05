@@ -179,8 +179,6 @@ var XML = function () {
    */
   var attr = function (attr) {
     if (!this.el) { return null; }
-    // Workaround a bug in jsdom https://github.com/tmpvar/jsdom/issues/651
-    attr = isNode ? attr.toLowerCase() : attr;
     return this.el.getAttribute(attr);
   };
   
