@@ -2093,8 +2093,8 @@ CCDA.Labs = function () {
       el = entry.tag('code');
       var panel_name = el.attr('displayName'),
           panel_code = el.attr('code'),
-          // panel_code_system = el.attr('codeSystem'),
-          // panel_code_system_name = el.attr('codeSystemName');
+          panel_code_system = el.attr('codeSystem'),
+          panel_code_system_name = el.attr('codeSystemName');
       
       results = entry.elsByTag('component');
       results_data = [];
@@ -2107,8 +2107,8 @@ CCDA.Labs = function () {
         el = result.tag('code');
         var name = el.attr('displayName'),
             code = el.attr('code'),
-            // code_system = el.attr('codeSystem'),
-            // code_system_name = el.attr('codeSystemName');
+            code_system = el.attr('codeSystem'),
+            code_system_name = el.attr('codeSystemName');
         
         el = result.tag('value');
         var value = parseFloat(el.attr('value')),
@@ -2124,8 +2124,8 @@ CCDA.Labs = function () {
           value: value,
           unit: unit,
           code: code,
-          // code_system: code_system,
-          // code_system_name: code_system_name,
+          code_system: code_system,
+          code_system_name: code_system_name
           // reference_low: reference_low,
           // reference_high: reference_high
         });
@@ -2134,8 +2134,8 @@ CCDA.Labs = function () {
       data.push({
         name: panel_name,
         code: panel_code,
-        // code_system: panel_code_system,
-        // code_system_name: panel_code_system_name,
+        code_system: panel_code_system,
+        code_system_name: panel_code_system_name,
         results: results_data
       });
     }

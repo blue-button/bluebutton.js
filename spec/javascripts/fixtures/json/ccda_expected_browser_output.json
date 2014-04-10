@@ -319,28 +319,20 @@
         {
           "date": "2000-03-23T07:00:00.000Z",
           "name": "HGB",
-          "value": 13,
+          "value": 13.2,
           "unit": "g/dl",
           "code": "30313-1",
           "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "reference": {
-            "low": null,
-            "high": null
-          }
+          "code_system_name": "LOINC"
         },
         {
           "date": "2000-03-23T07:00:00.000Z",
           "name": "WBC",
-          "value": 6,
+          "value": 6.7,
           "unit": "10+3/ul",
           "code": "33765-9",
           "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "reference": {
-            "low": null,
-            "high": null
-          }
+          "code_system_name": "LOINC"
         },
         {
           "date": "2000-03-23T07:00:00.000Z",
@@ -349,11 +341,7 @@
           "unit": "10+3/ul",
           "code": "26515-7",
           "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC",
-          "reference": {
-            "low": null,
-            "high": null
-          }
+          "code_system_name": "LOINC"
         }
       ]
     }
