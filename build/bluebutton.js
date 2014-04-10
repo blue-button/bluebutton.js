@@ -972,7 +972,7 @@ C32.Labs = function () {
       el = entry.tag('effectiveTime');
       var panel_date = parseDate(entry.tag('effectiveTime').attr('value'));
       if (!panel_date) {
-        var panel_date = parseDate(entry.tag('effectiveTime').tag('low').attr('value'));
+        panel_date = parseDate(entry.tag('effectiveTime').tag('low').attr('value'));
       }
       
       // panel
@@ -1003,10 +1003,10 @@ C32.Labs = function () {
               unit = el.attr('unit');
 
           el = result.tag('referenceRange');
-          var reference_range_text = el.tag('observationRange').tag('text').val();
-              reference_range_low_unit = el.tag('observationRange').tag('low').attr('unit');
-              reference_range_low_value = el.tag('observationRange').tag('low').attr('value');
-              reference_range_high_unit = el.tag('observationRange').tag('high').attr('unit');
+          var reference_range_text = el.tag('observationRange').tag('text').val(),
+              reference_range_low_unit = el.tag('observationRange').tag('low').attr('unit'),
+              reference_range_low_value = el.tag('observationRange').tag('low').attr('value'),
+              reference_range_high_unit = el.tag('observationRange').tag('high').attr('unit'),
               reference_range_high_value = el.tag('observationRange').tag('high').attr('value');
           
           results_data.push({
@@ -2114,9 +2114,12 @@ CCDA.Labs = function () {
         var value = parseFloat(el.attr('value')),
             unit = el.attr('unit');
         
-        // reference range may not be present
-        // reference_low = null;
-        // reference_high = null;
+        el = result.tag('referenceRange');
+        var reference_range_text = el.tag('observationRange').tag('text').val(),
+            reference_range_low_unit = el.tag('observationRange').tag('low').attr('unit'),
+            reference_range_low_value = el.tag('observationRange').tag('low').attr('value'),
+            reference_range_high_unit = el.tag('observationRange').tag('high').attr('unit'),
+            reference_range_high_value = el.tag('observationRange').tag('high').attr('value');
         
         results_data.push({
           date: date,
@@ -2125,9 +2128,14 @@ CCDA.Labs = function () {
           unit: unit,
           code: code,
           code_system: code_system,
-          code_system_name: code_system_name
-          // reference_low: reference_low,
-          // reference_high: reference_high
+          code_system_name: code_system_name,
+          reference_range: {
+            text: reference_range_text,
+            low_unit: reference_range_low_unit,
+            low_value: reference_range_low_value,
+            high_unit: reference_range_high_unit,
+            high_value: reference_range_high_value,
+          }
         });
       }
       

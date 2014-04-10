@@ -323,7 +323,14 @@
           "unit": "g/dl",
           "code": "30313-1",
           "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC"
+          "code_system_name": "LOINC",
+          "reference_range": {
+            "text": "M 13-18 g/dl; F 12-16 g/dl",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
         },
         {
           "date": "2000-03-23T07:00:00.000Z",
@@ -332,7 +339,14 @@
           "unit": "10+3/ul",
           "code": "33765-9",
           "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC"
+          "code_system_name": "LOINC",
+          "reference_range": {
+            "text": null,
+            "low_unit": "10+3/ul",
+            "low_value": "4.3",
+            "high_unit": "10+3/ul",
+            "high_value": "10.8"
+          }
         },
         {
           "date": "2000-03-23T07:00:00.000Z",
@@ -341,7 +355,14 @@
           "unit": "10+3/ul",
           "code": "26515-7",
           "code_system": "2.16.840.1.113883.6.1",
-          "code_system_name": "LOINC"
+          "code_system_name": "LOINC",
+          "reference_range": {
+            "text": null,
+            "low_unit": "10+3/ul",
+            "low_value": "150",
+            "high_unit": "10+3/ul",
+            "high_value": "350"
+          }
         }
       ]
     }
