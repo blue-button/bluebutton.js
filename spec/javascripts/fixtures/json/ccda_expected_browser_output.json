@@ -13,6 +13,7 @@
       "code_system": "2.16.840.1.113883.6.96",
       "code_system_name": "SNOMED CT",
       "severity": "Moderate to severe",
+      "status": "Active",
       "reaction": {
         "name": "Hives",
         "code": "247472004",
@@ -41,6 +42,7 @@
       "code_system": "2.16.840.1.113883.6.96",
       "code_system_name": "SNOMED CT",
       "severity": "Moderate to severe",
+      "status": "Active",
       "reaction": {
         "name": "Wheezing",
         "code": "56018004",
@@ -69,6 +71,7 @@
       "code_system": "2.16.840.1.113883.6.96",
       "code_system_name": "SNOMED CT",
       "severity": "Moderate to severe",
+      "status": "Active",
       "reaction": {
         "name": "Nausea",
         "code": "73879007",
@@ -98,8 +101,8 @@
       "family": "Everyman"
     },
     "dob": "1954-11-25T08:00:00.000Z",
-    "gender": "Male",
-    "marital_status": "Married",
+    "gender": "male",
+    "marital_status": "married",
     "address": {
       "street": [
         "17 Daws Rd."
@@ -180,6 +183,7 @@
       },
       "performer": {
         "name": "General Physician",
+        "code": "59058001",
         "code_system": "2.16.840.1.113883.6.96",
         "code_system_name": "SNOMED CT"
       },
@@ -315,27 +319,33 @@
         {
           "date": "2000-03-23T07:00:00.000Z",
           "name": "HGB",
-          "value": 13,
+          "value": 13.2,
           "unit": "g/dl",
           "code": "30313-1",
           "code_system": "2.16.840.1.113883.6.1",
           "code_system_name": "LOINC",
-          "reference": {
-            "low": null,
-            "high": null
+          "reference_range": {
+            "text": "M 13-18 g/dl; F 12-16 g/dl",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
           }
         },
         {
           "date": "2000-03-23T07:00:00.000Z",
           "name": "WBC",
-          "value": 6,
+          "value": 6.7,
           "unit": "10+3/ul",
           "code": "33765-9",
           "code_system": "2.16.840.1.113883.6.1",
           "code_system_name": "LOINC",
-          "reference": {
-            "low": null,
-            "high": null
+          "reference_range": {
+            "text": null,
+            "low_unit": "10+3/ul",
+            "low_value": "4.3",
+            "high_unit": "10+3/ul",
+            "high_value": "10.8"
           }
         },
         {
@@ -346,9 +356,12 @@
           "code": "26515-7",
           "code_system": "2.16.840.1.113883.6.1",
           "code_system_name": "LOINC",
-          "reference": {
-            "low": null,
-            "high": null
+          "reference_range": {
+            "text": null,
+            "low_unit": "10+3/ul",
+            "low_value": "150",
+            "high_unit": "10+3/ul",
+            "high_value": "350"
           }
         }
       ]

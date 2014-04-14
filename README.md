@@ -63,7 +63,7 @@ Each section contains a convenience `json()` method.
 bb.demographics().json();
 
 // Returns a JSON representation of the entire document
-bb.document().json();
+bb.data.json();
 ```
 
 ## CommonJS and AMD support

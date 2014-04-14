@@ -972,7 +972,7 @@ C32.Labs = function () {
       el = entry.tag('effectiveTime');
       var panel_date = parseDate(entry.tag('effectiveTime').attr('value'));
       if (!panel_date) {
-        var panel_date = parseDate(entry.tag('effectiveTime').tag('low').attr('value'));
+        panel_date = parseDate(entry.tag('effectiveTime').tag('low').attr('value'));
       }
       
       // panel
@@ -1003,10 +1003,10 @@ C32.Labs = function () {
               unit = el.attr('unit');
 
           el = result.tag('referenceRange');
-          var reference_range_text = el.tag('observationRange').tag('text').val();
-              reference_range_low_unit = el.tag('observationRange').tag('low').attr('unit');
-              reference_range_low_value = el.tag('observationRange').tag('low').attr('value');
-              reference_range_high_unit = el.tag('observationRange').tag('high').attr('unit');
+          var reference_range_text = el.tag('observationRange').tag('text').val(),
+              reference_range_low_unit = el.tag('observationRange').tag('low').attr('unit'),
+              reference_range_low_value = el.tag('observationRange').tag('low').attr('value'),
+              reference_range_high_unit = el.tag('observationRange').tag('high').attr('unit'),
               reference_range_high_value = el.tag('observationRange').tag('high').attr('value');
           
           results_data.push({
@@ -1446,8 +1446,8 @@ C32.Vitals = function () {
         el = result.tag('code');
         var name = el.attr('displayName'),
             code = el.attr('code'),
-            // code_system = el.attr('codeSystem'),
-            // code_system_name = el.attr('codeSystemName');
+            code_system = el.attr('codeSystem'),
+            code_system_name = el.attr('codeSystemName');
         
         el = result.tag('value');
         var value = parseFloat(el.attr('value')),
@@ -2093,8 +2093,8 @@ CCDA.Labs = function () {
       el = entry.tag('code');
       var panel_name = el.attr('displayName'),
           panel_code = el.attr('code'),
-          // panel_code_system = el.attr('codeSystem'),
-          // panel_code_system_name = el.attr('codeSystemName');
+          panel_code_system = el.attr('codeSystem'),
+          panel_code_system_name = el.attr('codeSystemName');
       
       results = entry.elsByTag('component');
       results_data = [];
@@ -2107,16 +2107,19 @@ CCDA.Labs = function () {
         el = result.tag('code');
         var name = el.attr('displayName'),
             code = el.attr('code'),
-            // code_system = el.attr('codeSystem'),
-            // code_system_name = el.attr('codeSystemName');
+            code_system = el.attr('codeSystem'),
+            code_system_name = el.attr('codeSystemName');
         
         el = result.tag('value');
         var value = parseFloat(el.attr('value')),
             unit = el.attr('unit');
         
-        // reference range may not be present
-        // reference_low = null;
-        // reference_high = null;
+        el = result.tag('referenceRange');
+        var reference_range_text = el.tag('observationRange').tag('text').val(),
+            reference_range_low_unit = el.tag('observationRange').tag('low').attr('unit'),
+            reference_range_low_value = el.tag('observationRange').tag('low').attr('value'),
+            reference_range_high_unit = el.tag('observationRange').tag('high').attr('unit'),
+            reference_range_high_value = el.tag('observationRange').tag('high').attr('value');
         
         results_data.push({
           date: date,
@@ -2124,18 +2127,23 @@ CCDA.Labs = function () {
           value: value,
           unit: unit,
           code: code,
-          // code_system: code_system,
-          // code_system_name: code_system_name,
-          // reference_low: reference_low,
-          // reference_high: reference_high
+          code_system: code_system,
+          code_system_name: code_system_name,
+          reference_range: {
+            text: reference_range_text,
+            low_unit: reference_range_low_unit,
+            low_value: reference_range_low_value,
+            high_unit: reference_range_high_unit,
+            high_value: reference_range_high_value,
+          }
         });
       }
       
       data.push({
         name: panel_name,
         code: panel_code,
-        // code_system: panel_code_system,
-        // code_system_name: panel_code_system_name,
+        code_system: panel_code_system,
+        code_system_name: panel_code_system_name,
         results: results_data
       });
     }
@@ -2553,8 +2561,8 @@ CCDA.Vitals = function () {
         el = result.tag('code');
         var name = el.attr('displayName'),
             code = el.attr('code'),
-            // code_system = el.attr('codeSystem'),
-            // code_system_name = el.attr('codeSystemName');
+            code_system = el.attr('codeSystem'),
+            code_system_name = el.attr('codeSystemName');
         
         el = result.tag('value');
         var value = parseFloat(el.attr('value')),
@@ -2563,8 +2571,8 @@ CCDA.Vitals = function () {
         results_data.push({
           name: name,
           code: code,
-          // code_system: code_system,
-          // code_system_name: code_system_name,
+          code_system: code_system,
+          code_system_name: code_system_name,
           value: value,
           unit: unit
         });
