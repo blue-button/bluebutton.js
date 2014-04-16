@@ -5,9 +5,9 @@ var runJsonTests = function(expectedOutput, bb) {
   }
 
   describe('document', function() {
-    it('should match the ccda type', function() {
-      var actual = bb.document().type;
-      var expected = expectedOutput.document.type;
+    it('should match document metadata', function() {
+      var actual = toJSON(bb.document());
+      var expected = expectedOutput.document;
 
       expect(actual).toEqual(expected);
     });

@@ -1,6 +1,23 @@
 {
   "document": {
-    "type": "c32"
+    "type": "c32",
+    "author": {
+      "name": {
+        "prefix": null,
+        "given": [],
+        "family": "Auto Generated"
+      },
+      "address": {
+        "street": [],
+        "city": null,
+        "state": null,
+        "zip": null,
+        "country": null
+      },
+      "phone": {
+        "work": "tel:+1-301-975-3251"
+      }
+    }
   },
   "allergies": [
     {
