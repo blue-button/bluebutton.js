@@ -1,4 +1,4 @@
-var runJsonTests = function(expectedOutput, bb, eachFn) {
+var runJsonTests = function(expectedOutput, bb) {
 
   function toJSON(target) {
     return JSON.parse(target.json())
@@ -15,7 +15,7 @@ var runJsonTests = function(expectedOutput, bb, eachFn) {
 
   describe('allergies', function() {
     var allergies = toJSON(bb.allergies());
-    eachFn(allergies, function(actual, i) {
+    _.each(allergies, function(actual, i) {
       it('should output the correct allergy at index['+i+']', function() {
         var expected = expectedOutput.allergies[i];
         expect(actual).toEqual(expected);
@@ -35,7 +35,7 @@ var runJsonTests = function(expectedOutput, bb, eachFn) {
 
   describe('encounters', function() {
     var encounters = toJSON(bb.encounters());
-    eachFn(encounters, function(actual, i) {
+    _.each(encounters, function(actual, i) {
       it('should output the correct encounter at index['+i+']', function() {
         var expected = expectedOutput.encounters[i];
         expect(actual).toEqual(expected);
@@ -45,7 +45,7 @@ var runJsonTests = function(expectedOutput, bb, eachFn) {
 
   describe('immunizations', function() {
     var immunizations = toJSON(bb.immunizations());
-    eachFn(immunizations, function(actual, i) {
+    _.each(immunizations, function(actual, i) {
       it('should output the correct immunization at index['+i+']', function() {
         var expected = expectedOutput.immunizations[i];
         expect(actual).toEqual(expected);
@@ -55,7 +55,7 @@ var runJsonTests = function(expectedOutput, bb, eachFn) {
 
   describe('labs', function() {
     var labs = toJSON(bb.labs());
-    eachFn(labs, function(actual, i) {
+    _.each(labs, function(actual, i) {
       it('should output the correct lab at index['+i+']', function() {
         var expected = expectedOutput.labs[i];
         expect(actual).toEqual(expected);
@@ -65,7 +65,7 @@ var runJsonTests = function(expectedOutput, bb, eachFn) {
 
   describe('medications', function() {
     var medications = toJSON(bb.medications());
-    eachFn(medications, function(actual, i) {
+    _.each(medications, function(actual, i) {
       it('should output the correct medication at index['+i+']', function() {
         var expected = expectedOutput.medications[i];
         expect(actual).toEqual(expected);
@@ -75,7 +75,7 @@ var runJsonTests = function(expectedOutput, bb, eachFn) {
 
   describe('problems', function() {
     var problems = toJSON(bb.problems());
-    eachFn(problems, function(actual, i) {
+    _.each(problems, function(actual, i) {
       it('should output the correct problem at index['+i+']', function() {
         var expected = expectedOutput.problems[i];
         expect(actual).toEqual(expected);
@@ -85,7 +85,7 @@ var runJsonTests = function(expectedOutput, bb, eachFn) {
 
   describe('procedures', function() {
     var procedures = toJSON(bb.procedures());
-    eachFn(procedures, function(actual, i) {
+    _.each(procedures, function(actual, i) {
       it('should output the correct procedure at index['+i+']', function() {
         var expected = expectedOutput.procedures[i];
         expect(actual).toEqual(expected);
@@ -95,7 +95,7 @@ var runJsonTests = function(expectedOutput, bb, eachFn) {
 
   describe('vitals', function() {
     var vitals = toJSON(bb.vitals());
-    eachFn(vitals, function(actual, i) {
+    _.each(vitals, function(actual, i) {
       it('should output the correct vital at index['+i+']', function() {
         var expected = expectedOutput.vitals[i];
         expect(actual).toEqual(expected);
@@ -114,8 +114,10 @@ var runJsonTests = function(expectedOutput, bb, eachFn) {
 
 };
 
+// Node-specific code
 if (typeof exports !== 'undefined') {
   if (typeof module !== 'undefined' && module.exports) {
     module.exports = runJsonTests;
+    var _ = require('underscore');
   }
 }

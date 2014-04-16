@@ -5,7 +5,7 @@ define(['../../../build/bluebutton'], function(BlueButton) {
     var bb = BlueButton(record);
 
     // the tests are defined in helpers/shared_spec.js
-    runJsonTests(expectedOutput, bb, _.each);
+    runJsonTests(expectedOutput, bb);
 
   });
 });

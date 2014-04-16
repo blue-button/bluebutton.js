@@ -1,6 +1,5 @@
 var fs = require('fs'),
     path = require('path'),
-    _ = require('underscore'),
     runJsonTests = require('../helpers/shared_spec'),
     BlueButton = require('../../../build/bluebutton');
 
@@ -21,6 +20,6 @@ describe('CCDA', function() {
   });
 
   // the tests are defined in helpers/shared_spec.js
-  runJsonTests(expectedOutput, bb, _.each);
+  runJsonTests(expectedOutput, bb);
 
 });
