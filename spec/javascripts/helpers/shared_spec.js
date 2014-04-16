@@ -1,4 +1,4 @@
-var runCCDATests = function(expectedOutput, bb, eachFn) {
+var runJsonTests = function(expectedOutput, bb, eachFn) {
 
   function toJSON(target) {
     return JSON.parse(target.json())
@@ -116,6 +116,6 @@ var runCCDATests = function(expectedOutput, bb, eachFn) {
 
 if (typeof exports !== 'undefined') {
   if (typeof module !== 'undefined' && module.exports) {
-    module.exports = runCCDATests;
+    module.exports = runJsonTests;
   }
 }

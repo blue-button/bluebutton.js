@@ -1,7 +1,7 @@
 var fs = require('fs'),
     path = require('path'),
     _ = require('underscore'),
-    runCCDATests = require('../helpers/ccda_shared_spec'),
+    runJsonTests = require('../helpers/shared_spec'),
     BlueButton = require('../../../build/bluebutton');
 
 describe('CCDA', function() {
@@ -20,7 +20,7 @@ describe('CCDA', function() {
     });
   });
 
-  // the tests are defined in helpers/ccda_shared_spec.js
-  runCCDATests(expectedOutput, bb, _.each);
+  // the tests are defined in helpers/shared_spec.js
+  runJsonTests(expectedOutput, bb, _.each);
 
 });

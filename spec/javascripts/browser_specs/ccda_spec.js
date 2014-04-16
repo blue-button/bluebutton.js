@@ -3,7 +3,7 @@ describe('CCDA', function() {
   var expectedOutput = getJSONFixture('ccda_expected_browser_output.json');
   var bb = BlueButton(record);
 
-  // the tests are defined in helpers/ccda_shared_spec.js
-  runCCDATests(expectedOutput, bb, _.each);
+  // the tests are defined in helpers/shared_spec.js
+  runJsonTests(expectedOutput, bb, _.each);
 
 });

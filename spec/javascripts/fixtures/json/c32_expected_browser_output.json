@@ -1,0 +1,867 @@
+{
+  "document": {
+    "type": "c32"
+  },
+  "allergies": [
+    {
+      "date_range": {
+        "start": null,
+        "end": null
+      },
+      "name": null,
+      "code": null,
+      "code_system": null,
+      "code_system_name": null,
+      "status": "Active",
+      "severity": null,
+      "reaction": {
+        "name": "Hives",
+        "code": "247472004",
+        "code_system": "2.16.840.1.113883.6.96"
+      },
+      "reaction_type": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "allergen": {
+        "name": "Penicillin",
+        "code": "70618",
+        "code_system": "2.16.840.1.113883.6.88",
+        "code_system_name": null
+      }
+    },
+    {
+      "date_range": {
+        "start": null,
+        "end": null
+      },
+      "name": null,
+      "code": null,
+      "code_system": null,
+      "code_system_name": null,
+      "status": "Active",
+      "severity": null,
+      "reaction": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      },
+      "reaction_type": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "allergen": {
+        "name": "Aspirin",
+        "code": "1191",
+        "code_system": "2.16.840.1.113883.6.88",
+        "code_system_name": null
+      }
+    },
+    {
+      "date_range": {
+        "start": null,
+        "end": null
+      },
+      "name": null,
+      "code": null,
+      "code_system": null,
+      "code_system_name": null,
+      "status": "Active",
+      "severity": "moderate",
+      "reaction": {
+        "name": "Nausea",
+        "code": "73879007",
+        "code_system": "2.16.840.1.113883.6.96"
+      },
+      "reaction_type": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "allergen": {
+        "name": "Codeine",
+        "code": "2670",
+        "code_system": "2.16.840.1.113883.6.88",
+        "code_system_name": null
+      }
+    }
+  ],
+  "demographics": {
+    "name": {
+      "prefix": null,
+      "given": [
+        "FirstName",
+        "MiddleName"
+      ],
+      "family": "LastName"
+    },
+    "dob": "1984-07-04T07:00:00.000Z",
+    "gender": "female",
+    "marital_status": "single",
+    "address": {
+      "street": [
+        "100 Bureau Drive"
+      ],
+      "city": "Gaithersburg",
+      "state": "MD",
+      "zip": "20899",
+      "country": null
+    },
+    "phone": {
+      "home": "tel:1-301-555-5555",
+      "work": null,
+      "mobile": null
+    },
+    "email": null,
+    "language": "en-US",
+    "race": null,
+    "ethnicity": null,
+    "religion": null,
+    "birthplace": {
+      "state": null,
+      "zip": null,
+      "country": null
+    },
+    "guardian": {
+      "name": {
+        "given": [],
+        "family": null
+      },
+      "relationship": null,
+      "address": {
+        "street": [],
+        "city": null,
+        "state": null,
+        "zip": null,
+        "country": null
+      },
+      "phone": {
+        "home": null
+      }
+    },
+    "provider": {
+      "organization": null,
+      "phone": null,
+      "address": {
+        "street": [],
+        "city": null,
+        "state": null,
+        "zip": null,
+        "country": null
+      }
+    }
+  },
+  "encounters": [
+    {
+      "date": "2000-04-07T07:00:00.000Z",
+      "name": "Office consultation - 15 minutes",
+      "code": "99241",
+      "code_system": "2.16.840.1.113883.6.12",
+      "code_system_name": "CPT",
+      "code_system_version": "4",
+      "finding": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      },
+      "translation": {
+        "name": "Ambulatory",
+        "code": "AMB",
+        "code_system": "2.16.840.1.113883.5.4",
+        "code_system_name": "HL7 ActEncounterCode"
+      },
+      "performer": {
+        "name": "Performer Name",
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "location": {
+        "organization": "Good Health Clinic",
+        "street": [],
+        "city": null,
+        "state": null,
+        "zip": null,
+        "country": null
+      }
+    }
+  ],
+  "immunizations": [
+    {
+      "date": "1999-10-31T07:00:00.000Z",
+      "product": {
+        "name": "Influenza virus vaccine",
+        "code": "88",
+        "code_system": "2.16.840.1.113883.6.59",
+        "code_system_name": "CVX",
+        "translation": {
+          "name": "influenza, live, intranasal",
+          "code": "111",
+          "code_system": "2.16.840.1.113883.6.59",
+          "code_system_name": "CVX"
+        }
+      },
+      "route": {
+        "name": "Intramuscular injection",
+        "code": "IM",
+        "code_system": "2.16.840.1.113883.5.112",
+        "code_system_name": "RouteOfAdministration"
+      },
+      "instructions": null,
+      "education_type": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      }
+    },
+    {
+      "date": "1998-12-15T08:00:00.000Z",
+      "product": {
+        "name": "Influenza virus vaccine",
+        "code": "88",
+        "code_system": "2.16.840.1.113883.6.59",
+        "code_system_name": "CVX",
+        "translation": {
+          "name": "influenza, live, intranasal",
+          "code": "111",
+          "code_system": "2.16.840.1.113883.6.59",
+          "code_system_name": "CVX"
+        }
+      },
+      "route": {
+        "name": "Intramuscular injection",
+        "code": "IM",
+        "code_system": "2.16.840.1.113883.5.112",
+        "code_system_name": "RouteOfAdministration"
+      },
+      "instructions": null,
+      "education_type": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      }
+    },
+    {
+      "date": "1998-12-15T08:00:00.000Z",
+      "product": {
+        "name": "Pneumococcal polysaccharide vaccine",
+        "code": "33",
+        "code_system": "2.16.840.1.113883.6.59",
+        "code_system_name": "CVX",
+        "translation": {
+          "name": "Pneumococcal NOS",
+          "code": "109",
+          "code_system": "2.16.840.1.113883.6.59",
+          "code_system_name": "CVX"
+        }
+      },
+      "route": {
+        "name": "Intramuscular injection",
+        "code": "IM",
+        "code_system": "2.16.840.1.113883.5.112",
+        "code_system_name": "RouteOfAdministration"
+      },
+      "instructions": null,
+      "education_type": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      }
+    },
+    {
+      "date": "1997-08-15T07:00:00.000Z",
+      "product": {
+        "name": "Tetanus and diphtheria toxoids",
+        "code": "09",
+        "code_system": "2.16.840.1.113883.6.59",
+        "code_system_name": "CVX",
+        "translation": {
+          "name": "Tetanus and diphtheria toxoids - preservative free",
+          "code": "113",
+          "code_system": "2.16.840.1.113883.6.59",
+          "code_system_name": "CVX"
+        }
+      },
+      "route": {
+        "name": "Intramuscular injection",
+        "code": "IM",
+        "code_system": "2.16.840.1.113883.5.112",
+        "code_system_name": "RouteOfAdministration"
+      },
+      "instructions": null,
+      "education_type": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      }
+    }
+  ],
+  "labs": [
+    {
+      "name": "CBC WO DIFFERENTIAL",
+      "code": "43789009",
+      "code_system": "2.16.840.1.113883.6.96",
+      "code_system_name": null,
+      "date": "2000-03-23T07:00:00.000Z",
+      "results": [
+        {
+          "date": "2000-03-23T07:00:00.000Z",
+          "name": "HGB",
+          "value": 13.2,
+          "unit": "g/dl",
+          "code": "30313-1",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": null,
+          "reference_range": {
+            "text": "M 13-18 g/dl; F 12-16 g/dl",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2000-03-23T07:00:00.000Z",
+          "name": "WBC",
+          "value": 6.7,
+          "unit": "10+3/ul",
+          "code": "33765-9",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": null,
+          "reference_range": {
+            "text": null,
+            "low_unit": "10+3/ul",
+            "low_value": "4.3",
+            "high_unit": "10+3/ul",
+            "high_value": "10.8"
+          }
+        },
+        {
+          "date": "2000-03-23T07:00:00.000Z",
+          "name": "PLT",
+          "value": 123,
+          "unit": "10+3/ul",
+          "code": "26515-7",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": null,
+          "reference_range": {
+            "text": null,
+            "low_unit": "10+3/ul",
+            "low_value": "150",
+            "high_unit": "10+3/ul",
+            "high_value": "350"
+          }
+        }
+      ]
+    },
+    {
+      "name": "LYTES",
+      "code": "20109005",
+      "code_system": "2.16.840.1.113883.6.96",
+      "code_system_name": "SNOMED CT",
+      "date": "2000-04-06T07:00:00.000Z",
+      "results": [
+        {
+          "date": "2000-04-06T07:00:00.000Z",
+          "name": "NA",
+          "value": 140,
+          "unit": "meq/l",
+          "code": "2951-2",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": null,
+          "reference_range": {
+            "text": null,
+            "low_unit": "meq/l",
+            "low_value": "135",
+            "high_unit": "meq/l",
+            "high_value": "145"
+          }
+        },
+        {
+          "date": "2000-04-06T07:00:00.000Z",
+          "name": "K",
+          "value": 4,
+          "unit": "meq/l",
+          "code": "2823-3",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": null,
+          "reference_range": {
+            "text": null,
+            "low_unit": "meq/l",
+            "low_value": "3.5",
+            "high_unit": "meq/l",
+            "high_value": "5.0"
+          }
+        },
+        {
+          "date": "2000-04-06T07:00:00.000Z",
+          "name": "CL",
+          "value": 102,
+          "unit": "meq/l",
+          "code": "2075-0",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": null,
+          "reference_range": {
+            "text": null,
+            "low_unit": "meq/l",
+            "low_value": "98",
+            "high_unit": "meq/l",
+            "high_value": "106"
+          }
+        },
+        {
+          "date": "2000-04-06T07:00:00.000Z",
+          "name": "HCO3",
+          "value": 35,
+          "unit": "meq/l",
+          "code": "1963-8",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": null,
+          "reference_range": {
+            "text": null,
+            "low_unit": "meq/l",
+            "low_value": "18",
+            "high_unit": "meq/l",
+            "high_value": "23"
+          }
+        }
+      ]
+    }
+  ],
+  "medications": [
+    {
+      "date_range": {
+        "start": "Invalid Date",
+        "end": null
+      },
+      "product": {
+        "name": "Albuterol 0.09 MG/ACTUAT inhalant solution",
+        "code": "307782",
+        "code_system": "2.16.840.1.113883.6.88",
+        "translation": {
+          "name": null,
+          "code": null,
+          "code_system": null,
+          "code_system_name": null
+        }
+      },
+      "dose_quantity": {
+        "value": "2",
+        "unit": null
+      },
+      "rate_quantity": {
+        "value": null,
+        "unit": null
+      },
+      "precondition": {
+        "name": "Wheezing",
+        "code": "56018004",
+        "code_system": "2.16.840.1.113883.6.96"
+      },
+      "reason": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      },
+      "route": {
+        "name": "Inhalation, oral",
+        "code": "IPINHL",
+        "code_system": "2.16.840.1.113883.5.112",
+        "code_system_name": "HL7 RouteOfAdministration"
+      },
+      "vehicle": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "administration": {
+        "name": "Puff",
+        "code": "415215001",
+        "code_system": "2.16.840.1.113883.6.96",
+        "code_system_name": null
+      },
+      "prescriber": {
+        "organization": null,
+        "person": null
+      }
+    },
+    {
+      "date_range": {
+        "start": null,
+        "end": null
+      },
+      "product": {
+        "name": "Clopidogrel 75 MG oral tablet",
+        "code": "309362",
+        "code_system": "2.16.840.1.113883.6.88",
+        "translation": {
+          "name": "Plavix",
+          "code": "174742",
+          "code_system": "2.16.840.1.113883.6.88",
+          "code_system_name": "RxNorm"
+        }
+      },
+      "dose_quantity": {
+        "value": "1",
+        "unit": null
+      },
+      "rate_quantity": {
+        "value": null,
+        "unit": null
+      },
+      "precondition": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      },
+      "reason": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      },
+      "route": {
+        "name": "Oral",
+        "code": "C38288",
+        "code_system": "2.16.840.1.113883.3.26.1.1",
+        "code_system_name": "FDA RouteOfAdministration"
+      },
+      "vehicle": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "administration": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "prescriber": {
+        "organization": null,
+        "person": null
+      }
+    },
+    {
+      "date_range": {
+        "start": "2007-11-21T08:00:00.000Z",
+        "end": null
+      },
+      "product": {
+        "name": "Metoprolol 25 MG oral tablet",
+        "code": "430618",
+        "code_system": "2.16.840.1.113883.6.88",
+        "translation": {
+          "name": null,
+          "code": null,
+          "code_system": null,
+          "code_system_name": null
+        }
+      },
+      "dose_quantity": {
+        "value": "1",
+        "unit": null
+      },
+      "rate_quantity": {
+        "value": null,
+        "unit": null
+      },
+      "precondition": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      },
+      "reason": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      },
+      "route": {
+        "name": "Oral",
+        "code": "C38288",
+        "code_system": "2.16.840.1.113883.3.26.1.1",
+        "code_system_name": "FDA RouteOfAdministration"
+      },
+      "vehicle": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "administration": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "prescriber": {
+        "organization": null,
+        "person": null
+      }
+    },
+    {
+      "date_range": {
+        "start": "2000-03-28T07:00:00.000Z",
+        "end": null
+      },
+      "product": {
+        "name": "Prednisone 20 MG oral tablet",
+        "code": "312615",
+        "code_system": "2.16.840.1.113883.6.88",
+        "translation": {
+          "name": "Deltasone",
+          "code": "227730",
+          "code_system": "2.16.840.1.113883.6.88",
+          "code_system_name": null
+        }
+      },
+      "dose_quantity": {
+        "value": "1",
+        "unit": null
+      },
+      "rate_quantity": {
+        "value": null,
+        "unit": null
+      },
+      "precondition": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      },
+      "reason": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      },
+      "route": {
+        "name": "Oral",
+        "code": "C38288",
+        "code_system": "2.16.840.1.113883.3.26.1.1",
+        "code_system_name": "FDA RouteOfAdministration"
+      },
+      "vehicle": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "administration": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "prescriber": {
+        "organization": null,
+        "person": null
+      }
+    },
+    {
+      "date_range": {
+        "start": "2000-03-28T07:00:00.000Z",
+        "end": "2000-04-04T07:00:00.000Z"
+      },
+      "product": {
+        "name": "Cephalexin 500 MG oral tablet",
+        "code": "197454",
+        "code_system": "2.16.840.1.113883.6.88",
+        "translation": {
+          "name": "Keflex",
+          "code": "203167",
+          "code_system": "2.16.840.1.113883.6.88",
+          "code_system_name": "RxNorm"
+        }
+      },
+      "dose_quantity": {
+        "value": "1",
+        "unit": null
+      },
+      "rate_quantity": {
+        "value": null,
+        "unit": null
+      },
+      "precondition": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      },
+      "reason": {
+        "name": "Bronchitis",
+        "code": "32398004",
+        "code_system": "2.16.840.1.113883.6.96"
+      },
+      "route": {
+        "name": "Oral",
+        "code": "C38288",
+        "code_system": "2.16.840.1.113883.3.26.1.1",
+        "code_system_name": "FDA RouteOfAdministration"
+      },
+      "vehicle": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "administration": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "prescriber": {
+        "organization": null,
+        "person": null
+      }
+    }
+  ],
+  "problems": [
+    {
+      "date_range": {
+        "start": "Invalid Date",
+        "end": null
+      },
+      "name": "Asthma",
+      "status": "Active",
+      "age": null,
+      "code": "195967001",
+      "code_system": "2.16.840.1.113883.6.96"
+    },
+    {
+      "date_range": {
+        "start": null,
+        "end": null
+      },
+      "name": "Pneumonia",
+      "status": "Resolved",
+      "age": null,
+      "code": "233604007",
+      "code_system": "2.16.840.1.113883.6.96"
+    },
+    {
+      "date_range": {
+        "start": null,
+        "end": null
+      },
+      "name": "Pneumonia",
+      "status": "Resolved",
+      "age": null,
+      "code": "233604007",
+      "code_system": "2.16.840.1.113883.6.96"
+    },
+    {
+      "date_range": {
+        "start": null,
+        "end": null
+      },
+      "name": "Myocardial infarction",
+      "status": "Resolved",
+      "age": null,
+      "code": "22298006",
+      "code_system": "2.16.840.1.113883.6.96"
+    },
+    {
+      "date_range": {
+        "start": null,
+        "end": null
+      },
+      "name": "Patient currently pregnant",
+      "status": null,
+      "age": null,
+      "code": "77386006",
+      "code_system": "2.16.840.1.113883.6.96"
+    }
+  ],
+  "procedures": [
+    {
+      "date": "Invalid Date",
+      "name": "Total hip replacement",
+      "code": "52734007",
+      "code_system": "2.16.840.1.113883.6.96",
+      "specimen": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      },
+      "performer": {
+        "organization": null,
+        "street": [],
+        "city": null,
+        "state": null,
+        "zip": null,
+        "country": null,
+        "phone": null
+      },
+      "device": {
+        "name": "Total hip replacement prosthesis",
+        "code": "304120007",
+        "code_system": "2.16.840.1.113883.6.96"
+      }
+    }
+  ],
+  "vitals": [
+    {
+      "date": "1999-11-14T08:00:00.000Z",
+      "results": [
+        {
+          "name": "Patient Body Height",
+          "code": "8302-2",
+          "value": 177,
+          "unit": "cm"
+        },
+        {
+          "name": "Patient Body Weight - Measured",
+          "code": "3141-9",
+          "value": 86,
+          "unit": "kg"
+        },
+        {
+          "name": "Intravascular Systolic",
+          "code": "8480-6",
+          "value": 132,
+          "unit": "mm[Hg]"
+        },
+        {
+          "name": "Intravascular Diastolic",
+          "code": "11377-9",
+          "value": 86,
+          "unit": "mm[Hg]"
+        }
+      ]
+    },
+    {
+      "date": "2000-04-07T07:00:00.000Z",
+      "results": [
+        {
+          "name": "Patient Body Height",
+          "code": "8302-2",
+          "value": 177,
+          "unit": "cm"
+        },
+        {
+          "name": "Patient Body Weight - Measured",
+          "code": "3141-9",
+          "value": 88,
+          "unit": "kg"
+        },
+        {
+          "name": "Intravascular Systolic",
+          "code": "8480-6",
+          "value": 145,
+          "unit": "mm[Hg]"
+        },
+        {
+          "name": "Intravascular Diastolic",
+          "code": "11377-9",
+          "value": 88,
+          "unit": "mm[Hg]"
+        }
+      ]
+    }
+  ]
+}
