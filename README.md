@@ -127,3 +127,8 @@ require(['bluebutton', 'text!examples/xml/ccd.xml'], function (BlueButton, xml) 
 Run `grunt` to build the library. All builds are placed in the [`build/`](/build) directory.
 
 Be sure to version up `package.json`, `bower.json`, and add any changes to `History.md` before releasing.
+
+
+## Running the Test Suite
+
+Run `grunt test` to run the test suite, which is important to do after making any changes to the way data parses. Before you run the tests the first time, you will need to `bower install` to download the sample CCDA the tests expect to use (and `npm install -g bower` if you don't have bower yet). The actual tests live in the [`spec/`](/spec) directory.
