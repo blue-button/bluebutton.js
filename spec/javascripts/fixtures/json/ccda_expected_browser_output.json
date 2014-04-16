@@ -1,6 +1,25 @@
 {
   "document": {
-    "type": "ccda"
+    "type": "ccda",
+    "author": {
+      "name": {
+        "prefix": null,
+        "given": ["Henry"],
+        "family": "Seven"
+      },
+      "address": {
+        "street": [
+          "21 North Ave."
+        ],
+        "city": "Burlington",
+        "state": "MA",
+        "zip": "02368",
+        "country": "USA"
+      },
+      "phone": {
+        "work": "tel:(555)555-1003"
+      }
+    }
   },
   "allergies": [
     {

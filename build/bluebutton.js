@@ -53,6 +53,52 @@ var Core = function () {
     var day = str.substr(6, 2);
     return new Date(year, month, day);
   };
+
+  /*
+   * Parses an HL7 name (prefix / given [] / family)
+   */
+  var parseName = function (nameEl) {
+    var prefix = nameEl.tag('prefix').val();
+    
+    var els = nameEl.elsByTag('given');
+    var given = [];
+    for (var i = 0; i < els.length; i++) {
+      given.push(els[i].val());
+    }
+    
+    var family = nameEl.tag('family').val();
+
+    return {
+      prefix: prefix,
+      given: given,
+      family: family
+    };
+  };
+
+  /*
+   * Parses an HL7 address (streetAddressLine [], city, state, postalCode, country)
+   */
+  var parseAddress = function (addrEl) {
+    var els = addrEl.elsByTag('streetAddressLine');
+    var street = [];
+    
+    for (var i = 0; i < els.length; i++) {
+      street.push(els[i].val());
+    }
+    
+    var city = addrEl.tag('city').val(),
+        state = addrEl.tag('state').val(),
+        zip = addrEl.tag('postalCode').val(),
+        country = addrEl.tag('country').val();
+
+    return {
+      street: street,
+      city: city,
+      state: state,
+      zip: zip,
+      country: country
+    };
+  };
   
   /*
    * Removes all `null` properties from an object.
@@ -76,6 +122,8 @@ var Core = function () {
   // Reveal public methods
   return {
     parseDate: parseDate,
+    parseName: parseName,
+    parseAddress: parseAddress,
     trim: trim
   };
   
@@ -516,6 +564,8 @@ C32.Demographics = function () {
   // Dependancies
   ///////////////////////////
   var parseDate = Core.parseDate;
+  var parseName = Core.parseName;
+  var parseAddress = Core.parseAddress;
   
   // Properties
   ///////////////////////////
@@ -535,16 +585,7 @@ C32.Demographics = function () {
     el = xmlDOM.template('2.16.840.1.113883.3.88.11.32.1');
     patient = el.tag('patientRole');
     el = patient.tag('patient').tag('name');
-    var prefix = el.tag('prefix').val();
-    
-    els = el.elsByTag('given');
-    var given = [];
-    
-    for (var i = 0; i < els.length; i++) {
-      given.push(els[i].val());
-    }
-    
-    var family = el.tag('family').val();
+    var patient_name_dict = parseName(el);
     
     el = patient.tag('patient');
     var dob = parseDate(el.tag('birthTime').attr('value')),
@@ -552,17 +593,7 @@ C32.Demographics = function () {
         marital_status = Codes.maritalStatus(el.tag('maritalStatusCode').attr('code'));
     
     el = patient.tag('addr');
-    els = el.elsByTag('streetAddressLine');
-    var street = [];
-    
-    for (var i = 0; i < els.length; i++) {
-      street.push(els[i].val());
-    }
-    
-    var city = el.tag('city').val(),
-        state = el.tag('state').val(),
-        zip = el.tag('postalCode').val(),
-        country = el.tag('country').val();
+    var patient_address_dict = parseAddress(el);
     
     el = patient.tag('telecom');
     var home = el.attr('value'),
@@ -577,70 +608,30 @@ C32.Demographics = function () {
         religion = patient.tag('religiousAffiliationCode').attr('displayName');
     
     el = patient.tag('birthplace');
-    var birthplace_state = el.tag('state').val(),
-        birthplace_zip = el.tag('postalCode').val(),
-        birthplace_country = el.tag('country').val();
+    var birthplace_dict = parseAddress(el);
     
     el = patient.tag('guardian');
     var guardian_relationship = el.tag('code').attr('displayName'),
         guardian_home = el.tag('telecom').attr('value');
-    el = el.tag('guardianPerson');
     
-    els = el.elsByTag('given');
-    var guardian_given = [];
-    
-    for (var i = 0; i < els.length; i++) {
-      guardian_given.push(els[i].val());
-    }
-    
-    var guardian_family = el.tag('family').val();
+    el = el.tag('guardianPerson').tag('name');
+    var guardian_name_dict = parseName(el);
     
     el = patient.tag('guardian').tag('addr');
-    
-    els = el.elsByTag('streetAddressLine');
-    var guardian_street = [];
-    
-    for (var i = 0; i < els.length; i++) {
-      guardian_street.push(els[i].val());
-    }
-    
-    var guardian_city = el.tag('city').val(),
-        guardian_state = el.tag('state').val(),
-        guardian_zip = el.tag('postalCode').val(),
-        guardian_country = el.tag('country').val();
+    var guardian_address_dict = parseAddress(el);
     
     el = patient.tag('providerOrganization');
     var provider_organization = el.tag('name').val(),
         provider_phone = el.tag('telecom').attr('value');
     
-    els = el.elsByTag('streetAddressLine');
-    var provider_street = [];
-    
-    for (var i = 0; i < els.length; i++) {
-      provider_street.push(els[i].val());
-    }
-    
-    var provider_city = el.tag('city').val(),
-        provider_state = el.tag('state').val(),
-        provider_zip = el.tag('postalCode').val(),
-        provider_country = el.tag('country').val();
+    var provider_address_dict = parseAddress(el.tag('addr'));
     
     data = {
-      name: {
-        prefix: prefix,
-        given: given,
-        family: family
-      },
+      name: patient_name_dict,
       dob: dob,
       gender: gender,
       marital_status: marital_status,
-      address: {
-       street: street,
-        city: city,
-        state: state,
-        zip: zip,
-        country: country
-      },
+      address: patient_address_dict,
       phone: {
         home: home,
         work: work,
@@ -652,23 +643,17 @@ C32.Demographics = function () {
       ethnicity: ethnicity,
       religion: religion,
       birthplace: {
-        state: birthplace_state,
-        zip: birthplace_zip,
-        country: birthplace_country
+        state: birthplace_dict.state,
+        zip: birthplace_dict.zip,
+        country: birthplace_dict.country
       },
       guardian: {
         name: {
-          given: guardian_given,
-          family: guardian_family
+          given: guardian_name_dict.given,
+          family: guardian_name_dict.family
         },
         relationship: guardian_relationship,
-        address: {
-          street: guardian_street,
-          city: guardian_city,
-          state: guardian_state,
-          zip: guardian_zip,
-          country: guardian_country
-        },
+        address: guardian_address_dict,
         phone: {
           home: guardian_home
         }
@@ -676,16 +661,76 @@ C32.Demographics = function () {
       provider: {
         organization: provider_organization,
         phone: provider_phone,
-        address: {
-          street: provider_street,
-          city: provider_city,
-          state: provider_state,
-          zip: provider_zip,
-          country: provider_country
-        }
+        address: provider_address_dict
       }
     };
     
+    return data;
+  };
+  
+  // Init
+  ///////////////////////////
+  
+  // Reveal public methods
+  return {
+    parse: parse
+  };
+  
+}();
+;
+
+/*
+ * document.js
+ */
+
+C32.Document = function () {
+  
+  // Dependancies
+  ///////////////////////////
+  var parseName = Core.parseName;
+  var parseAddress = Core.parseAddress;
+  
+  // Properties
+  ///////////////////////////
+  
+  // Private Methods
+  ///////////////////////////
+  
+  // Public Methods
+  ///////////////////////////
+  
+  /*
+   * Parse the document C32 XML section.
+   */
+  var parse = function (xmlDOM) {
+    var data = {}, el, els, author;
+    
+    el = xmlDOM.template('2.16.840.1.113883.3.88.11.32.1');
+    author = el.tag('author');
+    
+    el = author.tag('assignedPerson').tag('name');
+    var name_dict = parseName(el);
+    if (!name_dict.prefix && !name_dict.given.length && !name_dict.family) {
+      name_dict.family = el.val();
+    }
+
+    el = author.tag('addr');
+    var address_dict = parseAddress(el);
+
+    el = author.tag('telecom');
+    var work_phone = el.attr('value');
+    
+    data = {
+      type: 'c32',
+      author: {
+        name: name_dict,
+        address: address_dict,
+        phone: {
+          work: work_phone
+        }
+      }
+    };
+
     return data;
   };
   
@@ -1634,6 +1679,8 @@ CCDA.Demographics = function () {
   // Dependancies
   ///////////////////////////
   var parseDate = Core.parseDate;
+  var parseName = Core.parseName;
+  var parseAddress = Core.parseAddress;
   
   // Properties
   ///////////////////////////
@@ -1653,16 +1700,7 @@ CCDA.Demographics = function () {
     el = xmlDOM.template('2.16.840.1.113883.10.20.22.1.1');
     patient = el.tag('patientRole');
     el = patient.tag('patient').tag('name');
-    var prefix = el.tag('prefix').val();
-    
-    els = el.elsByTag('given');
-    var given = [];
-    
-    for (var i = 0; i < els.length; i++) {
-      given.push(els[i].val());
-    }
-    
-    var family = el.tag('family').val();
+    var patient_name_dict = parseName(el);
     
     el = patient.tag('patient');
     var dob = parseDate(el.tag('birthTime').attr('value')),
@@ -1670,17 +1708,7 @@ CCDA.Demographics = function () {
         marital_status = Codes.maritalStatus(el.tag('maritalStatusCode').attr('code'));
     
     el = patient.tag('addr');
-    els = el.elsByTag('streetAddressLine');
-    var street = [];
-    
-    for (var i = 0; i < els.length; i++) {
-      street.push(els[i].val());
-    }
-    
-    var city = el.tag('city').val(),
-        state = el.tag('state').val(),
-        zip = el.tag('postalCode').val(),
-        country = el.tag('country').val();
+    var patient_address_dict = parseAddress(el);
     
     el = patient.tag('telecom');
     var home = el.attr('value'),
@@ -1695,70 +1723,30 @@ CCDA.Demographics = function () {
         religion = patient.tag('religiousAffiliationCode').attr('displayName');
     
     el = patient.tag('birthplace');
-    var birthplace_state = el.tag('state').val(),
-        birthplace_zip = el.tag('postalCode').val(),
-        birthplace_country = el.tag('country').val();
+    var birthplace_dict = parseAddress(el);
     
     el = patient.tag('guardian');
     var guardian_relationship = el.tag('code').attr('displayName'),
         guardian_home = el.tag('telecom').attr('value');
-    el = el.tag('guardianPerson');
     
-    els = el.elsByTag('given');
-    var guardian_given = [];
-    
-    for (var i = 0; i < els.length; i++) {
-      guardian_given.push(els[i].val());
-    }
-    
-    var guardian_family = el.tag('family').val();
+    el = el.tag('guardianPerson').tag('name');
+    var guardian_name_dict = parseName(el);
     
     el = patient.tag('guardian').tag('addr');
-    
-    els = el.elsByTag('streetAddressLine');
-    var guardian_street = [];
-    
-    for (var i = 0; i < els.length; i++) {
-      guardian_street.push(els[i].val());
-    }
-    
-    var guardian_city = el.tag('city').val(),
-        guardian_state = el.tag('state').val(),
-        guardian_zip = el.tag('postalCode').val(),
-        guardian_country = el.tag('country').val();
+    var guardian_address_dict = parseAddress(el);
     
     el = patient.tag('providerOrganization');
     var provider_organization = el.tag('name').val(),
         provider_phone = el.tag('telecom').attr('value');
     
-    els = el.elsByTag('streetAddressLine');
-    var provider_street = [];
-    
-    for (var i = 0; i < els.length; i++) {
-      provider_street.push(els[i].val());
-    }
-    
-    var provider_city = el.tag('city').val(),
-        provider_state = el.tag('state').val(),
-        provider_zip = el.tag('postalCode').val(),
-        provider_country = el.tag('country').val();
+    var provider_address_dict = parseAddress(el.tag('addr'));
     
     data = {
-      name: {
-        prefix: prefix,
-        given: given,
-        family: family
-      },
+      name: patient_name_dict,
       dob: dob,
       gender: gender,
       marital_status: marital_status,
-      address: {
-       street: street,
-        city: city,
-        state: state,
-        zip: zip,
-        country: country
-      },
+      address: patient_address_dict,
       phone: {
         home: home,
         work: work,
@@ -1770,23 +1758,17 @@ CCDA.Demographics = function () {
       ethnicity: ethnicity,
       religion: religion,
       birthplace: {
-        state: birthplace_state,
-        zip: birthplace_zip,
-        country: birthplace_country
+        state: birthplace_dict.state,
+        zip: birthplace_dict.zip,
+        country: birthplace_dict.country
       },
       guardian: {
         name: {
-          given: guardian_given,
-          family: guardian_family
+          given: guardian_name_dict.given,
+          family: guardian_name_dict.family
         },
         relationship: guardian_relationship,
-        address: {
-          street: guardian_street,
-          city: guardian_city,
-          state: guardian_state,
-          zip: guardian_zip,
-          country: guardian_country
-        },
+        address: guardian_address_dict,
         phone: {
           home: guardian_home
         }
@@ -1794,16 +1776,73 @@ CCDA.Demographics = function () {
       provider: {
         organization: provider_organization,
         phone: provider_phone,
-        address: {
-          street: provider_street,
-          city: provider_city,
-          state: provider_state,
-          zip: provider_zip,
-          country: provider_country
-        }
+        address: provider_address_dict
       }
     };
     
+    return data;
+  };
+  
+  // Init
+  ///////////////////////////
+  
+  // Reveal public methods
+  return {
+    parse: parse
+  };
+  
+}();
+;
+
+/*
+ * document.js
+ */
+
+CCDA.Document = function () {
+  
+  // Dependancies
+  ///////////////////////////
+  var parseName = Core.parseName;
+  var parseAddress = Core.parseAddress;
+  
+  // Properties
+  ///////////////////////////
+  
+  // Private Methods
+  ///////////////////////////
+  
+  // Public Methods
+  ///////////////////////////
+  
+  /*
+   * Parse the document CCDA XML section.
+   */
+  var parse = function (xmlDOM) {
+    var data = {}, el, els, author;
+    
+    el = xmlDOM.template('2.16.840.1.113883.10.20.22.1.1');
+    author = el.tag('author');
+    
+    el = author.tag('assignedPerson').tag('name');
+    var name_dict = parseName(el);
+
+    el = author.tag('addr');
+    var address_dict = parseAddress(el);
+
+    el = author.tag('telecom');
+    var work_phone = el.attr('value');
+    
+    data = {
+      type: 'ccda',
+      author: {
+        name: name_dict,
+        address: address_dict,
+        phone: {
+          work: work_phone
+        }
+      }
+    };
+
     return data;
   };
   
@@ -2659,11 +2698,10 @@ var BlueButton = function (source) {
     type = "json";
   }
   
-  data.document = { type: type };
-  
   switch (type) {
     case "c32":
       data.allergies =     C32.Allergies.parse(xmlDOM);
+      data.document =      C32.Document.parse(xmlDOM);
       data.demographics =  C32.Demographics.parse(xmlDOM);
       data.encounters =    C32.Encounters.parse(xmlDOM);
       data.immunizations = C32.Immunizations.parse(xmlDOM);
@@ -2676,6 +2714,7 @@ var BlueButton = function (source) {
     case "ccda":
       data.allergies =     CCDA.Allergies.parse(xmlDOM);
       data.demographics =  CCDA.Demographics.parse(xmlDOM);
+      data.document =      CCDA.Document.parse(xmlDOM);
       data.encounters =    CCDA.Encounters.parse(xmlDOM);
       data.immunizations = CCDA.Immunizations.parse(xmlDOM);
       data.labs =          CCDA.Labs.parse(xmlDOM);
