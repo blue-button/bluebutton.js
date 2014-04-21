@@ -942,30 +942,30 @@ C32.Immunizations = function () {
  */
 
 C32.Labs = function () {
-  
+
   // Dependancies
   ///////////////////////////
   var parseDate = Core.parseDate;
-  
+
   // Properties
   ///////////////////////////
-  
+
   // Private Methods
   ///////////////////////////
-  
+
   // Public Methods
   ///////////////////////////
-  
+
   /*
    * Parse the labs CCDA XML section.
    */
   var parse = function (xmlDOM) {
     var data = [], results_data, el, entries, entry, results, result;
-    
+
     el = xmlDOM.template('2.16.840.1.113883.3.88.11.83.122');
 
     entries = el.elsByTag('entry');
-    
+
     for (var i = 0; i < entries.length; i++) {
       entry = entries[i];
 
@@ -974,30 +974,30 @@ C32.Labs = function () {
       if (!panel_date) {
         panel_date = parseDate(entry.tag('effectiveTime').tag('low').attr('value'));
       }
-      
+
       // panel
       el = entry.tag('code');
       var panel_name = el.attr('displayName'),
           panel_code = el.attr('code'),
           panel_code_system = el.attr('codeSystem'),
           panel_code_system_name = el.attr('codeSystemName');
-      
+
       results = entry.elsByTag('component');
       results_data = [];
-      
+
       for (var j = 0; j < results.length; j++) {
         result = results[j];
 
         // sometimes results organizers contain non-results. we only want results
         if (result.template('2.16.840.1.113883.10.20.1.31').val()) {
           var date = parseDate(result.tag('effectiveTime').attr('value'));
-          
+
           el = result.tag('code');
           var name = el.attr('displayName'),
               code = el.attr('code'),
               code_system = el.attr('codeSystem'),
               code_system_name = el.attr('codeSystemName');
-          
+
           el = result.tag('value');
           var value = parseFloat(el.attr('value')),
               unit = el.attr('unit');
@@ -1008,7 +1008,7 @@ C32.Labs = function () {
               reference_range_low_value = el.tag('observationRange').tag('low').attr('value'),
               reference_range_high_unit = el.tag('observationRange').tag('high').attr('unit'),
               reference_range_high_value = el.tag('observationRange').tag('high').attr('value');
-          
+
           results_data.push({
             date: date,
             name: name,
@@ -1022,12 +1022,12 @@ C32.Labs = function () {
               low_unit: reference_range_low_unit,
               low_value: reference_range_low_value,
               high_unit: reference_range_high_unit,
-              high_value: reference_range_high_value,
+              high_value: reference_range_high_value
             }
           });
         }
       }
-      
+
       data.push({
         name: panel_name,
         code: panel_code,
@@ -1037,18 +1037,18 @@ C32.Labs = function () {
         results: results_data
       });
     }
-    
+
     return data;
   };
-  
+
   // Init
   ///////////////////////////
-  
+
   // Reveal public methods
   return {
     parse: parse
   };
-  
+
 }();
 ;
 
@@ -2063,64 +2063,64 @@ CCDA.Immunizations = function () {
  */
 
 CCDA.Labs = function () {
-  
+
   // Dependancies
   ///////////////////////////
   var parseDate = Core.parseDate;
-  
+
   // Properties
   ///////////////////////////
-  
+
   // Private Methods
   ///////////////////////////
-  
+
   // Public Methods
   ///////////////////////////
-  
+
   /*
    * Parse the labs CCDA XML section.
    */
   var parse = function (xmlDOM) {
     var data = [], results_data, el, entries, entry, results, result;
-    
+
     el = xmlDOM.template('2.16.840.1.113883.10.20.22.2.3.1');
     entries = el.elsByTag('entry');
-    
+
     for (var i = 0; i < entries.length; i++) {
       entry = entries[i];
-      
+
       // panel
       el = entry.tag('code');
       var panel_name = el.attr('displayName'),
           panel_code = el.attr('code'),
           panel_code_system = el.attr('codeSystem'),
           panel_code_system_name = el.attr('codeSystemName');
-      
+
       results = entry.elsByTag('component');
       results_data = [];
-      
+
       for (var j = 0; j < results.length; j++) {
         result = results[j];
-        
+
         var date = parseDate(result.tag('effectiveTime').attr('value'));
-        
+
         el = result.tag('code');
         var name = el.attr('displayName'),
             code = el.attr('code'),
             code_system = el.attr('codeSystem'),
             code_system_name = el.attr('codeSystemName');
-        
+
         el = result.tag('value');
         var value = parseFloat(el.attr('value')),
             unit = el.attr('unit');
-        
+
         el = result.tag('referenceRange');
         var reference_range_text = el.tag('observationRange').tag('text').val(),
             reference_range_low_unit = el.tag('observationRange').tag('low').attr('unit'),
             reference_range_low_value = el.tag('observationRange').tag('low').attr('value'),
             reference_range_high_unit = el.tag('observationRange').tag('high').attr('unit'),
             reference_range_high_value = el.tag('observationRange').tag('high').attr('value');
-        
+
         results_data.push({
           date: date,
           name: name,
@@ -2134,11 +2134,11 @@ CCDA.Labs = function () {
             low_unit: reference_range_low_unit,
             low_value: reference_range_low_value,
             high_unit: reference_range_high_unit,
-            high_value: reference_range_high_value,
+            high_value: reference_range_high_value
           }
         });
       }
-      
+
       data.push({
         name: panel_name,
         code: panel_code,
@@ -2147,18 +2147,18 @@ CCDA.Labs = function () {
         results: results_data
       });
     }
-    
+
     return data;
   };
-  
+
   // Init
   ///////////////////////////
-  
+
   // Reveal public methods
   return {
     parse: parse
   };
-  
+
 }();
 ;
 
@@ -2601,18 +2601,18 @@ CCDA.Vitals = function () {
 /*
  * bluebutton.js - The public `BlueButton` object.
  */
- 
+
 var BlueButton = function (source) {
-  
+
   // Dependancies
   ///////////////////////////
-  
+
   // Properties
   ///////////////////////////
   var xmlDOM = null,
       type = '',
       data = {};
-  
+
   // Private Methods
   ///////////////////////////
   var addMethods = function (objects) {
@@ -2620,7 +2620,7 @@ var BlueButton = function (source) {
       objects[i].json = function () { return JSON.stringify(this, null, 2) };
     };
   };
-  
+
   // Public Methods
   ///////////////////////////
   var doc = function () { return data.document };
@@ -2639,28 +2639,31 @@ var BlueButton = function (source) {
       return data.vitals;
     }
   };
-  
+
   // Init
   ///////////////////////////
-  
-  // Remove leading and trailing whitespace
-  source = source.replace(/^\s+|\s+$/g,'');
-  
-  // Detect document type
-  if (source.substr(0, 5) == "<?xml") {
-    xmlDOM = XML.parseXML(source);
-    
-    if (!xmlDOM.template('2.16.840.1.113883.3.88.11.32.1').isEmpty()) {
-      type = "c32";
-    } else if(!xmlDOM.template('2.16.840.1.113883.10.20.22.1.2').isEmpty()) {
-      type = "ccda";
+
+  if(source != undefined){
+
+    // Remove leading and trailing whitespace
+    source = source.replace(/^\s+|\s+$/g,'');
+
+    // Detect document type
+    if (source.substr(0, 5) == "<?xml") {
+      xmlDOM = XML.parseXML(source);
+
+      if (!xmlDOM.template('2.16.840.1.113883.3.88.11.32.1').isEmpty()) {
+        type = "c32";
+      } else if(!xmlDOM.template('2.16.840.1.113883.10.20.22.1.2').isEmpty()) {
+        type = "ccda";
+      }
+    } else {
+      type = "json";
     }
-  } else {
-    type = "json";
   }
-  
+
   data.document = { type: type };
-  
+
   switch (type) {
     case "c32":
       data.allergies =     C32.Allergies.parse(xmlDOM);
@@ -2693,7 +2696,7 @@ var BlueButton = function (source) {
       console.log("BB Error: Blue Button JSON not yet implemented.");
       break;
   }
-  
+
   addMethods([
     data,
     data.document,
@@ -2707,7 +2710,7 @@ var BlueButton = function (source) {
     data.procedures,
     data.vitals
   ]);
-  
+
   // Reveal public methods
   return {
     xmlDOM: xmlDOM,
@@ -2723,7 +2726,7 @@ var BlueButton = function (source) {
     procedures: procedures,
     vitals: vitals
   };
-    
+
 };
 
         return BlueButton;
