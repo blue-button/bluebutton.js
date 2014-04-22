@@ -44,6 +44,7 @@ module.exports = function(grunt) {
           "<%= bb.src %>/c32/c32.js",
           "<%= bb.src %>/c32/allergies.js",
           "<%= bb.src %>/c32/demographics.js",
+          "<%= bb.src %>/c32/document.js",
           "<%= bb.src %>/c32/encounters.js",
           "<%= bb.src %>/c32/immunizations.js",
           "<%= bb.src %>/c32/labs.js",
@@ -55,6 +56,7 @@ module.exports = function(grunt) {
           "<%= bb.src %>/ccda/ccda.js",
           "<%= bb.src %>/ccda/allergies.js",
           "<%= bb.src %>/ccda/demographics.js",
+          "<%= bb.src %>/ccda/document.js",
           "<%= bb.src %>/ccda/encounters.js",
           "<%= bb.src %>/ccda/immunizations.js",
           "<%= bb.src %>/ccda/labs.js",
@@ -105,8 +107,9 @@ module.exports = function(grunt) {
     },
 
     jasmine_node: {
-      specNameMatcher: "_spec", // load only specs containing specNameMatcher
-        projectRoot: "<%= bb.test %>/node_specs",
+      all: ["<%= bb.test %>/node_specs"],
+      options: {
+        specNameMatcher: "_spec", // load only specs containing specNameMatcher
         requirejs: false,
         forceExit: true,
         isVerbose: false,
@@ -116,6 +119,7 @@ module.exports = function(grunt) {
           useDotNotation: true,
           consolidate: true
         }
+      }
     },
 
     watch: {
