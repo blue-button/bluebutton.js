@@ -3,6 +3,7 @@
   "browser": true,
   "eqeqeq": true,
   "forin": true,
+  "freeze": true,
   "immed": true,
   "latedef": true,
   "maxlen": 100,
