@@ -102,8 +102,8 @@ Use sample data and convert: <button onclick="load('bb_ref_ccda')">Sample CCDA</
 
 <pre><code id="vitals" class="javascript"></code></pre>
 
-<script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
-<script src="https://rawgithub.com/blue-button/bluebutton.js/master/build/bluebutton.js"></script>
+<script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+<script src="/files/bluebutton.js"></script>
 <script>
   var baseURL = "";
   var xml, bb;
