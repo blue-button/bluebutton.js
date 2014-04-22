@@ -1,9 +1,13 @@
 {
   "bitwise": true,
+  "browser": true,
   "eqeqeq": true,
+  "es5": true,
   "forin": true,
+  "freeze": true,
   "immed": true,
   "latedef": true,
+  "maxlen": 80,
   "newcap": true,
   "noarg": true,
   "noempty": true,
@@ -11,12 +15,8 @@
   "regexp": true,
   "trailing": true,
   "undef": true,
-  "unused": false,
-  "es5": true,
-  "globalstrict": true,
-  "smarttabs": true,
-  "browser": true,
+  "unused": true,
   "globals": {
-    "Core": true
+  "core": true
   }
 }

@@ -23,7 +23,7 @@ module.exports = function(grunt) {
         jshintrc: ".jshintrc"
       },
       beforeconcat: {
-        src: ["<%= bb.src %>/{,*/}*.foo"]
+        src: ["<%= bb.src %>/{,*/}*.js"]
       },
       afterconcat: {
         src: ["<%= bb.build %>/{,*/}*.foo"]
