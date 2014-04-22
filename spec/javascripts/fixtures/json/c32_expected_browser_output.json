@@ -863,24 +863,32 @@
         {
           "name": "Patient Body Height",
           "code": "8302-2",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
           "value": 177,
           "unit": "cm"
         },
         {
           "name": "Patient Body Weight - Measured",
           "code": "3141-9",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
           "value": 86,
           "unit": "kg"
         },
         {
           "name": "Intravascular Systolic",
           "code": "8480-6",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
           "value": 132,
           "unit": "mm[Hg]"
         },
         {
           "name": "Intravascular Diastolic",
           "code": "11377-9",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
           "value": 86,
           "unit": "mm[Hg]"
         }
@@ -892,24 +900,32 @@
         {
           "name": "Patient Body Height",
           "code": "8302-2",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
           "value": 177,
           "unit": "cm"
         },
         {
           "name": "Patient Body Weight - Measured",
           "code": "3141-9",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
           "value": 88,
           "unit": "kg"
         },
         {
           "name": "Intravascular Systolic",
           "code": "8480-6",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
           "value": 145,
           "unit": "mm[Hg]"
         },
         {
           "name": "Intravascular Diastolic",
           "code": "11377-9",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
           "value": 88,
           "unit": "mm[Hg]"
         }

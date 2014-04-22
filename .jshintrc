@@ -2,12 +2,10 @@
   "bitwise": true,
   "browser": true,
   "eqeqeq": true,
-  "es5": true,
   "forin": true,
-  "freeze": true,
   "immed": true,
   "latedef": true,
-  "maxlen": 80,
+  "maxlen": 100,
   "newcap": true,
   "noarg": true,
   "noempty": true,
@@ -17,6 +15,15 @@
   "undef": true,
   "unused": true,
   "globals": {
-  "core": true
-  }
+    "Core": true,
+    "XML": true,
+    "C32": true,
+    "CCDA": true,
+    "BlueButton": true,
+    "Codes": true,
+    "ActiveXObject": false
+  },
+  "browser": true,
+  "node": true,
+  "devel": true
 }
