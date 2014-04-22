@@ -747,7 +747,14 @@
       "status": "Active",
       "age": null,
       "code": "195967001",
-      "code_system": "2.16.840.1.113883.6.96"
+      "code_system": "2.16.840.1.113883.6.96",
+      "code_system_name": "SNOMED",
+      "translation": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      }
     },
     {
       "date_range": {
@@ -758,7 +765,14 @@
       "status": "Resolved",
       "age": null,
       "code": "233604007",
-      "code_system": "2.16.840.1.113883.6.96"
+      "code_system": "2.16.840.1.113883.6.96",
+      "code_system_name": "SNOMED",
+      "translation": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      }
     },
     {
       "date_range": {
@@ -769,7 +783,14 @@
       "status": "Resolved",
       "age": null,
       "code": "233604007",
-      "code_system": "2.16.840.1.113883.6.96"
+      "code_system": "2.16.840.1.113883.6.96",
+      "code_system_name": "SNOMED",
+      "translation": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      }
     },
     {
       "date_range": {
@@ -780,7 +801,14 @@
       "status": "Resolved",
       "age": null,
       "code": "22298006",
-      "code_system": "2.16.840.1.113883.6.96"
+      "code_system": "2.16.840.1.113883.6.96",
+      "code_system_name": "SNOMED",
+      "translation": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      }
     },
     {
       "date_range": {
@@ -791,7 +819,14 @@
       "status": null,
       "age": null,
       "code": "77386006",
-      "code_system": "2.16.840.1.113883.6.96"
+      "code_system": "2.16.840.1.113883.6.96",
+      "code_system_name": "SNOMED",
+      "translation": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      }
     }
   ],
   "procedures": [
