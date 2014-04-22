@@ -45,7 +45,7 @@
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-jasmine-node": "^0.2.1",
     "bower": "^1.3.2",
-    "grunt-contrib-jasmine": "^0.6.3"
+    "grunt-contrib-jasmine": "^0.5.3"
   },
   "devDependencies": {
     "matchdep": "*",
@@ -54,7 +54,7 @@
     "grunt-contrib-uglify": "*",
     "grunt-contrib-concat": "*",
     "grunt-contrib-clean": "*",
-    "grunt-contrib-jasmine": "*",
+    "grunt-contrib-jasmine": "^0.5.3",
     "grunt-contrib-copy": "*",
     "grunt-umd": "*",
     "grunt-contrib-jshint": "*",

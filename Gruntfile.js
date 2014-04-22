@@ -107,8 +107,9 @@ module.exports = function(grunt) {
     },
 
     jasmine_node: {
-      specNameMatcher: "_spec", // load only specs containing specNameMatcher
-        projectRoot: "<%= bb.test %>/node_specs",
+      all: ["<%= bb.test %>/node_specs"],
+      options: {
+        specNameMatcher: "_spec", // load only specs containing specNameMatcher
         requirejs: false,
         forceExit: true,
         isVerbose: false,
@@ -118,6 +119,7 @@ module.exports = function(grunt) {
           useDotNotation: true,
           consolidate: true
         }
+      }
     },
 
     watch: {
