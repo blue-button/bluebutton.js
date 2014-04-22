@@ -1,6 +1,6 @@
 # BlueButton.js
 
-BlueButton.js is JavaScript library to help make working with healthcare data easier. [Try the demo.](http://blue-button.github.io/applications/tools/js/sandbox.html)
+BlueButton.js is JavaScript library to help make working with healthcare data easier. [Try the demo.](http://www.bluebuttonjs.com/sandbox)
 
 **This project is under heavy development!** Until a v1 release, the public API will change, a lot.
 
