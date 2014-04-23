@@ -1,15 +1,17 @@
 {
   "bitwise": true,
   "browser": true,
+  "browser": true,
+  "devel": true,
   "eqeqeq": true,
-  "es5": true,
   "forin": true,
   "freeze": true,
   "immed": true,
   "latedef": true,
-  "maxlen": 80,
+  "maxlen": 100,
   "newcap": true,
   "noarg": true,
+  "node": true,
   "noempty": true,
   "nonew": true,
   "regexp": true,
@@ -17,6 +19,11 @@
   "undef": true,
   "unused": true,
   "globals": {
-  "core": true
+    "ActiveXObject": false,
+    "BlueButton": true,
+    "Codes": true,
+    "Core": true,
+    "Parsers": true,
+    "XML": true
   }
 }

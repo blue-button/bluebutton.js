@@ -1,7 +1,7 @@
 {
   "name": "bluebutton",
-  "version": "0.0.19",
-  "description": "BlueButton.js allows web developers to parse and navigate complex health data with ease.",
+  "version": "0.1.0",
+  "description": "BlueButton.js helps developers navigate complex health data with ease.",
   "keywords": [
     "bluebutton",
     "bb",
@@ -31,41 +31,42 @@
     "test": "grunt test"
   },
   "dependencies": {
+    "bower": "^1.3.2",
+    "grunt": "^0.4.4",
     "jsdom": "^0.10.5",
-    "grunt-contrib-copy": "^0.5.0",
-    "underscore": "^1.6.0",
     "grunt-contrib-clean": "^0.5.0",
     "grunt-contrib-concat": "^0.4.0",
-    "matchdep": "^0.3.0",
-    "grunt-template-jasmine-requirejs": "^0.1.10",
-    "grunt": "^0.4.4",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-umd": "^1.7.3",
-    "grunt-contrib-uglify": "^0.4.0",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-jasmine": "^0.5.3",
     "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-uglify": "^0.4.0",
+    "grunt-contrib-watch": "^0.6.1",
     "grunt-jasmine-node": "^0.2.1",
-    "bower": "^1.3.2",
-    "grunt-contrib-jasmine": "^0.6.3"
+    "grunt-template-jasmine-requirejs": "^0.1.10",
+    "grunt-umd": "^1.7.3",
+    "matchdep": "^0.3.0",
+    "underscore": "^1.6.0"
   },
   "devDependencies": {
-    "matchdep": "*",
-    "grunt": "*",
     "bower": "*",
-    "grunt-contrib-uglify": "*",
-    "grunt-contrib-concat": "*",
+    "grunt": "*",
+    "jsdom": "*",
     "grunt-contrib-clean": "*",
-    "grunt-contrib-jasmine": "*",
+    "grunt-contrib-concat": "*",
     "grunt-contrib-copy": "*",
-    "grunt-umd": "*",
+    "grunt-contrib-jasmine": "^0.5.3",
     "grunt-contrib-jshint": "*",
+    "grunt-contrib-uglify": "*",
     "grunt-contrib-watch": "*",
     "grunt-jasmine-node": "*",
     "grunt-template-jasmine-requirejs": "*",
+    "grunt-umd": "*",
+    "matchdep": "*",
     "underscore": "*"
   },
   "peerDependencies": {
-    "grunt": "*",
-    "bower": "*"
+    "bower": "*",
+    "grunt": "*"
   },
   "engines": {
     "node": ">=0.10.0"
