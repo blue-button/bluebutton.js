@@ -38,10 +38,25 @@ module.exports = function(grunt) {
         },
         src: [
           "<%= bb.src %>/core.js",
-          "<%= bb.src %>/xml.js",
-          "<%= bb.src %>/codes.js",
+          "<%= bb.src %>/core/codes.js",
+          "<%= bb.src %>/core/xml.js",
+          
+          "<%= bb.src %>/documents.js",
+          "<%= bb.src %>/documents/c32.js",
+          "<%= bb.src %>/documents/ccda.js",
+          
+          "<%= bb.src %>/generators.js",
+          "<%= bb.src %>/generators/c32.js",
+          "<%= bb.src %>/generators/ccda.js",
+          
+          "<%= bb.src %>/parsers.js",
           "<%= bb.src %>/parsers/c32.js",
           "<%= bb.src %>/parsers/ccda.js",
+          
+          "<%= bb.src %>/renderers.js",
+          "<%= bb.src %>/renderers/c32.js",
+          "<%= bb.src %>/renderers/ccda.js",
+          
           "<%= bb.src %>/bluebutton.js"
         ],
         dest: "<%= bb.build %>/bluebutton.js"
