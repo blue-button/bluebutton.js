@@ -23,7 +23,9 @@
     "BlueButton": true,
     "Codes": true,
     "Core": true,
+    "Documents": true,
+    "Generators": true,
     "Parsers": true,
-    "XML": true
+    "Renderers": true
   }
 }
