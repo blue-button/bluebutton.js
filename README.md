@@ -1,89 +1,73 @@
 # BlueButton.js
 
-BlueButton.js helps developers navigate complex health data with ease. [Try the demo.](http://www.bluebuttonjs.com/sandbox)
-
-**This project is under heavy development!** Until a v1 release, the public API will change, a lot.
+BlueButton.js helps developers navigate complex health data with ease, all in the spirit of empowering patients with access to their health records. [Try the demo.](http://www.bluebuttonjs.com/sandbox)
 
 ## Getting Started
 
-To use BlueButton.js with a health document, start by creating a Blue Button document object by passing the CCD XML to BlueButton:
+BlueButton.js supports a few different health data types, like C32 and CCDA. To parse a health document, pass the source data to `BlueButton`:
 
 ```JavaScript
-var bb = BlueButton(xml);
+var myRecord = BlueButton(xml);
 ```
 
-The document object, `bb` in this example, now exposes all CCD data through a simple and consistent interface. Each section of the document can be accessed using its associated method.
-
-## Document Sections
-
-The health record sections are available using the following public methods. JavaScript objects representing the patient data for that section is returned from each method:
+BlueButton.js will detect the document type and choose the appropriate parser. The returned object has the following properties:
 
 ```JavaScript
-// Returns personal information and demographics
-bb.demographics();
-
-// Returns allergies and alerts
-bb.allergies();
-
-// Returns encounters
-bb.encounters();
-
-// Returns a list of immunizations
-bb.immunizations();
-
-// Returns a list of laboratory results, organized by panel
-bb.labs();
-
-// Returns a list of medications
-bb.medications();
-
-// Returns the problem list
-bb.problems();
-
-// Returns a list of procedures
-bb.procedures();
-
-// Returns a list of vital readings, grouped by date
-bb.vitals();
+myRecord.type    // The document type
+myRecord.source  // The parsed source data with added querying methods
+myRecord.data    // The final parsed document data
 ```
 
-Information about the document itself can be accessed by using the document method:
+## CCDA Example
+
+Here's an example using BlueButton.js to parse a CCDA health summary. First, pass the CCDA XML to `BlueButton`:
 
 ```JavaScript
-// Returns an object containing information about the CCD document
-bb.document();
+var ccda = BlueButton(xml);
 ```
 
-## JSON
-
-Each section contains a convenience `json()` method.
+Access the parsed data like so:
 
 ```JavaScript
-// Returns a JSON representation of demographics
-bb.demographics().json();
+ccda.type  // Returns the string "ccda"
+ccda.data  // Returns an object containing the parsed CCDA sections
 
-// Returns a JSON representation of the entire document
-bb.data.json();
+// Available document sections
+ccda.data.allergies
+ccda.data.demographics
+ccda.data.encounters
+ccda.data.immunizations
+ccda.data.labs
+ccda.data.medications
+ccda.data.problems
+ccda.data.procedures
+ccda.data.vitals
+```
+
+Each section also has a `json` method to easily view the data:
+
+```JavaScript
+ccda.data.medications.json();
 ```
 
 ## CommonJS and AMD support
 
-BlueButton.js uses a UMD wrapper to support NodeJS and AMD module loaders like RequireJS.
+BlueButton.js uses a UMD wrapper to support NodeJS and AMD module loaders, like RequireJS.
 
-### Example using Node
+### An Example Using Node
 
 ```JavaScript
 var fs = require('fs');
 var BlueButton = require('bluebutton');
 
 var xml = fs.readFileSync('./example/xml/ccd.xml', 'utf-8');
-var bb = BlueButton(xml);
+var myRecord = BlueButton(xml);
 
-// Log demographics JSON object
-console.log(bb.demographics().json());
+// Log the demographics data
+console.log(myRecord.data.demographics.json());
 ```
 
-### Example using RequireJS
+### An Example Using RequireJS
 
 ```JavaScript
 require.config({
@@ -96,11 +80,11 @@ require.config({
 
 require(['bluebutton', 'text!examples/xml/ccd.xml'], function (BlueButton, xml) {
   'use strict';
-
-  var bb = BlueButton(xml);
   
-  // Log demographics JSON object
-  console.log(bb.demographics().json());
+  var myRecord = BlueButton(xml);
+  
+  // Log the demographics data
+  console.log(myRecord.data.demographics.json());
 });
 ```
 
@@ -113,22 +97,19 @@ require(['bluebutton', 'text!examples/xml/ccd.xml'], function (BlueButton, xml) 
     var xhr = new XMLHttpRequest();
     xhr.open('get', './examples/xml/ccd.xml', false);
     xhr.send();
-
-    var bb = BlueButton(xhr.responseText);
-
-    // Log demographics JSON object
-    console.log(bb.demographics().json());
+    
+    var myRecord = BlueButton(xhr.responseText);
+    
+    // Log the demographics data
+    console.log(myRecord.data.demographics.json());
   </script>
 </body>
 ```
 
 ## Creating a Build
 
-Run `grunt` to build the library. All builds are placed in the [`build/`](/build) directory.
-
-Be sure to version up `package.json`, `bower.json`, and add any changes to `History.md` before releasing.
-
+Run `grunt` to build the library. A `build/` directory will be created containing the standard and minified builds.
 
 ## Running the Test Suite
 
-Run `grunt test` to run the test suite, which is important to do after making any changes to the way data parses. Before you run the tests the first time, you will need to `bower install` to download the sample CCDA the tests expect to use (and `npm install -g bower` if you don't have bower yet). The actual tests live in the [`spec/`](/spec) directory.
+Use `grunt test` to run the test suite. This is important to do after making any changes to the parsers. Before running the tests the first time, run `bower install` to download the sample CCDA the tests require. (Run `npm install -g bower` if you don't yet have [Bower](http://bower.io)). Tests can be found in the [`spec/`](/spec) directory.
