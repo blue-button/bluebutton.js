@@ -44,9 +44,13 @@ ccda.data.procedures
 ccda.data.vitals
 ```
 
-Each section also has a `json` method to easily view the data:
+The `data` object and each section also has a `json` method to easily view the data:
 
 ```JavaScript
+// View all the data as JSON
+ccda.data.json();
+
+// View just the medication data as JSON
 ccda.data.medications.json();
 ```
 
@@ -88,7 +92,7 @@ require(['bluebutton', 'text!examples/xml/ccd.xml'], function (BlueButton, xml) 
 });
 ```
 
-### Example using Browser Global
+### An Example in the Browser
 
 ```HTML
 <body>
