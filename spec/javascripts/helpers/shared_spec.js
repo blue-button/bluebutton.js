@@ -1,20 +1,20 @@
-var runJsonTests = function(expectedOutput, bb) {
+var runJsonTests = function(expectedOutput, expectedType, bb) {
 
   function toJSON(target) {
     return JSON.parse(target.json())
   }
 
   describe('document', function() {
-    it('should match the ccda type', function() {
-      var actual = bb.document().type;
-      var expected = expectedOutput.document.type;
+    it('should match the document type', function() {
+      var actual = bb.type;
+      var expected = expectedType;
 
       expect(actual).toEqual(expected);
     });
   });
 
   describe('allergies', function() {
-    var allergies = toJSON(bb.allergies());
+    var allergies = toJSON(bb.data.allergies);
     _.each(allergies, function(actual, i) {
       it('should output the correct allergy at index['+i+']', function() {
         var expected = expectedOutput.allergies[i];
@@ -27,14 +27,14 @@ var runJsonTests = function(expectedOutput, bb) {
   // not an array of objects like everything else.
   describe('demographics', function() {
     it('should output the correct demographics', function() {
-      var actual = toJSON(bb.demographics());
+      var actual = toJSON(bb.data.demographics);
       var expected = expectedOutput.demographics;
       expect(actual).toEqual(expected);
     });
   });
 
   describe('encounters', function() {
-    var encounters = toJSON(bb.encounters());
+    var encounters = toJSON(bb.data.encounters);
     _.each(encounters, function(actual, i) {
       it('should output the correct encounter at index['+i+']', function() {
         var expected = expectedOutput.encounters[i];
@@ -44,7 +44,7 @@ var runJsonTests = function(expectedOutput, bb) {
   });
 
   describe('immunizations', function() {
-    var immunizations = toJSON(bb.immunizations());
+    var immunizations = toJSON(bb.data.immunizations);
     _.each(immunizations, function(actual, i) {
       it('should output the correct immunization at index['+i+']', function() {
         var expected = expectedOutput.immunizations[i];
@@ -54,7 +54,7 @@ var runJsonTests = function(expectedOutput, bb) {
   });
 
   describe('labs', function() {
-    var labs = toJSON(bb.labs());
+    var labs = toJSON(bb.data.labs);
     _.each(labs, function(actual, i) {
       it('should output the correct lab at index['+i+']', function() {
         var expected = expectedOutput.labs[i];
@@ -64,7 +64,7 @@ var runJsonTests = function(expectedOutput, bb) {
   });
 
   describe('medications', function() {
-    var medications = toJSON(bb.medications());
+    var medications = toJSON(bb.data.medications);
     _.each(medications, function(actual, i) {
       it('should output the correct medication at index['+i+']', function() {
         var expected = expectedOutput.medications[i];
@@ -74,7 +74,7 @@ var runJsonTests = function(expectedOutput, bb) {
   });
 
   describe('problems', function() {
-    var problems = toJSON(bb.problems());
+    var problems = toJSON(bb.data.problems);
     _.each(problems, function(actual, i) {
       it('should output the correct problem at index['+i+']', function() {
         var expected = expectedOutput.problems[i];
@@ -84,7 +84,7 @@ var runJsonTests = function(expectedOutput, bb) {
   });
 
   describe('procedures', function() {
-    var procedures = toJSON(bb.procedures());
+    var procedures = toJSON(bb.data.procedures);
     _.each(procedures, function(actual, i) {
       it('should output the correct procedure at index['+i+']', function() {
         var expected = expectedOutput.procedures[i];
@@ -94,7 +94,7 @@ var runJsonTests = function(expectedOutput, bb) {
   });
 
   describe('vitals', function() {
-    var vitals = toJSON(bb.vitals());
+    var vitals = toJSON(bb.data.vitals);
     _.each(vitals, function(actual, i) {
       it('should output the correct vital at index['+i+']', function() {
         var expected = expectedOutput.vitals[i];

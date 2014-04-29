@@ -4,6 +4,6 @@ describe('CCDA', function() {
   var bb = BlueButton(record);
 
   // the tests are defined in helpers/shared_spec.js
-  runJsonTests(expectedOutput, bb);
+  runJsonTests(expectedOutput, 'ccda', bb);
 
 });
