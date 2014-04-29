@@ -1,4 +1,25 @@
 {
+  "document": {
+    "author": {
+      "name": {
+        "prefix": null,
+        "given": ["Henry"],
+        "family": "Seven"
+      },
+      "address": {
+        "street": [
+          "21 North Ave."
+        ],
+        "city": "Burlington",
+        "state": "MA",
+        "zip": "02368",
+        "country": "USA"
+      },
+      "phone": {
+        "work": "tel:(555)555-1003"
+      }
+    }
+  },
   "allergies": [
     {
       "date_range": {
@@ -433,7 +454,14 @@
       "status": "Active",
       "age": 57,
       "code": "233604007",
-      "code_system": "2.16.840.1.113883.6.96"
+      "code_system": "2.16.840.1.113883.6.96",
+      "code_system_name": null,
+      "translation": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      }
     }
   ],
   "procedures": [

@@ -4,10 +4,19 @@ var runJsonTests = function(expectedOutput, expectedType, bb) {
     return JSON.parse(target.json())
   }
 
-  describe('document', function() {
+  describe('type', function() {
     it('should match the document type', function() {
       var actual = bb.type;
       var expected = expectedType;
+
+      expect(actual).toEqual(expected);
+    });
+  });
+
+  describe('document', function() {
+    it('should match the document metadata', function() {
+      var actual = toJSON(bb.data.document);
+      var expected = expectedOutput.document;
 
       expect(actual).toEqual(expected);
     });
