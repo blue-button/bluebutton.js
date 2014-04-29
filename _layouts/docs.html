@@ -1,72 +1,57 @@
-<!DOCTYPE html>
+---
+layout: main
+---
 
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>BlueButton.js</title>
-    <meta name="description" content="BlueButton.js">
-    <link href="/css/style.css" rel="stylesheet">
-    <link href="/css/syntax.css" rel="stylesheet">
-    <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet'> -->
-    <!-- <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/tomorrow.min.css"> -->
-  </head>
-  <body class="docs">
+<div class="section docs">
+  <div class="content">
     
-    {% include header.html %}
+    <a href="javascript:toggleDocsMenu();" class="toggle-docs-menu">Menu</a>
     
-    <div class="content-area">
-      <div class="sidebar">
-        <ul>
-          <li {% if page.url == '/docs/index.html' %}class="active"{% endif %}><a href="/docs"><div>Getting Started</div></a></li>
-          
-          <!--
-          
-          <li {% if page.url == '/docs/concepts.html' %}class="active"{% endif %}><a href="/docs/concepts.html"><div>Core Concepts</div></a></li>
-          
-          -->
-          
-          <li {% if page.url == '/docs/json/index.html' %}class="active"{% endif %}><a href="/docs/json"><div>Blue Button JSON</div></a></li>
-          
-          <ul>
-            <li {% if page.url == '/docs/json/demographics.html' %}class="active"{% endif %}><a href="/docs/json/demographics.html"><div>Demographics</div></a></li>
-            
-            <li {% if page.url == '/docs/json/allergies.html' %}class="active"{% endif %}><a href="/docs/json/allergies.html"><div>Allergies</div></a></li>
-            
-            <li {% if page.url == '/docs/json/encounters.html' %}class="active"{% endif %}><a href="/docs/json/encounters.html"><div>Encounters</div></a></li>
-            
-            <li {% if page.url == '/docs/json/immunizations.html' %}class="active"{% endif %}><a href="/docs/json/immunizations.html"><div>Immunizations</div></a></li>
-            
-            <li {% if page.url == '/docs/json/labs.html' %}class="active"{% endif %}><a href="/docs/json/labs.html"><div>Labs</div></a></li>
-            
-            <li {% if page.url == '/docs/json/medications.html' %}class="active"{% endif %}><a href="/docs/json/medications.html"><div>Medications</div></a></li>
-            
-            <li {% if page.url == '/docs/json/problems.html' %}class="active"{% endif %}><a href="/docs/json/problems.html"><div>Problems</div></a></li>
-            
-            <li {% if page.url == '/docs/json/procedures.html' %}class="active"{% endif %}><a href="/docs/json/procedures.html"><div>Procedures</div></a></li>
-            
-            <li {% if page.url == '/docs/json/vitals.html' %}class="active"{% endif %}><a href="/docs/json/vitals.html"><div>Vitals</div></a></li>
-            
-          </ul>
-          
-          <!--
-          
-          <li {% if page.url == '/docs/resources.html' %}class="active"{% endif %}><a href="/docs/resources.html"><div>Resources</div></a></li>
-          
-          -->
-          
-        </ul>
-      </div>
+    <div id="sidebar" class="sidebar">
       
-      <div class="page">
-        {{ content }}
-      </div>
+      <h1><a href="#">Getting Started</a></h1>
+      <ul>
+        <li><a href="#">Understanding Data</a></li>
+        <li><a href="#">Parsing Documents</a></li>
+        <li><a href="#">Generating Documents</a></li>
+        <li><a href="#">Rendering Data</a></li>
+      </ul>
+      
+      <h1><a href="#">Document Types</a></h1>
+      <ul>
+        <li><a href="#">CCDA</a></li>
+        <li><a href="#">C32</a></li>
+        <li><a href="#">Sample Data</a></li>
+      </ul>
+      
+      <h1><a href="#">Testing</a></h1>
+      
     </div>
     
-    {% include footer.html %}
+    <div class="page">
+      {{ content }}
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleDocsMenu() {
+    var el = document.getElementById('sidebar');
+    if (el.style.display === '') el.style.display = 'none';
     
-    <!--
-    <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    -->
-  </body>
-</html>
+    if (el.style.display === 'block') {
+      el.style.display = 'none';
+    } else {
+      el.style.display = 'block';
+    }
+  }
+  
+  window.addEventListener('resize', function (event) {
+    var el = document.getElementById('sidebar');
+    if (document.width > 768) {
+      el.style.display = 'block';
+    } else {
+      el.style.display = 'none';
+    }
+  });
+</script>

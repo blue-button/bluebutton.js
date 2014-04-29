@@ -1,0 +1,135 @@
+/* home */
+
+.home.first {
+  color: white;
+  background: #1875c6;
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#1875c6', endColorstr='#00a5ea');
+  background: linear-gradient(#1875c6, #00a5ea);
+  padding: 15px 0 35px 0;
+}
+
+.home.first .box {
+  max-width: 550px;
+  background: rgba(255, 255, 255, 0.15);
+  margin: 0 auto;
+  padding: 40px 40px 50px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.home.first .box h1 {
+  font-size: 25px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.home.first .box p {
+  font-size: 18px;
+  margin-bottom: 60px;
+}
+
+.home.first .box a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.home.first .box .button {
+  text-align: center;
+  border-radius: 7px;
+  font-size: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  padding: 20px 30px;
+}
+
+.home.first .box .button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.home.second {
+  margin: 50px 0;
+}
+
+.home.second .content {
+  max-width: 750px;
+}
+
+.home.second ul {
+  list-style: none;
+  margin-left: 40px;
+}
+
+.home.second li {
+  margin-bottom: 35px;
+}
+
+.home.second li .icon {
+  width: 35px;
+  height: 35px;
+  float: left;
+  margin-left: -40px;
+  top: -5px;
+  position: relative;
+}
+
+.home.second li .icon.apps {
+  background: url(../img/apps.svg);
+}
+
+.home.second li .icon.checkbox {
+  background: url(../img/checkbox.svg);
+}
+
+.home.second li .icon.console {
+  background: url(../img/console.svg);
+}
+
+.home.second li .icon.direct {
+  background: url(../img/direct.svg);
+}
+
+.home.second li .icon.db {
+  background: url(../img/db.svg);
+}
+
+.home.second li .icon.page {
+  background: url(../img/page.svg);
+}
+
+.home.second li .icon.paintbrush {
+  background: url(../img/paintbrush.svg);
+}
+
+.home.second li .icon.tools {
+  background: url(../img/tools.svg);
+}
+
+.home.second li .icon.cloud {
+  background: url(../img/cloud.svg);
+}
+
+.home.second li .icon.oss {
+  background: url(../img/oss.svg);
+}
+
+.home.second li .icon.heart {
+  background: url(../img/heart.svg);
+}
+
+.home.second li h1 {
+  margin-bottom: 10px;
+  font-size: 22px;
+  color: #1875c6;
+}
+
+.home.second li p {
+  font-size: 16px;
+}
+
+.home.second li h1 a {
+  color: #1875c6;
+  text-decoration: none;
+}
+
+.home.second li h1 a:hover {
+  text-decoration: underline;
+}

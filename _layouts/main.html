@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <title>BlueButton.js</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  {% if page.url contains '/docs' %}
+    <link rel="stylesheet"href="/css/docs.css">
+  {% elsif page.url == '/index.html' %}
+    <link rel="stylesheet" href="/css/home.css">
+  {% endif %}
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700,600">
+  <meta content='width=device-width' name='viewport'/>
+</head>
+<body>
+  
+  {% include warning.html %}
+  
+  <div class="main">
+    {% include header.html %}
+    {{ content }}
+  </div>
+  
+  {% include footer.html %}
+  
+</body>
+</html>

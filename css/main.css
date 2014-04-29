@@ -1,0 +1,296 @@
+/* Resets */
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q,
+samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset,
+form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article,
+aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  /* background: #c9e1f5; */
+}
+
+.center {
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 0.75em;
+  font-size: 36px;
+  font-weight: normal;
+  line-height: 1em;
+}
+
+h2 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  font-size: 28px;
+  font-weight: normal;
+}
+
+h3 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  font-size: 22px;
+  font-weight: normal;
+}
+
+h4 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  font-size: 18px;
+}
+
+p {
+  margin-bottom: 1em;
+  font-size: 16px;
+  line-height: 1.5em;
+}
+
+ol, ul {
+  list-style-position: inside;
+  margin-left: 10px;
+  margin-bottom: 1em;
+}
+
+li {
+  margin-bottom: 0.25em
+}
+
+code {
+  padding: 0 6px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  background: #fafafa;
+  font-size: 15px;
+  font-family: Menlo, Consolas, Monaco, "Lucida Console", monospace;
+}
+
+pre code {
+  display: block;
+  overflow-y: auto;
+  margin-bottom: 15px;
+  padding: 10px;
+  line-height: 1.33em;
+  color: inherit;
+}
+
+a { color: #234878; }
+
+iframe {
+  margin: 2em 0;
+}
+
+.section {}
+
+.section .content {
+  margin: 0 auto;
+  padding: 0 20px 0 20px;
+  max-width: 900px;
+}
+
+/* warning */
+
+.warning {
+  background: #FFAF00;
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  padding: 6px 0;
+}
+
+/* main */
+
+.main {
+  padding-bottom: 50px;
+  background: #fff;
+}
+
+/* header */
+
+.header {
+  color: white;
+  background: #1875c6;
+  font-size: 18px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.header nav {
+  display: inline;
+}
+
+.header nav .logo {
+  float: left;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  top: -14px;
+  margin-right: 10px;
+  background: url(../img/bb_logo.svg);
+}
+
+.header a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.header nav a.logo-link {
+  font-weight: bold;
+}
+
+.header nav a:hover {
+  border-bottom: 2px solid #b4dff5;
+  border-bottom: 2px solid rgba(255, 255, 255, .7);
+}
+
+.header nav ul {
+  list-style: none;
+  float: right;
+}
+
+.header nav ul li {
+  display: inline;
+  margin-left: 25px;
+}
+
+.header nav ul.collapsed {
+  display: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.header nav ul li .icon {
+  width: 25px;
+  height: 22px;
+  float: right;
+}
+
+.header nav ul li .icon.menu {
+  background: url(../img/menu.svg);
+}
+
+.header .collapsed-menu {
+  display: none;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.header .collapsed-menu ul {
+  list-style: none;
+  margin: 0;
+}
+
+.header .collapsed-menu ul li {
+  border-top: 1px rgba(255, 255, 255, 0.5) solid;
+  padding: 10px 0;
+  margin: 0;
+}
+
+.header .collapsed-menu ul li:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.header .collapsed-menu ul:last-child {
+  border-bottom: 1px rgba(255, 255, 255, 0.5) solid;
+}
+
+/* page */
+
+.section.page {
+  margin-top: 25px;
+}
+
+.page {
+  color: #333;
+}
+
+.page li {
+  list-style-position: outside;
+  margin-left: 20px;
+}
+
+.page img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+/* footer */
+
+.section.footer {}
+.section.footer .content {}
+
+/* table */
+
+table {	
+  text-align: left;
+  border-collapse: collapse;
+  margin: 20px;
+}
+
+.table-column {
+  border-bottom: 2px solid #1875c6;
+}
+
+td, th {
+  border-bottom: 1px solid #1875c6;
+  padding: 10px;
+}
+
+/* news */
+
+article {
+  margin-bottom: 2em;
+}
+
+.post-meta {
+  margin-bottom: 1em;
+}
+
+.post-meta a {
+  text-decoration: none;
+}
+
+.post-category {
+  background: #c5e1f6;
+  float: left;
+  padding: 2px 10px;
+}
+
+.post-date,
+.post-author {
+  margin-left: 10px;
+}
+
+img.avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 3px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+  .header nav ul.expanded {
+    display: none;
+  }
+  
+  .header nav ul.collapsed {
+    display: block;
+  }
+}
+
+@media (max-width: 320px) {
+  .warning {
+    font-size: 9px;
+  }
+}

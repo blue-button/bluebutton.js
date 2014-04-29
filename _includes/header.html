@@ -1,32 +1,45 @@
-
-<div class="header">
+<div class="section header">
   <div class="content">
-    <ul>
-      <li class="title">
-        <a href="/">
-          <img src="/img/bb_logo_sm.png" alt="" />
-          <h1>BlueButton.js</h1>
-        </a>
-      </li>
-        <!--
-        {% if page.url == '/community.html' %}
-          <li class="active"><div>Community</div></li>
-        {% else %}
-          <a href="/community.html"><li><div>Community</div></li></a>
-        {% endif %}
-        -->
-        
-        {% if page.url == '/sandbox.html' %}
-          <li class="active"><div>Sandbox</div></li>
-        {% else %}
-          <a href="/sandbox.html"><li><div>Sandbox</div></li></a>
-        {% endif %}
-        
-        {% if page.url contains '/docs' %}
-          <li class="active"><div>Documentation</div></li>
-        {% else %}
-          <a href="/docs"><li><div>Documentation</div></li></a>
-        {% endif %}
-    </ul>
+    <nav>
+      <a class="logo-link" href="/">
+        <div class="logo"></div>
+        BlueButton.js
+      </a>
+      <ul class="expanded">
+        <li><a href="/docs">Documentation</a></li>
+        <li><a href="/sandbox.html">Sandbox</a></li>
+        <li><a href="/community.html">Community</a></li>
+        <li><a href="/news">News</a></li>
+      </ul>
+      <ul class="collapsed">
+        <li><a href="javascript:toggleMenu();"><div class="icon menu"></div></a></li>
+      </ul>
+    </nav>
+    <div id="menu" class="collapsed-menu">
+      <ul>
+        <a href="/docs"><li>Documentation</li></a>
+        <a href="/sandbox.html"><li>Sandbox</li></a>
+        <a href="/community.html"><li>Community</li></a>
+        <a href="/news"><li>News</li></a>
+      </ul>
+    </div>
   </div>
 </div>
+
+<script>
+  function toggleMenu() {
+    var el = document.getElementById('menu');
+    if (el.style.display === '') el.style.display = 'none';
+    
+    if (el.style.display === 'block') {
+      el.style.display = 'none';
+    } else {
+      el.style.display = 'block';
+    }
+  }
+  
+  window.addEventListener('resize', function (event) {
+    var el = document.getElementById('menu');
+    el.style.display = 'none';
+  });
+</script>
