@@ -1,12 +1,9 @@
 {
-  "document": {
-    "type": "ccda"
-  },
   "allergies": [
     {
       "date_range": {
-        "start": "2009-09-02T07:00:00.000Z",
-        "end": "2010-01-03T08:00:00.000Z"
+        "start": "09/02/2009",
+        "end": "01/03/2010"
       },
       "name": "drug allergy",
       "code": "416098002",
@@ -34,8 +31,8 @@
     },
     {
       "date_range": {
-        "start": "2009-09-02T07:00:00.000Z",
-        "end": "2010-01-03T08:00:00.000Z"
+        "start": "09/02/2009",
+        "end": "01/03/2010"
       },
       "name": "drug allergy",
       "code": "416098002",
@@ -63,8 +60,8 @@
     },
     {
       "date_range": {
-        "start": "2009-09-02T07:00:00.000Z",
-        "end": "2010-01-03T08:00:00.000Z"
+        "start": "09/02/2009",
+        "end": "01/03/2010"
       },
       "name": "drug allergy",
       "code": "416098002",
@@ -100,7 +97,7 @@
       ],
       "family": "Everyman"
     },
-    "dob": "1954-11-25T08:00:00.000Z",
+    "dob": "11/25/1954",
     "gender": "male",
     "marital_status": "married",
     "address": {
@@ -164,7 +161,7 @@
   },
   "encounters": [
     {
-      "date": "2000-04-07T07:00:00.000Z",
+      "date": "04/07/2000",
       "name": "Office consultation - 15 minutes",
       "code": "99241",
       "code_system": "2.16.840.1.113883.6.12",
@@ -201,7 +198,7 @@
   ],
   "immunizations": [
     {
-      "date": "1999-10-31T07:00:00.000Z",
+      "date": "10/31/1999",
       "product": {
         "name": "Influenza virus vaccine",
         "code": "88",
@@ -228,7 +225,7 @@
       }
     },
     {
-      "date": "1998-12-15T08:00:00.000Z",
+      "date": "12/15/1998",
       "product": {
         "name": "Influenza virus vaccine",
         "code": "88",
@@ -255,7 +252,7 @@
       }
     },
     {
-      "date": "1998-12-15T08:00:00.000Z",
+      "date": "12/15/1998",
       "product": {
         "name": "Pneumococcal polysaccharide vaccine",
         "code": "33",
@@ -282,7 +279,7 @@
       }
     },
     {
-      "date": "1998-12-15T08:00:00.000Z",
+      "date": "12/15/1998",
       "product": {
         "name": "Tetanus and diphtheria toxoids - preservative free",
         "code": "103",
@@ -317,7 +314,7 @@
       "code_system_name": "SNOMED CT",
       "results": [
         {
-          "date": "2000-03-23T07:00:00.000Z",
+          "date": "03/23/2000",
           "name": "HGB",
           "value": 13.2,
           "unit": "g/dl",
@@ -333,7 +330,7 @@
           }
         },
         {
-          "date": "2000-03-23T07:00:00.000Z",
+          "date": "03/23/2000",
           "name": "WBC",
           "value": 6.7,
           "unit": "10+3/ul",
@@ -349,7 +346,7 @@
           }
         },
         {
-          "date": "2000-03-23T07:00:00.000Z",
+          "date": "03/23/2000",
           "name": "PLT",
           "value": 123,
           "unit": "10+3/ul",
@@ -370,8 +367,8 @@
   "medications": [
     {
       "date_range": {
-        "start": "2011-03-01T08:00:00.000Z",
-        "end": "2012-03-01T08:00:00.000Z"
+        "start": "03/01/2011",
+        "end": "03/01/2012"
       },
       "product": {
         "name": "Albuterol 0.09 MG/ACTUAT inhalant solution",
@@ -429,8 +426,8 @@
   "problems": [
     {
       "date_range": {
-        "start": "1998-02-28T08:00:00.000Z",
-        "end": "2011-01-03T08:00:00.000Z"
+        "start": "02/28/1998",
+        "end": "01/03/2011"
       },
       "name": "Pneumonia",
       "status": "Active",
@@ -441,7 +438,7 @@
   ],
   "procedures": [
     {
-      "date": "2011-02-15T08:00:00.000Z",
+      "date": "02/15/2011",
       "name": "Colonic polypectomy",
       "code": "274025005",
       "code_system": "2.16.840.1.113883.6.96",
@@ -468,7 +465,7 @@
       }
     },
     {
-      "date": "2011-02-03T08:00:00.000Z",
+      "date": "02/03/2011",
       "name": "Colonic polypectomy",
       "code": "274025005",
       "code_system": "2.16.840.1.113883.6.96",
@@ -495,7 +492,7 @@
       }
     },
     {
-      "date": "2011-02-03T08:00:00.000Z",
+      "date": "02/03/2011",
       "name": "Colonic polypectomy",
       "code": "274025005",
       "code_system": "2.16.840.1.113883.6.96",
@@ -524,7 +521,7 @@
   ],
   "vitals": [
     {
-      "date": "1999-11-14T08:00:00.000Z",
+      "date": "11/14/1999",
       "results": [
         {
           "name": "Height",
@@ -553,7 +550,7 @@
       ]
     },
     {
-      "date": "2000-04-07T07:00:00.000Z",
+      "date": "04/07/2000",
       "results": [
         {
           "name": "Height",
