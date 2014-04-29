@@ -33,6 +33,7 @@ ccda.type  // Returns the string "ccda"
 ccda.data  // Returns an object containing the parsed CCDA sections
 
 // Available document sections
+ccda.data.document
 ccda.data.allergies
 ccda.data.demographics
 ccda.data.encounters
