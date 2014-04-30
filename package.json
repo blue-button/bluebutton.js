@@ -45,7 +45,8 @@
     "grunt-template-jasmine-requirejs": "^0.1.10",
     "grunt-umd": "^1.7.3",
     "matchdep": "^0.3.0",
-    "underscore": "^1.6.0"
+    "underscore": "^1.6.0",
+    "ejs": "^1.0.0"
   },
   "devDependencies": {
     "bower": "*",
@@ -62,7 +63,8 @@
     "grunt-template-jasmine-requirejs": "*",
     "grunt-umd": "*",
     "matchdep": "*",
-    "underscore": "*"
+    "underscore": "*",
+    "ejs": "*"
   },
   "peerDependencies": {
     "bower": "*",
