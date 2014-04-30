@@ -24,6 +24,7 @@
     "Codes": true,
     "Core": true,
     "Documents": true,
+    "ejs": true,
     "Generators": true,
     "Parsers": true,
     "Renderers": true
