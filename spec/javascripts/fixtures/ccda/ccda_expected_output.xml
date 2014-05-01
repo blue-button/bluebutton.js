@@ -705,6 +705,217 @@
             
 
             
+
+                <!--
+                ********************************************************
+
+                PROCEDURES
+
+                ********************************************************
+                -->
+                    <component>
+                        <section>
+                            <templateId root="2.16.840.1.113883.10.20.22.2.7.1"/>
+                            <!-- Procedures section template -->
+                            <code code="47519-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="PROCEDURES"/>
+                            <title>Procedures</title>
+                            <text>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                           <th>Procedure</th>
+                                           <th>Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                            <tr>
+                                                <td>Colonic polypectomy</td>
+                                                <td>02/15/2011</td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td>Colonic polypectomy</td>
+                                                <td>02/03/2011</td>
+                                            </tr>
+                                        
+                                            <tr>
+                                                <td>Colonic polypectomy</td>
+                                                <td>02/03/2011</td>
+                                            </tr>
+                                        
+                                    </tbody>
+                                </table>
+                            </text>
+
+                            
+
+                            <entry typeCode="DRIV">
+                                <procedure classCode="PROC" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.22.4.14"/>
+                                    <!-- ***** Procedure  Activity Procedure Template ***** -->
+                                    <id root="d68b7e32-7810-4f5b-9cc2-acd54b0fd85d"/>
+                                    <code displayName="Colonic polypectomy" code="274025005" codeSystem="2.16.840.1.113883.6.96" >
+                                    </code>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20110215"/>
+                                    <methodCode nullFlavor="UNK"/>
+                                    
+                                    <performer>
+                                        <assignedEntity>
+                                            <id root="c2ee9ee9-ae31-4628-a919-fec1cbb58687"/>
+                                            <addr>
+                                                <streetAddressLine>17 Daws Rd.</streetAddressLine>
+                                                <city>Blue Bell</city>
+                                                <state>MA</state>
+                                                <postalCode>02368</postalCode>
+                                                <country>US</country>
+                                            </addr>
+                                            <telecom use="WP" value="null"/>
+                                            <representedOrganization>
+                                                <id root="c2ee9ee9-ae31-4628-a919-fec1cbb58686"/>
+                                                <name>null</name>
+                                                <telecom use="WP" value="null"/>
+                                                <addr>
+                                                    <streetAddressLine>17 Daws Rd.</streetAddressLine>
+                                                    <city>Blue Bell</city>
+                                                    <state>MA</state>
+                                                    <postalCode>02368</postalCode>
+                                                    <country>US</country>
+                                                </addr>
+                                            </representedOrganization>
+                                        </assignedEntity>
+                                    </performer>
+                                    <participant typeCode="LOC">
+                                        <participantRole classCode="MANU">
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.37"/>
+                                            <!--   Product instance template   -->
+                                            <id root="eb936010-7b17-11db-9fe1-0800200c9a68"/>
+                                            <playingDevice>
+                                                <code displayName="Colonoscope" code="90412006" codeSystem="2.16.840.1.113883.6.96" />
+                                            </playingDevice>
+                                            <scopingEntity>
+                                                <id root="eb936010-7b17-11db-9fe1-0800200c9b65"/>
+                                            </scopingEntity>
+                                        </participantRole>
+                                    </participant>
+                                </procedure>
+                            </entry>
+
+                            
+
+                            <entry typeCode="DRIV">
+                                <procedure classCode="PROC" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.22.4.14"/>
+                                    <!-- ***** Procedure  Activity Procedure Template ***** -->
+                                    <id root="d68b7e32-7810-4f5b-9cc2-acd54b0fd85d"/>
+                                    <code displayName="Colonic polypectomy" code="274025005" codeSystem="2.16.840.1.113883.6.96" >
+                                    </code>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20110203"/>
+                                    <methodCode nullFlavor="UNK"/>
+                                    
+                                    <performer>
+                                        <assignedEntity>
+                                            <id root="c2ee9ee9-ae31-4628-a919-fec1cbb58687"/>
+                                            <addr>
+                                                <streetAddressLine>17 Daws Rd.</streetAddressLine>
+                                                <city>Blue Bell</city>
+                                                <state>MA</state>
+                                                <postalCode>02368</postalCode>
+                                                <country>US</country>
+                                            </addr>
+                                            <telecom use="WP" value="null"/>
+                                            <representedOrganization>
+                                                <id root="c2ee9ee9-ae31-4628-a919-fec1cbb58686"/>
+                                                <name>null</name>
+                                                <telecom use="WP" value="null"/>
+                                                <addr>
+                                                    <streetAddressLine>17 Daws Rd.</streetAddressLine>
+                                                    <city>Blue Bell</city>
+                                                    <state>MA</state>
+                                                    <postalCode>02368</postalCode>
+                                                    <country>US</country>
+                                                </addr>
+                                            </representedOrganization>
+                                        </assignedEntity>
+                                    </performer>
+                                    <participant typeCode="LOC">
+                                        <participantRole classCode="MANU">
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.37"/>
+                                            <!--   Product instance template   -->
+                                            <id root="eb936010-7b17-11db-9fe1-0800200c9a68"/>
+                                            <playingDevice>
+                                                <code displayName="General Acute Care Hospital" code="GACH" codeSystem="2.16.840.1.113883.5.111" />
+                                            </playingDevice>
+                                            <scopingEntity>
+                                                <id root="eb936010-7b17-11db-9fe1-0800200c9b65"/>
+                                            </scopingEntity>
+                                        </participantRole>
+                                    </participant>
+                                </procedure>
+                            </entry>
+
+                            
+
+                            <entry typeCode="DRIV">
+                                <procedure classCode="PROC" moodCode="EVN">
+                                    <templateId root="2.16.840.1.113883.10.20.22.4.14"/>
+                                    <!-- ***** Procedure  Activity Procedure Template ***** -->
+                                    <id root="d68b7e32-7810-4f5b-9cc2-acd54b0fd85d"/>
+                                    <code displayName="Colonic polypectomy" code="274025005" codeSystem="2.16.840.1.113883.6.96" >
+                                    </code>
+                                    <statusCode code="completed"/>
+                                    <effectiveTime value="20110203"/>
+                                    <methodCode nullFlavor="UNK"/>
+                                    
+                                    <performer>
+                                        <assignedEntity>
+                                            <id root="c2ee9ee9-ae31-4628-a919-fec1cbb58687"/>
+                                            <addr>
+                                                <streetAddressLine>17 Daws Rd.</streetAddressLine>
+                                                <city>Blue Bell</city>
+                                                <state>MA</state>
+                                                <postalCode>02368</postalCode>
+                                                <country>US</country>
+                                            </addr>
+                                            <telecom use="WP" value="null"/>
+                                            <representedOrganization>
+                                                <id root="c2ee9ee9-ae31-4628-a919-fec1cbb58686"/>
+                                                <name>null</name>
+                                                <telecom use="WP" value="null"/>
+                                                <addr>
+                                                    <streetAddressLine>17 Daws Rd.</streetAddressLine>
+                                                    <city>Blue Bell</city>
+                                                    <state>MA</state>
+                                                    <postalCode>02368</postalCode>
+                                                    <country>US</country>
+                                                </addr>
+                                            </representedOrganization>
+                                        </assignedEntity>
+                                    </performer>
+                                    <participant typeCode="LOC">
+                                        <participantRole classCode="MANU">
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.37"/>
+                                            <!--   Product instance template   -->
+                                            <id root="eb936010-7b17-11db-9fe1-0800200c9a68"/>
+                                            <playingDevice>
+                                                <code displayName="General Acute Care Hospital" code="GACH" codeSystem="2.16.840.1.113883.5.111" />
+                                            </playingDevice>
+                                            <scopingEntity>
+                                                <id root="eb936010-7b17-11db-9fe1-0800200c9b65"/>
+                                            </scopingEntity>
+                                        </participantRole>
+                                    </participant>
+                                </procedure>
+                            </entry>
+
+                            
+
+                        </section>
+                    </component>
+
+            
             
 
             
