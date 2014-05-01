@@ -39,7 +39,7 @@
             
         
     </title>
-    <effectiveTime value="20140501010700+0000"/>
+    <effectiveTime value="2014050173+0000"/>
     <confidentialityCode code="N" displayName="Normal" codeSystem="2.16.840.1.113883.5.25"/>
     <languageCode code="en-US"/>
     <setId extension="111199021" root="2.16.840.1.113883.19"/>
@@ -80,6 +80,8 @@
                         <maritalStatusCode code="M" displayName="married" codeSystem="2.16.840.1.113883.5.2" codeSystemName="MaritalStatusCode"/>
                     
                     
+                        <religiousAffiliationCode code="1013" displayName="Christian (non-Catholic, non-specific)" codeSystemName="HL7 Religious Affiliation " codeSystem="2.16.840.1.113883.1.11.19185"/>
+                    
                     
                         <raceCode code="2106-3" displayName="White" codeSystem="2.16.840.1.113883.6.238" codeSystemName="Race &amp; Ethnicity - CDC"/>
                     
@@ -88,7 +90,7 @@
                     
                     
                         <guardian>
-                            <code code="GRPRN" displayName="Grandparent" codeSystem="2.16.840.1.113883.5.111" codeSystemName="HL7 Role code"/>
+                            <code code="GRFTH" displayName="Grandfather" codeSystem="2.16.840.1.113883.5.111" codeSystemName="HL7 Role code"/>
                             <addr use="HP">
                                 <!-- HP is "primary home" from codeSystem 2.16.840.1.113883.5.1119 -->
                                 <streetAddressLine>17 Daws Rd.</streetAddressLine>
@@ -147,7 +149,7 @@
     
     
         <author>
-            <time value="20140501010700+0000"/>
+            <time value="2014050173+0000"/>
             <assignedAuthor>
                 <!-- TODO support real NPI -->
                 <id extension="99999999" root="2.16.840.1.113883.4.6"/>
@@ -192,7 +194,7 @@
         <documentationOf>
             <serviceEvent classCode="PCPR">
                 <effectiveTime>
-                    <low value="20140501010700+0000" />
+                    <low value="2014050173+0000" />
                     <high nullFlavor="UNK" />
                 </effectiveTime>
                 <performer typeCode="PRF">
@@ -634,6 +636,26 @@
                             <code code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="PROBLEM LIST"/>
                             <title>Problems</title>
                             <text>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                           <th>Problem</th>
+                                           <th>Code</th>
+                                           <th>Code System</th>
+                                           <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                            <tr>
+                                                <td>Pneumonia</td>
+                                                <td>233604007</td>
+                                                <td></td>
+                                                <td>Active</td>
+                                            </tr>
+                                        
+                                    </tbody>
+                                </table>
                             </text>
 
                             
@@ -1101,6 +1123,65 @@
                             <code code="8716-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="VITAL SIGNS"/>
                             <title>Vital Signs</title>
                             <text>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                           <th>Date</th>
+                                           <th>Name</th>
+                                           <th>Value</th>
+                                           <th>Unit</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        
+                                            
+                                                <tr>
+                                                    <td>11/14/1999</td>
+                                                    <td>Height</td>
+                                                    <td>177</td>
+                                                    <td>cm</td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td>11/14/1999</td>
+                                                    <td>Patient Body Weight - Measured</td>
+                                                    <td>86</td>
+                                                    <td>kg</td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td>11/14/1999</td>
+                                                    <td>Intravascular Systolic</td>
+                                                    <td>132</td>
+                                                    <td>mm[Hg]</td>
+                                                </tr>
+                                            
+                                        
+                                            
+                                                <tr>
+                                                    <td>04/07/2000</td>
+                                                    <td>Height</td>
+                                                    <td>177</td>
+                                                    <td>cm</td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td>04/07/2000</td>
+                                                    <td>Patient Body Weight - Measured</td>
+                                                    <td>88</td>
+                                                    <td>kg</td>
+                                                </tr>
+                                            
+                                                <tr>
+                                                    <td>04/07/2000</td>
+                                                    <td>Intravascular Systolic</td>
+                                                    <td>145</td>
+                                                    <td>mm[Hg]</td>
+                                                </tr>
+                                            
+                                        
+                                    </tbody>
+                                </table>
                             </text>
 
 
