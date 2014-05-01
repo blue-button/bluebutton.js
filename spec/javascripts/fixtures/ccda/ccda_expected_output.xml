@@ -39,7 +39,7 @@
             
         
     </title>
-    <effectiveTime value="2014050173+0000"/>
+    <effectiveTime value="20000101120000+0000"/>
     <confidentialityCode code="N" displayName="Normal" codeSystem="2.16.840.1.113883.5.25"/>
     <languageCode code="en-US"/>
     <setId extension="111199021" root="2.16.840.1.113883.19"/>
@@ -149,7 +149,7 @@
     
     
         <author>
-            <time value="2014050173+0000"/>
+            <time value="20000101120000+0000"/>
             <assignedAuthor>
                 <!-- TODO support real NPI -->
                 <id extension="99999999" root="2.16.840.1.113883.4.6"/>
@@ -194,7 +194,7 @@
         <documentationOf>
             <serviceEvent classCode="PCPR">
                 <effectiveTime>
-                    <low value="2014050173+0000" />
+                    <low value="20000101120000+0000" />
                     <high nullFlavor="UNK" />
                 </effectiveTime>
                 <performer typeCode="PRF">
