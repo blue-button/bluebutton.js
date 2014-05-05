@@ -85,6 +85,17 @@ module.exports = function(grunt) {
         dest: "<%= bb.build %>/bluebutton.js"
       }
     },
+
+    copy: {
+      ejs: {
+        files: [{
+          cwd: ".",
+          src: "<%= bb.src %>/generators/ccda_template.ejs",
+          dest: "<%= bb.build %>/ccda_template.ejs",
+          expand: false
+        }]
+      }
+    },
     
     umd: {
      all: {
@@ -158,6 +169,7 @@ module.exports = function(grunt) {
     "clean",
     "jshint:beforeconcat",
     "concat",
+    "copy",
     "umd",
     "jshint:afterconcat",
     "uglify"
