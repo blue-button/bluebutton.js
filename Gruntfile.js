@@ -73,6 +73,7 @@ module.exports = function(grunt) {
           "<%= bb.src %>/parsers/ccda/medications.js",
           "<%= bb.src %>/parsers/ccda/problems.js",
           "<%= bb.src %>/parsers/ccda/procedures.js",
+          "<%= bb.src %>/parsers/ccda/smoking_status.js",
           "<%= bb.src %>/parsers/ccda/vitals.js",
           
           "<%= bb.src %>/renderers.js",
@@ -82,6 +83,17 @@ module.exports = function(grunt) {
           "<%= bb.src %>/bluebutton.js"
         ],
         dest: "<%= bb.build %>/bluebutton.js"
+      }
+    },
+
+    copy: {
+      ejs: {
+        files: [{
+          cwd: ".",
+          src: "<%= bb.src %>/generators/ccda_template.ejs",
+          dest: "<%= bb.build %>/ccda_template.ejs",
+          expand: false
+        }]
       }
     },
     
@@ -157,6 +169,7 @@ module.exports = function(grunt) {
     "clean",
     "jshint:beforeconcat",
     "concat",
+    "copy",
     "umd",
     "jshint:afterconcat",
     "uglify"

@@ -112,6 +112,15 @@ var runJsonTests = function(expectedOutput, expectedType, bb) {
     });
   });
 
+  describe('smoking status', function() {
+    it('should output the correct smoking_status', function() {
+      var actual = toJSON(bb.data.smoking_status);
+      var expected = expectedOutput.smoking_status;
+
+      expect(actual).toEqual(expected);
+    });
+  });
+
   describe('data', function() {
     it('should output the correct json', function() {
       var actual = toJSON(bb.data);

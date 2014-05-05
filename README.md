@@ -111,6 +111,50 @@ require(['bluebutton', 'text!examples/xml/ccd.xml'], function (BlueButton, xml) 
 </body>
 ```
 
+## Generation
+
+```JavaScript
+var json = fs.readFileSync('./example.json', 'utf-8');
+var template = fs.readFileSync('./build/ccda_template.ejs');
+var myRecord = BlueButton(json, {
+  generatorType: 'ccda',
+  template: template
+});
+
+// Log the resulting XML
+console.log(myRecord.data);
+```
+
+XML Generation requires ejs (https://github.com/visionmedia/ejs).
+
+### Browser Usage
+
+In order to do generation in the browser, include a copy of ejs.js before bluebutton.js (using the visionmedia implementation popular in Node and not the implementation at http://embeddedjs.com/) and then load the ejs template via XHR like so:
+
+```HTML
+<body>
+  <script src="./spec/javascripts/helpers/ejs.js"></script>
+  <script src="./bluebutton/build/bluebutton.js"></script>
+  <script>
+    var json = ...; // client-generated or fetched via XHR, depending on your application
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('get', './bluebutton/build/ccda_template.ejs', false);
+    xhr.send();
+    var template = xhr.responseText;
+
+    var myRecord = BlueButton(json, {
+      generatorType: 'ccda',
+      template: template
+    });
+
+    // Log the resulting XML
+    console.log(myRecord.data);
+  </script>
+</body>
+```
+
+
 ## Creating a Build
 
 Run `grunt` to build the library. A `build/` directory will be created containing the standard and minified builds.
