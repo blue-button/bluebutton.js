@@ -1259,11 +1259,11 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                                                                                                                    <tr>
-                                                    <td>Bronchitis</td>
-                                                    <td>04/07/2000</td>
-                                                </tr>
-                                                                                                                        </tbody>
+                                                                                                                                                                                        <tr>
+                                                        <td>Bronchitis</td>
+                                                        <td>04/07/2000</td>
+                                                    </tr>
+                                                                                                                                                                        </tbody>
                                 </table>
                                                     </text>
 
@@ -1590,119 +1590,119 @@
 
                         
                             
+                                
 
+                                    <entry typeCode="DRIV">
+                                        <organizer classCode="CLUSTER" moodCode="EVN">
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.26"/>
+                                            <!-- Vital signs organizer template -->
+                                            <id root="c6f88320-67ad-11db-bd13-0800200c9a66"/>
+                                            <code code="46680005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED -CT" displayName="Vital signs"/>
+                                            <statusCode code="completed"/>
+                                            <effectiveTime value="19991114"/>
 
-                                <entry typeCode="DRIV">
-                                    <organizer classCode="CLUSTER" moodCode="EVN">
-                                        <templateId root="2.16.840.1.113883.10.20.22.4.26"/>
-                                        <!-- Vital signs organizer template -->
-                                        <id root="c6f88320-67ad-11db-bd13-0800200c9a66"/>
-                                        <code code="46680005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED -CT" displayName="Vital signs"/>
-                                        <statusCode code="completed"/>
-                                        <effectiveTime value="19991114"/>
+                                            
+                                            <component>
+                                                <observation classCode="OBS" moodCode="EVN">
+                                                    <templateId root="2.16.840.1.113883.10.20.22.4.27"/>
+                                                    <!-- Vital Sign Observation template -->
+                                                    <id root="c6f88321-67ad-11db-bd13-0800200c9a66"/>
+                                                    <code code="8302-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Height"/>
+                                                    <statusCode code="completed"/>
+                                                    <effectiveTime value="19991114"/>
+                                                    <value xsi:type="PQ" value="177" unit="cm"/>
+                                                    <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
+                                                </observation>
+                                            </component>
+                                            
+                                            <component>
+                                                <observation classCode="OBS" moodCode="EVN">
+                                                    <templateId root="2.16.840.1.113883.10.20.22.4.27"/>
+                                                    <!-- Vital Sign Observation template -->
+                                                    <id root="c6f88321-67ad-11db-bd13-0800200c9a66"/>
+                                                    <code code="3141-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Patient Body Weight - Measured"/>
+                                                    <statusCode code="completed"/>
+                                                    <effectiveTime value="19991114"/>
+                                                    <value xsi:type="PQ" value="86" unit="kg"/>
+                                                    <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
+                                                </observation>
+                                            </component>
+                                            
+                                            <component>
+                                                <observation classCode="OBS" moodCode="EVN">
+                                                    <templateId root="2.16.840.1.113883.10.20.22.4.27"/>
+                                                    <!-- Vital Sign Observation template -->
+                                                    <id root="c6f88321-67ad-11db-bd13-0800200c9a66"/>
+                                                    <code code="8480-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Intravascular Systolic"/>
+                                                    <statusCode code="completed"/>
+                                                    <effectiveTime value="19991114"/>
+                                                    <value xsi:type="PQ" value="132" unit="mm[Hg]"/>
+                                                    <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
+                                                </observation>
+                                            </component>
+                                            
+                                            
+                                        </organizer>
+                                    </entry>
 
-                                        
-                                        <component>
-                                            <observation classCode="OBS" moodCode="EVN">
-                                                <templateId root="2.16.840.1.113883.10.20.22.4.27"/>
-                                                <!-- Vital Sign Observation template -->
-                                                <id root="c6f88321-67ad-11db-bd13-0800200c9a66"/>
-                                                <code code="8302-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Height"/>
-                                                <statusCode code="completed"/>
-                                                <effectiveTime value="19991114"/>
-                                                <value xsi:type="PQ" value="177" unit="cm"/>
-                                                <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
-                                            </observation>
-                                        </component>
-                                        
-                                        <component>
-                                            <observation classCode="OBS" moodCode="EVN">
-                                                <templateId root="2.16.840.1.113883.10.20.22.4.27"/>
-                                                <!-- Vital Sign Observation template -->
-                                                <id root="c6f88321-67ad-11db-bd13-0800200c9a66"/>
-                                                <code code="3141-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Patient Body Weight - Measured"/>
-                                                <statusCode code="completed"/>
-                                                <effectiveTime value="19991114"/>
-                                                <value xsi:type="PQ" value="86" unit="kg"/>
-                                                <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
-                                            </observation>
-                                        </component>
-                                        
-                                        <component>
-                                            <observation classCode="OBS" moodCode="EVN">
-                                                <templateId root="2.16.840.1.113883.10.20.22.4.27"/>
-                                                <!-- Vital Sign Observation template -->
-                                                <id root="c6f88321-67ad-11db-bd13-0800200c9a66"/>
-                                                <code code="8480-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Intravascular Systolic"/>
-                                                <statusCode code="completed"/>
-                                                <effectiveTime value="19991114"/>
-                                                <value xsi:type="PQ" value="132" unit="mm[Hg]"/>
-                                                <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
-                                            </observation>
-                                        </component>
-                                        
-                                        
-                                    </organizer>
-                                </entry>
-
-
+                                
                             
+                                
 
+                                    <entry typeCode="DRIV">
+                                        <organizer classCode="CLUSTER" moodCode="EVN">
+                                            <templateId root="2.16.840.1.113883.10.20.22.4.26"/>
+                                            <!-- Vital signs organizer template -->
+                                            <id root="c6f88320-67ad-11db-bd13-0800200c9a66"/>
+                                            <code code="46680005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED -CT" displayName="Vital signs"/>
+                                            <statusCode code="completed"/>
+                                            <effectiveTime value="20000407"/>
 
-                                <entry typeCode="DRIV">
-                                    <organizer classCode="CLUSTER" moodCode="EVN">
-                                        <templateId root="2.16.840.1.113883.10.20.22.4.26"/>
-                                        <!-- Vital signs organizer template -->
-                                        <id root="c6f88320-67ad-11db-bd13-0800200c9a66"/>
-                                        <code code="46680005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED -CT" displayName="Vital signs"/>
-                                        <statusCode code="completed"/>
-                                        <effectiveTime value="20000407"/>
+                                            
+                                            <component>
+                                                <observation classCode="OBS" moodCode="EVN">
+                                                    <templateId root="2.16.840.1.113883.10.20.22.4.27"/>
+                                                    <!-- Vital Sign Observation template -->
+                                                    <id root="c6f88321-67ad-11db-bd13-0800200c9a66"/>
+                                                    <code code="8302-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Height"/>
+                                                    <statusCode code="completed"/>
+                                                    <effectiveTime value="20000407"/>
+                                                    <value xsi:type="PQ" value="177" unit="cm"/>
+                                                    <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
+                                                </observation>
+                                            </component>
+                                            
+                                            <component>
+                                                <observation classCode="OBS" moodCode="EVN">
+                                                    <templateId root="2.16.840.1.113883.10.20.22.4.27"/>
+                                                    <!-- Vital Sign Observation template -->
+                                                    <id root="c6f88321-67ad-11db-bd13-0800200c9a66"/>
+                                                    <code code="3141-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Patient Body Weight - Measured"/>
+                                                    <statusCode code="completed"/>
+                                                    <effectiveTime value="20000407"/>
+                                                    <value xsi:type="PQ" value="88" unit="kg"/>
+                                                    <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
+                                                </observation>
+                                            </component>
+                                            
+                                            <component>
+                                                <observation classCode="OBS" moodCode="EVN">
+                                                    <templateId root="2.16.840.1.113883.10.20.22.4.27"/>
+                                                    <!-- Vital Sign Observation template -->
+                                                    <id root="c6f88321-67ad-11db-bd13-0800200c9a66"/>
+                                                    <code code="8480-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Intravascular Systolic"/>
+                                                    <statusCode code="completed"/>
+                                                    <effectiveTime value="20000407"/>
+                                                    <value xsi:type="PQ" value="145" unit="mm[Hg]"/>
+                                                    <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
+                                                </observation>
+                                            </component>
+                                            
+                                            
+                                        </organizer>
+                                    </entry>
 
-                                        
-                                        <component>
-                                            <observation classCode="OBS" moodCode="EVN">
-                                                <templateId root="2.16.840.1.113883.10.20.22.4.27"/>
-                                                <!-- Vital Sign Observation template -->
-                                                <id root="c6f88321-67ad-11db-bd13-0800200c9a66"/>
-                                                <code code="8302-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Height"/>
-                                                <statusCode code="completed"/>
-                                                <effectiveTime value="20000407"/>
-                                                <value xsi:type="PQ" value="177" unit="cm"/>
-                                                <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
-                                            </observation>
-                                        </component>
-                                        
-                                        <component>
-                                            <observation classCode="OBS" moodCode="EVN">
-                                                <templateId root="2.16.840.1.113883.10.20.22.4.27"/>
-                                                <!-- Vital Sign Observation template -->
-                                                <id root="c6f88321-67ad-11db-bd13-0800200c9a66"/>
-                                                <code code="3141-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Patient Body Weight - Measured"/>
-                                                <statusCode code="completed"/>
-                                                <effectiveTime value="20000407"/>
-                                                <value xsi:type="PQ" value="88" unit="kg"/>
-                                                <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
-                                            </observation>
-                                        </component>
-                                        
-                                        <component>
-                                            <observation classCode="OBS" moodCode="EVN">
-                                                <templateId root="2.16.840.1.113883.10.20.22.4.27"/>
-                                                <!-- Vital Sign Observation template -->
-                                                <id root="c6f88321-67ad-11db-bd13-0800200c9a66"/>
-                                                <code code="8480-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Intravascular Systolic"/>
-                                                <statusCode code="completed"/>
-                                                <effectiveTime value="20000407"/>
-                                                <value xsi:type="PQ" value="145" unit="mm[Hg]"/>
-                                                <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
-                                            </observation>
-                                        </component>
-                                        
-                                        
-                                    </organizer>
-                                </entry>
-
-
+                                
                             
                         
                     </section>
