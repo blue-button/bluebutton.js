@@ -540,6 +540,11 @@
         "code_system": "2.16.840.1.113883.5.112",
         "code_system_name": "HL7 RouteOfAdministration"
       },
+      "schedule": {
+        "type": null,
+        "period_value": "6",
+        "period_unit": "h"
+      },
       "vehicle": {
         "name": null,
         "code": null,
@@ -597,6 +602,11 @@
         "code": "C38288",
         "code_system": "2.16.840.1.113883.3.26.1.1",
         "code_system_name": "FDA RouteOfAdministration"
+      },
+      "schedule": {
+        "type": "interval",
+        "period_value": "24",
+        "period_unit": "h"
       },
       "vehicle": {
         "name": null,
@@ -656,6 +666,11 @@
         "code_system": "2.16.840.1.113883.3.26.1.1",
         "code_system_name": "FDA RouteOfAdministration"
       },
+      "schedule": {
+        "type": "interval",
+        "period_value": "12",
+        "period_unit": "h"
+      },
       "vehicle": {
         "name": null,
         "code": null,
@@ -714,6 +729,11 @@
         "code_system": "2.16.840.1.113883.3.26.1.1",
         "code_system_name": "FDA RouteOfAdministration"
       },
+      "schedule": {
+        "type": "interval",
+        "period_value": "24",
+        "period_unit": "h"
+      },
       "vehicle": {
         "name": null,
         "code": null,
@@ -771,6 +791,11 @@
         "code": "C38288",
         "code_system": "2.16.840.1.113883.3.26.1.1",
         "code_system_name": "FDA RouteOfAdministration"
+      },
+      "schedule": {
+        "type": "interval",
+        "period_value": "6",
+        "period_unit": "h"
       },
       "vehicle": {
         "name": null,

@@ -827,6 +827,11 @@
                                             <low value="20110301"/>
                                             <high value="20120301"/>
                                         </effectiveTime>
+                                        
+                                            <effectiveTime xsi:type="PIVL_TS" institutionSpecified="true" operator="A">
+                                                <period value="6" unit="h"/>
+                                            </effectiveTime>
+                                        
                                         <routeCode displayName="RESPIRATORY (INHALATION)" code="C38216" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCI Thesaurus" />
                                         
                                             <doseQuantity value="1" unit="null"/>

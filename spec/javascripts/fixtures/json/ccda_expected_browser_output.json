@@ -509,6 +509,11 @@
         "code_system": "2.16.840.1.113883.3.26.1.1",
         "code_system_name": "NCI Thesaurus"
       },
+      "schedule": {
+        "type": "frequency",
+        "period_value": "6",
+        "period_unit": "h"
+      },
       "vehicle": {
         "name": "drug vehicle",
         "code": "412307009",
