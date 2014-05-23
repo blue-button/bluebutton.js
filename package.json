@@ -20,6 +20,10 @@
       "name": "Rob Dodson",
       "email": "lets.email.rob@gmail.com",
       "url": "http://robdodson.me"
+    },
+    {
+      "name": "Ravi Sankar",
+      "email": "sankarravi+bbjs@gmail.com"
     }
   ],
   "main": "build/bluebutton.js",
