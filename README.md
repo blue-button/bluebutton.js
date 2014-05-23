@@ -61,6 +61,10 @@ BlueButton.js uses a UMD wrapper to support NodeJS and AMD module loaders, like 
 
 ### An Example Using Node
 
+```bash
+$ npm install bluebutton
+```
+
 ```JavaScript
 var fs = require('fs');
 var BlueButton = require('bluebutton');
@@ -153,7 +157,6 @@ In order to do generation in the browser, include a copy of ejs.js before bluebu
   </script>
 </body>
 ```
-
 
 ## Creating a Build
 
