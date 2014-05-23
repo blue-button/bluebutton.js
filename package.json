@@ -20,6 +20,10 @@
       "name": "Rob Dodson",
       "email": "lets.email.rob@gmail.com",
       "url": "http://robdodson.me"
+    },
+    {
+      "name": "Ravi Sankar",
+      "email": "sankarravi+bbjs@gmail.com"
     }
   ],
   "main": "build/bluebutton.js",
@@ -45,7 +49,8 @@
     "grunt-template-jasmine-requirejs": "^0.1.10",
     "grunt-umd": "^1.7.3",
     "matchdep": "^0.3.0",
-    "underscore": "^1.6.0"
+    "underscore": "^1.6.0",
+    "ejs": "^1.0.0"
   },
   "devDependencies": {
     "bower": "*",
@@ -62,7 +67,8 @@
     "grunt-template-jasmine-requirejs": "*",
     "grunt-umd": "*",
     "matchdep": "*",
-    "underscore": "*"
+    "underscore": "*",
+    "ejs": "*"
   },
   "peerDependencies": {
     "bower": "*",

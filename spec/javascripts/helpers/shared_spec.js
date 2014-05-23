@@ -112,6 +112,42 @@ var runJsonTests = function(expectedOutput, expectedType, bb) {
     });
   });
 
+  describe('smoking status', function() {
+    it('should output the correct smoking_status', function() {
+      var actual = toJSON(bb.data.smoking_status);
+      var expected = expectedOutput.smoking_status;
+
+      expect(actual).toEqual(expected);
+    });
+  });
+
+  describe('care plan', function() {
+    it('should output the correct care_plan', function() {
+      var actual = toJSON(bb.data.care_plan);
+      var expected = expectedOutput.care_plan;
+
+      expect(actual).toEqual(expected);
+    });
+  });
+
+  describe('instructions', function() {
+    it('should output the correct instructions', function() {
+      var actual = toJSON(bb.data.instructions);
+      var expected = expectedOutput.instructions;
+
+      expect(actual).toEqual(expected);
+    });
+  });
+
+  describe('functional statuses', function() {
+    it('should output the correct functional_statuses', function() {
+      var actual = toJSON(bb.data.functional_statuses);
+      var expected = expectedOutput.functional_statuses;
+
+      expect(actual).toEqual(expected);
+    });
+  });
+
   describe('data', function() {
     it('should output the correct json', function() {
       var actual = toJSON(bb.data);

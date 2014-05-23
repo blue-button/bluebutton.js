@@ -1,5 +1,6 @@
 {
   "document": {
+    "date": "11/10/2009",
     "author": {
       "name": {
         "prefix": null,
@@ -15,6 +16,52 @@
       },
       "phone": {
         "work": "tel:+1-301-975-3251"
+      }
+    },
+    "documentation_of": [
+      {
+        "name": {
+          "prefix": "Dr.",
+          "given": ["Pseudo"],
+          "family": "Physician-1"
+        },
+        "phone": {
+          "work": "tel:+1-301-975-3251"
+        },
+        "address": {
+          "street": [],
+          "city": null,
+          "state": null,
+          "zip": null,
+          "country": null
+        }
+      },
+      {
+        "name": {
+          "prefix": "Dr.",
+          "given": ["Pseudo"],
+          "family": "Physician-3"
+        },
+        "phone": {
+          "work": "tel:+1-301-975-3251"
+        },
+        "address": {
+          "street": [],
+          "city": null,
+          "state": null,
+          "zip": null,
+          "country": null
+        }
+      }
+    ],
+    "location": {
+      "name": null,
+      "address": {
+        "street": [],
+        "city": null,
+        "state": null,
+        "zip": null,
+        "country": null
       }
     }
   },
@@ -107,6 +154,10 @@
       }
     }
   ],
+  "care_plan": [],
+  "chief_complaint": {
+    "text": null
+  },
   "demographics": {
     "name": {
       "prefix": null,
@@ -180,11 +231,7 @@
       "code_system": "2.16.840.1.113883.6.12",
       "code_system_name": "CPT",
       "code_system_version": "4",
-      "finding": {
-        "name": null,
-        "code": null,
-        "code_system": null
-      },
+      "findings": [],
       "translation": {
         "name": "Ambulatory",
         "code": "AMB",
@@ -207,6 +254,7 @@
       }
     }
   ],
+  "functional_statuses": [],
   "immunizations": [
     {
       "date": "10/31/1999",
@@ -317,6 +365,7 @@
       }
     }
   ],
+  "instructions": [],
   "labs": [
     {
       "name": "CBC WO DIFFERENTIAL",
@@ -455,6 +504,7 @@
         "start": "Invalid Date",
         "end": null
       },
+      "text": null,
       "product": {
         "name": "Albuterol 0.09 MG/ACTUAT inhalant solution",
         "code": "307782",
@@ -490,6 +540,11 @@
         "code_system": "2.16.840.1.113883.5.112",
         "code_system_name": "HL7 RouteOfAdministration"
       },
+      "schedule": {
+        "type": null,
+        "period_value": "6",
+        "period_unit": "h"
+      },
       "vehicle": {
         "name": null,
         "code": null,
@@ -512,6 +567,7 @@
         "start": null,
         "end": null
       },
+      "text": null,
       "product": {
         "name": "Clopidogrel 75 MG oral tablet",
         "code": "309362",
@@ -547,6 +603,11 @@
         "code_system": "2.16.840.1.113883.3.26.1.1",
         "code_system_name": "FDA RouteOfAdministration"
       },
+      "schedule": {
+        "type": "interval",
+        "period_value": "24",
+        "period_unit": "h"
+      },
       "vehicle": {
         "name": null,
         "code": null,
@@ -569,6 +630,7 @@
         "start": "11/21/2007",
         "end": null
       },
+      "text": null,
       "product": {
         "name": "Metoprolol 25 MG oral tablet",
         "code": "430618",
@@ -604,6 +666,11 @@
         "code_system": "2.16.840.1.113883.3.26.1.1",
         "code_system_name": "FDA RouteOfAdministration"
       },
+      "schedule": {
+        "type": "interval",
+        "period_value": "12",
+        "period_unit": "h"
+      },
       "vehicle": {
         "name": null,
         "code": null,
@@ -626,6 +693,7 @@
         "start": "03/28/2000",
         "end": null
       },
+      "text": null,
       "product": {
         "name": "Prednisone 20 MG oral tablet",
         "code": "312615",
@@ -661,6 +729,11 @@
         "code_system": "2.16.840.1.113883.3.26.1.1",
         "code_system_name": "FDA RouteOfAdministration"
       },
+      "schedule": {
+        "type": "interval",
+        "period_value": "24",
+        "period_unit": "h"
+      },
       "vehicle": {
         "name": null,
         "code": null,
@@ -683,6 +756,7 @@
         "start": "03/28/2000",
         "end": "04/04/2000"
       },
+      "text": null,
       "product": {
         "name": "Cephalexin 500 MG oral tablet",
         "code": "197454",
@@ -717,6 +791,11 @@
         "code": "C38288",
         "code_system": "2.16.840.1.113883.3.26.1.1",
         "code_system_name": "FDA RouteOfAdministration"
+      },
+      "schedule": {
+        "type": "interval",
+        "period_value": "6",
+        "period_unit": "h"
       },
       "vehicle": {
         "name": null,
@@ -930,5 +1009,12 @@
         }
       ]
     }
-  ]
+  ],
+  "smoking_status": {
+    "date": null,
+    "name": null,
+    "code": null,
+    "code_system": null,
+    "code_system_name": null
+  }
 }
