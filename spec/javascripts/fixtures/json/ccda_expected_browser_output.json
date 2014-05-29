@@ -64,7 +64,8 @@
         "state": null,
         "zip": null,
         "country": null
-      }
+      },
+      "encounter_date": null
     }
   },
   "allergies": [

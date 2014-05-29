@@ -19,7 +19,7 @@ describe('CCDA Generation', function() {
           var BlueButton = require('./build/bluebutton.js');
           var json = fs.readFileSync('./spec/javascripts/fixtures/json/ccda_expected_browser_output.json', 'utf-8');
           var template = fs.readFileSync('./build/ccda_template.ejs', 'utf-8');
-          var bb = BlueButton(json, { template: template, generatorType: 'ccda' });
+          var bb = BlueButton(json, { template: template, generatorType: 'ccda', testingMode: true });
           fs.writeFileSync('./spec/javascripts/fixtures/ccda/ccda_expected_output.xml', bb.data, 'utf-8')
         };
    *
