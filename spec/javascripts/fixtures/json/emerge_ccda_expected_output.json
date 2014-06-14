@@ -1,0 +1,952 @@
+{
+  "document": {
+    "date": "04/16/2014",
+    "author": {
+      "name": {
+        "prefix": null,
+        "given": [
+          "Henry"
+        ],
+        "family": "Seven"
+      },
+      "address": {
+        "street": [
+          "1002 Healthcare Drive "
+        ],
+        "city": "Portland",
+        "state": "OR",
+        "zip": "99123",
+        "country": "US"
+      },
+      "phone": {
+        "work": "tel:555-555-1002"
+      }
+    },
+    "documentation_of": [
+      {
+        "name": {
+          "prefix": null,
+          "given": [
+            "Henry"
+          ],
+          "family": "Seven"
+        },
+        "phone": {
+          "work": "tel:+1-555-555-5000"
+        },
+        "address": {
+          "street": [
+            "1001 Village Avenue"
+          ],
+          "city": "Portland",
+          "state": "OR",
+          "zip": "99123",
+          "country": "US"
+        }
+      }
+    ],
+    "location": {
+      "name": null,
+      "address": {
+        "street": [],
+        "city": null,
+        "state": null,
+        "zip": null,
+        "country": null
+      },
+      "encounter_date": null
+    }
+  },
+  "allergies": [
+    {
+      "date_range": {
+        "start": "03/31/2010",
+        "end": null
+      },
+      "name": null,
+      "code": "ASSERTION",
+      "code_system": "2.16.840.1.113883.5.4",
+      "code_system_name": null,
+      "status": null,
+      "severity": "Mild",
+      "reaction": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      },
+      "reaction_type": {
+        "name": "Food allergy (disorder)",
+        "code": "414285001",
+        "code_system": "2.16.840.1.113883.6.96",
+        "code_system_name": "SNOMED-CT"
+      },
+      "allergen": {
+        "name": "Eggs",
+        "code": "291P45F896",
+        "code_system": "2.16.840.1.113883.4.9",
+        "code_system_name": "UNII"
+      }
+    },
+    {
+      "date_range": {
+        "start": "03/31/2010",
+        "end": null
+      },
+      "name": null,
+      "code": "ASSERTION",
+      "code_system": "2.16.840.1.113883.5.4",
+      "code_system_name": null,
+      "status": null,
+      "severity": "Mild to moderate",
+      "reaction": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      },
+      "reaction_type": {
+        "name": "Drug allergy (disorder)",
+        "code": "416098002",
+        "code_system": "2.16.840.1.113883.6.96",
+        "code_system_name": "SNOMED-CT"
+      },
+      "allergen": {
+        "name": "Amikacin Sulfate 50 MG/ML Injectable Solution",
+        "code": "905148",
+        "code_system": "2.16.840.1.113883.6.88",
+        "code_system_name": "RxNorm"
+      }
+    },
+    {
+      "date_range": {
+        "start": "03/31/2010",
+        "end": null
+      },
+      "name": null,
+      "code": "ASSERTION",
+      "code_system": "2.16.840.1.113883.5.4",
+      "code_system_name": null,
+      "status": null,
+      "severity": "Mild to moderate",
+      "reaction": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      },
+      "reaction_type": {
+        "name": "Drug allergy (disorder)",
+        "code": "416098002",
+        "code_system": "2.16.840.1.113883.6.96",
+        "code_system_name": "SNOMED-CT"
+      },
+      "allergen": {
+        "name": "Penicillin V",
+        "code": "N0000011298",
+        "code_system": "2.16.840.1.113883.3.26.1.5",
+        "code_system_name": "NDF-RT"
+      }
+    }
+  ],
+  "care_plan": [],
+  "chief_complaint": {
+    "text": null
+  },
+  "demographics": {
+    "name": {
+      "prefix": null,
+      "given": [
+        "Bernice"
+      ],
+      "family": "Maxwell"
+    },
+    "dob": "08/05/1940",
+    "gender": "female",
+    "marital_status": "married",
+    "address": {
+      "street": [
+        "4903 Earnhardt Drive"
+      ],
+      "city": "Louisville",
+      "state": "KY",
+      "zip": "40299",
+      "country": "US"
+    },
+    "phone": {
+      "home": "tel:(502)649-6327",
+      "work": null,
+      "mobile": null
+    },
+    "email": null,
+    "language": "spa",
+    "race": "Asian",
+    "ethnicity": "Not Hispanic or Latino",
+    "religion": "Zen Buddhism",
+    "birthplace": {
+      "state": "WI",
+      "zip": "53186",
+      "country": "US"
+    },
+    "guardian": {
+      "name": {
+        "given": [
+          "Judith"
+        ],
+        "family": "Schulz"
+      },
+      "relationship": "friend",
+      "address": {
+        "street": [
+          "2524 Christie Way"
+        ],
+        "city": "North Billerica",
+        "state": "MA",
+        "zip": "1862",
+        "country": "US"
+      },
+      "phone": {
+        "home": "tel:(978)766-5553"
+      }
+    },
+    "provider": {
+      "organization": "Community Health and Hospitals",
+      "phone": "tel: 555-555-5000",
+      "address": {
+        "street": [
+          "1001 Village Avenue"
+        ],
+        "city": "Portland",
+        "state": "OR",
+        "zip": "99123",
+        "country": "US"
+      }
+    }
+  },
+  "encounters": [
+    {
+      "date": "03/31/2010",
+      "name": "Office/outpatient visit, est",
+      "code": "99212",
+      "code_system": "2.16.840.1.113883.6.12",
+      "code_system_name": "CPT",
+      "code_system_version": null,
+      "findings": [
+        {
+          "name": "Hypertension",
+          "code": "59621000",
+          "code_system": "2.16.840.1.113883.6.96"
+        },
+        {
+          "name": "low back pain",
+          "code": "279039007",
+          "code_system": "2.16.840.1.113883.6.96"
+        }
+      ],
+      "translation": {
+        "name": "Essential (primary) hypertension",
+        "code": "I10",
+        "code_system": "2.16.840.1.113883.6.90",
+        "code_system_name": "ICD-10-CM"
+      },
+      "performer": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "location": {
+        "street": [],
+        "city": null,
+        "state": null,
+        "zip": null,
+        "country": null,
+        "organization": null
+      }
+    },
+    {
+      "date": "06/06/2010",
+      "name": "Office/outpatient visit, est",
+      "code": "99213",
+      "code_system": "2.16.840.1.113883.6.12",
+      "code_system_name": "CPT",
+      "code_system_version": null,
+      "findings": [
+        {
+          "name": "Colon Cancer",
+          "code": "126838000",
+          "code_system": "2.16.840.1.113883.6.96"
+        }
+      ],
+      "translation": {
+        "name": "Routine general medical examination at a health care facility",
+        "code": "V70.0",
+        "code_system": "2.16.840.1.113883.6.103",
+        "code_system_name": "ICD-9-CM"
+      },
+      "performer": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "location": {
+        "street": [],
+        "city": null,
+        "state": null,
+        "zip": null,
+        "country": null,
+        "organization": null
+      }
+    },
+    {
+      "date": "06/08/2010",
+      "name": "Initial inpatient consult",
+      "code": "99251",
+      "code_system": "2.16.840.1.113883.6.12",
+      "code_system_name": "CPT",
+      "code_system_version": null,
+      "findings": [
+        {
+          "name": "Acute Renal Insufficiency",
+          "code": "14669001",
+          "code_system": "2.16.840.1.113883.6.96"
+        }
+      ],
+      "translation": {
+        "name": "Acute kidney failure, unspecified",
+        "code": "N17.9",
+        "code_system": "2.16.840.1.113883.6.90",
+        "code_system_name": "ICD-10-CM"
+      },
+      "performer": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "location": {
+        "street": [],
+        "city": null,
+        "state": null,
+        "zip": null,
+        "country": null,
+        "organization": null
+      }
+    },
+    {
+      "date": "06/25/2010",
+      "name": "Office/outpatient visit, est",
+      "code": "99212",
+      "code_system": "2.16.840.1.113883.6.12",
+      "code_system_name": "CPT",
+      "code_system_version": null,
+      "findings": [],
+      "translation": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "performer": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "location": {
+        "street": [],
+        "city": null,
+        "state": null,
+        "zip": null,
+        "country": null,
+        "organization": null
+      }
+    },
+    {
+      "date": "10/27/2010",
+      "name": "Office/outpatient visit, est",
+      "code": "99213",
+      "code_system": "2.16.840.1.113883.6.12",
+      "code_system_name": "CPT",
+      "code_system_version": null,
+      "findings": [],
+      "translation": {
+        "name": "Routine general medical examination at a health care facility",
+        "code": "V70.0",
+        "code_system": "2.16.840.1.113883.6.103",
+        "code_system_name": "ICD-9-CM"
+      },
+      "performer": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "location": {
+        "street": [],
+        "city": null,
+        "state": null,
+        "zip": null,
+        "country": null,
+        "organization": null
+      }
+    }
+  ],
+  "functional_statuses": [],
+  "immunizations": [
+    {
+      "date": "10/27/2010",
+      "product": {
+        "name": "Influenza, high dose seasonal",
+        "code": "135",
+        "code_system": "2.16.840.1.113883.12.292",
+        "code_system_name": "CVX",
+        "translation": {
+          "name": null,
+          "code": null,
+          "code_system": null,
+          "code_system_name": null
+        }
+      },
+      "route": {
+        "name": "Intramuscular injection",
+        "code": "C28161",
+        "code_system": "2.16.840.1.113883.3.26.1.1",
+        "code_system_name": "NCI Thesaurus"
+      },
+      "instructions": null,
+      "education_type": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      }
+    },
+    {
+      "date": "10/27/2010",
+      "product": {
+        "name": "pneumococcal conjugate PCV 7",
+        "code": "100",
+        "code_system": "2.16.840.1.113883.12.292",
+        "code_system_name": "CVX",
+        "translation": {
+          "name": "Pneumococcal vacc, ped<5",
+          "code": "90669",
+          "code_system": "2.16.840.1.113883.6.12",
+          "code_system_name": "CPT"
+        }
+      },
+      "route": {
+        "name": "Intramuscular injection",
+        "code": "C28161",
+        "code_system": "2.16.840.1.113883.3.26.1.1",
+        "code_system_name": "NCI Thesaurus"
+      },
+      "instructions": null,
+      "education_type": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      }
+    }
+  ],
+  "instructions": [],
+  "labs": [
+    {
+      "name": "Lipid Panel",
+      "code": "16254007",
+      "code_system": "2.16.840.1.113883.6.96",
+      "code_system_name": "SNOMED-CT",
+      "results": [
+        {
+          "date": "03/31/2010",
+          "name": "HDLc SerPl-sCnc",
+          "value": 55,
+          "unit": "mg/dL",
+          "code": "14646-4",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "reference_range": {
+            "text": ">=40 mg/dL",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "03/31/2010",
+          "name": "LDLc SerPl-mCnc",
+          "value": 85,
+          "unit": "mg/dL",
+          "code": "2089-1",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "reference_range": {
+            "text": "<130 mg/dL (calc)",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "03/31/2010",
+          "name": "Cholest SerPl-mCnc",
+          "value": 165,
+          "unit": "mg/dL",
+          "code": "2093-3",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "reference_range": {
+            "text": "125-200 mg/dL",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "03/31/2010",
+          "name": "Trigl SerPl Calc-mCnc",
+          "value": 125,
+          "unit": "mg/dL",
+          "code": "12951-0",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "reference_range": {
+            "text": "10-39 years: 55-110 mg/dL | 40-59 years: 70-150 mg/dL | >60 years: 80-150 mg/dL | Therapeutic Target: <100 mg/dL ",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        }
+      ]
+    }
+  ],
+  "medications": [
+    {
+      "date_range": {
+        "start": "03/31/2010",
+        "end": null
+      },
+      "text": null,
+      "product": {
+        "name": "Enalapril Maleate 10 MG / Hydrochlorothiazide 25 MG Oral Tablet",
+        "code": "858828",
+        "code_system": "2.16.840.1.113883.6.88",
+        "translation": {
+          "name": null,
+          "code": null,
+          "code_system": null,
+          "code_system_name": null
+        }
+      },
+      "dose_quantity": {
+        "value": null,
+        "unit": null
+      },
+      "rate_quantity": {
+        "value": null,
+        "unit": null
+      },
+      "precondition": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      },
+      "reason": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      },
+      "route": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "schedule": {
+        "type": null,
+        "period_value": null,
+        "period_unit": null
+      },
+      "vehicle": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "administration": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "prescriber": {
+        "organization": null,
+        "person": null
+      }
+    },
+    {
+      "date_range": {
+        "start": "06/10/2010",
+        "end": null
+      },
+      "text": null,
+      "product": {
+        "name": "Lisinopril 10 MG Oral Tablet",
+        "code": "314076",
+        "code_system": "2.16.840.1.113883.6.88",
+        "translation": {
+          "name": null,
+          "code": null,
+          "code_system": null,
+          "code_system_name": null
+        }
+      },
+      "dose_quantity": {
+        "value": null,
+        "unit": null
+      },
+      "rate_quantity": {
+        "value": null,
+        "unit": null
+      },
+      "precondition": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      },
+      "reason": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      },
+      "route": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "schedule": {
+        "type": null,
+        "period_value": null,
+        "period_unit": null
+      },
+      "vehicle": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "administration": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "prescriber": {
+        "organization": null,
+        "person": null
+      }
+    }
+  ],
+  "problems": [
+    {
+      "date_range": {
+        "start": "03/31/2010",
+        "end": null
+      },
+      "name": "Essential hypertension",
+      "status": "Active",
+      "age": null,
+      "code": "59621000",
+      "code_system": "2.16.840.1.113883.6.96",
+      "code_system_name": "SNOMED-CT",
+      "translation": {
+        "name": "Essential (primary) hypertension",
+        "code": "I10",
+        "code_system": "2.16.840.1.113883.6.90",
+        "code_system_name": "ICD-10-CM"
+      }
+    },
+    {
+      "date_range": {
+        "start": "03/31/2010",
+        "end": null
+      },
+      "name": "Low back pain",
+      "status": "Active",
+      "age": null,
+      "code": "279039007",
+      "code_system": "2.16.840.1.113883.6.96",
+      "code_system_name": "SNOMED-CT",
+      "translation": {
+        "name": "Dorsalgia, unspecified",
+        "code": "M54.9",
+        "code_system": "2.16.840.1.113883.6.90",
+        "code_system_name": "ICD-10-CM"
+      }
+    },
+    {
+      "date_range": {
+        "start": "06/06/2010",
+        "end": null
+      },
+      "name": "Neoplasm of colon",
+      "status": "Active",
+      "age": null,
+      "code": "126838000",
+      "code_system": "2.16.840.1.113883.6.96",
+      "code_system_name": "SNOMED-CT",
+      "translation": {
+        "name": "Malignant neoplasm of colon, unspecified",
+        "code": "C18.9",
+        "code_system": "2.16.840.1.113883.6.90",
+        "code_system_name": "ICD-10-CM"
+      }
+    },
+    {
+      "date_range": {
+        "start": "06/08/2010",
+        "end": null
+      },
+      "name": "Acute renal failure syndrome",
+      "status": "Active",
+      "age": null,
+      "code": "14669001",
+      "code_system": "2.16.840.1.113883.6.96",
+      "code_system_name": "SNOMED-CT",
+      "translation": {
+        "name": "Acute kidney failure, unspecified",
+        "code": "N17.9",
+        "code_system": "2.16.840.1.113883.6.90",
+        "code_system_name": "ICD-10-CM"
+      }
+    },
+    {
+      "date_range": {
+        "start": "06/12/2010",
+        "end": null
+      },
+      "name": "T3: Colon/rectum tumor invades through the muscularis propria into the subserosa or the nonperitonealized pericolic or perirectal soft tissues",
+      "status": "Active",
+      "age": null,
+      "code": "369921003",
+      "code_system": "2.16.840.1.113883.6.96",
+      "code_system_name": "SNOMED-CT",
+      "translation": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      }
+    }
+  ],
+  "procedures": [
+    {
+      "date": "03/31/2010",
+      "name": "X-ray exam of spine",
+      "code": "72010",
+      "code_system": "2.16.840.1.113883.6.12",
+      "specimen": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      },
+      "performer": {
+        "street": [],
+        "city": null,
+        "state": null,
+        "zip": null,
+        "country": null,
+        "organization": null,
+        "phone": null
+      },
+      "device": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      }
+    },
+    {
+      "date": "06/06/2010",
+      "name": "Diagnostic colonoscopy",
+      "code": "45378",
+      "code_system": "2.16.840.1.113883.6.12",
+      "specimen": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      },
+      "performer": {
+        "street": [],
+        "city": null,
+        "state": null,
+        "zip": null,
+        "country": null,
+        "organization": null,
+        "phone": null
+      },
+      "device": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      }
+    },
+    {
+      "date": "06/06/2010",
+      "name": "PET img whbd ring dx colorec",
+      "code": "G0213",
+      "code_system": "2.16.840.1.113883.6.13",
+      "specimen": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      },
+      "performer": {
+        "street": [],
+        "city": null,
+        "state": null,
+        "zip": null,
+        "country": null,
+        "organization": null,
+        "phone": null
+      },
+      "device": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      }
+    },
+    {
+      "date": "06/06/2010",
+      "name": "Medical nutrition, indiv, in",
+      "code": "97802",
+      "code_system": "2.16.840.1.113883.6.12",
+      "specimen": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      },
+      "performer": {
+        "street": [],
+        "city": null,
+        "state": null,
+        "zip": null,
+        "country": null,
+        "organization": null,
+        "phone": null
+      },
+      "device": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      }
+    },
+    {
+      "date": "06/06/2010",
+      "name": "Exercise class",
+      "code": "S9451",
+      "code_system": "2.16.840.1.113883.6.13",
+      "specimen": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      },
+      "performer": {
+        "street": [],
+        "city": null,
+        "state": null,
+        "zip": null,
+        "country": null,
+        "organization": null,
+        "phone": null
+      },
+      "device": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      }
+    }
+  ],
+  "smoking_status": {
+    "date": null,
+    "name": "Never smoker (Never Smoked)",
+    "code": "266919005",
+    "code_system": "2.16.840.1.113883.6.96",
+    "code_system_name": "SNOMED-CT"
+  },
+  "vitals": [
+    {
+      "date": "03/31/2010",
+      "results": [
+        {
+          "name": "BP Diastolic",
+          "code": "8462-4",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 96,
+          "unit": "mm[Hg]"
+        },
+        {
+          "name": "Heart Rate",
+          "code": "8867-4",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 76,
+          "unit": "/min"
+        },
+        {
+          "name": "BP Systolic",
+          "code": "8480-6",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 150,
+          "unit": "mm[Hg]"
+        }
+      ]
+    },
+    {
+      "date": "06/06/2010",
+      "results": [
+        {
+          "name": "BMI",
+          "code": "39156-5",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 21.2,
+          "unit": "kg/m2"
+        }
+      ]
+    },
+    {
+      "date": "10/27/2010",
+      "results": [
+        {
+          "name": "BP Diastolic",
+          "code": "8462-4",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 76,
+          "unit": "mm[Hg]"
+        },
+        {
+          "name": "Heart Rate",
+          "code": "8867-4",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 72,
+          "unit": "/min"
+        },
+        {
+          "name": "BP Systolic",
+          "code": "8480-6",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 130,
+          "unit": "mm[Hg]"
+        }
+      ]
+    }
+  ]
+}

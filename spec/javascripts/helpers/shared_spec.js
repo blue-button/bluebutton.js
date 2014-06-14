@@ -1,7 +1,7 @@
 var runJsonTests = function(expectedOutput, expectedType, bb) {
 
   function toJSON(target) {
-    return JSON.parse(target.json())
+    return JSON.parse(target.json());
   }
 
   describe('type', function() {
