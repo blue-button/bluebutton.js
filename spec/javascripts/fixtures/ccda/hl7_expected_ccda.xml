@@ -795,7 +795,7 @@
                                         
                                             <tr>
                                                 <td>Albuterol 0.09 MG/ACTUAT inhalant solution</td>
-                                                <td></td>
+                                                <td>0.09 MG/ACTUAT inhalant solution, 2 puffs QID PRN wheezing</td>
                                                 <td>03/01/2011</td>
                                                 <td>03/01/2012</td>
                                                 <td>Bronchitis</td>
@@ -816,7 +816,7 @@
                                         <!-- ** MEDICATION ACTIVITY -->
                                         <id root="cdbd33f0-6cde-11db-9fe1-0800200c9a66"/>
                                         
-                                            <text></text>
+                                            <text>0.09 MG/ACTUAT inhalant solution, 2 puffs QID PRN wheezing</text>
                                         
                                         <statusCode code="completed"/>
                                         <effectiveTime xsi:type="IVL_TS">

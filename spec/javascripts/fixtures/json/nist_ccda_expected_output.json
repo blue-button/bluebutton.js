@@ -46,7 +46,7 @@
       }
     ],
     "location": {
-      "name": "",
+      "name": null,
       "address": {
         "street": [],
         "city": null,
@@ -322,7 +322,7 @@
         "code_system": "2.16.840.1.113883.3.26.1.1",
         "code_system_name": "National Cancer Institute (NCI) Thesaurus"
       },
-      "instructions": null,
+      "instructions": "Possible flu-like symptoms for three days.",
       "education_type": {
         "name": "immunization education",
         "code": "171044003",
@@ -349,7 +349,7 @@
         "code_system": "2.16.840.1.113883.3.26.1.1",
         "code_system_name": "National Cancer Institute (NCI) Thesaurus"
       },
-      "instructions": null,
+      "instructions": "Possible flu-like symptoms for three days.",
       "education_type": {
         "name": "immunization education",
         "code": "171044003",
@@ -422,7 +422,7 @@
         "start": null,
         "end": "08/06/2012"
       },
-      "text": "",
+      "text": "0.09 MG/ACTUAT inhalant solution, 2 puffs",
       "product": {
         "name": "Albuterol 0.09 MG/ACTUAT inhalant solution",
         "code": "573621",

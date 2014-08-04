@@ -773,7 +773,7 @@
                                         
                                             <tr>
                                                 <td>Albuterol 0.09 MG/ACTUAT inhalant solution</td>
-                                                <td></td>
+                                                <td>0.09 MG/ACTUAT inhalant solution, 2 puffs</td>
                                                 <td></td>
                                                 <td>08/06/2012</td>
                                                 <td>Pneumonia</td>
@@ -794,7 +794,7 @@
                                         <!-- ** MEDICATION ACTIVITY -->
                                         <id root="cdbd33f0-6cde-11db-9fe1-0800200c9a66"/>
                                         
-                                            <text></text>
+                                            <text>0.09 MG/ACTUAT inhalant solution, 2 puffs</text>
                                         
                                         <statusCode code="completed"/>
                                         <effectiveTime xsi:type="IVL_TS">
@@ -1391,7 +1391,7 @@
                                                 <templateId root="2.16.840.1.113883.10.20.22.4.20"/>
                                                 <!-- ** Instructions Template ** -->
                                                 <code displayName="immunization education" code="171044003" codeSystem="2.16.840.1.113883.6.96" />
-                                                <text>null</text>
+                                                <text>Possible flu-like symptoms for three days.</text>
                                                 <statusCode code="completed"/>
                                             </act>
                                         </entryRelationship>
@@ -1426,7 +1426,7 @@
                                                 <templateId root="2.16.840.1.113883.10.20.22.4.20"/>
                                                 <!-- ** Instructions Template ** -->
                                                 <code displayName="immunization education" code="171044003" codeSystem="2.16.840.1.113883.6.96" />
-                                                <text>null</text>
+                                                <text>Possible flu-like symptoms for three days.</text>
                                                 <statusCode code="completed"/>
                                             </act>
                                         </entryRelationship>
