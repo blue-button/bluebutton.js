@@ -40,13 +40,13 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "jsdom": "*",
+    "xmldom": "*",
     "ejs": "*"
   },
   "devDependencies": {
     "bower": "*",
     "grunt": "*",
-    "jsdom": "*",
+    "xmldom": "*",
     "grunt-contrib-clean": "*",
     "grunt-contrib-concat": "*",
     "grunt-contrib-copy": "*",
