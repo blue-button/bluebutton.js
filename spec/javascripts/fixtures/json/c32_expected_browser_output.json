@@ -269,7 +269,13 @@
           "code": "111",
           "code_system": "2.16.840.1.113883.6.59",
           "code_system_name": "CVX"
-        }
+        },
+        "lot_number": null,
+        "manufacturer_name": null
+      },
+      "dose_quantity": {
+        "value": null,
+        "unit": null
       },
       "route": {
         "name": "Intramuscular injection",
@@ -296,7 +302,13 @@
           "code": "111",
           "code_system": "2.16.840.1.113883.6.59",
           "code_system_name": "CVX"
-        }
+        },
+        "lot_number": "Unknown",
+        "manufacturer_name": null
+      },
+      "dose_quantity": {
+        "value": null,
+        "unit": null
       },
       "route": {
         "name": "Intramuscular injection",
@@ -323,7 +335,13 @@
           "code": "109",
           "code_system": "2.16.840.1.113883.6.59",
           "code_system_name": "CVX"
-        }
+        },
+        "lot_number": "Required-if-Known text to identifyor describe the Immunization Lot Number.",
+        "manufacturer_name": null
+      },
+      "dose_quantity": {
+        "value": null,
+        "unit": null
       },
       "route": {
         "name": "Intramuscular injection",
@@ -350,7 +368,13 @@
           "code": "113",
           "code_system": "2.16.840.1.113883.6.59",
           "code_system_name": "CVX"
-        }
+        },
+        "lot_number": "Required-if-Known text to identifyor describe the Immunization Lot Number.",
+        "manufacturer_name": null
+      },
+      "dose_quantity": {
+        "value": null,
+        "unit": null
       },
       "route": {
         "name": "Intramuscular injection",

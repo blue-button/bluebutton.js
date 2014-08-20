@@ -404,7 +404,13 @@
           "code": null,
           "code_system": null,
           "code_system_name": null
-        }
+        },
+        "lot_number": null,
+        "manufacturer_name": null
+      },
+      "dose_quantity": {
+        "value": null,
+        "unit": null
       },
       "route": {
         "name": "Intramuscular injection",
@@ -431,7 +437,13 @@
           "code": "90669",
           "code_system": "2.16.840.1.113883.6.12",
           "code_system_name": "CPT"
-        }
+        },
+        "lot_number": null,
+        "manufacturer_name": null
+      },
+      "dose_quantity": {
+        "value": null,
+        "unit": null
       },
       "route": {
         "name": "Intramuscular injection",

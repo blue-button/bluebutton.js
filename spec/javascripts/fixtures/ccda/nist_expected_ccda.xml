@@ -1373,8 +1373,8 @@
                                         <statusCode code="completed"/>
                                         <effectiveTime xsi:type="IVL_TS" value="20120510" />
                                         <routeCode displayName="Intramuscular injection" code="C28161" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="National Cancer Institute (NCI) Thesaurus" />
-                                        <doseQuantity nullFlavor="UNK"/>
-                                        <consumable>
+                                                                                    <doseQuantity value="50" unit="mcg"/>
+                                                                                <consumable>
                                             <manufacturedProduct classCode="MANU">
                                                 <templateId root="2.16.840.1.113883.10.20.22.4.54"/>
                                                 <!--  ********   Immunization Medication Information    ******** -->
@@ -1383,8 +1383,11 @@
                                                         <originalText>Influenza virus vaccine</originalText>
                                                         <translation displayName="influenza, live, intranasal" code="111" codeSystem="2.16.840.1.113883.6.59" codeSystemName="CVX" />
                                                     </code>
-                                                </manufacturedMaterial>
-                                            </manufacturedProduct>
+                                                                                                    </manufacturedMaterial>
+                                                                                                    <manufacturerOrganization>
+                                                        <name>Health LS - Immuno Inc.</name>
+                                                    </manufacturerOrganization>
+                                                                                            </manufacturedProduct>
                                         </consumable>
                                         <entryRelationship typeCode="SUBJ" inversionInd="true">
                                             <act classCode="ACT" moodCode="INT">
@@ -1408,8 +1411,8 @@
                                         <statusCode code="completed"/>
                                         <effectiveTime xsi:type="IVL_TS" value="20120401" />
                                         <routeCode displayName="Intramuscular injection" code="C28161" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="National Cancer Institute (NCI) Thesaurus" />
-                                        <doseQuantity nullFlavor="UNK"/>
-                                        <consumable>
+                                                                                    <doseQuantity value="50" unit="mcg"/>
+                                                                                <consumable>
                                             <manufacturedProduct classCode="MANU">
                                                 <templateId root="2.16.840.1.113883.10.20.22.4.54"/>
                                                 <!--  ********   Immunization Medication Information    ******** -->
@@ -1418,8 +1421,11 @@
                                                         <originalText>Influenza virus vaccine</originalText>
                                                         <translation displayName="Tetanus and diphtheria toxoids - preservative free" code="09" codeSystem="2.16.840.1.113883.6.59" codeSystemName="CVX" />
                                                     </code>
-                                                </manufacturedMaterial>
-                                            </manufacturedProduct>
+                                                                                                    </manufacturedMaterial>
+                                                                                                    <manufacturerOrganization>
+                                                        <name>Health LS - Immuno Inc.</name>
+                                                    </manufacturerOrganization>
+                                                                                            </manufacturedProduct>
                                         </consumable>
                                         <entryRelationship typeCode="SUBJ" inversionInd="true">
                                             <act classCode="ACT" moodCode="INT">
