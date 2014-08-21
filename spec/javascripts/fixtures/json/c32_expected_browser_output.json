@@ -857,7 +857,8 @@
         "code": null,
         "code_system": null,
         "code_system_name": null
-      }
+      },
+      "comment": null
     },
     {
       "date_range": {
@@ -875,7 +876,8 @@
         "code": null,
         "code_system": null,
         "code_system_name": null
-      }
+      },
+      "comment": null
     },
     {
       "date_range": {
@@ -893,7 +895,8 @@
         "code": null,
         "code_system": null,
         "code_system_name": null
-      }
+      },
+      "comment": null
     },
     {
       "date_range": {
@@ -911,7 +914,8 @@
         "code": null,
         "code_system": null,
         "code_system_name": null
-      }
+      },
+      "comment": null
     },
     {
       "date_range": {
@@ -929,7 +933,8 @@
         "code": null,
         "code_system": null,
         "code_system_name": null
-      }
+      },
+      "comment": null
     }
   ],
   "procedures": [

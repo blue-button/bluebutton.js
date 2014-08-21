@@ -679,7 +679,8 @@
         "code": "I10",
         "code_system": "2.16.840.1.113883.6.90",
         "code_system_name": "ICD-10-CM"
-      }
+      },
+      "comment": null
     },
     {
       "date_range": {
@@ -697,7 +698,8 @@
         "code": "M54.9",
         "code_system": "2.16.840.1.113883.6.90",
         "code_system_name": "ICD-10-CM"
-      }
+      },
+      "comment": null
     },
     {
       "date_range": {
@@ -715,7 +717,8 @@
         "code": "C18.9",
         "code_system": "2.16.840.1.113883.6.90",
         "code_system_name": "ICD-10-CM"
-      }
+      },
+      "comment": null
     },
     {
       "date_range": {
@@ -733,7 +736,8 @@
         "code": "N17.9",
         "code_system": "2.16.840.1.113883.6.90",
         "code_system_name": "ICD-10-CM"
-      }
+      },
+      "comment": null
     },
     {
       "date_range": {
@@ -751,7 +755,8 @@
         "code": null,
         "code_system": null,
         "code_system_name": null
-      }
+      },
+      "comment": null
     }
   ],
   "procedures": [

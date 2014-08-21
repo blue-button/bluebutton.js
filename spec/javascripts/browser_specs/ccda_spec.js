@@ -18,6 +18,16 @@ describe('EMERGE CCDA', function() {
 
 });
 
+describe('Allscripts CCDA', function() {
+  var record = readFixtures('../../../bower_components/sample_ccdas/Allscripts\ Samples/Enterprise\ EHR/b2\ Adam\ Everyman\ ToC.xml');
+  var expectedOutput = getJSONFixture('allscripts_ccda_expected_output.json');
+  var bb = BlueButton(record);
+
+  // the tests are defined in helpers/shared_spec.js
+  runJsonTests(expectedOutput, 'ccda', bb);
+
+});
+
 describe('NIST CCDA', function() {
   var record = readFixtures('../../../bower_components/sample_ccdas/NIST%20Samples/CCDA_CCD_b1_InPatient_v2.xml');
   var expectedOutput = getJSONFixture('nist_ccda_expected_output.json');

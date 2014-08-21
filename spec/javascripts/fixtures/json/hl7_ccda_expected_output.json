@@ -574,7 +574,8 @@
         "code": null,
         "code_system": null,
         "code_system_name": null
-      }
+      },
+      "comment": null
     }
   ],
   "procedures": [
