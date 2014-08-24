@@ -13,6 +13,7 @@
 }
 
 .docs .sidebar {
+  display: block;
   position: absolute;
   top: 20px;
   width: 190px;

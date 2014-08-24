@@ -1,6 +1,6 @@
 name: BlueButton.js
 markdown: redcarpet
-pygments: true
+highlighter: pygments
 baseurl: /bluebutton.js
 
 redcarpet:

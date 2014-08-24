@@ -12,6 +12,6 @@ If you have a suggestion or concern, [tweet us](https://twitter.com/bluebuttonjs
 
 There are a number of ways you can contribute to the library.
 
-- Expand the document parsing functionality.
-- Write tests.
-- Something else.
+- Provide feedback on the JSON model (which is still improving)
+- Expand the parsing or generation functionality (there's a lot more to the C-CDA spec than we cover)
+- Add support for parsing CCRs (another legacy format)
