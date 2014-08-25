@@ -314,7 +314,13 @@
           "code": "111",
           "code_system": "2.16.840.1.113883.6.59",
           "code_system_name": "CVX"
-        }
+        },
+        "lot_number": null,
+        "manufacturer_name": "Health LS - Immuno Inc."
+      },
+      "dose_quantity": {
+        "value": "50",
+        "unit": "mcg"
       },
       "route": {
         "name": "Intramuscular injection",
@@ -341,7 +347,13 @@
           "code": "09",
           "code_system": "2.16.840.1.113883.6.59",
           "code_system_name": "CVX"
-        }
+        },
+        "lot_number": null,
+        "manufacturer_name": "Health LS - Immuno Inc."
+      },
+      "dose_quantity": {
+        "value": "50",
+        "unit": "mcg"
       },
       "route": {
         "name": "Intramuscular injection",
@@ -498,7 +510,8 @@
         "code": null,
         "code_system": null,
         "code_system_name": null
-      }
+      },
+      "comment": null
     },
     {
       "date_range": {
@@ -516,7 +529,8 @@
         "code": null,
         "code_system": null,
         "code_system_name": null
-      }
+      },
+      "comment": null
     }
   ],
   "procedures": [

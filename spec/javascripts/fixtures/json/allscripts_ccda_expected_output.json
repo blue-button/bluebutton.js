@@ -1,0 +1,551 @@
+{
+  "document": {
+    "date": "07/18/2013",
+    "author": {
+      "name": {
+        "prefix": null,
+        "given": [
+          "Jim"
+        ],
+        "family": "Bergmann"
+      },
+      "address": {
+        "street": [],
+        "city": null,
+        "state": null,
+        "zip": null,
+        "country": null
+      },
+      "phone": {
+        "work": null
+      }
+    },
+    "documentation_of": [
+      {
+        "name": {
+          "prefix": null,
+          "given": [
+            "Samir",
+            "Samir"
+          ],
+          "family": "Khan"
+        },
+        "phone": {
+          "work": null
+        },
+        "address": {
+          "street": [
+            "1004 Healthcare Dr"
+          ],
+          "city": "Portland",
+          "state": "OR",
+          "zip": "97005",
+          "country": "US"
+        }
+      },
+      {
+        "name": {
+          "prefix": null,
+          "given": [
+            "Nancy"
+          ],
+          "family": "Nightingale"
+        },
+        "phone": {
+          "work": "tel:+1-(555)551-1122"
+        },
+        "address": {
+          "street": [
+            "1002 Healthcare Drive"
+          ],
+          "city": "Portland",
+          "state": "OR",
+          "zip": "97005",
+          "country": "US"
+        }
+      }
+    ],
+    "location": {
+      "name": null,
+      "address": {
+        "street": [],
+        "city": null,
+        "state": null,
+        "zip": null,
+        "country": null
+      },
+      "encounter_date": null
+    }
+  },
+  "allergies": [
+    {
+      "date_range": {
+        "start": null,
+        "end": null
+      },
+      "name": null,
+      "code": "ASSERTION",
+      "code_system": "2.16.840.1.113883.5.4",
+      "code_system_name": null,
+      "status": "Active",
+      "severity": null,
+      "reaction": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      },
+      "reaction_type": {
+        "name": "allergy to substance",
+        "code": "419199007",
+        "code_system": "2.16.840.1.113883.6.96",
+        "code_system_name": "SNOMED CT"
+      },
+      "allergen": {
+        "name": "Codeine",
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      }
+    },
+    {
+      "date_range": {
+        "start": null,
+        "end": null
+      },
+      "name": null,
+      "code": "ASSERTION",
+      "code_system": "2.16.840.1.113883.5.4",
+      "code_system_name": null,
+      "status": "Active",
+      "severity": null,
+      "reaction": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      },
+      "reaction_type": {
+        "name": "allergy to substance",
+        "code": "419199007",
+        "code_system": "2.16.840.1.113883.6.96",
+        "code_system_name": "SNOMED CT"
+      },
+      "allergen": {
+        "name": "Penicillin G Potassium SOLR",
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      }
+    }
+  ],
+  "care_plan": [
+    {
+      "text": "Pulmonary Function Test Referral; To Be Done: 16 Jul 2013",
+      "name": "encounter",
+      "code": null,
+      "code_system": null,
+      "code_system_name": null
+    },
+    {
+      "text": "Weight Loss; Start: 11Jul2013",
+      "name": "Weight Loss; Start: 11Jul2013",
+      "code": "289169006",
+      "code_system": "2.16.840.1.113883.6.5",
+      "code_system_name": "SNOMED"
+    },
+    {
+      "text": "Asthma Management; Start: 11Jul2013",
+      "name": "Asthma Management; Start: 11Jul2013",
+      "code": "406162001",
+      "code_system": "2.16.840.1.113883.6.5",
+      "code_system_name": "SNOMED"
+    }
+  ],
+  "chief_complaint": {
+    "text": null
+  },
+  "demographics": {
+    "name": {
+      "prefix": null,
+      "given": [
+        "Adam"
+      ],
+      "family": "Everyman"
+    },
+    "dob": "10/22/1962",
+    "gender": "male",
+    "marital_status": null,
+    "address": {
+      "street": [
+        "99 Forest Park"
+      ],
+      "city": "Chicago",
+      "state": "IL",
+      "zip": "60301",
+      "country": "US"
+    },
+    "phone": {
+      "home": null,
+      "work": null,
+      "mobile": null
+    },
+    "email": null,
+    "language": "eng",
+    "race": "White",
+    "ethnicity": "Not Hispanic or Latino",
+    "religion": null,
+    "birthplace": {
+      "state": null,
+      "zip": null,
+      "country": null
+    },
+    "guardian": {
+      "name": {
+        "given": [],
+        "family": null
+      },
+      "relationship": null,
+      "address": {
+        "street": [],
+        "city": null,
+        "state": null,
+        "zip": null,
+        "country": null
+      },
+      "phone": {
+        "home": null
+      }
+    },
+    "provider": {
+      "organization": "Primary Care Partners",
+      "phone": "tel:+1-(555)555-1122",
+      "address": {
+        "street": [
+          "Get Well Clinic, 1002 Healthcare Dr"
+        ],
+        "city": "Portland",
+        "state": "OR",
+        "zip": "97005",
+        "country": "US"
+      }
+    }
+  },
+  "encounters": [
+    {
+      "date": null,
+      "name": null,
+      "code": null,
+      "code_system": "2.16.840.1.113883.5.4",
+      "code_system_name": "ActEncounterCode",
+      "code_system_version": null,
+      "findings": [
+        {
+          "name": null,
+          "code": null,
+          "code_system": null
+        },
+        {
+          "name": null,
+          "code": null,
+          "code_system": null
+        }
+      ],
+      "translation": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "performer": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "location": {
+        "street": [],
+        "city": null,
+        "state": null,
+        "zip": null,
+        "country": null,
+        "organization": null
+      }
+    }
+  ],
+  "functional_statuses": [
+    {
+      "date": "07/11/2013",
+      "name": "No impairment",
+      "code": "66557003",
+      "code_system": "2.16.840.1.113883.6.96",
+      "code_system_name": "SNOMED CT"
+    },
+    {
+      "date": "07/11/2013",
+      "name": "No impairment",
+      "code": "66557003",
+      "code_system": "2.16.840.1.113883.6.96",
+      "code_system_name": "SNOMED CT"
+    }
+  ],
+  "immunizations": [
+    {
+      "date": "08/15/2010",
+      "product": {
+        "name": "Influenza A (H1N1) Monoval PF Intramuscular Suspension",
+        "code": "126",
+        "code_system": "2.16.840.1.113883.12.292",
+        "code_system_name": "CVX",
+        "translation": {
+          "name": "Influenza A (H1N1) Monoval PF Intramuscular Suspension",
+          "code": "00006404701",
+          "code_system": "2.16.840.1.113883.6.69",
+          "code_system_name": "NDC"
+        },
+        "lot_number": "8362",
+        "manufacturer_name": "MERCK SHARP & DOHME"
+      },
+      "dose_quantity": {
+        "value": null,
+        "unit": null
+      },
+      "route": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "instructions": null,
+      "education_type": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      }
+    }
+  ],
+  "instructions": [
+    {
+      "text": "diet and exercise counseling provided during visit",
+      "name": "ProviderInstructions",
+      "code": "423564006",
+      "code_system": "2.16.840.1.113883.11.20.9.34",
+      "code_system_name": "patientEducationType"
+    },
+    {
+      "text": "resources and instructions provided during visit",
+      "name": "ProviderInstructions",
+      "code": "423564006",
+      "code_system": "2.16.840.1.113883.11.20.9.34",
+      "code_system_name": "patientEducationType"
+    }
+  ],
+  "labs": [
+    {
+      "name": "CO2",
+      "code": "UNK",
+      "code_system": "2.16.840.1.113883.6.12",
+      "code_system_name": "CPT",
+      "results": [
+        {
+          "date": "07/11/2013",
+          "name": "Carbon Dioxide",
+          "value": 25.2,
+          "unit": "mmol/L",
+          "code": "2028-9",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "reference_range": {
+            "text": null,
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        }
+      ]
+    }
+  ],
+  "medications": [
+    {
+      "date_range": {
+        "start": null,
+        "end": null
+      },
+      "text": null,
+      "product": {
+        "name": "Proventil HFA 108 (90 Base) MCG/ACT Inhalation Aerosol Solution",
+        "code": "746763",
+        "code_system": "2.16.840.1.113883.6.88",
+        "translation": {
+          "name": "Proventil HFA 108 (90 Base) MCG/ACT Inhalation Aerosol Solution",
+          "code": "68258897406",
+          "code_system": "2.16.840.1.113883.6.69",
+          "code_system_name": "NDC"
+        }
+      },
+      "dose_quantity": {
+        "value": null,
+        "unit": null
+      },
+      "rate_quantity": {
+        "value": null,
+        "unit": null
+      },
+      "precondition": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      },
+      "reason": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      },
+      "route": {
+        "name": "RESPIRATORY (INHALATION)",
+        "code": "C38216",
+        "code_system": "2.16.840.1.113883.3.26.1.1",
+        "code_system_name": "NCI Thesaurus"
+      },
+      "schedule": {
+        "type": null,
+        "period_value": null,
+        "period_unit": null
+      },
+      "vehicle": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "administration": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "prescriber": {
+        "organization": null,
+        "person": null
+      }
+    }
+  ],
+  "problems": [
+    {
+      "date_range": {
+        "start": null,
+        "end": null
+      },
+      "name": "Asthma",
+      "status": "Active",
+      "age": null,
+      "code": "195967001",
+      "code_system": "2.16.840.1.113883.6.96",
+      "code_system_name": "SNOMED CT",
+      "translation": {
+        "name": "Asthma",
+        "code": "493.90",
+        "code_system": "2.16.840.1.113883.6.103",
+        "code_system_name": "ICD-9"
+      },
+      "comment": null
+    },
+    {
+      "date_range": {
+        "start": null,
+        "end": null
+      },
+      "name": "Costal chondritis",
+      "status": "Active",
+      "age": null,
+      "code": "64109004",
+      "code_system": "2.16.840.1.113883.6.96",
+      "code_system_name": "SNOMED CT",
+      "translation": {
+        "name": "Costal chondritis",
+        "code": "733.6",
+        "code_system": "2.16.840.1.113883.6.103",
+        "code_system_name": "ICD-9"
+      },
+      "comment": null
+    },
+    {
+      "date_range": {
+        "start": null,
+        "end": null
+      },
+      "name": "No impairment",
+      "status": "Active",
+      "age": null,
+      "code": "66557003",
+      "code_system": "2.16.840.1.113883.6.96",
+      "code_system_name": "SNOMED CT",
+      "translation": {
+        "name": "No impairment",
+        "code": "V68.01",
+        "code_system": "2.16.840.1.113883.6.103",
+        "code_system_name": "ICD-9"
+      },
+      "comment": null
+    }
+  ],
+  "procedures": [
+    {
+      "date": null,
+      "name": null,
+      "code": null,
+      "code_system": null,
+      "specimen": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      },
+      "performer": {
+        "street": [],
+        "city": null,
+        "state": null,
+        "zip": null,
+        "country": null,
+        "organization": null,
+        "phone": null
+      },
+      "device": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      }
+    },
+    {
+      "date": null,
+      "name": null,
+      "code": null,
+      "code_system": null,
+      "specimen": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      },
+      "performer": {
+        "street": [],
+        "city": null,
+        "state": null,
+        "zip": null,
+        "country": null,
+        "organization": null,
+        "phone": null
+      },
+      "device": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      }
+    }
+  ],
+  "smoking_status": {
+    "date": null,
+    "name": "Never smoker",
+    "code": "266919005",
+    "code_system": "2.16.840.1.113883.6.96",
+    "code_system_name": "SNOMED CT"
+  },
+  "vitals": []
+}
