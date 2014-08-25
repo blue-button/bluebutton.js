@@ -9,22 +9,28 @@ layout: main
     
     <div id="sidebar" class="sidebar">
       
-      <h1><a href="#">Getting Started</a></h1>
+      <h1><a href="#parsing">Parsing Documents</a></h1>
       <ul>
-        <li><a href="#">Understanding Data</a></li>
-        <li><a href="#">Parsing Documents</a></li>
-        <li><a href="#">Generating Documents</a></li>
-        <li><a href="#">Rendering Data</a></li>
+        <li><a href="#parsing-overview">An Overview</a></li>
+        <li><a href="#parsing-node">Node Usage</a></li>
+        <li><a href="#parsing-browser">Browser Usage</a></li>
+        <li><a href="#parsing-python">Python+Node Usage</a></li>
       </ul>
       
-      <h1><a href="#">Document Types</a></h1>
+      <h1><a href="#generating">Generating Documents</a></h1>
       <ul>
-        <li><a href="#">CCDA</a></li>
-        <li><a href="#">C32</a></li>
-        <li><a href="#">Sample Data</a></li>
+        <li><a href="#generating-overview">An Overview</a></li>
+        <li><a href="#generating-node">Node Usage</a></li>
+        <li><a href="#generating-browser">Browser Usage</a></li>
+        <li><a href="#generating-python">Python+Node Usage</a></li>
       </ul>
       
-      <h1><a href="#">Testing</a></h1>
+      <h1><a href="#logistics">Logistics</a></h1>
+      <ul>
+        <li><a href="#logistics-build">Building</a></li>
+        <li><a href="#logistics-test">Testing</a></li>
+        <li><a href="#logistics-github">Bugs and Contributions</a></li>
+      </ul>
       
     </div>
     
@@ -45,13 +51,4 @@ layout: main
       el.style.display = 'block';
     }
   }
-  
-  window.addEventListener('resize', function (event) {
-    var el = document.getElementById('sidebar');
-    if (document.width > 768) {
-      el.style.display = 'block';
-    } else {
-      el.style.display = 'none';
-    }
-  });
 </script>
