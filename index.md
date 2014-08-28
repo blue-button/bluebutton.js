@@ -35,7 +35,7 @@ layout: main
       <li>
         <div class="icon page"></div>
         <h1>Support for the Real World</h1>
-        <p>C-CDA isn't the first attempt to improve healthcare data interchange, so support the most popular legacy format, C32 CCDs, and are open to supporting others. BlueButton.js is used in production by multiple companies, and we make an effort to parse the widest range of real world data possible. It's also under an MIT license, which means you can use it in commercial software.</p>
+        <p>C-CDA isn't the first attempt to improve healthcare data interchange, so we support the most popular legacy format, C32 CCDs, and are open to supporting others. BlueButton.js is used in production by multiple companies, and we make an effort to parse the widest range of real world data possible. It's also under an MIT license, which means you can use it in commercial software.</p>
       </li>
 
       <li>
