@@ -524,7 +524,7 @@
           "code_system": "2.16.840.1.113883.6.1",
           "code_system_name": "LOINC",
           "reference_range": {
-            "text": "10-39 years: 55-110 mg/dL | 40-59 years: 70-150 mg/dL | >60 years: 80-150 mg/dL | Therapeutic Target: <100 mg/dL ",
+            "text": "10-39 years: 55-110 mg/dL | 40-59 years: 70-150 mg/dL | >60 years: 80-150 mg/dL | Therapeutic Target: <100 mg/dL",
             "low_unit": null,
             "low_value": null,
             "high_unit": null,
