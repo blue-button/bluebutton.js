@@ -355,7 +355,9 @@
         "code": null,
         "code_system": null
       }
-    },
+    }
+  ],
+  "immunization_declines": [
     {
       "date": "08/15/1997",
       "product": {

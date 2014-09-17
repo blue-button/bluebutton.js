@@ -62,6 +62,16 @@ var runJsonTests = function(expectedOutput, expectedType, bb) {
     });
   });
 
+  describe('immunization_declines', function() {
+    var immunization_declines = toJSON(bb.data.immunization_declines);
+    _.each(immunization_declines, function(actual, i) {
+      it('should output the correct immunization decline at index['+i+']', function() {
+        var expected = expectedOutput.immunization_declines[i];
+        expect(actual).toEqual(expected);
+      });
+    });
+  });
+
   describe('labs', function() {
     var labs = toJSON(bb.data.labs);
     _.each(labs, function(actual, i) {
