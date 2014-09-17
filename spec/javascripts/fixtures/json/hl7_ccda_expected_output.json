@@ -435,13 +435,13 @@
   ],
   "immunization_declines": [],
   "instructions": [],
-  "labs": [
+  "results": [
     {
       "name": "CBC WO DIFFERENTIAL",
       "code": "43789009",
       "code_system": "2.16.840.1.113883.6.96",
       "code_system_name": "SNOMED CT",
-      "results": [
+      "tests": [
         {
           "date": "03/23/2000",
           "name": "HGB",

@@ -339,13 +339,13 @@
       "code_system_name": "patientEducationType"
     }
   ],
-  "labs": [
+  "results": [
     {
       "name": "CO2",
       "code": "UNK",
       "code_system": "2.16.840.1.113883.6.12",
       "code_system_name": "CPT",
-      "results": [
+      "tests": [
         {
           "date": "07/11/2013",
           "name": "Carbon Dioxide",

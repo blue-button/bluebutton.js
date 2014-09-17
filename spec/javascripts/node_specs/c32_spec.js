@@ -17,11 +17,11 @@ describe('C32', function() {
    * There are also some currently invalid dates that get parsed as "Invalid Date" by phantom and null by node
    *
    * Here we modify the expected output for PhantomJS to fix the data for Node. */
-  expectedOutput['labs'].forEach(function(lab) {
+  expectedOutput['results'].forEach(function(lab) {
     if (lab['date'] === '2000-03-23T07:00:00.000Z') {
       lab['date'] = '2000-03-23T08:00:00.000Z';
     }
-    lab['results'].forEach(function(result) {
+    lab['tests'].forEach(function(result) {
       if (result['date'] === '2000-03-23T07:00:00.000Z') {
         result['date'] = '2000-03-23T08:00:00.000Z';
       }

@@ -72,11 +72,11 @@ var runJsonTests = function(expectedOutput, expectedType, bb) {
     });
   });
 
-  describe('labs', function() {
-    var labs = toJSON(bb.data.labs);
-    _.each(labs, function(actual, i) {
+  describe('results', function() {
+    var results = toJSON(bb.data.results);
+    _.each(results, function(actual, i) {
       it('should output the correct lab at index['+i+']', function() {
-        var expected = expectedOutput.labs[i];
+        var expected = expectedOutput.results[i];
         expect(actual).toEqual(expected);
       });
     });
