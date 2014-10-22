@@ -1542,7 +1542,7 @@
                                                     <templateId root="2.16.840.1.113883.10.20.22.4.27"/>
                                                     <!-- Vital Sign Observation template -->
                                                     <id root="c6f88321-67ad-11db-bd13-0800200c9a66"/>
-                                                    <code displayName="Height" code="8302-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" >
+                                                    <code displayName="Height" code="8302-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                                                     <statusCode code="completed"/>
                                                     <effectiveTime value="20111101" />
                                                     <value xsi:type="PQ" value="69" unit="in"/>
@@ -1555,7 +1555,7 @@
                                                     <templateId root="2.16.840.1.113883.10.20.22.4.27"/>
                                                     <!-- Vital Sign Observation template -->
                                                     <id root="c6f88321-67ad-11db-bd13-0800200c9a66"/>
-                                                    <code displayName="Patient Body Weight - Measured" code="3141-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" >
+                                                    <code displayName="Patient Body Weight - Measured" code="3141-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                                                     <statusCode code="completed"/>
                                                     <effectiveTime value="20111101" />
                                                     <value xsi:type="PQ" value="189" unit="lbs"/>
@@ -1568,7 +1568,7 @@
                                                     <templateId root="2.16.840.1.113883.10.20.22.4.27"/>
                                                     <!-- Vital Sign Observation template -->
                                                     <id root="c6f88321-67ad-11db-bd13-0800200c9a66"/>
-                                                    <code displayName="Intravascular Systolic" code="8480-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" >
+                                                    <code displayName="Intravascular Systolic" code="8480-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                                                     <statusCode code="completed"/>
                                                     <effectiveTime value="20111101" />
                                                     <value xsi:type="PQ" value="132" unit="mm[Hg]"/>
@@ -1599,7 +1599,7 @@
                                                     <templateId root="2.16.840.1.113883.10.20.22.4.27"/>
                                                     <!-- Vital Sign Observation template -->
                                                     <id root="c6f88321-67ad-11db-bd13-0800200c9a66"/>
-                                                    <code displayName="Height" code="8302-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" >
+                                                    <code displayName="Height" code="8302-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                                                     <statusCode code="completed"/>
                                                     <effectiveTime value="20120806" />
                                                     <value xsi:type="PQ" value="69" unit="in"/>
@@ -1612,7 +1612,7 @@
                                                     <templateId root="2.16.840.1.113883.10.20.22.4.27"/>
                                                     <!-- Vital Sign Observation template -->
                                                     <id root="c6f88321-67ad-11db-bd13-0800200c9a66"/>
-                                                    <code displayName="Patient Body Weight - Measured" code="3141-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" >
+                                                    <code displayName="Patient Body Weight - Measured" code="3141-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                                                     <statusCode code="completed"/>
                                                     <effectiveTime value="20120806" />
                                                     <value xsi:type="PQ" value="194" unit="lbs"/>
@@ -1625,7 +1625,7 @@
                                                     <templateId root="2.16.840.1.113883.10.20.22.4.27"/>
                                                     <!-- Vital Sign Observation template -->
                                                     <id root="c6f88321-67ad-11db-bd13-0800200c9a66"/>
-                                                    <code displayName="Intravascular Systolic" code="8480-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" >
+                                                    <code displayName="Intravascular Systolic" code="8480-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" />
                                                     <statusCode code="completed"/>
                                                     <effectiveTime value="20120806" />
                                                     <value xsi:type="PQ" value="145" unit="mm[Hg]"/>
