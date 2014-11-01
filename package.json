@@ -1,6 +1,6 @@
 {
   "name": "bluebutton",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "BlueButton.js helps developers navigate complex health data with ease.",
   "keywords": [
     "bb",
@@ -24,13 +24,16 @@
   },
   "contributors": [
     {
-      "name": "Rob Dodson",
-      "email": "lets.email.rob@gmail.com",
-      "url": "http://robdodson.me"
-    },
-    {
       "name": "Ravi Sankar",
       "email": "sankarravi+bbjs@gmail.com"
+    },
+    {
+      "name": "Tyler Hayes",
+      "email": "tyler@thetylerhayes.com"
+    },
+    {
+      "name": "Dmitry Kachaev",
+      "url": "http://twitter.com/kachok"
     }
   ],
   "main": "build/bluebutton.js",
