@@ -1380,6 +1380,12 @@ IMMUNIZATIONS
                            <td>Apr 2012</td>
                            <td>Completed</td>
                         </tr>
+                        <tr>
+                           <td><content
+                                 ID="immun6"/>Influenza virus vaccine, IM</td>
+                           <td>Aug 2012</td>
+                           <td>Declined</td>
+                        </tr>
                      </tbody>
                   </table>
                </text>
@@ -1529,6 +1535,61 @@ IMMUNIZATIONS
                               code="completed"/>
                         </act>
                      </entryRelationship>
+                  </substanceAdministration>
+               </entry>
+               <entry
+                  typeCode="DRIV">
+                  <substanceAdministration
+                     classCode="SBADM"
+                     moodCode="EVN"
+                     negationInd="true">
+                     <templateId
+                        root="2.16.840.1.113883.10.20.22.4.52"/>
+                     <!--  ********   Immunization activity template    ******** -->
+                     <id
+                        root="e6f1ba43-c0ed-4b9b-9f12-f435d8ad8f92"/>
+                     <text>
+                        <reference
+                           value="#immun6"/>
+                     </text>
+                     <statusCode
+                        code="completed"/>
+                     <effectiveTime
+                        xsi:type="IVL_TS"
+                        value="20120603"/>
+                     <routeCode
+                        code="C28161"
+                        codeSystem="2.16.840.1.113883.3.26.1.1"
+                        codeSystemName="National Cancer Institute (NCI) Thesaurus"
+                        displayName="Intramuscular injection"/>
+                     <doseQuantity
+                        value="50"
+                        unit="mcg"/>
+                     <consumable>
+                        <manufacturedProduct
+                           classCode="MANU">
+                           <templateId
+                              root="2.16.840.1.113883.10.20.22.4.54"/>
+                           <!--  ********   Immunization Medication Information    ******** -->
+                           <manufacturedMaterial>
+                              <code
+                                 code="88"
+                                 codeSystem="2.16.840.1.113883.6.59"
+                                 displayName="Influenza virus vaccine"
+                                 codeSystemName="CVX">
+                                 <originalText>Influenza virus vaccine</originalText>
+                                 <translation
+                                    code="111"
+                                    displayName="influenza, live, intranasal"
+                                    codeSystemName="CVX"
+                                    codeSystem="2.16.840.1.113883.6.59"/>
+                              </code>
+                           </manufacturedMaterial>
+                           <manufacturerOrganization>
+                              <name>Health LS - Immuno Inc.</name>
+                           </manufacturerOrganization>
+                        </manufacturedProduct>
+                     </consumable>
                   </substanceAdministration>
                </entry>
             </section>

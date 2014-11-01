@@ -10,7 +10,7 @@
     }
 }(this, function() {
 
-/* BlueButton.js -- 0.1.0 */
+/* BlueButton.js -- 0.2.0 */
 
 /*
  * ...
@@ -685,6 +685,7 @@ Core.XML = (function () {
         immediateChildTag: immediateChildTag,
         elsByTag: elsByTag,
         attr: attr,
+        boolAttr: boolAttr,
         val: val,
         isEmpty: isEmpty
       };
@@ -747,13 +748,20 @@ Core.XML = (function () {
    * in this context) is not the same attribute as `id` in XML, so there are no matches
    */
   var content = function (contentId) {
-    var el = tagAttrVal(this.el, 'content', 'ID', contentId);
-    if (!el) {
-      return emptyEl();
-    } else {
-      return wrapElement(el);
-    }
-  };
+      var el = tagAttrVal(this.el, 'content', 'ID', contentId);
+      if (!el) {
+        // check the <td> tag too, which isn't really correct but
+        // will inevitably be used sometimes because it looks like very
+        // normal HTML to put the data directly in a <td>
+        el = tagAttrVal(this.el, 'td', 'ID', contentId);
+      }
+
+      if (!el) {
+        return emptyEl();
+      } else {
+        return wrapElement(el);
+      }
+    };
   
   
   /*
@@ -813,12 +821,25 @@ Core.XML = (function () {
    * told to parse malformed XML as XML anyways), return the empty
    * string instead, so we fix that here.
    */
-  var attr = function (attr) {
+  var attr = function (attrName) {
     if (!this.el) { return null; }
-    var attrVal = this.el.getAttribute(attr);
+    var attrVal = this.el.getAttribute(attrName);
     return attrVal || null;
   };
-  
+
+  /*
+   * Wrapper for attr() for retrieving boolean attributes;
+   * a raw call attr() will return Strings, which can be unexpected,
+   * since the string 'false' will by truthy
+   */
+  var boolAttr = function (attrName) {
+    var rawAttr = this.attr(attrName);
+    if (rawAttr === 'true' || rawAttr === '1') {
+      return true;
+    }
+    return false;
+  };
+
   
   /*
    * Retrieve the element's value. For example, if the element is:
@@ -838,10 +859,23 @@ Core.XML = (function () {
     // if there's no text value here and the only thing inside is a
     // <reference> tag, see if there's a linked <content> tag we can
     // get something out of
-    if (!textContent && this.el.childNodes.length === 1 &&
-          this.el.childNodes[0].tagName === 'reference') {
+    if (!Core.stripWhitespace(textContent)) {
 
-      var contentId = this.el.childNodes[0].getAttribute('value');
+      var contentId;
+      // "no text value" might mean there's just a reference tag
+      if (this.el.childNodes.length === 1 &&
+          this.el.childNodes[0].tagName === 'reference') {
+        contentId = this.el.childNodes[0].getAttribute('value');
+
+      // or maybe a newlines on top/above the reference tag
+      } else if (this.el.childNodes.length === 3 &&
+          this.el.childNodes[1].tagName === 'reference') {
+        contentId = this.el.childNodes[1].getAttribute('value');
+
+      } else {
+        return textContent;
+      }
+
       if (contentId && contentId[0] === '#') {
         contentId = contentId.slice(1); // get rid of the '#'
         var docRoot = wrapElement(this.el.ownerDocument);
@@ -1111,7 +1145,7 @@ Documents.C32 = (function () {
         el = this.template('2.16.840.1.113883.3.88.11.83.117');
         el.entries = entries;
         return el;
-      case 'labs':
+      case 'results':
         el = this.template('2.16.840.1.113883.3.88.11.83.122');
         el.entries = entries;
         return el;
@@ -1208,7 +1242,7 @@ Documents.CCDA = (function () {
         el = this.template('2.16.840.1.113883.10.20.22.2.45');
         el.entries = entries;
         return el;
-      case 'labs':
+      case 'results':
         el = this.template('2.16.840.1.113883.10.20.22.2.3.1');
         el.entries = entries;
         return el;
@@ -1269,7 +1303,6 @@ var Generators = (function () {
     }
   }
 
-  
   if (typeof ejs !== 'undefined') {
     /* Filters are automatically available to ejs to be used like "... | hl7Date"
      * Helpers are functions that we'll manually pass in to ejs.
@@ -1509,28 +1542,30 @@ Parsers.C32 = (function () {
   var run = function (c32) {
     var data = {};
     
-    data.document      = Parsers.C32.document(c32);
-    data.allergies     = Parsers.C32.allergies(c32);
-    data.demographics  = Parsers.C32.demographics(c32);
-    data.encounters    = Parsers.C32.encounters(c32);
-    data.immunizations = Parsers.C32.immunizations(c32);
-    data.labs          = Parsers.C32.labs(c32);
-    data.medications   = Parsers.C32.medications(c32);
-    data.problems      = Parsers.C32.problems(c32);
-    data.procedures    = Parsers.C32.procedures(c32);
-    data.vitals        = Parsers.C32.vitals(c32);
+    data.document              = Parsers.C32.document(c32);
+    data.allergies             = Parsers.C32.allergies(c32);
+    data.demographics          = Parsers.C32.demographics(c32);
+    data.encounters            = Parsers.C32.encounters(c32);
+    data.immunizations         = Parsers.C32.immunizations(c32).administered;
+    data.immunization_declines = Parsers.C32.immunizations(c32).declined;
+    data.results               = Parsers.C32.results(c32);
+    data.medications           = Parsers.C32.medications(c32);
+    data.problems              = Parsers.C32.problems(c32);
+    data.procedures            = Parsers.C32.procedures(c32);
+    data.vitals                = Parsers.C32.vitals(c32);
     
-    data.json                 = Core.json;
-    data.document.json        = Core.json;
-    data.allergies.json       = Core.json;
-    data.demographics.json    = Core.json;
-    data.encounters.json      = Core.json;
-    data.immunizations.json   = Core.json;
-    data.labs.json            = Core.json;
-    data.medications.json     = Core.json;
-    data.problems.json        = Core.json;
-    data.procedures.json      = Core.json;
-    data.vitals.json          = Core.json;
+    data.json                       = Core.json;
+    data.document.json              = Core.json;
+    data.allergies.json             = Core.json;
+    data.demographics.json          = Core.json;
+    data.encounters.json            = Core.json;
+    data.immunizations.json         = Core.json;
+    data.immunization_declines.json = Core.json;
+    data.results.json               = Core.json;
+    data.medications.json           = Core.json;
+    data.problems.json              = Core.json;
+    data.procedures.json            = Core.json;
+    data.vitals.json                = Core.json;
 
     // Sections that are in CCDA but not C32... we want to keep the API
     // consistent, even if the entries are always null
@@ -1686,7 +1721,7 @@ Parsers.C32.allergies = function (c32) {
     if (!reaction_name) {
       el = entry.template('2.16.840.1.113883.10.20.1.54').tag('text');
       if (!el.isEmpty()) {
-        reaction_name = el.val();
+        reaction_name = Core.stripWhitespace(el.val());
       }
     }
 
@@ -1942,7 +1977,7 @@ Parsers.C32.immunizations = function (c32) {
   var parseDate = Documents.parseDate;
   var parseName = Documents.parseName;
   var parseAddress = Documents.parseAddress;
-  var data = [], el, product;
+  var administeredData = [], declinedData = [], el, product;
   
   var immunizations = c32.section('immunizations');
   
@@ -1951,7 +1986,14 @@ Parsers.C32.immunizations = function (c32) {
     // date
     el = entry.tag('effectiveTime');
     var date = parseDate(el.attr('value'));
-    
+    if (!date) {
+      date = parseDate(el.tag('low').attr('value'));
+    }
+
+    // if 'declined' is true, this is a record that this vaccine WASN'T administered
+    el = entry.tag('substanceAdministration');
+    var declined = el.boolAttr('negationInd');
+
     // product
     product = entry.template('2.16.840.1.113883.10.20.1.53');
     el = product.tag('code');
@@ -1983,7 +2025,7 @@ Parsers.C32.immunizations = function (c32) {
     
     // instructions
     el = entry.template('2.16.840.1.113883.10.20.1.49');
-    var instructions_text = el.tag('text').val();
+    var instructions_text = Core.stripWhitespace(el.tag('text').val());
     el = el.tag('code');
     var education_name = el.attr('displayName'),
         education_code = el.attr('code'),
@@ -1994,6 +2036,7 @@ Parsers.C32.immunizations = function (c32) {
     var dose_value = el.attr('value'),
         dose_unit = el.attr('unit');
     
+    var data = (declined) ? declinedData : administeredData;
     data.push({
       date: date,
       product: {
@@ -2029,24 +2072,27 @@ Parsers.C32.immunizations = function (c32) {
     });
   });
   
-  return data;
+  return {
+    administered: administeredData,
+    declined: declinedData
+  };
 };
 ;
 
 /*
- * Parser for the C32 labs section
+ * Parser for the C32 results (labs) section
  */
 
-Parsers.C32.labs = function (c32) {
+Parsers.C32.results = function (c32) {
   
   var parseDate = Documents.parseDate;
   var parseName = Documents.parseName;
   var parseAddress = Documents.parseAddress;
   var data = [], el;
   
-  var labs = c32.section('labs');
+  var results = c32.section('results');
   
-  labs.entries().each(function(entry) {
+  results.entries().each(function(entry) {
     
     el = entry.tag('effectiveTime');
     var panel_date = parseDate(entry.tag('effectiveTime').attr('value'));
@@ -2061,35 +2107,35 @@ Parsers.C32.labs = function (c32) {
         panel_code_system = el.attr('codeSystem'),
         panel_code_system_name = el.attr('codeSystemName');
     
-    var result;
-    var results = entry.elsByTag('component');
-    var results_data = [];
+    var observation;
+    var tests = entry.elsByTag('component');
+    var tests_data = [];
     
-    for (var i = 0; i < results.length; i++) {
-      result = results[i];
+    for (var i = 0; i < tests.length; i++) {
+      observation = tests[i];
       
-      // sometimes results organizers contain non-results. we only want results
-      if (result.template('2.16.840.1.113883.10.20.1.31').val()) {
-        var date = parseDate(result.tag('effectiveTime').attr('value'));
+      // sometimes results organizers contain non-results. we only want tests
+      if (observation.template('2.16.840.1.113883.10.20.1.31').val()) {
+        var date = parseDate(observation.tag('effectiveTime').attr('value'));
         
-        el = result.tag('code');
+        el = observation.tag('code');
         var name = el.attr('displayName'),
             code = el.attr('code'),
             code_system = el.attr('codeSystem'),
             code_system_name = el.attr('codeSystemName');
         
-        el = result.tag('value');
+        el = observation.tag('value');
         var value = parseFloat(el.attr('value')),
             unit = el.attr('unit');
     
-        el = result.tag('referenceRange');
-        var reference_range_text = el.tag('observationRange').tag('text').val(),
+        el = observation.tag('referenceRange');
+        var reference_range_text = Core.stripWhitespace(el.tag('observationRange').tag('text').val()),
             reference_range_low_unit = el.tag('observationRange').tag('low').attr('unit'),
             reference_range_low_value = el.tag('observationRange').tag('low').attr('value'),
             reference_range_high_unit = el.tag('observationRange').tag('high').attr('unit'),
             reference_range_high_value = el.tag('observationRange').tag('high').attr('value');
         
-        results_data.push({
+        tests_data.push({
           date: date,
           name: name,
           value: value,
@@ -2114,7 +2160,7 @@ Parsers.C32.labs = function (c32) {
       code_system: panel_code_system,
       code_system_name: panel_code_system_name,
       date: panel_date,
-      results: results_data
+      tests: tests_data
     });
   });
   
@@ -2177,7 +2223,7 @@ Parsers.C32.medications = function (c32) {
     if (!product_name) {
       el = entry.tag('manufacturedProduct').tag('originalText');
       if (!el.isEmpty()) {
-        product_name = el.val();
+        product_name = Core.stripWhitespace(el.val());
       }
     }
 
@@ -2185,7 +2231,7 @@ Parsers.C32.medications = function (c32) {
     if (!product_name) {
       el = entry.tag('manufacturedProduct').tag('name');
       if (!el.isEmpty()) {
-        product_name = el.val();
+        product_name = Core.stripWhitespace(el.val());
       }
     }
     
@@ -2336,7 +2382,7 @@ Parsers.C32.problems = function (c32) {
     if (!name) {
       el = entry.template('2.16.840.1.113883.10.20.1.28').tag('originalText');
       if (!el.isEmpty()) {
-        name = el.val();
+        name = Core.stripWhitespace(el.val());
       }
     }
 
@@ -2512,38 +2558,40 @@ Parsers.CCDA = (function () {
   var run = function (ccda) {
     var data = {};
     
-    data.document             = Parsers.CCDA.document(ccda);
-    data.allergies            = Parsers.CCDA.allergies(ccda);
-    data.care_plan            = Parsers.CCDA.care_plan(ccda);
-    data.chief_complaint      = Parsers.CCDA.free_text(ccda, 'chief_complaint');
-    data.demographics         = Parsers.CCDA.demographics(ccda);
-    data.encounters           = Parsers.CCDA.encounters(ccda);
-    data.functional_statuses  = Parsers.CCDA.functional_statuses(ccda);
-    data.immunizations        = Parsers.CCDA.immunizations(ccda);
-    data.instructions         = Parsers.CCDA.instructions(ccda);
-    data.labs                 = Parsers.CCDA.labs(ccda);
-    data.medications          = Parsers.CCDA.medications(ccda);
-    data.problems             = Parsers.CCDA.problems(ccda);
-    data.procedures           = Parsers.CCDA.procedures(ccda);
-    data.smoking_status       = Parsers.CCDA.smoking_status(ccda);
-    data.vitals               = Parsers.CCDA.vitals(ccda);
+    data.document              = Parsers.CCDA.document(ccda);
+    data.allergies             = Parsers.CCDA.allergies(ccda);
+    data.care_plan             = Parsers.CCDA.care_plan(ccda);
+    data.chief_complaint       = Parsers.CCDA.free_text(ccda, 'chief_complaint');
+    data.demographics          = Parsers.CCDA.demographics(ccda);
+    data.encounters            = Parsers.CCDA.encounters(ccda);
+    data.functional_statuses   = Parsers.CCDA.functional_statuses(ccda);
+    data.immunizations         = Parsers.CCDA.immunizations(ccda).administered;
+    data.immunization_declines = Parsers.CCDA.immunizations(ccda).declined;
+    data.instructions          = Parsers.CCDA.instructions(ccda);
+    data.results               = Parsers.CCDA.results(ccda);
+    data.medications           = Parsers.CCDA.medications(ccda);
+    data.problems              = Parsers.CCDA.problems(ccda);
+    data.procedures            = Parsers.CCDA.procedures(ccda);
+    data.smoking_status        = Parsers.CCDA.smoking_status(ccda);
+    data.vitals                = Parsers.CCDA.vitals(ccda);
     
-    data.json                      = Core.json;
-    data.document.json             = Core.json;
-    data.allergies.json            = Core.json;
-    data.care_plan.json            = Core.json;
-    data.chief_complaint.json      = Core.json;
-    data.demographics.json         = Core.json;
-    data.encounters.json           = Core.json;
-    data.functional_statuses.json  = Core.json;
-    data.immunizations.json        = Core.json;
-    data.instructions.json         = Core.json;
-    data.labs.json                 = Core.json;
-    data.medications.json          = Core.json;
-    data.problems.json             = Core.json;
-    data.procedures.json           = Core.json;
-    data.smoking_status.json       = Core.json;
-    data.vitals.json               = Core.json;
+    data.json                        = Core.json;
+    data.document.json               = Core.json;
+    data.allergies.json              = Core.json;
+    data.care_plan.json              = Core.json;
+    data.chief_complaint.json        = Core.json;
+    data.demographics.json           = Core.json;
+    data.encounters.json             = Core.json;
+    data.functional_statuses.json    = Core.json;
+    data.immunizations.json          = Core.json;
+    data.immunization_declines.json  = Core.json;
+    data.instructions.json           = Core.json;
+    data.results.json                = Core.json;
+    data.medications.json            = Core.json;
+    data.problems.json               = Core.json;
+    data.procedures.json             = Core.json;
+    data.smoking_status.json         = Core.json;
+    data.vitals.json                 = Core.json;
     
     return data;
   };
@@ -3019,7 +3067,7 @@ Parsers.CCDA.immunizations = function (ccda) {
   var parseDate = Documents.parseDate;
   var parseName = Documents.parseName;
   var parseAddress = Documents.parseAddress;
-  var data = [], el, product;
+  var administeredData = [], declinedData = [], el, product;
   
   var immunizations = ccda.section('immunizations');
   
@@ -3028,7 +3076,14 @@ Parsers.CCDA.immunizations = function (ccda) {
     // date
     el = entry.tag('effectiveTime');
     var date = parseDate(el.attr('value'));
-    
+    if (!date) {
+      date = parseDate(el.tag('low').attr('value'));
+    }
+
+    // if 'declined' is true, this is a record that this vaccine WASN'T administered
+    el = entry.tag('substanceAdministration');
+    var declined = el.boolAttr('negationInd');
+
     // product
     product = entry.template('2.16.840.1.113883.10.20.22.4.54');
     el = product.tag('code');
@@ -3060,7 +3115,7 @@ Parsers.CCDA.immunizations = function (ccda) {
     
     // instructions
     el = entry.template('2.16.840.1.113883.10.20.22.4.20');
-    var instructions_text = el.tag('text').val();
+    var instructions_text = Core.stripWhitespace(el.tag('text').val());
     el = el.tag('code');
     var education_name = el.attr('displayName'),
         education_code = el.attr('code'),
@@ -3071,6 +3126,7 @@ Parsers.CCDA.immunizations = function (ccda) {
     var dose_value = el.attr('value'),
         dose_unit = el.attr('unit');
     
+    var data = (declined) ? declinedData : administeredData;
     data.push({
       date: date,
       product: {
@@ -3106,7 +3162,10 @@ Parsers.CCDA.immunizations = function (ccda) {
     });
   });
   
-  return data;
+  return {
+    administered: administeredData,
+    declined: declinedData
+  };
 };
 ;
 
@@ -3128,7 +3187,7 @@ Parsers.CCDA.instructions = function (ccda) {
         code_system = el.attr('codeSystem'),
         code_system_name = el.attr('codeSystemName');
 
-    var text = entry.tag('text').val();
+    var text = Core.stripWhitespace(entry.tag('text').val());
     
     data.push({
       text: text,
@@ -3144,19 +3203,19 @@ Parsers.CCDA.instructions = function (ccda) {
 ;
 
 /*
- * Parser for the CCDA labs section
+ * Parser for the CCDA results (labs) section
  */
 
-Parsers.CCDA.labs = function (ccda) {
+Parsers.CCDA.results = function (ccda) {
   
   var parseDate = Documents.parseDate;
   var parseName = Documents.parseName;
   var parseAddress = Documents.parseAddress;
   var data = [], el;
   
-  var labs = ccda.section('labs');
+  var results = ccda.section('results');
   
-  labs.entries().each(function(entry) {
+  results.entries().each(function(entry) {
     
     // panel
     el = entry.tag('code');
@@ -3165,33 +3224,33 @@ Parsers.CCDA.labs = function (ccda) {
         panel_code_system = el.attr('codeSystem'),
         panel_code_system_name = el.attr('codeSystemName');
     
-    var result;
-    var results = entry.elsByTag('component');
-    var results_data = [];
+    var observation;
+    var tests = entry.elsByTag('component');
+    var tests_data = [];
     
-    for (var i = 0; i < results.length; i++) {
-      result = results[i];
+    for (var i = 0; i < tests.length; i++) {
+      observation = tests[i];
       
-      var date = parseDate(result.tag('effectiveTime').attr('value'));
+      var date = parseDate(observation.tag('effectiveTime').attr('value'));
       
-      el = result.tag('code');
+      el = observation.tag('code');
       var name = el.attr('displayName'),
           code = el.attr('code'),
           code_system = el.attr('codeSystem'),
           code_system_name = el.attr('codeSystemName');
       
-      el = result.tag('value');
+      el = observation.tag('value');
       var value = parseFloat(el.attr('value')),
           unit = el.attr('unit');
       
-      el = result.tag('referenceRange');
-      var reference_range_text = el.tag('observationRange').tag('text').val(),
+      el = observation.tag('referenceRange');
+      var reference_range_text = Core.stripWhitespace(el.tag('observationRange').tag('text').val()),
           reference_range_low_unit = el.tag('observationRange').tag('low').attr('unit'),
           reference_range_low_value = el.tag('observationRange').tag('low').attr('value'),
           reference_range_high_unit = el.tag('observationRange').tag('high').attr('unit'),
           reference_range_high_value = el.tag('observationRange').tag('high').attr('value');
       
-      results_data.push({
+      tests_data.push({
         date: date,
         name: name,
         value: value,
@@ -3214,7 +3273,7 @@ Parsers.CCDA.labs = function (ccda) {
       code: panel_code,
       code_system: panel_code_system,
       code_system_name: panel_code_system_name,
-      results: results_data
+      tests: tests_data
     });
   });
   
@@ -3272,7 +3331,7 @@ Parsers.CCDA.medications = function (ccda) {
     if (!product_name) {
       el = entry.tag('manufacturedProduct').tag('originalText');
       if (!el.isEmpty()) {
-        product_name = el.val();
+        product_name = Core.stripWhitespace(el.val());
       }
     }
     
@@ -3431,7 +3490,7 @@ Parsers.CCDA.problems = function (ccda) {
     var age = parseFloat(el.tag('value').attr('value'));
 
     el = entry.template('2.16.840.1.113883.10.20.22.4.64');
-    var comment = el.tag('text').val();
+    var comment = Core.stripWhitespace(el.tag('text').val());
     
     data.push({
       date_range: {

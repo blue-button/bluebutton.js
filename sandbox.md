@@ -31,7 +31,7 @@ bb.data.medications.json();
 
 Use sample data and convert: <button onclick="load('bb_ref_ccda')">Sample CCDA</button> | <button onclick="convert()">Convert</button> <button onclick="clearAll()">Clear</button>
 
-[Document](#document-section), [Demographics](#demographics-section), [Allergies](#allergies-section), [Encounters](#encounters-section), [Immunizations](#immunizations-section), [Labs](#labs-section), [Medications](#medications-section), [Problems](#problems-section), [Procedures](#procedures-section), [Vitals](#vitals-section)
+[Document](#document-section), [Demographics](#demographics-section), [Allergies](#allergies-section), [Care Plan](#careplan-section), [Chief Complaint](#chiefcomplaint-section), [Encounters](#encounters-section), [Functional Status](#functionalstatus-section), [Immunizations](#immunizations-section), [Declined Immunizations](#immunizationdeclines-section), [Patient Instructions](#instructions-section), [Medications](#medications-section), [Problems](#problems-section), [Procedures](#procedures-section), [Results (Labs)](#results-section), [Smoking Status](#smokingstatus-section), [Vitals](#vitals-section)
 
 
 <a name="document-section"></a>
@@ -74,14 +74,14 @@ Use sample data and convert: <button onclick="load('bb_ref_ccda')">Sample CCDA</
 <pre><code id="immunizations" class="javascript"></code></pre>
 
 
+<a name="immunizationdeclines-section"></a>
+## Declined Immunizations
+<pre><code id="immunizationdeclines" class="javascript"></code></pre>
+
+
 <a name="instructions-section"></a>
 ## Patient Instructions
 <pre><code id="instructions" class="javascript"></code></pre>
-
-
-<a name="labs-section"></a>
-## Labs
-<pre><code id="labs" class="javascript"></code></pre>
 
 
 <a name="medications-section"></a>
@@ -99,6 +99,11 @@ Use sample data and convert: <button onclick="load('bb_ref_ccda')">Sample CCDA</
 <pre><code id="procedures" class="javascript"></code></pre>
 
 
+<a name="results-section"></a>
+## Results (Labs)
+<pre><code id="results" class="javascript"></code></pre>
+
+
 <a name="smokingstatus-section"></a>
 ## Smoking Status
 <pre><code id="smokingstatus" class="javascript"></code></pre>
@@ -109,7 +114,6 @@ Use sample data and convert: <button onclick="load('bb_ref_ccda')">Sample CCDA</
 <pre><code id="vitals" class="javascript"></code></pre>
 
 <script src="//yandex.st/highlightjs/8.0/highlight.min.js"></script>
-<!-- <script src="//github.com/blue-button/bluebutton.js/releases/download/0.1.0/bluebutton.js"></script> -->
 <script src="/files/bluebutton.js"></script>
 <script>
   var baseURL = "";
@@ -122,8 +126,9 @@ Use sample data and convert: <button onclick="load('bb_ref_ccda')">Sample CCDA</
   var encounters = document.getElementById('encounters');
   var functionalStatus = document.getElementById('functionalstatus');
   var immunizations = document.getElementById('immunizations');
+  var immunizationDeclines = document.getElementById('immunizationdeclines');
   var instructions = document.getElementById('instructions');
-  var labs = document.getElementById('labs');
+  var results = document.getElementById('results');
   var medications = document.getElementById('medications');
   var problems = document.getElementById('problems');
   var procedures = document.getElementById('procedures');
@@ -187,8 +192,9 @@ Use sample data and convert: <button onclick="load('bb_ref_ccda')">Sample CCDA</
     encounters.innerHTML = hl(bb.data.encounters.json());
     functionalStatus.innerHTML = hl(bb.data.functional_statuses.json());
     immunizations.innerHTML = hl(bb.data.immunizations.json());
+    immunizationDeclines.innerHTML = hl(bb.data.immunization_declines.json());
     instructions.innerHTML = hl(bb.data.instructions.json());
-    labs.innerHTML = hl(bb.data.labs.json());
+    results.innerHTML = hl(bb.data.results.json());
     medications.innerHTML = hl(bb.data.medications.json());
     problems.innerHTML = hl(bb.data.problems.json());
     procedures.innerHTML = hl(bb.data.procedures.json());
