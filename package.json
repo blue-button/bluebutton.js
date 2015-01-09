@@ -1,6 +1,6 @@
 {
   "name": "bluebutton",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "BlueButton.js helps developers navigate complex health data with ease.",
   "keywords": [
     "bb",
@@ -45,13 +45,12 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "xmldom": "*",
-    "ejs": "*"
+    "xmldom": "~0.1.19",
+    "ejs": "^1.0.0"
   },
   "devDependencies": {
     "bower": "*",
     "grunt": "*",
-    "xmldom": "*",
     "grunt-contrib-clean": "*",
     "grunt-contrib-concat": "*",
     "grunt-contrib-copy": "*",
@@ -63,8 +62,7 @@
     "grunt-template-jasmine-requirejs": "*",
     "grunt-umd": "*",
     "matchdep": "*",
-    "underscore": "*",
-    "ejs": "*"
+    "underscore": "*"
   },
   "engines": {
     "node": ">=0.10.0"
