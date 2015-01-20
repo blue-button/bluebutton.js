@@ -43,7 +43,7 @@ ccda.data.encounters
 ccda.data.functional_statuses
 ccda.data.immunizations
 ccda.data.instructions
-ccda.data.labs
+ccda.data.results
 ccda.data.medications
 ccda.data.problems
 ccda.data.procedures
