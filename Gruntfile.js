@@ -124,7 +124,10 @@ module.exports = function(grunt) {
           specs: "<%= bb.test %>/browser_specs/*_spec.js",
           vendor: ["<%= bb.test %>/helpers/*.js"]
         },
-        src: "<%= bb.build %>/bluebutton.js",
+        src: [
+          "<%= bb.build %>/bluebutton.js",
+          "<%= bb.src %>/documents.js"
+        ]
       },
       amd: {
         options: {
@@ -132,7 +135,10 @@ module.exports = function(grunt) {
           vendor: ["<%= bb.test %>/helpers/*.js"],
           template: require('grunt-template-jasmine-requirejs')
         },
-        src: "<%= bb.build %>/bluebutton.js",
+        src: [
+          "<%= bb.build %>/bluebutton.js",
+          "<%= bb.src %>/documents.js"
+        ]
       }
     },
     

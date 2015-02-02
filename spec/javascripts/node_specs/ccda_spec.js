@@ -1,6 +1,6 @@
 var fs = require('fs'),
     path = require('path'),
-    runJsonTests = require('../helpers/shared_spec'),
+    runJsonTests = require('../helpers/shared_spec').runJsonTests,
     BlueButton = require('../../../build/bluebutton');
 
 describe('HL7 CCDA', function() {

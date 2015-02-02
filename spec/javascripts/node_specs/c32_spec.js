@@ -1,14 +1,16 @@
 var fs = require('fs'),
     path = require('path'),
-    runJsonTests = require('../helpers/shared_spec'),
+    runJsonTests = require('../helpers/shared_spec').runJsonTests,
     BlueButton = require('../../../build/bluebutton');
+
+var expectedOutput;
 
 describe('C32', function() {
   var record = fs.readFileSync(path.resolve(__dirname,
     '../fixtures/c32/HITSP_C32v2.5_Rev6_16Sections_Entries_MinimalErrors.xml'), 'utf-8');
   var bb = BlueButton(record);
 
-  var expectedOutput = JSON.parse(fs.readFileSync(path.resolve(__dirname,
+  expectedOutput = JSON.parse(fs.readFileSync(path.resolve(__dirname,
     '../fixtures/json/c32_expected_browser_output.json'), 'utf-8'));
 
   /* There are several dates near Daylight Saving time.
@@ -53,13 +55,14 @@ describe('C32', function() {
 
   // the tests are defined in helpers/shared_spec.js
   runJsonTests(expectedOutput, 'c32', bb);
+});
 
+describe('C32 with HL7 IDs', function() {
   // We're also going to test a slight variant of the file above,
   // which uses only old HL7 CCD tags, instead of the HITSP section tags
   // to make sure we're resilient to that
-  record = fs.readFileSync(path.resolve(__dirname,
+  var record = fs.readFileSync(path.resolve(__dirname,
     '../fixtures/c32/HITSP_C32_with_HL7_IDs.xml'), 'utf-8');
-  bb = BlueButton(record);
+  var bb = BlueButton(record);
   runJsonTests(expectedOutput, 'c32', bb);
-
 });
