@@ -38,7 +38,7 @@
         
     </title>
     
-        <effectiveTime value="20050329" />
+        <effectiveTime value="20050329121504+0000" />
     
     <confidentialityCode code="N" displayName="Normal" codeSystem="2.16.840.1.113883.5.25"/>
     <languageCode code="en-US"/>
@@ -191,7 +191,7 @@
             <serviceEvent classCode="PCPR">
                 <effectiveTime>
                     
-                        <low value="20050329" />
+                        <low value="20050329121504+0000" />
                     
                     <high nullFlavor="UNK" />
                 </effectiveTime>
@@ -909,7 +909,7 @@
                                                 <td>Pneumonia</td>
                                                 <td>233604007</td>
                                                 <td></td>
-                                                <td>02/28/1998</td>
+                                                <td>03/01/1998</td>
                                                 <td>Active</td>
                                             </tr>
                                         
@@ -929,7 +929,7 @@
                                         <code nullFlavor="NA"/>
                                         <statusCode code="completed"/>
                                         <effectiveTime>
-                                            <low value="19980228" />
+                                            <low value="19980301" />
                                             <high value="20110103" />
                                         </effectiveTime>
                                         <entryRelationship typeCode="SUBJ">
@@ -940,7 +940,7 @@
                                                 <code code="409586006" codeSystem="2.16.840.1.113883.6.96" displayName="Complaint"/>
                                                 <statusCode code="completed"/>
                                                 <effectiveTime>
-                                                    <low value="19980228" />
+                                                    <low value="19980301" />
                                                 </effectiveTime>
                                                 <value xsi:type="CD" displayName="Pneumonia" code="233604007" codeSystem="2.16.840.1.113883.6.96" />
                                                 <entryRelationship typeCode="REFR">
@@ -1097,7 +1097,7 @@
                                                     <td>g/dl</td>
                                                                                                             <td></td>
                                                     
-                                                    <td>03/23/2000</td>
+                                                    <td>2000-03-23T14:30:00Z</td>
                                                 </tr>
                                             
                                                 <tr>
@@ -1107,7 +1107,7 @@
                                                     <td>10+3/ul</td>
                                                                                                             <td>4.3 to 10.8</td>
                                                     
-                                                    <td>03/23/2000</td>
+                                                    <td>2000-03-23T14:30:00Z</td>
                                                 </tr>
                                             
                                                 <tr>
@@ -1117,7 +1117,7 @@
                                                     <td>10+3/ul</td>
                                                                                                             <td>150 to 350</td>
                                                     
-                                                    <td>03/23/2000</td>
+                                                    <td>2000-03-23T14:30:00Z</td>
                                                 </tr>
                                             
                                         
@@ -1149,7 +1149,7 @@
                                             <code displayName="HGB" code="30313-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" >
                                             </code>
                                             <statusCode code="completed"/>
-                                            <effectiveTime value="20000323" />
+                                            <effectiveTime value="20000323143000+0000" />
                                             
                                                 <value xsi:type="PQ"
                                                     value="13.2"
@@ -1179,7 +1179,7 @@
                                             <code displayName="WBC" code="33765-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" >
                                             </code>
                                             <statusCode code="completed"/>
-                                            <effectiveTime value="20000323" />
+                                            <effectiveTime value="20000323143000+0000" />
                                             
                                                 <value xsi:type="PQ"
                                                     value="6.7"
@@ -1209,7 +1209,7 @@
                                             <code displayName="PLT" code="26515-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" >
                                             </code>
                                             <statusCode code="completed"/>
-                                            <effectiveTime value="20000323" />
+                                            <effectiveTime value="20000323143000+0000" />
                                             
                                                 <value xsi:type="PQ"
                                                     value="123"
@@ -1337,7 +1337,7 @@
                                                 <td>Influenza virus vaccine</td>
                                                 <td>CVX</td>
                                                 <td>88</td>
-                                                <td>10/31/1999</td>
+                                                <td>11/01/1999</td>
                                             </tr>
                                         
                                             <tr>
@@ -1375,7 +1375,7 @@
                                         <!--  ********   Immunization activity template    ******** -->
                                         <id root="e6f1ba43-c0ed-4b9b-9f12-f435d8ad8f92"/>
                                         <statusCode code="completed"/>
-                                        <effectiveTime xsi:type="IVL_TS" value="19991031" />
+                                        <effectiveTime xsi:type="IVL_TS" value="19991101" />
                                         <routeCode displayName="Intramuscular injection" code="IM" codeSystem="2.16.840.1.113883.5.112" codeSystemName="RouteOfAdministration" />
                                                                                     <doseQuantity nullFlavor="UNK"/>
                                                                                 <consumable>

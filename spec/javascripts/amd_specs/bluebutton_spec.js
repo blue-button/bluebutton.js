@@ -4,6 +4,8 @@ define(['../../../build/bluebutton'], function(BlueButton) {
     it("should exist", function() {
       expect(BlueButton).toBeDefined();
     });
+
+    runDateParsingTests(Documents);
     
   });
 });

@@ -1,6 +1,6 @@
 {
   "document": {
-    "date": "04/16/2014",
+    "date": "2014-04-16T11:54:39Z",
     "author": {
       "name": {
         "prefix": null,
@@ -60,7 +60,7 @@
   "allergies": [
     {
       "date_range": {
-        "start": "03/31/2010",
+        "start": "2010-03-31T10:00:00Z",
         "end": null
       },
       "name": null,
@@ -89,7 +89,7 @@
     },
     {
       "date_range": {
-        "start": "03/31/2010",
+        "start": "2010-03-31T10:00:00Z",
         "end": null
       },
       "name": null,
@@ -118,7 +118,7 @@
     },
     {
       "date_range": {
-        "start": "03/31/2010",
+        "start": "2010-03-31T10:00:00Z",
         "end": null
       },
       "name": null,
@@ -158,7 +158,7 @@
       ],
       "family": "Maxwell"
     },
-    "dob": "08/05/1940",
+    "dob": "1940-08-05T12:00:00Z",
     "gender": "female",
     "marital_status": "married",
     "address": {
@@ -222,7 +222,7 @@
   },
   "encounters": [
     {
-      "date": "03/31/2010",
+      "date": "2010-03-31T10:00:00Z",
       "name": "Office/outpatient visit, est",
       "code": "99212",
       "code_system": "2.16.840.1.113883.6.12",
@@ -262,7 +262,7 @@
       }
     },
     {
-      "date": "06/06/2010",
+      "date": "2010-06-06T10:00:00Z",
       "name": "Office/outpatient visit, est",
       "code": "99213",
       "code_system": "2.16.840.1.113883.6.12",
@@ -297,7 +297,7 @@
       }
     },
     {
-      "date": "06/08/2010",
+      "date": "2010-06-08T10:00:00Z",
       "name": "Initial inpatient consult",
       "code": "99251",
       "code_system": "2.16.840.1.113883.6.12",
@@ -332,7 +332,7 @@
       }
     },
     {
-      "date": "06/25/2010",
+      "date": "2010-06-25T10:00:00Z",
       "name": "Office/outpatient visit, est",
       "code": "99212",
       "code_system": "2.16.840.1.113883.6.12",
@@ -361,7 +361,7 @@
       }
     },
     {
-      "date": "10/27/2010",
+      "date": "2010-10-27T10:00:00Z",
       "name": "Office/outpatient visit, est",
       "code": "99213",
       "code_system": "2.16.840.1.113883.6.12",
@@ -393,7 +393,7 @@
   "functional_statuses": [],
   "immunizations": [
     {
-      "date": "10/27/2010",
+      "date": "2010-10-27T10:00:00Z",
       "product": {
         "name": "Influenza, high dose seasonal",
         "code": "135",
@@ -426,7 +426,7 @@
       }
     },
     {
-      "date": "10/27/2010",
+      "date": "2010-10-27T10:00:00Z",
       "product": {
         "name": "pneumococcal conjugate PCV 7",
         "code": "100",
@@ -469,7 +469,7 @@
       "code_system_name": "SNOMED-CT",
       "tests": [
         {
-          "date": "03/31/2010",
+          "date": "2010-03-31T10:00:00Z",
           "name": "HDLc SerPl-sCnc",
           "value": 55,
           "unit": "mg/dL",
@@ -485,7 +485,7 @@
           }
         },
         {
-          "date": "03/31/2010",
+          "date": "2010-03-31T10:00:00Z",
           "name": "LDLc SerPl-mCnc",
           "value": 85,
           "unit": "mg/dL",
@@ -501,7 +501,7 @@
           }
         },
         {
-          "date": "03/31/2010",
+          "date": "2010-03-31T10:00:00Z",
           "name": "Cholest SerPl-mCnc",
           "value": 165,
           "unit": "mg/dL",
@@ -517,7 +517,7 @@
           }
         },
         {
-          "date": "03/31/2010",
+          "date": "2010-03-31T10:00:00Z",
           "name": "Trigl SerPl Calc-mCnc",
           "value": 125,
           "unit": "mg/dL",
@@ -538,7 +538,7 @@
   "medications": [
     {
       "date_range": {
-        "start": "03/31/2010",
+        "start": "2010-03-31T10:00:00Z",
         "end": null
       },
       "text": null,
@@ -601,7 +601,7 @@
     },
     {
       "date_range": {
-        "start": "06/10/2010",
+        "start": "2010-06-10T10:00:00Z",
         "end": null
       },
       "text": null,
@@ -666,7 +666,7 @@
   "problems": [
     {
       "date_range": {
-        "start": "03/31/2010",
+        "start": "2010-03-31T10:00:00Z",
         "end": null
       },
       "name": "Essential hypertension",
@@ -685,7 +685,7 @@
     },
     {
       "date_range": {
-        "start": "03/31/2010",
+        "start": "2010-03-31T10:00:00Z",
         "end": null
       },
       "name": "Low back pain",
@@ -704,7 +704,7 @@
     },
     {
       "date_range": {
-        "start": "06/06/2010",
+        "start": "2010-06-06T10:00:00Z",
         "end": null
       },
       "name": "Neoplasm of colon",
@@ -723,7 +723,7 @@
     },
     {
       "date_range": {
-        "start": "06/08/2010",
+        "start": "2010-06-08T10:00:00Z",
         "end": null
       },
       "name": "Acute renal failure syndrome",
@@ -742,7 +742,7 @@
     },
     {
       "date_range": {
-        "start": "06/12/2010",
+        "start": "2010-06-12T10:00:00Z",
         "end": null
       },
       "name": "T3: Colon/rectum tumor invades through the muscularis propria into the subserosa or the nonperitonealized pericolic or perirectal soft tissues",
@@ -762,7 +762,7 @@
   ],
   "procedures": [
     {
-      "date": "03/31/2010",
+      "date": "2010-03-31T10:00:00Z",
       "name": "X-ray exam of spine",
       "code": "72010",
       "code_system": "2.16.840.1.113883.6.12",
@@ -787,7 +787,7 @@
       }
     },
     {
-      "date": "06/06/2010",
+      "date": "2010-06-06T10:00:00Z",
       "name": "Diagnostic colonoscopy",
       "code": "45378",
       "code_system": "2.16.840.1.113883.6.12",
@@ -812,7 +812,7 @@
       }
     },
     {
-      "date": "06/06/2010",
+      "date": "2010-06-06T10:00:00Z",
       "name": "PET img whbd ring dx colorec",
       "code": "G0213",
       "code_system": "2.16.840.1.113883.6.13",
@@ -837,7 +837,7 @@
       }
     },
     {
-      "date": "06/06/2010",
+      "date": "2010-06-06T10:00:00Z",
       "name": "Medical nutrition, indiv, in",
       "code": "97802",
       "code_system": "2.16.840.1.113883.6.12",
@@ -862,7 +862,7 @@
       }
     },
     {
-      "date": "06/06/2010",
+      "date": "2010-06-06T10:00:00Z",
       "name": "Exercise class",
       "code": "S9451",
       "code_system": "2.16.840.1.113883.6.13",
@@ -896,7 +896,7 @@
   },
   "vitals": [
     {
-      "date": "03/31/2010",
+      "date": "2010-03-31T10:00:00Z",
       "results": [
         {
           "name": "BP Diastolic",
@@ -925,7 +925,7 @@
       ]
     },
     {
-      "date": "06/06/2010",
+      "date": "2010-06-06T10:00:00Z",
       "results": [
         {
           "name": "BMI",
@@ -938,7 +938,7 @@
       ]
     },
     {
-      "date": "10/27/2010",
+      "date": "2010-10-27T10:00:00Z",
       "results": [
         {
           "name": "BP Diastolic",

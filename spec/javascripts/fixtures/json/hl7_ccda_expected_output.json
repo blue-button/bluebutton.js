@@ -1,10 +1,12 @@
 {
   "document": {
-    "date": "03/29/2005",
+    "date": "2005-03-29T12:15:04Z",
     "author": {
       "name": {
         "prefix": null,
-        "given": ["Henry"],
+        "given": [
+          "Henry"
+        ],
         "family": "Seven"
       },
       "address": {
@@ -24,7 +26,9 @@
       {
         "name": {
           "prefix": "Dr.",
-          "given": ["Pseudo"],
+          "given": [
+            "Pseudo"
+          ],
           "family": "Physician-1"
         },
         "phone": {
@@ -41,7 +45,9 @@
       {
         "name": {
           "prefix": "Dr.",
-          "given": ["Pseudo"],
+          "given": [
+            "Pseudo"
+          ],
           "family": "Physician-3"
         },
         "phone": {
@@ -78,8 +84,8 @@
       "code": "416098002",
       "code_system": "2.16.840.1.113883.6.96",
       "code_system_name": "SNOMED CT",
-      "severity": "Moderate to severe",
       "status": "Active",
+      "severity": "Moderate to severe",
       "reaction": {
         "name": "Hives",
         "code": "247472004",
@@ -107,8 +113,8 @@
       "code": "416098002",
       "code_system": "2.16.840.1.113883.6.96",
       "code_system_name": "SNOMED CT",
-      "severity": "Moderate to severe",
       "status": "Active",
+      "severity": "Moderate to severe",
       "reaction": {
         "name": "Wheezing",
         "code": "56018004",
@@ -136,8 +142,8 @@
       "code": "416098002",
       "code_system": "2.16.840.1.113883.6.96",
       "code_system_name": "SNOMED CT",
-      "severity": "Moderate to severe",
       "status": "Active",
+      "severity": "Moderate to severe",
       "reaction": {
         "name": "Nausea",
         "code": "73879007",
@@ -269,11 +275,13 @@
       "code_system": "2.16.840.1.113883.6.12",
       "code_system_name": "CPT",
       "code_system_version": "4",
-      "findings": [{
-        "name": "Bronchitis",
-        "code": "32398004",
-        "code_system": "2.16.840.1.113883.6.96"
-      }],
+      "findings": [
+        {
+          "name": "Bronchitis",
+          "code": "32398004",
+          "code_system": "2.16.840.1.113883.6.96"
+        }
+      ],
       "translation": {
         "name": "Ambulatory",
         "code": "AMB",
@@ -287,21 +295,21 @@
         "code_system_name": "SNOMED CT"
       },
       "location": {
-        "organization": "General Acute Care Hospital",
         "street": [
           "17 Daws Rd."
         ],
         "city": "Blue Bell",
         "state": "MA",
         "zip": "02368",
-        "country": "US"
+        "country": "US",
+        "organization": "General Acute Care Hospital"
       }
     }
   ],
   "functional_statuses": [],
   "immunizations": [
     {
-      "date": "10/31/1999",
+      "date": "11/01/1999",
       "product": {
         "name": "Influenza virus vaccine",
         "code": "88",
@@ -443,7 +451,7 @@
       "code_system_name": "SNOMED CT",
       "tests": [
         {
-          "date": "03/23/2000",
+          "date": "2000-03-23T14:30:00Z",
           "name": "HGB",
           "value": 13.2,
           "unit": "g/dl",
@@ -459,7 +467,7 @@
           }
         },
         {
-          "date": "03/23/2000",
+          "date": "2000-03-23T14:30:00Z",
           "name": "WBC",
           "value": 6.7,
           "unit": "10+3/ul",
@@ -475,7 +483,7 @@
           }
         },
         {
-          "date": "03/23/2000",
+          "date": "2000-03-23T14:30:00Z",
           "name": "PLT",
           "value": 123,
           "unit": "10+3/ul",
@@ -561,7 +569,7 @@
   "problems": [
     {
       "date_range": {
-        "start": "02/28/1998",
+        "start": "03/01/1998",
         "end": "01/03/2011"
       },
       "name": "Pneumonia",
@@ -591,7 +599,6 @@
         "code_system": null
       },
       "performer": {
-        "organization": null,
         "street": [
           "17 Daws Rd."
         ],
@@ -599,6 +606,7 @@
         "state": "MA",
         "zip": "02368",
         "country": "US",
+        "organization": null,
         "phone": null
       },
       "device": {
@@ -618,7 +626,6 @@
         "code_system": null
       },
       "performer": {
-        "organization": null,
         "street": [
           "17 Daws Rd."
         ],
@@ -626,6 +633,7 @@
         "state": "MA",
         "zip": "02368",
         "country": "US",
+        "organization": null,
         "phone": null
       },
       "device": {
@@ -645,7 +653,6 @@
         "code_system": null
       },
       "performer": {
-        "organization": null,
         "street": [
           "17 Daws Rd."
         ],
@@ -653,6 +660,7 @@
         "state": "MA",
         "zip": "02368",
         "country": "US",
+        "organization": null,
         "phone": null
       },
       "device": {
@@ -662,6 +670,13 @@
       }
     }
   ],
+  "smoking_status": {
+    "date": null,
+    "name": null,
+    "code": null,
+    "code_system": null,
+    "code_system_name": null
+  },
   "vitals": [
     {
       "date": "11/14/1999",
@@ -721,12 +736,5 @@
         }
       ]
     }
-  ],
-  "smoking_status": {
-    "date": null,
-    "name": null,
-    "code": null,
-    "code_system": null,
-    "code_system_name": null
-  }
+  ]
 }

@@ -1,6 +1,6 @@
 {
   "document": {
-    "date": "07/18/2013",
+    "date": "2013-07-18T15:18:36Z",
     "author": {
       "name": {
         "prefix": null,
@@ -273,14 +273,14 @@
   ],
   "functional_statuses": [
     {
-      "date": "07/11/2013",
+      "date": "2013-07-11T04:00:00Z",
       "name": "No impairment",
       "code": "66557003",
       "code_system": "2.16.840.1.113883.6.96",
       "code_system_name": "SNOMED CT"
     },
     {
-      "date": "07/11/2013",
+      "date": "2013-07-11T04:00:00Z",
       "name": "No impairment",
       "code": "66557003",
       "code_system": "2.16.840.1.113883.6.96",
@@ -289,7 +289,7 @@
   ],
   "immunizations": [
     {
-      "date": "08/15/2010",
+      "date": "2010-08-15T04:00:00Z",
       "product": {
         "name": "Influenza A (H1N1) Monoval PF Intramuscular Suspension",
         "code": "126",
@@ -347,7 +347,7 @@
       "code_system_name": "CPT",
       "tests": [
         {
-          "date": "07/11/2013",
+          "date": "2013-07-11T00:27:00Z",
           "name": "Carbon Dioxide",
           "value": 25.2,
           "unit": "mmol/L",

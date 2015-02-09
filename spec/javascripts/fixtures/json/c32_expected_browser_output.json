@@ -1,6 +1,6 @@
 {
   "document": {
-    "date": "11/10/2009",
+    "date": "2009-11-10T13:09:45Z",
     "author": {
       "name": {
         "prefix": null,
@@ -258,7 +258,7 @@
   "functional_statuses": [],
   "immunizations": [
     {
-      "date": "10/31/1999",
+      "date": "11/01/1999",
       "product": {
         "name": "Influenza virus vaccine",
         "code": "88",
@@ -399,10 +399,10 @@
       "code": "43789009",
       "code_system": "2.16.840.1.113883.6.96",
       "code_system_name": null,
-      "date": "03/23/2000",
+      "date": "2000-03-23T14:30:00Z",
       "tests": [
         {
-          "date": "03/23/2000",
+          "date": "2000-03-23T14:30:00Z",
           "name": "HGB",
           "value": 13.2,
           "unit": "g/dl",
@@ -418,7 +418,7 @@
           }
         },
         {
-          "date": "03/23/2000",
+          "date": "2000-03-23T14:30:00Z",
           "name": "WBC",
           "value": 6.7,
           "unit": "10+3/ul",
@@ -434,7 +434,7 @@
           }
         },
         {
-          "date": "03/23/2000",
+          "date": "2000-03-23T14:30:00Z",
           "name": "PLT",
           "value": 123,
           "unit": "10+3/ul",
@@ -456,10 +456,10 @@
       "code": "20109005",
       "code_system": "2.16.840.1.113883.6.96",
       "code_system_name": "SNOMED CT",
-      "date": "04/06/2000",
+      "date": "2000-04-06T13:00:00Z",
       "tests": [
         {
-          "date": "04/06/2000",
+          "date": "2000-04-06T13:00:00Z",
           "name": "NA",
           "value": 140,
           "unit": "meq/l",
@@ -475,7 +475,7 @@
           }
         },
         {
-          "date": "04/06/2000",
+          "date": "2000-04-06T13:00:00Z",
           "name": "K",
           "value": 4,
           "unit": "meq/l",
@@ -491,7 +491,7 @@
           }
         },
         {
-          "date": "04/06/2000",
+          "date": "2000-04-06T13:00:00Z",
           "name": "CL",
           "value": 102,
           "unit": "meq/l",
@@ -507,7 +507,7 @@
           }
         },
         {
-          "date": "04/06/2000",
+          "date": "2000-04-06T13:00:00Z",
           "name": "HCO3",
           "value": 35,
           "unit": "meq/l",
@@ -528,7 +528,7 @@
   "medications": [
     {
       "date_range": {
-        "start": "Invalid Date",
+        "start": "01/01/2005",
         "end": null
       },
       "text": null,
@@ -845,7 +845,7 @@
   "problems": [
     {
       "date_range": {
-        "start": "Invalid Date",
+        "start": "01/01/1950",
         "end": null
       },
       "name": "Asthma",
@@ -941,7 +941,7 @@
   ],
   "procedures": [
     {
-      "date": "Invalid Date",
+      "date": "01/01/1998",
       "name": "Total hip replacement",
       "code": "52734007",
       "code_system": "2.16.840.1.113883.6.96",

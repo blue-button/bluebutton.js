@@ -169,10 +169,63 @@ var runJsonTests = function(expectedOutput, expectedType, bb) {
 
 };
 
+var runDateParsingTests = function(Documents) {
+  describe('parseDate', function() {
+    var parseDate = Documents.parseDate;
+
+    // on the left: the input you want to test
+    // on the right: an ISO-8601 date-time (UTC) or a MM/DD/YYYY date-time (local time)
+    var assertEquivalency = function(inputStr, expectedStr) {
+      var parsed = parseDate(inputStr).getTime();
+      var expected = (new Date(expectedStr)).getTime();
+      expect(parsed).toEqual(expected);
+    };
+
+    it('should parse year only', function() {
+      assertEquivalency('1999', '01/01/1999 00:00:00');
+    });
+
+    it('should parse year + month', function() {
+      assertEquivalency('199907', '07/01/1999 00:00:00');
+    });
+
+    it('should parse year + month + day', function() {
+      assertEquivalency('19990704', '07/04/1999 00:00:00');
+    });
+
+    it('should parse standard CCDA date', function() {
+      assertEquivalency('20140416115439', '2014-04-16T11:54:39Z');
+    });
+
+    it('should parse CCDA date + positive timezone', function() {
+      assertEquivalency('20140416115439+0700', '2014-04-16T04:54:39Z');
+    });
+
+    it('should parse CCDA date + negative timezone', function() {
+      assertEquivalency('20140416115439-0500', '2014-04-16T16:54:39Z');
+    });
+
+    it('should parse CCDA date + UTC timezone', function() {
+      assertEquivalency('20140416115439Z', '2014-04-16T11:54:39Z');
+    });
+
+    it('should parse CCDA date + timezone + millis', function() {
+      assertEquivalency('20101026091700.000-0500', '2010-10-26T14:17:00Z');
+    });
+
+    it('should parse totally invalid date as NaN', function() {
+      expect(parseDate('gobbledigook').getTime()).toBeNaN();
+    });
+  });
+};
+
 // Node-specific code
 if (typeof exports !== 'undefined') {
   if (typeof module !== 'undefined' && module.exports) {
-    module.exports = runJsonTests;
+    module.exports = {
+      runJsonTests: runJsonTests,
+      runDateParsingTests: runDateParsingTests
+    };
     var _ = require('underscore');
   }
 }

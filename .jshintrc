@@ -27,6 +27,9 @@
     "ejs": true,
     "Generators": true,
     "Parsers": true,
-    "Renderers": true
+    "Renderers": true,
+    "describe": true,
+    "it": true,
+    "expect": true
   }
 }
