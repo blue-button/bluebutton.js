@@ -240,6 +240,7 @@
         "family": "Relative"
       },
       "relationship": "Grandfather",
+      "relationship_code": "GRFTH",
       "address": {
         "street": [
           "17 Daws Rd."

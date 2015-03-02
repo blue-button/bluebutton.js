@@ -202,6 +202,7 @@
         "family": "Jones"
       },
       "relationship": "Grandfather",
+      "relationship_code": "GPARNT",
       "address": {
         "street": [
           "1357 Amber Drive"
