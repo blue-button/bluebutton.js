@@ -548,5 +548,59 @@
     "code_system": "2.16.840.1.113883.6.96",
     "code_system_name": "SNOMED CT"
   },
-  "vitals": []
+  "vitals": [
+    {
+      "date": "2013-07-11T00:25:00Z",
+      "results": [
+        {
+          "name": "BP Systolic",
+          "code": "8480-6",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 150,
+          "unit": "mm[Hg]"
+        },
+        {
+          "name": "BP Diastolic",
+          "code": "8462-4",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 95,
+          "unit": "mm[Hg]"
+        },
+        {
+          "name": "Height",
+          "code": "8302-2",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 70,
+          "unit": "[in_us]"
+        },
+        {
+          "name": "Weight",
+          "code": "3141-9",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 195,
+          "unit": "[lb_av]"
+        },
+        {
+          "name": "Body Mass Index Calculated",
+          "code": "39156-5",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 27.98,
+          "unit": "kg/m2"
+        },
+        {
+          "name": "Body Surface Area Calculated",
+          "code": "3140-1",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "value": 2.06,
+          "unit": "1"
+        }
+      ]
+    }
+  ]
 }
