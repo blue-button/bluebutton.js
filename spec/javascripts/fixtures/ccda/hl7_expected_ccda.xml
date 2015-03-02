@@ -87,8 +87,8 @@
                     
                     
                         <guardian>
-                            <code code="GRFTH" displayName="Grandfather" codeSystem="2.16.840.1.113883.5.111" codeSystemName="HL7 Role code"/>
-                            <addr use="HP">
+                                                            <code code="GRFTH" displayName="Grandfather" codeSystem="2.16.840.1.113883.5.111" codeSystemName="HL7 Role code"/>
+                                                        <addr use="HP">
                                 <!-- HP is "primary home" from codeSystem 2.16.840.1.113883.5.1119 -->
                                 <streetAddressLine>17 Daws Rd.</streetAddressLine>
 <city>Blue Bell</city>
@@ -350,16 +350,16 @@
                                                         </playingEntity>
                                                     </participantRole>
                                                 </participant>
-                                                <entryRelationship typeCode="SUBJ" inversionInd="true">
-                                                    <observation classCode="OBS" moodCode="EVN">
-                                                        <templateId root="2.16.840.1.113883.10.20.22.4.28"/>
-                                                        <!-- Alert status observation template -->
-                                                        <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Status"/>
-                                                        <statusCode code="completed"/>
-                                                        <value xsi:type="CE" code="55561003" codeSystem="2.16.840.1.113883.6.96" displayName="Active"/>
-                                                    </observation>
-                                                </entryRelationship>
-                                                <entryRelationship typeCode="MFST" inversionInd="true">
+                                                                                                    <entryRelationship typeCode="SUBJ" inversionInd="true">
+                                                        <observation classCode="OBS" moodCode="EVN">
+                                                            <templateId root="2.16.840.1.113883.10.20.22.4.28"/>
+                                                            <!-- Alert status observation template -->
+                                                            <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Status"/>
+                                                            <statusCode code="completed"/>
+                                                            <value xsi:type="CE" code="55561003" codeSystem="2.16.840.1.113883.6.96" displayName="Active"/>
+                                                        </observation>
+                                                    </entryRelationship>
+                                                                                                <entryRelationship typeCode="MFST" inversionInd="true">
                                                     <observation classCode="OBS" moodCode="EVN">
                                                         <templateId root="2.16.840.1.113883.10.20.22.4.9"/>
                                                         <!-- Reaction observation template -->
@@ -421,16 +421,16 @@
                                                         </playingEntity>
                                                     </participantRole>
                                                 </participant>
-                                                <entryRelationship typeCode="SUBJ" inversionInd="true">
-                                                    <observation classCode="OBS" moodCode="EVN">
-                                                        <templateId root="2.16.840.1.113883.10.20.22.4.28"/>
-                                                        <!-- Alert status observation template -->
-                                                        <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Status"/>
-                                                        <statusCode code="completed"/>
-                                                        <value xsi:type="CE" code="55561003" codeSystem="2.16.840.1.113883.6.96" displayName="Active"/>
-                                                    </observation>
-                                                </entryRelationship>
-                                                <entryRelationship typeCode="MFST" inversionInd="true">
+                                                                                                    <entryRelationship typeCode="SUBJ" inversionInd="true">
+                                                        <observation classCode="OBS" moodCode="EVN">
+                                                            <templateId root="2.16.840.1.113883.10.20.22.4.28"/>
+                                                            <!-- Alert status observation template -->
+                                                            <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Status"/>
+                                                            <statusCode code="completed"/>
+                                                            <value xsi:type="CE" code="55561003" codeSystem="2.16.840.1.113883.6.96" displayName="Active"/>
+                                                        </observation>
+                                                    </entryRelationship>
+                                                                                                <entryRelationship typeCode="MFST" inversionInd="true">
                                                     <observation classCode="OBS" moodCode="EVN">
                                                         <templateId root="2.16.840.1.113883.10.20.22.4.9"/>
                                                         <!-- Reaction observation template -->
@@ -492,16 +492,16 @@
                                                         </playingEntity>
                                                     </participantRole>
                                                 </participant>
-                                                <entryRelationship typeCode="SUBJ" inversionInd="true">
-                                                    <observation classCode="OBS" moodCode="EVN">
-                                                        <templateId root="2.16.840.1.113883.10.20.22.4.28"/>
-                                                        <!-- Alert status observation template -->
-                                                        <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Status"/>
-                                                        <statusCode code="completed"/>
-                                                        <value xsi:type="CE" code="55561003" codeSystem="2.16.840.1.113883.6.96" displayName="Active"/>
-                                                    </observation>
-                                                </entryRelationship>
-                                                <entryRelationship typeCode="MFST" inversionInd="true">
+                                                                                                    <entryRelationship typeCode="SUBJ" inversionInd="true">
+                                                        <observation classCode="OBS" moodCode="EVN">
+                                                            <templateId root="2.16.840.1.113883.10.20.22.4.28"/>
+                                                            <!-- Alert status observation template -->
+                                                            <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Status"/>
+                                                            <statusCode code="completed"/>
+                                                            <value xsi:type="CE" code="55561003" codeSystem="2.16.840.1.113883.6.96" displayName="Active"/>
+                                                        </observation>
+                                                    </entryRelationship>
+                                                                                                <entryRelationship typeCode="MFST" inversionInd="true">
                                                     <observation classCode="OBS" moodCode="EVN">
                                                         <templateId root="2.16.840.1.113883.10.20.22.4.9"/>
                                                         <!-- Reaction observation template -->
@@ -830,7 +830,7 @@
                                         
                                         <routeCode displayName="RESPIRATORY (INHALATION)" code="C38216" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCI Thesaurus" />
                                         
-                                            <doseQuantity value="1" unit="null"/>
+                                            <doseQuantity value="1"  />
                                         
                                         
                                             <rateQuantity value="90" unit="ml/min"/>
@@ -852,6 +852,17 @@
                                                 <manufacturerOrganization/>
                                             </manufacturedProduct>
                                         </consumable>
+                                                                                    <participant typeCode="CSM">
+                                               <participantRole classCode="MANU">
+                                                  <templateId root="2.16.840.1.113883.10.20.22.4.24"/>
+                                                  <code code="412307009" displayName="drug vehicle" codeSystem="2.16.840.1.113883.6.96"/>
+                                                  <playingEntity classCode="MMAT">
+                                                     <code displayName="Diethylene Glycol" code="5955009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+                                                     <name>Diethylene Glycol</name>
+                                                  </playingEntity>
+                                               </participantRole>
+                                            </participant>
+                                        
                                         <entryRelationship typeCode="RSON">
                                             <observation classCode="OBS" moodCode="EVN">
                                                 <templateId root="2.16.840.1.113883.10.20.22.4.19"/>
@@ -942,7 +953,8 @@
                                                 <effectiveTime>
                                                     <low value="19980301" />
                                                 </effectiveTime>
-                                                <value xsi:type="CD" displayName="Pneumonia" code="233604007" codeSystem="2.16.840.1.113883.6.96" />
+                                                <value xsi:type="CD" displayName="Pneumonia" code="233604007" codeSystem="2.16.840.1.113883.6.96" >
+                                                                                                    </value>
                                                 <entryRelationship typeCode="REFR">
                                                     <observation classCode="OBS" moodCode="EVN">
                                                         <!-- Problem status observation template -->
@@ -952,6 +964,16 @@
                                                         <value xsi:type="CD" code="55561003" codeSystem="2.16.840.1.113883.6.96" displayName="Active" codeSystemName="SNOMED CT"/>
                                                     </observation>
                                                 </entryRelationship>
+                                                                                                    <entryRelationship typeCode="SUBJ" inversionInd="true">
+                                                       <observation classCode="OBS" moodCode="EVN">
+                                                          <templateId root="2.16.840.1.113883.10.20.22.4.31"/>
+                                                          <!-- Age observation template   -->
+                                                          <code code="445518008" codeSystem="2.16.840.1.113883.6.96" displayName="Age At Onset"/>
+                                                          <statusCode code="completed"/>
+                                                          <value xsi:type="PQ" value="57" unit="a"/>
+                                                       </observation>
+                                                    </entryRelationship>
+                                                
                                             </observation>
                                         </entryRelationship>
                                     </act>
@@ -1135,7 +1157,7 @@
                                     <!-- Result organizer template -->
                                     <templateId root="2.16.840.1.113883.10.20.22.4.1"/>
                                     <id root="7d5a02b0-67a4-11db-bd13-0800200c9a66"/>
-                                    <code code="43789009" displayName="CBC WO DIFFERENTIAL" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+                                    <code displayName="CBC WO DIFFERENTIAL" code="43789009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
                                     <statusCode code="completed"/>
 
                                     
@@ -1161,8 +1183,8 @@
                                             <targetSiteCode/>
                                             <referenceRange>
                                                 <observationRange>
-                                                    <text></text>
-                                                </observationRange>
+                                                                                                            <text>M 13-18 g/dl; F 12-16 g/dl</text>
+                                                                                                    </observationRange>
                                             </referenceRange>
                                         </observation>
                                     </component>
@@ -1191,8 +1213,13 @@
                                             <targetSiteCode/>
                                             <referenceRange>
                                                 <observationRange>
-                                                    <text></text>
-                                                </observationRange>
+                                                                                                            <value xsi:type="IVL_PQ">
+                                                           <low value="4.3"
+                                                                unit="10+3/ul"/>
+                                                           <high value="10.8"
+                                                                unit="10+3/ul"/>
+                                                        </value>
+                                                                                                    </observationRange>
                                             </referenceRange>
                                         </observation>
                                     </component>
@@ -1221,8 +1248,13 @@
                                             <targetSiteCode/>
                                             <referenceRange>
                                                 <observationRange>
-                                                    <text></text>
-                                                </observationRange>
+                                                                                                            <value xsi:type="IVL_PQ">
+                                                           <low value="150"
+                                                                unit="10+3/ul"/>
+                                                           <high value="350"
+                                                                unit="10+3/ul"/>
+                                                        </value>
+                                                                                                    </observationRange>
                                             </referenceRange>
                                         </observation>
                                     </component>
@@ -1279,7 +1311,7 @@
                                         <!-- Encounter Activities -->
                                         <!--  ********  Encounter activity template   ******** -->
                                         <id root="2a620155-9d11-439e-92b3-5d9815ff4de8"/>
-                                        <code displayName="Office consultation - 15 minutes" code="99241" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" >
+                                        <code displayName="Office consultation - 15 minutes" code="99241" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="4" >
                                                                                             <translation displayName="Ambulatory" code="AMB" codeSystem="2.16.840.1.113883.5.4" codeSystemName="HL7 ActEncounterCode" />
                                                                                     </code>
                                         <effectiveTime value="20000407" />
@@ -1395,8 +1427,8 @@
                                                 <templateId root="2.16.840.1.113883.10.20.22.4.20"/>
                                                 <!-- ** Instructions Template ** -->
                                                 <code displayName="immunization education" code="171044003" codeSystem="2.16.840.1.113883.6.96" />
-                                                <text>Possible flu-like symptoms for three days.</text>
-                                                <statusCode code="completed"/>
+                                                                                                    <text>Possible flu-like symptoms for three days.</text>
+                                                                                                <statusCode code="completed"/>
                                             </act>
                                         </entryRelationship>
                                     </substanceAdministration>
@@ -1430,8 +1462,8 @@
                                                 <templateId root="2.16.840.1.113883.10.20.22.4.20"/>
                                                 <!-- ** Instructions Template ** -->
                                                 <code displayName="immunization education" code="171044003" codeSystem="2.16.840.1.113883.6.96" />
-                                                <text>Possible flu-like symptoms for three days.</text>
-                                                <statusCode code="completed"/>
+                                                                                                    <text>Possible flu-like symptoms for three days.</text>
+                                                                                                <statusCode code="completed"/>
                                             </act>
                                         </entryRelationship>
                                     </substanceAdministration>
@@ -1465,8 +1497,8 @@
                                                 <templateId root="2.16.840.1.113883.10.20.22.4.20"/>
                                                 <!-- ** Instructions Template ** -->
                                                 <code displayName="immunization education" code="171044003" codeSystem="2.16.840.1.113883.6.96" />
-                                                <text>Possible flu-like symptoms for three days.</text>
-                                                <statusCode code="completed"/>
+                                                                                                    <text>Possible flu-like symptoms for three days.</text>
+                                                                                                <statusCode code="completed"/>
                                             </act>
                                         </entryRelationship>
                                     </substanceAdministration>
@@ -1500,8 +1532,8 @@
                                                 <templateId root="2.16.840.1.113883.10.20.22.4.20"/>
                                                 <!-- ** Instructions Template ** -->
                                                 <code displayName="immunization education" code="171044003" codeSystem="2.16.840.1.113883.6.96" />
-                                                <text>Possible flu-like symptoms for three days.</text>
-                                                <statusCode code="completed"/>
+                                                                                                    <text>Possible flu-like symptoms for three days.</text>
+                                                                                                <statusCode code="completed"/>
                                             </act>
                                         </entryRelationship>
                                     </substanceAdministration>
@@ -1600,7 +1632,7 @@
                                             <templateId root="2.16.840.1.113883.10.20.22.4.26"/>
                                             <!-- Vital signs organizer template -->
                                             <id root="c6f88320-67ad-11db-bd13-0800200c9a66"/>
-                                            <code code="46680005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED -CT" displayName="Vital signs"/>
+                                            <code code="46680005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Vital signs"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime value="19991114" />
 
@@ -1657,7 +1689,7 @@
                                             <templateId root="2.16.840.1.113883.10.20.22.4.26"/>
                                             <!-- Vital signs organizer template -->
                                             <id root="c6f88320-67ad-11db-bd13-0800200c9a66"/>
-                                            <code code="46680005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED -CT" displayName="Vital signs"/>
+                                            <code code="46680005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Vital signs"/>
                                             <statusCode code="completed"/>
                                             <effectiveTime value="20000407" />
 
