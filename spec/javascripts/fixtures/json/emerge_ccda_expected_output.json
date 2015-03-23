@@ -1,6 +1,7 @@
 {
   "document": {
     "date": "2014-04-16T11:54:39Z",
+    "title": "Community Health and Hospitals: Health Summary",
     "author": {
       "name": {
         "prefix": null,
@@ -476,6 +477,12 @@
           "code": "14646-4",
           "code_system": "2.16.840.1.113883.6.1",
           "code_system_name": "LOINC",
+          "translation": {
+            "name": "Lipoprotein bld, hr fraction",
+            "code": "83701",
+            "code_system": "2.16.840.1.113883.6.12",
+            "code_system_name": "CPT"
+          },
           "reference_range": {
             "text": ">=40 mg/dL",
             "low_unit": null,
@@ -492,6 +499,12 @@
           "code": "2089-1",
           "code_system": "2.16.840.1.113883.6.1",
           "code_system_name": "LOINC",
+          "translation": {
+            "name": "Assay of blood lipoprotein",
+            "code": "83721",
+            "code_system": "2.16.840.1.113883.6.12",
+            "code_system_name": "CPT"
+          },
           "reference_range": {
             "text": "<130 mg/dL (calc)",
             "low_unit": null,
@@ -508,6 +521,12 @@
           "code": "2093-3",
           "code_system": "2.16.840.1.113883.6.1",
           "code_system_name": "LOINC",
+          "translation": {
+            "name": "Assay, bld/serum cholesterol",
+            "code": "82465",
+            "code_system": "2.16.840.1.113883.6.12",
+            "code_system_name": "CPT"
+          },
           "reference_range": {
             "text": "125-200 mg/dL",
             "low_unit": null,
@@ -524,6 +543,12 @@
           "code": "12951-0",
           "code_system": "2.16.840.1.113883.6.1",
           "code_system_name": "LOINC",
+          "translation": {
+            "name": "Assay of triglycerides",
+            "code": "84478",
+            "code_system": "2.16.840.1.113883.6.12",
+            "code_system_name": "CPT"
+          },
           "reference_range": {
             "text": "10-39 years: 55-110 mg/dL | 40-59 years: 70-150 mg/dL | >60 years: 80-150 mg/dL | Therapeutic Target: <100 mg/dL",
             "low_unit": null,

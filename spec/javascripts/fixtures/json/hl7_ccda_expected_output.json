@@ -1,6 +1,7 @@
 {
   "document": {
     "date": "2005-03-29T12:15:04Z",
+    "title": "Good Health Health Summary",
     "author": {
       "name": {
         "prefix": null,
@@ -458,6 +459,12 @@
           "code": "30313-1",
           "code_system": "2.16.840.1.113883.6.1",
           "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
           "reference_range": {
             "text": "M 13-18 g/dl; F 12-16 g/dl",
             "low_unit": null,
@@ -474,6 +481,12 @@
           "code": "33765-9",
           "code_system": "2.16.840.1.113883.6.1",
           "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
           "reference_range": {
             "text": null,
             "low_unit": "10+3/ul",
@@ -490,6 +503,12 @@
           "code": "26515-7",
           "code_system": "2.16.840.1.113883.6.1",
           "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
           "reference_range": {
             "text": null,
             "low_unit": "10+3/ul",
