@@ -808,7 +808,7 @@
                                         
                                         <routeCode displayName="RESPIRATORY (INHALATION)" code="C38216" codeSystem="2.16.840.1.113883.3.26.1.1" codeSystemName="NCI Thesaurus" />
                                         
-                                            <doseQuantity value="0.09" unit="mg/actuat"/>
+                                            <doseQuantity value="0.09"  unit="mg/actuat"  />
                                         
                                         
                                             <rateQuantity value="90" unit="ml/min"/>
@@ -830,6 +830,17 @@
                                                 <manufacturerOrganization/>
                                             </manufacturedProduct>
                                         </consumable>
+                                                                                    <participant typeCode="CSM">
+                                               <participantRole classCode="MANU">
+                                                  <templateId root="2.16.840.1.113883.10.20.22.4.24"/>
+                                                  <code code="412307009" displayName="drug vehicle" codeSystem="2.16.840.1.113883.6.96"/>
+                                                  <playingEntity classCode="MMAT">
+                                                     <code displayName="Aerosol" code="324049" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RxNorm" />
+                                                     <name>Aerosol</name>
+                                                  </playingEntity>
+                                               </participantRole>
+                                            </participant>
+                                        
                                         <entryRelationship typeCode="RSON">
                                             <observation classCode="OBS" moodCode="EVN">
                                                 <templateId root="2.16.840.1.113883.10.20.22.4.19"/>
@@ -939,6 +950,16 @@
                                                         <value xsi:type="CD" code="55561003" codeSystem="2.16.840.1.113883.6.96" displayName="Active" codeSystemName="SNOMED CT"/>
                                                     </observation>
                                                 </entryRelationship>
+                                                                                                    <entryRelationship typeCode="SUBJ" inversionInd="true">
+                                                       <observation classCode="OBS" moodCode="EVN">
+                                                          <templateId root="2.16.840.1.113883.10.20.22.4.31"/>
+                                                          <!-- Age observation template   -->
+                                                          <code code="445518008" codeSystem="2.16.840.1.113883.6.96" displayName="Age At Onset"/>
+                                                          <statusCode code="completed"/>
+                                                          <value xsi:type="PQ" value="65" unit="a"/>
+                                                       </observation>
+                                                    </entryRelationship>
+                                                
                                             </observation>
                                         </entryRelationship>
                                     </act>
@@ -978,6 +999,16 @@
                                                         <value xsi:type="CD" code="55561003" codeSystem="2.16.840.1.113883.6.96" displayName="Active" codeSystemName="SNOMED CT"/>
                                                     </observation>
                                                 </entryRelationship>
+                                                                                                    <entryRelationship typeCode="SUBJ" inversionInd="true">
+                                                       <observation classCode="OBS" moodCode="EVN">
+                                                          <templateId root="2.16.840.1.113883.10.20.22.4.31"/>
+                                                          <!-- Age observation template   -->
+                                                          <code code="445518008" codeSystem="2.16.840.1.113883.6.96" displayName="Age At Onset"/>
+                                                          <statusCode code="completed"/>
+                                                          <value xsi:type="PQ" value="60" unit="a"/>
+                                                       </observation>
+                                                    </entryRelationship>
+                                                
                                             </observation>
                                         </entryRelationship>
                                     </act>
@@ -1121,7 +1152,7 @@
                                     <!-- Result organizer template -->
                                     <templateId root="2.16.840.1.113883.10.20.22.4.1"/>
                                     <id root="7d5a02b0-67a4-11db-bd13-0800200c9a66"/>
-                                    <code code="43789009" displayName="CBC WO DIFFERENTIAL" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT"/>
+                                    <code displayName="CBC WO DIFFERENTIAL" code="43789009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
                                     <statusCode code="completed"/>
 
                                     
@@ -1283,7 +1314,7 @@
                                         <!-- Encounter Activities -->
                                         <!--  ********  Encounter activity template   ******** -->
                                         <id root="2a620155-9d11-439e-92b3-5d9815ff4de8"/>
-                                        <code displayName="Outpatient Visit" code="99212" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" >
+                                        <code displayName="Outpatient Visit" code="99212" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="4" >
                                                                                             <translation nullFlavor="UNK" />
                                                                                     </code>
                                         <effectiveTime value="20120806" />
