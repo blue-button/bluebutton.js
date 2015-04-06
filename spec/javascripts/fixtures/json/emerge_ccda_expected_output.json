@@ -194,6 +194,7 @@
         "family": "Schulz"
       },
       "relationship": "friend",
+      "relationship_code": "FRND",
       "address": {
         "street": [
           "2524 Christie Way"
