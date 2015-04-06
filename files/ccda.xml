@@ -3815,7 +3815,43 @@ HOSPITAL DISCHARGE INSTRUCTIONS
                   </list>
                </text>
             </section>
-         </component>  
+         </component>
+         <!-- 
+************************************
+PATIENT INSTRUCTIONS
+************************************ 
+         -->
+         <component>
+            <section>
+               <templateId root="2.16.840.1.113883.10.20.22.2.45"/>
+               <code code="69730-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Instructions"/>
+               <title>Instructions</title>
+               <entry>
+                  <act classCode="ACT" moodCode="INT">
+                     <templateId root="2.16.840.1.113883.10.20.22.4.20"/>
+                     <code code="423564006" codeSystem="2.16.840.1.113883.11.20.9.34" codeSystemName="patientEducationType" displayName="ProviderInstructions"/>
+                     <text>diet and exercise counseling provided during visit</text>
+                     <effectiveTime>
+                        <low value="20120813"/>
+                        <high value="20120813"/>
+                     </effectiveTime>
+                     <statusCode code="completed"/>
+                  </act>
+               </entry>
+               <entry>
+                  <act classCode="ACT" moodCode="INT">
+                     <templateId root="2.16.840.1.113883.10.20.22.4.20"/>
+                     <code code="423564006" codeSystem="2.16.840.1.113883.11.20.9.34" codeSystemName="patientEducationType" displayName="ProviderInstructions"/>
+                     <text>resources and instructions provided during visit</text>
+                     <effectiveTime>
+                        <low value="20120813"/>
+                        <high value="20120813"/>
+                     </effectiveTime>
+                     <statusCode code="completed"/>
+                  </act>
+               </entry>
+            </section>
+         </component>
   
       </structuredBody>
    </component>
