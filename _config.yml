@@ -1,7 +1,52 @@
-name: BlueButton.js
-markdown: redcarpet
-highlighter: pygments
-baseurl: /bluebutton.js
+# Site settings
+title: BlueButton.js
+description: > # this means to ignore newlines until "baseurl:"
+  BlueButton.js helps developers parse and generate complex health data formats like C-CDA with ease, so you can empower patients with access to their health records.
+baseurl: "/bluebutton.js"
+url: "http://bluebuttonjs.com"
 
+# Header
+header:
+  logo_text: BlueButton.js
+  logo_img: logo.svg
+  nav:
+    - text: Docs
+      link: /docs
+    - text: Sandbox
+      link: /sandbox
+    - text: Download
+      link: /download
+
+# Edit pages
+edit_page:
+  # enabled: true  # Enabled by default for pages and posts
+  text: "Edit this page »"
+  github:
+    author: blue-button
+    repo:   bluebutton.js
+    branch: gh-pages
+
+# Posts
+posts_path: /blog
+permalink: "/blog/:year/:month/:day/:title"
+
+# Pagination
+paginate: 5
+paginate_path: "/blog/page:num"
+
+# Build settings
+markdown: redcarpet
 redcarpet:
-  extensions: ['hard_wrap', 'autolink']
+  extensions: [hard_wrap, tables]
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: template/page
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: template/post

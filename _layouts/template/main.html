@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{{ site.description }}">
+    
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    
+    <!-- Compiled CSS  -->
+    <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
+    
+    <!-- Custom <head> content; for web fonts, favicon, etc. -->
+    {% include head.html %}
+  </head>
+  
+  <body>
+    
+    <div class="wrapper">
+      
+      {% include template/header.html %}
+      
+      <div class="main">
+        {{ content }}
+      </div>
+      
+      <div class="push"></div>
+    </div>
+    
+    <footer>
+      
+      {% if page.edit_page != false %}
+        {% if site.edit_page.enabled != false or page.edit_page %}
+          <div class="section edit-page">
+            <div class="content">
+              <hr>
+              <p>
+              <a href="https://github.com/{{ site.edit_page.github.author }}/{{ site.edit_page.github.repo }}/edit/{{ site.edit_page.github.branch }}/{{ page.path }}">{{ site.edit_page.text }}</a>
+              </p>
+            </div>
+          </div>
+        {% endif %}
+      {% endif %}
+      
+      <div class="section footer-content">
+        <div class="content">
+          {% include footer.html %}
+        </div>
+      </div>
+    </footer>
+    
+    <script src="{{ "/assets/template/fastclick.js" | prepend: site.baseurl }}"></script>
+    <script src="{{ "/assets/template/template.js" | prepend: site.baseurl }}"></script>
+    {% include scripts.html %}
+  </body>
+  
+</html>

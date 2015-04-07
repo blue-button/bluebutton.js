@@ -1,0 +1,16 @@
+
+<h1>Categories</h1>
+
+{% for category in site.categories %}
+  <a name="{{ category | first }}"></a>
+  <h2>{{ category | first }} ({{ category | last | size }})</h2>
+  <ul>
+  {% for posts in category %}
+    {% for post in posts %}
+      {% if post.url %}
+        <li><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+  </ul>
+{% endfor %}

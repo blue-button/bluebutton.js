@@ -1,11 +1,23 @@
 ---
-layout: docs
+title: Documentation
+subtitle: Get started working with health data.
+permalink: /docs/
+
+breadcrumbs:
+  - text: Home
+    link: /
+
+contents:
+  - text: Parsing
+    link: "#parsing"
+  - text: Generating
+    link: "#generating"
+  - text: Development
+    link: "#development"
 ---
 
-# Documentation
-
-## Parsing Documents <a name="parsing"></a>
-### An Overview <a name="parsing-overview"></a>
+<a name="parsing"></a>
+# Parsing Documents
 
 BlueButton.js supports a few different health data types, like C32 and CCDA. To parse a health document, pass the source data to `BlueButton`:
 
@@ -61,7 +73,7 @@ ccda.data.json();
 ccda.data.medications.json();
 ```
 
-### An Example Using Node <a name="parsing-node"></a>
+## An Example Using Node
 
 ```bash
 $ npm install bluebutton
@@ -78,7 +90,7 @@ var myRecord = BlueButton(xml);
 console.log(myRecord.data.demographics.json());
 ```
 
-### An Example in the Browser <a name="parsing-browser"></a>
+## An Example in the Browser
 
 ```HTML
 <body>
@@ -96,7 +108,7 @@ console.log(myRecord.data.demographics.json());
 </body>
 ```
 
-### An Example Using Python + Node <a name="parsing-python"></a>
+## An Example Using Python & Node
 
 First, install `npm` and `node` on the server running Python.
 
@@ -138,9 +150,8 @@ console.log(result); // goes to stdout, which is piped into our variable `result
 
 [Ruby](http://stackoverflow.com/a/3159997) and many other languages have similar tools for calling out to the command-line.
 
-## Generating Documents <a name="generating"></a>
-
-### An Overview <a name="generating-overview"></a>
+<a name="generating"></a>
+# Generating Documents
 
 Finding a good parser for CCDAs before BlueButton.js was a pain, but there were a few options out there. Generation was much more difficult. You could use [Model Driven Health Tools](https://www.projects.openhealthtools.org/sf/projects/mdht/), which is very robust but requires the user to have intimate knowledge of the architecture of CCDAs and has all the downsides of an enterprise-style Java project. Or you could roll your own tool.
 
@@ -148,7 +159,8 @@ BlueButton.js lets you pass in the same JSON you would get when parsing a docume
 
 BlueButton.js only supports generating CCDAs right now.
 
-### Node Usage <a name="generating-node"></a>
+## Node Usage
+
 ```JavaScript
 var json = fs.readFileSync('./example.json', 'utf-8');
 var template = fs.readFileSync('./build/ccda_template.ejs');
@@ -160,11 +172,11 @@ var myRecord = BlueButton(json, {
 // Log the resulting XML
 console.log(myRecord.data);
 ```
-XML Generation requires ejs (https://github.com/visionmedia/ejs).
+XML Generation requires [EJS](https://github.com/visionmedia/ejs).
 
-### Browser Usage <a name="generating-browser"></a>
+## Browser Usage
 
-In order to do generation in the browser, include a copy of ejs.js before bluebutton.js (using the visionmedia implementation popular in Node and not the implementation at http://embeddedjs.com/) and then load the ejs template via XHR like so:
+In order to do generation in the browser, include a copy of ejs.js before bluebutton.js (using the visionmedia implementation popular in Node and not the implementation at [embeddedjs.com](http://www.embeddedjs.com)) and then load the ejs template via XHR like so:
 
 ```HTML
 <body>
@@ -189,7 +201,7 @@ In order to do generation in the browser, include a copy of ejs.js before bluebu
 </body>
 ```
 
-### Python + Node Usage <a name="generating-python"></a>
+## Python & Node Usage
 
 Python to call out to Node:
 
@@ -230,15 +242,17 @@ cli.withStdin(function(json) {
 });
 ```
 
-## Logistics <a name="logistics"></a>
-### Creating a Build <a name="logistics-build"></a>
+<a name="development"></a>
+# Development
+
+## Creating a Build
 
 Run `grunt` to build the library. A `build/` directory will be created containing the standard and minified builds.
 
-### Running the Test Suite <a name="logistics-test"></a>
+## Running the Test Suite
 
 Use `grunt test` to run the test suite. This is important to do after making any changes to the parsers. Before running the tests the first time, run `bower install` to download the sample CCDA the tests require. (Run `npm install -g bower` if you don't yet have [Bower](http://bower.io)). Tests can be found in the [`spec/`](https://github.com/blue-button/bluebutton.js/tree/master/spec/javascripts) directory.
 
-### Bugs and Contributing <a name="logistics-github"></a>
+## Bugs and Contributing
 
-The project is hosted at https://github.com/blue-button/bluebutton.js. Please create Github Issues and pull requests for bugs you run into / changes you would like to make!
+The project is hosted at [github.com/blue-button/bluebutton.js](https://github.com/blue-button/bluebutton.js). Please create Github Issues and pull requests for bugs you run into / changes you would like to make!

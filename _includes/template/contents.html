@@ -1,0 +1,16 @@
+
+{% if page.contents %}
+
+<div id="contents" class="contents">
+  
+  <h1>Contents</h1>
+  
+  <ul id="contents-list">
+    {% for item in page.contents %}
+      <li><a href="{{ item.link }}">{{ item.text }}</a></li>
+    {% endfor %}
+  </ul>
+  
+</div>
+
+{% endif %}

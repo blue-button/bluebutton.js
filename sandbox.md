@@ -1,10 +1,13 @@
 ---
-layout: page
+title: Sandbox
+permalink: /sandbox/
+
+breadcrumbs:
+  - text: Home
+    link: /
 ---
 
-# Sandbox
-
-This demo converts each section of a CCD document in XML to JSON, using for example:
+This demo converts each section of a CCD document as XML into JSON, using for example:
 
 ```javascript
 var bb = BlueButton(xml);
@@ -113,27 +116,26 @@ Use sample data and convert: <button onclick="load('bb_ref_ccda')">Sample CCDA</
 ## Vitals
 <pre><code id="vitals" class="javascript"></code></pre>
 
-<script src="//yandex.st/highlightjs/8.0/highlight.min.js"></script>
-<script src="/files/bluebutton.js"></script>
+<script src="/assets/bluebutton.js"></script>
 <script>
   var baseURL = "";
   var xml, bb;
-  var doc = document.getElementById('document');
-  var demographics = document.getElementById('demographics');
-  var allergies = document.getElementById('allergies');
-  var carePlan = document.getElementById('careplan');
-  var chiefComplaint = document.getElementById('chiefcomplaint');
-  var encounters = document.getElementById('encounters');
-  var functionalStatus = document.getElementById('functionalstatus');
-  var immunizations = document.getElementById('immunizations');
+  var doc                  = document.getElementById('document');
+  var demographics         = document.getElementById('demographics');
+  var allergies            = document.getElementById('allergies');
+  var carePlan             = document.getElementById('careplan');
+  var chiefComplaint       = document.getElementById('chiefcomplaint');
+  var encounters           = document.getElementById('encounters');
+  var functionalStatus     = document.getElementById('functionalstatus');
+  var immunizations        = document.getElementById('immunizations');
   var immunizationDeclines = document.getElementById('immunizationdeclines');
-  var instructions = document.getElementById('instructions');
-  var results = document.getElementById('results');
-  var medications = document.getElementById('medications');
-  var problems = document.getElementById('problems');
-  var procedures = document.getElementById('procedures');
-  var smokingStatus = document.getElementById('smokingstatus');
-  var vitals = document.getElementById('vitals');
+  var instructions         = document.getElementById('instructions');
+  var results              = document.getElementById('results');
+  var medications          = document.getElementById('medications');
+  var problems             = document.getElementById('problems');
+  var procedures           = document.getElementById('procedures');
+  var smokingStatus        = document.getElementById('smokingstatus');
+  var vitals               = document.getElementById('vitals');
   
   function hl(src) {
     return hljs.highlight('javascript', src).value
@@ -146,7 +148,7 @@ Use sample data and convert: <button onclick="load('bb_ref_ccda')">Sample CCDA</
     switch (kind) {
       case 'va_c32': url = '/VA_CCD_Sample_File_Version_12_4.xml';
         break;
-      case 'bb_ref_ccda': url = baseURL + '/files/ccda.xml';
+      case 'bb_ref_ccda': url = baseURL + '/assets/ccda.xml';
         break;
     }
     
@@ -184,22 +186,22 @@ Use sample data and convert: <button onclick="load('bb_ref_ccda')">Sample CCDA</
     xml = document.getElementById('xml').value;
     bb = BlueButton(xml);
     
-    doc.innerHTML = hl(bb.data.document.json());
-    demographics.innerHTML = hl(bb.data.demographics.json());
-    allergies.innerHTML = hl(bb.data.allergies.json());
-    carePlan.innerHTML = hl(bb.data.care_plan.json());
-    chiefComplaint.innerHTML = hl(bb.data.chief_complaint.json());
-    encounters.innerHTML = hl(bb.data.encounters.json());
-    functionalStatus.innerHTML = hl(bb.data.functional_statuses.json());
-    immunizations.innerHTML = hl(bb.data.immunizations.json());
-    immunizationDeclines.innerHTML = hl(bb.data.immunization_declines.json());
-    instructions.innerHTML = hl(bb.data.instructions.json());
-    results.innerHTML = hl(bb.data.results.json());
-    medications.innerHTML = hl(bb.data.medications.json());
-    problems.innerHTML = hl(bb.data.problems.json());
-    procedures.innerHTML = hl(bb.data.procedures.json());
-    smokingStatus.innerHTML = hl(bb.data.smoking_status.json());
-    vitals.innerHTML = hl(bb.data.vitals.json());
+    doc.innerHTML = bb.data.document.json();
+    demographics.innerHTML         = bb.data.demographics.json();
+    allergies.innerHTML            = bb.data.allergies.json();
+    carePlan.innerHTML             = bb.data.care_plan.json();
+    chiefComplaint.innerHTML       = bb.data.chief_complaint.json();
+    encounters.innerHTML           = bb.data.encounters.json();
+    functionalStatus.innerHTML     = bb.data.functional_statuses.json();
+    immunizations.innerHTML        = bb.data.immunizations.json();
+    immunizationDeclines.innerHTML = bb.data.immunization_declines.json();
+    instructions.innerHTML         = bb.data.instructions.json();
+    results.innerHTML              = bb.data.results.json();
+    medications.innerHTML          = bb.data.medications.json();
+    problems.innerHTML             = bb.data.problems.json();
+    procedures.innerHTML           = bb.data.procedures.json();
+    smokingStatus.innerHTML        = bb.data.smoking_status.json();
+    vitals.innerHTML               = bb.data.vitals.json();
   }
 
 </script>

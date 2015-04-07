@@ -1,0 +1,27 @@
+
+{% for post in paginator.posts %}
+  <article class="post-excerpt">
+    <header>
+      <h1>
+        <a href="{{ post.url | prepend: site.baseurl }}">
+          {{ post.title }}
+        </a>
+      </h1>
+    </header>
+    
+    {% include template/post-meta.html param=post %}
+    
+    <div class="post-content">
+      {{ post.excerpt }}
+    </div>
+    <a href="{{ post.url | prepend: site.baseurl }}">Read More...</a>
+  </article>
+{% endfor %}
+
+<hr>
+
+{% if paginator.next_page %}
+  <p><a href="{{ paginator.next_page_path | prepend: site.baseurl }}">Next page &raquo;</a></p>
+{% endif %}
+
+<p class="rss-subscribe">Subscribe <a href="{{ '/feed.xml' | prepend: site.baseurl }}">via RSS</a></p>

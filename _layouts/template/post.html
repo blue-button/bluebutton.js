@@ -1,0 +1,20 @@
+---
+layout: template/main
+---
+
+<div class="content">
+  <div class="post">
+    
+    <header class="post-header">
+      <h1>{{ page.title }}</h1>
+      
+      {% include template/post-meta.html param=page %}
+    </header>
+    
+    <article class="post-content">
+      {{ content }}
+    </article>
+    
+  </div>
+  
+</div>

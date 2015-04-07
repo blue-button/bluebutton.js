@@ -1,5 +1,7 @@
-# BlueButton.js Documentation Site
+# BlueButton.js Website
 
-View at [bluebuttonjs.com](http://www.bluebuttonjs.com).
+[The BlueButton.js website »](http://www.bluebuttonjs.com)
 
-To run locally using [Jekyll](http://jekyllrb.com), use `$ bash serve.sh`.
+Serve locally by running `bash serve.sh`.
+
+Uses [this template »](http://github.com/blacktm/standard-jekyll-template)

@@ -1,0 +1,55 @@
+
+{% if page.header != false %}
+{% if site.header %}
+
+<header id="site-header" class="site-header">
+  <div class="content">
+    
+    <nav>
+      <a class="site-logo" href="{{ site.baseurl }}/">
+        {% if site.header.logo_img %}
+          <img class="site-logo-img" src="{{ site.baseurl }}/assets/img/{{ site.header.logo_img }}" alt="logo">
+        {% endif %}
+        {{ site.header.logo_text }}
+      </a>
+      <ul class="site-menu">
+      
+      {% for item in site.header.nav %}
+        <li><a href="{{ site.baseurl }}{{ item.link }}">{{ item.text }}</a></li>
+      {% endfor %}
+      
+      </ul>
+      
+      {% if site.header.nav %}
+      <ul class="site-menu-mobile-expand">
+        <li>
+          <a href="javascript:toggleDisplay('site-menu-mobile');">
+            <div class="icon menu">
+              <svg id="mobile-menu-icon" width="25px" height="20px" viewBox="0 0 25 20">
+                <rect x="0" y="0" width="25" height="2"></rect>
+                <rect x="0" y="9" width="25" height="2"></rect>
+                <rect x="0" y="18" width="25" height="2"></rect>
+              </svg>
+            </div>
+          </a>
+        </li>
+      </ul>
+      {% endif %}
+      
+    </nav>
+    
+    <div id="site-menu-mobile" class="site-menu-mobile">
+      <ul>
+      
+      {% for item in site.header.nav %}
+        <a href="{{ site.baseurl }}{{ item.link }}"><li>{{ item.text }}</li></a>
+      {% endfor %}
+      
+      </ul>
+    </div>
+    
+  </div>
+</header>
+
+{% endif %}
+{% endif %}

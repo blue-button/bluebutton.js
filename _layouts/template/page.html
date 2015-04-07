@@ -1,0 +1,43 @@
+---
+layout: template/main
+---
+
+<div class="content">
+  
+  {% if page.breadcrumbs %}
+  <div class="breadcrumbs">
+    <ul>
+      {% for item in page.breadcrumbs %}
+        <li>
+          {% if page.breadcrumbs.size == 1 %}
+            <img class="back-arrow" src="{{ site.baseurl }}/assets/template/separator.svg" alt="back arrow">
+          {% endif %}
+          
+          {% if item.link %}
+            <a href="{{ site.baseurl }}{{ item.link }}">{{ item.text }}</a>
+          {% else %}
+            {{ item.text }}
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  
+  {% if page.title %}
+  <div class="page-header">
+    <h1>{{ page.title }}</h1>
+    
+    {% if page.subtitle %}
+    <h2>{{ page.subtitle }}</h2>
+    {% endif %}
+  </div>
+  {% endif %}
+  
+  {% include template/contents.html %}
+  
+  <div class="page-content{% if page.contents %} margin{% endif %}">
+    {{ content }}
+  </div>
+  
+</div>
