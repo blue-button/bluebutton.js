@@ -1167,7 +1167,7 @@
                                             <templateId root="2.16.840.1.113883.10.20.22.4.2"/>
                                             <id root="107c2dc0-67a5-11db-bd13-0800200c9a66"/>
                                             <code displayName="HGB" code="30313-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" >
-                                            </code>
+                                                                                            </code>
                                             <statusCode code="completed"/>
                                             <effectiveTime value="20000323143000+0000" />
                                             
@@ -1197,7 +1197,7 @@
                                             <templateId root="2.16.840.1.113883.10.20.22.4.2"/>
                                             <id root="107c2dc0-67a5-11db-bd13-0800200c9a66"/>
                                             <code displayName="WBC" code="33765-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" >
-                                            </code>
+                                                                                            </code>
                                             <statusCode code="completed"/>
                                             <effectiveTime value="20000323143000+0000" />
                                             
@@ -1232,7 +1232,7 @@
                                             <templateId root="2.16.840.1.113883.10.20.22.4.2"/>
                                             <id root="107c2dc0-67a5-11db-bd13-0800200c9a66"/>
                                             <code displayName="PLT" code="26515-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" >
-                                            </code>
+                                                                                            </code>
                                             <statusCode code="completed"/>
                                             <effectiveTime value="20000323143000+0000" />
                                             
