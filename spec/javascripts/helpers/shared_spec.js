@@ -1,3 +1,9 @@
+/*
+ * Verifies that the JSON parsed from some XML by BB matches the
+ * contents of a fixture containing the expected JSON. Checks each
+ * section (for easier debugging) before checking the whole output
+ * (to make sure we don't forget to add new sections to the tests.)
+ */
 var runJsonTests = function(expectedOutput, expectedType, bb) {
 
   function toJSON(target) {
@@ -169,6 +175,12 @@ var runJsonTests = function(expectedOutput, expectedType, bb) {
 
 };
 
+/*
+ * We have our own date parsing code, because pulling in moment.js felt like too much,
+ * but naive JS parsing isn't enough to handle the datetimes we get from CDAs. Add
+ * to these tests if you find any date parsing falldowns. If we're doing that often...
+ * suck up the filesize and pull in moment.js.
+ */
 var runDateParsingTests = function(Documents) {
   describe('parseDate', function() {
     var parseDate = Documents.parseDate;
@@ -219,12 +231,93 @@ var runDateParsingTests = function(Documents) {
   });
 };
 
+/*
+ * Manually adjusts the JSON to account for failures of the generator that
+ * we expect (basically a whitelist of expected losses of fidelity) or to
+ * correct errors in the source JSON that we will not preserve.
+ */
+var _launderPassThroughJson = function(jsonInputStr, jsonSourceName) {
+  if (jsonSourceName.toLowerCase() === 'emerge') {
+    // the codeSystemName in EMERGE files differs from our convention
+    return jsonInputStr.replace(/SNOMED\-CT/g, 'SNOMED CT');
+
+  } else if (jsonSourceName.toLowerCase() === 'nist') {
+    // The display name and code disagree in the source file.
+    // We're going to end up relying on the display name, so fix the code to fit.
+    jsonInputStr = jsonInputStr.replace('GPARNT', 'GRFTH');
+
+    // Some modifications will be easier with the actual JSON
+    var parsedJson = JSON.parse(jsonInputStr);
+    // We don't generate encounter locations, because that would require adding a location
+    // type code that we don't want to have to pay attention to (and the location is optional
+    // but the code is not optional once you have a location)
+    parsedJson.encounters.forEach(function(encounter) {
+      encounter.location = {
+        street: [],
+        city : null,
+        state : null,
+        zip : null,
+        country : null,
+        organization : null
+      };
+    });
+    // We could probably make this one work without new data if someone finds they care...
+    parsedJson.procedures.forEach(function(procedure) {
+      procedure.performer = {
+        street: [],
+        city : null,
+        state : null,
+        zip : null,
+        country : null,
+        organization : null,
+        phone: null
+      };
+    });
+    // If we include a med performer, there is some other data that becomes necessary
+    parsedJson.medications.forEach(function(medication) {
+      medication.prescriber = {
+          organization: null,
+          person: null
+        };
+    });
+    return JSON.stringify(parsedJson);
+
+  } else {
+    return jsonInputStr;
+  }
+};
+
+var runPassThroughTest = function(BlueButton, jsonInputStr, jsonSourceName, template) {
+  // 1. Takes some initial JSON (jsonInputStr)
+
+  // 2. Manually tweak the JSON to strip out data we know will break the
+  // tests but that we don't care about
+  jsonInputStr = _launderPassThroughJson(jsonInputStr, jsonSourceName);
+
+  // 3. Generates a CCDA from it
+  var bb = BlueButton(jsonInputStr, {
+    template: template,
+    generatorType: 'ccda',
+    testingMode: true
+  });
+  var bbGeneratedXml = bb.data;
+
+  // 4. Then parses the CCDA with BB again
+  bb = BlueButton(bbGeneratedXml);
+
+  // 5. And makes sure we get back what we sent in
+  // (minus a whitelist of expected differences, in each of the tests below)
+  runJsonTests(JSON.parse(jsonInputStr), 'ccda', bb);
+};
+
+
 // Node-specific code
 if (typeof exports !== 'undefined') {
   if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
       runJsonTests: runJsonTests,
-      runDateParsingTests: runDateParsingTests
+      runDateParsingTests: runDateParsingTests,
+      runPassThroughTest: runPassThroughTest
     };
     var _ = require('underscore');
   }

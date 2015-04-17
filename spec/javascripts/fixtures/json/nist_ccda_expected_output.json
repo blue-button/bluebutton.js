@@ -203,6 +203,7 @@
         "family": "Jones"
       },
       "relationship": "Grandfather",
+      "relationship_code": "GPARNT",
       "address": {
         "street": [
           "1357 Amber Drive"
@@ -496,10 +497,10 @@
         "period_unit": "h"
       },
       "vehicle": {
-        "name": "drug vehicle",
-        "code": "412307009",
-        "code_system": "2.16.840.1.113883.6.96",
-        "code_system_name": null
+        "name": "Aerosol",
+        "code": "324049",
+        "code_system": "2.16.840.1.113883.6.88",
+        "code_system_name": "RxNorm"
       },
       "administration": {
         "name": "INHALANT",
@@ -576,9 +577,9 @@
         "phone": null
       },
       "device": {
-        "name": "Urgent Care Center",
-        "code": "1160-1",
-        "code_system": "2.16.840.1.113883.6.259"
+        "name": null,
+        "code": null,
+        "code_system": null
       }
     }
   ],
