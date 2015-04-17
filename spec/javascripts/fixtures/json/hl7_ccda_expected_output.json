@@ -241,6 +241,7 @@
         "family": "Relative"
       },
       "relationship": "Grandfather",
+      "relationship_code": "GRFTH",
       "address": {
         "street": [
           "17 Daws Rd."
@@ -568,10 +569,10 @@
         "period_unit": "h"
       },
       "vehicle": {
-        "name": "drug vehicle",
-        "code": "412307009",
+        "name": "Diethylene Glycol",
+        "code": "5955009",
         "code_system": "2.16.840.1.113883.6.96",
-        "code_system_name": null
+        "code_system_name": "SNOMED CT"
       },
       "administration": {
         "name": "INHALANT",
@@ -656,9 +657,9 @@
         "phone": null
       },
       "device": {
-        "name": "General Acute Care Hospital",
-        "code": "GACH",
-        "code_system": "2.16.840.1.113883.5.111"
+        "name": null,
+        "code": null,
+        "code_system": null
       }
     },
     {
@@ -683,9 +684,9 @@
         "phone": null
       },
       "device": {
-        "name": "General Acute Care Hospital",
-        "code": "GACH",
-        "code_system": "2.16.840.1.113883.5.111"
+        "name": null,
+        "code": null,
+        "code_system": null
       }
     }
   ],

@@ -128,17 +128,6 @@ module.exports = function(grunt) {
           "<%= bb.build %>/bluebutton.js",
           "<%= bb.src %>/documents.js"
         ]
-      },
-      amd: {
-        options: {
-          specs: "<%= bb.test %>/amd_specs/*_spec.js",
-          vendor: ["<%= bb.test %>/helpers/*.js"],
-          template: require('grunt-template-jasmine-requirejs')
-        },
-        src: [
-          "<%= bb.build %>/bluebutton.js",
-          "<%= bb.src %>/documents.js"
-        ]
       }
     },
     
