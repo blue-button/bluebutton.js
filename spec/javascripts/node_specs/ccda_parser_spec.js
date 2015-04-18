@@ -54,3 +54,16 @@ describe('NIST CCDA', function() {
   runJsonTests(expectedOutput, 'ccda', bb);
 
 });
+
+describe('Epic PHR CCDA', function() {
+  var record = fs.readFileSync(path.resolve(__dirname,
+    '../fixtures/ccda/epic_phr.xml'), 'utf-8');
+  var bb = BlueButton(record);
+
+  var expectedOutput = JSON.parse(fs.readFileSync(path.resolve(__dirname,
+    '../fixtures/json/epic_ccda_expected_output.json'), 'utf-8'));
+
+  // the tests are defined in helpers/shared_spec.js
+  runJsonTests(expectedOutput, 'ccda', bb);
+
+});

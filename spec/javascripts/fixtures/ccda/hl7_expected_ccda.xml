@@ -1172,9 +1172,12 @@
                                             <statusCode code="completed"/>
                                             <effectiveTime value="20000323143000+0000" />
                                             
-                                                <value xsi:type="PQ"
-                                                    value="13.2"
-                                                     unit="g/dl" 
+                                                <value
+                                                    
+                                                        xsi:type="PQ"
+                                                        value="13.2"
+                                                         unit="g/dl" 
+                                                    
                                                 />
                                             
                                             <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
@@ -1202,9 +1205,12 @@
                                             <statusCode code="completed"/>
                                             <effectiveTime value="20000323143000+0000" />
                                             
-                                                <value xsi:type="PQ"
-                                                    value="6.7"
-                                                     unit="10+3/ul" 
+                                                <value
+                                                    
+                                                        xsi:type="PQ"
+                                                        value="6.7"
+                                                         unit="10+3/ul" 
+                                                    
                                                 />
                                             
                                             <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
@@ -1237,9 +1243,12 @@
                                             <statusCode code="completed"/>
                                             <effectiveTime value="20000323143000+0000" />
                                             
-                                                <value xsi:type="PQ"
-                                                    value="123"
-                                                     unit="10+3/ul" 
+                                                <value
+                                                    
+                                                        xsi:type="PQ"
+                                                        value="123"
+                                                         unit="10+3/ul" 
+                                                    
                                                 />
                                             
                                             <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>

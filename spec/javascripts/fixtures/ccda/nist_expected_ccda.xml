@@ -1169,9 +1169,12 @@
                                             <statusCode code="completed"/>
                                             <effectiveTime value="20120810" />
                                             
-                                                <value xsi:type="PQ"
-                                                    value="10.2"
-                                                     unit="g/dl" 
+                                                <value
+                                                    
+                                                        xsi:type="PQ"
+                                                        value="10.2"
+                                                         unit="g/dl" 
+                                                    
                                                 />
                                             
                                             <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
@@ -1199,9 +1202,12 @@
                                             <statusCode code="completed"/>
                                             <effectiveTime value="20120810" />
                                             
-                                                <value xsi:type="PQ"
-                                                    value="12.3"
-                                                     unit="10+3/ul" 
+                                                <value
+                                                    
+                                                        xsi:type="PQ"
+                                                        value="12.3"
+                                                         unit="10+3/ul" 
+                                                    
                                                 />
                                             
                                             <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
@@ -1234,9 +1240,12 @@
                                             <statusCode code="completed"/>
                                             <effectiveTime value="20120810" />
                                             
-                                                <value xsi:type="PQ"
-                                                    value="123"
-                                                     unit="10+3/ul" 
+                                                <value
+                                                    
+                                                        xsi:type="PQ"
+                                                        value="123"
+                                                         unit="10+3/ul" 
+                                                    
                                                 />
                                             
                                             <interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
