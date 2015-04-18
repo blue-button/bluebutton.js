@@ -575,9 +575,10 @@
         "start": "01/01/2005",
         "end": null
       },
-      "text": "Albuterol inhalant",
+      "text": null,
       "product": {
         "name": "Albuterol 0.09 MG/ACTUAT inhalant solution",
+        "text": "Albuterol inhalant",
         "code": "307782",
         "code_system": "2.16.840.1.113883.6.88",
         "translation": {
@@ -638,9 +639,10 @@
         "start": null,
         "end": null
       },
-      "text": "Clopidogrel",
+      "text": null,
       "product": {
         "name": "Clopidogrel 75 MG oral tablet",
+        "text": "Clopidogrel",
         "code": "309362",
         "code_system": "2.16.840.1.113883.6.88",
         "translation": {
@@ -701,9 +703,10 @@
         "start": "11/21/2007",
         "end": null
       },
-      "text": "Metoprolol",
+      "text": null,
       "product": {
         "name": "Metoprolol 25 MG oral tablet",
+        "text": "Metoprolol",
         "code": "430618",
         "code_system": "2.16.840.1.113883.6.88",
         "translation": {
@@ -764,9 +767,10 @@
         "start": "03/28/2000",
         "end": null
       },
-      "text": "Prednisone",
+      "text": null,
       "product": {
         "name": "Prednisone 20 MG oral tablet",
+        "text": "Prednisone",
         "code": "312615",
         "code_system": "2.16.840.1.113883.6.88",
         "translation": {
@@ -827,9 +831,10 @@
         "start": "03/28/2000",
         "end": "04/04/2000"
       },
-      "text": "Cephalexin",
+      "text": null,
       "product": {
         "name": "Cephalexin 500 MG oral tablet",
+        "text": "Cephalexin",
         "code": "197454",
         "code_system": "2.16.840.1.113883.6.88",
         "translation": {

@@ -567,9 +567,10 @@
         "start": "2010-03-31T10:00:00Z",
         "end": null
       },
-      "text": "Antihypertensive combinations + Enalapril Maleate 10 MG / Hydrochlorothiazide 25 MG Oral Tablet",
+      "text": null,
       "product": {
         "name": "Enalapril Maleate 10 MG / Hydrochlorothiazide 25 MG Oral Tablet",
+        "text": "Antihypertensive combinations + Enalapril Maleate 10 MG / Hydrochlorothiazide 25 MG Oral Tablet",
         "code": "858828",
         "code_system": "2.16.840.1.113883.6.88",
         "translation": {
@@ -630,9 +631,10 @@
         "start": "2010-06-10T10:00:00Z",
         "end": null
       },
-      "text": "ACE inhibitor or ARB + Lisinopril 10 MG Oral Tablet",
+      "text": null,
       "product": {
         "name": "Lisinopril 10 MG Oral Tablet",
+        "text": "ACE inhibitor or ARB + Lisinopril 10 MG Oral Tablet",
         "code": "314076",
         "code_system": "2.16.840.1.113883.6.88",
         "translation": {

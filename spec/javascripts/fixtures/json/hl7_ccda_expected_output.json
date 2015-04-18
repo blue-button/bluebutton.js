@@ -530,6 +530,7 @@
       "text": "0.09 MG/ACTUAT inhalant solution, 2 puffs QID PRN wheezing",
       "product": {
         "name": "Albuterol 0.09 MG/ACTUAT inhalant solution",
+        "text": null,
         "code": "329498",
         "code_system": "2.16.840.1.113883.6.88",
         "translation": {

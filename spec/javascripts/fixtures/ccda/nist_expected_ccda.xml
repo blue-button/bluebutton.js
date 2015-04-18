@@ -823,6 +823,9 @@
                                                 <manufacturedMaterial>
                                                     <code displayName="Albuterol 0.09 MG/ACTUAT inhalant solution" code="573621" codeSystem="2.16.840.1.113883.6.88" >
                                                         <translation displayName="Proventil 0.09 MG/ACTUAT inhalant solution" code="573621" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RxNorm"/>
+                                                        
+                                                            <originalText>Albuterol 0.09 MG/ACTUAT inhalant solution</originalText>
+                                                        
                                                     </code>
                                                 </manufacturedMaterial>
                                                 <manufacturerOrganization/>

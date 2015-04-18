@@ -379,9 +379,10 @@
         "start": null,
         "end": null
       },
-      "text": "Proventil HFA 108 (90 Base) MCG/ACT Inhalation Aerosol Solution",
+      "text": null,
       "product": {
         "name": "Proventil HFA 108 (90 Base) MCG/ACT Inhalation Aerosol Solution",
+        "text": "Proventil HFA 108 (90 Base) MCG/ACT Inhalation Aerosol Solution",
         "code": "746763",
         "code_system": "2.16.840.1.113883.6.88",
         "translation": {
