@@ -154,28 +154,6 @@
             "high_unit": null,
             "high_value": null
           }
-        },
-        {
-          "date": null,
-          "name": "Clerical Orders",
-          "value": null,
-          "unit": null,
-          "code": "45",
-          "code_system": "1.2.840.114350.1.13.65.2.7.4.698084.30",
-          "code_system_name": "Epic.EncounterType",
-          "translation": {
-            "name": null,
-            "code": null,
-            "code_system": null,
-            "code_system_name": null
-          },
-          "reference_range": {
-            "text": null,
-            "low_unit": null,
-            "low_value": null,
-            "high_unit": null,
-            "high_value": null
-          }
         }
       ]
     },
@@ -193,28 +171,6 @@
           "code": "X11529-5",
           "code_system": "2.16.840.1.113883.6.1",
           "code_system_name": "LOINC",
-          "translation": {
-            "name": null,
-            "code": null,
-            "code_system": null,
-            "code_system_name": null
-          },
-          "reference_range": {
-            "text": null,
-            "low_unit": null,
-            "low_value": null,
-            "high_unit": null,
-            "high_value": null
-          }
-        },
-        {
-          "date": null,
-          "name": "Clerical Orders",
-          "value": null,
-          "unit": null,
-          "code": "45",
-          "code_system": "1.2.840.114350.1.13.65.2.7.4.698084.30",
-          "code_system_name": "Epic.EncounterType",
           "translation": {
             "name": null,
             "code": null,
@@ -253,28 +209,6 @@
           },
           "reference_range": {
             "text": "<=5.0 mIU/mL",
-            "low_unit": null,
-            "low_value": null,
-            "high_unit": null,
-            "high_value": null
-          }
-        },
-        {
-          "date": null,
-          "name": "Clerical Orders",
-          "value": null,
-          "unit": null,
-          "code": "45",
-          "code_system": "1.2.840.114350.1.13.65.2.7.4.698084.30",
-          "code_system_name": "Epic.EncounterType",
-          "translation": {
-            "name": null,
-            "code": null,
-            "code_system": null,
-            "code_system_name": null
-          },
-          "reference_range": {
-            "text": null,
             "low_unit": null,
             "low_value": null,
             "high_unit": null,
@@ -508,28 +442,6 @@
             "high_unit": null,
             "high_value": null
           }
-        },
-        {
-          "date": null,
-          "name": "Clerical Orders",
-          "value": null,
-          "unit": null,
-          "code": "45",
-          "code_system": "1.2.840.114350.1.13.65.2.7.4.698084.30",
-          "code_system_name": "Epic.EncounterType",
-          "translation": {
-            "name": null,
-            "code": null,
-            "code_system": null,
-            "code_system_name": null
-          },
-          "reference_range": {
-            "text": null,
-            "low_unit": null,
-            "low_value": null,
-            "high_unit": null,
-            "high_value": null
-          }
         }
       ]
     },
@@ -758,28 +670,6 @@
             "high_unit": null,
             "high_value": null
           }
-        },
-        {
-          "date": null,
-          "name": "Clerical Orders",
-          "value": null,
-          "unit": null,
-          "code": "45",
-          "code_system": "1.2.840.114350.1.13.65.2.7.4.698084.30",
-          "code_system_name": "Epic.EncounterType",
-          "translation": {
-            "name": null,
-            "code": null,
-            "code_system": null,
-            "code_system_name": null
-          },
-          "reference_range": {
-            "text": null,
-            "low_unit": null,
-            "low_value": null,
-            "high_unit": null,
-            "high_value": null
-          }
         }
       ]
     },
@@ -832,28 +722,6 @@
             "high_unit": null,
             "high_value": null
           }
-        },
-        {
-          "date": null,
-          "name": "Clerical Orders",
-          "value": null,
-          "unit": null,
-          "code": "45",
-          "code_system": "1.2.840.114350.1.13.65.2.7.4.698084.30",
-          "code_system_name": "Epic.EncounterType",
-          "translation": {
-            "name": null,
-            "code": null,
-            "code_system": null,
-            "code_system_name": null
-          },
-          "reference_range": {
-            "text": null,
-            "low_unit": null,
-            "low_value": null,
-            "high_unit": null,
-            "high_value": null
-          }
         }
       ]
     },
@@ -879,28 +747,6 @@
           },
           "reference_range": {
             "text": "26.0-35.0",
-            "low_unit": null,
-            "low_value": null,
-            "high_unit": null,
-            "high_value": null
-          }
-        },
-        {
-          "date": null,
-          "name": "Clerical Orders",
-          "value": null,
-          "unit": null,
-          "code": "45",
-          "code_system": "1.2.840.114350.1.13.65.2.7.4.698084.30",
-          "code_system_name": "Epic.EncounterType",
-          "translation": {
-            "name": null,
-            "code": null,
-            "code_system": null,
-            "code_system_name": null
-          },
-          "reference_range": {
-            "text": null,
             "low_unit": null,
             "low_value": null,
             "high_unit": null,
@@ -1129,28 +975,6 @@
           },
           "reference_range": {
             "text": "7.0-11.5",
-            "low_unit": null,
-            "low_value": null,
-            "high_unit": null,
-            "high_value": null
-          }
-        },
-        {
-          "date": null,
-          "name": "Clerical Orders",
-          "value": null,
-          "unit": null,
-          "code": "45",
-          "code_system": "1.2.840.114350.1.13.65.2.7.4.698084.30",
-          "code_system_name": "Epic.EncounterType",
-          "translation": {
-            "name": null,
-            "code": null,
-            "code_system": null,
-            "code_system_name": null
-          },
-          "reference_range": {
-            "text": null,
             "low_unit": null,
             "low_value": null,
             "high_unit": null,
@@ -1538,28 +1362,6 @@
             "high_unit": null,
             "high_value": null
           }
-        },
-        {
-          "date": null,
-          "name": "Clerical Orders",
-          "value": null,
-          "unit": null,
-          "code": "45",
-          "code_system": "1.2.840.114350.1.13.65.2.7.4.698084.30",
-          "code_system_name": "Epic.EncounterType",
-          "translation": {
-            "name": null,
-            "code": null,
-            "code_system": null,
-            "code_system_name": null
-          },
-          "reference_range": {
-            "text": null,
-            "low_unit": null,
-            "low_value": null,
-            "high_unit": null,
-            "high_value": null
-          }
         }
       ]
     },
@@ -1577,28 +1379,6 @@
           "code": "X11529-5",
           "code_system": "2.16.840.1.113883.6.1",
           "code_system_name": "LOINC",
-          "translation": {
-            "name": null,
-            "code": null,
-            "code_system": null,
-            "code_system_name": null
-          },
-          "reference_range": {
-            "text": null,
-            "low_unit": null,
-            "low_value": null,
-            "high_unit": null,
-            "high_value": null
-          }
-        },
-        {
-          "date": null,
-          "name": "Clerical Orders",
-          "value": null,
-          "unit": null,
-          "code": "45",
-          "code_system": "1.2.840.114350.1.13.65.2.7.4.698084.30",
-          "code_system_name": "Epic.EncounterType",
           "translation": {
             "name": null,
             "code": null,
@@ -1994,28 +1774,6 @@
             "high_unit": null,
             "high_value": null
           }
-        },
-        {
-          "date": null,
-          "name": "Clerical Orders",
-          "value": null,
-          "unit": null,
-          "code": "45",
-          "code_system": "1.2.840.114350.1.13.65.2.7.4.698084.30",
-          "code_system_name": "Epic.EncounterType",
-          "translation": {
-            "name": null,
-            "code": null,
-            "code_system": null,
-            "code_system_name": null
-          },
-          "reference_range": {
-            "text": null,
-            "low_unit": null,
-            "low_value": null,
-            "high_unit": null,
-            "high_value": null
-          }
         }
       ]
     },
@@ -2046,28 +1804,6 @@
             "high_unit": null,
             "high_value": null
           }
-        },
-        {
-          "date": null,
-          "name": "Clerical Orders",
-          "value": null,
-          "unit": null,
-          "code": "45",
-          "code_system": "1.2.840.114350.1.13.65.2.7.4.698084.30",
-          "code_system_name": "Epic.EncounterType",
-          "translation": {
-            "name": null,
-            "code": null,
-            "code_system": null,
-            "code_system_name": null
-          },
-          "reference_range": {
-            "text": null,
-            "low_unit": null,
-            "low_value": null,
-            "high_unit": null,
-            "high_value": null
-          }
         }
       ]
     },
@@ -2085,28 +1821,6 @@
           "code": null,
           "code_system": null,
           "code_system_name": null,
-          "translation": {
-            "name": null,
-            "code": null,
-            "code_system": null,
-            "code_system_name": null
-          },
-          "reference_range": {
-            "text": null,
-            "low_unit": null,
-            "low_value": null,
-            "high_unit": null,
-            "high_value": null
-          }
-        },
-        {
-          "date": null,
-          "name": "Clerical Orders",
-          "value": null,
-          "unit": null,
-          "code": "45",
-          "code_system": "1.2.840.114350.1.13.65.2.7.4.698084.30",
-          "code_system_name": "Epic.EncounterType",
           "translation": {
             "name": null,
             "code": null,
