@@ -1,0 +1,1917 @@
+{
+  "document": {
+    "date": "2015-04-09T14:39:53Z",
+    "title": "Patient Health Summary",
+    "author": {
+      "name": {
+        "prefix": null,
+        "given": [],
+        "family": null
+      },
+      "address": {
+        "street": [],
+        "city": null,
+        "state": null,
+        "zip": null,
+        "country": null
+      },
+      "phone": {
+        "work": null
+      }
+    },
+    "documentation_of": [
+      {
+        "name": {
+          "prefix": null,
+          "given": [],
+          "family": null
+        },
+        "phone": {
+          "work": null
+        },
+        "address": {
+          "street": [],
+          "city": null,
+          "state": null,
+          "zip": null,
+          "country": null
+        }
+      }
+    ],
+    "location": {
+      "name": null,
+      "address": {
+        "street": [],
+        "city": null,
+        "state": null,
+        "zip": null,
+        "country": null
+      },
+      "encounter_date": null
+    }
+  },
+  "allergies": [],
+  "care_plan": [],
+  "chief_complaint": {
+    "text": null
+  },
+  "demographics": {
+    "name": {
+      "prefix": null,
+      "given": [
+        "VICTORIA"
+      ],
+      "family": "TEST"
+    },
+    "dob": "01/22/1983",
+    "gender": "female",
+    "marital_status": null,
+    "address": {
+      "street": [
+        "1234 100TH ST",
+        "APT 21"
+      ],
+      "city": "FOREST TREES",
+      "state": "NY",
+      "zip": "11375",
+      "country": "USA"
+    },
+    "phone": {
+      "home": "tel:+1-917-555-5555",
+      "work": null,
+      "mobile": null
+    },
+    "email": null,
+    "language": "ENG",
+    "race": "WHITE",
+    "ethnicity": null,
+    "religion": null,
+    "birthplace": {
+      "state": null,
+      "zip": null,
+      "country": null
+    },
+    "guardian": {
+      "name": {
+        "given": [],
+        "family": null
+      },
+      "relationship": null,
+      "relationship_code": null,
+      "address": {
+        "street": [],
+        "city": null,
+        "state": null,
+        "zip": null,
+        "country": null
+      },
+      "phone": {
+        "home": null
+      }
+    },
+    "provider": {
+      "organization": "SACRED HEART MEDICAL COLLEGE",
+      "phone": "tel:+1-212-555-5555",
+      "address": {
+        "street": [],
+        "city": "New York",
+        "state": "NY",
+        "zip": "10001",
+        "country": null
+      }
+    }
+  },
+  "encounters": [],
+  "functional_statuses": [],
+  "immunizations": [],
+  "immunization_declines": [],
+  "instructions": [],
+  "results": [
+    {
+      "name": "Cytology, Gyn (CYTOLOGY, GYN)",
+      "code": "88108",
+      "code_system": "2.16.840.1.113883.6.12",
+      "code_system_name": "CPT-4",
+      "tests": [
+        {
+          "date": "2014-10-10T15:20:21Z",
+          "name": "CYTOPATHOLOGY",
+          "value": "\n                            Sacred Heart Hospital\n                            \n                            Department of Laboratories\n                            \n                            JD 1028                                  Inquiry: (212)\n                            \n                            555-5555\n                            \n                            123 East 34th Street, New York NY  10001    Fax:     (212)\n                            \n                            555-5555\n                            \n                            \n                            \n                            \n                            \n                            C14-45547\n                            \n                            Cytopathology Report\n                            \n                            Date Collected: 10/10/2014\n                            \n                            Date Received:  10/10/2014 17:13\n                            \n                            Report Date:    10/15/2014\n                            \n                            \n                            \n                            Patient: TEST, VICTORIA Submitted by: TESTING A. PROVIDER,\n                            \n                            M.D.\n                            \n                                     1234 100TH ST WMC OB/GYN, J-130\n                            \n                                     APT 21 123 East 34th Street\n                            \n                                      New York, NY  10001\n                            \n                            \n                            \n                            SAH-MRN: 001234567 Telephone: 1(212) 555-5555      Fax: 555-5555\n                            \n                            Encounter #: 12345678\n                            \n                            Location: CLCC\n                            \n                            Age/Sex: 31/F\n                            \n                            \n                            \n                            \n                            \n                            \n                            \n                            CLINICAL INFORMATION:\n                            \n                            ROUTINE    Age: 31  LMP: 9/18/14\n                            \n                            V72.31 [Routine Gynecological Examination]\n                            \n                            SOURCE OF SPECIMEN: Cervical/endocervical ThinPrep\n                            \n                            \n                            \n                            SPECIMEN CONSISTS OF:\n                            \n                            PreservCyt solution vial, 20 ml fluid - 1 cervical/endocervical\n                            \n                            ThinPrep prepared for Imager assisted analysis.\n                            \n                            \n                            \n                            \n                            \n                            CYTOLOGIC INTERPRETATION:\n                            \n                                 Specimen Adequacy:\n                            \n                                 Satisfactory for evaluation.\n                            \n                                 Specimen lacks an adequate endocervical/transformation zone\n                            \n                            component.\n                            \n                            Limited by cytolysis.\n                            \n                            \n                            \n                                 Primary Diagnosis:\n                            \n                                 No intraepithelial lesion or malignancy identified.\n                            \n                              Screening with Pap test detects premalignant and malignant\n                            \n                            conditions of the uterine cervix. Pap test has an inherent\n                            \n                            false-negative rate and regular screening is critical for cancer\n                            \n                            prevention (1). Co-testing with Pap test and HPV test for\n                            \n                            cervical cancer screening is preferred in women => 30 years (2).\n                            \n                            (1) Papanicalaou Society of Cytopathology Practice Guidelines\n                            \n                            Task Force Recommendation.  Diagn Cytopathol, 2003;28:282; (2)\n                            \n                            American Society for colposcopy and cervical pathology (ASCCP),\n                            \n                            The American Cancer Society (ACS) and American Society for\n                            \n                            Clinical Pathology (ASCP) Screening Guidelines.  AJCP,\n                            \n                            2012;137:516.\n                            \n                            \n                            \n                                      ** Electronically Signed Out **\n                            \n                            \n                            \n                            John J. Testling, CT (ASCP)\n                            \n                            William Tests, CT (ASCP)\n                            \n                            \n                            \n                            \n                            \n                                      Attending Pathologist\n                            \n                            ICD9 Codes:  V76.2\n                            \n                            Billing Codes:  \\F\\(Private Ambulatory)\n                            \n                            SNOMED:\n                            \n                            TEST1/Testling\n                          ",
+          "unit": null,
+          "code": "X11529-5",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": null,
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cytology, Gyn (CYTOLOGY, GYN)",
+      "code": "88108",
+      "code_system": "2.16.840.1.113883.6.12",
+      "code_system_name": "CPT-4",
+      "tests": [
+        {
+          "date": "2013-07-13T13:36:20Z",
+          "name": "CYTOPATHOLOGY",
+          "value": "\n                            Sacred Heart Hospital\n                            \n                            Department of Laboratories\n                            \n                            JD 1028                                  Inquiry: (212)\n                            \n                            555-5555\n                            \n                            123 East 34th Street, New York NY  10001    Fax:     (212)\n                            \n                            555-5555\n                            \n                            \n                            \n                            \n                            \n                            C13-30680\n                            \n                            Cytopathology Report\n                            \n                            Date Collected: 7/13/2013\n                            \n                            Date Received:  7/15/2013 10:19\n                            \n                            Report Date:    7/16/2013\n                            \n                            \n                            \n                            Patient: TEST, VICTORIA Submitted by: TESTING A. PROVIDER,\n                            \n                            M.D.\n                            \n                                     1234 100TH ST WMC OB/GYN, J-130\n                            \n                                     APT21 123 East 34th Street\n                            \n                                      New York, NY  10001\n                            \n                            \n                            \n                            SAH-MRN: 001234567 Telephone: 1(212) 555-5555      Fax: 555-5555\n                            \n                            Encounter #: 124578979\n                            \n                            Location: CLCC\n                            \n                            Age/Sex: 29/F\n                            \n                            \n                            \n                            \n                            \n                            \n                            \n                            CLINICAL INFORMATION:\n                            \n                            ROUTINE    Age: 29  LMP: 6/30/13\n                            \n                            V72.31 [Routine Gynecological Examination]\n                            \n                            SOURCE OF SPECIMEN: Cervical/endocervical ThinPrep\n                            \n                            \n                            \n                            SPECIMEN CONSISTS OF:\n                            \n                            PreservCyt solution vial, 20 ml fluid - 1 cervical/endocervical\n                            \n                            ThinPrep prepared for Imager assisted analysis.\n                            \n                            \n                            \n                            \n                            \n                            CYTOLOGIC INTERPRETATION:\n                            \n                                 Specimen Adequacy:\n                            \n                                 Satisfactory for evaluation.\n                            \n                                      Specimen lacks an adequate endocervical/transformation\n                            \n                            zone component.\n                            \n                            \n                            \n                                 Primary Diagnosis:\n                            \n                                 No intraepithelial lesion or malignancy identified.\n                            \n                            \n                            \n                                      ** Electronically Signed Out **\n                            \n                            \n                            \n                            Mary A. Testing, CT (ASCP), CMIAC\n                            \n                            \n                            \n                            \n                            \n                                      Attending Pathologist\n                            \n                            ICD9 Codes:  V76.2\n                            \n                            Billing Codes:  \\F\\(Private Ambulatory)\n                            \n                            SNOMED:\n                            \n                            MTes/mtes\n                          ",
+          "unit": null,
+          "code": "X11529-5",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": null,
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Human Chorionic Gonadotropin (HCG), Beta, Qn (BETA HCG,QUANTATIVE)",
+      "code": "84702",
+      "code_system": "2.16.840.1.113883.6.12",
+      "code_system_name": "CPT-4",
+      "tests": [
+        {
+          "date": "2013-06-05T16:00:00Z",
+          "name": "HCG (TOTAL BETA)",
+          "value": "<0.5",
+          "unit": null,
+          "code": "21198-7",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "<=5.0 mIU/mL",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "CBC Panel w/Platelets + Differential (CBC W/ PLATELETS+ DIFF (COMPLETE))",
+      "code": "85025",
+      "code_system": "2.16.840.1.113883.6.12",
+      "code_system_name": "CPT-4",
+      "tests": [
+        {
+          "date": "2013-06-05T16:00:00Z",
+          "name": "WBC COUNT",
+          "value": "5.4 x10(3)/uL",
+          "unit": null,
+          "code": "804-5",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "3.4-11.2",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2013-06-05T16:00:00Z",
+          "name": "RED BLOOD CELL COUNT",
+          "value": "4.30 x10(6)/uL",
+          "unit": null,
+          "code": "789-8",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "3.80-5.20",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2013-06-05T16:00:00Z",
+          "name": "HEMOGLOBIN",
+          "value": 13.9,
+          "unit": "g/dL",
+          "code": "718-7",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "11.7-15.3",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2013-06-05T16:00:00Z",
+          "name": "HEMATOCRIT",
+          "value": 41.2,
+          "unit": "%",
+          "code": "4544-3",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "35.0-45.0",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2013-06-05T16:00:00Z",
+          "name": "MEAN CORPUSCULAR VOL",
+          "value": 96,
+          "unit": "fL",
+          "code": "787-2",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "81.0-100.0",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2013-06-05T16:00:00Z",
+          "name": "(MCH)MEAN CORP HGB",
+          "value": 32.4,
+          "unit": "pg",
+          "code": "785-6",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "27.0-34.0",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2013-06-05T16:00:00Z",
+          "name": "MEAN CORP HGB CONC",
+          "value": 33.8,
+          "unit": "g/dL",
+          "code": "786-4",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "32.0-36.0",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2013-06-05T16:00:00Z",
+          "name": "RED CELL DIST WIDTH",
+          "value": 12.8,
+          "unit": "%",
+          "code": "788-0",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "11.5-14.5",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2013-06-05T16:00:00Z",
+          "name": "PLATELET COUNT",
+          "value": "183 x10(3)/uL",
+          "unit": null,
+          "code": "777-3",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "150-450",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2013-06-05T16:00:00Z",
+          "name": "MEAN PLATELET VOLUME",
+          "value": 9.3,
+          "unit": "fL",
+          "code": "32623-1",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "7.0-11.5",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Automated Differential (AUTO DIFFERENTIAL)",
+      "code": "23601",
+      "code_system": "1.2.840.114350.1.13.65.2.7.2.696580",
+      "code_system_name": "Epic.EAP.ID",
+      "tests": [
+        {
+          "date": "2013-06-05T16:00:00Z",
+          "name": "NEUTROPHIL%AUTO",
+          "value": 60.3,
+          "unit": "%",
+          "code": "770-8",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "45.0-75.0",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2013-06-05T16:00:00Z",
+          "name": "LYMPH%AUTO",
+          "value": 31,
+          "unit": "%",
+          "code": "736-9",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "20.0-50.0",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2013-06-05T16:00:00Z",
+          "name": "MONOCYTE%AUTO",
+          "value": 6.6,
+          "unit": "%",
+          "code": "5905-5",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "2.0-11.0",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2013-06-05T16:00:00Z",
+          "name": "EOSINOPHIL%AUTO",
+          "value": 1.6,
+          "unit": "%",
+          "code": "713-8",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "0.0-5.0",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2013-06-05T16:00:00Z",
+          "name": "BASOPHILE%AUTO",
+          "value": 0.5,
+          "unit": "%",
+          "code": "706-2",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "0.0-1.0",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2013-06-05T16:00:00Z",
+          "name": "NEUTROPHIL ABSOLUTE#",
+          "value": "3.3 x10(3)/uL",
+          "unit": null,
+          "code": "751-8",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "1.8-7.0",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2013-06-05T16:00:00Z",
+          "name": "LYMPH ABSOLUTE #",
+          "value": "1.7 x10(3)/uL",
+          "unit": null,
+          "code": "731-0",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "1.0-4.8",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2013-06-05T16:00:00Z",
+          "name": "MONOCYTE ABSOLUTE #",
+          "value": "0.4 x10(3)/uL",
+          "unit": null,
+          "code": "742-7",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "0.2-0.9",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2013-06-05T16:00:00Z",
+          "name": "EOSINOPHIL ABS #",
+          "value": "0.10 x10(3)/uL",
+          "unit": null,
+          "code": "711-2",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "0.00-0.45",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2013-06-05T16:00:00Z",
+          "name": "BASOPHIL ABSOLUTE #",
+          "value": "0.00 x10(3)/uL",
+          "unit": null,
+          "code": "704-7",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "0.00-0.10",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Prothrombin Time w/INR (PROTHROMBIN TIME - INR)",
+      "code": "85610",
+      "code_system": "2.16.840.1.113883.6.12",
+      "code_system_name": "CPT-4",
+      "tests": [
+        {
+          "date": "2011-08-18T14:55:00Z",
+          "name": "PROTHROMBIN TIME",
+          "value": "12.9 second(s)",
+          "unit": null,
+          "code": "5902-2",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "9.8-13.2",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-18T14:55:00Z",
+          "name": "INT'L NORMAL RATIO",
+          "value": "1.1 ratio",
+          "unit": null,
+          "code": "6301-6",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "0.9-1.1",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Activated PTT (ACTIVATED PTT)",
+      "code": "85730",
+      "code_system": "2.16.840.1.113883.6.12",
+      "code_system_name": "CPT-4",
+      "tests": [
+        {
+          "date": "2011-08-18T14:55:00Z",
+          "name": "ACTIVATED PTT",
+          "value": "28.2 second(s)",
+          "unit": null,
+          "code": "14979-9",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "26.0-35.0",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "CBC Panel w/Platelets + w/o Differential (CBC PLATELET W/O DIFFERENTIAL)",
+      "code": "85021",
+      "code_system": "2.16.840.1.113883.6.12",
+      "code_system_name": "CPT-4",
+      "tests": [
+        {
+          "date": "2011-08-18T14:55:00Z",
+          "name": "WBC COUNT",
+          "value": "6.7 x10(3)/uL",
+          "unit": null,
+          "code": "804-5",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "3.4-11.2",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-18T14:55:00Z",
+          "name": "RED BLOOD CELL COUNT",
+          "value": "3.86 x10(6)/uL",
+          "unit": null,
+          "code": "789-8",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "3.80-5.20",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-18T14:55:00Z",
+          "name": "HEMOGLOBIN",
+          "value": 12.6,
+          "unit": "g/dL",
+          "code": "718-7",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "11.7-15.3",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-18T14:55:00Z",
+          "name": "HEMATOCRIT",
+          "value": 36.3,
+          "unit": "%",
+          "code": "4544-3",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "35.0-45.0",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-18T14:55:00Z",
+          "name": "MEAN CORPUSCULAR VOL",
+          "value": 94,
+          "unit": "fL",
+          "code": "787-2",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "81.0-100.0",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-18T14:55:00Z",
+          "name": "(MCH)MEAN CORP HGB",
+          "value": 32.7,
+          "unit": "pg",
+          "code": "785-6",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "27.0-34.0",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-18T14:55:00Z",
+          "name": "MEAN CORP HGB CONC",
+          "value": 34.8,
+          "unit": "g/dL",
+          "code": "786-4",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "32.0-36.0",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-18T14:55:00Z",
+          "name": "RED CELL DIST WIDTH",
+          "value": 12.6,
+          "unit": "%",
+          "code": "788-0",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "11.5-14.5",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-18T14:55:00Z",
+          "name": "PLATELET COUNT",
+          "value": "166 x10(3)/uL",
+          "unit": null,
+          "code": "777-3",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "150-450",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-18T14:55:00Z",
+          "name": "MEAN PLATELET VOLUME",
+          "value": 8.5,
+          "unit": "fL",
+          "code": "32623-1",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "7.0-11.5",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Urinalysis Complete (URINALYSIS, COMPLETE)",
+      "code": "81001",
+      "code_system": "2.16.840.1.113883.6.12",
+      "code_system_name": "CPT-4",
+      "tests": [
+        {
+          "date": "2011-08-18T14:55:00Z",
+          "name": "COLOR URINE",
+          "value": "Yellow",
+          "unit": null,
+          "code": "5778-6",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "Straw",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-18T14:55:00Z",
+          "name": "APPEARANCE URINE",
+          "value": "Clear",
+          "unit": null,
+          "code": "5767-9",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "Clear",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-18T14:55:00Z",
+          "name": "GLUCOSE URINE",
+          "value": "Negative",
+          "unit": null,
+          "code": "5792-7",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "Negative mg/dL",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-18T14:55:00Z",
+          "name": "BILIRUBIN URINE",
+          "value": "Negative",
+          "unit": null,
+          "code": "5770-3",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "Negative",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-18T14:55:00Z",
+          "name": "KETONES URINE",
+          "value": "Negative",
+          "unit": null,
+          "code": "5797-6",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "Negative mg/dL",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-18T14:55:00Z",
+          "name": "SPECIFIC GRAVITY UR",
+          "value": 1.004,
+          "unit": "1",
+          "code": "5811-5",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "1.005-1.030",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-18T14:55:00Z",
+          "name": "BLOOD URINE",
+          "value": "Negative",
+          "unit": null,
+          "code": "5794-3",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "Negative",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-18T14:55:00Z",
+          "name": "PH URINE",
+          "value": "7.0 pH units",
+          "unit": null,
+          "code": "2756-5",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "4.5-8.0",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-18T14:55:00Z",
+          "name": "PROTEIN URINE",
+          "value": "Negative",
+          "unit": null,
+          "code": "5804-0",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "Negative mg/dL",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-18T14:55:00Z",
+          "name": "UROBILINOGEN URINE",
+          "value": 0.2,
+          "unit": "EU/dL",
+          "code": "20405-7",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "<=1.0",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-18T14:55:00Z",
+          "name": "NITRITE URINE",
+          "value": "Negative",
+          "unit": null,
+          "code": "5802-4",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "Negative",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-18T14:55:00Z",
+          "name": "LEUKOCYTE ESTERASE U",
+          "value": "Trace",
+          "unit": null,
+          "code": "5799-2",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "Negative",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-18T14:55:00Z",
+          "name": "WHITE BLOOD CELLS UR",
+          "value": "3 /HPF",
+          "unit": null,
+          "code": "5821-4",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "0-5",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-18T14:55:00Z",
+          "name": "RED BLOOD CELLS UR",
+          "value": "1 /HPF",
+          "unit": null,
+          "code": "13945-1",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "0-4",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-18T14:55:00Z",
+          "name": "BACTERIA",
+          "value": "None",
+          "unit": null,
+          "code": "25145-4",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "Few",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-18T14:55:00Z",
+          "name": "SQUAMOUS EPITH CELLS",
+          "value": "6 /HPF",
+          "unit": null,
+          "code": "11277-1",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "0-5",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-18T14:55:00Z",
+          "name": "UA COMMENT",
+          "value": "See Footnote",
+          "unit": null,
+          "code": "X5600",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": null,
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Cytopathology (CYTOPATHOLOGY)",
+      "code": "88108",
+      "code_system": "2.16.840.1.113883.6.12",
+      "code_system_name": "CPT-4",
+      "tests": [
+        {
+          "date": "2011-08-13T09:56:14Z",
+          "name": "CYTOPATHOLOGY",
+          "value": "\n                            Sacred Heart Hospital\n                            \n                            Department of Laboratories\n                            \n                            JD 1028                                  Inquiry: (212)\n                            \n                            555-5555\n                            \n                            123 East 34th Street, New York NY  10001    Fax:     (212)\n                            \n                            555-5555\n                            \n                            \n                            \n                            \n                            \n                            C11-32794\n                            \n                            Cytopathology Report\n                            \n                            Date Collected: 8/13/2011\n                            \n                            Date Received:  8/15/2011 09:11\n                            \n                            Report Date:    8/16/2011\n                            \n                            \n                            \n                            Patient: TEST, VICTORIA Submitted by: TESTING A. PROVIDER,\n                            \n                            M.D.\n                            \n                                     1234 100TH ST WMC OB/GYN, J-130\n                            \n                                     APT 21 123 East 34th Street\n                            \n                                      New York, NY  10001\n                            \n                            \n                            \n                            SAH-MRN: 001234567 Telephone: 1(212) 555-5555      Fax: 1(212)\n                            \n                            555-5555\n                            \n                            Encounter #: 124782719\n                            \n                            Location: CLCC\n                            \n                            Age/Sex: 27/F\n                            \n                            \n                            \n                            \n                            \n                            \n                            \n                            CLINICAL INFORMATION:\n                            \n                            \n                            SOURCE OF SPECIMEN: Cervical/endocervical ThinPrep\n                            \n                            \n                            \n                            SPECIMEN CONSISTS OF:\n                            \n                            PreservCyt solution vial, 20 ml fluid - 1 cervical/endocervical\n                            \n                            ThinPrep prepared for Imager assisted analysis.\n                            \n                            \n                            \n                            \n                            \n                            CYTOLOGIC INTERPRETATION:\n                            \n                                 Specimen Adequacy:\n                            \n                                 Satisfactory for evaluation; endocervical/transformation\n                            \n                            zone component present.\n                            \n                            \n                            \n                                 Primary Diagnosis:\n                            \n                                 No intraepithelial lesion or malignancy identified.\n                            \n                            \n                            \n                                 Additional Findings:\n                            \n                                 Inflammation and associated inflammatory epithelial\n                            \n                            findings.\n                            \n                            \n                            \n                                      ** Electronically Signed Out **\n                            \n                            \n                            \n                            Sam Test-Ive, CT (ASCP)\n                            \n                            \n                            \n                            \n                            \n                                      Attending Pathologist\n                            \n                            ICD9 Codes:  V76.2\n                            \n                            Billing Codes:  \\F\\(Private Ambulatory)\n                            \n                            SNOMED:\n                            \n                            STES/sts900\n                          ",
+          "unit": null,
+          "code": "X11529-5",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": null,
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Urinalysis Complete (URINALYSIS, COMPLETE)",
+      "code": "81001",
+      "code_system": "2.16.840.1.113883.6.12",
+      "code_system_name": "CPT-4",
+      "tests": [
+        {
+          "date": "2011-08-13T09:56:00Z",
+          "name": "COLOR URINE",
+          "value": "Yellow",
+          "unit": null,
+          "code": "5778-6",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "Straw",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-13T09:56:00Z",
+          "name": "APPEARANCE URINE",
+          "value": "Clear",
+          "unit": null,
+          "code": "5767-9",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "Clear",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-13T09:56:00Z",
+          "name": "GLUCOSE URINE",
+          "value": "Negative",
+          "unit": null,
+          "code": "5792-7",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "Negative mg/dL",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-13T09:56:00Z",
+          "name": "BILIRUBIN URINE",
+          "value": "Negative",
+          "unit": null,
+          "code": "5770-3",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "Negative",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-13T09:56:00Z",
+          "name": "KETONES URINE",
+          "value": "Negative",
+          "unit": null,
+          "code": "5797-6",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "Negative mg/dL",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-13T09:56:00Z",
+          "name": "SPECIFIC GRAVITY UR",
+          "value": 1.012,
+          "unit": "1",
+          "code": "5811-5",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "1.005-1.030",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-13T09:56:00Z",
+          "name": "BLOOD URINE",
+          "value": "Negative",
+          "unit": null,
+          "code": "5794-3",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "Negative",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-13T09:56:00Z",
+          "name": "PH URINE",
+          "value": "7.0 pH units",
+          "unit": null,
+          "code": "2756-5",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "4.5-8.0",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-13T09:56:00Z",
+          "name": "PROTEIN URINE",
+          "value": "Negative",
+          "unit": null,
+          "code": "5804-0",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "Negative mg/dL",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-13T09:56:00Z",
+          "name": "UROBILINOGEN URINE",
+          "value": 0.2,
+          "unit": "EU/dL",
+          "code": "20405-7",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "<=1.0",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-13T09:56:00Z",
+          "name": "NITRITE URINE",
+          "value": "Negative",
+          "unit": null,
+          "code": "5802-4",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "Negative",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-13T09:56:00Z",
+          "name": "LEUKOCYTE ESTERASE U",
+          "value": "Trace",
+          "unit": null,
+          "code": "5799-2",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "Negative",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-13T09:56:00Z",
+          "name": "WHITE BLOOD CELLS UR",
+          "value": "8 /HPF",
+          "unit": null,
+          "code": "5821-4",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "0-5",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-13T09:56:00Z",
+          "name": "RED BLOOD CELLS UR",
+          "value": "0 /HPF",
+          "unit": null,
+          "code": "13945-1",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "0-4",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-13T09:56:00Z",
+          "name": "BACTERIA",
+          "value": "None",
+          "unit": null,
+          "code": "25145-4",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "Few",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-13T09:56:00Z",
+          "name": "SQUAMOUS EPITH CELLS",
+          "value": "10 /HPF",
+          "unit": null,
+          "code": "11277-1",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": "0-5",
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        },
+        {
+          "date": "2011-08-13T09:56:00Z",
+          "name": "UA COMMENT",
+          "value": "See Footnote",
+          "unit": null,
+          "code": "X5600",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": null,
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Urine Culture (URINE CULTURE)",
+      "code": "87086",
+      "code_system": "2.16.840.1.113883.6.12",
+      "code_system_name": "CPT-4",
+      "tests": [
+        {
+          "date": "2011-08-13T09:56:00Z",
+          "name": "FINAL REPORT",
+          "value": "<1,000 CFU/mL - Negative",
+          "unit": null,
+          "code": "X11529-54",
+          "code_system": "2.16.840.1.113883.6.1",
+          "code_system_name": "LOINC",
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": null,
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "OUTSIDE SONOGRAM SCAN",
+      "code": "27044",
+      "code_system": "1.2.840.114350.1.13.65.2.7.2.696580",
+      "code_system_name": "Epic.EAP.ID",
+      "tests": [
+        {
+          "date": "2011-08-11T00:00:00Z",
+          "name": "",
+          "value": null,
+          "unit": null,
+          "code": null,
+          "code_system": null,
+          "code_system_name": null,
+          "translation": {
+            "name": null,
+            "code": null,
+            "code_system": null,
+            "code_system_name": null
+          },
+          "reference_range": {
+            "text": null,
+            "low_unit": null,
+            "low_value": null,
+            "high_unit": null,
+            "high_value": null
+          }
+        }
+      ]
+    }
+  ],
+  "medications": [
+    {
+      "date_range": {
+        "start": "10/17/2014",
+        "end": null
+      },
+      "text": "1 tablet by mouth every day",
+      "product": {
+        "name": "NECON 1/50, 28, 1-50 MG-MCG Tab",
+        "code": null,
+        "code_system": null,
+        "text": "NECON 1/50, 28, 1-50 MG-MCG Tab",
+        "translation": {
+          "name": "Necon 1/50 (28) 1-50 Mg-McG Or Tabs",
+          "code": "762004",
+          "code_system": "2.16.840.1.113883.6.88",
+          "code_system_name": "RxNorm"
+        }
+      },
+      "dose_quantity": {
+        "value": null,
+        "unit": null
+      },
+      "rate_quantity": {
+        "value": null,
+        "unit": null
+      },
+      "precondition": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      },
+      "reason": {
+        "name": null,
+        "code": null,
+        "code_system": null
+      },
+      "route": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "schedule": {
+        "type": null,
+        "period_value": null,
+        "period_unit": null
+      },
+      "vehicle": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "administration": {
+        "name": null,
+        "code": null,
+        "code_system": null,
+        "code_system_name": null
+      },
+      "prescriber": {
+        "organization": null,
+        "person": null
+      }
+    }
+  ],
+  "problems": [],
+  "procedures": [],
+  "smoking_status": {
+    "date": null,
+    "name": null,
+    "code": null,
+    "code_system": null,
+    "code_system_name": null
+  },
+  "vitals": []
+}

@@ -1,0 +1,3416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type='text/xsl' href='STYLE.XSL'?>
+<ClinicalDocument xmlns="urn:hl7-org:v3">
+  <realmCode code="US" />
+  <typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3" />
+  <templateId root="1.2.840.114350.1.72.1.51693" />
+  <templateId root="2.16.840.1.113883.10.20.22.1.1" />
+  <templateId root="2.16.840.1.113883.10.20.22.1.2" />
+  <templateId root="1.2.840.114350.1.72.1.77896772" />
+  <id assigningAuthorityName="EPC" root="1.2.840.114350.1.13.65.2.7.8.688883.367227" />
+  <code code="34133-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Summarization of Episode Note" />
+  <title>Patient Health Summary</title>
+  <effectiveTime value="20150409103953-0400" />
+  <confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" />
+  <languageCode code="en-US" />
+  <setId assigningAuthorityName="EPC" extension="48b82fa8-dec6-11e4-8f41-87089983bd9c" root="1.2.840.114350.1.13.65.2.7.1.1" />
+  <versionNumber value="1" />
+  <recordTarget>
+    <patientRole>
+      <id root="1.2.840.114350.1.13.65.2.7.3.688884.100" extension="WMC4948304" />
+      <addr use="HP">
+        <streetAddressLine>1234 100TH ST</streetAddressLine>
+        <streetAddressLine>APT 21</streetAddressLine>
+        <streetAddressLine nullFlavor="UNK" />
+        <city>FOREST TREES</city>
+        <state>NY</state>
+        <postalCode>11375</postalCode>
+        <country>USA</country>
+      </addr>
+      <telecom use="HP" value="tel:+1-917-555-5555" />
+      <telecom use="WP" value="tel:+1-917-555-5555" />
+      <telecom use="MC" value="tel:+1-917-555-5555" />
+      <telecom value="mailto://VICTORIA.TEST@TESTMAIL.COM" />
+      <patient>
+        <name use="L">
+          <given>VICTORIA</given>
+          <family>TEST</family>
+        </name>
+        <administrativeGenderCode code="F" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGenderCode" displayName="Female" />
+        <birthTime value="19830122" />
+        <maritalStatusCode code="Single" codeSystem="2.16.840.1.113883.5.2" codeSystemName="MaritalStatusCode" displayName="SINGLE" />
+        <religiousAffiliationCode code="Other" codeSystem="2.16.840.1.113883.5.1076" codeSystemName="ReligiousAffiliation" />
+        <raceCode code="2106-3" codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDC Race and Ethnicity" displayName="WHITE" />
+        <ethnicGroupCode codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDC Race and Ethnicity" nullFlavor="UNK" />
+        <languageCommunication>
+          <languageCode code="ENG" />
+          <preferenceInd value="true" />
+        </languageCommunication>
+      </patient>
+      <providerOrganization>
+        <id root="1.2.840.114350.1.13.65.2.7.2.688879" extension="16400" />
+        <name>SACRED HEART MEDICAL COLLEGE</name>
+        <telecom use="WP" value="tel:+1-212-555-5555" />
+        <addr nullFlavor="NA">
+          <city>New York</city>
+          <state>NY</state>
+          <postalCode>10001</postalCode>
+        </addr>
+      </providerOrganization>
+    </patientRole>
+  </recordTarget>
+  <author>
+    <time value="20150409103953" />
+    <assignedAuthor>
+      <id root="1.2.840.114350.1.1" extension="8.1" />
+      <addr nullFlavor="NA">
+        <streetAddressLine nullFlavor="UNK" />
+        <city nullFlavor="UNK" />
+      </addr>
+      <telecom nullFlavor="NA" />
+      <assignedAuthoringDevice>
+        <manufacturerModelName>Epic - Version 8.1</manufacturerModelName>
+        <softwareName>Epic - Version 8.1</softwareName>
+      </assignedAuthoringDevice>
+      <representedOrganization>
+        <id root="1.2.840.114350.1.13.65.2.7.2.688879" extension="16400" />
+        <name>SACRED HEART MEDICAL COLLEGE</name>
+        <telecom use="WP" value="tel:+1-212-555-5555" />
+        <addr nullFlavor="NA">
+          <city>New York</city>
+          <state>NY</state>
+          <postalCode>10001</postalCode>
+        </addr>
+      </representedOrganization>
+    </assignedAuthor>
+  </author>
+  <custodian>
+    <assignedCustodian>
+      <representedCustodianOrganization>
+        <id root="1.2.840.114350.1.13.65.2.7.2.688879" extension="16400" />
+        <name>SACRED HEART MEDICAL COLLEGE</name>
+        <telecom use="WP" value="tel:+1-212-555-5555" />
+        <addr nullFlavor="NA">
+          <city>New York</city>
+          <state>NY</state>
+          <postalCode>10001</postalCode>
+        </addr>
+      </representedCustodianOrganization>
+    </assignedCustodian>
+  </custodian>
+  <participant typeCode="IND">
+    <templateId root="2.16.840.1.113883.3.88.11.32.3" />
+    <templateId root="2.16.840.1.113883.3.88.11.83.3" />
+    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.4" />
+    <time value="20060601" />
+    <associatedEntity classCode="ECON">
+      <id nullFlavor="UNK" />
+      <code nullFlavor="OTH">
+        <originalText>Other</originalText>
+      </code>
+      <addr nullFlavor="NA" />
+      <telecom use="HP" value="tel:+1-917-555-5555" />
+      <associatedPerson>
+        <name use="P">
+          <given>TEST^AMY A   (MOTHER)</given>
+        </name>
+      </associatedPerson>
+    </associatedEntity>
+  </participant>
+  <participant typeCode="IND">
+    <templateId root="2.16.840.1.113883.3.88.11.32.3" />
+    <templateId root="2.16.840.1.113883.3.88.11.83.3" />
+    <templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.4" />
+    <time value="20060601" />
+    <associatedEntity classCode="ECON">
+      <id nullFlavor="UNK" />
+      <code nullFlavor="OTH">
+        <originalText>Mother</originalText>
+      </code>
+      <addr nullFlavor="NA" />
+      <telecom nullFlavor="UNK" />
+      <associatedPerson>
+        <name use="P">
+          <given>,VICTORIA</given>
+        </name>
+      </associatedPerson>
+    </associatedEntity>
+  </participant>
+  <documentationOf typeCode="DOC">
+    <serviceEvent classCode="PCPR">
+      <effectiveTime>
+        <low value="19830122" />
+        <high value="20150409" />
+      </effectiveTime>
+      <performer typeCode="PRF">
+        <templateId root="2.16.840.1.113883.3.88.11.32.4" />
+        <templateId root="2.16.840.1.113883.3.88.11.83.4" />
+        <templateId root="1.3.6.1.4.1.19376.1.5.3.1.2.3" />
+        <functionCode code="PCP" codeSystem="2.16.840.1.113883.5.88" codeSystemName="ParticipationFunction" displayName="Primary Care Provider">
+          <originalText>Primary Care Provider</originalText>
+        </functionCode>
+        <time>
+          <low nullFlavor="NI" />
+          <high nullFlavor="PINF" />
+        </time>
+        <assignedEntity nullFlavor="NI">
+          <id nullFlavor="NA" />
+          <addr nullFlavor="NA" />
+          <telecom nullFlavor="NA" />
+          <assignedPerson nullFlavor="NA">
+            <name nullFlavor="NA" />
+          </assignedPerson>
+        </assignedEntity>
+      </performer>
+    </serviceEvent>
+  </documentationOf>
+  <component>
+    <structuredBody>
+      <component>
+        <section>
+          <code code="X-CE-PFD" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Note from SACRED HEART MEDICAL COLLEGE " />
+          <title>Note from SACRED HEART MEDICAL COLLEGE</title>
+          <text>
+            <content>This document contains information that was shared with VICTORIA TEST. It may not contain the entire record from SACRED HEART MEDICAL COLLEGE .</content>
+          </text>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.10.20.22.2.6.1" />
+          <id root="48C7E7CC-DEC6-11E4-8F41-87089983BD9C" />
+          <code code="48765-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Allergies, Adverse Reactions, Alerts" />
+          <title>Allergies</title>
+          <text>
+            <list>
+              <item ID="allergy1">
+                <caption ID="allergen2">PENICILLINS</caption>
+              </item>
+            </list>
+          </text>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.10.20.22.2.1.1" />
+          <id root="48DE4166-DEC6-11E4-8F41-87089983BD9C" />
+          <code code="10160-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="History of Medication Usage" />
+          <title>Current Medications</title>
+          <text>
+            <list>
+              <item ID="currx3">
+                <caption ID="med3">NECON 1/50, 28, 1-50 MG-MCG Tab</caption>
+                <content>(Started 10/17/2014)</content>
+                <paragraph ID="sig3">1 tablet by mouth every day</paragraph>
+              </item>
+            </list>
+          </text>
+          <entry>
+            <substanceAdministration classCode="SBADM" moodCode="INT">
+              <templateId root="2.16.840.1.113883.10.20.22.4.16" />
+              <id root="1.2.840.114350.1.13.65.2.7.2.798268" extension="92286760" />
+              <text mediaType="text/xml">
+                <reference value="#sig3" />
+              </text>
+              <statusCode code="completed" />
+              <effectiveTime xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="IVL_TS">
+                <low value="20141017" />
+                <high nullFlavor="UNK" />
+              </effectiveTime>
+              <consumable typeCode="CSM">
+                <manufacturedProduct classCode="MANU">
+                  <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2" />
+                  <templateId root="2.16.840.1.113883.10.20.1.53" />
+                  <templateId root="2.16.840.1.113883.3.88.11.32.9" />
+                  <templateId root="2.16.840.1.113883.3.88.11.83.8.2" />
+                  <templateId root="2.16.840.1.113883.3.249.11.100.13" />
+                  <templateId root="2.16.840.1.113883.10.20.22.4.23" />
+                  <manufacturedMaterial>
+                    <code nullFlavor="UNK">
+                      <originalText>
+                        <reference value="#med3" />
+                      </originalText>
+                      <translation code="762004" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RxNorm" displayName="Necon 1/50 (28) 1-50 Mg-McG Or Tabs" />
+                      <translation code="52544-245-31" codeSystem="2.16.840.1.113883.6.69" codeSystemName="NDC" displayName="Necon 1/50 (28) 1-50 Mg-McG Or Tabs" />
+                      <translation code="59716" codeSystem="2.16.840.1.113883.6.253" codeSystemName="Medispan Drug Descriptor ID" displayName="Necon 1/50 (28) 1-50 Mg-McG Or Tabs" />
+                      <translation code="25990002700310" codeSystem="2.16.840.1.113883.6.68" codeSystemName="Medi-Span Generic Product Identifier" displayName="Necon 1/50 (28) 1-50 Mg-McG Or Tabs" />
+                      <translation code="59716" codeSystem="2.16.840.1.113883.6.162" codeSystemName="Med-File (Medi-Span)" displayName="Necon 1/50 (28) 1-50 Mg-McG Or Tabs" />
+                    </code>
+                  </manufacturedMaterial>
+                </manufacturedProduct>
+              </consumable>
+              <author>
+                <time value="20141021205809+0000" />
+                <assignedAuthor>
+                  <id root="1.2.840.114350.1.13.65.2.7.2.836982" extension="129531" />
+                  <addr>
+                    <streetAddressLine>123 E 34TH ST, J-130</streetAddressLine>
+                    <city>NEW YORK</city>
+                    <state>NY</state>
+                    <postalCode>10001</postalCode>
+                  </addr>
+                  <telecom use="WP" value="tel:+1-212-555-5555" />
+                  <telecom use="WP" value="mailto://test1234@med.sacredheart.edu" />
+                  <assignedPerson>
+                    <name>
+                      <given>Sonia</given>
+                      <family>Testzz</family>
+                    </name>
+                  </assignedPerson>
+                  <representedOrganization>
+                    <id root="1.2.840.114350.1.13.65.2.7.2.688879" extension="16400" />
+                    <name>SACRED HEART MEDICAL COLLEGE</name>
+                    <telecom use="WP" value="tel:+1-212-555-5555" />
+                    <addr nullFlavor="NA">
+                      <city>New York</city>
+                      <state>NY</state>
+                      <postalCode>10001</postalCode>
+                    </addr>
+                  </representedOrganization>
+                </assignedAuthor>
+              </author>
+              <entryRelationship typeCode="SUBJ">
+                <observation classCode="OBS" moodCode="EVN">
+                  <code code="73639000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Prescription Drug" />
+                  <statusCode code="completed" />
+                </observation>
+              </entryRelationship>
+              <entryRelationship typeCode="SUBJ" inversionInd="true">
+                <act classCode="ACT" moodCode="INT">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.20" />
+                  <code code="311401005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" />
+                  <text>
+                    <reference value="#sig3" />
+                  </text>
+                  <statusCode code="completed" />
+                  <author>
+                    <time value="20141021205809+0000" />
+                    <assignedAuthor>
+                      <id root="1.2.840.114350.1.13.65.2.7.2.836982" extension="129531" />
+                      <addr>
+                        <streetAddressLine>123 E 34TH ST, J-130</streetAddressLine>
+                        <city>NEW YORK</city>
+                        <state>NY</state>
+                        <postalCode>10001</postalCode>
+                      </addr>
+                      <telecom use="WP" value="tel:+1-212-555-5555" />
+                      <telecom use="WP" value="mailto://test1234@med.sacredheart.edu" />
+                      <assignedPerson>
+                        <name>
+                          <given>Sonia</given>
+                          <family>Testzz</family>
+                        </name>
+                      </assignedPerson>
+                      <representedOrganization>
+                        <id root="1.2.840.114350.1.13.65.2.7.2.688879" extension="16400" />
+                        <name>SACRED HEART MEDICAL COLLEGE</name>
+                        <telecom use="WP" value="tel:+1-212-555-5555" />
+                        <addr nullFlavor="NA">
+                          <city>New York</city>
+                          <state>NY</state>
+                          <postalCode>10001</postalCode>
+                        </addr>
+                      </representedOrganization>
+                    </assignedAuthor>
+                  </author>
+                </act>
+              </entryRelationship>
+              <entryRelationship typeCode="REFR">
+                <supply classCode="SPLY" moodCode="INT">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.17" />
+                  <id root="1.2.840.114350.1.13.65.2.7.2.798268" extension="92286760" />
+                  <statusCode code="completed" />
+                  <repeatNumber value="12" />
+                  <quantity value="28" />
+                  <product>
+                    <manufacturedProduct classCode="MANU">
+                      <templateId root="1.3.6.1.4.1.19376.1.5.3.1.4.7.2" />
+                      <templateId root="2.16.840.1.113883.10.20.1.53" />
+                      <templateId root="2.16.840.1.113883.3.88.11.32.9" />
+                      <templateId root="2.16.840.1.113883.3.88.11.83.8.2" />
+                      <templateId root="2.16.840.1.113883.3.249.11.100.13" />
+                      <templateId root="2.16.840.1.113883.10.20.22.4.23" />
+                      <manufacturedMaterial>
+                        <code nullFlavor="UNK">
+                          <originalText>
+                            <reference value="#med3" />
+                          </originalText>
+                          <translation code="762004" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RxNorm" displayName="Necon 1/50 (28) 1-50 Mg-McG Or Tabs" />
+                          <translation code="52544-245-31" codeSystem="2.16.840.1.113883.6.69" codeSystemName="NDC" displayName="Necon 1/50 (28) 1-50 Mg-McG Or Tabs" />
+                          <translation code="59716" codeSystem="2.16.840.1.113883.6.253" codeSystemName="Medispan Drug Descriptor ID" displayName="Necon 1/50 (28) 1-50 Mg-McG Or Tabs" />
+                          <translation code="25990002700310" codeSystem="2.16.840.1.113883.6.68" codeSystemName="Medi-Span Generic Product Identifier" displayName="Necon 1/50 (28) 1-50 Mg-McG Or Tabs" />
+                          <translation code="59716" codeSystem="2.16.840.1.113883.6.162" codeSystemName="Med-File (Medi-Span)" displayName="Necon 1/50 (28) 1-50 Mg-McG Or Tabs" />
+                        </code>
+                      </manufacturedMaterial>
+                    </manufacturedProduct>
+                  </product>
+                </supply>
+              </entryRelationship>
+              <entryRelationship typeCode="REFR">
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.1.47" />
+                  <code code="33999-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="Status" />
+                  <statusCode code="completed" />
+                  <value code="55561003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Active" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CE" />
+                </observation>
+              </entryRelationship>
+            </substanceAdministration>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section>
+          <id root="48E10892-DEC6-11E4-8F41-87089983BD9C" />
+          <code code="11450-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="PROBLEM LIST" />
+          <title>Active Problems</title>
+          <text>
+            <content ID="nof4">Not on file</content>
+          </text>
+          <entry>
+            <act classCode="ACT" moodCode="EVN" nullFlavor="ASKU">
+              <templateId root="2.16.840.1.113883.10.20.22.4.3" />
+              <id nullFlavor="NI" />
+              <code code="CONC" codeSystem="2.16.840.1.113883.5.6" />
+              <statusCode code="active" />
+              <effectiveTime>
+                <low nullFlavor="UNK" />
+              </effectiveTime>
+              <entryRelationship typeCode="SUBJ" inversionInd="false">
+                <observation classCode="OBS" moodCode="EVN" nullFlavor="ASKU">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.4" />
+                  <id nullFlavor="NI" />
+                  <code code="55607006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Problem" />
+                  <text>
+                    <reference value="#nof4" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime>
+                    <low nullFlavor="UNK" />
+                  </effectiveTime>
+                  <value code="64572001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT" displayName="Disease" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CD">
+                    <originalText>
+                      <reference value="#nof4" />
+                    </originalText>
+                  </value>
+                </observation>
+              </entryRelationship>
+            </act>
+          </entry>
+        </section>
+      </component>
+      <component>
+        <section>
+          <templateId root="2.16.840.1.113883.10.20.22.2.3.1" />
+          <id root="49231AB6-DEC6-11E4-8F41-87089983BD9C" />
+          <code code="30954-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="STUDIES SUMMARY" />
+          <title>Results</title>
+          <text>
+            <list styleCode="TOC">
+              <item ID="Result22">
+                <caption>Cytology, Gyn (CYTOLOGY, GYN) (10/10/2014  3:20 PM EDT)</caption>
+                <table>
+                  <colgroup>
+                    <col width="25%" />
+                    <col width="50%" />
+                    <col width="25%" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>Component</th>
+                      <th>Value</th>
+                      <th>Range</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ID="Result22Comp1">
+                      <td ID="Result22Comp1Name">CYTOPATHOLOGY</td>
+                      <td styleCode="noIndent">
+                        <content styleCode="pre">
+                          <content ID="Result22Comp1Value">
+                            <content>Sacred Heart Hospital</content>
+                            <br />
+                            <content>Department of Laboratories</content>
+                            <br />
+                            <content>JD 1028                                  Inquiry: (212)</content>
+                            <br />
+                            <content>555-5555</content>
+                            <br />
+                            <content>123 East 34th Street, New York NY  10001    Fax:     (212)</content>
+                            <br />
+                            <content>555-5555</content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content>C14-45547</content>
+                            <br />
+                            <content>Cytopathology Report</content>
+                            <br />
+                            <content>Date Collected: 10/10/2014</content>
+                            <br />
+                            <content>Date Received:  10/10/2014 17:13</content>
+                            <br />
+                            <content>Report Date:    10/15/2014</content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content>Patient: TEST, VICTORIA Submitted by: TESTING A. PROVIDER,</content>
+                            <br />
+                            <content>M.D.</content>
+                            <br />
+                            <content>         1234 100TH ST WMC OB/GYN, J-130</content>
+                            <br />
+                            <content>         APT 21 123 East 34th Street</content>
+                            <br />
+                            <content>          New York, NY  10001</content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content>SAH-MRN: 001234567 Telephone: 1(212) 555-5555      Fax: 555-5555</content>
+                            <br />
+                            <content>Encounter #: 12345678</content>
+                            <br />
+                            <content>Location: CLCC</content>
+                            <br />
+                            <content>Age/Sex: 31/F</content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content>CLINICAL INFORMATION:</content>
+                            <br />
+                            <content>ROUTINE    Age: 31  LMP: 9/18/14</content>
+                            <br />
+                            <content>V72.31 [Routine Gynecological Examination]</content>
+                            <br />
+                            <content>SOURCE OF SPECIMEN: Cervical/endocervical ThinPrep</content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content>SPECIMEN CONSISTS OF:</content>
+                            <br />
+                            <content>PreservCyt solution vial, 20 ml fluid - 1 cervical/endocervical</content>
+                            <br />
+                            <content>ThinPrep prepared for Imager assisted analysis.</content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content>CYTOLOGIC INTERPRETATION:</content>
+                            <br />
+                            <content>     Specimen Adequacy:</content>
+                            <br />
+                            <content>     Satisfactory for evaluation.</content>
+                            <br />
+                            <content>     Specimen lacks an adequate endocervical/transformation zone</content>
+                            <br />
+                            <content>component.</content>
+                            <br />
+                            <content>Limited by cytolysis.</content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content>     Primary Diagnosis:</content>
+                            <br />
+                            <content>     No intraepithelial lesion or malignancy identified.</content>
+                            <br />
+                            <content>  Screening with Pap test detects premalignant and malignant</content>
+                            <br />
+                            <content>conditions of the uterine cervix. Pap test has an inherent</content>
+                            <br />
+                            <content>false-negative rate and regular screening is critical for cancer</content>
+                            <br />
+                            <content>prevention (1). Co-testing with Pap test and HPV test for</content>
+                            <br />
+                            <content>cervical cancer screening is preferred in women =&gt; 30 years (2).</content>
+                            <br />
+                            <content>(1) Papanicalaou Society of Cytopathology Practice Guidelines</content>
+                            <br />
+                            <content>Task Force Recommendation.  Diagn Cytopathol, 2003;28:282; (2)</content>
+                            <br />
+                            <content>American Society for colposcopy and cervical pathology (ASCCP),</content>
+                            <br />
+                            <content>The American Cancer Society (ACS) and American Society for</content>
+                            <br />
+                            <content>Clinical Pathology (ASCP) Screening Guidelines.  AJCP,</content>
+                            <br />
+                            <content>2012;137:516.</content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content>          ** Electronically Signed Out **</content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content>John J. Testling, CT (ASCP)</content>
+                            <br />
+                            <content>William Tests, CT (ASCP)</content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content>          Attending Pathologist</content>
+                            <br />
+                            <content>ICD9 Codes:  V76.2</content>
+                            <br />
+                            <content>Billing Codes:  \F\(Private Ambulatory)</content>
+                            <br />
+                            <content>SNOMED:</content>
+                            <br />
+                            <content>TEST1/Testling</content>
+                          </content>
+                        </content>
+                      </td>
+                      <td />
+                    </tr>
+                  </tbody>
+                </table>
+              </item>
+              <item ID="Result23">
+                <caption>Cytology, Gyn (CYTOLOGY, GYN) (07/13/2013  1:36 PM EDT)</caption>
+                <table>
+                  <colgroup>
+                    <col width="25%" />
+                    <col width="50%" />
+                    <col width="25%" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>Component</th>
+                      <th>Value</th>
+                      <th>Range</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ID="Result23Comp1">
+                      <td ID="Result23Comp1Name">CYTOPATHOLOGY</td>
+                      <td styleCode="noIndent">
+                        <content styleCode="pre">
+                          <content ID="Result23Comp1Value">
+                            <content>Sacred Heart Hospital</content>
+                            <br />
+                            <content>Department of Laboratories</content>
+                            <br />
+                            <content>JD 1028                                  Inquiry: (212)</content>
+                            <br />
+                            <content>555-5555</content>
+                            <br />
+                            <content>123 East 34th Street, New York NY  10001    Fax:     (212)</content>
+                            <br />
+                            <content>555-5555</content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content>C13-30680</content>
+                            <br />
+                            <content>Cytopathology Report</content>
+                            <br />
+                            <content>Date Collected: 7/13/2013</content>
+                            <br />
+                            <content>Date Received:  7/15/2013 10:19</content>
+                            <br />
+                            <content>Report Date:    7/16/2013</content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content>Patient: TEST, VICTORIA Submitted by: TESTING A. PROVIDER,</content>
+                            <br />
+                            <content>M.D.</content>
+                            <br />
+                            <content>         1234 100TH ST WMC OB/GYN, J-130</content>
+                            <br />
+                            <content>         APT21 123 East 34th Street</content>
+                            <br />
+                            <content>          New York, NY  10001</content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content>SAH-MRN: 001234567 Telephone: 1(212) 555-5555      Fax: 555-5555</content>
+                            <br />
+                            <content>Encounter #: 124578979</content>
+                            <br />
+                            <content>Location: CLCC</content>
+                            <br />
+                            <content>Age/Sex: 29/F</content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content>CLINICAL INFORMATION:</content>
+                            <br />
+                            <content>ROUTINE    Age: 29  LMP: 6/30/13</content>
+                            <br />
+                            <content>V72.31 [Routine Gynecological Examination]</content>
+                            <br />
+                            <content>SOURCE OF SPECIMEN: Cervical/endocervical ThinPrep</content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content>SPECIMEN CONSISTS OF:</content>
+                            <br />
+                            <content>PreservCyt solution vial, 20 ml fluid - 1 cervical/endocervical</content>
+                            <br />
+                            <content>ThinPrep prepared for Imager assisted analysis.</content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content>CYTOLOGIC INTERPRETATION:</content>
+                            <br />
+                            <content>     Specimen Adequacy:</content>
+                            <br />
+                            <content>     Satisfactory for evaluation.</content>
+                            <br />
+                            <content>          Specimen lacks an adequate endocervical/transformation</content>
+                            <br />
+                            <content>zone component.</content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content>     Primary Diagnosis:</content>
+                            <br />
+                            <content>     No intraepithelial lesion or malignancy identified.</content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content>          ** Electronically Signed Out **</content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content>Mary A. Testing, CT (ASCP), CMIAC</content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content>          Attending Pathologist</content>
+                            <br />
+                            <content>ICD9 Codes:  V76.2</content>
+                            <br />
+                            <content>Billing Codes:  \F\(Private Ambulatory)</content>
+                            <br />
+                            <content>SNOMED:</content>
+                            <br />
+                            <content>MTes/mtes</content>
+                          </content>
+                        </content>
+                      </td>
+                      <td />
+                    </tr>
+                  </tbody>
+                </table>
+              </item>
+              <item ID="Result24">
+                <caption>Human Chorionic Gonadotropin (HCG), Beta, Qn (BETA HCG,QUANTATIVE) (06/05/2013  4:00 PM EDT)</caption>
+                <table>
+                  <colgroup>
+                    <col width="25%" />
+                    <col width="50%" />
+                    <col width="25%" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>Component</th>
+                      <th>Value</th>
+                      <th>Range</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ID="Result24Comp1">
+                      <td ID="Result24Comp1Name">HCG (TOTAL BETA)</td>
+                      <td>
+                        <content>
+                          <content>&lt;0.5</content>
+                        </content>
+                        <content styleCode="allIndent">
+                          <content styleCode="cellHeader">Comment:</content>
+                          <br />
+                          <content ID="Result24Comp1Comment" styleCode="pre">
+                            <content>Heterophilic antibodies in human serum can react with reagent</content>
+                            <br />
+                            <content>immunoglobulins,interfering with in vitro immunoassays. Patients routinely</content>
+                            <br />
+                            <content>exposed to animalsor to animal serum products can be prone to this</content>
+                            <br />
+                            <content>interference and anomalousvalues may be observed.             If the total hCG</content>
+                            <br />
+                            <content>level is inconsistent with clinicalpresentation, results should be          </content>
+                            <br />
+                            <content>                 confirmed by analternate hCG method or a urine-based assay.  </content>
+                            <br />
+                            <content>           Males and Non-Pregnant females: &lt;5 mIU/mL             Use as a</content>
+                            <br />
+                            <content>Pregnancy Test:                        Negative:      &lt;5    mIU/mL            </content>
+                            <br />
+                            <content>            Borderline: 5-25    mIU/mL                        Positive:    &gt;25</content>
+                            <br />
+                            <content>      mIU/mL</content>
+                            <br />
+                          </content>
+                        </content>
+                      </td>
+                      <td>&lt;=5.0 mIU/mL</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </item>
+              <item ID="Result25">
+                <caption>CBC Panel w/Platelets + Differential (CBC W/ PLATELETS+ DIFF (COMPLETE)) (06/05/2013  4:00 PM EDT)</caption>
+                <table>
+                  <colgroup>
+                    <col width="25%" />
+                    <col width="50%" />
+                    <col width="25%" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>Component</th>
+                      <th>Value</th>
+                      <th>Range</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ID="Result25Comp1">
+                      <td ID="Result25Comp1Name">WBC COUNT</td>
+                      <td>5.4</td>
+                      <td>3.4-11.2 x10(3)/uL</td>
+                    </tr>
+                    <tr ID="Result25Comp2">
+                      <td ID="Result25Comp2Name">RED BLOOD CELL COUNT</td>
+                      <td>4.30</td>
+                      <td>3.80-5.20 x10(6)/uL</td>
+                    </tr>
+                    <tr ID="Result25Comp3">
+                      <td ID="Result25Comp3Name">HEMOGLOBIN</td>
+                      <td>13.9</td>
+                      <td>11.7-15.3 g/dL</td>
+                    </tr>
+                    <tr ID="Result25Comp4">
+                      <td ID="Result25Comp4Name">HEMATOCRIT</td>
+                      <td>41.2</td>
+                      <td>35.0-45.0 %</td>
+                    </tr>
+                    <tr ID="Result25Comp5">
+                      <td ID="Result25Comp5Name">MEAN CORPUSCULAR VOL</td>
+                      <td>96.0</td>
+                      <td>81.0-100.0 fL</td>
+                    </tr>
+                    <tr ID="Result25Comp6">
+                      <td ID="Result25Comp6Name">(MCH)MEAN CORP HGB</td>
+                      <td>32.4</td>
+                      <td>27.0-34.0 pg</td>
+                    </tr>
+                    <tr ID="Result25Comp7">
+                      <td ID="Result25Comp7Name">MEAN CORP HGB CONC</td>
+                      <td>33.8</td>
+                      <td>32.0-36.0 g/dL</td>
+                    </tr>
+                    <tr ID="Result25Comp8">
+                      <td ID="Result25Comp8Name">RED CELL DIST WIDTH</td>
+                      <td>12.8</td>
+                      <td>11.5-14.5 %</td>
+                    </tr>
+                    <tr ID="Result25Comp9">
+                      <td ID="Result25Comp9Name">PLATELET COUNT</td>
+                      <td>183</td>
+                      <td>150-450 x10(3)/uL</td>
+                    </tr>
+                    <tr ID="Result25Comp10">
+                      <td ID="Result25Comp10Name">MEAN PLATELET VOLUME</td>
+                      <td>9.3</td>
+                      <td>7.0-11.5 fL</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </item>
+              <item ID="Result26">
+                <caption>Automated Differential (AUTO DIFFERENTIAL) (06/05/2013  4:00 PM EDT)</caption>
+                <table>
+                  <colgroup>
+                    <col width="25%" />
+                    <col width="50%" />
+                    <col width="25%" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>Component</th>
+                      <th>Value</th>
+                      <th>Range</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ID="Result26Comp1">
+                      <td ID="Result26Comp1Name">NEUTROPHIL%AUTO</td>
+                      <td>60.3</td>
+                      <td>45.0-75.0 %</td>
+                    </tr>
+                    <tr ID="Result26Comp2">
+                      <td ID="Result26Comp2Name">LYMPH%AUTO</td>
+                      <td>31.0</td>
+                      <td>20.0-50.0 %</td>
+                    </tr>
+                    <tr ID="Result26Comp3">
+                      <td ID="Result26Comp3Name">MONOCYTE%AUTO</td>
+                      <td>6.6</td>
+                      <td>2.0-11.0 %</td>
+                    </tr>
+                    <tr ID="Result26Comp4">
+                      <td ID="Result26Comp4Name">EOSINOPHIL%AUTO</td>
+                      <td>1.6</td>
+                      <td>0.0-5.0 %</td>
+                    </tr>
+                    <tr ID="Result26Comp5">
+                      <td ID="Result26Comp5Name">BASOPHILE%AUTO</td>
+                      <td>0.5</td>
+                      <td>0.0-1.0 %</td>
+                    </tr>
+                    <tr ID="Result26Comp6">
+                      <td ID="Result26Comp6Name">NEUTROPHIL ABSOLUTE#</td>
+                      <td>3.3</td>
+                      <td>1.8-7.0 x10(3)/uL</td>
+                    </tr>
+                    <tr ID="Result26Comp7">
+                      <td ID="Result26Comp7Name">LYMPH ABSOLUTE #</td>
+                      <td>1.7</td>
+                      <td>1.0-4.8 x10(3)/uL</td>
+                    </tr>
+                    <tr ID="Result26Comp8">
+                      <td ID="Result26Comp8Name">MONOCYTE ABSOLUTE #</td>
+                      <td>0.4</td>
+                      <td>0.2-0.9 x10(3)/uL</td>
+                    </tr>
+                    <tr ID="Result26Comp9">
+                      <td ID="Result26Comp9Name">EOSINOPHIL ABS #</td>
+                      <td>0.10</td>
+                      <td>0.00-0.45 x10(3)/uL</td>
+                    </tr>
+                    <tr ID="Result26Comp10">
+                      <td ID="Result26Comp10Name">BASOPHIL ABSOLUTE #</td>
+                      <td>0.00</td>
+                      <td>0.00-0.10 x10(3)/uL</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </item>
+              <item ID="Result27">
+                <caption>Prothrombin Time w/INR (PROTHROMBIN TIME - INR) (08/18/2011  2:55 PM EDT)</caption>
+                <table>
+                  <colgroup>
+                    <col width="25%" />
+                    <col width="50%" />
+                    <col width="25%" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>Component</th>
+                      <th>Value</th>
+                      <th>Range</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ID="Result27Comp1">
+                      <td ID="Result27Comp1Name">PROTHROMBIN TIME</td>
+                      <td>
+                        <content>
+                          <content>12.9</content>
+                        </content>
+                        <content styleCode="allIndent">
+                          <content styleCode="cellHeader">Comment:</content>
+                          <br />
+                          <content ID="Result27Comp1Comment" styleCode="pre">
+                            <content>Effective 12/7/2010 the PT and INR reportable limits have been extended. The</content>
+                            <br />
+                            <content>new PT reportable range is 9.0 to 117.0 seconds and the new INR ratio</content>
+                            <br />
+                            <content>reportable range is 0.9 to 9.1.</content>
+                            <br />
+                          </content>
+                        </content>
+                      </td>
+                      <td>9.8-13.2 second(s)</td>
+                    </tr>
+                    <tr ID="Result27Comp2">
+                      <td ID="Result27Comp2Name">INT'L NORMAL RATIO</td>
+                      <td>
+                        <content>
+                          <content>1.1</content>
+                        </content>
+                        <content styleCode="allIndent">
+                          <content styleCode="cellHeader">Comment:</content>
+                          <br />
+                          <content ID="Result27Comp2Comment" styleCode="pre">
+                            <content>An INR of 2.0 - 3.0 is currently recommended for venous thromboembolic</content>
+                            <br />
+                            <content>prophylaxis.</content>
+                            <br />
+                            <content>For additional recommendations see Chest 2004; 126 (suppl).</content>
+                            <br />
+                            <content>Effective 12/7/2010 the PT and INR reportable limits have been extended. The</content>
+                            <br />
+                            <content>new PT reportable range is 9.0 to 117.0 seconds and the new INR ratio</content>
+                            <br />
+                            <content>reportable range is 0.9 to 9.1.</content>
+                            <br />
+                          </content>
+                        </content>
+                      </td>
+                      <td>0.9-1.1 ratio</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </item>
+              <item ID="Result28">
+                <caption>Activated PTT (ACTIVATED PTT) (08/18/2011  2:55 PM EDT)</caption>
+                <table>
+                  <colgroup>
+                    <col width="25%" />
+                    <col width="50%" />
+                    <col width="25%" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>Component</th>
+                      <th>Value</th>
+                      <th>Range</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ID="Result28Comp1">
+                      <td ID="Result28Comp1Name">ACTIVATED PTT</td>
+                      <td>
+                        <content>
+                          <content>28.2</content>
+                        </content>
+                        <content styleCode="allIndent">
+                          <content styleCode="cellHeader">Comment:</content>
+                          <br />
+                          <content ID="Result28Comp1Comment" styleCode="pre">
+                            <content>Effective 9/19/2010, the Laboratory has moved APTT testing from the Sysmex</content>
+                            <br />
+                            <content>CA1500 to the ACL TOP. See new reference ranges for APTT.</content>
+                            <br />
+                            <content>New Heparin Therapeutic Range is 64 - 97 seconds.</content>
+                            <br />
+                          </content>
+                        </content>
+                      </td>
+                      <td>26.0-35.0 second(s)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </item>
+              <item ID="Result29">
+                <caption>CBC Panel w/Platelets + w/o Differential (CBC PLATELET W/O DIFFERENTIAL) (08/18/2011  2:55 PM EDT)</caption>
+                <table>
+                  <colgroup>
+                    <col width="25%" />
+                    <col width="50%" />
+                    <col width="25%" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>Component</th>
+                      <th>Value</th>
+                      <th>Range</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ID="Result29Comp1">
+                      <td ID="Result29Comp1Name">WBC COUNT</td>
+                      <td>6.7</td>
+                      <td>3.4-11.2 x10(3)/uL</td>
+                    </tr>
+                    <tr ID="Result29Comp2">
+                      <td ID="Result29Comp2Name">RED BLOOD CELL COUNT</td>
+                      <td>3.86</td>
+                      <td>3.80-5.20 x10(6)/uL</td>
+                    </tr>
+                    <tr ID="Result29Comp3">
+                      <td ID="Result29Comp3Name">HEMOGLOBIN</td>
+                      <td>12.6</td>
+                      <td>11.7-15.3 g/dL</td>
+                    </tr>
+                    <tr ID="Result29Comp4">
+                      <td ID="Result29Comp4Name">HEMATOCRIT</td>
+                      <td>36.3</td>
+                      <td>35.0-45.0 %</td>
+                    </tr>
+                    <tr ID="Result29Comp5">
+                      <td ID="Result29Comp5Name">MEAN CORPUSCULAR VOL</td>
+                      <td>94.0</td>
+                      <td>81.0-100.0 fL</td>
+                    </tr>
+                    <tr ID="Result29Comp6">
+                      <td ID="Result29Comp6Name">(MCH)MEAN CORP HGB</td>
+                      <td>32.7</td>
+                      <td>27.0-34.0 pg</td>
+                    </tr>
+                    <tr ID="Result29Comp7">
+                      <td ID="Result29Comp7Name">MEAN CORP HGB CONC</td>
+                      <td>34.8</td>
+                      <td>32.0-36.0 g/dL</td>
+                    </tr>
+                    <tr ID="Result29Comp8">
+                      <td ID="Result29Comp8Name">RED CELL DIST WIDTH</td>
+                      <td>12.6</td>
+                      <td>11.5-14.5 %</td>
+                    </tr>
+                    <tr ID="Result29Comp9">
+                      <td ID="Result29Comp9Name">PLATELET COUNT</td>
+                      <td>166</td>
+                      <td>150-450 x10(3)/uL</td>
+                    </tr>
+                    <tr ID="Result29Comp10">
+                      <td ID="Result29Comp10Name">MEAN PLATELET VOLUME</td>
+                      <td>8.5</td>
+                      <td>7.0-11.5 fL</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </item>
+              <item ID="Result30">
+                <caption>Urinalysis Complete (URINALYSIS, COMPLETE) (08/18/2011  2:55 PM EDT)</caption>
+                <table>
+                  <colgroup>
+                    <col width="25%" />
+                    <col width="50%" />
+                    <col width="25%" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>Component</th>
+                      <th>Value</th>
+                      <th>Range</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ID="Result30Comp1">
+                      <td ID="Result30Comp1Name">COLOR URINE</td>
+                      <td>Yellow</td>
+                      <td>Straw</td>
+                    </tr>
+                    <tr ID="Result30Comp2">
+                      <td ID="Result30Comp2Name">APPEARANCE URINE</td>
+                      <td>Clear</td>
+                      <td>Clear</td>
+                    </tr>
+                    <tr ID="Result30Comp3">
+                      <td ID="Result30Comp3Name">GLUCOSE URINE</td>
+                      <td>Negative</td>
+                      <td>Negative mg/dL</td>
+                    </tr>
+                    <tr ID="Result30Comp4">
+                      <td ID="Result30Comp4Name">BILIRUBIN URINE</td>
+                      <td>Negative</td>
+                      <td>Negative</td>
+                    </tr>
+                    <tr ID="Result30Comp5">
+                      <td ID="Result30Comp5Name">KETONES URINE</td>
+                      <td>Negative</td>
+                      <td>Negative mg/dL</td>
+                    </tr>
+                    <tr ID="Result30Comp6">
+                      <td ID="Result30Comp6Name">SPECIFIC GRAVITY UR</td>
+                      <td>1.004</td>
+                      <td>1.005-1.030</td>
+                    </tr>
+                    <tr ID="Result30Comp7">
+                      <td ID="Result30Comp7Name">BLOOD URINE</td>
+                      <td>Negative</td>
+                      <td>Negative</td>
+                    </tr>
+                    <tr ID="Result30Comp8">
+                      <td ID="Result30Comp8Name">PH URINE</td>
+                      <td>7.0</td>
+                      <td>4.5-8.0 pH units</td>
+                    </tr>
+                    <tr ID="Result30Comp9">
+                      <td ID="Result30Comp9Name">PROTEIN URINE</td>
+                      <td>Negative</td>
+                      <td>Negative mg/dL</td>
+                    </tr>
+                    <tr ID="Result30Comp10">
+                      <td ID="Result30Comp10Name">UROBILINOGEN URINE</td>
+                      <td>0.2</td>
+                      <td>&lt;=1.0 EU/dL</td>
+                    </tr>
+                    <tr ID="Result30Comp11">
+                      <td ID="Result30Comp11Name">NITRITE URINE</td>
+                      <td>Negative</td>
+                      <td>Negative</td>
+                    </tr>
+                    <tr ID="Result30Comp12">
+                      <td ID="Result30Comp12Name">LEUKOCYTE ESTERASE U</td>
+                      <td>Trace</td>
+                      <td>Negative</td>
+                    </tr>
+                    <tr ID="Result30Comp13">
+                      <td ID="Result30Comp13Name">WHITE BLOOD CELLS UR</td>
+                      <td>3</td>
+                      <td>0-5 /HPF</td>
+                    </tr>
+                    <tr ID="Result30Comp14">
+                      <td ID="Result30Comp14Name">RED BLOOD CELLS UR</td>
+                      <td>1</td>
+                      <td>0-4 /HPF</td>
+                    </tr>
+                    <tr ID="Result30Comp15">
+                      <td ID="Result30Comp15Name">BACTERIA</td>
+                      <td>None</td>
+                      <td>Few</td>
+                    </tr>
+                    <tr ID="Result30Comp16">
+                      <td ID="Result30Comp16Name">SQUAMOUS EPITH CELLS</td>
+                      <td>6</td>
+                      <td>0-5 /HPF</td>
+                    </tr>
+                    <tr ID="Result30Comp17">
+                      <td ID="Result30Comp17Name">UA COMMENT</td>
+                      <td>
+                        <content>
+                          <content>See Footnote</content>
+                        </content>
+                        <content styleCode="allIndent">
+                          <content styleCode="cellHeader">Comment:</content>
+                          <br />
+                          <content ID="Result30Comp17Comment" styleCode="pre">
+                            <content>The sediment has been examined for WBC, RBC, CASTS, CRYSTALS and EPITHELIAL</content>
+                            <br />
+                            <content>CELLS, which are only reported if present.</content>
+                            <br />
+                          </content>
+                        </content>
+                      </td>
+                      <td />
+                    </tr>
+                  </tbody>
+                </table>
+              </item>
+              <item ID="Result31">
+                <caption>Cytopathology (CYTOPATHOLOGY) (08/13/2011  9:56 AM EDT)</caption>
+                <table>
+                  <colgroup>
+                    <col width="25%" />
+                    <col width="50%" />
+                    <col width="25%" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>Component</th>
+                      <th>Value</th>
+                      <th>Range</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ID="Result31Comp1">
+                      <td ID="Result31Comp1Name">CYTOPATHOLOGY</td>
+                      <td styleCode="noIndent">
+                        <content styleCode="pre">
+                          <content ID="Result31Comp1Value">
+                            <content>Sacred Heart Hospital</content>
+                            <br />
+                            <content>Department of Laboratories</content>
+                            <br />
+                            <content>JD 1028                                  Inquiry: (212)</content>
+                            <br />
+                            <content>555-5555</content>
+                            <br />
+                            <content>123 East 34th Street, New York NY  10001    Fax:     (212)</content>
+                            <br />
+                            <content>555-5555</content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content>C11-32794</content>
+                            <br />
+                            <content>Cytopathology Report</content>
+                            <br />
+                            <content>Date Collected: 8/13/2011</content>
+                            <br />
+                            <content>Date Received:  8/15/2011 09:11</content>
+                            <br />
+                            <content>Report Date:    8/16/2011</content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content>Patient: TEST, VICTORIA Submitted by: TESTING A. PROVIDER,</content>
+                            <br />
+                            <content>M.D.</content>
+                            <br />
+                            <content>         1234 100TH ST WMC OB/GYN, J-130</content>
+                            <br />
+                            <content>         APT 21 123 East 34th Street</content>
+                            <br />
+                            <content>          New York, NY  10001</content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content>SAH-MRN: 001234567 Telephone: 1(212) 555-5555      Fax: 1(212)</content>
+                            <br />
+                            <content>555-5555</content>
+                            <br />
+                            <content>Encounter #: 124782719</content>
+                            <br />
+                            <content>Location: CLCC</content>
+                            <br />
+                            <content>Age/Sex: 27/F</content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content>CLINICAL INFORMATION:</content>
+                            <br />
+                            <br />
+                            <content>SOURCE OF SPECIMEN: Cervical/endocervical ThinPrep</content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content>SPECIMEN CONSISTS OF:</content>
+                            <br />
+                            <content>PreservCyt solution vial, 20 ml fluid - 1 cervical/endocervical</content>
+                            <br />
+                            <content>ThinPrep prepared for Imager assisted analysis.</content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content>CYTOLOGIC INTERPRETATION:</content>
+                            <br />
+                            <content>     Specimen Adequacy:</content>
+                            <br />
+                            <content>     Satisfactory for evaluation; endocervical/transformation</content>
+                            <br />
+                            <content>zone component present.</content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content>     Primary Diagnosis:</content>
+                            <br />
+                            <content>     No intraepithelial lesion or malignancy identified.</content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content>     Additional Findings:</content>
+                            <br />
+                            <content>     Inflammation and associated inflammatory epithelial</content>
+                            <br />
+                            <content>findings.</content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content>          ** Electronically Signed Out **</content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content>Sam Test-Ive, CT (ASCP)</content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content></content>
+                            <br />
+                            <content>          Attending Pathologist</content>
+                            <br />
+                            <content>ICD9 Codes:  V76.2</content>
+                            <br />
+                            <content>Billing Codes:  \F\(Private Ambulatory)</content>
+                            <br />
+                            <content>SNOMED:</content>
+                            <br />
+                            <content>STES/sts900</content>
+                          </content>
+                        </content>
+                      </td>
+                      <td />
+                    </tr>
+                  </tbody>
+                </table>
+              </item>
+              <item ID="Result32">
+                <caption>Urinalysis Complete (URINALYSIS, COMPLETE) (08/13/2011  9:56 AM EDT)</caption>
+                <table>
+                  <colgroup>
+                    <col width="25%" />
+                    <col width="50%" />
+                    <col width="25%" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>Component</th>
+                      <th>Value</th>
+                      <th>Range</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ID="Result32Comp1">
+                      <td ID="Result32Comp1Name">COLOR URINE</td>
+                      <td>Yellow</td>
+                      <td>Straw</td>
+                    </tr>
+                    <tr ID="Result32Comp2">
+                      <td ID="Result32Comp2Name">APPEARANCE URINE</td>
+                      <td>Clear</td>
+                      <td>Clear</td>
+                    </tr>
+                    <tr ID="Result32Comp3">
+                      <td ID="Result32Comp3Name">GLUCOSE URINE</td>
+                      <td>Negative</td>
+                      <td>Negative mg/dL</td>
+                    </tr>
+                    <tr ID="Result32Comp4">
+                      <td ID="Result32Comp4Name">BILIRUBIN URINE</td>
+                      <td>Negative</td>
+                      <td>Negative</td>
+                    </tr>
+                    <tr ID="Result32Comp5">
+                      <td ID="Result32Comp5Name">KETONES URINE</td>
+                      <td>Negative</td>
+                      <td>Negative mg/dL</td>
+                    </tr>
+                    <tr ID="Result32Comp6">
+                      <td ID="Result32Comp6Name">SPECIFIC GRAVITY UR</td>
+                      <td>1.012</td>
+                      <td>1.005-1.030</td>
+                    </tr>
+                    <tr ID="Result32Comp7">
+                      <td ID="Result32Comp7Name">BLOOD URINE</td>
+                      <td>Negative</td>
+                      <td>Negative</td>
+                    </tr>
+                    <tr ID="Result32Comp8">
+                      <td ID="Result32Comp8Name">PH URINE</td>
+                      <td>7.0</td>
+                      <td>4.5-8.0 pH units</td>
+                    </tr>
+                    <tr ID="Result32Comp9">
+                      <td ID="Result32Comp9Name">PROTEIN URINE</td>
+                      <td>Negative</td>
+                      <td>Negative mg/dL</td>
+                    </tr>
+                    <tr ID="Result32Comp10">
+                      <td ID="Result32Comp10Name">UROBILINOGEN URINE</td>
+                      <td>0.2</td>
+                      <td>&lt;=1.0 EU/dL</td>
+                    </tr>
+                    <tr ID="Result32Comp11">
+                      <td ID="Result32Comp11Name">NITRITE URINE</td>
+                      <td>Negative</td>
+                      <td>Negative</td>
+                    </tr>
+                    <tr ID="Result32Comp12">
+                      <td ID="Result32Comp12Name">LEUKOCYTE ESTERASE U</td>
+                      <td>Trace</td>
+                      <td>Negative</td>
+                    </tr>
+                    <tr ID="Result32Comp13">
+                      <td ID="Result32Comp13Name">WHITE BLOOD CELLS UR</td>
+                      <td>8</td>
+                      <td>0-5 /HPF</td>
+                    </tr>
+                    <tr ID="Result32Comp14">
+                      <td ID="Result32Comp14Name">RED BLOOD CELLS UR</td>
+                      <td>0</td>
+                      <td>0-4 /HPF</td>
+                    </tr>
+                    <tr ID="Result32Comp15">
+                      <td ID="Result32Comp15Name">BACTERIA</td>
+                      <td>None</td>
+                      <td>Few</td>
+                    </tr>
+                    <tr ID="Result32Comp16">
+                      <td ID="Result32Comp16Name">SQUAMOUS EPITH CELLS</td>
+                      <td>10</td>
+                      <td>0-5 /HPF</td>
+                    </tr>
+                    <tr ID="Result32Comp17">
+                      <td ID="Result32Comp17Name">UA COMMENT</td>
+                      <td>
+                        <content>
+                          <content>See Footnote</content>
+                        </content>
+                        <content styleCode="allIndent">
+                          <content styleCode="cellHeader">Comment:</content>
+                          <br />
+                          <content ID="Result32Comp17Comment" styleCode="pre">
+                            <content>The sediment has been examined for WBC, RBC, CASTS, CRYSTALS and EPITHELIAL</content>
+                            <br />
+                            <content>CELLS, which are only reported if present.</content>
+                            <br />
+                          </content>
+                        </content>
+                      </td>
+                      <td />
+                    </tr>
+                  </tbody>
+                </table>
+              </item>
+              <item ID="Result33">
+                <caption>Urine Culture (URINE CULTURE) (08/13/2011  9:56 AM EDT)</caption>
+                <table>
+                  <colgroup>
+                    <col width="25%" />
+                    <col width="50%" />
+                    <col width="25%" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>Component</th>
+                      <th>Value</th>
+                      <th>Range</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr ID="Result33Comp1">
+                      <td ID="Result33Comp1Name">FINAL REPORT</td>
+                      <td>&lt;1,000 CFU/mL - Negative</td>
+                      <td />
+                    </tr>
+                  </tbody>
+                </table>
+              </item>
+              <item ID="Result34">
+                <caption>OUTSIDE SONOGRAM SCAN (08/11/2011 12:00 AM EDT)</caption>
+              </item>
+            </list>
+          </text>
+          <entry typeCode="DRIV">
+            <organizer classCode="BATTERY" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.22.4.1" />
+              <id root="1.2.840.114350.1.13.65.2.7.2.798268" extension="92286759" />
+              <code code="88108" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT-4" displayName="Cytology, Gyn (CYTOLOGY, GYN)" />
+              <statusCode code="completed" />
+              <effectiveTime>
+                <low value="20141010152021" />
+              </effectiveTime>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="92286759.1" />
+                  <code code="X11529-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="CYTOPATHOLOGY">
+                    <originalText>
+                      <reference value="#Result22Comp1Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result22Comp1" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20141010152021" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ED">
+                    <reference value="#Result22Comp1Value" />
+                  </value>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <encounter classCode="ENC" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.49" />
+                  <id root="1.2.840.114350.1.13.65.2.7.3.698084.8" extension="30768148" />
+                  <code code="45" codeSystem="1.2.840.114350.1.13.65.2.7.4.698084.30" codeSystemName="Epic.EncounterType" displayName="Clerical Orders" />
+                  <effectiveTime>
+                    <low value="20110822" />
+                    <high value="20110822" />
+                  </effectiveTime>
+                </encounter>
+              </component>
+            </organizer>
+          </entry>
+          <entry typeCode="DRIV">
+            <organizer classCode="BATTERY" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.22.4.1" />
+              <id root="1.2.840.114350.1.13.65.2.7.2.798268" extension="92286755" />
+              <code code="88108" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT-4" displayName="Cytology, Gyn (CYTOLOGY, GYN)" />
+              <statusCode code="completed" />
+              <effectiveTime>
+                <low value="20130713133620" />
+              </effectiveTime>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="92286755.1" />
+                  <code code="X11529-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="CYTOPATHOLOGY">
+                    <originalText>
+                      <reference value="#Result23Comp1Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result23Comp1" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20130713133620" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ED">
+                    <reference value="#Result23Comp1Value" />
+                  </value>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <encounter classCode="ENC" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.49" />
+                  <id root="1.2.840.114350.1.13.65.2.7.3.698084.8" extension="30768148" />
+                  <code code="45" codeSystem="1.2.840.114350.1.13.65.2.7.4.698084.30" codeSystemName="Epic.EncounterType" displayName="Clerical Orders" />
+                  <effectiveTime>
+                    <low value="20110822" />
+                    <high value="20110822" />
+                  </effectiveTime>
+                </encounter>
+              </component>
+            </organizer>
+          </entry>
+          <entry typeCode="DRIV">
+            <organizer classCode="BATTERY" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.22.4.1" />
+              <id root="1.2.840.114350.1.13.65.2.7.2.798268" extension="83987104" />
+              <code code="84702" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT-4" displayName="Human Chorionic Gonadotropin (HCG), Beta, Qn (BETA HCG,QUANTATIVE)" />
+              <statusCode code="completed" />
+              <effectiveTime>
+                <low value="20130605160000" />
+              </effectiveTime>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="83987104.1" />
+                  <code code="21198-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HCG (TOTAL BETA)">
+                    <originalText>
+                      <reference value="#Result24Comp1Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result24Comp1" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20130605160000" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">&lt;0.5</value>
+                  <entryRelationship typeCode="COMP">
+                    <act classCode="ACT" moodCode="EVN">
+                      <templateId root="2.16.840.1.113883.10.20.22.4.64" />
+                      <code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="comment" />
+                      <text>
+                        <reference value="#Result24Comp1Comment" />
+                      </text>
+                      <statusCode code="completed" />
+                    </act>
+                  </entryRelationship>
+                  <referenceRange>
+                    <observationRange>
+                      <text>&lt;=5.0 mIU/mL</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <encounter classCode="ENC" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.49" />
+                  <id root="1.2.840.114350.1.13.65.2.7.3.698084.8" extension="30768148" />
+                  <code code="45" codeSystem="1.2.840.114350.1.13.65.2.7.4.698084.30" codeSystemName="Epic.EncounterType" displayName="Clerical Orders" />
+                  <effectiveTime>
+                    <low value="20110822" />
+                    <high value="20110822" />
+                  </effectiveTime>
+                </encounter>
+              </component>
+            </organizer>
+          </entry>
+          <entry typeCode="DRIV">
+            <organizer classCode="BATTERY" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.22.4.1" />
+              <id root="1.2.840.114350.1.13.65.2.7.2.798268" extension="83987105" />
+              <code code="85025" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT-4" displayName="CBC Panel w/Platelets + Differential (CBC W/ PLATELETS+ DIFF (COMPLETE))" />
+              <statusCode code="completed" />
+              <effectiveTime>
+                <low value="20130605160000" />
+              </effectiveTime>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="83987105.1" />
+                  <code code="804-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="WBC COUNT">
+                    <originalText>
+                      <reference value="#Result25Comp1Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result25Comp1" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20130605160000" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">5.4 x10(3)/uL</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>3.4-11.2</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="83987105.2" />
+                  <code code="789-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="RED BLOOD CELL COUNT">
+                    <originalText>
+                      <reference value="#Result25Comp2Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result25Comp2" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20130605160000" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">4.30 x10(6)/uL</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>3.80-5.20</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="83987105.3" />
+                  <code code="718-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HEMOGLOBIN">
+                    <originalText>
+                      <reference value="#Result25Comp3Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result25Comp3" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20130605160000" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="g/dL" value="13.9" />
+                  <referenceRange>
+                    <observationRange>
+                      <text>11.7-15.3</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="83987105.4" />
+                  <code code="4544-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HEMATOCRIT">
+                    <originalText>
+                      <reference value="#Result25Comp4Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result25Comp4" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20130605160000" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="%" value="41.2" />
+                  <referenceRange>
+                    <observationRange>
+                      <text>35.0-45.0</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="83987105.5" />
+                  <code code="787-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="MEAN CORPUSCULAR VOL">
+                    <originalText>
+                      <reference value="#Result25Comp5Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result25Comp5" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20130605160000" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="fL" value="96.0" />
+                  <referenceRange>
+                    <observationRange>
+                      <text>81.0-100.0</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="83987105.6" />
+                  <code code="785-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="(MCH)MEAN CORP HGB">
+                    <originalText>
+                      <reference value="#Result25Comp6Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result25Comp6" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20130605160000" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="pg" value="32.4" />
+                  <referenceRange>
+                    <observationRange>
+                      <text>27.0-34.0</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="83987105.7" />
+                  <code code="786-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="MEAN CORP HGB CONC">
+                    <originalText>
+                      <reference value="#Result25Comp7Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result25Comp7" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20130605160000" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="g/dL" value="33.8" />
+                  <referenceRange>
+                    <observationRange>
+                      <text>32.0-36.0</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="83987105.8" />
+                  <code code="788-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="RED CELL DIST WIDTH">
+                    <originalText>
+                      <reference value="#Result25Comp8Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result25Comp8" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20130605160000" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="%" value="12.8" />
+                  <referenceRange>
+                    <observationRange>
+                      <text>11.5-14.5</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="83987105.9" />
+                  <code code="777-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="PLATELET COUNT">
+                    <originalText>
+                      <reference value="#Result25Comp9Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result25Comp9" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20130605160000" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">183 x10(3)/uL</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>150-450</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="83987105.10" />
+                  <code code="32623-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="MEAN PLATELET VOLUME">
+                    <originalText>
+                      <reference value="#Result25Comp10Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result25Comp10" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20130605160000" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="fL" value="9.3" />
+                  <referenceRange>
+                    <observationRange>
+                      <text>7.0-11.5</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <encounter classCode="ENC" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.49" />
+                  <id root="1.2.840.114350.1.13.65.2.7.3.698084.8" extension="30768148" />
+                  <code code="45" codeSystem="1.2.840.114350.1.13.65.2.7.4.698084.30" codeSystemName="Epic.EncounterType" displayName="Clerical Orders" />
+                  <effectiveTime>
+                    <low value="20110822" />
+                    <high value="20110822" />
+                  </effectiveTime>
+                </encounter>
+              </component>
+            </organizer>
+          </entry>
+          <entry typeCode="DRIV">
+            <organizer classCode="BATTERY" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.22.4.1" />
+              <id root="1.2.840.114350.1.13.65.2.7.2.798268" extension="90967222" />
+              <code code="23601" codeSystem="1.2.840.114350.1.13.65.2.7.2.696580" codeSystemName="Epic.EAP.ID" displayName="Automated Differential (AUTO DIFFERENTIAL)" />
+              <statusCode code="completed" />
+              <effectiveTime>
+                <low value="20130605160000" />
+              </effectiveTime>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="90967222.1" />
+                  <code code="770-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="NEUTROPHIL%AUTO">
+                    <originalText>
+                      <reference value="#Result26Comp1Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result26Comp1" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20130605160000" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="%" value="60.3" />
+                  <referenceRange>
+                    <observationRange>
+                      <text>45.0-75.0</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="90967222.2" />
+                  <code code="736-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="LYMPH%AUTO">
+                    <originalText>
+                      <reference value="#Result26Comp2Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result26Comp2" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20130605160000" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="%" value="31.0" />
+                  <referenceRange>
+                    <observationRange>
+                      <text>20.0-50.0</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="90967222.3" />
+                  <code code="5905-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="MONOCYTE%AUTO">
+                    <originalText>
+                      <reference value="#Result26Comp3Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result26Comp3" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20130605160000" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="%" value="6.6" />
+                  <referenceRange>
+                    <observationRange>
+                      <text>2.0-11.0</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="90967222.4" />
+                  <code code="713-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="EOSINOPHIL%AUTO">
+                    <originalText>
+                      <reference value="#Result26Comp4Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result26Comp4" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20130605160000" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="%" value="1.6" />
+                  <referenceRange>
+                    <observationRange>
+                      <text>0.0-5.0</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="90967222.5" />
+                  <code code="706-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="BASOPHILE%AUTO">
+                    <originalText>
+                      <reference value="#Result26Comp5Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result26Comp5" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20130605160000" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="%" value="0.5" />
+                  <referenceRange>
+                    <observationRange>
+                      <text>0.0-1.0</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="90967222.6" />
+                  <code code="751-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="NEUTROPHIL ABSOLUTE#">
+                    <originalText>
+                      <reference value="#Result26Comp6Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result26Comp6" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20130605160000" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">3.3 x10(3)/uL</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>1.8-7.0</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="90967222.7" />
+                  <code code="731-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="LYMPH ABSOLUTE #">
+                    <originalText>
+                      <reference value="#Result26Comp7Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result26Comp7" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20130605160000" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">1.7 x10(3)/uL</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>1.0-4.8</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="90967222.8" />
+                  <code code="742-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="MONOCYTE ABSOLUTE #">
+                    <originalText>
+                      <reference value="#Result26Comp8Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result26Comp8" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20130605160000" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">0.4 x10(3)/uL</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>0.2-0.9</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="90967222.9" />
+                  <code code="711-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="EOSINOPHIL ABS #">
+                    <originalText>
+                      <reference value="#Result26Comp9Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result26Comp9" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20130605160000" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">0.10 x10(3)/uL</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>0.00-0.45</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="90967222.10" />
+                  <code code="704-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="BASOPHIL ABSOLUTE #">
+                    <originalText>
+                      <reference value="#Result26Comp10Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result26Comp10" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20130605160000" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">0.00 x10(3)/uL</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>0.00-0.10</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <encounter classCode="ENC" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.49" />
+                  <id root="1.2.840.114350.1.13.65.2.7.3.698084.8" extension="30768148" />
+                  <code code="45" codeSystem="1.2.840.114350.1.13.65.2.7.4.698084.30" codeSystemName="Epic.EncounterType" displayName="Clerical Orders" />
+                  <effectiveTime>
+                    <low value="20110822" />
+                    <high value="20110822" />
+                  </effectiveTime>
+                </encounter>
+              </component>
+            </organizer>
+          </entry>
+          <entry typeCode="DRIV">
+            <organizer classCode="BATTERY" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.22.4.1" />
+              <id root="1.2.840.114350.1.13.65.2.7.2.798268" extension="68919913" />
+              <code code="85610" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT-4" displayName="Prothrombin Time w/INR (PROTHROMBIN TIME - INR)" />
+              <statusCode code="completed" />
+              <effectiveTime>
+                <low value="20110818145500" />
+              </effectiveTime>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919913.1" />
+                  <code code="5902-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="PROTHROMBIN TIME">
+                    <originalText>
+                      <reference value="#Result27Comp1Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result27Comp1" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110818145500" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">12.9 second(s)</value>
+                  <entryRelationship typeCode="COMP">
+                    <act classCode="ACT" moodCode="EVN">
+                      <templateId root="2.16.840.1.113883.10.20.22.4.64" />
+                      <code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="comment" />
+                      <text>
+                        <reference value="#Result27Comp1Comment" />
+                      </text>
+                      <statusCode code="completed" />
+                    </act>
+                  </entryRelationship>
+                  <referenceRange>
+                    <observationRange>
+                      <text>9.8-13.2</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919913.2" />
+                  <code code="6301-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="INT'L NORMAL RATIO">
+                    <originalText>
+                      <reference value="#Result27Comp2Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result27Comp2" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110818145500" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">1.1 ratio</value>
+                  <entryRelationship typeCode="COMP">
+                    <act classCode="ACT" moodCode="EVN">
+                      <templateId root="2.16.840.1.113883.10.20.22.4.64" />
+                      <code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="comment" />
+                      <text>
+                        <reference value="#Result27Comp2Comment" />
+                      </text>
+                      <statusCode code="completed" />
+                    </act>
+                  </entryRelationship>
+                  <referenceRange>
+                    <observationRange>
+                      <text>0.9-1.1</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <encounter classCode="ENC" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.49" />
+                  <id root="1.2.840.114350.1.13.65.2.7.3.698084.8" extension="30768148" />
+                  <code code="45" codeSystem="1.2.840.114350.1.13.65.2.7.4.698084.30" codeSystemName="Epic.EncounterType" displayName="Clerical Orders" />
+                  <effectiveTime>
+                    <low value="20110822" />
+                    <high value="20110822" />
+                  </effectiveTime>
+                </encounter>
+              </component>
+            </organizer>
+          </entry>
+          <entry typeCode="DRIV">
+            <organizer classCode="BATTERY" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.22.4.1" />
+              <id root="1.2.840.114350.1.13.65.2.7.2.798268" extension="68919914" />
+              <code code="85730" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT-4" displayName="Activated PTT (ACTIVATED PTT)" />
+              <statusCode code="completed" />
+              <effectiveTime>
+                <low value="20110818145500" />
+              </effectiveTime>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919914.1" />
+                  <code code="14979-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="ACTIVATED PTT">
+                    <originalText>
+                      <reference value="#Result28Comp1Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result28Comp1" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110818145500" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">28.2 second(s)</value>
+                  <entryRelationship typeCode="COMP">
+                    <act classCode="ACT" moodCode="EVN">
+                      <templateId root="2.16.840.1.113883.10.20.22.4.64" />
+                      <code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="comment" />
+                      <text>
+                        <reference value="#Result28Comp1Comment" />
+                      </text>
+                      <statusCode code="completed" />
+                    </act>
+                  </entryRelationship>
+                  <referenceRange>
+                    <observationRange>
+                      <text>26.0-35.0</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <encounter classCode="ENC" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.49" />
+                  <id root="1.2.840.114350.1.13.65.2.7.3.698084.8" extension="30768148" />
+                  <code code="45" codeSystem="1.2.840.114350.1.13.65.2.7.4.698084.30" codeSystemName="Epic.EncounterType" displayName="Clerical Orders" />
+                  <effectiveTime>
+                    <low value="20110822" />
+                    <high value="20110822" />
+                  </effectiveTime>
+                </encounter>
+              </component>
+            </organizer>
+          </entry>
+          <entry typeCode="DRIV">
+            <organizer classCode="BATTERY" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.22.4.1" />
+              <id root="1.2.840.114350.1.13.65.2.7.2.798268" extension="68919915" />
+              <code code="85021" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT-4" displayName="CBC Panel w/Platelets + w/o Differential (CBC PLATELET W/O DIFFERENTIAL)" />
+              <statusCode code="completed" />
+              <effectiveTime>
+                <low value="20110818145500" />
+              </effectiveTime>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919915.1" />
+                  <code code="804-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="WBC COUNT">
+                    <originalText>
+                      <reference value="#Result29Comp1Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result29Comp1" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110818145500" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">6.7 x10(3)/uL</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>3.4-11.2</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919915.2" />
+                  <code code="789-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="RED BLOOD CELL COUNT">
+                    <originalText>
+                      <reference value="#Result29Comp2Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result29Comp2" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110818145500" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">3.86 x10(6)/uL</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>3.80-5.20</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919915.3" />
+                  <code code="718-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HEMOGLOBIN">
+                    <originalText>
+                      <reference value="#Result29Comp3Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result29Comp3" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110818145500" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="g/dL" value="12.6" />
+                  <referenceRange>
+                    <observationRange>
+                      <text>11.7-15.3</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919915.4" />
+                  <code code="4544-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="HEMATOCRIT">
+                    <originalText>
+                      <reference value="#Result29Comp4Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result29Comp4" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110818145500" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="%" value="36.3" />
+                  <referenceRange>
+                    <observationRange>
+                      <text>35.0-45.0</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919915.5" />
+                  <code code="787-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="MEAN CORPUSCULAR VOL">
+                    <originalText>
+                      <reference value="#Result29Comp5Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result29Comp5" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110818145500" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="fL" value="94.0" />
+                  <referenceRange>
+                    <observationRange>
+                      <text>81.0-100.0</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919915.6" />
+                  <code code="785-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="(MCH)MEAN CORP HGB">
+                    <originalText>
+                      <reference value="#Result29Comp6Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result29Comp6" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110818145500" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="pg" value="32.7" />
+                  <referenceRange>
+                    <observationRange>
+                      <text>27.0-34.0</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919915.7" />
+                  <code code="786-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="MEAN CORP HGB CONC">
+                    <originalText>
+                      <reference value="#Result29Comp7Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result29Comp7" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110818145500" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="g/dL" value="34.8" />
+                  <referenceRange>
+                    <observationRange>
+                      <text>32.0-36.0</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919915.8" />
+                  <code code="788-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="RED CELL DIST WIDTH">
+                    <originalText>
+                      <reference value="#Result29Comp8Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result29Comp8" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110818145500" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="%" value="12.6" />
+                  <referenceRange>
+                    <observationRange>
+                      <text>11.5-14.5</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919915.9" />
+                  <code code="777-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="PLATELET COUNT">
+                    <originalText>
+                      <reference value="#Result29Comp9Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result29Comp9" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110818145500" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">166 x10(3)/uL</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>150-450</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919915.10" />
+                  <code code="32623-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="MEAN PLATELET VOLUME">
+                    <originalText>
+                      <reference value="#Result29Comp10Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result29Comp10" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110818145500" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="fL" value="8.5" />
+                  <referenceRange>
+                    <observationRange>
+                      <text>7.0-11.5</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <encounter classCode="ENC" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.49" />
+                  <id root="1.2.840.114350.1.13.65.2.7.3.698084.8" extension="30768148" />
+                  <code code="45" codeSystem="1.2.840.114350.1.13.65.2.7.4.698084.30" codeSystemName="Epic.EncounterType" displayName="Clerical Orders" />
+                  <effectiveTime>
+                    <low value="20110822" />
+                    <high value="20110822" />
+                  </effectiveTime>
+                </encounter>
+              </component>
+            </organizer>
+          </entry>
+          <entry typeCode="DRIV">
+            <organizer classCode="BATTERY" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.22.4.1" />
+              <id root="1.2.840.114350.1.13.65.2.7.2.798268" extension="68919916" />
+              <code code="81001" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT-4" displayName="Urinalysis Complete (URINALYSIS, COMPLETE)" />
+              <statusCode code="completed" />
+              <effectiveTime>
+                <low value="20110818145500" />
+              </effectiveTime>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919916.1" />
+                  <code code="5778-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="COLOR URINE">
+                    <originalText>
+                      <reference value="#Result30Comp1Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result30Comp1" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110818145500" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">Yellow</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>Straw</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919916.2" />
+                  <code code="5767-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="APPEARANCE URINE">
+                    <originalText>
+                      <reference value="#Result30Comp2Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result30Comp2" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110818145500" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">Clear</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>Clear</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919916.3" />
+                  <code code="5792-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="GLUCOSE URINE">
+                    <originalText>
+                      <reference value="#Result30Comp3Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result30Comp3" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110818145500" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">Negative</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>Negative mg/dL</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919916.4" />
+                  <code code="5770-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="BILIRUBIN URINE">
+                    <originalText>
+                      <reference value="#Result30Comp4Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result30Comp4" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110818145500" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">Negative</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>Negative</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919916.5" />
+                  <code code="5797-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="KETONES URINE">
+                    <originalText>
+                      <reference value="#Result30Comp5Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result30Comp5" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110818145500" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">Negative</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>Negative mg/dL</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919916.6" />
+                  <code code="5811-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="SPECIFIC GRAVITY UR">
+                    <originalText>
+                      <reference value="#Result30Comp6Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result30Comp6" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110818145500" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="1" value="1.004" />
+                  <referenceRange>
+                    <observationRange>
+                      <text>1.005-1.030</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919916.7" />
+                  <code code="5794-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="BLOOD URINE">
+                    <originalText>
+                      <reference value="#Result30Comp7Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result30Comp7" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110818145500" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">Negative</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>Negative</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919916.8" />
+                  <code code="2756-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="PH URINE">
+                    <originalText>
+                      <reference value="#Result30Comp8Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result30Comp8" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110818145500" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">7.0 pH units</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>4.5-8.0</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919916.9" />
+                  <code code="5804-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="PROTEIN URINE">
+                    <originalText>
+                      <reference value="#Result30Comp9Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result30Comp9" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110818145500" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">Negative</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>Negative mg/dL</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919916.10" />
+                  <code code="20405-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="UROBILINOGEN URINE">
+                    <originalText>
+                      <reference value="#Result30Comp10Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result30Comp10" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110818145500" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="EU/dL" value="0.2" />
+                  <referenceRange>
+                    <observationRange>
+                      <text>&lt;=1.0</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919916.11" />
+                  <code code="5802-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="NITRITE URINE">
+                    <originalText>
+                      <reference value="#Result30Comp11Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result30Comp11" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110818145500" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">Negative</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>Negative</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919916.12" />
+                  <code code="5799-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="LEUKOCYTE ESTERASE U">
+                    <originalText>
+                      <reference value="#Result30Comp12Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result30Comp12" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110818145500" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">Trace</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>Negative</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919916.13" />
+                  <code code="5821-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="WHITE BLOOD CELLS UR">
+                    <originalText>
+                      <reference value="#Result30Comp13Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result30Comp13" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110818145500" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">3 /HPF</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>0-5</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919916.14" />
+                  <code code="13945-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="RED BLOOD CELLS UR">
+                    <originalText>
+                      <reference value="#Result30Comp14Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result30Comp14" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110818145500" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">1 /HPF</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>0-4</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919916.15" />
+                  <code code="25145-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="BACTERIA">
+                    <originalText>
+                      <reference value="#Result30Comp15Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result30Comp15" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110818145500" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">None</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>Few</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919916.16" />
+                  <code code="11277-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="SQUAMOUS EPITH CELLS">
+                    <originalText>
+                      <reference value="#Result30Comp16Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result30Comp16" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110818145500" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">6 /HPF</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>0-5</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919916.17" />
+                  <code code="X5600" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="UA COMMENT">
+                    <originalText>
+                      <reference value="#Result30Comp17Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result30Comp17" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110818145500" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">See Footnote</value>
+                  <entryRelationship typeCode="COMP">
+                    <act classCode="ACT" moodCode="EVN">
+                      <templateId root="2.16.840.1.113883.10.20.22.4.64" />
+                      <code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="comment" />
+                      <text>
+                        <reference value="#Result30Comp17Comment" />
+                      </text>
+                      <statusCode code="completed" />
+                    </act>
+                  </entryRelationship>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <encounter classCode="ENC" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.49" />
+                  <id root="1.2.840.114350.1.13.65.2.7.3.698084.8" extension="30768148" />
+                  <code code="45" codeSystem="1.2.840.114350.1.13.65.2.7.4.698084.30" codeSystemName="Epic.EncounterType" displayName="Clerical Orders" />
+                  <effectiveTime>
+                    <low value="20110822" />
+                    <high value="20110822" />
+                  </effectiveTime>
+                </encounter>
+              </component>
+            </organizer>
+          </entry>
+          <entry typeCode="DRIV">
+            <organizer classCode="BATTERY" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.22.4.1" />
+              <id root="1.2.840.114350.1.13.65.2.7.2.798268" extension="68919910" />
+              <code code="88108" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT-4" displayName="Cytopathology (CYTOPATHOLOGY)" />
+              <statusCode code="completed" />
+              <effectiveTime>
+                <low value="20110813095614" />
+              </effectiveTime>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919910.1" />
+                  <code code="X11529-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="CYTOPATHOLOGY">
+                    <originalText>
+                      <reference value="#Result31Comp1Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result31Comp1" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110813095614" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ED">
+                    <reference value="#Result31Comp1Value" />
+                  </value>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <encounter classCode="ENC" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.49" />
+                  <id root="1.2.840.114350.1.13.65.2.7.3.698084.8" extension="30768148" />
+                  <code code="45" codeSystem="1.2.840.114350.1.13.65.2.7.4.698084.30" codeSystemName="Epic.EncounterType" displayName="Clerical Orders" />
+                  <effectiveTime>
+                    <low value="20110822" />
+                    <high value="20110822" />
+                  </effectiveTime>
+                </encounter>
+              </component>
+            </organizer>
+          </entry>
+          <entry typeCode="DRIV">
+            <organizer classCode="BATTERY" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.22.4.1" />
+              <id root="1.2.840.114350.1.13.65.2.7.2.798268" extension="68919911" />
+              <code code="81001" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT-4" displayName="Urinalysis Complete (URINALYSIS, COMPLETE)" />
+              <statusCode code="completed" />
+              <effectiveTime>
+                <low value="20110813095600" />
+              </effectiveTime>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919911.1" />
+                  <code code="5778-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="COLOR URINE">
+                    <originalText>
+                      <reference value="#Result32Comp1Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result32Comp1" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110813095600" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">Yellow</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>Straw</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919911.2" />
+                  <code code="5767-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="APPEARANCE URINE">
+                    <originalText>
+                      <reference value="#Result32Comp2Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result32Comp2" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110813095600" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">Clear</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>Clear</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919911.3" />
+                  <code code="5792-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="GLUCOSE URINE">
+                    <originalText>
+                      <reference value="#Result32Comp3Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result32Comp3" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110813095600" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">Negative</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>Negative mg/dL</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919911.4" />
+                  <code code="5770-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="BILIRUBIN URINE">
+                    <originalText>
+                      <reference value="#Result32Comp4Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result32Comp4" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110813095600" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">Negative</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>Negative</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919911.5" />
+                  <code code="5797-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="KETONES URINE">
+                    <originalText>
+                      <reference value="#Result32Comp5Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result32Comp5" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110813095600" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">Negative</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>Negative mg/dL</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919911.6" />
+                  <code code="5811-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="SPECIFIC GRAVITY UR">
+                    <originalText>
+                      <reference value="#Result32Comp6Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result32Comp6" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110813095600" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="1" value="1.012" />
+                  <referenceRange>
+                    <observationRange>
+                      <text>1.005-1.030</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919911.7" />
+                  <code code="5794-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="BLOOD URINE">
+                    <originalText>
+                      <reference value="#Result32Comp7Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result32Comp7" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110813095600" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">Negative</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>Negative</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919911.8" />
+                  <code code="2756-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="PH URINE">
+                    <originalText>
+                      <reference value="#Result32Comp8Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result32Comp8" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110813095600" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">7.0 pH units</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>4.5-8.0</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919911.9" />
+                  <code code="5804-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="PROTEIN URINE">
+                    <originalText>
+                      <reference value="#Result32Comp9Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result32Comp9" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110813095600" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">Negative</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>Negative mg/dL</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919911.10" />
+                  <code code="20405-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="UROBILINOGEN URINE">
+                    <originalText>
+                      <reference value="#Result32Comp10Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result32Comp10" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110813095600" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PQ" unit="EU/dL" value="0.2" />
+                  <referenceRange>
+                    <observationRange>
+                      <text>&lt;=1.0</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919911.11" />
+                  <code code="5802-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="NITRITE URINE">
+                    <originalText>
+                      <reference value="#Result32Comp11Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result32Comp11" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110813095600" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">Negative</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>Negative</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919911.12" />
+                  <code code="5799-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="LEUKOCYTE ESTERASE U">
+                    <originalText>
+                      <reference value="#Result32Comp12Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result32Comp12" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110813095600" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">Trace</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>Negative</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919911.13" />
+                  <code code="5821-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="WHITE BLOOD CELLS UR">
+                    <originalText>
+                      <reference value="#Result32Comp13Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result32Comp13" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110813095600" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">8 /HPF</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>0-5</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919911.14" />
+                  <code code="13945-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="RED BLOOD CELLS UR">
+                    <originalText>
+                      <reference value="#Result32Comp14Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result32Comp14" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110813095600" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">0 /HPF</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>0-4</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919911.15" />
+                  <code code="25145-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="BACTERIA">
+                    <originalText>
+                      <reference value="#Result32Comp15Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result32Comp15" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110813095600" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">None</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>Few</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919911.16" />
+                  <code code="11277-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="SQUAMOUS EPITH CELLS">
+                    <originalText>
+                      <reference value="#Result32Comp16Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result32Comp16" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110813095600" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">10 /HPF</value>
+                  <referenceRange>
+                    <observationRange>
+                      <text>0-5</text>
+                    </observationRange>
+                  </referenceRange>
+                </observation>
+              </component>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919911.17" />
+                  <code code="X5600" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="UA COMMENT">
+                    <originalText>
+                      <reference value="#Result32Comp17Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result32Comp17" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110813095600" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">See Footnote</value>
+                  <entryRelationship typeCode="COMP">
+                    <act classCode="ACT" moodCode="EVN">
+                      <templateId root="2.16.840.1.113883.10.20.22.4.64" />
+                      <code code="48767-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="comment" />
+                      <text>
+                        <reference value="#Result32Comp17Comment" />
+                      </text>
+                      <statusCode code="completed" />
+                    </act>
+                  </entryRelationship>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <encounter classCode="ENC" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.49" />
+                  <id root="1.2.840.114350.1.13.65.2.7.3.698084.8" extension="30768148" />
+                  <code code="45" codeSystem="1.2.840.114350.1.13.65.2.7.4.698084.30" codeSystemName="Epic.EncounterType" displayName="Clerical Orders" />
+                  <effectiveTime>
+                    <low value="20110822" />
+                    <high value="20110822" />
+                  </effectiveTime>
+                </encounter>
+              </component>
+            </organizer>
+          </entry>
+          <entry typeCode="DRIV">
+            <organizer classCode="BATTERY" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.22.4.1" />
+              <id root="1.2.840.114350.1.13.65.2.7.2.798268" extension="68919912" />
+              <code code="87086" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT-4" displayName="Urine Culture (URINE CULTURE)" />
+              <statusCode code="completed" />
+              <effectiveTime>
+                <low value="20110813095600" />
+              </effectiveTime>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.6.798268.2000" extension="68919912.1" />
+                  <code code="X11529-54" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" displayName="FINAL REPORT">
+                    <originalText>
+                      <reference value="#Result33Comp1Name" />
+                    </originalText>
+                  </code>
+                  <text>
+                    <reference value="#Result33Comp1" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110813095600" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST">&lt;1,000 CFU/mL - Negative</value>
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <encounter classCode="ENC" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.49" />
+                  <id root="1.2.840.114350.1.13.65.2.7.3.698084.8" extension="30768148" />
+                  <code code="45" codeSystem="1.2.840.114350.1.13.65.2.7.4.698084.30" codeSystemName="Epic.EncounterType" displayName="Clerical Orders" />
+                  <effectiveTime>
+                    <low value="20110822" />
+                    <high value="20110822" />
+                  </effectiveTime>
+                </encounter>
+              </component>
+            </organizer>
+          </entry>
+          <entry typeCode="DRIV">
+            <organizer classCode="BATTERY" moodCode="EVN">
+              <templateId root="2.16.840.1.113883.10.20.22.4.1" />
+              <id root="1.2.840.114350.1.13.65.2.7.2.798268" extension="69183959" />
+              <code code="27044" codeSystem="1.2.840.114350.1.13.65.2.7.2.696580" codeSystemName="Epic.EAP.ID" displayName="OUTSIDE SONOGRAM SCAN" />
+              <statusCode code="completed" />
+              <effectiveTime>
+                <low value="20110811000000" />
+              </effectiveTime>
+              <component>
+                <observation classCode="OBS" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.2" />
+                  <id root="1.2.840.114350.1.13.65.2.7.2.798268" extension="69183959" />
+                  <code nullFlavor="UNK" />
+                  <text>
+                    <reference nullFlavor="UNK" />
+                  </text>
+                  <statusCode code="completed" />
+                  <effectiveTime value="20110811000000" />
+                  <value xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ST" nullFlavor="NA" />
+                </observation>
+              </component>
+              <component typeCode="COMP">
+                <encounter classCode="ENC" moodCode="EVN">
+                  <templateId root="2.16.840.1.113883.10.20.22.4.49" />
+                  <id root="1.2.840.114350.1.13.65.2.7.3.698084.8" extension="30768148" />
+                  <code code="45" codeSystem="1.2.840.114350.1.13.65.2.7.4.698084.30" codeSystemName="Epic.EncounterType" displayName="Clerical Orders" />
+                  <effectiveTime>
+                    <low value="20110822" />
+                    <high value="20110822" />
+                  </effectiveTime>
+                </encounter>
+              </component>
+            </organizer>
+          </entry>
+        </section>
+      </component>
+    </structuredBody>
+  </component>
+</ClinicalDocument>
