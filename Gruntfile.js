@@ -176,8 +176,8 @@ module.exports = function(grunt) {
   
   grunt.registerTask("test", [
     "default",
-    "jasmine",
-    "jasmine_node"
+    "jasmine_node",
+    "jasmine"
   ]);
   
 };
