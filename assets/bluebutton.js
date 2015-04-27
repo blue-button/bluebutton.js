@@ -10,7 +10,7 @@
     }
 }(this, function() {
 
-/* BlueButton.js -- 0.3.0 */
+/* BlueButton.js -- 0.4.1 */
 
 /*
  * ...
@@ -68,40 +68,51 @@ var Core = (function () {
     };
     
     var replacerFn = function(key, value) {
-      /* By default, Dates are output as ISO Strings like "2014-01-03T08:00:00.000Z."
-       * This is tricky when all we have is a date (not a datetime); JS ignores that distinction.
+      /* By default, Dates are output as ISO Strings like "2014-01-03T08:00:00.000Z." This is
+       * tricky when all we have is a date (not a datetime); JS sadly ignores that distinction.
        *
-       * Assuming dates are just at midnight local time is questionable and means our tests output
-       * different UTC values in every timezone. Right now, we only have date-level precision
-       * the vast majority of the time, so this will output a pure date string any time we
-       * don't have significant time data. If we need to be able to output datetimes at
-       * midnight in the future, we'll need a strategy for tracking the original precision.
+       * To paper over this JS wart, we use two different JSON formats for dates and datetimes.
+       * This is a little ugly but makes sure that the dates/datetimes mostly just parse
+       * correclty for clients:
        *
-       * We output strings like 04/27/2014 because "2014-04-27" will be parsed
-       * assuming midnight UTC (and so will turn to something like 04/26/2014 at 5PM).
+       * 1. Datetimes are rendered as standard ISO strings, without the misleading millisecond
+       *    precision (misleading because we don't have it): YYYY-MM-DDTHH:mm:ssZ
+       * 2. Dates are rendered as MM/DD/YYYY. This ensures they are parsed as midnight local-time,
+       *    no matter what local time is, and therefore ensures the date is always correct.
+       *    Outputting "YYYY-MM-DD" would lead most browsers/node to assume midnight UTC, which
+       *    means "2014-04-27" suddenly turns into "04/26/2014 at 5PM" or just "04/26/2014"
+       *    if you format it as a date...
+       *
+       * See http://stackoverflow.com/questions/2587345/javascript-date-parse and
+       *     http://blog.dygraphs.com/2012/03/javascript-and-dates-what-mess.html
+       * for more on this issue.
        */
       var originalValue = this[key]; // a Date
 
       if ( value && (originalValue instanceof Date) && !isNaN(originalValue.getTime()) ) {
-        if (!originalValue.getHours() && !originalValue.getMinutes() &&
-            !originalValue.getSeconds() && !originalValue.getMilliseconds()) {
-          
-          return datePad( originalValue.getMonth() + 1 ) +
-            '/' + datePad( originalValue.getDate() ) +
-            '/' + originalValue.getFullYear();
+
+        // If while parsing we indicated that there was time-data specified, or if we see
+        // non-zero values in the hour/minutes/seconds/millis fields, output a datetime.
+        if (originalValue._parsedWithTimeData ||
+            originalValue.getHours() || originalValue.getMinutes() ||
+            originalValue.getSeconds() || originalValue.getMilliseconds()) {
+
+          // Based on https://developer.mozilla.org/en-US/docs/Web/JavaScript/
+          //    Reference/Global_Objects/Date/toISOString
+          return originalValue.getUTCFullYear() +
+            '-' + datePad( originalValue.getUTCMonth() + 1 ) +
+            '-' + datePad( originalValue.getUTCDate() ) +
+            'T' + datePad( originalValue.getUTCHours() ) +
+            ':' + datePad( originalValue.getUTCMinutes() ) +
+            ':' + datePad( originalValue.getUTCSeconds() ) +
+            'Z';
         }
         
-        // Even if we do have a real datetime, we never have millisecond level precision
-        // but JSON.Stringify calls Date.toISOString, which will include those by default.
-        // Based on https://developer.mozilla.org/en-US/docs/Web/JavaScript/
-        //    Reference/Global_Objects/Date/toISOString
-        return originalValue.getUTCFullYear() +
-          '-' + datePad( originalValue.getUTCMonth() + 1 ) +
-          '-' + datePad( originalValue.getUTCDate() ) +
-          'T' + datePad( originalValue.getUTCHours() ) +
-          ':' + datePad( originalValue.getUTCMinutes() ) +
-          ':' + datePad( originalValue.getUTCSeconds() ) +
-          'Z';
+        // We just have a pure date
+        return datePad( originalValue.getMonth() + 1 ) +
+          '/' + datePad( originalValue.getDate() ) +
+          '/' + originalValue.getFullYear();
+
       }
 
       return value;
@@ -755,6 +766,13 @@ Core.XML = (function () {
         // normal HTML to put the data directly in a <td>
         el = tagAttrVal(this.el, 'td', 'ID', contentId);
       }
+      if (!el) {
+        // Ugh, Epic uses really non-standard locations.
+        el = tagAttrVal(this.el, 'caption', 'ID', contentId) ||
+             tagAttrVal(this.el, 'paragraph', 'ID', contentId) ||
+             tagAttrVal(this.el, 'tr', 'ID', contentId) ||
+             tagAttrVal(this.el, 'item', 'ID', contentId);
+      }
 
       if (!el) {
         return emptyEl();
@@ -810,6 +828,16 @@ Core.XML = (function () {
   var elsByTag = function (tag) {
     return wrapElement(this.el.getElementsByTagName(tag));
   };
+
+
+  var unescapeSpecialChars = function(s) {
+    if (!s) { return s; }
+    return s.replace(/&lt;/g, '<')
+            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, '&')
+            .replace(/&quot;/g, '"')
+            .replace(/&apos;/g, "'");
+  };
   
   
   /*
@@ -824,7 +852,10 @@ Core.XML = (function () {
   var attr = function (attrName) {
     if (!this.el) { return null; }
     var attrVal = this.el.getAttribute(attrName);
-    return attrVal || null;
+    if (attrVal) {
+      return unescapeSpecialChars(attrVal);
+    }
+    return null;
   };
 
   /*
@@ -873,7 +904,7 @@ Core.XML = (function () {
         contentId = this.el.childNodes[1].getAttribute('value');
 
       } else {
-        return textContent;
+        return unescapeSpecialChars(textContent);
       }
 
       if (contentId && contentId[0] === '#') {
@@ -884,7 +915,7 @@ Core.XML = (function () {
       }
     }
 
-    return textContent;
+    return unescapeSpecialChars(textContent);
   };
   
   
@@ -1067,7 +1098,12 @@ var Documents = (function () {
         min = _toInt(min) - utcOffset;
       }
 
-      return new Date(Date.UTC(year, month, day, hour, min, secs));
+      var date = new Date(Date.UTC(year, month, day, hour, min, secs));
+      // This flag lets us output datetime-precision in our JSON even if the time happens
+      // to translate to midnight local time. If we clone the date object, it is not
+      // guaranteed to survive.
+      date._parsedWithTimeData = true;
+      return date;
     }
 
     return new Date(year, month, day);
@@ -1333,10 +1369,16 @@ Documents.CCDA = (function () {
         return el;
       case 'results':
         el = this.template('2.16.840.1.113883.10.20.22.2.3.1');
+        if (el.isEmpty()) {
+          el = this.template('2.16.840.1.113883.10.20.22.2.3');
+        }
         el.entries = entries;
         return el;
       case 'medications':
         el = this.template('2.16.840.1.113883.10.20.22.2.1.1');
+        if (el.isEmpty()) {
+          el = this.template('2.16.840.1.113883.10.20.22.2.1');
+        }
         el.entries = entries;
         return el;
       case 'problems':
@@ -1359,6 +1401,9 @@ Documents.CCDA = (function () {
         return el;
       case 'vitals':
         el = this.template('2.16.840.1.113883.10.20.22.2.4.1');
+        if (el.isEmpty()) {
+          el = this.template('2.16.840.1.113883.10.20.22.2.4');
+        }
         el.entries = entries;
         return el;
     }
@@ -1705,6 +1750,7 @@ Parsers.C32.document = function (c32) {
   var doc = c32.section('document');
 
   var date = parseDate(doc.tag('effectiveTime').attr('value'));
+  var title = Core.stripWhitespace(doc.tag('title').val());
   
   var author = doc.tag('author');
   el = author.tag('assignedPerson').tag('name');
@@ -1749,6 +1795,7 @@ Parsers.C32.document = function (c32) {
   
   data = {
     date: date,
+    title: title,
     author: {
       name: name_dict,
       address: address_dict,
@@ -1830,6 +1877,12 @@ Parsers.C32.allergies = function (c32) {
       el = entry.tag('participant').tag('name');
       if (!el.isEmpty()) {
         allergen_name = el.val();
+      }
+    }
+    if (!allergen_name) {
+      el = entry.template('2.16.840.1.113883.3.88.11.83.6').tag('originalText');
+      if (!el.isEmpty()) {
+        allergen_name = Core.stripWhitespace(el.val());
       }
     }
     
@@ -1914,6 +1967,7 @@ Parsers.C32.demographics = function (c32) {
   
   el = patient.tag('guardian');
   var guardian_relationship = el.tag('code').attr('displayName'),
+    guardian_relationship_code = el.tag('code').attr('code'),
       guardian_home = el.tag('telecom').attr('value');
   
   el = el.tag('guardianPerson').tag('name');
@@ -1954,6 +2008,7 @@ Parsers.C32.demographics = function (c32) {
         family: guardian_name_dict.family
       },
       relationship: guardian_relationship,
+      relationship_code: guardian_relationship_code,
       address: guardian_address_dict,
       phone: {
         home: guardian_home
@@ -2197,7 +2252,7 @@ Parsers.C32.results = function (c32) {
         panel_code_system_name = el.attr('codeSystemName');
     
     var observation;
-    var tests = entry.elsByTag('component');
+    var tests = entry.elsByTag('observation');
     var tests_data = [];
     
     for (var i = 0; i < tests.length; i++) {
@@ -2212,10 +2267,28 @@ Parsers.C32.results = function (c32) {
             code = el.attr('code'),
             code_system = el.attr('codeSystem'),
             code_system_name = el.attr('codeSystemName');
-        
+
+        if (!name) {
+          name = Core.stripWhitespace(observation.tag('text').val());
+        }
+    
+        el = observation.tag('translation');
+        var translation_name = el.attr('displayName'),
+        translation_code = el.attr('code'),
+        translation_code_system = el.attr('codeSystem'),
+        translation_code_system_name = el.attr('codeSystemName');
+    
         el = observation.tag('value');
-        var value = parseFloat(el.attr('value')),
+        var value = el.attr('value'),
             unit = el.attr('unit');
+        // We could look for xsi:type="PQ" (physical quantity) but it seems better
+        // not to trust that that field has been used correctly...
+        if (value && !isNaN(parseFloat(value))) {
+          value = parseFloat(value);
+        }
+        if (!value) {
+          value = el.val(); // look for free-text values
+        }
     
         el = observation.tag('referenceRange');
         var reference_range_text = Core.stripWhitespace(el.tag('observationRange').tag('text').val()),
@@ -2232,6 +2305,12 @@ Parsers.C32.results = function (c32) {
           code: code,
           code_system: code_system,
           code_system_name: code_system_name,
+          translation: {
+            name: translation_name,
+            code: translation_code,
+            code_system: translation_code_system,
+            code_system_name: translation_code_system_name
+          },
           reference_range: {
             text: reference_range_text,
             low_unit: reference_range_low_unit,
@@ -2309,11 +2388,14 @@ Parsers.C32.medications = function (c32) {
         product_code = el.attr('code'),
         product_code_system = el.attr('codeSystem');
 
-    if (!product_name) {
-      el = entry.tag('manufacturedProduct').tag('originalText');
-      if (!el.isEmpty()) {
-        product_name = Core.stripWhitespace(el.val());
-      }
+    var product_original_text = null;
+    el = entry.tag('manufacturedProduct').tag('originalText');
+    if (!el.isEmpty()) {
+      product_original_text = Core.stripWhitespace(el.val());
+    }
+    // if we don't have a product name yet, try the originalText version
+    if (!product_name && product_original_text) {
+      product_name = product_original_text;
     }
 
     // irregularity in some c32s
@@ -2354,10 +2436,15 @@ Parsers.C32.medications = function (c32) {
         route_code_system = el.attr('codeSystem'),
         route_code_system_name = el.attr('codeSystemName');
     
-    // participant => vehicle
-    el = entry.tag('participant').tag('code');
-    var vehicle_name = el.attr('displayName'),
-        vehicle_code = el.attr('code'),
+    // participant/playingEntity => vehicle
+    el = entry.tag('participant').tag('playingEntity');
+    var vehicle_name = el.tag('name').val();
+
+    el = el.tag('code');
+    // prefer the code vehicle_name but fall back to the non-coded one
+    // (which for C32s is in fact the primary field for this info)
+    vehicle_name = el.attr('displayName') || vehicle_name;
+    var vehicle_code = el.attr('code'),
         vehicle_code_system = el.attr('codeSystem'),
         vehicle_code_system_name = el.attr('codeSystemName');
     
@@ -2380,6 +2467,7 @@ Parsers.C32.medications = function (c32) {
       text: text,
       product: {
         name: product_name,
+        text: product_original_text,
         code: product_code,
         code_system: product_code_system,
         translation: {
@@ -2484,8 +2572,11 @@ Parsers.C32.problems = function (c32) {
     el = entry.template('2.16.840.1.113883.10.20.1.50');
     var status = el.tag('value').attr('displayName');
     
+    var age = null;
     el = entry.template('2.16.840.1.113883.10.20.1.38');
-    var age = parseFloat(el.tag('value').attr('value'));
+    if (!el.isEmpty()) {
+      age = parseFloat(el.tag('value').attr('value'));
+    }
     
     data.push({
       date_range: {
@@ -2534,6 +2625,10 @@ Parsers.C32.procedures = function (c32) {
     var name = el.attr('displayName'),
         code = el.attr('code'),
         code_system = el.attr('codeSystem');
+
+    if (!name) {
+      name = Core.stripWhitespace(entry.tag('originalText').val());
+    }
     
     // 'specimen' tag not always present
     // el = entry.tag('specimen').tag('code');
@@ -2706,6 +2801,7 @@ Parsers.CCDA.document = function (ccda) {
   var doc = ccda.section('document');
 
   var date = parseDate(doc.tag('effectiveTime').attr('value'));
+  var title = Core.stripWhitespace(doc.tag('title').val());
   
   var author = doc.tag('author');
   el = author.tag('assignedPerson').tag('name');
@@ -2745,6 +2841,7 @@ Parsers.CCDA.document = function (ccda) {
   
   data = {
     date: date,
+    title: title,
     author: {
       name: name_dict,
       address: address_dict,
@@ -2818,6 +2915,12 @@ Parsers.CCDA.allergies = function (ccda) {
       el = entry.tag('participant').tag('name');
       if (!el.isEmpty()) {
         allergen_name = el.val();
+      }
+    }
+    if (!allergen_name) {
+      el = entry.template('2.16.840.1.113883.10.20.22.4.7').tag('originalText');
+      if (!el.isEmpty()) {
+        allergen_name = Core.stripWhitespace(el.val());
       }
     }
     
@@ -2947,6 +3050,7 @@ Parsers.CCDA.demographics = function (ccda) {
   
   el = patient.tag('guardian');
   var guardian_relationship = el.tag('code').attr('displayName'),
+      guardian_relationship_code = el.tag('code').attr('code'),
       guardian_home = el.tag('telecom').attr('value');
   
   el = el.tag('guardianPerson').tag('name');
@@ -2988,6 +3092,7 @@ Parsers.CCDA.demographics = function (ccda) {
         family: guardian_name_dict.family
       },
       relationship: guardian_relationship,
+      relationship_code: guardian_relationship_code,
       address: guardian_address_dict,
       phone: {
         home: guardian_home
@@ -3314,7 +3419,7 @@ Parsers.CCDA.results = function (ccda) {
         panel_code_system_name = el.attr('codeSystemName');
     
     var observation;
-    var tests = entry.elsByTag('component');
+    var tests = entry.elsByTag('observation');
     var tests_data = [];
     
     for (var i = 0; i < tests.length; i++) {
@@ -3327,10 +3432,28 @@ Parsers.CCDA.results = function (ccda) {
           code = el.attr('code'),
           code_system = el.attr('codeSystem'),
           code_system_name = el.attr('codeSystemName');
+
+      if (!name) {
+        name = Core.stripWhitespace(observation.tag('text').val());
+      }
       
+      el = observation.tag('translation');
+      var translation_name = el.attr('displayName'),
+        translation_code = el.attr('code'),
+        translation_code_system = el.attr('codeSystem'),
+        translation_code_system_name = el.attr('codeSystemName');
+    
       el = observation.tag('value');
-      var value = parseFloat(el.attr('value')),
+      var value = el.attr('value'),
           unit = el.attr('unit');
+      // We could look for xsi:type="PQ" (physical quantity) but it seems better
+      // not to trust that that field has been used correctly...
+      if (value && !isNaN(parseFloat(value))) {
+        value = parseFloat(value);
+      }
+      if (!value) {
+        value = el.val(); // look for free-text values
+      }
       
       el = observation.tag('referenceRange');
       var reference_range_text = Core.stripWhitespace(el.tag('observationRange').tag('text').val()),
@@ -3347,6 +3470,12 @@ Parsers.CCDA.results = function (ccda) {
         code: code,
         code_system: code_system,
         code_system_name: code_system_name,
+        translation: {
+          name: translation_name,
+          code: translation_code,
+          code_system: translation_code_system,
+          code_system_name: translation_code_system_name
+        },
         reference_range: {
           text: reference_range_text,
           low_unit: reference_range_low_unit,
@@ -3384,7 +3513,7 @@ Parsers.CCDA.medications = function (ccda) {
   medications.entries().each(function(entry) {
     
     el = entry.tag('text');
-    var text = Core.stripWhitespace(el.val());
+    var sig = Core.stripWhitespace(el.val());
 
     var effectiveTimes = entry.elsByTag('effectiveTime');
 
@@ -3417,11 +3546,14 @@ Parsers.CCDA.medications = function (ccda) {
         product_code = el.attr('code'),
         product_code_system = el.attr('codeSystem');
 
-    if (!product_name) {
-      el = entry.tag('manufacturedProduct').tag('originalText');
-      if (!el.isEmpty()) {
-        product_name = Core.stripWhitespace(el.val());
-      }
+    var product_original_text = null;
+    el = entry.tag('manufacturedProduct').tag('originalText');
+    if (!el.isEmpty()) {
+      product_original_text = Core.stripWhitespace(el.val());
+    }
+    // if we don't have a product name yet, try the originalText version
+    if (!product_name && product_original_text) {
+      product_name = product_original_text;
     }
     
     el = entry.tag('manufacturedProduct').tag('translation');
@@ -3454,10 +3586,14 @@ Parsers.CCDA.medications = function (ccda) {
         route_code_system = el.attr('codeSystem'),
         route_code_system_name = el.attr('codeSystemName');
     
-    // participant => vehicle
-    el = entry.tag('participant').tag('code');
-    var vehicle_name = el.attr('displayName'),
-        vehicle_code = el.attr('code'),
+    // participant/playingEntity => vehicle
+    el = entry.tag('participant').tag('playingEntity');
+    var vehicle_name = el.tag('name').val();
+
+    el = el.tag('code');
+    // prefer the code vehicle_name but fall back to the non-coded one
+    vehicle_name = el.attr('displayName') || vehicle_name;
+    var vehicle_code = el.attr('code'),
         vehicle_code_system = el.attr('codeSystem'),
         vehicle_code_system_name = el.attr('codeSystemName');
     
@@ -3477,11 +3613,12 @@ Parsers.CCDA.medications = function (ccda) {
         start: start_date,
         end: end_date
       },
-      text: text,
+      text: sig,
       product: {
         name: product_name,
         code: product_code,
         code_system: product_code_system,
+        text: product_original_text,
         translation: {
           name: translation_name,
           code: translation_code,
@@ -3575,8 +3712,11 @@ Parsers.CCDA.problems = function (ccda) {
     el = entry.template('2.16.840.1.113883.10.20.22.4.6');
     var status = el.tag('value').attr('displayName');
     
+    var age = null;
     el = entry.template('2.16.840.1.113883.10.20.22.4.31');
-    var age = parseFloat(el.tag('value').attr('value'));
+    if (!el.isEmpty()) {
+      age = parseFloat(el.tag('value').attr('value'));
+    }
 
     el = entry.template('2.16.840.1.113883.10.20.22.4.64');
     var comment = Core.stripWhitespace(el.tag('text').val());
@@ -3628,6 +3768,10 @@ Parsers.CCDA.procedures = function (ccda) {
     var name = el.attr('displayName'),
         code = el.attr('code'),
         code_system = el.attr('codeSystem');
+
+    if (!name) {
+      name = Core.stripWhitespace(entry.tag('originalText').val());
+    }
     
     // 'specimen' tag not always present
     // el = entry.tag('specimen').tag('code');
@@ -3647,7 +3791,7 @@ Parsers.CCDA.procedures = function (ccda) {
     performer_dict.phone = phone;
     
     // participant => device
-    el = entry.tag('participant').tag('code');
+    el = entry.template('2.16.840.1.113883.10.20.22.4.37').tag('code');
     var device_name = el.attr('displayName'),
         device_code = el.attr('code'),
         device_code_system = el.attr('codeSystem');
@@ -3686,24 +3830,42 @@ Parsers.CCDA.smoking_status = function (ccda) {
   var parseAddress = Documents.parseAddress;
   var data, el;
 
-  var social_history = ccda.section('social_history');
+  var name = null,
+      code = null,
+      code_system = null,
+      code_system_name = null,
+      entry_date = null;
 
   // We can parse all of the social_history sections,
   // but in practice, this section seems to be used for
   // smoking status, so we're just going to break that out.
-  var entry = social_history.template('2.16.840.1.113883.10.20.22.4.78');
-  if (entry.isEmpty()) {
-    entry = social_history.template('2.16.840.1.113883.10.22.4.78');
+  // And we're just looking for the first non-empty one.
+  var social_history = ccda.section('social_history');
+  var entries = social_history.entries();
+  for (var i=0; i < entries.length; i++) {
+    var entry = entries[i];
+
+    var smoking_status = entry.template('2.16.840.1.113883.10.20.22.4.78');
+    if (smoking_status.isEmpty()) {
+      smoking_status = entry.template('2.16.840.1.113883.10.22.4.78');
+    }
+    if (smoking_status.isEmpty()) {
+      continue;
+    }
+
+    el = smoking_status.tag('effectiveTime');
+    entry_date = parseDate(el.attr('value'));
+
+    el = smoking_status.tag('value');
+    name = el.attr('displayName');
+    code = el.attr('code');
+    code_system = el.attr('codeSystem');
+    code_system_name = el.attr('codeSystemName');
+
+    if (name) {
+      break;
+    }
   }
-
-  el = entry.tag('effectiveTime');
-  var entry_date = parseDate(el.attr('value'));
-
-  el = entry.tag('value');
-  var name = el.attr('displayName'),
-      code = el.attr('code'),
-      code_system = el.attr('codeSystem'),
-      code_system_name = el.attr('codeSystemName');
 
   data = {
     date: entry_date,
