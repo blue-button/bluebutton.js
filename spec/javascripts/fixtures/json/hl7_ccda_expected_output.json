@@ -615,9 +615,9 @@
       "code": "274025005",
       "code_system": "2.16.840.1.113883.6.96",
       "specimen": {
-        "name": null,
-        "code": null,
-        "code_system": null
+        "name": "colonic polyp sample",
+        "code": "309226005",
+        "code_system": "2.16.840.1.113883.6.96"
       },
       "performer": {
         "street": [
