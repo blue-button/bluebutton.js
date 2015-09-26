@@ -10,7 +10,7 @@
     }
 }(this, function() {
 
-/* BlueButton.js -- 0.4.1 */
+/* BlueButton.js -- 0.4.2 */
 
 /*
  * ...
@@ -25,19 +25,25 @@ var Core = (function () {
   var parseData = function (source) {
     source = stripWhitespace(source);
     
-    if (source.substr(0, 5) === '<?xml') {
-      return Core.XML.parse(source);
-    } else {
+    if (source.charAt(0) === '<') {
       try {
-        return JSON.parse(source);
+        return Core.XML.parse(source);
       } catch (e) {
-        if (console.error) {
-          console.error("Error: Cannot parse this file. BB.js only accepts valid XML " +
-            "(for parsing) or JSON (for generation). If you are attempting to provide " +
-            "XML or JSON, please run your data through a validator to see if it is malformed.\n");
+        if (console.log) {
+          console.log("File looked like it might be XML but couldn't be parsed.");
         }
-        throw e;
       }
+    }
+
+    try {
+      return JSON.parse(source);
+    } catch (e) {
+      if (console.error) {
+        console.error("Error: Cannot parse this file. BB.js only accepts valid XML " +
+          "(for parsing) or JSON (for generation). If you are attempting to provide " +
+          "XML or JSON, please run your data through a validator to see if it is malformed.\n");
+      }
+      throw e;
     }
   };
   
@@ -2631,13 +2637,10 @@ Parsers.C32.procedures = function (c32) {
     }
     
     // 'specimen' tag not always present
-    // el = entry.tag('specimen').tag('code');
-    // var specimen_name = el.attr('displayName'),
-    //     specimen_code = el.attr('code'),
-    //     specimen_code_system = el.attr('codeSystem');
-    var specimen_name = null,
-        specimen_code = null,
-        specimen_code_system = null;
+    el = entry.tag('specimen').tag('code');
+    var specimen_name = el.attr('displayName'),
+        specimen_code = el.attr('code'),
+        specimen_code_system = el.attr('codeSystem');
     
     el = entry.tag('performer').tag('addr');
     var organization = el.tag('name').val(),
@@ -3774,13 +3777,10 @@ Parsers.CCDA.procedures = function (ccda) {
     }
     
     // 'specimen' tag not always present
-    // el = entry.tag('specimen').tag('code');
-    // var specimen_name = el.attr('displayName'),
-    //     specimen_code = el.attr('code'),
-    //     specimen_code_system = el.attr('codeSystem');
-    var specimen_name = null,
-        specimen_code = null,
-        specimen_code_system = null;
+    el = entry.tag('specimen').tag('code');
+    var specimen_name = el.attr('displayName'),
+        specimen_code = el.attr('code'),
+        specimen_code_system = el.attr('codeSystem');
     
     el = entry.tag('performer').tag('addr');
     var organization = el.tag('name').val(),
