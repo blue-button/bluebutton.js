@@ -171,11 +171,20 @@
       "zip": "40299",
       "country": "US"
     },
-    "phone": {
-      "home": "tel:(502)649-6327",
-      "work": null,
-      "mobile": null
-    },
+    "phones": [
+      {
+        "type": "home",
+        "number": "tel:(502)649-6327"
+      },
+      {
+        "type": "mobile",
+        "number": null
+      },
+      {
+        "type": "work",
+        "number": null
+      }
+    ],
     "email": null,
     "language": "spa",
     "race": "Asian",

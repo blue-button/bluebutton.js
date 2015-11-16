@@ -76,11 +76,20 @@
       "zip": "11375",
       "country": "USA"
     },
-    "phone": {
-      "home": "tel:+1-917-555-5555",
-      "work": null,
-      "mobile": null
-    },
+    "phones": [
+      {
+        "type": "home",
+        "number": "tel:+1-917-555-5555"
+      },
+      {
+        "type": "mobile",
+        "number": null
+      },
+      {
+        "type": "work",
+        "number": null
+      }
+    ],
     "email": null,
     "language": "ENG",
     "race": "WHITE",

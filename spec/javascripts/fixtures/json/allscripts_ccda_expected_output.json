@@ -184,11 +184,20 @@
       "zip": "60301",
       "country": "US"
     },
-    "phone": {
-      "home": null,
-      "work": null,
-      "mobile": null
-    },
+    "phones": [
+      {
+        "type": "home",
+        "number": null
+      },
+      {
+        "type": "mobile",
+        "number": null
+      },
+      {
+        "type": "work",
+        "number": null
+      }
+    ],
     "email": null,
     "language": "eng",
     "race": "White",
