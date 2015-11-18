@@ -163,7 +163,7 @@ BlueButton.js only supports generating CCDAs right now.
 
 ```JavaScript
 var json = fs.readFileSync('./example.json', 'utf-8');
-var template = fs.readFileSync('./build/ccda_template.ejs');
+var template = fs.readFileSync('./build/ccda_template.ejs', 'utf-8');
 var myRecord = BlueButton(json, {
   generatorType: 'ccda',
   template: template
