@@ -63,6 +63,13 @@
         }
       }
     ],
+    "encounterParticipant": {
+      "name" : null,
+      "phone" : {
+        "work" : null 
+      },
+      "address" : null 
+    },
     "location": {
       "name": null,
       "address": {
