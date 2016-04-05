@@ -1,6 +1,6 @@
 {
   "name": "bluebutton",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "BlueButton.js helps developers navigate complex health data with ease.",
   "keywords": [
     "bb",
@@ -50,7 +50,7 @@
   },
   "devDependencies": {
     "bower": "*",
-    "grunt": "*",
+    "grunt": "~0.4.0",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-concat": "~0.4.0",
     "grunt-contrib-copy": "~0.5.0",
@@ -67,5 +67,7 @@
   "engines": {
     "node": ">=0.10.0"
   },
-  "licenses": ["MIT"]
+  "licenses": [
+    "MIT"
+  ]
 }
