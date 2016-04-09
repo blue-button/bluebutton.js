@@ -247,11 +247,11 @@ cli.withStdin(function(json) {
 
 ## Creating a Build
 
-Run `grunt` to build the library. A `build/` directory will be created containing the standard and minified builds.
+Run `npm run build` to build the library. A `build/` directory will be created containing the standard and minified builds.
 
 ## Running the Test Suite
 
-Use `grunt test` to run the test suite. This is important to do after making any changes to the parsers. Before running the tests the first time, run `bower install` to download the sample CCDA the tests require. (Run `npm install -g bower` if you don't yet have [Bower](http://bower.io)). Tests can be found in the [`spec/`](https://github.com/blue-button/bluebutton.js/tree/master/spec/javascripts) directory.
+Use `npm run test` to run the test suite. This is important to do after making any changes to the parsers. Before running the tests the first time, run `bower install` to download the sample CCDA the tests require. (Run `npm install -g bower` if you don't yet have [Bower](http://bower.io)). Tests can be found in the [`spec/`](https://github.com/blue-button/bluebutton.js/tree/master/spec/javascripts) directory.
 
 ## Bugs and Contributing
 
