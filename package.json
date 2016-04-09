@@ -42,6 +42,7 @@
     "url": "git://github.com/blue-button/bluebutton.js.git"
   },
   "scripts": {
+    "build": "grunt",
     "test": "grunt test"
   },
   "dependencies": {
