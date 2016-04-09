@@ -1,6 +1,6 @@
 {
   "name": "bluebutton",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "BlueButton.js allows web developers to parse and navigate complex health data with ease.",
   "main": [
     "build/bluebutton.js"
