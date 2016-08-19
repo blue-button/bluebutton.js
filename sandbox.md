@@ -116,9 +116,9 @@ Use sample data and convert: <button onclick="load('bb_ref_ccda')">Sample CCDA</
 ## Vitals
 <pre><code id="vitals" class="javascript"></code></pre>
 
-<script src="/assets/bluebutton.js"></script>
+<script src="{{ site.baseurl }}/assets/bluebutton.js"></script>
 <script>
-  var baseURL = "";
+  var baseURL = "{{ site.baseurl }}";
   var xml, bb;
   var doc                  = document.getElementById('document');
   var demographics         = document.getElementById('demographics');

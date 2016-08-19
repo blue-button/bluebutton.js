@@ -2,8 +2,8 @@
 title: BlueButton.js
 description: > # this means to ignore newlines until "baseurl:"
   BlueButton.js helps developers parse and generate complex health data formats like C-CDA with ease, so you can empower patients with access to their health records.
-baseurl: ""
-url: "http://bluebuttonjs.com"
+baseurl: "/bluebutton.js"
+url: "http://blue-button.github.io"
 
 # Header
 header:
@@ -35,9 +35,11 @@ paginate: 5
 paginate_path: "/blog/page:num"
 
 # Build settings
-markdown: redcarpet
-redcarpet:
-  extensions: [hard_wrap, tables]
+kramdown:
+  hard_wrap: true
+
+# Plugins
+gems: [jekyll-paginate]
 
 # Defaults
 defaults:
