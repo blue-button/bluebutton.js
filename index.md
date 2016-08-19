@@ -30,7 +30,7 @@ edit_page: false
       <li>
         <div class="icon console"></div>
         <h2>All JavaScript</h2>
-        <p>With support for both <a href="{{ site.baseurl }}/docs/#parsing-node">Node.js</a> and the <a href="{{ site.baseurl }}/docs/#parsing-browser">browser</a>, you can use BlueButton.js everywhere. It's easy to call Node from the command-line from other languages like <a href="{{ site.baseurl }}/docs/#parsing-python">Python</a> and Ruby, so you can use BlueButton.js on your server without any complicated setup. And, of course, using it in the browser is as simple as adding a script tag.</p>
+        <p>With support for both Node.js and the browser, you can use BlueButton.js everywhere. It's easy to call Node from the command-line from other languages like Python and Ruby, so you can use BlueButton.js on your server without any complicated setup. And, of course, using it in the browser is as simple as adding a script tag.</p>
       </li>
 
       <li>
