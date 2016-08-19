@@ -1,6 +1,6 @@
 # BlueButton.js [![Build Status](https://travis-ci.org/blue-button/bluebutton.js.svg?branch=master)](https://travis-ci.org/blue-button/bluebutton.js)
 
-BlueButton.js helps developers parse and generate complex health data formats like C-CDA with ease, so you can empower patients with access to their health records. [Try the demo.](http://www.bluebuttonjs.com/sandbox/)
+BlueButton.js helps developers parse and generate complex health data formats like C-CDA with ease, so you can empower patients with access to their health records. [Try the demo.](http://blue-button.github.io/bluebutton.js/sandbox/)
 
 ## Quick Start
 
@@ -20,4 +20,4 @@ myRecord.data    // The final parsed document data
 
 ## Detailed Documentation
 
-See http://www.bluebuttonjs.com/docs/ for an explanation of the data sections, much more detailed sample code, instructions on how to generate a build, etc.
+[View the documentation](http://blue-button.github.io/bluebutton.js/docs) for an explanation of the data sections, much more detailed sample code, instructions on how to generate a build, etc.
