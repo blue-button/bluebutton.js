@@ -38,82 +38,114 @@ Use sample data and convert: <button onclick="load('bb_ref_ccda')">Sample CCDA</
 
 
 <a name="document-section"></a>
+
 ## Document
+
 <pre><code id="document" class="javascript"></code></pre>
 
 
 <a name="demographics-section"></a>
+
 ## Demographics
+
 <pre><code id="demographics" class="javascript"></code></pre>
 
 
 <a name="allergies-section"></a>
+
 ## Allergies
+
 <pre><code id="allergies" class="javascript"></code></pre>
 
 
 <a name="careplan-section"></a>
+
 ## Care Plan
+
 <pre><code id="careplan" class="javascript"></code></pre>
 
 
 <a name="chiefcomplaint-section"></a>
+
 ## Chief Complaint
+
 <pre><code id="chiefcomplaint" class="javascript"></code></pre>
 
 
 <a name="encounters-section"></a>
+
 ## Encounters
+
 <pre><code id="encounters" class="javascript"></code></pre>
 
 
 <a name="functionalstatus-section"></a>
+
 ## Functional Status
+
 <pre><code id="functionalstatus" class="javascript"></code></pre>
 
 
 <a name="immunizations-section"></a>
+
 ## Immunizations
+
 <pre><code id="immunizations" class="javascript"></code></pre>
 
 
 <a name="immunizationdeclines-section"></a>
+
 ## Declined Immunizations
+
 <pre><code id="immunizationdeclines" class="javascript"></code></pre>
 
 
 <a name="instructions-section"></a>
+
 ## Patient Instructions
+
 <pre><code id="instructions" class="javascript"></code></pre>
 
 
 <a name="medications-section"></a>
+
 ## Medications
+
 <pre><code id="medications" class="javascript"></code></pre>
 
 
 <a name="problems-section"></a>
+
 ## Problems
+
 <pre><code id="problems" class="javascript"></code></pre>
 
 
 <a name="procedures-section"></a>
+
 ## Procedures
+
 <pre><code id="procedures" class="javascript"></code></pre>
 
 
 <a name="results-section"></a>
+
 ## Results (Labs)
+
 <pre><code id="results" class="javascript"></code></pre>
 
 
 <a name="smokingstatus-section"></a>
+
 ## Smoking Status
+
 <pre><code id="smokingstatus" class="javascript"></code></pre>
 
 
 <a name="vitals-section"></a>
+
 ## Vitals
+
 <pre><code id="vitals" class="javascript"></code></pre>
 
 <script src="{{ site.baseurl }}/assets/bluebutton.js"></script>

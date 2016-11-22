@@ -16,6 +16,8 @@ contents:
     link: "#development"
 ---
 
+<a name="parsing"></a>
+
 # Parsing Documents
 
 BlueButton.js supports a few different health data types, like C32 and CCDA. To parse a health document, pass the source data to `BlueButton`:
@@ -149,6 +151,8 @@ console.log(result); // goes to stdout, which is piped into our variable `result
 
 [Ruby](http://stackoverflow.com/a/3159997) and many other languages have similar tools for calling out to the command-line.
 
+<a name="generating"></a>
+
 # Generating Documents
 
 Finding a good parser for CCDAs before BlueButton.js was a pain, but there were a few options out there. Generation was much more difficult. You could use [Model Driven Health Tools](https://www.projects.openhealthtools.org/sf/projects/mdht/), which is very robust but requires the user to have intimate knowledge of the architecture of CCDAs and has all the downsides of an enterprise-style Java project. Or you could roll your own tool.
@@ -239,6 +243,8 @@ cli.withStdin(function(json) {
     console.log(bb.data);
 });
 ```
+
+<a name="development"></a>
 
 # Development
 
