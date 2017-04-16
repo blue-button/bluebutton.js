@@ -344,6 +344,7 @@
   "results": [
     {
       "name": "CO2",
+      "date": "2013-07-11T00:27:00Z",
       "code": "UNK",
       "code_system": "2.16.840.1.113883.6.12",
       "code_system_name": "CPT",
