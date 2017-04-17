@@ -218,11 +218,20 @@
       "zip": "02368",
       "country": "US"
     },
-    "phone": {
-      "home": "tel:(781)555-1212",
-      "work": null,
-      "mobile": null
-    },
+    "phones": [
+      {
+        "type": "home",
+        "number": "tel:(781)555-1212"
+      },
+      {
+        "type": "mobile",
+        "number": null
+      },
+      {
+        "type": "work",
+        "number": null
+      }
+    ],
     "email": null,
     "language": "fr-CN",
     "race": "White",

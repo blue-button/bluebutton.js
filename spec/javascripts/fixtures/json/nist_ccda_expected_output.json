@@ -180,11 +180,20 @@
       "zip": "97006",
       "country": "US"
     },
-    "phone": {
-      "home": "tel:(816)276-6909",
-      "work": null,
-      "mobile": null
-    },
+    "phones": [
+      {
+        "type": "home",
+        "number": "tel:(816)276-6909"
+      },
+      {
+        "type": "mobile",
+        "number": null
+      },
+      {
+        "type": "work",
+        "number": null
+      }
+    ],
     "email": null,
     "language": "eng",
     "race": "White",
