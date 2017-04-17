@@ -24,6 +24,8 @@ myRecord.source  // The parsed source data with added querying methods
 myRecord.data    // The final parsed document data
 ```
 
+Note: Many of the example health records posted here are missing the XML declaration required by the BlueButton.js parser. If you are experiencing errors with CCDA parsing, add ```XML <?xml version="1.0" encoding="UTF-8" standalone="no" ?>``` as the first line of your CCDA file. 
+
 ## Detailed Documentation
 
 [View the documentation](http://blue-button.github.io/bluebutton.js/docs) for an explanation of the data sections, much more detailed sample code, instructions on how to generate a build, etc.
